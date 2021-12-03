@@ -1,8 +1,10 @@
 const inputsCountersValues={
     nombre_d_habitants: 0,
     hauteur_sous_plafond: 0,
+    hauteur_sous_plafond_moyenne: 1,
     chaufface_envisage_source_energie_nbr_unite: 0,
     eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond: 0,
+    source_energie_nombre: 0,
     consommation_annuelle_elec: 0,
     consommation_annuelle_gaz: 0,
     consommation_annuelle_gpl: 0,
@@ -13,6 +15,27 @@ const inputsCountersValues={
 
 jQuery(function($){
     $(document).ready(function(){
+      var elems = document.querySelectorAll('select');
+      var instances = M.FormSelect.init(elems);
+
+      var current = 1, current_step,next_step,steps;
+      steps = $("fieldset").length;
+      let stepVisited=[1];
+      let previousStep=null;
+      
+      /* Add the listener */
+
+      // var els = document.querySelectorAll('select');
+
+      // [].forEach.call(els, function(el) {
+      //   this.addEventListener('change', function() {
+      //     console.log(el.value);
+      //     console.log(el.children[el.value].textContent);
+      //     alert(el.children[el.value].textContent);
+      //   }, false);
+      // });
+      
+      
       $('a').click(function(e){
         e.preventDefault();
       });
@@ -30,11 +53,21 @@ jQuery(function($){
       }
 
       resetAllRadioInput();
+
       $('.counter__increment').click(function(e){
+        //hauteur_sous_plafond_moyenne
+        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='hauteur_sous_plafond_moyenne'){
+          const result=inputsCountersValues.hauteur_sous_plafond_moyenne +0.2;
+          inputsCountersValues.hauteur_sous_plafond_moyenne = Math.round(result*100)/100
+          $($($(this).parent().children('.counter__value'))[0]).text(inputsCountersValues.hauteur_sous_plafond_moyenne);  
+          return
+        }
+
         inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]=parseInt(inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')])+1
         inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]=inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')];
 
-        //champ calcle
+
+        //champ calcule
         $($($(this).parent().children('.counter__value'))[0]).text(inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]);
         if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond'){
           $('#inputVolumeHabitation').val(parseInt($('#inputSurfaceSol').val()) * inputsCountersValues.eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond);
@@ -48,6 +81,16 @@ jQuery(function($){
 
       $('.counter__decrement').click(function(e){
         if(parseInt(inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')])===0) return;
+        
+        //hauteur_sous_plafond_moyenne
+        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='hauteur_sous_plafond_moyenne' && inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]===1) return 
+        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='hauteur_sous_plafond_moyenne'){
+          const result=inputsCountersValues.hauteur_sous_plafond_moyenne -0.2;
+          inputsCountersValues.hauteur_sous_plafond_moyenne = Math.round(result*100)/100
+          $($($(this).parent().children('.counter__value'))[0]).text(inputsCountersValues.hauteur_sous_plafond_moyenne);  
+          return
+        }
+
         inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]=parseInt(inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')])-1
         inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]=inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')];
         
@@ -172,10 +215,7 @@ jQuery(function($){
       });
       
       /* ALL ABOUT THE FORM */
-      var current = 1, current_step,next_step,steps;
-      steps = $("fieldset").length;
-      let stepVisited=[1];
-      let previousStep=null;
+     
       $(".next").click(function(e){
         let timeout= current >1 && current<25 ? 200 : 0;
         setTimeout(()=>{
@@ -195,6 +235,28 @@ jQuery(function($){
                 $('.page .previous').css('visibility', 'hidden');
             }
 
+            if(current>1 && current< 10){
+              if(!$("#part-2").hasClass('step-list-item-active')){
+                $("#part-2").addClass('step-list-item-active')
+              }
+              $("#part-2 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
+    
+              if(!$("#part-1 h5").hasClass('step-list-item-disabled')){
+                $("#part-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+              }
+              $("#part-1").removeClass('step-list-item-active',1000, 'easeInBack');
+    
+            }else{
+              if(!$("#part-1").hasClass('step-list-item-active')){
+                $("#part-1").addClass('step-list-item-active')
+              }
+              $("#part-1 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
+    
+              if(!$("#part-2 h5").hasClass('step-list-item-disabled')){
+                $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+              }
+              $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
+            }
             // if(current>5){
             //   setTimeout(() => {
             //     $('.topbar .topbar__progress').css('visibility','hidden');
@@ -265,6 +327,29 @@ jQuery(function($){
           $('.page .previous').css('visibility', 'hidden');
 
         }
+
+        if(current>1 && current< 10){
+          if(!$("#part-2").hasClass('step-list-item-active')){
+            $("#part-2").addClass('step-list-item-active')
+          }
+          $("#part-2 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
+
+          if(!$("#part-1 h5").hasClass('step-list-item-disabled')){
+            $("#part-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          }
+          $("#part-1").removeClass('step-list-item-active',1000, 'easeInBack');
+
+        }else{
+          if(!$("#part-1").hasClass('step-list-item-active')){
+            $("#part-1").addClass('step-list-item-active')
+          }
+          $("#part-1 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
+
+          if(!$("#part-2 h5").hasClass('step-list-item-disabled')){
+            $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          }
+          $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
+        }
         current_step.hide();
         
         setTimeout(() => {      
@@ -281,6 +366,121 @@ jQuery(function($){
         
       });
 
+      $('.navigationButton').click(function(){
+        
+        for(let i=0; i<19; i++){
+          $('.step-'+i).removeAttr('style');
+        }
+        if($(this).attr('aria-selected')==='part-1'){
+          current=0;
+            $('.page .page__content #regiration_form').css("transform"," translateX(50px)" );
+            $('.page .page__content #regiration_form').css("transition", "none" );
+
+            previousStep=parseInt($(this).attr('skipStep')) ? current:  null;
+            current= $(this).attr('skipStep') ? parseInt($(this).attr('skipStep')) : current;
+            
+            current_step =  $('.step-'+current);
+            next_step=++current;
+            next_step_form =  $('.step-'+next_step);
+            
+            if (current >=1 && current<=25){ 
+              $('.page .previous').css('visibility', 'visible');
+            }else{
+                $('.page .previous').css('visibility', 'hidden');
+            }
+
+            if(current>1 && current< 10){
+              if(!$("#part-2").hasClass('step-list-item-active')){
+                $("#part-2").addClass('step-list-item-active')
+              }
+              $("#part-2 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
+    
+              if(!$("#part-1 h5").hasClass('step-list-item-disabled')){
+                $("#part-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+              }
+              $("#part-1").removeClass('step-list-item-active',1000, 'easeInBack');
+    
+            }else{
+              if(!$("#part-1").hasClass('step-list-item-active')){
+                $("#part-1").addClass('step-list-item-active')
+              }
+              $("#part-1 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
+    
+              if(!$("#part-2 h5").hasClass('step-list-item-disabled')){
+                $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+              }
+              $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
+            }
+
+            if (previousStep){ $('.step-'+previousStep).hide()}
+            current_step.hide();
+
+            $('.page .page__content #regiration_form').css("transition", ".4s ease-out" );
+            $('.page .page__content #regiration_form').css("transform"," translateX(0px)" );
+            
+            
+            
+            next_step_form.fadeTo('slow', 1, function(){
+              setProgressBar(next_step);
+              next_step_form.show();
+              stepVisited.push(next_step);
+            });
+        }else if ($(this).attr('aria-selected')==='part-2'){
+          current=1;
+              $('.page .page__content #regiration_form').css("transform"," translateX(50px)" );
+              $('.page .page__content #regiration_form').css("transition", "none" );
+  
+              previousStep=parseInt($(this).attr('skipStep')) ? current:  null;
+              current= $(this).attr('skipStep') ? parseInt($(this).attr('skipStep')) : current;
+              
+              current_step =  $('.step-'+current);
+              next_step=++current;
+              next_step_form =  $('.step-'+next_step);
+              
+              if (current >=1 && current<=25){ 
+                $('.page .previous').css('visibility', 'visible');
+              }else{
+                  $('.page .previous').css('visibility', 'hidden');
+              }
+  
+              if(current>1 && current< 10){
+                if(!$("#part-2").hasClass('step-list-item-active')){
+                  $("#part-2").addClass('step-list-item-active')
+                }
+                $("#part-2 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
+      
+                if(!$("#part-1 h5").hasClass('step-list-item-disabled')){
+                  $("#part-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+                }
+                $("#part-1").removeClass('step-list-item-active',1000, 'easeInBack');
+      
+              }else{
+                if(!$("#part-1").hasClass('step-list-item-active')){
+                  $("#part-1").addClass('step-list-item-active')
+                }
+                $("#part-1 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
+      
+                if(!$("#part-2 h5").hasClass('step-list-item-disabled')){
+                  $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+                }
+                $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
+              }
+  
+              if (previousStep){ $('.step-'+previousStep).hide()}
+              current_step.hide();
+  
+              $('.page .page__content #regiration_form').css("transition", ".4s ease-out" );
+              $('.page .page__content #regiration_form').css("transform"," translateX(0px)" );
+              
+              
+              
+              next_step_form.fadeTo('slow', 1, function(){
+                setProgressBar(next_step);
+                next_step_form.show();
+                stepVisited.push(next_step);
+              });
+        }
+      })
 
       // Change progress bar action
       setProgressBar(current);
@@ -294,18 +494,27 @@ jQuery(function($){
     });
 
     //CHAMPS CALCULER 
-    
       //= inputVolumeHabitation inputSurfaceSol * inputsCountersValues('eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond')
     $('#inputSurfaceSol').change(function(){
       $('#inputVolumeHabitation').val(parseInt($(this).val())* inputsCountersValues.eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond);
 
     })
     
+    $('#inputConsoFioul').change(function(){
+      $('#inputTotalConso20ans').val(((parseInt($(this).val())+parseInt($('#inputConsoGaz').val()))* parseInt($('#inputConsoAnIndex').val())));
+      $('#inputMoyennConso').val((((parseInt($(this).val())+parseInt($('#inputConsoGaz').val()))* parseInt($(this).val()))/parseInt($(this).val())))
+    })
+
+    
+    $('#inputConsoGaz').change(function(){
+      $('#inputTotalConso20ans').val(((parseInt($('#inputConsoFioul').val()) +parseInt($(this).val()))* parseInt($('#inputConsoAnIndex').val())));
+      $('#inputMoyennConso').val((((parseInt($('#inputConsoFioul').val())+parseInt($(this).val()))* parseInt($(this).val()))/parseInt($(this).val())))
+    })
 
     $('#inputConsoAnIndex').change(function(e){
-      $('#inputTotalConso20ans').val(((inputsCountersValues.consommation_annuelle_fioul+inputsCountersValues.consommation_annuelle_gaz)* parseInt($(this).val())))
-      $('#inputMoyennConso').val((((inputsCountersValues.consommation_annuelle_fioul+inputsCountersValues.consommation_annuelle_gaz)* parseInt($(this).val()))/parseInt($(this).val())))
-      console.log((((inputsCountersValues.consommation_annuelle_fioul+inputsCountersValues.consommation_annuelle_gaz)* parseInt($(this).val()))/parseInt($(this).val())));
+      $('#inputTotalConso20ans').val(((parseInt($('#inputConsoFioul').val())+parseInt($('#inputConsoGaz').val()))* parseInt($(this).val())))
+
+      $('#inputMoyennConso').val((((parseInt($('#inputConsoFioul').val())+parseInt($('#inputConsoGaz').val()))* parseInt($(this).val()))/parseInt($(this).val())))
     })
 
     //-----------------------------------------------------------------------------------------

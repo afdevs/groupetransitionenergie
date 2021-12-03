@@ -23,21 +23,25 @@
         <div class="page">
             <aside class="aside">
                 <ul class="step-list">
-                    <li class="step-list-item step-list-item-active">
-                        <div class="step-list-item-content">
-                        <h5>Votre projet</h5>
-                        <p class="step-description-text">Décrivez votre logement et détaillez votre projet de travaux.</p>
-
-                        </div>
+                    <li class="step-list-item step-list-item-active" id="part-1">
+                        <button class="navigationButton" aria-selected="part-1">
+                            <div class="step-list-item-content">
+                            <h5>INFORMATION CLIENT</h5>
+                            <!-- <p class="step-description-text">Décrivez votre logement et détaillez votre projet de travaux.</p> -->
+                            </div>
+                        </button>
                     </li>
 
-                    <li class="step-list-item ">
-                        <div class="step-list-item-content">
-                        <h5 class="step-list-item-disabled">Vos informations</h5>
-                        <p class="step-description-text step-list-item-disabled">Décrivez votre logement et détaillez votre projet de travaux.</p>
-
+                    <li class="step-list-item" id="part-2">
+                        <button class="navigationButton" aria-selected="part-2">
+                            <div class="step-list-item-content">
+                            <h5 class="step-list-item-disabled">ETUDE DU LOGEMENT</h5>
+                            <!-- <p class="step-description-text step-list-item-disabled">Décrivez votre logement et détaillez votre projet de travaux.</p> -->
                         </div>
+
+                        </button>
                     </li>
+                    
                 </ul>
             </aside>
             <div class="page__content">
@@ -120,51 +124,45 @@
                     <fieldset class="step-2">
                         <h2>Type d’occupation</h2>
                         <div class="step-2__content">
-                            <div class="noImageSelection">
-                                <label for="type_occupation_1" class="select-item btn step-2__link no-image" >                                       
-                                    <input type="radio" name="proprietaire_secondaire" id="type_occupation_1" value="Propriétaire d’une résidence secondaire">
-                                    <span>Propriétaire d’une résidence secondaire</span>
-                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox not-absolute">
+                            <div class="step-2__content optionWithImages">
+                                <label for="type_occupation_1" class="select-item btn step-2__link image image4">
+                                    <input type="radio" name="type_d_occupation" id="type_occupation_1" value="Propriétaire occupant">
+                                    <span class="img-wrapper">
+                                        <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_Proprietaire-occupant.svg" alt="Photo - Carrée/rectangulaire">
+                                    </span>
+                                    Propriétaire occupant
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
 
-                                <label for="type_occupation_2" class="select-item btn step-2__link no-image">                                       
-                                    <input type="radio" name="proprietaire_occupant"  id="type_occupation_2" value="Propriétaire occupant">
-                                    <span>Propriétaire occupant</span>
-                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox not-absolute">
+                                <label for="type_occupation_2" class="select-item btn step-2__link image image4">
+                                    <input type="radio" name="type_d_occupation" id="type_occupation_2" value="
+                                    Propriétaire d’une résidence secondaire">
+                                    <span class="img-wrapper">
+                                        <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_proprietaire-maison-secondaire.svg" alt="Photo - Propriétaire d’une résidence secondaire">
+                                    </span>
+                                    Propriétaire d’une résidence secondaire
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
 
-                                <label for="type_occupation_3" class="select-item btn step-2__link no-image" >                                       
-                                    <input type="radio" name="proprietaire_bailleur" id="type_occupation_3" value="Propriétaire bailleur">
-                                    <span>Propriétaire bailleur</span>
-                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox not-absolute">
+                                <label for="type_occupation_3" class="select-item btn step-2__link image image4">
+                                    <input type="radio" name="type_d_occupation" id="type_occupation_3" value="Propriétaire bailleur">
+                                    <span class="img-wrapper">
+                                        <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_proprietaire-bailleur.svg" alt="Photo - Propriétaire bailleur">
+                                    </span>
+                                    Propriétaire bailleur
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
 
-                                <label for="type_occupation_4" class="select-item btn step-2__link no-image" >                                       
-                                    <input type="radio" name="proprietaire_locataire" id="type_occupation_4" value="Locataire">
-                                    <span>Locataire</span>
-                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox not-absolute">
+                                <label for="type_occupation_4" class="select-item btn step-2__link image image4">
+                                    <input type="radio" name="type_d_occupation" id="type_occupation_4" value="Locataire">
+                                    <span class="img-wrapper">
+                                        <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_Locataire.svg" alt="Photo - Locataire">
+                                    </span>
+                                    Locataire
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
                             </div>
                             <div class="inputsCounter">
-                                <!-- <div class="input-item-counter">
-                                    <div class="counter">
-                                        <div class="counter__fields ">
-                                            <div class="counter__title">Nombre d’habitants </div>
-                                             <div class="counter__subtitle">Nombre d’habitants </div> 
-                                        </div>
-                                        <div class="counter_buttons">
-                                            <button class="counter__decrement" type="button">
-                                                -
-                                            </button>
-                                            <span class="counter__value">0</span>
-                                            <button class="counter__increment" type="button">
-                                                +
-                                            </button>
-                                        </div>
-                                        <span class="step-1__content__notice">Nombre d’habitants requis </span>
-
-                                    </div>
-                                </div>  -->
                                 <div class="input-counter">
                                     <div class="counter">
                                         <div class="counter__fields">
@@ -192,9 +190,61 @@
                         <div class="step-3__content">
                             <div class="inputs">
                                 <div class="input-item">
-                                    <label for="inputAnneContruct">Année de construction</label>
-                                    <input id="inputAnneContruct" type="number" name="annee_contruction" class="" min="0">
-                                    <span class="step-1__content__notice">TAnnée de construction </span>
+                                    <label for="inputAnneContruct">Année de construction</label>    
+                                    <select name="annee_contruction" id="">
+                                        <option disabled selected>Choisir</option>
+                                        <option>2021</option>
+                                        <option>2020</option>
+                                        <option>2019</option>
+                                        <option>2018</option>
+                                        <option>2017</option>
+                                        <option>2016</option>
+                                        <option>2015</option>
+                                        <option>2014</option>
+                                        <option>2013</option>
+                                        <option>2012</option>
+                                        <option>2011</option>
+                                        <option>2010</option>
+                                        <option>2009</option>
+                                        <option>2008</option>
+                                        <option>2007</option>
+                                        <option>2006</option>
+                                        <option>2005</option>
+                                        <option>2004</option>
+                                        <option>2003</option>
+                                        <option>2002</option>
+                                        <option>2001</option>
+                                        <option>2000</option>
+                                        <option>1999</option>
+                                        <option>1998</option>
+                                        <option>1997</option>
+                                        <option>1996</option>
+                                        <option>1995</option>
+                                        <option>1994</option>
+                                        <option>1993</option>
+                                        <option>1992</option>
+                                        <option>1991</option>
+                                        <option>1990</option>
+                                        <option>1989</option>
+                                        <option>1988</option>
+                                        <option>1987</option>
+                                        <option>1986</option>
+                                        <option>1985</option>
+                                        <option>1984</option>
+                                        <option>1983</option>
+                                        <option>1982</option>
+                                        <option>1981</option>
+                                        <option>1980</option>
+                                        <option>1979</option>
+                                        <option>1978</option>
+                                        <option>1977</option>
+                                        <option>1976</option>
+                                        <option>1975</option>
+                                        <option>Avant 1975</option>
+                                    </select>
+                                    
+                                    <!-- <input id="inputAnneContruct" type="number" name="annee_contruction" class="" min="0">
+                                    <span class="step-1__content__notice">TAnnée de construction </span> -->
                                 </div>  
                                 <div class="input-item">
                                     <label for="inputSurfaceSol">Surface au sol (m 2)</label>
@@ -259,47 +309,60 @@
                         <div class="step-5__content optionWithImages">
                             <label for="inputNiveau1" class="select-item btn step-5__link image">
                                 <input type="radio" name="nombre_de_niveau" id="inputNiveau1" value="Niveau 1">
-                                <img class="step-1__img" src="./assets/images/picto_gte/niveau_1.png" alt="Photo - Niveau 1">
-                                
+                                <span class="img-wrapper">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_1niveau.svg" alt="Photo - Niveau 1">     
+                                </span>
+                                1                           
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
                             <label for="inputNiveau2" class="select-item btn step-5__link image">
                                 <input type="radio" name="nombre_de_niveau" id="inputNiveau2" value="Niveau 2">
-                                <img class="step-1__img" src="./assets/images/picto_gte/niveau_2.png" alt="Photo - Niveau 2">
                                 
+                                <span class="img-wrapper">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_2niveaux.svg" alt="Photo - Niveau 2">
+                                </span>
+                                2
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-
                             </label>
                             
                             <label for="inputNiveau3" class="select-item btn step-5__link image">
                                 <input type="radio" name="nombre_de_niveau" id="inputNiveau3" value="Niveau 3">
-                                <img class="step-1__img" src="./assets/images/picto_gte/developpee.png" alt="Photo - Niveau 3">
-                                
+                                <span class="img-wrapper">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_3niveaux.svg" alt="Photo - Niveau 3" >
+                                </span>
+                                3
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
 
                             </label>
                         </div>
                             
-                        <div class="input-counter">
-                            <div class="counter">
-                                <div class="counter__fields">
-                                    <div class="counter__title">Hauteur sous plafond moyenne (m) </div>
-                                    <!-- <div class="counter__subtitle">Nombre d’habitants </div> -->
-                                </div>
-                                <div class="counter_buttons">
-                                    <button class="counter__decrement" type="button">
-                                        -
-                                    </button>
-                                    <span class="counter__value" name="hauteur_sous_plafond">0</span>
-                                    <button class="counter__increment" type="button">
-                                        +
-                                    </button>
-                                </div>
-                                <span class="step-1__content__notice">Hauteur sous plafond moyenne (m) requis </span>
-
-                            </div>
-                        </div>  
+                        <label for="hauteur_sous_plafond_moyenne">Année de construction</label>  
+                        <select id="hauteur_sous_plafond_moyenne" name="hauteur_sous_plafond_moyenne" style="width: 100%;">
+                            <option value="1.8">1.80 m</option>
+                            <option value="1.9">1.90 m</option>
+                            <option value="2.0">2.00 m</option>
+                            <option value="2.1">2.10 m</option>
+                            <option value="2.2">2.20 m</option>
+                            <option value="2.3">2.30 m</option>
+                            <option value="2.4">2.40 m</option>
+                            <option selected="selected" value="2.5">2.50 m</option>
+                            <option value="2.6">2.60 m</option>
+                            <option value="2.7">2.70 m</option>
+                            <option value="2.8">2.80 m</option>
+                            <option value="2.9">2.90 m</option>
+                            <option value="3.0">3.00 m</option>
+                            <option value="3.1">3.10 m</option>
+                            <option value="3.2">3.20 m</option>
+                            <option value="3.3">3.30 m</option>
+                            <option value="3.4">3.40 m</option>
+                            <option value="3.5">3.50 m</option>
+                            <option value="3.6">3.60 m</option>
+                            <option value="3.7">3.70 m</option>
+                            <option value="3.8">3.80 m</option>
+                            <option value="3.9">3.90 m</option>
+                            <option value="4.0">4.00 m</option>
+                        </select>
                         <div class="inputs"> 
                             <div class="input-item nopr20">
                                 <label for="inputVolumeHabitation">Volume habitation (m 3 hauteur x surface )</label>
@@ -312,14 +375,14 @@
                     <fieldset class="step-6">
                         <h2>Type de sous-sol</h2>
                         <div class="step-6__content optionWithImages">
-                            <label for="inputCaveSousSol" class="next btn step-6__link image">
+                            <label for="inputCaveSousSol" class="select-item btn step-6__link image">
                                 <input type="radio" name="type_de_sous_sol" id="inputCaveSousSol" value="Cave/sous-sol">
                                 <img class="step-1__img" src="./assets/images/picto_gte/sous_sol.png" alt="Photo - cave/sous-sol">
                                 Cave/sous-sol
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="inputTerrePlein" class="next btn step-6__link image">
+                            <label for="inputTerrePlein" class="select-item btn step-6__link image">
                                 <input type="radio" name="type_de_sous_sol" id="inputTerrePlein" value="Terre-plein">
                                 <img class="step-1__img" src="./assets/images/picto_gte/terre_plein.png" alt="Photo - Terre-plein">
                                 Terre-plein
@@ -327,7 +390,7 @@
 
                             </label>
                             
-                            <label for="inputVideSanitaire" class="next btn step-6__link image">
+                            <label for="inputVideSanitaire" class="select-item btn step-6__link image">
                                 <input type="radio" name="type_de_sous_sol" id="inputVideSanitaire" value="Vide sanitaire">
                                 <img class="step-1__img" src="./assets/images/picto_gte/vide_sanitaire.png" alt="Photo - Vide sanitaire">
                                 Vide sanitaire
@@ -335,20 +398,16 @@
 
                             </label>
                         </div>
-                        
-                    </fieldset>
-                    
-                    <fieldset class="step-7">
-                        <h2>Type de murs </h2>
-                        <div class="step-7__content optionWithImages">
-                            <label for="inputPierre" class="next btn step-7__link image">
+                            <h2>Type de murs </h2>
+                        <div class="step-6__content optionWithImages">
+                            <label for="inputPierre" class="select-item btn step-6__link image four-item-image">
                                 <input type="radio" name="type_de_mur" id="inputPierre" value="Pierre">
                                 <img class="step-1__img" src="./assets/images/picto_gte/pierre.png" alt="Photo - Pierre">
                                 Pierre
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="inputBeton" class="next btn step-7__link image">
+                            <label for="inputBeton" class="select-item btn step-6__link image four-item-image">
                                 <input type="radio" name="type_de_mur" id="inputBeton" value="Béton">
                                 <img class="step-1__img" src="./assets/images/picto_gte/beton.png" alt="Photo - Béton">
                                 Béton                                
@@ -356,68 +415,66 @@
 
                             </label>
                             
-                            <label for="inputBrique" class="next btn step-7__link image">
+                            <label for="inputBrique" class="select-item btn step-6__link image four-item-image">
                                 <input type="radio" name="type_de_mur" id="inputBrique" value="Brique">
                                 <img class="step-1__img" src="./assets/images/picto_gte/brique.png" alt="Photo - Brique">
                                 Brique
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
 
                             </label>
-                            <label for="inputBois" class="next btn step-7__link image">
+                            <label for="inputBois" class="select-item btn step-6__link image four-item-image">
                                 <input type="radio" name="type_de_mur" id="inputBois" value="Bois">
                                 <img class="step-1__img" src="./assets/images/picto_gte/bois.png" alt="Photo - Bois">
                                 Bois
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
 
                             </label>
-                        </div>                        
+                        </div>    
                     </fieldset>
                     
-                    <fieldset class="step-8">
-                        <h2>Type de vitrages  </h2>
-                        <div class="step-8__content optionWithImages">
-                            <label for="inputCombleAmenage" class="next btn step-8__link image">
-                                <input type="radio" name="type_de_comble" id="inputCombleAmenage" value="Combles aménagés">
-                                <img class="step-1__img" src="./assets/images/picto_gte/comble_amenage.png" alt="Photo - Combles aménagés">
-                                Combles aménagés
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-                            
-                            <label for="inputComblePerdue" class="next btn step-8__link image">
-                                <input type="radio" name="type_de_comble" id="inputComblePerdue" value="Combles perdues">
-                                <img class="step-1__img" src="./assets/images/picto_gte/comble_perdue.png" alt="Photo - Combles perdues">
-                                Combles perdues
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                    <fieldset class="step-7">
+                        <h2>Type de combles  </h2>                        
+                        <div class="step-7__content">
+                            <div class="step-7__content optionWithImages">
+                                <label for="inputCombleAmenage" class="select-item btn step-7__link image">
+                                    <input type="radio" name="type_de_comble" id="inputCombleAmenage" value="Combles aménagés">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/comble_amenage.png" alt="Photo - Combles aménagés">
+                                    Combles aménagés
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                                </label>
+                                
+                                <label for="inputComblePerdue" class="select-item btn step-7__link image">
+                                    <input type="radio" name="type_de_comble" id="inputComblePerdue" value="Combles perdues">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/comble_perdue.png" alt="Photo - Combles perdues">
+                                    Combles perdues
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
 
-                            </label>
-                            
-                            <label for="inputPasDeComble" class="next btn step-8__link image">
-                                <input type="radio" name="type_de_comble" id="inputPasDeComble" value="Pas de combles">
-                                <img class="step-1__img" src="./assets/images/picto_gte/pas_de_comble.png" alt="Photo - Pas de combles">
-                                Pas de combles
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                                </label>
+                                
+                                <label for="inputPasDeComble" class="select-item btn step-7__link image">
+                                    <input type="radio" name="type_de_comble" id="inputPasDeComble" value="Pas de combles">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/pas_de_comble.png" alt="Photo - Pas de combles">
+                                    Pas de combles
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
 
-                            </label>
-                        </div>
-                    </fieldset>
-                    
-                    <fieldset class="step-9">
-                        <h2>Combles isolés </h2>
-                        <div class="step-9__content">
+                                </label>
+                            </div>
+                        
+                            <h2>Combles isolés </h2>
                             <div class="noImageSelection">
-                                <label for="comble_isole_1" class="next btn step-9__link no-image">                                       
+                                <label for="comble_isole_1" class="select-item btn step-7__link no-image three-item-no-image">                                       
                                     <input type="radio" name="comble_isole" id="comble_isole_1" value="Oui">
                                     <span>Oui</span>
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox not-absolute">
                                 </label>
 
-                                <label for="comble_isole_2" class="next btn step-9__link no-image">                                       
+                                <label for="comble_isole_2" class="select-item btn step-7__link no-image three-item-no-image">                                       
                                     <input type="radio" name="comble_isole"  id="comble_isole_2" value="Non">
                                     <span>Non</span>
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox not-absolute">
                                 </label>
                                 
-                                <label for="comble_isole_3" class="next btn step-9__link no-image">                                       
+                                <label for="comble_isole_3" class="select-item btn step-7__link no-image three-item-no-image">                                       
                                     <input type="radio" name="comble_isole"  id="type_installation_electrique_2" value="Je ne sais pas">
                                     <span>Je ne sais pas</span>
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox not-absolute">
@@ -426,24 +483,24 @@
                         </div>
                     </fieldset>
                     
-                    <fieldset class="step-10">
-                        <h2>Type de combles  </h2>
+                    <fieldset class="step-8">
+                        <h2>Type de vitrages  </h2>
                         <div class="step-10__content optionWithImages">
-                            <label for="type_de_vitrage_1" class="next btn step-10__link image">                        
+                            <label for="type_de_vitrage_1" class="next btn step-8__link image">                        
                                 <input type="radio" name="type_de_vitrage" id="type_de_vitrage_1" value="Simple">
                                 <img class="step-1__img" src="./assets/images/picto_gte/vitrage_simple.png" alt="Photo - Vitrage simple">
                                 Simple
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="type_de_vitrage_2" class="next btn step-10__link image">                          
+                            <label for="type_de_vitrage_2" class="next btn step-8__link image">                          
                                 <input type="radio" name="type_de_vitrage"  id="type_de_vitrage_2" value="Double">
                                 <img class="step-1__img" src="./assets/images/picto_gte/vitrage_double.png" alt="Photo - Vitrage double">
                                 Double
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="type_de_vitrage_3" class="next btn step-10__link image">               
+                            <label for="type_de_vitrage_3" class="next btn step-8__link image">               
                                 <input type="radio" name="type_de_vitrage"  id="type_de_vitrage_3" value="Double renforcé">
                                 <img class="step-1__img" src="./assets/images/picto_gte/vitrage_double_renforce.png" alt="Photo - Vitrage renforcé">
                                 Double renforcé
@@ -453,24 +510,24 @@
                         </div>
                     </fieldset>
 
-                    <fieldset class="step-11">
+                    <fieldset class="step-9">
                         <h2>Type de ventilation</h2>
-                        <div class="step-11__content optionWithImages">
-                            <label for="type_de_ventilation_1" class="next btn step-11__link image">                        
+                        <div class="step-9__content optionWithImages">
+                            <label for="type_de_ventilation_1" class="next btn step-9__link image">                        
                                 <input type="radio" name="type_de_ventilation" id="type_de_ventilation_1" value="Naturelle">
                                 <img class="step-1__img" src="./assets/images/picto_gte/ventilation_naturelle.png" alt="Photo - Ventilation naturelle">
                                 Naturelle
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="type_de_ventilation_2" class="next btn step-11__link image">             
+                            <label for="type_de_ventilation_2" class="next btn step-9__link image">             
                                 <input type="radio" name="type_de_ventilation"  id="type_de_ventilation_2" value="Simple">
                                 <img class="step-1__img" src="./assets/images/picto_gte/ventilation_double.png" alt="Photo - Ventilation Simple">
                                 Simple
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="type_de_ventilation_3" class="next btn step-11__link image">        
+                            <label for="type_de_ventilation_3" class="next btn step-9__link image">        
                                 <input type="radio" name="type_de_ventilation"  id="type_de_ventilation_3" value="Double f lux">
                                 <img class="step-1__img" src="./assets/images/picto_gte/ventilation_double_flux.png" alt="Photo - Ventilation double flux">
                                 Double flux
@@ -478,222 +535,112 @@
 
                             </label>
                         </div>
-                    </fieldset>
-
-                    <fieldset class="step-12">
-                        <h2>Coefficient d’isolation</h2>
-                        <div class="step-12__content">
-                            <select name="coefficient_d_isolation" id="">
-                                <option value="1,8 - norme 1900">1,8 - norme 1900</option>
-                                <option value="1,6 - norme 1960">1,6 - norme 1960</option>
-                                <option value="1,3 - norme 1980">1,3 - norme 1980</option>
-                                <option value="1 - norme 2000">1 - norme 2000</option>
-                            </select>
-                            <!-- <div class="noImageSelection">
-                                <label for="coefficient_d_isolation_1" class="select-item btn step-12__link no-image">                                       
-                                    <input type="radio" name="coefficient_d_isolation" id="coefficient_d_isolation_1" value="1,8 - norme 1900">
-                                    <span>1,8 - norme 1900</span>
-                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox not-absolute">
-                                </label>
-
-                                <label for="coefficient_d_isolation_2" class="select-item btn step-12__link no-image">                                       
-                                    <input type="radio" name="coefficient_d_isolation"  id="coefficient_d_isolation_2" value="1,6 - norme 1960">
-                                    <span>1,6 - norme 1960</span>
-                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox not-absolute">
-                                </label>
-                                
-                                <label for="coefficient_d_isolation_3" class="select-item btn step-12__link no-image">                                       
-                                    <input type="radio" name="coefficient_d_isolation"  id="coefficient_d_isolation_3" value="1,3 - norme 1980">
-                                    <span>1,3 - norme 1980</span>
-                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox not-absolute">
-                                </label>
-                                
-                                <label for="coefficient_d_isolation_4" class="select-item btn step-12__link no-image">                                       
-                                    <input type="radio" name="coefficient_d_isolation"  id="coefficient_d_isolation_4" value="1 - norme 2000">
-                                    <span>1 - norme 2000</span>
-                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox not-absolute">
-                                </label>
-                                
-                                <label for="coefficient_d_isolation_5" class="select-item btn step-12__link no-image">                                       
-                                    <input type="radio" name="coefficient_d_isolation"  id="coefficient_d_isolation_5" value="0,65 - norme 2005">
-                                    <span>0,65 - norme 2005</span>
-                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox not-absolute">
-                                </label>
-                            </div> -->
-                        </div>
-                            
-                        <div class="inputs ">
-                            <div class="input-item nopr20">
-                                <label for="inputTempConfort">Température de confort (C°)</label>
-                                <input id="inputTempConfort" type="number" name="temperature_de_confort" class="" min="0">
-                                <span class="step-1__content__notice">Température de confort (C°) requis </span>
-                            </div>  
-                        </div>
+                        
+                        <label for="inputTempConfort">Coefficient d’isolation G</label>
+                        <select id="visolation" style="width: 100%;" name="coefficient_d_isolation">
+                            <option value="3.00">G = 3.00 : véranda ancienne</option>
+                            <option value="2.50">G = 2.50 : véranda récente</option>
+                            <option value="2.00">G = 2.00 : ancien très mal isolé</option>
+                            <option value="1.80">G = 1.80 : bâtiment années 1950</option>
+                            <option value="1.70">G = 1.70 : ancien isolé sur dalle</option>
+                            <option value="1.60">G = 1.60 : bâtiment années 1960</option>
+                            <option value="1.60">G = 1.60 : ancien mur épais pas isolé</option>
+                            <option value="1.40">G = 1.40 : entre 1974-1982</option>
+                            <option value="1.30">G = 1.30 : immeuble années 1980</option>
+                            <option value="1.10">G = 1.10 : maison années 1980</option>
+                            <option value="1.00">G = 1.00 : entre 1990-2000</option>
+                            <option value="0.92">G = 0.92 : isolation norme RT2005 Gaz</option>
+                            <option value="0.90">G = 0.90 : maison RT2000</option>
+                            <option value="0.87">G = 0.87 : HPE rénovation 2009</option>
+                            <option selected="selected" value="0.80">G = 0.80 : entre 2001-2005</option>
+                            <option value="0.80">G = 0.80 : isolation norme RT2000</option>
+                            <option value="0.80">G = 0.80 : maison RT2005</option>
+                            <option value="0.73">G = 0.73 : bâtiment après 2005</option>
+                            <option value="0.65">G = 0.65 : isolation norme RT2005</option>
+                            <option value="0.58">G = 0.58 : isolation norme RT2005 Elec</option>
+                            <option value="0.47">G = 0.47 : BBC rénovation 2009</option>
+                            <option value="0.30">G = 0.30 : isolation norme RT2012</option>
+                        </select>
                     </fieldset>
                     
-                    <fieldset class="step-13">
+                    <fieldset class="step-10">
                         <h1>Consommation et équipements</h1>
                         <h2>CONSOMMATION ANNUELLE</h2>
-                        <div class="step-13__content optionWithImages">
-                            <label for="consommation_annuelle_1" class="multi-select-item btn step-13__link image">                        
+                        <div class="step-10__content optionWithImages">
+                            <label for="consommation_annuelle_1" class="multi-select-item btn step-10__link image">                        
                                 <input type="radio" name="consommation_annuelle" id="consommation_annuelle_1" value="Electricité">
                                 <img class="step-1__img" src="./assets/images/picto_gte/conso_elec.png" alt="Photo - Electricité">
-                                <div class="input-counter" style="margin-top:16px">
-                                    <div class="counter__fields">
-                                        <div class="counter__title">Electricité (€)</div>
-                                    </div>
-                                    <div class="counter_buttons" style="margin-top:10px">
-                                        <button class="counter__decrement" type="button">
-                                            -
-                                        </button>
-                                        <span class="counter__value" name="consommation_annuelle_elec">0</span>
-                                        <button class="counter__increment" type="button">
-                                            +
-                                        </button>
-                                    </div>
-                                </div>  
-                                <!-- <div class="inputs">
+                                <div class="inputs">
                                     <div class="input-item">
                                         <label for="inputConsoElec">Electricité (€)</label>
                                         <input id="inputConsoElec" type="number" name="consommation_annuelle_elec" class="" min="0">
                                     </div>  
-                                </div> -->
+                                </div>
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="consommation_annuelle_2" class="multi-select-item btn step-13__link image">             
+                            <label for="consommation_annuelle_2" class="multi-select-item btn step-10__link image">             
                                 <input type="radio" name="consommation_annuelle"  id="consommation_annuelle_2" value="Gaz naturel">
                                 <img class="step-1__img" src="./assets/images/picto_gte/conso_gaz.png" alt="Photo - Gaz naturel">
-                                <div class="input-counter" style="margin-top:16px">
-                                    <div class="counter__fields">
-                                        <div class="counter__title">Gaz naturel (€)</div>
-                                    </div>
-                                    <div class="counter_buttons" style="margin-top:10px">
-                                        <button class="counter__decrement" type="button">
-                                            -
-                                        </button>
-                                        <span class="counter__value" name="consommation_annuelle_gaz">0</span>
-                                        <button class="counter__increment" type="button">
-                                            +
-                                        </button>
-                                    </div>
-                                </div>  
-                                <!-- <div class="inputs">
+                                <div class="inputs">
                                     <div class="input-item">
                                         <label for="inputConsoGaz">Gaz naturel (€)</label>
-                                        <input id="inputConsoGaz" type="number" name="consommation_annuelle_gaz" class="" min="0">
+                                        <input id="inputConsoGaz" type="number" name="consommation_annuelle_gaz" value="0" min="0">
                                     </div>  
-                                </div> -->
+                                </div>
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="consommation_annuelle_3" class="multi-select-item btn step-13__link image">        
+                            <label for="consommation_annuelle_3" class="multi-select-item btn step-10__link image" style="margin-top: 10px;">        
                                 <input type="radio" name="consommation_annuelle"  id="consommation_annuelle_3" value="GPL">
                                 <img class="step-1__img" src="./assets/images/picto_gte/conso_gpl.png" alt="Photo - GPL">
-                                <div class="input-counter" style="margin-top:16px">
-                                    <div class="counter__fields">
-                                        <div class="counter__title">GPL (€)</div>
-                                    </div>
-                                    <div class="counter_buttons" style="margin-top:10px">
-                                        <button class="counter__decrement" type="button">
-                                            -
-                                        </button>
-                                        <span class="counter__value" name="consommation_annuelle_gpl">0</span>
-                                        <button class="counter__increment" type="button">
-                                            +
-                                        </button>
-                                    </div>
-                                </div>  
-                                <!-- <div class="inputs">
+                                <div class="inputs">
                                     <div class="input-item">
                                         <label for="inputConsoGpl">GPL (€)</label>
                                         <input id="inputConsoGpl" type="number" name="consommation_annuelle_gpl" class="" min="0">
                                     </div>  
-                                </div> -->
+                                </div>
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
 
-                            <label for="consommation_annuelle_4" class="multi-select-item btn step-13__link image">             
+                            <label for="consommation_annuelle_4" class="multi-select-item btn step-10__link image">             
                                 <input type="radio" name="consommation_annuelle"  id="consommation_annuelle_4" value="FIOUL">
                                 <img class="step-1__img" src="./assets/images/picto_gte/conso_fioul.png" alt="Photo - FIOUL">
-                                <div class="input-counter" style="margin-top:16px">
-                                    <div class="counter__fields">
-                                        <div class="counter__title">FIOUL (€)</div>
-                                    </div>
-                                    <div class="counter_buttons" style="margin-top:10px">
-                                        <button class="counter__decrement" type="button">
-                                            -
-                                        </button>
-                                        <span class="counter__value" name="consommation_annuelle_fioul">0</span>
-                                        <button class="counter__increment" type="button">
-                                            +
-                                        </button>
-                                    </div>
-                                </div> 
-                                <!-- <div class="inputs">
+                                <div class="inputs">
                                     <div class="input-item">
                                         <label for="inputConsoFioul">FIOUL (€)</label>
-                                        <input id="inputConsoFioul" type="number" name="consommation_annuelle_fioul" class="" min="0">
+                                        <input id="inputConsoFioul" type="number" name="consommation_annuelle_fioul" value="0" min="0">
                                     </div>  
-                                </div> -->
+                                </div>
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="consommation_annuelle_5" class="multi-select-item btn step-13__link image">        
+                            <label for="consommation_annuelle_5" class="multi-select-item btn step-10__link image">        
                                 <input type="radio" name="consommation_annuelle"  id="consommation_annuelle_5" value="Bois">
                                 <img class="step-1__img" src="./assets/images/picto_gte/conso_bois.png" alt="Photo - Bois">
-                                <div class="input-counter" style="margin-top:16px">
-                                    <div class="counter__fields">
-                                        <div class="counter__title">Bois (€)</div>
-                                    </div>
-                                    <div class="counter_buttons" style="margin-top:10px">
-                                        <button class="counter__decrement" type="button">
-                                            -
-                                        </button>
-                                        <span class="counter__value" name="consommation_annuelle_bois">0</span>
-                                        <button class="counter__increment" type="button">
-                                            +
-                                        </button>
-                                    </div>
-                                </div>
-                                <!-- <div class="inputs">
+                                <div class="inputs">
                                     <div class="input-item">
                                         <label for="inputConsoBois">Bois (€)</label>
                                         <input id="inputConsoBois" type="number" name="consommation_annuelle_bois" class="" min="0">
                                     </div>  
-                                </div> -->
+                                </div>
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="consommation_annuelle_6" class="multi-select-item btn step-13__link image">        
+                            <label for="consommation_annuelle_6" class="multi-select-item btn step-10__link image">        
                                 <input type="radio" name="consommation_annuelle"  id="consommation_annuelle_6" value="Autre">
-                                <!-- <img class="step-1__img" src="./assets/images/picto_gte/conso_autre.png" alt="Photo - Autre"> -->
-                                <div class="input-counter" style="margin-top:67px">
-                                    <div class="counter__fields">
-                                        <div class="counter__title">Autre (€)</div>
-                                    </div>
-                                    <div class="counter_buttons" style="margin-top:10px">
-                                        <button class="counter__decrement" type="button">
-                                            -
-                                        </button>
-                                        <span class="counter__value" name="consommation_annuelle_autre">0</span>
-                                        <button class="counter__increment" type="button">
-                                            +
-                                        </button>
-                                    </div>
-                                </div>
-                                <!-- <div class="inputs" style="margin-top: 70px;">
+                                <div class="inputs" style="margin-top: 70px;">
                                     <div class="input-item">
                                         <label for="inputConsoAutre">Autre (€)</label>
                                         <input id="inputConsoAutre" type="number" name="consommation_annuelle_autre" class="" min="0">
                                     </div>  
-                                </div> -->
+                                </div>
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                         </div>
                     </fieldset>
 
-                    <fieldset class="step-14">
+                    <fieldset class="step-11">
                         <h2>CONSOMMATION ANNUELLE</h2>
                         <div class="inputs">
                             <div class="input-item nopr20">
@@ -718,39 +665,39 @@
                         </div>
                     </fieldset>
                     
-                    <fieldset class="step-15">
+                    <fieldset class="step-12">
                         <h1>Chauffage actuel</h1>
                         <h2>Source d’énergie</h2>
-                        <div class="step-15__content optionWithImages">
-                            <label for="source_energie_1" class="next btn step-15__link image">                        
+                        <div class="step-12__content optionWithImages">
+                            <label for="source_energie_1" class="next btn step-12__link image">                        
                                 <input type="radio" name="source_energie" id="source_energie_1" value="Electricité">
                                 <img class="step-1__img" src="./assets/images/picto_gte/conso_elec.png" alt="Photo - Electricité">
                                 Electricité
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="source_energie_2" class="next btn step-15__link image">             
+                            <label for="source_energie_2" class="next btn step-12__link image">             
                                 <input type="radio" name="source_energie"  id="source_energie_2" value="Gaz naturel">
                                 <img class="step-1__img" src="./assets/images/picto_gte/conso_gaz.png" alt="Photo - Gaz naturel">
                                 Gaz naturel
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="source_energie_3" class="next btn step-15__link image">        
+                            <label for="source_energie_3" class="next btn step-12__link image">        
                                 <input type="radio" name="source_energie"  id="source_energie_3" value="GPL">
                                 <img class="step-1__img" src="./assets/images/picto_gte/conso_gpl.png" alt="Photo - GPL">
                                GPL
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
 
-                            <label for="source_energie_4" class="next btn step-15__link image">             
+                            <label for="source_energie_4" class="next btn step-12__link image">             
                                 <input type="radio" name="source_energie"  id="source_energie_4" value="FIOUL">
                                 <img class="step-1__img" src="./assets/images/picto_gte/conso_fioul.png" alt="Photo - FIOUL">
                                 FIOUL
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="source_energie_5" class="next btn step-15__link image">        
+                            <label for="source_energie_5" class="next btn step-12__link image">        
                                 <input type="radio" name="source_energie"  id="source_energie_5" value="Bois">
                                 <img class="step-1__img" src="./assets/images/picto_gte/conso_bois.png" alt="Photo - Bois">
                                 Bois
@@ -759,90 +706,99 @@
                         </div>
                     </fieldset>
                     
-                    <fieldset class="step-16">
+                    <fieldset class="step-13">
                         <h2>Source d’énergie</h2>
-                        <div class="inputs">
-                            <div class="input-item nopr20">
-                                <label for="inputConsoChauffage">Consommation de chauffage (€/an)</label>
-                                <input id="inputConsoChauffage" type="number" name="source_energie_chaufface" class="" min="0">
-                                <span class="step-1__content__notice">Consommation de chauffage (€/an) (m) requis </span>
-                            </div>  
-                        </div>
-                        <div class="inputs">
-                            <div class="input-item">
-                                <label for="inputTypeChauffa">Type de chauffage</label>
-                                <input id="inputTypeChauffa" type="number" name="source_energie_type_de_chauffa" class="" min="0">
-                                <span class="step-1__content__notice">Type de chauffage requis </span>
+                        <div class="step-13__content">
+                            <div class="inputs">
+                                <div class="input-item nopr20">
+                                    <label for="inputConsoChauffage">Consommation de chauffage (€/an)</label>
+                                    <input id="inputConsoChauffage" type="number" name="source_energie_chaufface" class="" min="0">
+                                    <span class="step-1__content__notice">Consommation de chauffage (€/an) (m) requis </span>
+                                </div>  
                             </div>
-                            <div class="input-item">
-                                <label for="inputAnneeInstall">Année d’installation</label>
-                                <input id="inputAnneeInstall" type="number" name="source_energie_annee_install" class="" min="0">
-                                <span class="step-1__content__notice">Année d’installation requis </span>
+                            <div class="inputs">
+                                <div class="input-item">
+                                    <label for="inputAnneeInstall">Année d’installation</label>
+                                    <input id="inputAnneeInstall" type="number" name="source_energie_annee_install" class="" min="0">
+                                    <span class="step-1__content__notice">Année d’installation requis </span>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="noImageSelection">
-                            <label for="inputRadiateurFonte" class="select-item btn step-16__link no-image" >                                       
-                                <input type="radio" name="source_energie_no_image" id="inputRadiateurFonte" value="Radiateur fonte">
-                                <span>Radiateur fonte</span>
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox not-absolute">
-                            </label>
+                            
+                            <h2>Type de chauffage</h2>
+                            <div class="noImageSelection">
+                                <label for="inputRadiateurFonte" class="select-item btn step-13__link no-image" style="width:200px;">                                       
+                                    <input type="radio" name="source_energie_no_image" id="inputRadiateurFonte" value="Radiateur fonte">
+                                    <span>Radiateur fonte</span>
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox not-absolute">
+                                </label>
 
-                            <label for="inputRadiateurAlu" class="select-item btn step-16__link no-image">                                       
-                                <input type="radio" name="source_energie_no_image"  id="inputRadiateurAlu" value="Radiateur alluminium">
-                                <span>Radiateur alluminium</span>
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox not-absolute">
-                            </label>
+                                <label for="inputRadiateurAlu" class="select-item btn step-13__link no-image">                                       
+                                    <input type="radio" name="source_energie_no_image"  id="inputRadiateurAlu" value="Radiateur alluminium">
+                                    <span>Radiateur alluminium</span>
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox not-absolute">
+                                </label>
 
-                            <label for="inputRadiateurPlan" class="select-item btn step-16__link no-image" >                                       
-                                <input type="radio" name="source_energie_no_image" id="inputRadiateurPlan" value="Plancher chauffant">
-                                <span>Plancher chauffant</span>
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox not-absolute">
-                            </label>
-                        </div>
+                                <label for="inputRadiateurPlan" class="select-item btn step-13__link no-image" style="width:235px;">                                       
+                                    <input type="radio" name="source_energie_no_image" id="inputRadiateurPlan" value="Plancher chauffant">
+                                    <span>Plancher chauffant</span>
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox not-absolute">
+                                </label>
+                            </div>
 
-                        <div class="inputs">
-                            <div class="input-item nopr20">
-                                <label for="inputConsoChauffageNbr">Nombre</label>
-                                <input id="inputConsoChauffageNbr" type="number" name="source_energie_nombre" class="" min="0">
-                                <span class="step-1__content__notice">Nombre requis </span>
+                            
+                            <div class="input-counter">
+                                <div class="counter">
+                                    <div class="counter__fields">
+                                        <div class="counter__title">Nombre </div>
+                                    </div>
+                                    <div class="counter_buttons">
+                                        <button class="counter__decrement" type="button">
+                                            -
+                                        </button>
+                                        <span class="counter__value" name="source_energie_nombre">0</span>
+                                        <button class="counter__increment" type="button">
+                                            +
+                                        </button>
+                                    </div>
+                                </div>
                             </div>  
+
                         </div>
                     </fieldset>
                     
-                    <fieldset class="step-17">
+                    <fieldset class="step-14">
                         <h1>Eau chaude sanitaire actuelle</h1>
                         <h2>Source d’énergie</h2>
-                        <div class="step-17__content optionWithImages">
-                            <label for="source_energie_eau_chaude_1" class="select-item btn step-17__link image">                        
+                        <div class="step-14__content optionWithImages">
+                            <label for="source_energie_eau_chaude_1" class="select-item btn step-14__link image">                        
                                 <input type="radio" name="source_energie_eau_chaude" id="source_energie_eau_chaude_1" value="Electricité">
                                 <img class="step-1__img" src="./assets/images/picto_gte/conso_elec.png" alt="Photo - Electricité">
                                 Electricité
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="source_energie_eau_chaude_2" class="select-item btn step-17__link image">             
+                            <label for="source_energie_eau_chaude_2" class="select-item btn step-14__link image">             
                                 <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_2" value="Gaz naturel">
                                 <img class="step-1__img" src="./assets/images/picto_gte/conso_gaz.png" alt="Photo - Gaz naturel">
                                 Gaz naturel
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="source_energie_eau_chaude_3" class="select-item btn step-17__link image">        
+                            <label for="source_energie_eau_chaude_3" class="select-item btn step-14__link image">        
                                 <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_3" value="GPL">
                                 <img class="step-1__img" src="./assets/images/picto_gte/conso_gpl.png" alt="Photo - GPL">
                                GPL
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
 
-                            <label for="source_energie_eau_chaude_4" class="select-item btn step-17__link image">             
+                            <label for="source_energie_eau_chaude_4" class="select-item btn step-14__link image">             
                                 <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_4" value="FIOUL">
                                 <img class="step-1__img" src="./assets/images/picto_gte/conso_fioul.png" alt="Photo - FIOUL">
                                 FIOUL
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="source_energie_eau_chaude_5" class="select-item btn step-17__link image">        
+                            <label for="source_energie_eau_chaude_5" class="select-item btn step-14__link image">        
                                 <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_5" value="Bois">
                                 <img class="step-1__img" src="./assets/images/picto_gte/conso_bois.png" alt="Photo - Bois">
                                 Bois
@@ -875,11 +831,11 @@
                         </div>
                     </fieldset>
 
-                    <fieldset class="step-18">
+                    <fieldset class="step-15">
                         <h1>Eclairage actuelle</h1>
                         <h2>Source d’énergie</h2>
-                        <div class="step-18__content optionWithImages">
-                            <label for="source_energie_eclairage_1" class="next btn step-18__link image">                        
+                        <div class="step-15__content optionWithImages">
+                            <label for="source_energie_eclairage_1" class="next btn step-15__link image">                        
                                 <input type="radio" name="source_energie_eclairage" id="source_energie_eclairage_1" value="Electricité ampoules classique">
                                 <img class="step-1__img" src="./assets/images/picto_gte/conso_elec.png" alt="Photo - Electricité ampoules classique">
                                 Electricité ampoules classique
@@ -889,11 +845,11 @@
                         </div>
                     </fieldset>
                     
-                    <fieldset class="step-19">
+                    <fieldset class="step-16">
                         <h1>Chauffage envisagé</h1>
                         <h2>Source d’énergie</h2>
-                        <div class="step-19__content optionWithImages">
-                            <label for="chaufface_envisage_source_energie_1" class="select-item btn step-19__link image" style="height:auto;">                        
+                        <div class="step-16__content optionWithImages">
+                            <label for="chaufface_envisage_source_energie_1" class="select-item btn step-16__link image" style="height:auto;">                        
                                 <input type="radio" name="chaufface_envisage_source_energie" id="chaufface_envisage_source_energie_1" value="Pac air/air">
                                 <img class="step-1__img" src="./assets/images/picto_gte/pac_air_air.png" alt="Photo - Pac air/air">
                                 Pac air/air 
@@ -926,7 +882,7 @@
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="chaufface_envisage_source_energie_2" class="select-item btn step-19__link image" style="height:auto;">                        
+                            <label for="chaufface_envisage_source_energie_2" class="select-item btn step-16__link image" style="height:auto;">                        
                                 <input type="radio" name="chaufface_envisage_source_energie" id="chaufface_envisage_source_energie_2" value="Pac air/eau">
                                 <img class="step-1__img" src="./assets/images/picto_gte/pair_air_eau.png" alt="Photo - Pac air/eau">
                                 Pac air/eau 
@@ -957,11 +913,11 @@
                         </div>
                     </fieldset>
                     
-                    <fieldset class="step-20">
+                    <fieldset class="step-17">
                         <h1>Eau chaude sanitaire envisagée</h1>
                         <h2>Source d’énergie</h2>
-                        <div class="step-21__content optionWithImages">
-                            <label for="eau_chaude_sanitaire_envisage_source_energie_1" class="select-item btn step-20__link image" style="height:auto;">                        
+                        <div class="step-17__content optionWithImages">
+                            <label for="eau_chaude_sanitaire_envisage_source_energie_1" class="select-item btn step-17__link image" style="height:auto;">                        
                                 <input type="radio" name="eau_chaude_sanitaire_envisage_source_energie" id="eau_chaude_sanitaire_envisage_source_energie_1" value="Chauffe-eau thermodynamique">
                                 <img class="step-1__img" src="./assets/images/picto_gte/chauffe_eau_thermo.png" alt="Photo - Chauffe-eau thermodynamique">
                                 Chauffe-eau thermodynamique
@@ -993,13 +949,13 @@
                         </div>
                         
                         <div class="noImageSelection">
-                            <label for="eau_chaude_sanitaire_envisage_source_energie_no_image_1" class="select-item btn step-20__link no-image" >                                       
+                            <label for="eau_chaude_sanitaire_envisage_source_energie_no_image_1" class="select-item btn step-17__link no-image" >                                       
                                 <input type="radio" name="eau_chaude_sanitaire_envisage_source_energie_no_image" id="eau_chaude_sanitaire_envisage_source_energie_no_image_1" value="200L">
                                 <span>200L</span>
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox not-absolute">
                             </label>
 
-                            <label for="eau_chaude_sanitaire_envisage_source_energie_no_image_2" class="select-item btn step-20__link no-image">                                       
+                            <label for="eau_chaude_sanitaire_envisage_source_energie_no_image_2" class="select-item btn step-17__link no-image">                                       
                                 <input type="radio" name="eau_chaude_sanitaire_envisage_source_energie_no_image"  id="eau_chaude_sanitaire_envisage_source_energie_no_image_2" value="270L">
                                 <span>270L</span>
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox not-absolute">
@@ -1008,11 +964,11 @@
                         </div>
                     </fieldset>
                     
-                    <fieldset class="step-21">
+                    <fieldset class="step-18">
                         <h1>Eclairage envisagé</h1>
                         <h2>Source d’énergie</h2>
-                        <div class="step-21__content optionWithImages">
-                            <label for="eclairage_envisage_source_energie_1" class="select-item btn step-21__link image" style="height:auto;">                        
+                        <div class="step-18__content optionWithImages">
+                            <label for="eclairage_envisage_source_energie_1" class="select-item btn step-18__link image" style="height:auto;">                        
                                 <input type="radio" name="eclairage_envisage_source_energie" id="eclairage_envisage_source_energie_1" value="Electricité ampoules led">
                                 <img class="step-1__img" src="./assets/images/picto_gte/chauffe_eau_thermo.png" alt="Photo - Electricité ampoules led">
                                 Electricité ampoules led

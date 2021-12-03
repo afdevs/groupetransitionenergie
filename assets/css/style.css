@@ -212,10 +212,22 @@ h5{
     font-family: aoki_regular,Helvetica,Arial,sans-serif;
     font-weight: bold;
     font-size: 16px;
-    line-height: 5px;
+    line-height: 25px;
     letter-spacing: .4px;
     color: #003250;
     margin-top: 10px;
+}
+.navigationButton{
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    text-align: inherit;
+}
+
+.navigationButton:hover, .navigationButton:focus{
+    background: none;
 }
 .step-list-item{
     position: relative;
@@ -458,7 +470,8 @@ fieldset{
     border: 0;
     margin-bottom: 20px;
 }
-.page .page__content label.image{
+
+.page .page__content label.image, .page .page__content label.image4{
     background-color: #fff;
     border: 2px solid transparent;
     border-radius: 8px;
@@ -476,7 +489,11 @@ fieldset{
     
 }
 
-.page .page__content .step-7__content label.step-7__link{
+.page .page__content label.image4{
+    width: 170px;
+
+}
+.page .page__content .step-6__content label.four-item-image{
     width: 150px;
     height: 160px;
 
@@ -485,7 +502,7 @@ fieldset{
     border-color: #003250!important;
 }
 
-.page .page__content label.image:hover{
+.page .page__content label.image:hover, .page .page__content label.image4:hover{
     background-color: #fff!important;
     box-shadow: 0 4px 20px 0 rgb(0 0 0 / 20%);
     transition: box-shadow .5s,border .2s;
@@ -510,9 +527,14 @@ fieldset{
 }
 
 
-.page .page__content .step-9__content label.step-9__link{
+.page .page__content .step-7__content label.three-item-no-image{
     height: 55px;
     max-width: 190px;
+}
+
+#regiration_form > fieldset.step-16 > div > div.noImageSelection > label{
+    height: 55px;
+    max-width: 240px;
 }
 
 .page .page__content label.no-image:hover{
@@ -608,6 +630,7 @@ input.valid:not([type]), input.valid:not([type]):focus, input.valid[type=text]:n
     -webkit-box-shadow: none;
     box-shadow: none;
 }
+
 input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
     font-weight: 100;
     margin: 0;
@@ -811,7 +834,7 @@ input[type=button]:hover, .page .page__content button:hover{
     opacity: 1;
     padding-top: 8px;
     padding-bottom: 8px;
-    height: auto!important;
+    max-height: 250px!important;
 }
 .select-wrapper .dropdown-content li{
     min-height: 45px;
@@ -904,6 +927,10 @@ input[type=button]:hover, .page .page__content button:hover{
     /* webkit-animation: leaves-data-v-22fe01dd .3s ease-in-out alternate!important; */
 }
 
+.select-dropdown > #select-options-ce3d4b99-6902-eb43-8509-ca487dcda133{
+    max-height: 240px;
+    overflow: scroll;
+}
 .step-2__content, .step-3__content, .step-4__content, .step-5__content, .step-6__content, .step-7__content, .step-8__content, .step-9__content, .step-10__content, .step-11__content, .step-12__content, .step-13__content, .step-14__content, .step-15__content, .step-16__content, .step-17__content, .step-18__content, .step-19__content, .step-20__content, .step-21__content, .step-22__content, .step-23__content, .step-24__content, .step-25__content,  .step-26__content, .step-27__content, .step-28__content{
     border-radius: 10px;
     margin: 15px auto;
@@ -972,7 +999,7 @@ input[type=button]:hover, .page .page__content button:hover{
     align-items: center;
     padding: 72px 0 72px;
 }
-.step-8__link{
+/* .step-8__link{
     margin: auto;
     display: block;
     padding: 8px;
@@ -985,7 +1012,7 @@ input[type=button]:hover, .page .page__content button:hover{
     background-color: #ffffff;
     padding: 16px 0 116px;    
     margin-bottom: 20px;
-}
+} */
 .step-1__link:focus, .step-8__link:focus{
     background-color: #e7e7e7;
 }
@@ -1198,4 +1225,35 @@ input[type=button]:hover, .page .page__content button:hover{
         transform: scale(1);
 
     }
+}
+
+/* OVERRIDING STYLE */
+
+.img-wrapper {
+    position: relative;
+    height: 100px;
+    width: 100%;
+    width: 100%;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    margin-bottom: 12px;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.page .page__content .img-wrapper img.step-1__img{
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    transition: all 0.2s ease-in-out;
 }
