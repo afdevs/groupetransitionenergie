@@ -15,8 +15,22 @@ const inputsCountersValues={
 
 jQuery(function($){
     $(document).ready(function(){
-      var elems = document.querySelectorAll('select');
-      var instances = M.FormSelect.init(elems);
+      //initialize all modals           
+      $('.modal').modal({
+        // dismissible:false
+    });
+
+      //or by click on trigger
+      $('#chauffageModalButton').click(function(e){
+      //now you can open modal from code
+        $('#modal1').modal('open');
+
+      })
+      // $('.modal-trigger').modal();
+
+      // var elems = document.querySelectorAll('select');
+      // var instances = M.FormSelect.init(elems);
+      $('select').formSelect();
 
       var current = 1, current_step,next_step,steps;
       steps = $("fieldset").length;
@@ -40,7 +54,6 @@ jQuery(function($){
         e.preventDefault();
       });
       
-      $('select').formSelect();
 
       //Rese all radios inputs to uncheck
       function resetAllRadioInput(){
@@ -234,29 +247,15 @@ jQuery(function($){
             }else{
                 $('.page .previous').css('visibility', 'hidden');
             }
-
-            if(current>1 && current< 10){
-              if(!$("#part-2").hasClass('step-list-item-active')){
-                $("#part-2").addClass('step-list-item-active')
-              }
-              $("#part-2 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
-    
-              if(!$("#part-1 h5").hasClass('step-list-item-disabled')){
-                $("#part-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-              }
-              $("#part-1").removeClass('step-list-item-active',1000, 'easeInBack');
-    
+            
+            if(current>9){
+              $('.main-cta').css('visibility', 'hidden');
             }else{
-              if(!$("#part-1").hasClass('step-list-item-active')){
-                $("#part-1").addClass('step-list-item-active')
-              }
-              $("#part-1 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
-    
-              if(!$("#part-2 h5").hasClass('step-list-item-disabled')){
-                $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-              }
-              $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
+              $('.main-cta').css('visibility', 'visible');
             }
+
+            
+            handleStepsDesign(current)
             // if(current>5){
             //   setTimeout(() => {
             //     $('.topbar .topbar__progress').css('visibility','hidden');
@@ -310,9 +309,10 @@ jQuery(function($){
       });
 
       $(".previous").click(function(){
-        let timeout= current>1 && current<25 ? 200 : 0;        
-          $('.page .page__content #regiration_form').css("transform"," translateX(50px)" );
-          $('.page .page__content #regiration_form').css("transition", "none" );
+        let timeout= current>1 && current<25 ? 200 : 0;  
+        
+        $('.page .page__content #regiration_form').css("transform"," translateX(50px)" );
+        $('.page .page__content #regiration_form').css("transition", "none" );
 
         current_step = $('.step-'+stepVisited[stepVisited.length-1]);
 
@@ -327,29 +327,16 @@ jQuery(function($){
           $('.page .previous').css('visibility', 'hidden');
 
         }
-
-        if(current>1 && current< 10){
-          if(!$("#part-2").hasClass('step-list-item-active')){
-            $("#part-2").addClass('step-list-item-active')
-          }
-          $("#part-2 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
-
-          if(!$("#part-1 h5").hasClass('step-list-item-disabled')){
-            $("#part-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-          }
-          $("#part-1").removeClass('step-list-item-active',1000, 'easeInBack');
-
+  
+        if(current>9){
+          $('.main-cta').css('visibility', 'hidden');
         }else{
-          if(!$("#part-1").hasClass('step-list-item-active')){
-            $("#part-1").addClass('step-list-item-active')
-          }
-          $("#part-1 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
+          $('.main-cta').css('visibility', 'visible');
+        }    
 
-          if(!$("#part-2 h5").hasClass('step-list-item-disabled')){
-            $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-          }
-          $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
-        }
+        
+        handleStepsDesign(current)
+
         current_step.hide();
         
         setTimeout(() => {      
@@ -362,15 +349,13 @@ jQuery(function($){
             next_step_form.show();
           });
           stepVisited.pop();
-        
-        
       });
 
       $('.navigationButton').click(function(){
-        
         for(let i=0; i<19; i++){
           $('.step-'+i).removeAttr('style');
         }
+
         if($(this).attr('aria-selected')==='part-1'){
           current=0;
             $('.page .page__content #regiration_form').css("transform"," translateX(50px)" );
@@ -389,28 +374,13 @@ jQuery(function($){
                 $('.page .previous').css('visibility', 'hidden');
             }
 
-            if(current>1 && current< 10){
-              if(!$("#part-2").hasClass('step-list-item-active')){
-                $("#part-2").addClass('step-list-item-active')
-              }
-              $("#part-2 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
-    
-              if(!$("#part-1 h5").hasClass('step-list-item-disabled')){
-                $("#part-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-              }
-              $("#part-1").removeClass('step-list-item-active',1000, 'easeInBack');
-    
+            if(current>9){
+              $('.main-cta').css('visibility', 'hidden');
             }else{
-              if(!$("#part-1").hasClass('step-list-item-active')){
-                $("#part-1").addClass('step-list-item-active')
-              }
-              $("#part-1 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
-    
-              if(!$("#part-2 h5").hasClass('step-list-item-disabled')){
-                $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-              }
-              $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
+              $('.main-cta').css('visibility', 'visible');
             }
+
+            handleStepsDesign(current)
 
             if (previousStep){ $('.step-'+previousStep).hide()}
             current_step.hide();
@@ -426,59 +396,84 @@ jQuery(function($){
               stepVisited.push(next_step);
             });
         }else if ($(this).attr('aria-selected')==='part-2'){
-          current=1;
-              $('.page .page__content #regiration_form').css("transform"," translateX(50px)" );
-              $('.page .page__content #regiration_form').css("transition", "none" );
-  
-              previousStep=parseInt($(this).attr('skipStep')) ? current:  null;
-              current= $(this).attr('skipStep') ? parseInt($(this).attr('skipStep')) : current;
-              
-              current_step =  $('.step-'+current);
-              next_step=++current;
-              next_step_form =  $('.step-'+next_step);
-              
-              if (current >=1 && current<=25){ 
-                $('.page .previous').css('visibility', 'visible');
-              }else{
-                  $('.page .previous').css('visibility', 'hidden');
-              }
-  
-              if(current>1 && current< 10){
-                if(!$("#part-2").hasClass('step-list-item-active')){
-                  $("#part-2").addClass('step-list-item-active')
-                }
-                $("#part-2 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
-      
-                if(!$("#part-1 h5").hasClass('step-list-item-disabled')){
-                  $("#part-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-                }
-                $("#part-1").removeClass('step-list-item-active',1000, 'easeInBack');
-      
-              }else{
-                if(!$("#part-1").hasClass('step-list-item-active')){
-                  $("#part-1").addClass('step-list-item-active')
-                }
-                $("#part-1 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
-      
-                if(!$("#part-2 h5").hasClass('step-list-item-disabled')){
-                  $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-                }
-                $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
-              }
-  
-              if (previousStep){ $('.step-'+previousStep).hide()}
-              current_step.hide();
-  
-              $('.page .page__content #regiration_form').css("transition", ".4s ease-out" );
-              $('.page .page__content #regiration_form').css("transform"," translateX(0px)" );
-              
-              
-              
-              next_step_form.fadeTo('slow', 1, function(){
-                setProgressBar(next_step);
-                next_step_form.show();
-                stepVisited.push(next_step);
-              });
+            current=1;
+            $('.page .page__content #regiration_form').css("transform"," translateX(50px)" );
+            $('.page .page__content #regiration_form').css("transition", "none" );
+
+            previousStep=parseInt($(this).attr('skipStep')) ? current:  null;
+            current= $(this).attr('skipStep') ? parseInt($(this).attr('skipStep')) : current;
+            
+            current_step =  $('.step-'+current);
+            next_step=++current;
+            next_step_form =  $('.step-'+next_step);
+            
+            if (current >=1 && current<=25){ 
+              $('.page .previous').css('visibility', 'visible');
+            }else{
+                $('.page .previous').css('visibility', 'hidden');
+            }
+
+            if(current>9){
+              $('.main-cta').css('visibility', 'hidden');
+            }else{
+              $('.main-cta').css('visibility', 'visible');
+            }
+
+            handleStepsDesign(current)
+
+            if (previousStep){ $('.step-'+previousStep).hide()}
+            current_step.hide();
+
+            $('.page .page__content #regiration_form').css("transition", ".4s ease-out" );
+            $('.page .page__content #regiration_form').css("transform"," translateX(0px)" );
+            
+            
+            
+            next_step_form.fadeTo('slow', 1, function(){
+              setProgressBar(next_step);
+              next_step_form.show();
+              stepVisited.push(next_step);
+            });
+        }else if ($(this).attr('aria-selected')==='part-3'){
+            $('.step-'+1).css('display', 'none');
+            current=9;
+            $('.page .page__content #regiration_form').css("transform"," translateX(50px)" );
+            $('.page .page__content #regiration_form').css("transition", "none" );
+
+            previousStep=parseInt($(this).attr('skipStep')) ? current:  null;
+            current= $(this).attr('skipStep') ? parseInt($(this).attr('skipStep')) : current;
+            
+            current_step =  $('.step-'+current);
+            next_step=++current;
+            next_step_form =  $('.step-'+next_step);
+            
+            if (current >=1 && current<=25){ 
+              $('.page .previous').css('visibility', 'visible');
+            }else{
+                $('.page .previous').css('visibility', 'hidden');
+            }
+            
+            if(current>9){
+              $('.main-cta').css('visibility', 'hidden');
+            }else{
+              $('.main-cta').css('visibility', 'visible');
+            }
+
+            handleStepsDesign(current)
+
+            if (previousStep){ $('.step-'+previousStep).hide()}
+            current_step.hide();
+
+            $('.page .page__content #regiration_form').css("transition", ".4s ease-out" );
+            $('.page .page__content #regiration_form').css("transform"," translateX(0px)" );
+            
+            
+            
+            next_step_form.fadeTo('slow', 1, function(){
+              setProgressBar(next_step);
+              next_step_form.show();
+              stepVisited.push(next_step);
+            });
         }
       })
 
@@ -493,6 +488,56 @@ jQuery(function($){
       }
     });
 
+    function handleStepsDesign(current){
+      if(current>1 && current< 10){
+        if(!$("#part-2").hasClass('step-list-item-active')){
+          $("#part-2").addClass('step-list-item-active')
+        }
+        $("#part-2 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
+
+        if(!$("#part-1 h5").hasClass('step-list-item-disabled')){
+          $("#part-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-1").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-3 h5").hasClass('step-list-item-disabled')){
+          $("#part-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-3").removeClass('step-list-item-active',1000, 'easeInBack');
+
+      } else if(current<=1){
+        if(!$("#part-1").hasClass('step-list-item-active')){
+          $("#part-1").addClass('step-list-item-active')
+        }
+        $("#part-1 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
+
+        if(!$("#part-2 h5").hasClass('step-list-item-disabled')){
+          $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-3 h5").hasClass('step-list-item-disabled')){
+          $("#part-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-3").removeClass('step-list-item-active',1000, 'easeInBack');
+      } else {
+        if(!$("#part-3").hasClass('step-list-item-active')){
+          $("#part-3").addClass('step-list-item-active')
+        }
+        $("#part-3 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
+
+        if(!$("#part-2 h5").hasClass('step-list-item-disabled')){
+          $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
+
+        if(!$("#part-1 h5").hasClass('step-list-item-disabled')){
+          $("#part-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-1").removeClass('step-list-item-active',1000, 'easeInBack');
+
+      }
+    }
     //CHAMPS CALCULER 
       //= inputVolumeHabitation inputSurfaceSol * inputsCountersValues('eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond')
     $('#inputSurfaceSol').change(function(){
