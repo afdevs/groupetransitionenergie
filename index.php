@@ -576,7 +576,7 @@
                         
                     <h2>Vos consommations<br>poste par poste</h2>                     
                         <!-- <h3 class="text-center mb-4">Vos consommations
-                                            <br>poste par poste</h3>    -->
+                            <br>poste par poste</h3>    -->
                         <div class="step-10__content optionWithImages" style="justify-content: center;">
                             <div class="vos-consommations__consumption-list">
                                 <a class="vos-consommations__consumption-item chauffage-item" data-target="modal1" class="btn chauffage-modal-trigger" id="chauffageModalButton">
@@ -632,13 +632,14 @@
                             </div>
                         </div>
                     </fieldset>
+                    
                     <fieldset class="step-11">
                         <h1>Consommation et équipements</h1>
                         <h2>CONSOMMATION ANNUELLE</h2>
                         <div class="step-10__content optionWithImages">
                             <label for="consommation_annuelle_1" class="multi-select-item btn step-11__link image">                        
                                 <input type="radio" name="consommation_annuelle" id="consommation_annuelle_1" value="Electricité">
-                                <img class="step-1__img" src="./assets/images/picto_gte/conso_elec.png" alt="Photo - Electricité">
+                                <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_électricité.svg" alt="Photo - Electricité">
                                 <div class="inputs">
                                     <div class="input-item">
                                         <label for="inputConsoElec">Electricité (€)</label>
@@ -650,7 +651,7 @@
                             
                             <label for="consommation_annuelle_2" class="multi-select-item btn step-11__link image">             
                                 <input type="radio" name="consommation_annuelle"  id="consommation_annuelle_2" value="Gaz naturel">
-                                <img class="step-1__img" src="./assets/images/picto_gte/conso_gaz.png" alt="Photo - Gaz naturel">
+                                <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_gaz naturel.svg" alt="Photo - Gaz naturel">
                                 <div class="inputs">
                                     <div class="input-item">
                                         <label for="inputConsoGaz">Gaz naturel (€)</label>
@@ -662,7 +663,7 @@
                             
                             <label for="consommation_annuelle_3" class="multi-select-item btn step-11__link image" style="margin-top: 10px;">        
                                 <input type="radio" name="consommation_annuelle"  id="consommation_annuelle_3" value="GPL">
-                                <img class="step-1__img" src="./assets/images/picto_gte/conso_gpl.png" alt="Photo - GPL">
+                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_GPL.svg" alt="Photo - GPL">
                                 <div class="inputs">
                                     <div class="input-item">
                                         <label for="inputConsoGpl">GPL (€)</label>
@@ -674,7 +675,7 @@
 
                             <label for="consommation_annuelle_4" class="multi-select-item btn step-11__link image">             
                                 <input type="radio" name="consommation_annuelle"  id="consommation_annuelle_4" value="FIOUL">
-                                <img class="step-1__img" src="./assets/images/picto_gte/conso_fioul.png" alt="Photo - FIOUL">
+                                <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_fioul.svg" alt="Photo - FIOUL">
                                 <div class="inputs">
                                     <div class="input-item">
                                         <label for="inputConsoFioul">FIOUL (€)</label>
@@ -686,7 +687,7 @@
                             
                             <label for="consommation_annuelle_5" class="multi-select-item btn step-11__link image">        
                                 <input type="radio" name="consommation_annuelle"  id="consommation_annuelle_5" value="Bois">
-                                <img class="step-1__img" src="./assets/images/picto_gte/conso_bois.png" alt="Photo - Bois">
+                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_bois.svg" alt="Photo - Bois">
                                 <div class="inputs">
                                     <div class="input-item">
                                         <label for="inputConsoBois">Bois (€)</label>
@@ -740,35 +741,35 @@
                         <div class="step-13__content optionWithImages">
                             <label for="source_energie_1" class="next btn step-13__link image">                        
                                 <input type="radio" name="source_energie" id="source_energie_1" value="Electricité">
-                                <img class="step-1__img" src="./assets/images/picto_gte/conso_elec.png" alt="Photo - Electricité">
+                                <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_électricité.svg" alt="Photo - Electricité">
                                 Electricité
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
                             <label for="source_energie_2" class="next btn step-13__link image">             
                                 <input type="radio" name="source_energie"  id="source_energie_2" value="Gaz naturel">
-                                <img class="step-1__img" src="./assets/images/picto_gte/conso_gaz.png" alt="Photo - Gaz naturel">
+                                <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_gaz naturel.svg" alt="Photo - Gaz naturel">
                                 Gaz naturel
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
                             <label for="source_energie_3" class="next btn step-13__link image">        
                                 <input type="radio" name="source_energie"  id="source_energie_3" value="GPL">
-                                <img class="step-1__img" src="./assets/images/picto_gte/conso_gpl.png" alt="Photo - GPL">
+                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_GPL.svg" alt="Photo - GPL">
                                GPL
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
 
                             <label for="source_energie_4" class="next btn step-13__link image">             
                                 <input type="radio" name="source_energie"  id="source_energie_4" value="FIOUL">
-                                <img class="step-1__img" src="./assets/images/picto_gte/conso_fioul.png" alt="Photo - FIOUL">
+                                <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_fioul.svg" alt="Photo - FIOUL">
                                 FIOUL
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
                             <label for="source_energie_5" class="next btn step-13__link image">        
                                 <input type="radio" name="source_energie"  id="source_energie_5" value="Bois">
-                                <img class="step-1__img" src="./assets/images/picto_gte/conso_bois.png" alt="Photo - Bois">
+                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_bois.svg" alt="Photo - Bois">
                                 Bois
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
@@ -1052,14 +1053,101 @@
                 </div>
             </div>
         </div>
-      <!-- Modal Structure -->
-        <div id="modal1" class="modal">
-            <div class="modal-content">
-            <h4>Modal Header</h4>
-            <p>A bunch of text</p>
-            </div>
+        <div class="modalContainer">
+            <!-- Modal Structure -->
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4>Chauffage </h4>
+                    <fieldset class="step-13">
+                        <h2>Source d’énergie</h2>
+                        <div class="step-13__content optionWithImages">
+                            <label for="source_energie_1" class="select-item btn step-13__link image">                        
+                                <input type="radio" name="source_energie" id="source_energie_1" value="Electricité">
+                                <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_électricité.svg" alt="Photo - Electricité">
+                                Electricité
+                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                            </label>
+                            
+                            <label for="source_energie_2" class="select-item btn step-13__link image">             
+                                <input type="radio" name="source_energie"  id="source_energie_2" value="Gaz naturel">
+                                <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_gaz naturel.svg" alt="Photo - Gaz naturel">
+                                Gaz naturel
+                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                            </label>
+                            
+                            <label for="source_energie_3" class="select-item btn step-13__link image">        
+                                <input type="radio" name="source_energie"  id="source_energie_3" value="GPL">
+                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_GPL.svg" alt="Photo - GPL">
+                                GPL
+                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                            </label>
+
+                            <label for="source_energie_4" class="select-item btn step-13__link image">             
+                                <input type="radio" name="source_energie"  id="source_energie_4" value="FIOUL">
+                                <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_fioul.svg" alt="Photo - FIOUL">
+                                FIOUL
+                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                            </label>
+                            
+                            <label for="source_energie_5" class="select-item btn step-13__link image">        
+                                <input type="radio" name="source_energie"  id="source_energie_5" value="Bois">
+                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_bois.svg" alt="Photo - Bois">
+                                Bois
+                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                            </label>
+                        </div>
+                    </fieldset>
+                    
+                    <fieldset class="step-14">
+                        <h2>Type de chauffage</h2>
+                        <div class="step-14__content optionWithImages">
+                            <label for="type_de_chaufface_1" class="select-item btn step-14__link image image5">                        
+                                <input type="radio" name="type_de_chaufface" id="type_de_chaufface_1" value="Convecteur électrique">
+                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_convecteur electrique.svg" alt="Photo - Convecteur électrique">
+                                Convecteur électrique
+                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                            </label>
+                            
+                            <label for="type_de_chaufface_2" class="select-item btn step-14__link image image5">             
+                                <input type="radio" name="type_de_chaufface"  id="type_de_chaufface_2" value="Plancher chauffant électrique">
+                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_plancher-chauffant.svg" alt="Photo - Plancher chauffant électrique">
+                                Plancher chauffant électrique
+                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                            </label>
+                            
+                            <label for="type_de_chaufface_3" class="select-item btn step-14__link image image5">        
+                                <input type="radio" name="type_de_chaufface"  id="type_de_chaufface_3" value="Radiateur électrique à inertie">
+                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_radiateur-inertie.svg" alt="Photo - Radiateur électrique à inertie">
+                                Radiateur électrique à inertie
+                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                            </label>
+
+                            <label for="type_de_chaufface_4" class="select-item btn step-14__link image image5">             
+                                <input type="radio" name="type_de_chaufface"  id="type_de_chaufface_4" value="Chaudière électrique">
+                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chaudiere-electrique.svg" alt="Photo - Chaudière électrique">
+                                Chaudière électrique
+                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                            </label>
+                            
+                            <label for="type_de_chaufface_5" class="select-item btn step-14__link image image5">        
+                                <input type="radio" name="type_de_chaufface"  id="type_de_chaufface_5" value="Pompe à chaleur">
+                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_pompe à chaleur.svg" alt="Photo - Pompe à chaleur">
+                                Pompe à chaleur
+                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                            </label>
+                            
+                            <label for="type_de_chaufface_6" class="select-item btn step-14__link image image5">        
+                                <input type="radio" name="type_de_chaufface"  id="type_de_chaufface_6" value="Chauffe eau solaire">
+                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chauffage-solaire.svg" alt="Photo - Chauffe eau solaire">
+                                Chauffe eau solaire
+                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
             <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                </div>
             </div>
         </div>
     </main>

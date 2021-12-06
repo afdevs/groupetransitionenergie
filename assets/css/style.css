@@ -498,6 +498,73 @@ fieldset{
     height: 160px;
 
 }
+
+/*for modal */
+main .modalContainer .modal{
+    max-height: inherit!important;
+}
+main .modalContainer .modal h4, h2{
+    text-align: center;
+    margin-top: 16px;
+    margin-bottom: 40px;
+}
+main .modalContainer .modal h4{
+    color: #3bb54a;
+}
+main .modalContainer .modal-content fieldset{
+    max-width: 850px!important;
+}
+main .modalContainer .modal-content label.image, main .modalContainer .modal-content label.image4, main .modalContainer .modal-content label.image5{
+    background-color: #fff;
+    border: 2px solid transparent!important;
+    border-radius: 8px;
+    display: -webkit-flex;
+    display: flex;
+    cursor: pointer;
+    box-shadow: 0 4px 20px 0 rgb(0 50 80 / 10%);
+    transition: box-shadow .5s,border .2s;
+    height: auto;
+    width: 150px!important;
+    height: 234px!important;
+    flex-direction: column;
+    font-weight: 100!important;
+    position: relative;
+}
+
+main .modalContainer .modal-content label.image:hover, main .modalContainer .modal-content label.image4:hover, main .modalContainer .modal-content label.image5:hover{
+    background-color: #fff!important;
+    box-shadow: 0 4px 20px 0 rgb(0 0 0 / 20%);
+    transition: box-shadow .5s,border .2s;
+    border-color: #003250!important;
+}
+
+main .modalContainer .modal-content label.image4{
+    width: 170px;
+
+}
+
+main .modalContainer .modal-content label.image5{
+    width: 125px!important;
+    height: 234px!important;
+    
+}
+
+main .modalContainer .modal-content label{
+    height: auto;
+    padding: 12px 10px;
+    font-family: aoki_regular,Helvetica,Arial,sans-serif;
+    color: #003250;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: calc(16px - 8px);
+}
+main .modalContainer .step-13__content .step-1__img {
+    width: 75%;
+    margin-top: 3px;
+    margin-bottom: 4px;
+}
+/*---------------------------------------------------*/
+
 .image-checked, .no-image-checked{
     border-color: #003250!important;
 }
@@ -1300,7 +1367,10 @@ h3 {
 .vos-consommations__consumption-list {
     /* To show on mobile version */
     /* width: calc(100% + 25px); */
-    margin-left: -25px;
+    /* margin-left: -25px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .vos-consommations__consumption-item.chauffage-item {
@@ -1340,7 +1410,7 @@ h3 {
     padding-right: 50px;
     transition: all 0.2s ease-in-out;
     overflow: hidden;
-    max-width: 420px;
+    max-width: 300px;
     /* To mask on mobile version */
     border-top-left-radius: 89px;
     border-bottom-left-radius: 89px;
