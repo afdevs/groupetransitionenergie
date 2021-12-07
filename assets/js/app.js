@@ -19,13 +19,25 @@ jQuery(function($){
       //initialize all modals           
       $('.modal').modal({
         // dismissible:false
+        preventScrolling: false
     });
 
       //or by click on trigger
       $('#chauffageModalButton').click(function(e){
-      //now you can open modal from code
         $('#modal1').modal('open');
 
+      })
+      
+      $('#eauSanitaireModalButton').click(function(e){
+          $('#modal2').modal('open');
+      })
+      
+      $('#appareilElecModalButton').click(function(e){
+        $('#modal3').modal('open');
+      })
+      
+      $('#eclairageModalButton').click(function(e){
+        $('#modal4').modal('open');
       })
       // $('.modal-trigger').modal();
 

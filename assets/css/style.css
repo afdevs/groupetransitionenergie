@@ -57,10 +57,11 @@
 body{
     background: #f7f9ff;
     margin: 0;
-    height: unset;
+    /* height: unset; */
     /* min-height: 100vh; */
-    overflow: hidden;
+    overflow-y: scroll;
     font-family: aoki_regular;
+    height: fit-content!important;
 }
 
 a span{
@@ -500,8 +501,23 @@ fieldset{
 }
 
 /*for modal */
+.modal {
+    position: absolute!important;
+}
 main .modalContainer .modal{
     max-height: inherit!important;
+    overflow: unset;
+}
+
+main .modalContainer .modal .callToAction{
+    background: linear-gradient(86deg,#225b55 23%,#009381 75%,#009381 117%);
+    padding: 16px 32px;
+    color: white;
+    border-radius: 5px;
+    transition: box-shadow 300ms ease;
+}
+main .modalContainer .modal .callToAction:hover{
+    box-shadow: 0 10px 12px 0 rgb(0 0 0 / 25%);
 }
 main .modalContainer .modal h4, h2{
     text-align: center;
@@ -578,6 +594,24 @@ main .modalContainer .inputs .input-item input[type=number]{
 
 main .modalContainer .modal-content .counter{
     text-align: center;
+}
+main .modalContainer .modal-content .inputs .input-item .input-item-range{
+    display: flex;
+    max-width: 60%;
+    justify-content: revert;
+    align-content: center;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;    
+}
+main .modalContainer .modal-content .inputs .input-item .rangeMin, main .modalContainer .modal-content .inputs .input-item .rangeMax{
+    transform: translateY(-3px);
+}
+main .modalContainer .modal-content .inputs .input-item .range-field{
+    width: 85%;
+    margin-right: auto;
+    margin-left: auto;
 }
 /*---------------------------------------------------*/
 
