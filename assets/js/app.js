@@ -10,7 +10,8 @@ const inputsCountersValues={
     consommation_annuelle_gpl: 0,
     consommation_annuelle_fioul: 0,
     consommation_annuelle_bois: 0,
-    consommation_annuelle_autre:0
+    consommation_annuelle_autre:0,
+    temperature_de_confort: 0
 }
 
 jQuery(function($){
@@ -75,6 +76,14 @@ jQuery(function($){
           $($($(this).parent().children('.counter__value'))[0]).text(inputsCountersValues.hauteur_sous_plafond_moyenne);  
           return
         }
+        
+        //temperature de confort
+        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='temperature_de_confort'){
+          const result=inputsCountersValues.temperature_de_confort +0.5;
+          inputsCountersValues.temperature_de_confort = Math.round(result*100)/100
+          $($($(this).parent().children('.counter__value'))[0]).text(inputsCountersValues.temperature_de_confort);  
+          return
+        }
 
         inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]=parseInt(inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')])+1
         inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]=inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')];
@@ -103,6 +112,15 @@ jQuery(function($){
           $($($(this).parent().children('.counter__value'))[0]).text(inputsCountersValues.hauteur_sous_plafond_moyenne);  
           return
         }
+        
+        //temperature de confort
+        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='temperature_de_confort'){
+          const result=inputsCountersValues.temperature_de_confort -0.5;
+          inputsCountersValues.temperature_de_confort = Math.round(result*100)/100
+          $($($(this).parent().children('.counter__value'))[0]).text(inputsCountersValues.temperature_de_confort);  
+          return
+        }
+
 
         inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]=parseInt(inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')])-1
         inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]=inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')];

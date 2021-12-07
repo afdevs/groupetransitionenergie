@@ -327,17 +327,17 @@ fieldset.step-1{
     background: #fff;
     box-shadow: 0 4px 20px 0 rgb(0 50 80 / 10%);
 }
-.page .page__content .counter__title{
+.page .page__content .counter__title {
     color: #003250;
     font-family: aoki_regular,Helvetica,Arial,sans-serif;
     font-size: 14px !important;
     margin-bottom: 2px;
 }
-.page .page__content .counter__subtitle{
+.page .page__content .counter__subtitle, main .modalContainer .modal-content .counter__subtitle{
     color: #00325082;
 }
 
-.page .page__content .counter__decrement, .page .page__content .counter__increment{
+.page .page__content .counter__decrement, .page .page__content .counter__increment,   main .modalContainer .modal-content .counter__decrement,   main .modalContainer .modal-content .counter__increment{
     width: 32px;
     height: 32px;
     cursor: pointer;
@@ -358,7 +358,7 @@ fieldset.step-1{
     margin: 0 10px;
 }
 
-.page .page__content .counter__decrement:hover, .page .page__content .counter__increment:hover{
+.page .page__content .counter__decrement:hover, .page .page__content .counter__increment:hover, main .modalContainer .modal-content .counter__decrement:hover, main .modalContainer .modal-content .counter__increment:hover {
     color: rgb(34, 34, 34);
     border-color: rgba(34, 34, 34, 0.42);
     background: rgb(255, 255, 255);
@@ -371,13 +371,13 @@ fieldset.step-1{
     display: inline-block;
 }
 
-.page .page__content .input-counter{
+.page .page__content .input-counter,  main .modalContainer .modal-content .input-counter{
     width: 100%;
     margin-bottom: 16px;
     
 }
 
-.page .page__content .input-item-counter{
+.page .page__content .input-item-counter,  main .modalContainer .modal-content .input-item-counter{
     width: calc(50% - 8px);
     margin-bottom: 16px;
 }
@@ -549,7 +549,7 @@ main .modalContainer .modal-content label.image5{
     
 }
 
-main .modalContainer .modal-content label{
+main .modalContainer .modal-content label, main .modalContainer .modal-content .counter__title{
     height: auto;
     padding: 12px 10px;
     font-family: aoki_regular,Helvetica,Arial,sans-serif;
@@ -562,6 +562,22 @@ main .modalContainer .step-13__content .step-1__img {
     width: 75%;
     margin-top: 3px;
     margin-bottom: 4px;
+}
+main .modalContainer .inputs .input-item{
+    text-align: center;
+}
+main .modalContainer .inputs .input-item label,  main .modalContainer .modal-content .counter__title{
+    margin: 25px 0!important;
+    display: block
+}
+main .modalContainer .inputs .input-item input[type=number]{
+    max-width: 65%!important;
+    display: block!important;
+    margin: 16px auto!important;
+}
+
+main .modalContainer .modal-content .counter{
+    text-align: center;
 }
 /*---------------------------------------------------*/
 

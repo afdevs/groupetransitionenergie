@@ -1143,10 +1143,59 @@
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                         </div>
+                        
+                        <div class="inputs">
+                            <div class="input-item">
+                                <label for="inputAnneeInstall">Année d’installation</label>
+                                <input id="inputAnneeInstall" type="number" name="source_energie_annee_install" class="" min="0">
+                                <span class="step-1__content__notice">Année d’installation requis </span>
+                            </div>
+                        </div>
+
+                        <div class="inputsCounter">
+                            <div class="input-counter">
+                                <div class="counter">
+                                    <div class="counter__fields">
+                                        <div class="counter__title">Température de confort (C°) </div>
+                                    </div>
+                                    <div class="counter_buttons">
+                                        <button class="counter__decrement" type="button">
+                                            -
+                                        </button>
+                                        <span class="counter__value" name="temperature_de_confort">0</span>
+                                        <button class="counter__increment" type="button">
+                                            +
+                                        </button>
+                                    </div>
+                                    <span class="step-1__content__notice">Nombre d’habitants requis </span>
+
+                                </div>
+                            </div>  
+                        </div>
+                            
+                        <div class="inputs">    
+                            <div class="input-item">
+                                <label for="inputEstimFactChauff">Estimation de la facture de chauffage (€/an)</label>
+                                <input id="inputEstimFactChauff" type="number" name="estimation_de_facture_de_chauffage" class="" min="0">
+                                <span class="step-1__content__notice">Estimation de la facture de chauffage requis </span>
+                            </div>
+                        </div>
+                          
+                        <div class="inputs">
+                            <div class="input-item">
+                                <label for="inputPrixElec">Prix de l'électricité (€/kWh)</label>
+                                <input id="inputPrixElec" type="number" name="prix_de_l_electricite" class="" min="0">
+                                <span class="step-1__content__notice">Estimation de la facture de chauffage requis </span>
+                            </div>
+                        </div>
                     </fieldset>
                 </div>
             <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                
+            <!-- <div class="nextButtonControl">
+                    <input type="button" class="next btn btn-info main-cta" value="Suivant" />
+                </div> -->
+                    <a href="#!" class="modal-close btn btn-info main-cta">VALIDER</a>
                 </div>
             </div>
         </div>
