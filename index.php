@@ -1198,7 +1198,7 @@
                     
                     <fieldset class="step-14">
                         <h2>Type de chauffage</h2>
-                        <div id="source_energie_type_elec" style="display: block;">
+                        <div id="source_energie_type_elec" style="display: none;">
                             <div class="step-14__content optionWithImages" style="max-width: 615px;">
                                 <label for="type_de_chaufface_convecteur_elec" class="select-item btn step-14__link image image5">                        
                                     <input type="radio" name="type_de_chaufface" id="type_de_chaufface_convecteur_elec" value="Convecteur électrique">
@@ -1478,73 +1478,74 @@
                 <div class="modal-content">
                     <h4 style="color:#0288d1;">Eau chaude sanitaire </h4>
                         <h2>Source d’énergie</h2>
-                        <div class="step-13__content optionWithImages" style="max-width: 660px;">
-                            <label for="source_energie_eau_chaude_1" class="select-item btn step-13__link image">                        
-                                <input type="radio" name="source_energie_eau_chaude" id="source_energie_eau_chaude_1" value="Electricité">
+                        <div class="step-13__content optionWithImages" style="max-width: 83%;">
+                            <label for="source_energie_eau_chaude_elec_1" class="select-item btn step-13__link image">                        
+                                <input type="radio" name="source_energie_eau_chaude" id="source_energie_eau_chaude_elec_1" value="Electricité">
                                 <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_électricité.svg" alt="Photo - Electricité">
                                 Electricité
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="source_energie_eau_chaude_2" class="select-item btn step-13__link image">             
-                                <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_2" value="Gaz naturel">
+                            <label for="source_energie_eau_chaude_gaz_natur_2" class="select-item btn step-13__link image">             
+                                <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_gaz_natur_2" value="Gaz naturel">
                                 <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_gaz naturel.svg" alt="Photo - Gaz naturel">
                                 Gaz naturel
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="source_energie_eau_chaude_3" class="select-item btn step-13__link image">        
-                                <input type="radio" name="source_energie_eau_chaude"  id="source_ene3gie_eau_chaude_3" value="GPL">
+                            <label for="source_energie_eau_chaude_gpl_3" class="select-item btn step-13__link image">        
+                                <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_gpl_3" value="GPL">
                                 <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_GPL.svg" alt="Photo - GPL">
                                 GPL
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
 
-                            <!-- <label for="source_energie_eau_chaude_4" class="select-item btn step-13__link image">             
-                                <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_4" value="FIOUL">
+                            <label for="source_energie_eau_chaude_fioul_4" class="select-item btn step-13__link image">             
+                                <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_fioul_4" value="FIOUL">
                                 <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_fioul.svg" alt="Photo - FIOUL">
                                 FIOUL
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label> -->
+                            </label>
                             
-                            <label for="source_energie_eau_chaude_5" class="select-item btn step-13__link image">        
-                                <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_5" value="Bois">
+                            <label for="source_energie_eau_chaude_bois_5" class="select-item btn step-13__link image">        
+                                <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_bois_5" value="Bois">
                                 <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_bois.svg" alt="Photo - Bois">
                                 Bois
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                         </div>
+                        <div id="source_energie_eau_chaude_Elect" style="display:none;">
+                            <h2 style="margin-top: 40px!important;margin-bottom:25px;">Type d'eau chaude sanitaire</h2>
+                            <div class="step-14__content optionWithImages" style="max-width: 400px;">
+                                <label for="type_de_chaufface_1" class="select-item btn step-14__link image" style="width: 190px!important;">                        
+                                    <input type="radio" name="type_d_eau_chaude" id="type_d_eau_chaude_1" value="Chauffe-eau électrique">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chauffe-eau-electrique.svg" alt="Photo - Chauffe-eau électrique">
+                                    Chauffe-eau électrique
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                                </label>
+                                
+                                <label for="type_d_eau_chaude_2" class="select-item btn step-14__link image" style="width: 190px!important;">             
+                                    <input type="radio" name="type_d_eau_chaude"  id="type_d_eau_chaude_2" value="Chauffe-eau thermodynamique">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chauffe-eau-thermodynamique.svg" alt="Photo - Chauffe-eau thermodynamique">
+                                    Chauffe-eau thermodynamique
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                                </label>
+                            </div>
+                            <div class="step-14__content optionWithImages" style="max-width: 400px;">
+                                <label for="type_d_eau_chaude_3" class="select-item btn step-14__link image" style="width: 190px!important;">        
+                                    <input type="radio" name="type_d_eau_chaude"  id="type_d_eau_chaude_3" value="Module ECS intégré à PAC">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_ECS-et-PAC.svg" alt="Photo - Module ECS intégré à PAC">
+                                    Module ECS intégré à PAC
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                                </label>
 
-                        <h2 style="margin-top: 40px!important;margin-bottom:25px;">Type d'eau chaude sanitaire</h2>
-                        <div class="step-14__content optionWithImages" style="max-width: 400px;">
-                            <label for="type_de_chaufface_1" class="select-item btn step-14__link image" style="width: 190px!important;">                        
-                                <input type="radio" name="type_d_eau_chaude" id="type_d_eau_chaude_1" value="Chauffe-eau électrique">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chauffe-eau-electrique.svg" alt="Photo - Chauffe-eau électrique">
-                                Chauffe-eau électrique
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-                            
-                            <label for="type_d_eau_chaude_2" class="select-item btn step-14__link image" style="width: 190px!important;">             
-                                <input type="radio" name="type_d_eau_chaude"  id="type_d_eau_chaude_2" value="Chauffe-eau thermodynamique">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chauffe-eau-thermodynamique.svg" alt="Photo - Chauffe-eau thermodynamique">
-                                Chauffe-eau thermodynamique
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-                        </div>
-                        <div class="step-14__content optionWithImages" style="max-width: 400px;">
-                            <label for="type_d_eau_chaude_3" class="select-item btn step-14__link image" style="width: 190px!important;">        
-                                <input type="radio" name="type_d_eau_chaude"  id="type_d_eau_chaude_3" value="Module ECS intégré à PAC">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_ECS-et-PAC.svg" alt="Photo - Module ECS intégré à PAC">
-                                Module ECS intégré à PAC
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-
-                            <label for="type_d_eau_chaude_4" class="select-item btn step-14__link image" style="width: 190px!important;">             
-                                <input type="radio" name="type_d_eau_chaude"  id="type_d_eau_chaude_4" value="Chauffe eau solaire">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chauffage-solaire_.svg" alt="Photo - Chauffe eau solaire">
-                                Chauffe eau solaire
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
+                                <label for="type_d_eau_chaude_4" class="select-item btn step-14__link image" style="width: 190px!important;">             
+                                    <input type="radio" name="type_d_eau_chaude"  id="type_d_eau_chaude_4" value="Chauffe eau solaire">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chauffage-solaire_.svg" alt="Photo - Chauffe eau solaire">
+                                    Chauffe eau solaire
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                                </label>
+                            </div>
                         </div>
 
                         <div class="inputs">
