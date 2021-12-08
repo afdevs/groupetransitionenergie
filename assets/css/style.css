@@ -524,9 +524,9 @@ main .modalContainer .modal h4, h2{
     margin-top: 16px;
     margin-bottom: 40px;
 }
-main .modalContainer .modal h4{
+/* main .modalContainer .modal h4{
     color: #3bb54a;
-}
+} */
 main .modalContainer .modal-content fieldset{
     max-width: 850px!important;
 }
@@ -560,7 +560,7 @@ main .modalContainer .modal-content label.image4{
 }
 
 main .modalContainer .modal-content label.image5{
-    width: 125px!important;
+    width: 190px!important;
     height: 234px!important;
     
 }
@@ -586,7 +586,7 @@ main .modalContainer .inputs .input-item label,  main .modalContainer .modal-con
     margin: 25px 0!important;
     display: block
 }
-main .modalContainer .inputs .input-item input[type=number]{
+main .modalContainer .inputs .input-item input[type=number], main .modalContainer .inputs .input-item input[type=text]{
     max-width: 65%!important;
     display: block!important;
     margin: 16px auto!important;
@@ -612,6 +612,50 @@ main .modalContainer .modal-content .inputs .input-item .range-field{
     width: 85%;
     margin-right: auto;
     margin-left: auto;
+}
+main .modalContainer .select-wrapper .dropdown-content li{
+    text-align: center!important;
+}
+main .modalContainer .select-wrapper input.select-dropdown{
+    text-align: center!important;
+}
+main .modalContainer .optionWithImagesColumn{    
+    max-width: 600px;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+main .modalContainer .modal-content .optionWithImagesColumn label.image{
+    background-color: #fff;
+    border: 2px solid transparent !important;
+    border-radius: 8px;
+    display: -webkit-flex;
+    cursor: pointer;
+    box-shadow: 0 4px 20px 0 rgb(0 50 80 / 10%);
+    transition: box-shadow .5s,border .2s;
+    height: auto!important;
+    width: 500px!important;
+    flex-direction: column;
+    font-weight: 100 !important;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    margin: 11px 0;
+}
+.optionWithImagesColumn .image-checkbox {
+    width: 25px;
+    position: inherit;
+    /* z-index: 54;
+    top: 40px;
+    right: 7px; */
+    margin-right: 11px;
+}
+main .modalContainer .step-left__img{
+    width: 90px;
 }
 /*---------------------------------------------------*/
 

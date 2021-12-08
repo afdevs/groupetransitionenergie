@@ -11,7 +11,7 @@ const inputsCountersValues={
     consommation_annuelle_fioul: 0,
     consommation_annuelle_bois: 0,
     consommation_annuelle_autre:0,
-    temperature_de_confort: 0
+    temperature_de_confort: 17
 }
 
 jQuery(function($){
@@ -81,6 +81,8 @@ jQuery(function($){
       resetAllRadioInput();
 
       $('.counter__increment').click(function(e){
+        
+        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='temperature_de_confort' && inputsCountersValues.temperature_de_confort >=25)return;
         //hauteur_sous_plafond_moyenne
         if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='hauteur_sous_plafond_moyenne'){
           const result=inputsCountersValues.hauteur_sous_plafond_moyenne +0.2;
@@ -114,6 +116,8 @@ jQuery(function($){
       });
 
       $('.counter__decrement').click(function(e){
+        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='temperature_de_confort' && inputsCountersValues.temperature_de_confort <= 17)return;
+          
         if(parseInt(inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')])===0) return;
         
         //hauteur_sous_plafond_moyenne
@@ -126,7 +130,8 @@ jQuery(function($){
         }
         
         //temperature de confort
-        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='temperature_de_confort'){
+        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='temperature_de_confort' && inputsCountersValues.temperature_de_confort > 17){
+          
           const result=inputsCountersValues.temperature_de_confort -0.5;
           inputsCountersValues.temperature_de_confort = Math.round(result*100)/100
           $($($(this).parent().children('.counter__value'))[0]).text(inputsCountersValues.temperature_de_confort);  
@@ -232,6 +237,7 @@ jQuery(function($){
             $($($(el)[0]).children('img.image-checkbox')[0]).attr('src', newCheckboxUrl);
           }
         })
+        
         Array.from($($(this).parent().children('label.image'))).forEach(el=>{
           let urlPathCheckbox=$($($(el)[0]).children('img')[0]).attr('src');
           if(urlPathCheckbox){
@@ -240,6 +246,7 @@ jQuery(function($){
             $($($(el)[0]).children('img.image-checkbox')[0]).attr('src', newCheckboxUrl);
           }
         })
+        
         let checkboxIconPath=$($($($(this)[0])[0]).children('img.image-checkbox')[0]).attr('src');
         if (checkboxIconPath){$($($($(this)[0])[0]).children('img.image-checkbox')[0]).attr('src', checkboxIconPath.replace('check', 'uncheck'));}
         
@@ -257,8 +264,7 @@ jQuery(function($){
         return false;
       });
       
-      /* ALL ABOUT THE FORM */
-     
+      /* ALL ABOUT THE FORM */     
       $(".next").click(function(e){
         let timeout= current >1 && current<25 ? 200 : 0;
         setTimeout(()=>{
@@ -592,8 +598,53 @@ jQuery(function($){
       $('#inputMoyennConso').val((((parseInt($('#inputConsoFioul').val())+parseInt($('#inputConsoGaz').val()))* parseInt($(this).val()))/parseInt($(this).val())))
     })
 
+    //MODAL CONDITIONAL
+    $("label[for='source_energie_1_chauffage']").click(function(){
+      $('#source_energie_type_gpl').css('display', 'none')
+      $('#source_energie_type_fioul').css('display', 'none')
+      $('#source_energie_type_bois').css('display', 'none')
+      $('#source_energie_type_gaz_naturel').css('display', 'none')
+      $('#source_energie_type_elec').css('display', 'block')
+      $('#source_energie_1_chauffage_pric_Elect').css('display', 'block')
+    })
+    
+    $("label[for='source_energie_2_chauffage']").click(function(){
+      $('#source_energie_type_elec').css('display', 'none')
+      $('#source_energie_type_gpl').css('display', 'none')
+      $('#source_energie_type_fioul').css('display', 'none')
+      $('#source_energie_type_bois').css('display', 'none')
+      $('#source_energie_type_gaz_naturel').css('display', 'block')
+      $('#source_energie_1_chauffage_pric_Elect').css('display', 'none')
+    })
+    
+    $("label[for='source_energie_3_chauffage']").click(function(){
+      $('#source_energie_type_elec').css('display', 'none')
+      $('#source_energie_type_gaz_naturel').css('display', 'none')
+      $('#source_energie_type_fioul').css('display', 'none')
+      $('#source_energie_type_bois').css('display', 'none')
+      $('#source_energie_type_gpl').css('display', 'block')
+      $('#source_energie_1_chauffage_pric_Elect').css('display', 'none')
+    })
+    
+    $("label[for='source_energie_4_chauffage']").click(function(){
+      $('#source_energie_type_elec').css('display', 'none')
+      $('#source_energie_type_gaz_naturel').css('display', 'none')
+      $('#source_energie_type_fioul').css('display', 'block')
+      $('#source_energie_type_bois').css('display', 'none')
+      $('#source_energie_type_gpl').css('display', 'none')
+      $('#source_energie_1_chauffage_pric_Elect').css('display', 'none')
+    })
+    
+    $("label[for='source_energie_5_chauffage']").click(function(){
+      $('#source_energie_type_elec').css('display', 'none')
+      $('#source_energie_type_gaz_naturel').css('display', 'none')
+      $('#source_energie_type_fioul').css('display', 'none')
+      $('#source_energie_type_bois').css('display', 'block')
+      $('#source_energie_type_gpl').css('display', 'none')
+      $('#source_energie_1_chauffage_pric_Elect').css('display', 'none')
+    })
+    
     //-----------------------------------------------------------------------------------------
-
     //Validation form
     const prenom=$('#inputPrenom');
     const nom=$('#inputNom');

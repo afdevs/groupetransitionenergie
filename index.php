@@ -204,54 +204,54 @@
                                     <label for="inputAnneContruct">Année de construction</label>    
                                     <select name="annee_contruction" id="">
                                         <option disabled selected>Choisir</option>
-                                        <option>2021</option>
-                                        <option>2020</option>
-                                        <option>2019</option>
-                                        <option>2018</option>
-                                        <option>2017</option>
-                                        <option>2016</option>
-                                        <option>2015</option>
-                                        <option>2014</option>
-                                        <option>2013</option>
-                                        <option>2012</option>
-                                        <option>2011</option>
-                                        <option>2010</option>
-                                        <option>2009</option>
-                                        <option>2008</option>
-                                        <option>2007</option>
-                                        <option>2006</option>
-                                        <option>2005</option>
-                                        <option>2004</option>
-                                        <option>2003</option>
-                                        <option>2002</option>
-                                        <option>2001</option>
-                                        <option>2000</option>
-                                        <option>1999</option>
-                                        <option>1998</option>
-                                        <option>1997</option>
-                                        <option>1996</option>
-                                        <option>1995</option>
-                                        <option>1994</option>
-                                        <option>1993</option>
-                                        <option>1992</option>
-                                        <option>1991</option>
-                                        <option>1990</option>
-                                        <option>1989</option>
-                                        <option>1988</option>
-                                        <option>1987</option>
-                                        <option>1986</option>
-                                        <option>1985</option>
-                                        <option>1984</option>
-                                        <option>1983</option>
-                                        <option>1982</option>
-                                        <option>1981</option>
-                                        <option>1980</option>
-                                        <option>1979</option>
-                                        <option>1978</option>
-                                        <option>1977</option>
-                                        <option>1976</option>
-                                        <option>1975</option>
-                                        <option>Avant 1975</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2014">2014</option>
+                                        <option value="2013">2013</option>
+                                        <option value="2012">2012</option>
+                                        <option value="2011">2011</option>
+                                        <option value="2010">2010</option>
+                                        <option value="2009">2009</option>
+                                        <option value="2008">2008</option>
+                                        <option value="2007">2007</option>
+                                        <option value="2006">2006</option>
+                                        <option value="2005">2005</option>
+                                        <option value="2004">2004</option>
+                                        <option value="2003">2003</option>
+                                        <option value="2002">2002</option>
+                                        <option value="2001">2001</option>
+                                        <option value="2000">2000</option>
+                                        <option value="1999">1999</option>
+                                        <option value="1998">1998</option>
+                                        <option value="1997">1997</option>
+                                        <option value="1996">1996</option>
+                                        <option value="1995">1995</option>
+                                        <option value="1994">1994</option>
+                                        <option value="1995">1993</option>
+                                        <option value="1992">1992</option>
+                                        <option value="1991">1991</option>
+                                        <option value="1990">1990</option>
+                                        <option value="1989">1989</option>
+                                        <option value="1988">1988</option>
+                                        <option value="1987">1987</option>
+                                        <option value="1986">1986</option>
+                                        <option value="1985">1985</option>
+                                        <option value="1984">1984</option>
+                                        <option value="1983">1983</option>
+                                        <option value="1982">1982</option>
+                                        <option value="1981">1981</option>
+                                        <option value="1980">1980</option>
+                                        <option value="1979">1979</option>
+                                        <option value="1978">1978</option>
+                                        <option value="1977">1977</option>
+                                        <option value="1976">1976</option>
+                                        <option value="1975">1975</option>
+                                        <option value="Avant 1975"> Avant 1975</option>
                                     </select>
                                     
                                     <!-- <input id="inputAnneContruct" type="number" name="annee_contruction" class="" min="0">
@@ -344,7 +344,6 @@
                                 </span>
                                 3
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-
                             </label>
                         </div>
                             
@@ -788,9 +787,59 @@
                             </div>
                             <div class="inputs">
                                 <div class="input-item">
-                                    <label for="inputAnneeInstall">Année d’installation</label>
-                                    <input id="inputAnneeInstall" type="number" name="source_energie_annee_install" class="" min="0">
-                                    <span class="step-1__content__notice">Année d’installation requis </span>
+                                    <label for="inputAnneeInstall">Année d’installation</label> 
+                                    <select name="annee_install_source_energie" id="">
+                                        <option disabled selected>Choisir</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2014">2014</option>
+                                        <option value="2013">2013</option>
+                                        <option value="2012">2012</option>
+                                        <option value="2011">2011</option>
+                                        <option value="2010">2010</option>
+                                        <option value="2009">2009</option>
+                                        <option value="2008">2008</option>
+                                        <option value="2007">2007</option>
+                                        <option value="2006">2006</option>
+                                        <option value="2005">2005</option>
+                                        <option value="2004">2004</option>
+                                        <option value="2003">2003</option>
+                                        <option value="2002">2002</option>
+                                        <option value="2001">2001</option>
+                                        <option value="2000">2000</option>
+                                        <option value="1999">1999</option>
+                                        <option value="1998">1998</option>
+                                        <option value="1997">1997</option>
+                                        <option value="1996">1996</option>
+                                        <option value="1995">1995</option>
+                                        <option value="1994">1994</option>
+                                        <option value="1995">1993</option>
+                                        <option value="1992">1992</option>
+                                        <option value="1991">1991</option>
+                                        <option value="1990">1990</option>
+                                        <option value="1989">1989</option>
+                                        <option value="1988">1988</option>
+                                        <option value="1987">1987</option>
+                                        <option value="1986">1986</option>
+                                        <option value="1985">1985</option>
+                                        <option value="1984">1984</option>
+                                        <option value="1983">1983</option>
+                                        <option value="1982">1982</option>
+                                        <option value="1981">1981</option>
+                                        <option value="1980">1980</option>
+                                        <option value="1979">1979</option>
+                                        <option value="1978">1978</option>
+                                        <option value="1977">1977</option>
+                                        <option value="1976">1976</option>
+                                        <option value="1975">1975</option>
+                                        <option value="Avant 1975"> Avant 1975</option>
+                                    </select>
+                                    
                                 </div>
                             </div>
                             
@@ -895,8 +944,57 @@
                         <div class="inputs">
                             <div class="input-item nopr20">
                                 <label for="inputSourceEnergieAnneInstal">Année d’installation</label>
-                                <input id="inputSourceEnergieAnneInstal" type="number" name="source_energie_eau_chaude_conso_annee_install" class="" min="0">
-                                <span class="step-1__content__notice">Année d’installation requis </span>
+                                <select name="annee_contruction_eau_chaude_conso" id="">
+                                    <option disabled selected>Choisir</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2011">2011</option>
+                                    <option value="2010">2010</option>
+                                    <option value="2009">2009</option>
+                                    <option value="2008">2008</option>
+                                    <option value="2007">2007</option>
+                                    <option value="2006">2006</option>
+                                    <option value="2005">2005</option>
+                                    <option value="2004">2004</option>
+                                    <option value="2003">2003</option>
+                                    <option value="2002">2002</option>
+                                    <option value="2001">2001</option>
+                                    <option value="2000">2000</option>
+                                    <option value="1999">1999</option>
+                                    <option value="1998">1998</option>
+                                    <option value="1997">1997</option>
+                                    <option value="1996">1996</option>
+                                    <option value="1995">1995</option>
+                                    <option value="1994">1994</option>
+                                    <option value="1995">1993</option>
+                                    <option value="1992">1992</option>
+                                    <option value="1991">1991</option>
+                                    <option value="1990">1990</option>
+                                    <option value="1989">1989</option>
+                                    <option value="1988">1988</option>
+                                    <option value="1987">1987</option>
+                                    <option value="1986">1986</option>
+                                    <option value="1985">1985</option>
+                                    <option value="1984">1984</option>
+                                    <option value="1983">1983</option>
+                                    <option value="1982">1982</option>
+                                    <option value="1981">1981</option>
+                                    <option value="1980">1980</option>
+                                    <option value="1979">1979</option>
+                                    <option value="1978">1978</option>
+                                    <option value="1977">1977</option>
+                                    <option value="1976">1976</option>
+                                    <option value="1975">1975</option>
+                                    <option value="Avant 1975"> Avant 1975</option>
+                                </select>
                             </div>  
                         </div>
                     </fieldset>
@@ -1057,40 +1155,40 @@
             <!-- Modal Structure -->
             <div id="modal1" class="modal">
                 <div class="modal-content">
-                    <h4>Chauffage </h4>
+                    <h4 style="color: #50249f;">Chauffage </h4>
                     <fieldset class="step-13">
                         <h2>Source d’énergie</h2>
                         <div class="step-13__content optionWithImages">
-                            <label for="source_energie_1" class="select-item btn step-13__link image">                        
-                                <input type="radio" name="source_energie" id="source_energie_1" value="Electricité">
+                            <label for="source_energie_1_chauffage" class="select-item btn step-13__link image">                        
+                                <input type="radio" name="source_energie" id="source_energie_1_chauffage" value="Electricité">
                                 <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_électricité.svg" alt="Photo - Electricité">
                                 Electricité
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="source_energie_2" class="select-item btn step-13__link image">             
-                                <input type="radio" name="source_energie"  id="source_energie_2" value="Gaz naturel">
+                            <label for="source_energie_2_chauffage" class="select-item btn step-13__link image">             
+                                <input type="radio" name="source_energie"  id="source_energie_2_chauffage" value="Gaz naturel">
                                 <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_gaz naturel.svg" alt="Photo - Gaz naturel">
                                 Gaz naturel
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="source_energie_3" class="select-item btn step-13__link image">        
-                                <input type="radio" name="source_energie"  id="source_energie_3" value="GPL">
+                            <label for="source_energie_3_chauffage" class="select-item btn step-13__link image">        
+                                <input type="radio" name="source_energie"  id="source_energie_3_chauffage" value="GPL">
                                 <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_GPL.svg" alt="Photo - GPL">
                                 GPL
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
 
-                            <label for="source_energie_4" class="select-item btn step-13__link image">             
-                                <input type="radio" name="source_energie"  id="source_energie_4" value="FIOUL">
+                            <label for="source_energie_4_chauffage" class="select-item btn step-13__link image">             
+                                <input type="radio" name="source_energie"  id="source_energie_4_chauffage" value="FIOUL">
                                 <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_fioul.svg" alt="Photo - FIOUL">
                                 FIOUL
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="source_energie_5" class="select-item btn step-13__link image">        
-                                <input type="radio" name="source_energie"  id="source_energie_5" value="Bois">
+                            <label for="source_energie_5_chauffage" class="select-item btn step-13__link image">        
+                                <input type="radio" name="source_energie"  id="source_energie_5_chauffage" value="Bois">
                                 <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_bois.svg" alt="Photo - Bois">
                                 Bois
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
@@ -1100,55 +1198,206 @@
                     
                     <fieldset class="step-14">
                         <h2>Type de chauffage</h2>
-                        <div class="step-14__content optionWithImages">
-                            <label for="type_de_chaufface_1" class="select-item btn step-14__link image image5">                        
-                                <input type="radio" name="type_de_chaufface" id="type_de_chaufface_1" value="Convecteur électrique">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_convecteur electrique.svg" alt="Photo - Convecteur électrique">
-                                Convecteur électrique
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
+                        <div id="source_energie_type_elec" style="display: block;">
+                            <div class="step-14__content optionWithImages" style="max-width: 615px;">
+                                <label for="type_de_chaufface_convecteur_elec" class="select-item btn step-14__link image image5">                        
+                                    <input type="radio" name="type_de_chaufface" id="type_de_chaufface_convecteur_elec" value="Convecteur électrique">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_convecteur electrique.svg" alt="Photo - Convecteur électrique">
+                                    Convecteur électrique
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                                </label>
+                                
+                                <label for="type_de_chaufface_plancher_chauffant" class="select-item btn step-14__link image image5">             
+                                    <input type="radio" name="type_de_chaufface"  id="type_de_chaufface_plancher_chauffant" value="Plancher chauffant électrique">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_plancher-chauffant.svg" alt="Photo - Plancher chauffant électrique">
+                                    Plancher chauffant électrique
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                                </label>
+                                
+                                <label for="type_de_chaufface_radiateur_elec" class="select-item btn step-14__link image image5">        
+                                    <input type="radio" name="type_de_chaufface"  id="type_de_chaufface_radiateur_elec" value="Radiateur électrique à inertie">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_radiateur-inertie.svg" alt="Photo - Radiateur électrique à inertie">
+                                    Radiateur électrique à inertie
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                                </label>
+                            </div>
                             
-                            <label for="type_de_chaufface_2" class="select-item btn step-14__link image image5">             
-                                <input type="radio" name="type_de_chaufface"  id="type_de_chaufface_2" value="Plancher chauffant électrique">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_plancher-chauffant.svg" alt="Photo - Plancher chauffant électrique">
-                                Plancher chauffant électrique
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-                            
-                            <label for="type_de_chaufface_3" class="select-item btn step-14__link image image5">        
-                                <input type="radio" name="type_de_chaufface"  id="type_de_chaufface_3" value="Radiateur électrique à inertie">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_radiateur-inertie.svg" alt="Photo - Radiateur électrique à inertie">
-                                Radiateur électrique à inertie
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-
-                            <label for="type_de_chaufface_4" class="select-item btn step-14__link image image5">             
-                                <input type="radio" name="type_de_chaufface"  id="type_de_chaufface_4" value="Chaudière électrique">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chaudiere-electrique.svg" alt="Photo - Chaudière électrique">
-                                Chaudière électrique
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-                            
-                            <label for="type_de_chaufface_5" class="select-item btn step-14__link image image5">        
-                                <input type="radio" name="type_de_chaufface"  id="type_de_chaufface_5" value="Pompe à chaleur">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_pompe à chaleur.svg" alt="Photo - Pompe à chaleur">
-                                Pompe à chaleur
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-                            
-                            <label for="type_de_chaufface_6" class="select-item btn step-14__link image image5">        
-                                <input type="radio" name="type_de_chaufface"  id="type_de_chaufface_6" value="Chauffe eau solaire">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chauffage-solaire.svg" alt="Photo - Chauffe eau solaire">
-                                Chauffe eau solaire
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
+                            <div class="step-14__content optionWithImages" style="max-width: 615px;">
+                                <label for="type_de_chaufface_chaudiere_elec" class="select-item btn step-14__link image image5">             
+                                    <input type="radio" name="type_de_chaufface"  id="type_de_chaufface_chaudiere_elec" value="Chaudière électrique">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chaudiere-electrique.svg" alt="Photo - Chaudière électrique">
+                                    Chaudière électrique
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                                </label>
+                                
+                                <label for="type_de_chaufface_pompe_a_chaleur" class="select-item btn step-14__link image image5">        
+                                    <input type="radio" name="type_de_chaufface"  id="type_de_chaufface_pompe_a_chaleur" value="Pompe à chaleur">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_pompe à chaleur.svg" alt="Photo - Pompe à chaleur">
+                                    Pompe à chaleur
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                                </label>
+                                
+                                <label for="type_de_chaufface_chudiere_eau_solaire" class="select-item btn step-14__link image image5">        
+                                    <input type="radio" name="type_de_chaufface"  id="type_de_chaufface_chudiere_eau_solaire" value="Chauffe eau solaire">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chauffage-solaire.svg" alt="Photo - Chauffe eau solaire">
+                                    Chauffe eau solaire
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                                </label>
+                            </div>
                         </div>
                         
+                        <div id="source_energie_type_gaz_naturel" style="display: none;">
+                            <div class="step-14__content optionWithImages" style="max-width: 415px;">
+                                <label for="type_de_chaufface_chaudierer_gaz_natur_hors_condensa" class="select-item btn step-14__link image image5">                        
+                                    <input type="radio" name="type_de_chaufface" id="type_de_chaufface_chaudierer_gaz_natur_hors_condensa" value="Chaudière Gaz naturel hors condensation">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chaudiere-gaz-basse-temperature.svg" alt="Photo - Chaudière Gaz naturel hors condensation">
+                                    Chaudière Gaz naturel hors condensation
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                                </label>
+                                
+                                <label for="type_de_chaufface_chaudiere_gaz_natur_condensa" class="select-item btn step-14__link image image5">             
+                                    <input type="radio" name="type_de_chaufface"  id="type_de_chaufface_chaudiere_gaz_natur_condensa" value="Chaudière Gaz naturel à condensation">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chaudiere-gaz-condensation.svg" alt="Photo - Chaudière Gaz naturel à condensation">
+                                    Chaudière Gaz naturel à condensation
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                                </label>
+                            </div>
+
+                        </div>
+                        
+                        <div id="source_energie_type_gpl" style="display: none;">
+                            <div class="step-14__content optionWithImages" style="max-width: 620px;">
+                                <label for="type_de_chaufface_chaudiere_gpl_condensation" class="select-item btn step-14__link image image5">                        
+                                    <input type="radio" name="type_de_chaufface" id="type_de_chaufface_chaudiere_gpl_condensation" value="Chaudière GPL à condensation">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chaudiere-GPL-condensation.svg" alt="Photo - Chaudière GPL à condensation">
+                                    Chaudière GPL à condensation
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                                </label>
+                                
+                                <label for="type_de_chaufface_chaudiere_gpn_hor_condensation" class="select-item btn step-14__link image image5">                        
+                                    <input type="radio" name="type_de_chaufface" id="type_de_chaufface_chaudiere_gpn_chor_ondensation" value="Chaudière GPL hors condensation">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chaudiere-GPL-basse-temperature.svg" alt="Photo - Chaudière GPL hors condensation">
+                                    Chaudière GPL hors condensation
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                                </label>
+                                
+                                <label for="type_de_chaufface_poele_gpl" class="select-item btn step-14__link image image5">             
+                                    <input type="radio" name="type_de_chaufface"  id="type_de_chaufface_poele_gpl" value="Poêle GPL">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_poele-GPL.svg" alt="Photo - Poêle GPL">
+                                    Poêle GPL
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                                </label>
+                            </div>
+                        </div>
+                        
+                        
+                        <div id="source_energie_type_fioul" style="display: none;">
+                            <div class="step-14__content optionWithImages" style="max-width: 620px;">
+                                <label for="type_de_chauffage_chaudiere_fioul" class="select-item btn step-14__link image image5">                        
+                                    <input type="radio" name="type_de_chaufface" id="type_de_chauffage_chaudiere_fioul" value="Chaudière Fioul">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chaudiere-fioul-condensation.svg" alt="Photo - Chaudière Fioul">
+                                    Chaudière Fioul
+                                                    
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                                </label>
+                                
+                                <label for="type_de_chaufface_chaudiere_hors_condensation" class="select-item btn step-14__link image image5">                        
+                                    <input type="radio" name="type_de_chaufface" id="type_de_chaufface_chaudiere_hors_condensation" value="Chaudière Fioul hors condensation">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chaudiere-fioul-basse-temperature.svg" alt="Photo - Chaudière Fioul hors condensation">
+                                    Chaudière Fioul hors condensation
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                                </label>
+                                
+                                <label for="type_de_chaufface_poele_fioul" class="select-item btn step-14__link image image5">             
+                                    <input type="radio" name="type_de_chaufface"  id="type_de_chaufface_poele_fioul" value="Poêle GPL">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_poele-fioul.svg" alt="Photo - Poêle GPL">
+                                    Poêle Fioul
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                                </label>
+                            </div>
+                        </div>
+                        
+                        
+                        <div id="source_energie_type_bois" style="display: none;">
+                            <div class="step-14__content optionWithImages" style="max-width: 620px;">
+                                <label for="type_de_chaufface_chaudiere_bois" class="select-item btn step-14__link image image5">                        
+                                    <input type="radio" name="type_de_chaufface" id="type_de_chaufface_chaudiere_bois" value="Chaudière Bois">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chaudiere-bois.svg" alt="Photo - Chaudière Bois">
+                                    Chaudière Bois
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                                </label>
+                                
+                                <label for="type_de_chauffage_poele" class="select-item btn step-14__link image image5">                        
+                                    <input type="radio" name="type_de_chaufface" id="type_de_chauffage_poele" value="Poêle à buches classiques">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_poele-bois.svg" alt="Photo - Poêle à buches classiques">
+                                    Poêle à buches classiques
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                                </label>
+                                
+                                <label for="type_de_chauffage_cheminee" class="select-item btn step-14__link image image5">             
+                                    <input type="radio" name="type_de_chaufface"  id="type_de_chauffage_cheminee" value="Cheminée">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_Cheminee.svg" alt="Photo - Cheminée">
+                                    Cheminée
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                                </label>
+                            </div>
+                        </div>
+                        
+
                         <div class="inputs">
                             <div class="input-item">
                                 <label for="inputAnneeInstall">Année d’installation</label>
-                                <input id="inputAnneeInstall" type="number" name="source_energie_annee_install" class="" min="0">
-                                <span class="step-1__content__notice">Année d’installation requis </span>
+                                <select name="annee_contruction_chauffage" id="">
+                                        <option disabled selected>Choisir</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2014">2014</option>
+                                        <option value="2013">2013</option>
+                                        <option value="2012">2012</option>
+                                        <option value="2011">2011</option>
+                                        <option value="2010">2010</option>
+                                        <option value="2009">2009</option>
+                                        <option value="2008">2008</option>
+                                        <option value="2007">2007</option>
+                                        <option value="2006">2006</option>
+                                        <option value="2005">2005</option>
+                                        <option value="2004">2004</option>
+                                        <option value="2003">2003</option>
+                                        <option value="2002">2002</option>
+                                        <option value="2001">2001</option>
+                                        <option value="2000">2000</option>
+                                        <option value="1999">1999</option>
+                                        <option value="1998">1998</option>
+                                        <option value="1997">1997</option>
+                                        <option value="1996">1996</option>
+                                        <option value="1995">1995</option>
+                                        <option value="1994">1994</option>
+                                        <option value="1995">1993</option>
+                                        <option value="1992">1992</option>
+                                        <option value="1991">1991</option>
+                                        <option value="1990">1990</option>
+                                        <option value="1989">1989</option>
+                                        <option value="1988">1988</option>
+                                        <option value="1987">1987</option>
+                                        <option value="1986">1986</option>
+                                        <option value="1985">1985</option>
+                                        <option value="1984">1984</option>
+                                        <option value="1983">1983</option>
+                                        <option value="1982">1982</option>
+                                        <option value="1981">1981</option>
+                                        <option value="1980">1980</option>
+                                        <option value="1979">1979</option>
+                                        <option value="1978">1978</option>
+                                        <option value="1977">1977</option>
+                                        <option value="1976">1976</option>
+                                        <option value="1975">1975</option>
+                                        <option value="Avant 1975"> Avant 1975</option>
+                                    </select>
                             </div>
                         </div>
 
@@ -1162,17 +1411,30 @@
                                         <button class="counter__decrement" type="button">
                                             -
                                         </button>
-                                        <span class="counter__value" name="temperature_de_confort">0</span>
+                                        <span class="counter__value" name="temperature_de_confort">17</span>
                                         <button class="counter__increment" type="button">
                                             +
                                         </button>
                                     </div>
                                     <span class="step-1__content__notice">Nombre d’habitants requis </span>
-
                                 </div>
                             </div>  
                         </div>
                             
+                        <div class="inputs">
+                            <div class="input-item">
+                                <label for="type_de_chaufface_nombre_d_annee_a_indexer">Nombre d'année à indexer</label>
+                                <select name="type_de_chaufface_nombre_d_annee_a_indexer" id="">
+                                    <option disabled selected>Choisir</option>
+                                    <option value="05">05</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                </select>
+                            </div>
+                        </div>
+
                         <div class="inputs">    
                             <div class="input-item">
                                 <label for="inputEstimFactChauff">Estimation de la facture de chauffage (€/an)</label>
@@ -1181,7 +1443,7 @@
                             </div>
                         </div>
                           
-                        <div class="inputs">
+                        <div class="inputs" id="source_energie_1_chauffage_pric_Elect" style="display: block;">
                             <div class="input-item">
                                 <label for="inputPrixElec">Prix de l'électricité (€/kWh)</label>
                                 <input id="inputPrixElec" type="number" name="prix_de_l_electricite" class="" min="0">
@@ -1191,7 +1453,7 @@
                         
                         <div class="inputs">
                             <div class="input-item">
-                                <label for="inputEvol25Annee">Évolution du <span>prix du fioul </span> sur les 25 prochaines années (%) </label>
+                                <label for="inputEvol25Annee">Évolution du <span>prix du fioul </span> <!--sur les 25 prochaines années (%)--> </label>
                                 <div class="input-item-range">
                                     <span class="rangeMin"> 0%</span>
                                         <p class="range-field">
@@ -1216,7 +1478,7 @@
                 <div class="modal-content">
                     <h4 style="color:#0288d1;">Eau chaude sanitaire </h4>
                         <h2>Source d’énergie</h2>
-                        <div class="step-13__content optionWithImages" style="max-width: 83%;">
+                        <div class="step-13__content optionWithImages" style="max-width: 660px;">
                             <label for="source_energie_eau_chaude_1" class="select-item btn step-13__link image">                        
                                 <input type="radio" name="source_energie_eau_chaude" id="source_energie_eau_chaude_1" value="Electricité">
                                 <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_électricité.svg" alt="Photo - Electricité">
@@ -1238,12 +1500,12 @@
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
 
-                            <label for="source_energie_eau_chaude_4" class="select-item btn step-13__link image">             
+                            <!-- <label for="source_energie_eau_chaude_4" class="select-item btn step-13__link image">             
                                 <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_4" value="FIOUL">
                                 <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_fioul.svg" alt="Photo - FIOUL">
                                 FIOUL
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
+                            </label> -->
                             
                             <label for="source_energie_eau_chaude_5" class="select-item btn step-13__link image">        
                                 <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_5" value="Bois">
@@ -1253,8 +1515,8 @@
                             </label>
                         </div>
 
-                        <h2>Type d'eau chaude sanitaire</h2>
-                        <div class="step-14__content optionWithImages" style="max-width: 83%;">
+                        <h2 style="margin-top: 40px!important;margin-bottom:25px;">Type d'eau chaude sanitaire</h2>
+                        <div class="step-14__content optionWithImages" style="max-width: 400px;">
                             <label for="type_de_chaufface_1" class="select-item btn step-14__link image" style="width: 190px!important;">                        
                                 <input type="radio" name="type_d_eau_chaude" id="type_d_eau_chaude_1" value="Chauffe-eau électrique">
                                 <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chauffe-eau-electrique.svg" alt="Photo - Chauffe-eau électrique">
@@ -1268,7 +1530,8 @@
                                 Chauffe-eau thermodynamique
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
-                            
+                        </div>
+                        <div class="step-14__content optionWithImages" style="max-width: 400px;">
                             <label for="type_d_eau_chaude_3" class="select-item btn step-14__link image" style="width: 190px!important;">        
                                 <input type="radio" name="type_d_eau_chaude"  id="type_d_eau_chaude_3" value="Module ECS intégré à PAC">
                                 <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_ECS-et-PAC.svg" alt="Photo - Module ECS intégré à PAC">
@@ -1287,83 +1550,132 @@
                         <div class="inputs">
                             <div class="input-item">
                                 <label for="inputAnneeInstall">Année d’installation</label>
-                                <input id="inputAnneeInstall" type="number" name="source_energie_annee_install" class="" min="0">
-                                <span class="step-1__content__notice">Année d’installation requis </span>
+                                <select name="annee_contruction_eau_chaude_sani" id="">
+                                    <option disabled selected>Choisir</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2011">2011</option>
+                                    <option value="2010">2010</option>
+                                    <option value="2009">2009</option>
+                                    <option value="2008">2008</option>
+                                    <option value="2007">2007</option>
+                                    <option value="2006">2006</option>
+                                    <option value="2005">2005</option>
+                                    <option value="2004">2004</option>
+                                    <option value="2003">2003</option>
+                                    <option value="2002">2002</option>
+                                    <option value="2001">2001</option>
+                                    <option value="2000">2000</option>
+                                    <option value="1999">1999</option>
+                                    <option value="1998">1998</option>
+                                    <option value="1997">1997</option>
+                                    <option value="1996">1996</option>
+                                    <option value="1995">1995</option>
+                                    <option value="1994">1994</option>
+                                    <option value="1995">1993</option>
+                                    <option value="1992">1992</option>
+                                    <option value="1991">1991</option>
+                                    <option value="1990">1990</option>
+                                    <option value="1989">1989</option>
+                                    <option value="1988">1988</option>
+                                    <option value="1987">1987</option>
+                                    <option value="1986">1986</option>
+                                    <option value="1985">1985</option>
+                                    <option value="1984">1984</option>
+                                    <option value="1983">1983</option>
+                                    <option value="1982">1982</option>
+                                    <option value="1981">1981</option>
+                                    <option value="1980">1980</option>
+                                    <option value="1979">1979</option>
+                                    <option value="1978">1978</option>
+                                    <option value="1977">1977</option>
+                                    <option value="1976">1976</option>
+                                    <option value="1975">1975</option>
+                                    <option value="Avant 1975"> Avant 1975</option>
+                                </select>
                             </div>
                         </div>
 
                         
-                        <h2>Capacité de stockage</h2>
-                        <div class="step-14__content optionWithImages" style="max-width: 83%;">
+                        <h2 style="margin-top: 40px!important;margin-bottom:25px;">Capacité de stockage</h2>
+                        <div class="step-14__content optionWithImagesColumn" >
                             <label for="capacite_de_stockage_eau_chaude_1" class="select-item btn step-14__link image">                        
                                 <input type="radio" name="capacite_de_stockage_eau_chaude" id="capacite_de_stockage_eau_chaude_1" value="Pas de stockage">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_pas-de-stockage.svg" alt="Photo - Pas de stockage">
+                                <img class="step-left__img" src="./assets/images/picto_gte/icones-normal_pas-de-stockage.svg" alt="Photo - Pas de stockage">
                                 Pas de stockage
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
                             <label for="capacite_de_stockage_eau_chaude_2" class="select-item btn step-14__link image">             
                                 <input type="radio" name="capacite_de_stockage_eau_chaude"  id="capacite_de_stockage_eau_chaude_2" value="150 litres">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_capacite-100-150L.svg" alt="Photo - 150 litres">
+                                <img class="step-left__img" src="./assets/images/picto_gte/icones-normal_capacite-100-150L.svg" alt="Photo - 150 litres">
                                 150 litres
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
                             <label for="capacite_de_stockage_eau_chaude_3" class="select-item btn step-14__link image">        
                                 <input type="radio" name="capacite_de_stockage_eau_chaude"  id="capacite_de_stockage_eau_chaude_3" value="200 litres">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_capacite-150-200L.svg" alt="Photo - 200 litres">
+                                <img class="step-left__img" src="./assets/images/picto_gte/icones-normal_capacite-150-200L.svg" alt="Photo - 200 litres">
                                 200 litres
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
 
                             <label for="capacite_de_stockage_eau_chaude_4" class="select-item btn step-14__link image">             
                                 <input type="radio" name="capacite_de_stockage_eau_chaude"  id="capacite_de_stockage_eau_chaude_4" value="250 litres">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_capacite-200-300L.svg" alt="Photo - 250 litres">
+                                <img class="step-left__img" src="./assets/images/picto_gte/icones-normal_capacite-200-300L.svg" alt="Photo - 250 litres">
                                 250 litres
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
                             <label for="capacite_de_stockage_eau_chaude_5" class="select-item btn step-14__link image">             
                                 <input type="radio" name="capacite_de_stockage_eau_chaude"  id="capacite_de_stockage_eau_chaude_5" value="300 litres et plus">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_capacite-superieure300L.svg" alt="Photo - 300 litres et plus">
+                                <img class="step-left__img" src="./assets/images/picto_gte/icones-normal_capacite-superieure300L.svg" alt="Photo - 300 litres et plus">
                                 300 litres et plus
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                         </div>
 
-                        <h2>Utilisation de l'eau chaude sanitaire</h2>
-                        <div class="step-14__content optionWithImages" style="max-width: 83%;">
+                        <h2 style="margin-top: 40px!important;margin-bottom:25px;">Utilisation de l'eau chaude sanitaire</h2>
+                        <div class="step-14__content optionWithImagesColumn">
                             <label for="utilisation_eau_chaude_1" class="select-item btn step-14__link image">                        
                                 <input type="radio" name="utilisation_eau_chaude" id="utilisation_eau_chaude_1" value="Sobre">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_ECS-sobre.svg" alt="Photo - Sobre">
+                                <img class="step-left__img" src="./assets/images/picto_gte/icones-normal_ECS-sobre.svg" alt="Photo - Sobre">
                                 Sobre
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
                             <label for="utilisation_eau_chaude_2" class="select-item btn step-14__link image">             
                                 <input type="radio" name="utilisation_eau_chaude"  id="utilisation_eau_chaude_2" value="Modérée">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_ECS-modere.svg" alt="Photo - Modérée">
+                                <img class="step-left__img" src="./assets/images/picto_gte/icones-normal_ECS-modere.svg" alt="Photo - Modérée">
                                 Modérée
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
                             <label for="utilisation_eau_chaude_3" class="select-item btn step-14__link image">        
                                 <input type="radio" name="utilisation_eau_chaude"  id="utilisation_eau_chaude_3" value="Normale">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_ECS-normal.svg" alt="Photo - Normale">
+                                <img class="step-left__img" src="./assets/images/picto_gte/icones-normal_ECS-normal.svg" alt="Photo - Normale">
                                 Normale
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
 
                             <label for="utilisation_eau_chaude_4" class="select-item btn step-14__link image">             
                                 <input type="radio" name="utilisation_eau_chaude"  id="utilisation_eau_chaude_4" value="Intensive">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_ECS_intensif.svg" alt="Photo - Intensive">
+                                <img class="step-left__img" src="./assets/images/picto_gte/icones-normal_ECS_intensif.svg" alt="Photo - Intensive">
                                 Intensive
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
                             <label for="utilisation_eau_chaude_5" class="select-item btn step-14__link image">             
                                 <input type="radio" name="utilisation_eau_chaude"  id="utilisation_eau_chaude_5" value="Balnéo">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_ECS-balneo.svg" alt="Photo - Balnéo">
+                                <img class="step-left__img" src="./assets/images/picto_gte/icones-normal_ECS-balneo.svg" alt="Photo - Balnéo">
                                 Balnéo
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
@@ -1389,41 +1701,41 @@
              <!-- Modal Structure -->
              <div id="modal3" class="modal">
                 <div class="modal-content">
-                    <h4 style="color:#d81159;margin-bottom:0;">Eau chaude sanitaire </h4>
+                    <h4 style="color:#d81159;margin-bottom:0;">Appareils électriques </h4>
                     <h5 style="color:#d81159;margin-bottom:40px; text-align:center;">(Appareils et équipements électriques)</h5>
                         <h2>Utilisation de vos appareils et équipements électriques</h2>
-                        <div class="step-13__content optionWithImages" style="max-width: 83%;">
+                        <div class="step-13__content optionWithImagesColumn" >
                             <label for="utilisation_appareil_equip_electrique_1" class="select-item btn step-13__link image">                        
                                 <input type="radio" name="utilisation_appareil_equip_electrique" id="utilisation_appareil_equip_electrique_1" value="Sobre">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icone_tache-menagere-sobre.svg" alt="Photo - Sobre">
+                                <img class="step-left__img" src="./assets/images/picto_gte/icone_tache-menagere-sobre.svg" alt="Photo - Sobre">
                                 Sobre
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
                             <label for="utilisation_appareil_equip_electrique_2" class="select-item btn step-13__link image">             
                                 <input type="radio" name="utilisation_appareil_equip_electrique"  id="utilisation_appareil_equip_electrique_2" value="Modérée">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icone_tache-menagere-moderee.svg" alt="Photo - Modérée">
+                                <img class="step-left__img" src="./assets/images/picto_gte/icone_tache-menagere-moderee.svg" alt="Photo - Modérée">
                                 Modérée
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
                             <label for="utilisation_appareil_equip_electrique_3" class="select-item btn step-13__link image">        
                                 <input type="radio" name="utilisation_appareil_equip_electrique"  id="utilisation_appareil_equip_electrique_3" value="Normale">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icone_tache-menagere-elevee.svg" alt="Photo - Normale">
+                                <img class="step-left__img" src="./assets/images/picto_gte/icone_tache-menagere-elevee.svg" alt="Photo - Normale">
                                 Normale
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
 
                             <label for="utilisation_appareil_equip_electrique_4" class="select-item btn step-13__link image">             
                                 <input type="radio" name="utilisation_appareil_equip_electrique"  id="source_energie_eau_chaude_4" value="Élevée">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icone_tache-menagere-elevee.svg" alt="Photo - Élevée">
+                                <img class="step-left__img" src="./assets/images/picto_gte/icone_tache-menagere-elevee.svg" alt="Photo - Élevée">
                                 Élevée
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
                             <label for="utilisation_appareil_equip_electrique_5" class="select-item btn step-13__link image">        
                                 <input type="radio" name="utilisation_appareil_equip_electrique"  id="utilisation_appareil_equip_electrique_5" value="Très élevée">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icone_tache-menagere-tres-elevee.svg" alt="Photo - Très élevée">
+                                <img class="step-left__img" src="./assets/images/picto_gte/icone_tache-menagere-tres-elevee.svg" alt="Photo - Très élevée">
                                 Très élevée
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
@@ -1438,20 +1750,6 @@
                             </div>
                         </div>
                         
-                        
-                        <div class="inputs">
-                            <div class="input-item">
-                                <label for="inputEvolPrixElec25Annee">Évolution du prix de l'électricité sur les 25 prochaines années (%) </label>
-                                <div class="input-item-range">
-                                    <span class="rangeMin"> 0%</span>
-                                        <p class="range-field">
-                                            <input type="range" id="inputEvolPrixElec25Annee" name="evolution_prix_elec_sur_les_25_prochaine_annees" min="0" max="7" />
-                                        </p>
-                                    <span class="rangeMax">7%</span>
-                                </div>
-                            </div>
-                        </div>
-
                     </fieldset>
                 </div>
                 
@@ -1471,60 +1769,59 @@
                         <div class="step-13__content optionWithImages" style="max-width: 63%;">
                             <label for="type_d_ampoule_eclairage_1" class="select-item btn step-13__link image" style="width:190px!important;">                        
                                 <input type="radio" name="type_d_ampoule_eclairage" id="type_d_ampoule_eclairage_1" value="Ampoules incandescentes">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_ampoules-incandescentes.svg" alt="Photo - Ampoules incandescentes">
+                                <img class="step-left__img" src="./assets/images/picto_gte/icones-normal_ampoules-incandescentes.svg" alt="Photo - Ampoules incandescentes">
                                 Ampoules incandescentes
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
                             <label for="type_d_ampoule_eclairage_2" class="select-item btn step-13__link image" style="width:190px!important;">             
                                 <input type="radio" name="type_d_ampoule_eclairage"  id="type_d_ampoule_eclairage_2" value="Ampoules LED">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_ampoules-LED.svg" alt="Photo - Ampoules LED">
+                                <img class="step-left__img" src="./assets/images/picto_gte/icones-normal_ampoules-LED.svg" alt="Photo - Ampoules LED">
                                 Ampoules LED
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
                             <label for="type_d_ampoule_eclairage_3" class="select-item btn step-13__link image" style="width:190px!important;">        
                                 <input type="radio" name="type_d_ampoule_eclairage"  id="type_d_ampoule_eclairage_3" value="Mixte">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_ampoules-mixtes.svg" alt="Photo - Mixte">
+                                <img class="step-left__img" src="./assets/images/picto_gte/icones-normal_ampoules-mixtes.svg" alt="Photo - Mixte">
                                 Mixte
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                         </div>
-
                         
-                        <h2>Utilisation moyenne de l'éclairage par jour</h2>
-                        <div class="step-13__content optionWithImages" style="max-width: 83%;">
+                        <h2 style="margin-top: 40px!important;margin-bottom:25px;">Utilisation moyenne de l'éclairage par jour</h2>
+                        <div class="step-13__content optionWithImagesColumn">
                             <label for="utilisation_moyenne_eclairage_1" class="select-item btn step-13__link image">                        
                                 <input type="radio" name="utilisation_moyenne_eclairage" id="utilisation_moyenne_eclairage_1" value="Sobre">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_Eclairage-sobre.svg" alt="Photo - Sobre">
+                                <img class="step-left__img" src="./assets/images/picto_gte/icones-normal_Eclairage-sobre.svg" alt="Photo - Sobre">
                                 Sobre
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
                             <label for="utilisation_moyenne_eclairage_2" class="select-item btn step-13__link image">             
                                 <input type="radio" name="utilisation_moyenne_eclairage"  id="utilisation_moyenne_eclairage_2" value="Modérée">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_Eclairage-modere.svg" alt="Photo - Modérée">
+                                <img class="step-left__img" src="./assets/images/picto_gte/icones-normal_Eclairage-modere.svg" alt="Photo - Modérée">
                                 Modérée
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
                             <label for="utilisation_moyenne_eclairage_3" class="select-item btn step-13__link image">        
                                 <input type="radio" name="utilisation_moyenne_eclairage"  id="utilisation_moyenne_eclairage_3" value="Moyenne">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_Eclairage-normal.svg" alt="Photo - Moyenne">
+                                <img class="step-left__img" src="./assets/images/picto_gte/icones-normal_Eclairage-normal.svg" alt="Photo - Moyenne">
                                 Moyenne
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
                             <label for="utilisation_moyenne_eclairage_4" class="select-item btn step-13__link image">        
                                 <input type="radio" name="utilisation_moyenne_eclairage"  id="utilisation_moyenne_eclairage_4" value="Élevée">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_Eclairage-eleve.svg" alt="Photo - Élevée">
+                                <img class="step-left__img" src="./assets/images/picto_gte/icones-normal_Eclairage-eleve.svg" alt="Photo - Élevée">
                                 Élevée
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
                             <label for="utilisation_moyenne_eclairage_5" class="select-item btn step-13__link image">        
                                 <input type="radio" name="utilisation_moyenne_eclairage"  id="utilisation_moyenne_eclairage_5" value="Très élevée">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_Eclairage-tres-eleve.svg" alt="Photo - Très élevée">
+                                <img class="step-left__img" src="./assets/images/picto_gte/icones-selectionnee_Eclairage-tres-eleve.svg" alt="Photo - Très élevée">
                                 Très élevée
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
