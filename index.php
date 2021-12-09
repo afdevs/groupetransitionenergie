@@ -1158,39 +1158,45 @@
                     <h4 style="color: #50249f;">Chauffage </h4>
                     <fieldset class="step-13">
                         <h2>Source d’énergie</h2>
-                        <div class="step-13__content optionWithImages">
-                            <label for="source_energie_1_chauffage" class="select-item btn step-13__link image">                        
-                                <input type="radio" name="source_energie" id="source_energie_1_chauffage" value="Electricité">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_électricité.svg" alt="Photo - Electricité">
-                                Electricité
+                        <div class="step-13__content optionWithImages" style="max-width: 760px;">
+                            <label for="source_energie_1_chauffage" class="select-item btn step-13__link image chauff_image_3">                        
+                                <input type="radio" name="source_energie" id="source_energie_1_chauffage" value="Chauffage au Fioul ">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_au_fioul_crop.png" alt="Photo - Chauffage au Fioul ">
+                                Chauffage au Fioul 
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="source_energie_2_chauffage" class="select-item btn step-13__link image">             
-                                <input type="radio" name="source_energie"  id="source_energie_2_chauffage" value="Gaz naturel">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_gaz naturel.svg" alt="Photo - Gaz naturel">
-                                Gaz naturel
+                            <label for="source_energie_2_chauffage" class="select-item btn step-13__link image chauff_image_3">             
+                                <input type="radio" name="source_energie"  id="source_energie_2_chauffage" value="Chauffage Électrique">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_elec_crop.png" alt="Photo - Chauffage Électrique">
+                                Chauffage Électrique
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
-                            
-                            <label for="source_energie_3_chauffage" class="select-item btn step-13__link image">        
-                                <input type="radio" name="source_energie"  id="source_energie_3_chauffage" value="GPL">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_GPL.svg" alt="Photo - GPL">
-                                GPL
+                            <label for="source_energie_3_chauffage" class="select-item btn step-13__link image chauff_image_3">        
+                                <input type="radio" name="source_energie"  id="source_energie_3_chauffage" value=" Chauffage au Gaz ">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/chuaffage_au_gaz_crop.png" alt="Photo -  Chauffage au Gaz ">
+                                Chauffage au Gaz 
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
 
-                            <label for="source_energie_4_chauffage" class="select-item btn step-13__link image">             
-                                <input type="radio" name="source_energie"  id="source_energie_4_chauffage" value="FIOUL">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_fioul.svg" alt="Photo - FIOUL">
-                                FIOUL
+                            <label for="source_energie_4_chauffage" class="select-item btn step-13__link image chauff_image_3">             
+                                <input type="radio" name="source_energie"  id="source_energie_4_chauffage" value=" Chauffage au Bois">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_au_bois_crop.png" alt="Photo -  Chauffage au Bois ">
+                                Chauffage au Bois 
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="source_energie_5_chauffage" class="select-item btn step-13__link image">        
-                                <input type="radio" name="source_energie"  id="source_energie_5_chauffage" value="Bois">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_bois.svg" alt="Photo - Bois">
-                                Bois
+                            <label for="source_energie_5_chauffage" class="select-item btn step-13__link image chauff_image_3">        
+                                <input type="radio" name="source_energie"  id="source_energie_5_chauffage" value=" Pompe à Chaleur">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_pompe_a_chaleur_crop.png" alt="Photo -  Pompe à Chaleur ">
+                                Pompe à Chaleur
+                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                            </label>
+                            
+                            <label for="source_energie_5_chauffage" class="select-item btn step-13__link image chauff_image_3">        
+                                <input type="radio" name="source_energie"  id="source_energie_5_chauffage" value="Chauffage au Charbon ">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/chaffage_au_charbon_crop.png" alt="Photo -  Chauffage au Charbon">
+                                Chauffage au Charbon 
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                         </div>
@@ -1478,42 +1484,51 @@
                 <div class="modal-content">
                     <h4 style="color:#0288d1;">Eau chaude sanitaire </h4>
                         <h2>Source d’énergie</h2>
-                        <div class="step-13__content optionWithImages" style="max-width: 83%;">
-                            <label for="source_energie_eau_chaude_elec_1" class="select-item btn step-13__link image">                        
-                                <input type="radio" name="source_energie_eau_chaude" id="source_energie_eau_chaude_elec_1" value="Electricité">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_électricité.svg" alt="Photo - Electricité">
-                                Electricité
+                        <div class="step-13__content optionWithImages" style="max-width: 760px;">
+                            
+                            <label for="source_energie_eau_chaude_fioul_1" class="select-item btn step-13__link image chauff_image_3">                        
+                                <input type="radio" name="source_energie_eau_chaude" id="source_energie_eau_chaude_fioul_1" value="Chauffage au Fioul ">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_au_fioul_crop.png" alt="Photo - Chauffage au Fioul ">
+                                Chauffage au Fioul 
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="source_energie_eau_chaude_gaz_natur_2" class="select-item btn step-13__link image">             
-                                <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_gaz_natur_2" value="Gaz naturel">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_gaz naturel.svg" alt="Photo - Gaz naturel">
-                                Gaz naturel
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-                            
-                            <label for="source_energie_eau_chaude_gpl_3" class="select-item btn step-13__link image">        
-                                <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_gpl_3" value="GPL">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_GPL.svg" alt="Photo - GPL">
-                                GPL
+                            <label for="source_energie_eau_chaude_elec_2" class="select-item btn step-13__link image chauff_image_3">             
+                                <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_elec_2" value="Chauffage Électrique">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_elec_crop.png" alt="Photo - Chauffage Électrique">
+                                Chauffage Électrique
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
 
-                            <label for="source_energie_eau_chaude_fioul_4" class="select-item btn step-13__link image">             
-                                <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_fioul_4" value="FIOUL">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_fioul.svg" alt="Photo - FIOUL">
-                                FIOUL
+                            <label for="source_energie_eau_chaude_gaz_3" class="select-item btn step-13__link image chauff_image_3">        
+                                <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_gaz_3" value=" Chauffage au Gaz ">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/chuaffage_au_gaz_crop.png" alt="Photo -  Chauffage au Gaz ">
+                                Chauffage au Gaz 
+                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                            </label>
+
+                            <label for="source_energie_eau_chaude_bois_4" class="select-item btn step-13__link image chauff_image_3">             
+                                <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_bois_4" value=" Chauffage au Bois">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_au_bois_crop.png" alt="Photo -  Chauffage au Bois ">
+                                Chauffage au Bois 
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="source_energie_eau_chaude_bois_5" class="select-item btn step-13__link image">        
-                                <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_bois_5" value="Bois">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_bois.svg" alt="Photo - Bois">
-                                Bois
+                            <label for="source_energie_eau_chaude_pompe_a_chauleur_5" class="select-item btn step-13__link image chauff_image_3">        
+                                <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_pompe_a_chauleur_5" value=" Pompe à Chaleur">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_pompe_a_chaleur_crop.png" alt="Photo -  Pompe à Chaleur ">
+                                Pompe à Chaleur
+                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                            </label>
+                            
+                            <label for="source_energie_eau_chaude_chauffr_charbon_6" class="select-item btn step-13__link image chauff_image_3">        
+                                <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_chauffr_charbon_6" value="Chauffage au Charbon ">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/chaffage_au_charbon_crop.png" alt="Photo -  Chauffage au Charbon">
+                                Chauffage au Charbon 
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                         </div>
+                        
                         <div id="source_energie_eau_chaude_Elect" style="display:none;">
                             <h2 style="margin-top: 40px!important;margin-bottom:25px;">Type d'eau chaude sanitaire</h2>
                             <div class="step-14__content optionWithImages" style="max-width: 400px;">

@@ -643,24 +643,29 @@ jQuery(function($){
       $('#source_energie_type_gpl').css('display', 'none')
       $('#source_energie_1_chauffage_pric_Elect').css('display', 'none')
     })
+    
+    $("label[for='source_energie_eau_chaude_fioul_1']").click(function(){
+      $('#source_energie_eau_chaude_Elect').css('display', 'none')
+    })
+    
 
-    $("label[for='source_energie_eau_chaude_elec_1']").click(function(){
+    $("label[for='source_energie_eau_chaude_elec_2']").click(function(){
       $('#source_energie_eau_chaude_Elect').css('display', 'block')
     })
 
-    $("label[for='source_energie_eau_chaude_gaz_natur_2']").click(function(){
+    $("label[for='source_energie_eau_chaude_gaz_3']").click(function(){
       $('#source_energie_eau_chaude_Elect').css('display', 'none')
     })
     
-    $("label[for='source_energie_eau_chaude_gpl_3']").click(function(){
+    $("label[for='source_energie_eau_chaude_bois_4']").click(function(){
       $('#source_energie_eau_chaude_Elect').css('display', 'none')
     })
     
-    $("label[for='source_energie_eau_chaude_fioul_4']").click(function(){
+    $("label[for='source_energie_eau_chaude_pompe_a_chauleur_5']").click(function(){
       $('#source_energie_eau_chaude_Elect').css('display', 'none')
     })
     
-    $("label[for='source_energie_eau_chaude_bois_5']").click(function(){
+    $("label[for='source_energie_eau_chaude_chauffr_charbon_6']").click(function(){
       $('#source_energie_eau_chaude_Elect').css('display', 'none')
     })
     

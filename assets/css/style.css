@@ -530,6 +530,10 @@ main .modalContainer .modal h4, h2{
 main .modalContainer .modal-content fieldset{
     max-width: 850px!important;
 }
+main .modalContainer .modal-content .select-wrapper .caret{
+    display: none!important;
+}
+
 main .modalContainer .modal-content label.image, main .modalContainer .modal-content label.image4, main .modalContainer .modal-content label.image5{
     background-color: #fff;
     border: 2px solid transparent!important;
@@ -545,6 +549,15 @@ main .modalContainer .modal-content label.image, main .modalContainer .modal-con
     flex-direction: column;
     font-weight: 100!important;
     position: relative;
+}
+main .modalContainer .modal-content label.chauff_image_3{
+    width: 240px !important;
+    height: 168px !important;
+    margin-bottom: 20px;
+}
+
+main .modalContainer .step-chauff__img{
+    width: 60px;
 }
 
 main .modalContainer .modal-content label.image:hover, main .modalContainer .modal-content label.image4:hover, main .modalContainer .modal-content label.image5:hover{
