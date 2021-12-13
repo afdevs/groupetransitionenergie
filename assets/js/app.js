@@ -11,7 +11,10 @@ const inputsCountersValues={
     consommation_annuelle_fioul: 0,
     consommation_annuelle_bois: 0,
     consommation_annuelle_autre:0,
-    temperature_de_confort: 17
+    temperature_de_confort: 17,
+    votre_conso_actuel: 0,
+    votre_conso_sur_x_annee: 0,
+    moyenne_conso_sur_x_annee: 0
 }
 
 jQuery(function($){
@@ -388,7 +391,7 @@ jQuery(function($){
       });
 
       $('.navigationButton').click(function(){
-        for(let i=0; i<19; i++){
+        for(let i=0; i<17; i++){
           $('.step-'+i).removeAttr('style');
         }
 
@@ -510,7 +513,90 @@ jQuery(function($){
               next_step_form.show();
               stepVisited.push(next_step);
             });
+        } if($(this).attr('aria-selected')==='part-4'){
+          $('.step-'+1).css('display', 'none');
+          current=14;
+          $('.page .page__content #regiration_form').css("transform"," translateX(50px)" );
+          $('.page .page__content #regiration_form').css("transition", "none" );
+
+          previousStep=parseInt($(this).attr('skipStep')) ? current:  null;
+          current= $(this).attr('skipStep') ? parseInt($(this).attr('skipStep')) : current;
+          
+          current_step =  $('.step-'+current);
+          next_step=++current;
+          next_step_form =  $('.step-'+next_step);
+          
+          if (current >=1 && current<=25){ 
+            $('.page .previous').css('visibility', 'visible');
+          }else{
+              $('.page .previous').css('visibility', 'hidden');
+          }
+          
+          if(current>9){
+            $('.main-cta').css('visibility', 'hidden');
+          }else{
+            $('.main-cta').css('visibility', 'visible');
+          }
+
+          handleStepsDesign(current)
+
+          if (previousStep){ $('.step-'+previousStep).hide()}
+          current_step.hide();
+
+          $('.page .page__content #regiration_form').css("transition", ".4s ease-out" );
+          $('.page .page__content #regiration_form').css("transform"," translateX(0px)" );
+          
+          
+          
+          next_step_form.fadeTo('slow', 1, function(){
+            setProgressBar(next_step);
+            next_step_form.show();
+            stepVisited.push(next_step);
+          });
+
+        } if($(this).attr('aria-selected')==='part-5'){
+          $('.step-'+1).css('display', 'none');
+          current=15;
+          $('.page .page__content #regiration_form').css("transform"," translateX(50px)" );
+          $('.page .page__content #regiration_form').css("transition", "none" );
+
+          previousStep=parseInt($(this).attr('skipStep')) ? current:  null;
+          current= $(this).attr('skipStep') ? parseInt($(this).attr('skipStep')) : current;
+          
+          current_step =  $('.step-'+current);
+          next_step=++current;
+          next_step_form =  $('.step-'+next_step);
+          
+          if (current >=1 && current<=25){ 
+            $('.page .previous').css('visibility', 'visible');
+          }else{
+              $('.page .previous').css('visibility', 'hidden');
+          }
+          
+          if(current>9){
+            $('.main-cta').css('visibility', 'hidden');
+          }else{
+            $('.main-cta').css('visibility', 'visible');
+          }
+
+          handleStepsDesign(current)
+
+          if (previousStep){ $('.step-'+previousStep).hide()}
+          current_step.hide();
+
+          $('.page .page__content #regiration_form').css("transition", ".4s ease-out" );
+          $('.page .page__content #regiration_form').css("transform"," translateX(0px)" );
+          
+          
+          
+          next_step_form.fadeTo('slow', 1, function(){
+            setProgressBar(next_step);
+            next_step_form.show();
+            stepVisited.push(next_step);
+          });
+
         }
+        //end
       })
 
       // Change progress bar action
@@ -540,7 +626,16 @@ jQuery(function($){
           $("#part-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-3").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-4 h5").hasClass('step-list-item-disabled')){
+          $("#part-4 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-4").removeClass('step-list-item-active',1000, 'easeInBack');
 
+        if(!$("#part-5 h5").hasClass('step-list-item-disabled')){
+          $("#part-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-5").removeClass('step-list-item-active',1000, 'easeInBack');
       } else if(current<=1){
         if(!$("#part-1").hasClass('step-list-item-active')){
           $("#part-1").addClass('step-list-item-active')
@@ -556,6 +651,66 @@ jQuery(function($){
           $("#part-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-3").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-4 h5").hasClass('step-list-item-disabled')){
+          $("#part-4 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-4").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-5 h5").hasClass('step-list-item-disabled')){
+          $("#part-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-5").removeClass('step-list-item-active',1000, 'easeInBack');
+      }else if(current==15){
+        if(!$("#part-4").hasClass('step-list-item-active')){
+          $("#part-4").addClass('step-list-item-active')
+        }
+        $("#part-4 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
+
+        if(!$("#part-2 h5").hasClass('step-list-item-disabled')){
+          $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-3 h5").hasClass('step-list-item-disabled')){
+          $("#part-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-3").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-1 h5").hasClass('step-list-item-disabled')){
+          $("#part-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-1").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-5 h5").hasClass('step-list-item-disabled')){
+          $("#part-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-5").removeClass('step-list-item-active',1000, 'easeInBack');
+      }else if(current==16){
+        if(!$("#part-5").hasClass('step-list-item-active')){
+          $("#part-5").addClass('step-list-item-active')
+        }
+        $("#part-5 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
+
+        if(!$("#part-2 h5").hasClass('step-list-item-disabled')){
+          $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-3 h5").hasClass('step-list-item-disabled')){
+          $("#part-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-3").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-4 h5").hasClass('step-list-item-disabled')){
+          $("#part-4 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-4").removeClass('step-list-item-active',1000, 'easeInBack');
+
+        if(!$("#part-1 h5").hasClass('step-list-item-disabled')){
+          $("#part-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-1").removeClass('step-list-item-active',1000, 'easeInBack');
       } else {
         if(!$("#part-3").hasClass('step-list-item-active')){
           $("#part-3").addClass('step-list-item-active')
@@ -572,6 +727,15 @@ jQuery(function($){
         }
         $("#part-1").removeClass('step-list-item-active',1000, 'easeInBack');
 
+        if(!$("#part-4 h5").hasClass('step-list-item-disabled')){
+          $("#part-4 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-4").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-5 h5").hasClass('step-list-item-disabled')){
+          $("#part-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-5").removeClass('step-list-item-active',1000, 'easeInBack');
       }
     }
     //CHAMPS CALCULER 
@@ -594,10 +758,42 @@ jQuery(function($){
 
     $('#inputConsoAnIndex').change(function(e){
       $('#inputTotalConso20ans').val(((parseInt($('#inputConsoFioul').val())+parseInt($('#inputConsoGaz').val()))* parseInt($(this).val())))
-
       $('#inputMoyennConso').val((((parseInt($('#inputConsoFioul').val())+parseInt($('#inputConsoGaz').val()))* parseInt($(this).val()))/parseInt($(this).val())))
     })
 
+    $('#inputEstimFactChauff').change(function(e){
+      inputsCountersValues.votre_conso_actuel=parseFloat($(this).val());
+      $('#votre_conso_actuel').text($(this).val());
+      if(!isNaN(parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()))){
+        inputsCountersValues.votre_conso_sur_x_annee=parseInt($(this).val()) * parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()) * parseInt($('#inputEvol25Annee').val())
+        inputsCountersValues.moyenne_conso_sur_x_annee=inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val() || 0);
+      }
+      $('#votre_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee);
+      $('#moyenne_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val() || 0));
+    })
+
+    $('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').change(function(e){
+      inputsCountersValues.votre_conso_actuel= parseFloat($('#inputEstimFactChauff').val()||0);
+      $('#votre_conso_actuel').text(inputsCountersValues.votre_conso_actuel);
+      if(!isNaN(parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()))){
+        inputsCountersValues.votre_conso_sur_x_annee=parseInt($(this).val()) * parseFloat($('#inputEstimFactChauff').val()||0) * parseInt($('#inputEvol25Annee').val());
+        inputsCountersValues.moyenne_conso_sur_x_annee=inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val() || 0);
+      }
+      $('#votre_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee);
+      $('#moyenne_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee/ parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val() || 0));
+    })
+
+    $('#inputEvol25Annee').change(function(){
+      inputsCountersValues.votre_conso_actuel= parseFloat($('#inputEstimFactChauff').val()||0);
+      $('#votre_conso_actuel').text(inputsCountersValues.votre_conso_actuel);
+      if(!isNaN(parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()))){
+        inputsCountersValues.votre_conso_sur_x_annee=parseInt($('#inputEstimFactChauff').val() || 0) * parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()) * (parseInt($(this).val()) || 1)
+        inputsCountersValues.moyenne_conso_sur_x_annee=inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val() || 0);
+        
+      }
+      $('#votre_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee);
+      $('#moyenne_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val() || 0));
+    })
     //MODAL CONDITIONAL
     $("label[for='source_energie_1_chauffage']").click(function(){
       $('#source_energie_type_gpl').css('display', 'none')

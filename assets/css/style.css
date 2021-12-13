@@ -428,7 +428,7 @@ svg[data-v-250eb6c4] {
 
 #regiration_form{
     margin-top: 5%;
-    max-width: 795px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
     overflow: hidden;;
@@ -747,6 +747,54 @@ main .modalContainer .step-left__img{
     justify-content: space-between;
 }
 
+.page .page__content .step-15 .optionWithImages label.result1, .page .page__content .step-15 .optionWithImages label.result2, .page .page__content .step-15 .optionWithImages label.result3{
+    width: 280px!important;
+    box-shadow: 0 4px 20px 0 rgb(0 0 0 / 20%);
+    transition: box-shadow .5s,border .2s;
+}
+
+
+.page .page__content .step-15 .optionWithImages label.result1:hover{
+    background-color: #5a29b4!important;
+    box-shadow: 0 4px 20px 0 rgb(0 50 80 / 5%);
+}
+
+.page .page__content .step-15 .optionWithImages label.result2:hover{
+    background-color: #0288d1!important;
+    box-shadow: 0 4px 20px 0 rgb(0 50 80 / 5%);
+}
+
+.page .page__content .step-15 .optionWithImages label.result3:hover{
+    background-color: #7fb863!important;
+    box-shadow: 0 4px 20px 0 rgb(0 50 80 / 5%);
+}
+
+
+.page .page__content .step-16 .optionWithImages label.conso_result1, .page .page__content .step-16 .optionWithImages label.conso_result2, .page .page__content .step-16 .optionWithImages label.conso_result3, .page .page__content .step-16 .optionWithImages label.conso_result4 {
+    min-width: 500px!important;
+    width: 75%;
+    box-shadow: 0 4px 20px 0 rgb(0 0 0 / 20%);
+    transition: box-shadow .5s,border .2s;
+}
+
+.page .page__content .step-16 .optionWithImages label.conso_result1, .page .page__content .step-16 .optionWithImages label.conso_result1:hover{
+    background-color: #225b55!important;   
+}
+.page .page__content .step-16 .optionWithImages label.conso_result2, .page .page__content .step-16 .optionWithImages label.conso_result2:hover{
+    background-color: #6dd6c7!important;
+}
+.page .page__content .step-16 .optionWithImages label.conso_result3, .page .page__content .step-16 .optionWithImages label.conso_result3:hover{
+    background-color: #67879b!important;
+}
+.page .page__content .step-16 .optionWithImages label.conso_result4, .page .page__content .step-16 .optionWithImages label.conso_result4:hover{
+    background-color: #61ce70!important;
+}
+
+.conso_result_image{
+    height: 75px;
+    position: absolute;
+    right: 30px;
+}
 /* INPUTS */
 
 .invalide{
@@ -1057,7 +1105,7 @@ input[type=button]:hover, .page .page__content button:hover{
     background-color: inherit!important;
 }
 
-.image-checkbox {
+.image-checkbox, .image-checkbox_ {
     width: 25px;
     position: absolute;
     z-index: 54;
