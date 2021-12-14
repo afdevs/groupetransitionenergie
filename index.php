@@ -667,50 +667,32 @@
                             </label>
                         </div>                    
                     </fieldset>
-
                     
                     <fieldset class="step-16">
-                    <div class="step-16__content optionWithImages" style="width: 900px;flex-direction: column;">
-                            <label for="type_de_ventilation_1" class="select-item btn step-16__link image conso_result1" style="font-size: 18px!important;color:white; height:170px!important;">                        
-                                <span style="position: absolute;top: 30px;left:30px;text-align: left; width: 100%;">Pompe à chaleur air-eau </span> 
-                                <span style="position: absolute;top: 60px;left:30px;text-align: left; width: 100%;font-size: 13px!important;">Chauffage</span> 
-                                <span id="votre_conso_actuel" style="font-size:40px;position: absolute;left: 30px; top:90px">0 €</span> 
+                        <div class="step-16__content optionWithImages" style="width: 825px;">
+                            <label for="type_de_ventilation_1" class="select-item btn step-16__link image conso_result1" style="font-size: 18px!important;color:white; height:220px!important;margin-bottom: 25px;">                        
+                                <span style="position: absolute;top: 30px;left:30px;text-align: left; width: fit-content;">Pompe à chaleur air-eau </span> 
+                                <span style="position: absolute;top: 60px;left:30px;text-align: left; width: fit-content;font-size: 13px!important;">Chauffage</span> 
+                                <span id="votre_conso_actuel" style="font-size:40px;position: absolute;left: 30px; top: 90px; display: flex; width: 200px; justify-content: space-between;flex-wrap: wrap;">0 KW</span> 
                                 <img src="./assets/images/picto_gte/chauffee-small-icon.svg" alt="Pompe à chaleur air-eau" class="conso_result_image">
                             </label>
                             
-                            <label for="type_de_ventilation_2" class="select-item btn step-16__link image conso_result2" style="font-size: 18px!important;color:white; height:170px!important;">  
+                            <label for="type_de_ventilation_2" class="select-item btn step-16__link image conso_result2" style="font-size: 18px!important;color:white; height:220px!important;margin-bottom: 25px;">  
                                 <span style="position: absolute;top: 30px;left:30px;text-align: left; width: 100%;"> Pompe à chaleur air/air </span> 
                                 <span style="position: absolute;top: 60px;left:30px;text-align: left; width: 100%;font-size: 13px!important;">Chauffage</span> 
-                                <span id="votre_conso_sur_x_annee" style="font-size:40px;position: absolute;left: 30px; top:90px; display: flex; align-items: center;justify-content: space-between;">
-                                    <div class="input-counter" style="max-width: 256px;margin-bottom: 0;">
-                                        <div class="counter" style="padding: 7px;font-size: 13px;"> 
-                                            <div class="counter__fields">
-                                                <div class="counter__title">Nombre d’unité </div>
-                                            </div>
-                                            <div class="counter_buttons">
-                                                <button class="counter__decrement" type="button" style="width:25px; height:25px; font-size: 13px!important;margin: 0 0px;">
-                                                    -
-                                                </button>
-                                                <span class="counter__value" name="pompe_a_chaleur_air_air_nombre_unite">0</span>
-                                                <button class="counter__increment" type="button" style="width:25px; height:25px; font-size: 13px!important;margin: 0 0px;">
-                                                    +
-                                                </button>
-                                            </div>
-                                            <span class="step-1__content__notice">Nombre d’unité requis </span>
-
-                                        </div> 
-                                    </div>
-                                    
-                                    <label for="inputPompeAChaleurSurfaceTotal" style="display: flex;margin-bottom: 0;">Surface total(m2)
-                                        <input id="inputPompeAChaleurSurfaceTotal" name="pompe_a_chaleur_air_air_surface_total" style="width: 100px;" type="number" name="eau_chaude_sanitaire_envisage_source_energie_ballon_eau_chau" class="" min="0"> 
-                                    </label>
+                                <span id="votre_conso_sur_x_annee" style="font-size:40px;position: absolute;left: 30px; top:90px; display: flex; align-items: center;justify-content: space-between;flex-wrap: wrap;">
+                                    <button data-target="modal5" class="callToAction" id="pompeChaleurButton">Choisir</button>
                                 </span> 
                                 <img src="./assets/images/picto_gte/pac_air_air_crop.png" alt="Pompe à chaleur air-eau" class="conso_result_image">
                             </label>
-                            <div class="type_de_ventilation_3" class="select-item btn step-16__link image conso_result3" style="font-size: 18px!important;color:white; height:170px!important;">     
-                                <span style="position: absolute;top: 60px;left:30px;text-align: left; width: 1100%;font-size: 13px!important;">Eclairage</span> 
-                                <span style="position: absolute;top: 30px;left:30px;text-align: left; width: 100%;">Chauffe-eau thermodynamique</span> 
-                                <span id="moyenne_conso_sur_x_annee" style="font-size:40px;position: absolute;left: 30px; top: 110px; display: flex; width: 200px; justify-content: space-between;">
+                            <!-- width: 100% !important;
+display: 100%;
+text-align: left;
+left: 30px; -->
+                            <div class="type_de_ventilation_3" class="select-item btn step-16__link image conso_result3" style="font-size: 18px!important;color:white; height:220px!important;margin-bottom: 25px;">     
+                                <span style="position: absolute;top: 60px;left:30px;text-align: left; width: fit-content;font-size: 13px!important;">Eclairage</span> 
+                                <span style="position: absolute;top: 30px;left:30px;text-align: left; width: fit-content;">Chauffe-eau thermodynamique</span> 
+                                <span id="moyenne_conso_sur_x_annee" style="font-size:40px;position: absolute;left: 30px; top: 110px; display: flex; width: 200px; justify-content: space-between;flex-wrap: wrap;">
                                     <label for="200l" style="color: white;" class="checkbox-label-white">
                                         <input type="checkbox" class="filled-in checkbox-white chk-moyenne-conso" id="200l" value="200L" name="moyenne_conso_sur_x_annee_check1" />
                                         <span for="200l">200 L</span>
@@ -721,13 +703,13 @@
                                     </label>
                                 </span> 
 
-                                <img src="./assets/images/picto_gte/ecs-white-icon.svg" alt="Pompe à chaleur air-eau" style="top: 40px;" class="conso_result_image">
+                                <img src="./assets/images/picto_gte/ecs-white-icon.svg" alt="Chauffe-eau thermodynamique" style="top: 75px;" class="conso_result_image">
                             </div>
                             
-                            <div for="type_de_ventilation_3" class="select-item btn step-16__link image conso_result4" style="font-size: 18px!important;color:white; height:170px!important;">  
-                                <span style="position: absolute;top: 30px;left:30px;text-align: left; width: 100%;">Electricité ampoules led</span> 
-                                <span style="position: absolute;top: 60px;left:30px;text-align: left; width: 100%;font-size: 13px!important;">Eclairage</span> 
-                                <span id="elec_ampoule_led" style="font-size:40px;position: absolute;left: 30px; top:110px;display: flex; width: 192px; justify-content: space-between;">
+                            <div for="type_de_ventilation_3" class="select-item btn step-16__link image conso_result4" style="font-size: 18px!important;color:white; height:220px!important;margin-bottom: 25px;">  
+                                <span style="position: absolute;top: 30px;left:30px;text-align: left; width: fit-content;">Electricité ampoules led</span> 
+                                <span style="position: absolute;top: 60px;left:30px;text-align: left; width: fit-content;font-size: 13px!important;">Eclairage</span> 
+                                <span id="elec_ampoule_led" style="font-size:40px;position: absolute;left: 30px; top:110px;display: flex; width: 192px; justify-content: space-between;flex-wrap: wrap;">
                                     <label for="elec_ampoule1" style="color: white;" class="checkbox-label-white">
                                         <input type="checkbox" class="filled-in checkbox-white chk-elec-ampoule" id="elec_ampoule1" value="Oui" name="elec_ampoule_led_chk1" />
                                         <span for="elec_ampoule1">OUI</span>
@@ -739,569 +721,9 @@
                                 <img src="./assets/images/picto_gte/electricite-white-icon.svg" alt="Pompe à chaleur air-eau" class="conso_result_image">
 
                             </div>
-                        </div>                
-                        <!-- <h1>Chauffage envisagé</h1>
-                        <h2>Source d’énergie</h2>
-                        <div class="step-16__content optionWithImages">
-                            <label for="chaufface_envisage_source_energie_2" class="select-item btn step-16__link image" style="height:auto;">                        
-                                <input type="radio" name="chaufface_envisage_source_energie" id="chaufface_envisage_source_energie_2" value="Pac air/eau">
-                                <img class="step-1__img" src="./assets/images/picto_gte/pair_air_eau.png" alt="Photo - Pac air/eau">
-                                Pompe à chaleur air-eau 
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                                <div class="inputs" style="margin: 0;">
-                                    <div class="input-item nopr20">
-                                        <label for="inputChauffEnvisageNombreUni">G-isolation X</label>
-                                        <input id="inputChauffEnvisageNombreUni" type="number" name="chaufface_envisage_source_energie_nbr_unite" class="" min="0">
-                                        <span class="step-1__content__notice">G-isolation X requis </span>
-                                    </div> 
-                                </div>   
-                                <div class="inputs" style="margin: 0;">
-                                    <div class="input-item nopr20">
-                                        <label for="inputChauffEnvisageNombreUni">Volume m 3 T°∆</label>
-                                        <input id="inputChauffEnvisageNombreUni" type="number" name="chaufface_envisage_source_energie_nbr_unite" class="" min="0">
-                                        <span class="step-1__content__notice">Volume m 3 T°∆ requis </span>
-                                    </div>  
-                                </div>    
-                            </label>
-                            <label for="chaufface_envisage_source_energie_1" class="select-item btn step-16__link image" style="height:auto;">                        
-                                <input type="radio" name="chaufface_envisage_source_energie" id="chaufface_envisage_source_energie_1" value="Pac air/air">
-                                <img class="step-1__img" src="./assets/images/picto_gte/pac_air_air.png" alt="Photo - Pac air/air">
-                                Pompe à chaleur air/air 
-                                <div class="input-counter">
-                                     <div class="counter"> 
-                                        <div class="counter__fields">
-                                            <div class="counter__title">Nombre d’unité </div>
-                                            <div class="counter__subtitle">Nombre d’habitants </div>
-                                        </div>
-                                        <div class="counter_buttons">
-                                            <button class="counter__decrement" type="button">
-                                                -
-                                            </button>
-                                            <span class="counter__value" name="chaufface_envisage_source_energie_nbr_unite">0</span>
-                                            <button class="counter__increment" type="button">
-                                                +
-                                            </button>
-                                        </div>
-                                        <span class="step-1__content__notice">Nombre d’unité requis </span>
-
-                                     </div> 
-                                </div> 
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-                             
-                            <div class="inputs">
-                                <div class="input-item nopr20">
-                                    <label for="inputChauffEnvisagePuissancePac">Puissance estimée pac</label>
-                                    <input id="inputChauffEnvisagePuissancePac" type="number" name="chaufface_envisage_source_energie_puissance_pac" class="" min="0">
-                                    <span class="step-1__content__notice">Puissance estimée pac requis </span>
-                                </div>  
-                            </div>    
-                        </div>
-                        
-                        <h2>Eau chaude sanitaire envisagé</h2>
-                        <div class="step-18__content optionWithImages">
-                            <label for="eau_chaude_sanitaire_envisage_source_energie_1" class="select-item btn step-18__link image" style="height:auto;">                        
-                                <input type="radio" name="eau_chaude_sanitaire_envisage_source_energie" id="eau_chaude_sanitaire_envisage_source_energie_1" value="Chauffe-eau thermodynamique">
-                                <img class="step-1__img" style="width: 55px;" src="./assets/images/picto_gte/chauffe_eau_thermo.png" alt="Photo - Chauffe-eau thermodynamique">
-                                Chauffe-eau thermodynamique
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-                        </div>
-                        <div class="input-counter">
-                            <div class="counter">
-                                <div class="counter__fields">
-                                    <div class="counter__title">Hauteur sous plafond </div>
-                                </div>
-                                <div class="counter_buttons" style="margin-top:10px">
-                                    <button class="counter__decrement" type="button">
-                                        -
-                                    </button>
-                                    <span class="counter__value" name="eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond" id="eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond">0</span>
-                                    <button class="counter__increment" type="button">
-                                        +
-                                    </button>
-                                </div>
-                            </div>
-                        </div>  
-                        <div class="inputs" >
-                            <div class="input-item">
-                                <label for="inputEauSaniEnvisageBallEauChau">Ballon d’eau chaude</label>
-                                <input id="inputEauSaniEnvisageBallEauChau" type="number" name="eau_chaude_sanitaire_envisage_source_energie_ballon_eau_chau" class="" min="0">
-                                <span class="step-1__content__notice">Ballon d’eau chaude requis </span>
-                            </div>  
-                        </div>
-                        
-                        <div class="noImageSelection">
-                            <label for="eau_chaude_sanitaire_envisage_source_energie_no_image_1" class="select-item btn step-18__link no-image" >                                       
-                                <input type="radio" name="eau_chaude_sanitaire_envisage_source_energie_no_image" id="eau_chaude_sanitaire_envisage_source_energie_no_image_1" value="200L">
-                                <span>200L</span>
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox not-absolute">
-                            </label>
-
-                            <label for="eau_chaude_sanitaire_envisage_source_energie_no_image_2" class="select-item btn step-18__link no-image">                                       
-                                <input type="radio" name="eau_chaude_sanitaire_envisage_source_energie_no_image"  id="eau_chaude_sanitaire_envisage_source_energie_no_image_2" value="270L">
-                                <span>270L</span>
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox not-absolute">
-                            </label>
-                        </div>
-                        <h1>Eclairage envisagé</h1>
-                        <div class="step-19__content optionWithImages">
-                            <label for="eclairage_envisage_source_energie_1" class="select-item btn step-19__link image" style="height:auto;">                        
-                                <input type="radio" name="eclairage_envisage_source_energie" id="eclairage_envisage_source_energie_1" value="Electricité ampoules led">
-                                <img class="step-1__img" style="width: 60px;" src="./assets/images/picto_gte/pictoGTE_2021-11-19_aÌ_08.28.27-removebg-preview.png" alt="Photo - Electricité ampoules led">
-                                Electricité ampoules led
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-                        </div> -->
-                    </fieldset>
-<!--                     
-                    <fieldset class="step-11">
-                        <h1>Consommation et équipements</h1>
-                        <h2>CONSOMMATION ANNUELLE</h2>
-                        <div class="step-10__content optionWithImages">
-                            <label for="consommation_annuelle_1" class="multi-select-item btn step-11__link image">                        
-                                <input type="radio" name="consommation_annuelle" id="consommation_annuelle_1" value="Electricité">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_électricité.svg" alt="Photo - Electricité">
-                                <div class="inputs">
-                                    <div class="input-item">
-                                        <label for="inputConsoElec">Electricité (€)</label>
-                                        <input id="inputConsoElec" type="number" name="consommation_annuelle_elec" class="" min="0">
-                                    </div>  
-                                </div>
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-                            
-                            <label for="consommation_annuelle_2" class="multi-select-item btn step-11__link image">             
-                                <input type="radio" name="consommation_annuelle"  id="consommation_annuelle_2" value="Gaz naturel">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_gaz naturel.svg" alt="Photo - Gaz naturel">
-                                <div class="inputs">
-                                    <div class="input-item">
-                                        <label for="inputConsoGaz">Gaz naturel (€)</label>
-                                        <input id="inputConsoGaz" type="number" name="consommation_annuelle_gaz" value="0" min="0">
-                                    </div>  
-                                </div>
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-                            
-                            <label for="consommation_annuelle_3" class="multi-select-item btn step-11__link image" style="margin-top: 10px;">        
-                                <input type="radio" name="consommation_annuelle"  id="consommation_annuelle_3" value="GPL">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_GPL.svg" alt="Photo - GPL">
-                                <div class="inputs">
-                                    <div class="input-item">
-                                        <label for="inputConsoGpl">GPL (€)</label>
-                                        <input id="inputConsoGpl" type="number" name="consommation_annuelle_gpl" class="" min="0">
-                                    </div>  
-                                </div>
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-
-                            <label for="consommation_annuelle_4" class="multi-select-item btn step-11__link image">             
-                                <input type="radio" name="consommation_annuelle"  id="consommation_annuelle_4" value="FIOUL">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_fioul.svg" alt="Photo - FIOUL">
-                                <div class="inputs">
-                                    <div class="input-item">
-                                        <label for="inputConsoFioul">FIOUL (€)</label>
-                                        <input id="inputConsoFioul" type="number" name="consommation_annuelle_fioul" value="0" min="0">
-                                    </div>  
-                                </div>
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-                            
-                            <label for="consommation_annuelle_5" class="multi-select-item btn step-11__link image">        
-                                <input type="radio" name="consommation_annuelle"  id="consommation_annuelle_5" value="Bois">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_bois.svg" alt="Photo - Bois">
-                                <div class="inputs">
-                                    <div class="input-item">
-                                        <label for="inputConsoBois">Bois (€)</label>
-                                        <input id="inputConsoBois" type="number" name="consommation_annuelle_bois" class="" min="0">
-                                    </div>  
-                                </div>
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-                            
-                            <label for="consommation_annuelle_6" class="multi-select-item btn step-11__link image">        
-                                <input type="radio" name="consommation_annuelle"  id="consommation_annuelle_6" value="Autre">
-                                <div class="inputs" style="margin-top: 70px;">
-                                    <div class="input-item">
-                                        <label for="inputConsoAutre">Autre (€)</label>
-                                        <input id="inputConsoAutre" type="number" name="consommation_annuelle_autre" class="" min="0">
-                                    </div>  
-                                </div>
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-                        </div>
-                    </fieldset> -->
-
-                    <fieldset class="step-12">
-                        <h2>CONSOMMATION ANNUELLE</h2>
-                        <div class="inputs">
-                            <div class="input-item nopr20">
-                                <label for="inputConsoAnIndex">INDEXATION</label>
-                                <input id="inputConsoAnIndex" type="number" name="conso_indexation" class="" min="0" value="20">
-                                <span class="step-1__content__notice">Hauteur sous plafond moyenne (m) requis </span>
-                            </div>  
-                        </div>
-                        <div class="inputs">
-                            <div class="input-item nopr20">
-                                <label for="inputTotalConso20ans">TOTAL CONSOMMATION SUR 20 ANS</label>
-                                <input id="inputTotalConso20ans" type="number" name="conso_moyenne_conso" class="" min="0" style="background: #ae391c78; color: #fff;" >
-                                <span class="step-1__content__notice">MOYENNE DE CONSOMMATION SUR 20 ANS requis </span>
-                            </div>
-                        </div>
-                        <div class="inputs">
-                            <div class="input-item nopr20">
-                                <label for="inputMoyennConso">MOYENNE DE CONSOMMATION SUR 20 ANS</label>
-                                <input id="inputMoyennConso" type="number" name="conso_moyenne_conso" class="" min="0" style="background: #f6dc12;">
-                                <span class="step-1__content__notice">MOYENNE DE CONSOMMATION SUR 20 ANS requis </span>
-                            </div>
-                        </div>
-                    </fieldset>
-                    
-                    <!-- <fieldset class="step-13">
-                        <h1>Chauffage actuel</h1>
-                        <h2>Source d’énergie</h2>
-                        <div class="step-13__content optionWithImages">
-                            <label for="source_energie_1" class="next btn step-13__link image">                        
-                                <input type="radio" name="source_energie" id="source_energie_1" value="Electricité">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_électricité.svg" alt="Photo - Electricité">
-                                Electricité
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-                            
-                            <label for="source_energie_2" class="next btn step-13__link image">             
-                                <input type="radio" name="source_energie"  id="source_energie_2" value="Gaz naturel">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_gaz naturel.svg" alt="Photo - Gaz naturel">
-                                Gaz naturel
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-                            
-                            <label for="source_energie_3" class="next btn step-13__link image">        
-                                <input type="radio" name="source_energie"  id="source_energie_3" value="GPL">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_GPL.svg" alt="Photo - GPL">
-                               GPL
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-
-                            <label for="source_energie_4" class="next btn step-13__link image">             
-                                <input type="radio" name="source_energie"  id="source_energie_4" value="FIOUL">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_fioul.svg" alt="Photo - FIOUL">
-                                FIOUL
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-                            
-                            <label for="source_energie_5" class="next btn step-13__link image">        
-                                <input type="radio" name="source_energie"  id="source_energie_5" value="Bois">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_bois.svg" alt="Photo - Bois">
-                                Bois
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-                        </div>
-                    </fieldset>
-                    
-                    <fieldset class="step-14">
-                        <h2>Source d’énergie</h2>
-                        <div class="step-14__content">
-                            <div class="inputs">
-                                <div class="input-item nopr20">
-                                    <label for="inputConsoChauffage">Consommation de chauffage (€/an)</label>
-                                    <input id="inputConsoChauffage" type="number" name="source_energie_chaufface" class="" min="0">
-                                    <span class="step-1__content__notice">Consommation de chauffage (€/an) (m) requis </span>
-                                </div>  
-                            </div>
-                            <div class="inputs">
-                                <div class="input-item">
-                                    <label for="inputAnneeInstall">Année d’installation</label> 
-                                    <select name="annee_install_source_energie" id="">
-                                        <option disabled selected>Choisir</option>
-                                        <option value="2021">2021</option>
-                                        <option value="2020">2020</option>
-                                        <option value="2019">2019</option>
-                                        <option value="2018">2018</option>
-                                        <option value="2017">2017</option>
-                                        <option value="2016">2016</option>
-                                        <option value="2015">2015</option>
-                                        <option value="2014">2014</option>
-                                        <option value="2013">2013</option>
-                                        <option value="2012">2012</option>
-                                        <option value="2011">2011</option>
-                                        <option value="2010">2010</option>
-                                        <option value="2009">2009</option>
-                                        <option value="2008">2008</option>
-                                        <option value="2007">2007</option>
-                                        <option value="2006">2006</option>
-                                        <option value="2005">2005</option>
-                                        <option value="2004">2004</option>
-                                        <option value="2003">2003</option>
-                                        <option value="2002">2002</option>
-                                        <option value="2001">2001</option>
-                                        <option value="2000">2000</option>
-                                        <option value="1999">1999</option>
-                                        <option value="1998">1998</option>
-                                        <option value="1997">1997</option>
-                                        <option value="1996">1996</option>
-                                        <option value="1995">1995</option>
-                                        <option value="1994">1994</option>
-                                        <option value="1995">1993</option>
-                                        <option value="1992">1992</option>
-                                        <option value="1991">1991</option>
-                                        <option value="1990">1990</option>
-                                        <option value="1989">1989</option>
-                                        <option value="1988">1988</option>
-                                        <option value="1987">1987</option>
-                                        <option value="1986">1986</option>
-                                        <option value="1985">1985</option>
-                                        <option value="1984">1984</option>
-                                        <option value="1983">1983</option>
-                                        <option value="1982">1982</option>
-                                        <option value="1981">1981</option>
-                                        <option value="1980">1980</option>
-                                        <option value="1979">1979</option>
-                                        <option value="1978">1978</option>
-                                        <option value="1977">1977</option>
-                                        <option value="1976">1976</option>
-                                        <option value="1975">1975</option>
-                                        <option value="Avant 1975"> Avant 1975</option>
-                                    </select>
-                                    
-                                </div>
-                            </div>
-                            
-                            <h2>Type de chauffage</h2>
-                            <div class="noImageSelection">
-                                <label for="inputRadiateurFonte" class="select-item btn step-14__link no-image" style="width:200px;">                                       
-                                    <input type="radio" name="source_energie_no_image" id="inputRadiateurFonte" value="Radiateur fonte">
-                                    <span>Radiateur fonte</span>
-                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox not-absolute">
-                                </label>
-
-                                <label for="inputRadiateurAlu" class="select-item btn step-14__link no-image">                                       
-                                    <input type="radio" name="source_energie_no_image"  id="inputRadiateurAlu" value="Radiateur alluminium">
-                                    <span>Radiateur alluminium</span>
-                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox not-absolute">
-                                </label>
-
-                                <label for="inputRadiateurPlan" class="select-item btn step-14__link no-image" style="width:235px;">                                       
-                                    <input type="radio" name="source_energie_no_image" id="inputRadiateurPlan" value="Plancher chauffant">
-                                    <span>Plancher chauffant</span>
-                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox not-absolute">
-                                </label>
-                            </div>
-
-                            
-                            <div class="input-counter">
-                                <div class="counter">
-                                    <div class="counter__fields">
-                                        <div class="counter__title">Nombre </div>
-                                    </div>
-                                    <div class="counter_buttons">
-                                        <button class="counter__decrement" type="button">
-                                            -
-                                        </button>
-                                        <span class="counter__value" name="source_energie_nombre">0</span>
-                                        <button class="counter__increment" type="button">
-                                            +
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>  
-
-                        </div>
-                    </fieldset>
-                    
-                    <fieldset class="step-15">
-                        <h1>Eau chaude sanitaire actuelle</h1>
-                        <h2>Source d’énergie</h2>
-                        <div class="step-15__content optionWithImages">
-                            <label for="source_energie_eau_chaude_1" class="select-item btn step-15__link image">                        
-                                <input type="radio" name="source_energie_eau_chaude" id="source_energie_eau_chaude_1" value="Electricité">
-                                <img class="step-1__img" src="./assets/images/picto_gte/conso_elec.png" alt="Photo - Electricité">
-                                Electricité
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-                            
-                            <label for="source_energie_eau_chaude_2" class="select-item btn step-15__link image">             
-                                <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_2" value="Gaz naturel">
-                                <img class="step-1__img" src="./assets/images/picto_gte/conso_gaz.png" alt="Photo - Gaz naturel">
-                                Gaz naturel
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-                            
-                            <label for="source_energie_eau_chaude_3" class="select-item btn step-15__link image">        
-                                <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_3" value="GPL">
-                                <img class="step-1__img" src="./assets/images/picto_gte/conso_gpl.png" alt="Photo - GPL">
-                               GPL
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-
-                            <label for="source_energie_eau_chaude_4" class="select-item btn step-15__link image">             
-                                <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_4" value="FIOUL">
-                                <img class="step-1__img" src="./assets/images/picto_gte/conso_fioul.png" alt="Photo - FIOUL">
-                                FIOUL
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-                            
-                            <label for="source_energie_eau_chaude_5" class="select-item btn step-15__link image">        
-                                <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_5" value="Bois">
-                                <img class="step-1__img" src="./assets/images/picto_gte/conso_bois.png" alt="Photo - Bois">
-                                Bois
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-                        </div>
-                        
-                        <div class="inputs">
-                            <div class="input-item nopr20">
-                                <label for="inputSourceEnergieEauSani">Consommation d’eau chaude sanitaire (€/an)</label>
-                                <input id="inputSourceEnergieEauSani" type="number" name="source_energie_eau_chaude_conso_eau_sani" class="" min="0">
-                                <span class="step-1__content__notice">Consommation d’eau chaude sanitaire (€/an) requis </span>
-                            </div>  
-                        </div>
-                        
-                        <div class="inputs">
-                            <div class="input-item nopr20">
-                                <label for="inputSourceEnergieTypeSystem">Type de système</label>
-                                <input id="inputSourceEnergieTypeSystem" type="number" name="source_energie_eau_chaude_conso_type_systeme" class="" min="0">
-                                <span class="step-1__content__notice">Type de système requis </span>
-                            </div>  
-                        </div>
-                        
-                        <div class="inputs">
-                            <div class="input-item nopr20">
-                                <label for="inputSourceEnergieAnneInstal">Année d’installation</label>
-                                <select name="annee_contruction_eau_chaude_conso" id="">
-                                    <option disabled selected>Choisir</option>
-                                    <option value="2021">2021</option>
-                                    <option value="2020">2020</option>
-                                    <option value="2019">2019</option>
-                                    <option value="2018">2018</option>
-                                    <option value="2017">2017</option>
-                                    <option value="2016">2016</option>
-                                    <option value="2015">2015</option>
-                                    <option value="2014">2014</option>
-                                    <option value="2013">2013</option>
-                                    <option value="2012">2012</option>
-                                    <option value="2011">2011</option>
-                                    <option value="2010">2010</option>
-                                    <option value="2009">2009</option>
-                                    <option value="2008">2008</option>
-                                    <option value="2007">2007</option>
-                                    <option value="2006">2006</option>
-                                    <option value="2005">2005</option>
-                                    <option value="2004">2004</option>
-                                    <option value="2003">2003</option>
-                                    <option value="2002">2002</option>
-                                    <option value="2001">2001</option>
-                                    <option value="2000">2000</option>
-                                    <option value="1999">1999</option>
-                                    <option value="1998">1998</option>
-                                    <option value="1997">1997</option>
-                                    <option value="1996">1996</option>
-                                    <option value="1995">1995</option>
-                                    <option value="1994">1994</option>
-                                    <option value="1995">1993</option>
-                                    <option value="1992">1992</option>
-                                    <option value="1991">1991</option>
-                                    <option value="1990">1990</option>
-                                    <option value="1989">1989</option>
-                                    <option value="1988">1988</option>
-                                    <option value="1987">1987</option>
-                                    <option value="1986">1986</option>
-                                    <option value="1985">1985</option>
-                                    <option value="1984">1984</option>
-                                    <option value="1983">1983</option>
-                                    <option value="1982">1982</option>
-                                    <option value="1981">1981</option>
-                                    <option value="1980">1980</option>
-                                    <option value="1979">1979</option>
-                                    <option value="1978">1978</option>
-                                    <option value="1977">1977</option>
-                                    <option value="1976">1976</option>
-                                    <option value="1975">1975</option>
-                                    <option value="Avant 1975"> Avant 1975</option>
-                                </select>
-                            </div>  
-                        </div>
-                    </fieldset>
-
-                    <fieldset class="step-16">
-                        <h1>Eclairage actuelle</h1>
-                        <h2>Source d’énergie</h2>
-                        <div class="step-16__content optionWithImages">
-                            <label for="source_energie_eclairage_1" class="next btn step-16__link image">                        
-                                <input type="radio" name="source_energie_eclairage" id="source_energie_eclairage_1" value="Electricité ampoules classique">
-                                <img class="step-1__img" src="./assets/images/picto_gte/conso_elec.png" alt="Photo - Electricité ampoules classique">
-                                Electricité ampoules classique
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                                
-                            </label>
-                        </div>
-                    </fieldset> -->
-                    
-                    
-                    <fieldset class="step-18">
-                        <h1>Eau chaude sanitaire envisagée</h1>
-                        <h2>Source d’énergie</h2>
-                        <div class="step-18__content optionWithImages">
-                            <label for="eau_chaude_sanitaire_envisage_source_energie_1" class="select-item btn step-18__link image" style="height:auto;">                        
-                                <input type="radio" name="eau_chaude_sanitaire_envisage_source_energie" id="eau_chaude_sanitaire_envisage_source_energie_1" value="Chauffe-eau thermodynamique">
-                                <img class="step-1__img" src="./assets/images/picto_gte/chauffe_eau_thermo.png" alt="Photo - Chauffe-eau thermodynamique">
-                                Chauffe-eau thermodynamique
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-                        </div>
-                        <div class="input-counter">
-                            <div class="counter">
-                                <div class="counter__fields">
-                                    <div class="counter__title">Hauteur sous plafond </div>
-                                </div>
-                                <div class="counter_buttons" style="margin-top:10px">
-                                    <button class="counter__decrement" type="button">
-                                        -
-                                    </button>
-                                    <span class="counter__value" name="eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond" id="eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond">0</span>
-                                    <button class="counter__increment" type="button">
-                                        +
-                                    </button>
-                                </div>
-                            </div>
-                        </div>  
-                        <div class="inputs" >
-                            <div class="input-item">
-                                <label for="inputEauSaniEnvisageBallEauChau">Ballon d’eau chaude</label>
-                                <input id="inputEauSaniEnvisageBallEauChau" type="number" name="eau_chaude_sanitaire_envisage_source_energie_ballon_eau_chau" class="" min="0">
-                                <span class="step-1__content__notice">Ballon d’eau chaude requis </span>
-                            </div>  
-                        </div>
-                        
-                        <div class="noImageSelection">
-                            <label for="eau_chaude_sanitaire_envisage_source_energie_no_image_1" class="select-item btn step-18__link no-image" >                                       
-                                <input type="radio" name="eau_chaude_sanitaire_envisage_source_energie_no_image" id="eau_chaude_sanitaire_envisage_source_energie_no_image_1" value="200L">
-                                <span>200L</span>
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox not-absolute">
-                            </label>
-
-                            <label for="eau_chaude_sanitaire_envisage_source_energie_no_image_2" class="select-item btn step-18__link no-image">                                       
-                                <input type="radio" name="eau_chaude_sanitaire_envisage_source_energie_no_image"  id="eau_chaude_sanitaire_envisage_source_energie_no_image_2" value="270L">
-                                <span>270L</span>
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox not-absolute">
-                            </label>
-
-                        </div>
-                    </fieldset>
-                    
-                    <fieldset class="step-19">
-                        <h1>Eclairage envisagé</h1>
-                        <h2>Source d’énergie</h2>
-                        <div class="step-19__content optionWithImages">
-                            <label for="eclairage_envisage_source_energie_1" class="select-item btn step-19__link image" style="height:auto;">                        
-                                <input type="radio" name="eclairage_envisage_source_energie" id="eclairage_envisage_source_energie_1" value="Electricité ampoules led">
-                                <img class="step-1__img" src="./assets/images/picto_gte/chauffe_eau_thermo.png" alt="Photo - Electricité ampoules led">
-                                Electricité ampoules led
-                                <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
-                            </label>
-                        </div>
+                        </div>        
                     </fieldset>
                 </form>
-
                 <div class="nextButtonControl">
                     <input type="button" class="next btn btn-info main-cta" value="Suivant" />
                 </div>
@@ -1475,8 +897,7 @@
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
                             </div>
-                        </div>
-                        
+                        </div>                        
                         
                         <div id="source_energie_type_bois" style="display: none;">
                             <div class="step-11__content optionWithImages" style="max-width: 620px;">
@@ -1598,7 +1019,7 @@
                         <div class="inputs">    
                             <div class="input-item">
                                 <label for="inputEstimFactChauff">Estimation de la facture de chauffage (€/an)</label>
-                                <input id="inputEstimFactChauff" type="number" name="estimation_de_facture_de_chauffage" class="" min="0">
+                                <input id="inputEstimFactChauff" type="number" name="estimation_de_facture_de_chauffage" value="0" min="0">
                                 <span class="step-1__content__notice">Estimation de la facture de chauffage requis </span>
                             </div>
                         </div>
@@ -1634,7 +1055,7 @@
             </div>
 
              <!-- Modal Structure -->
-             <div id="modal2" class="modal">
+             <div id="modal2" class="modal" style="width: 65%;">
                 <div class="modal-content">
                     <h4 style="color:#0288d1;">Eau chaude sanitaire </h4>
                     <fieldset class="step-12">
@@ -1777,7 +1198,7 @@
 
                         
                         <h2 style="margin-top: 40px!important;margin-bottom:25px;">Capacité de stockage</h2>
-                        <div class="step-12__content optionWithImages" style="max-width: 830px;" > 
+                        <div class="step-12__content optionWithImages" style="max-width: 845px;" > 
                             <!-- optionWithImagesColumn 
                         left__img-->
                             <label for="capacite_de_stockage_eau_chaude_1" class="select-item btn step-12__link image">                        
@@ -1817,7 +1238,7 @@
                         </div>
 
                         <h2 style="margin-top: 40px!important;margin-bottom:25px;">Utilisation de l'eau chaude sanitaire</h2>
-                        <div class="step-12__content optionWithImages" style="max-width: 830px;" >
+                        <div class="step-12__content optionWithImages" style="max-width: 845px;" >
                             <!-- optionWithImagesColumn 
                                 left__img    
                             -->
@@ -1923,7 +1344,7 @@
                         
                         <div class="inputs">    
                             <div class="input-item">
-                                <label for="inputEstimFactEauChaude">Estimation de la facture d'eau chaude sanitaire (€/an)</label>
+                                <label for="inputEstimFactEauChaude">Estimation de la facture des appareils électriques (€/an)</label>
                                 <input id="inputEstimFactEauChaude" type="number" name="estimation_de_facture_d_eacu_chaude" class="" min="0">
                                 <span class="step-1__content__notice">Estimation de la facture d'eau chaude sanitaire requis </span>
                             </div>
@@ -1938,7 +1359,6 @@
                     </div>
                 </div>
             </div>
-
             
              <!-- Modal Structure -->
              <div id="modal4" class="modal">
@@ -2021,6 +1441,38 @@
                 
                 <div class="modal-footer">
                     <div style="margin-right: 75px;">
+                        <a href="#!" class="modal-close callToAction">VALIDER</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="modal5" class="modal" style="width: 30%;">
+                <div class="modal-content">
+                    <div class="input-counter">
+                        <div class="counter"> 
+                                <div class="counter__fields">
+                                    <div class="counter__title">Nombre d’unité </div>
+                                </div>
+                                <div class="counter_buttons">
+                                    <button class="counter__decrement" type="button">
+                                        -
+                                    </button>
+                                    <span class="counter__value" name="pompe_a_chaleur_air_air_nombre_unite">0</span>
+                                    <button class="counter__increment" type="button">
+                                        +
+                                    </button>
+                                </div>
+                                <span class="step-1__content__notice">Nombre d’unité requis </span>
+
+                        </div> 
+                    </div>
+                    
+                    <label for="inputPompeAChaleurSurfaceTotal" class="pompeAChaleurAirAir">Surface total(m2)
+                        <input id="inputPompeAChaleurSurfaceTotal" name="pompe_a_chaleur_air_air_surface_total" type="number" name="eau_chaude_sanitaire_envisage_source_energie_ballon_eau_chau" class="" min="0"> 
+                    </label>
+                </div>
+                <div class="modal-footer"style="margin-top: 40px;text-align:center;">
+                    <div >
                         <a href="#!" class="modal-close callToAction">VALIDER</a>
                     </div>
                 </div>

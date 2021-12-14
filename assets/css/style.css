@@ -509,7 +509,7 @@ main .modalContainer .modal{
     overflow: unset;
 }
 
-main .modalContainer .modal .callToAction{
+main .modalContainer .modal .callToAction, .page .page__content .step-16 .callToAction{
     background: linear-gradient(86deg,#225b55 23%,#009381 75%,#009381 117%);
     padding: 16px 32px;
     color: white;
@@ -670,6 +670,17 @@ main .modalContainer .modal-content .optionWithImagesColumn label.image{
 main .modalContainer .step-left__img{
     width: 90px;
 }
+main .modalContainer .modal .modal-content .pompeAChaleurAirAir{
+    max-width: 300px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    margin-top: 50px;
+}
+main .modalContainer .modal .modal-content .pompeAChaleurAirAir input[type=number]{
+    margin-top: 25px;
+}
 /*---------------------------------------------------*/
 
 .image-checked, .no-image-checked{
@@ -771,8 +782,7 @@ main .modalContainer .step-left__img{
 
 
 .page .page__content .step-16 .optionWithImages label.conso_result1, .page .page__content .step-16 .optionWithImages label.conso_result2, .page .page__content .step-16 .optionWithImages div.conso_result3, .page .page__content .step-16 .optionWithImages  div.conso_result4, div[class=type_de_ventilation_3] {
-    min-width: 500px!important;
-    width: 75%;
+    width: 400px;
     box-shadow: 0 4px 20px 0 rgb(0 0 0 / 20%);
     transition: box-shadow .5s,border .2s;
 }
@@ -805,7 +815,6 @@ main .modalContainer .step-left__img{
     z-index: 0;
 }
 /* INPUTS */
-
 .invalide{
     border-width: 1px!important;
     border-color: #c00!important;
@@ -1174,7 +1183,7 @@ input[type=button]:hover, .page .page__content button:hover{
     background: #399bd2!important;
 }
 
-.step-2__link:not(:last-child), .step-3__link:not(:last-child), .step-4__link:not(:last-child), .step-5__link:not(:last-child), .step-6__link:not(:last-child), .step-7__link:not(:last-child), .step-8__link:not(:last-child), .step-9__link:not(:last-child), .step-10__link:not(:last-child), .step-11__link:not(:last-child), .step-12__link:not(:last-child), .step-13__link:not(:last-child), .step-14__link:not(:last-child), .step-15__link:not(:last-child), .step-16__link:not(:last-child), .step-17__link:not(:last-child), .step-18__link:not(:last-child), .step-19__link:not(:last-child), .step-20__link:not(:last-child), .step-21__link:not(:last-child), .step-22__link:not(:last-child), .step-23__link:not(:last-child), .step-24__link:not(:last-child), .step-25__link:not(:last-child), .step-26__link:not(:last-child), .step-27__link:not(:last-child), .step-28__link:not(:last-child), div[class=type_de_ventilation_3]{
+.step-2__link:not(:last-child), .step-3__link:not(:last-child), .step-4__link:not(:last-child), .step-5__link:not(:last-child), .step-6__link:not(:last-child), .step-7__link:not(:last-child), .step-8__link:not(:last-child), .step-9__link:not(:last-child), .step-10__link:not(:last-child), .step-11__link:not(:last-child), .step-12__link:not(:last-child), .step-13__link:not(:last-child), .step-14__link:not(:last-child), .step-15__link:not(:last-child), .step-16__link:not(:last-child), .step-17__link:not(:last-child), .step-18__link:not(:last-child), .step-19__link:not(:last-child), .step-20__link:not(:last-child), .step-21__link:not(:last-child), .step-22__link:not(:last-child), .step-23__link:not(:last-child), .step-24__link:not(:last-child), .step-25__link:not(:last-child), .step-26__link:not(:last-child), .step-27__link:not(:last-child), .step-28__link:not(:last-child){
     margin-bottom: 10px;
 }
 
@@ -1494,7 +1503,8 @@ fieldset.step-10{
     box-shadow: 0 4px 20px 0 rgb(0 0 0 / 20%);
     transition: box-shadow .5s,border .2s;
     border-color: #003250!important;
-    padding-bottom: 15px;max-width: 815px;
+    padding-bottom: 15px;
+    max-width: 900px;
     padding: 16px;
 }
 .text-center {

@@ -43,6 +43,10 @@ jQuery(function($){
       $('#eclairageModalButton').click(function(e){
         $('#modal4').modal('open');
       })
+
+      $('#pompeChaleurButton').click(function(e){
+        $('#modal5').modal('open');
+      })
       // $('.modal-trigger').modal();
 
       // var elems = document.querySelectorAll('select');
@@ -85,7 +89,6 @@ jQuery(function($){
       resetAllRadioInput();
 
       $('.counter__increment').click(function(e){
-        
         if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='temperature_de_confort' && inputsCountersValues.temperature_de_confort >=25)return;
         //hauteur_sous_plafond_moyenne
         if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='hauteur_sous_plafond_moyenne'){
@@ -301,7 +304,7 @@ jQuery(function($){
                 $('.page .previous').css('visibility', 'hidden');
             }
             
-            if(current>9){
+            if(current>10){
               $('.main-cta').css('visibility', 'hidden');
             }else{
               $('.main-cta').css('visibility', 'visible');
@@ -381,7 +384,7 @@ jQuery(function($){
 
         }
   
-        if(current>9){
+        if(current>10){
           $('.main-cta').css('visibility', 'hidden');
         }else{
           $('.main-cta').css('visibility', 'visible');
@@ -427,7 +430,7 @@ jQuery(function($){
                 $('.page .previous').css('visibility', 'hidden');
             }
 
-            if(current>9){
+            if(current>10){
               $('.main-cta').css('visibility', 'hidden');
             }else{
               $('.main-cta').css('visibility', 'visible');
@@ -466,7 +469,7 @@ jQuery(function($){
                 $('.page .previous').css('visibility', 'hidden');
             }
 
-            if(current>9){
+            if(current>10){
               $('.main-cta').css('visibility', 'hidden');
             }else{
               $('.main-cta').css('visibility', 'visible');
@@ -506,7 +509,7 @@ jQuery(function($){
                 $('.page .previous').css('visibility', 'hidden');
             }
             
-            if(current>9){
+            if(current>10){
               $('.main-cta').css('visibility', 'hidden');
             }else{
               $('.main-cta').css('visibility', 'visible');
@@ -585,7 +588,7 @@ jQuery(function($){
               $('.page .previous').css('visibility', 'hidden');
           }
           
-          if(current>9){
+          if(current>10){
             $('.main-cta').css('visibility', 'hidden');
           }else{
             $('.main-cta').css('visibility', 'visible');
@@ -790,7 +793,7 @@ jQuery(function($){
       inputsCountersValues.votre_conso_actuel=parseFloat($(this).val());
       $('#votre_conso_actuel').text($(this).val() +' €');
       if(!isNaN(parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()))){
-        inputsCountersValues.votre_conso_sur_x_annee=parseInt($(this).val()) * parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()) * parseInt($('#inputEvol25Annee').val())
+        inputsCountersValues.votre_conso_sur_x_annee=(parseInt($(this).val())+ parseInt($('#inputEvol25Annee').val())) * parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val())
         inputsCountersValues.moyenne_conso_sur_x_annee=inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val() || 0);
       }
       $('#votre_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee +' €');
@@ -803,57 +806,57 @@ jQuery(function($){
       inputsCountersValues.votre_conso_actuel= parseFloat($('#inputEstimFactChauff').val()||0);
       $('#votre_conso_actuel').text(inputsCountersValues.votre_conso_actuel +' €');
       if(!isNaN(parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()))){
-        inputsCountersValues.votre_conso_sur_x_annee=parseInt($(this).val()) * parseFloat($('#inputEstimFactChauff').val()||0) * parseInt($('#inputEvol25Annee').val());
-        inputsCountersValues.moyenne_conso_sur_x_annee=inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val() || 0);
+        inputsCountersValues.votre_conso_sur_x_annee=(parseInt($('#inputEvol25Annee').val()) + parseFloat($('#inputEstimFactChauff').val()))*parseInt($(this).val());
+        inputsCountersValues.moyenne_conso_sur_x_annee=inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val());
       }
       $('#votre_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee +' €');
       $('#moyenne_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee/ parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val() || 0) +' €');
     })
 
     $('#inputEvol25Annee').change(function(){
-      inputsCountersValues.votre_conso_actuel= parseFloat($('#inputEstimFactChauff').val()||0);
+      inputsCountersValues.votre_conso_actuel= parseFloat($('#inputEstimFactChauff').val());
       $('#votre_conso_actuel').text(inputsCountersValues.votre_conso_actuel +' €');
       if(!isNaN(parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()))){
-        inputsCountersValues.votre_conso_sur_x_annee=parseInt($('#inputEstimFactChauff').val() || 0) * parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()) * (parseInt($(this).val()) || 1)
-        inputsCountersValues.moyenne_conso_sur_x_annee=inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val() || 0);
+        inputsCountersValues.votre_conso_sur_x_annee=(parseInt($('#inputEstimFactChauff').val()) + parseInt($(this).val())) * parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val() || 0)
+        inputsCountersValues.moyenne_conso_sur_x_annee=inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val());
         
       }
       $('#votre_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee +' €');
-      $('#moyenne_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val() || 0) +' €');
+      $('#moyenne_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()) +' €');
     })
     //MODAL CONDITIONAL
     $("label[for='source_energie_1_chauffage']").click(function(){
       $('#source_energie_type_gpl').css('display', 'none')
-      $('#source_energie_type_fioul').css('display', 'none')
+      $('#source_energie_type_fioul').css('display', 'block')
       $('#source_energie_type_bois').css('display', 'none')
       $('#source_energie_type_gaz_naturel').css('display', 'none')
-      $('#source_energie_type_elec').css('display', 'block')
-      $('#source_energie_1_chauffage_pric_Elect').css('display', 'block')
+      $('#source_energie_type_elec').css('display', 'none')
+      $('#source_energie_1_chauffage_pric_Elect').css('display', 'none')
     })
     
     $("label[for='source_energie_2_chauffage']").click(function(){
-      $('#source_energie_type_elec').css('display', 'none')
+      $('#source_energie_type_elec').css('display', 'block')
       $('#source_energie_type_gpl').css('display', 'none')
       $('#source_energie_type_fioul').css('display', 'none')
       $('#source_energie_type_bois').css('display', 'none')
-      $('#source_energie_type_gaz_naturel').css('display', 'block')
-      $('#source_energie_1_chauffage_pric_Elect').css('display', 'none')
+      $('#source_energie_type_gaz_naturel').css('display', 'none')
+      $('#source_energie_1_chauffage_pric_Elect').css('display', 'block')
     })
     
     $("label[for='source_energie_3_chauffage']").click(function(){
       $('#source_energie_type_elec').css('display', 'none')
-      $('#source_energie_type_gaz_naturel').css('display', 'none')
+      $('#source_energie_type_gaz_naturel').css('display', 'block')
       $('#source_energie_type_fioul').css('display', 'none')
       $('#source_energie_type_bois').css('display', 'none')
-      $('#source_energie_type_gpl').css('display', 'block')
+      $('#source_energie_type_gpl').css('display', 'none')
       $('#source_energie_1_chauffage_pric_Elect').css('display', 'none')
     })
     
     $("label[for='source_energie_4_chauffage']").click(function(){
       $('#source_energie_type_elec').css('display', 'none')
       $('#source_energie_type_gaz_naturel').css('display', 'none')
-      $('#source_energie_type_fioul').css('display', 'block')
-      $('#source_energie_type_bois').css('display', 'none')
+      $('#source_energie_type_fioul').css('display', 'none')
+      $('#source_energie_type_bois').css('display', 'block')
       $('#source_energie_type_gpl').css('display', 'none')
       $('#source_energie_1_chauffage_pric_Elect').css('display', 'none')
     })
@@ -862,7 +865,7 @@ jQuery(function($){
       $('#source_energie_type_elec').css('display', 'none')
       $('#source_energie_type_gaz_naturel').css('display', 'none')
       $('#source_energie_type_fioul').css('display', 'none')
-      $('#source_energie_type_bois').css('display', 'block')
+      $('#source_energie_type_bois').css('display', 'none')
       $('#source_energie_type_gpl').css('display', 'none')
       $('#source_energie_1_chauffage_pric_Elect').css('display', 'none')
     })
