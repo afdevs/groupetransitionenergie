@@ -791,9 +791,10 @@ main .modalContainer .step-left__img{
 }
 
 .conso_result_image{
-    height: 75px;
+    /*height: 75px;*/
     position: absolute;
     right: 30px;
+    width: 65px;
 }
 [type="checkbox"].filled-in:checked+span:not(.lever):before {
     top: -7px;

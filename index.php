@@ -675,7 +675,7 @@
                                 <span style="position: absolute;top: 30px;left:30px;text-align: left; width: 100%;">Pompe à chaleur air-eau </span> 
                                 <span style="position: absolute;top: 60px;left:30px;text-align: left; width: 100%;font-size: 13px!important;">Chauffage</span> 
                                 <span id="votre_conso_actuel" style="font-size:40px;position: absolute;left: 30px; top:90px">0 €</span> 
-                                <img src="./assets/images/picto_gte/pair_air_eau_crop.png" alt="Pompe à chaleur air-eau" class="conso_result_image">
+                                <img src="./assets/images/picto_gte/chauffee-small-icon.svg" alt="Pompe à chaleur air-eau" class="conso_result_image">
                             </label>
                             
                             <label for="type_de_ventilation_2" class="select-item btn step-16__link image conso_result2" style="font-size: 18px!important;color:white; height:170px!important;">  
@@ -705,7 +705,7 @@
                                         <input id="inputPompeAChaleurSurfaceTotal" name="pompe_a_chaleur_air_air_surface_total" style="width: 100px;" type="number" name="eau_chaude_sanitaire_envisage_source_energie_ballon_eau_chau" class="" min="0"> 
                                     </label>
                                 </span> 
-                                <img src="./assets/images/picto_gte/pac_air_air_crop.png" alt="Pompe à chaleur air-eau" style="height: 60px;" class="conso_result_image">
+                                <img src="./assets/images/picto_gte/pac_air_air_crop.png" alt="Pompe à chaleur air-eau" class="conso_result_image">
                             </label>
                             <div class="type_de_ventilation_3" class="select-item btn step-16__link image conso_result3" style="font-size: 18px!important;color:white; height:170px!important;">     
                                 <span style="position: absolute;top: 60px;left:30px;text-align: left; width: 1100%;font-size: 13px!important;">Eclairage</span> 
@@ -721,7 +721,7 @@
                                     </label>
                                 </span> 
 
-                                <img src="./assets/images/picto_gte/chauffe_eau_thermo_crop.png" alt="Pompe à chaleur air-eau" style="height: 85px;" class="conso_result_image">
+                                <img src="./assets/images/picto_gte/ecs-white-icon.svg" alt="Pompe à chaleur air-eau" style="top: 40px;" class="conso_result_image">
                             </div>
                             
                             <div for="type_de_ventilation_3" class="select-item btn step-16__link image conso_result4" style="font-size: 18px!important;color:white; height:170px!important;">  
@@ -736,7 +736,7 @@
                                         <input type="checkbox" class="filled-in checkbox-white chk-elec-ampoule" id="elec_ampoule2" value="Non" name="elec_ampoule_led_chk2" />
                                         <span for="elec_ampoule2">NON</span>
                                     </label></span> 
-                                <img src="./assets/images/picto_gte/elec_ampoule_led_crop.png" alt="Pompe à chaleur air-eau" class="conso_result_image">
+                                <img src="./assets/images/picto_gte/electricite-white-icon.svg" alt="Pompe à chaleur air-eau" class="conso_result_image">
 
                             </div>
                         </div>                
