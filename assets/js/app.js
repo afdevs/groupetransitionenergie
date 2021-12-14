@@ -12,6 +12,7 @@ const inputsCountersValues={
     consommation_annuelle_bois: 0,
     consommation_annuelle_autre:0,
     temperature_de_confort: 17,
+    pompe_a_chaleur_air_air_nombre_unite: 0,
     votre_conso_actuel: 0,
     votre_conso_sur_x_annee: 0,
     moyenne_conso_sur_x_annee: 0
@@ -102,6 +103,13 @@ jQuery(function($){
           return
         }
 
+        //Nombre d'unite pac air air
+        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='pompe_a_chaleur_air_air_nombre_unite'){
+          inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite++;
+          $($($(this).parent().children('.counter__value'))[0]).text(inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite);  
+          return
+        }
+
         inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]=parseInt(inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')])+1
         inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]=inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')];
 
@@ -141,6 +149,12 @@ jQuery(function($){
           return
         }
 
+        //Nombre d'unite pac air air
+        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='pompe_a_chaleur_air_air_nombre_unite'){
+          inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite--;
+          $($($(this).parent().children('.counter__value'))[0]).text(inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite);  
+          return
+        }
 
         inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]=parseInt(inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')])-1
         inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]=inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')];
@@ -546,8 +560,6 @@ jQuery(function($){
           $('.page .page__content #regiration_form').css("transition", ".4s ease-out" );
           $('.page .page__content #regiration_form').css("transform"," translateX(0px)" );
           
-          
-          
           next_step_form.fadeTo('slow', 1, function(){
             setProgressBar(next_step);
             next_step_form.show();
@@ -738,6 +750,19 @@ jQuery(function($){
         $("#part-5").removeClass('step-list-item-active',1000, 'easeInBack');
       }
     }
+
+    //CHECKBOX
+    $(".chk-moyenne-conso").change(function() {
+        $(".chk-moyenne-conso").prop('checked', false);
+        $(this).prop('checked', true);
+    });
+
+    $(".chk-elec-ampoule").change(function() {
+        $(".chk-elec-ampoule").prop('checked', false);
+        $(this).prop('checked', true);
+    });
+
+
     //CHAMPS CALCULER 
       //= inputVolumeHabitation inputSurfaceSol * inputsCountersValues('eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond')
     $('#inputSurfaceSol').change(function(){
@@ -763,36 +788,38 @@ jQuery(function($){
 
     $('#inputEstimFactChauff').change(function(e){
       inputsCountersValues.votre_conso_actuel=parseFloat($(this).val());
-      $('#votre_conso_actuel').text($(this).val());
+      $('#votre_conso_actuel').text($(this).val() +' €');
       if(!isNaN(parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()))){
         inputsCountersValues.votre_conso_sur_x_annee=parseInt($(this).val()) * parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()) * parseInt($('#inputEvol25Annee').val())
         inputsCountersValues.moyenne_conso_sur_x_annee=inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val() || 0);
       }
-      $('#votre_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee);
-      $('#moyenne_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val() || 0));
+      $('#votre_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee +' €');
+      $('#moyenne_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val() || 0) +' €');
     })
 
-    $('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').change(function(e){
+      $('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').change(function(e){
+        $("#votre_conso_sur_x_annee_value").text($(this).val());
+        $("#moyenne_conso_sur_x_annee_value").text($(this).val());
       inputsCountersValues.votre_conso_actuel= parseFloat($('#inputEstimFactChauff').val()||0);
-      $('#votre_conso_actuel').text(inputsCountersValues.votre_conso_actuel);
+      $('#votre_conso_actuel').text(inputsCountersValues.votre_conso_actuel +' €');
       if(!isNaN(parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()))){
         inputsCountersValues.votre_conso_sur_x_annee=parseInt($(this).val()) * parseFloat($('#inputEstimFactChauff').val()||0) * parseInt($('#inputEvol25Annee').val());
         inputsCountersValues.moyenne_conso_sur_x_annee=inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val() || 0);
       }
-      $('#votre_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee);
-      $('#moyenne_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee/ parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val() || 0));
+      $('#votre_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee +' €');
+      $('#moyenne_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee/ parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val() || 0) +' €');
     })
 
     $('#inputEvol25Annee').change(function(){
       inputsCountersValues.votre_conso_actuel= parseFloat($('#inputEstimFactChauff').val()||0);
-      $('#votre_conso_actuel').text(inputsCountersValues.votre_conso_actuel);
+      $('#votre_conso_actuel').text(inputsCountersValues.votre_conso_actuel +' €');
       if(!isNaN(parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()))){
         inputsCountersValues.votre_conso_sur_x_annee=parseInt($('#inputEstimFactChauff').val() || 0) * parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()) * (parseInt($(this).val()) || 1)
         inputsCountersValues.moyenne_conso_sur_x_annee=inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val() || 0);
         
       }
-      $('#votre_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee);
-      $('#moyenne_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val() || 0));
+      $('#votre_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee +' €');
+      $('#moyenne_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val() || 0) +' €');
     })
     //MODAL CONDITIONAL
     $("label[for='source_energie_1_chauffage']").click(function(){

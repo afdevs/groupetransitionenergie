@@ -586,7 +586,7 @@
                         </select>
                     </fieldset>
                     
-                    <fieldset class="step-10">                        
+                    <fieldset class="step-10" >                        
                     <h2>Vos consommations<br>poste par poste</h2>                     
                         <!-- <h3 class="text-center mb-4">Vos consommations
                             <br>poste par poste</h3>    -->
@@ -599,9 +599,8 @@
                                         <div class="name-caption">Chauffage</div>
                                     </div>
 
-                                    <div class="consump-info">
-                                        <div class="consumpt-val">-€</div>
-                                        <div class="consumpt-caption">-</div>
+                                    <div class="consump-info ">
+                                        <div class="consumpt-val" >44545€</div>
                                     </div>
                                 </a>
                                 
@@ -610,11 +609,10 @@
                                         <div class="img-wrapper"><img alt="" src="./assets/images/picto_gte/ecs-white-icon.svg">
                                         </div>
                                         <div class="name-caption">Eau chaude sanitaire (ECS)</div>
-                                    </div>
-
-                                    <div class="consump-info">
-                                        <div class="consumpt-val">-€</div>
-                                        <div class="consumpt-caption">-</div>
+                                    </div>      
+                                    
+                                    <div class="consump-info ">
+                                        <div class="consumpt-val" >44545€</div>
                                     </div>
                                 </a>
                                 
@@ -623,10 +621,9 @@
                                         <div class="img-wrapper"><img alt="" src="./assets/images/picto_gte/taches-menageres-white-icon.png"></div>
                                         <div class="name-caption">Appareils électriques</div>
                                     </div>
-
-                                    <div class="consump-info">
-                                        <div class="consumpt-val">-€</div>
-                                        <div class="consumpt-caption">-</div>
+                                    
+                                    <div class="consump-info ">
+                                        <div class="consumpt-val" >44545€</div>
                                     </div>
                                 </a>
                                 
@@ -635,11 +632,9 @@
                                         <div class="img-wrapper"><img alt="" src="./assets/images/picto_gte/electricite-white-icon.svg"></div>
                                         <div class="name-caption">Éclairage</div>
                                     </div>
-
-                                    <div class="consump-info">
-                                        <div class="consumpt-val">-€</div>
-                                        <div class="consumpt-caption">-</div>
-
+                                   
+                                    <div class="consump-info ">
+                                        <div class="consumpt-val" >44545€</div>
                                     </div>
                                 </a>
                             </div>
@@ -647,25 +642,26 @@
                     </fieldset>
                     
                     <fieldset class="step-15">
-                        <div class="step-15__content optionWithImages" style="width: 900px;">
+                        <h2>Consommation et indexation</h2>
+                        <div class="step-15__content optionWithImages" style="width: 900px;margin-top: 17%;">
                             <label for="type_de_ventilation_1" class="select-item btn step-15__link image result1" style="width: 280px!important;font-size: 13px !important; background-color: #5a29b4; color:white; height:170px!important;">                        
                                 <!-- <input id="votre_conso_actuel" type="number" name="type_de_ventilation" id="type_de_ventilation_1" value="Votre consomation actuel"> -->
                                 <span style="position: absolute;top: 40px;left:50px;width: 220px;text-align: center;">Votre consommation actuel</span> 
-                                <span id="votre_conso_actuel" style="font-size:40px;position: absolute;bottom: 30px;">0</span> 
+                                <span id="votre_conso_actuel" style="font-size:40px;position: absolute;bottom: 30px;">0 €</span> 
                                 <img src="./assets/images/check_icon.svg" alt="" class="image-checkbox_" style="top: 40px;left: 11px;">
                             </label>
                             
                             <label for="type_de_ventilation_2" class="select-item btn step-15__link image result2" style="width: 280px!important;font-size: 13px !important; background-color: #0288d1; color:white; height:170px!important;">             
                                 <!-- <input id="step-15_value2" type="radio" name="type_de_ventilation"  id="type_de_ventilation_2" value="Votre consommation sur X années"> -->
-                                <span style="position: absolute;top: 40px;left:40px;width: 220px;text-align: center;">Votre consommation sur X années</span> 
-                                <span id="votre_conso_sur_x_annee" style="font-size:40px;position: absolute;bottom: 30px;">0</span> 
+                                <span style="position: absolute;top: 40px;left:40px;width: 220px;text-align: center;">Votre consommation sur <span id="votre_conso_sur_x_annee_value">X </span> années</span> 
+                                <span id="votre_conso_sur_x_annee" style="font-size:40px;position: absolute;bottom: 30px;">0 €</span> 
                                 <img src="./assets/images/check_icon.svg" alt="" class="image-checkbox_" style="top: 40px;left: 11px;">
                             </label>
                             
                             <label for="type_de_ventilation_3" class="select-item btn step-15__link image result3" style="width: 280px!important;font-size: 13px !important; background-color: #7fb863; color:white; height:170px!important;">        
                                 <!-- <input id="step-15_value3" type="radio" name="type_de_ventilation"  id="type_de_ventilation_3" value="Moyenne de consommation sur X années"> -->
-                                <span style="position: absolute;top: 40px;left:40px;width: 220px;text-align: center;">Moyenne de consommation sur X années</span> 
-                                <span id="moyenne_conso_sur_x_annee" style="font-size:40px;position: absolute;bottom: 30px;">0</span> 
+                                <span style="position: absolute;top: 40px;left:40px;width: 220px;text-align: center;">Moyenne de consommation sur <span id="moyenne_conso_sur_x_annee_value">X </span> années</span> 
+                                <span id="moyenne_conso_sur_x_annee" style="font-size:40px;position: absolute;bottom: 30px;">0 €</span> 
 
                                 <img src="./assets/images/check_icon.svg" alt="" class="image-checkbox_" style="top: 40px;left: 11px;">
                             </label>
@@ -685,25 +681,64 @@
                             <label for="type_de_ventilation_2" class="select-item btn step-16__link image conso_result2" style="font-size: 18px!important;color:white; height:170px!important;">  
                                 <span style="position: absolute;top: 30px;left:30px;text-align: left; width: 100%;"> Pompe à chaleur air/air </span> 
                                 <span style="position: absolute;top: 60px;left:30px;text-align: left; width: 100%;font-size: 13px!important;">Chauffage</span> 
-                                <span id="votre_conso_sur_x_annee" style="font-size:40px;position: absolute;left: 30px; top:90px">0 €</span> 
-                                <img src="./assets/images/picto_gte/pair_air_eau_crop.png" alt="Pompe à chaleur air-eau" class="conso_result_image">
-                            </label>
-                            
-                            <label for="type_de_ventilation_3" class="select-item btn step-16__link image conso_result3" style="font-size: 18px!important;color:white; height:170px!important;">     
-                                <span style="position: absolute;top: 60px;left:30px;text-align: left; width: 100%;font-size: 13px!important;">Eclairage</span> 
-                                <span style="position: absolute;top: 30px;left:30px;text-align: left; width: 100%;">Chauffe-eau thermodynamique</span> 
-                                <span id="moyenne_conso_sur_x_annee" style="font-size:40px;position: absolute;left: 30px; top:90px">0 €</span> 
-                                <img src="./assets/images/picto_gte/chauffe_eau_thermo_crop.png" alt="Pompe à chaleur air-eau" style="height: 85px;" class="conso_result_image">
+                                <span id="votre_conso_sur_x_annee" style="font-size:40px;position: absolute;left: 30px; top:90px; display: flex; align-items: center;justify-content: space-between;">
+                                    <div class="input-counter" style="max-width: 256px;margin-bottom: 0;">
+                                        <div class="counter" style="padding: 7px;font-size: 13px;"> 
+                                            <div class="counter__fields">
+                                                <div class="counter__title">Nombre d’unité </div>
+                                            </div>
+                                            <div class="counter_buttons">
+                                                <button class="counter__decrement" type="button" style="width:25px; height:25px; font-size: 13px!important;margin: 0 0px;">
+                                                    -
+                                                </button>
+                                                <span class="counter__value" name="pompe_a_chaleur_air_air_nombre_unite">0</span>
+                                                <button class="counter__increment" type="button" style="width:25px; height:25px; font-size: 13px!important;margin: 0 0px;">
+                                                    +
+                                                </button>
+                                            </div>
+                                            <span class="step-1__content__notice">Nombre d’unité requis </span>
 
+                                        </div> 
+                                    </div>
+                                    
+                                    <label for="inputPompeAChaleurSurfaceTotal" style="display: flex;margin-bottom: 0;">Surface total(m2)
+                                        <input id="inputPompeAChaleurSurfaceTotal" name="pompe_a_chaleur_air_air_surface_total" style="width: 100px;" type="number" name="eau_chaude_sanitaire_envisage_source_energie_ballon_eau_chau" class="" min="0"> 
+                                    </label>
+                                </span> 
+                                <img src="./assets/images/picto_gte/pac_air_air_crop.png" alt="Pompe à chaleur air-eau" style="height: 60px;" class="conso_result_image">
                             </label>
+                            <div class="type_de_ventilation_3" class="select-item btn step-16__link image conso_result3" style="font-size: 18px!important;color:white; height:170px!important;">     
+                                <span style="position: absolute;top: 60px;left:30px;text-align: left; width: 1100%;font-size: 13px!important;">Eclairage</span> 
+                                <span style="position: absolute;top: 30px;left:30px;text-align: left; width: 100%;">Chauffe-eau thermodynamique</span> 
+                                <span id="moyenne_conso_sur_x_annee" style="font-size:40px;position: absolute;left: 30px; top: 110px; display: flex; width: 200px; justify-content: space-between;">
+                                    <label for="200l" style="color: white;" class="checkbox-label-white">
+                                        <input type="checkbox" class="filled-in checkbox-white chk-moyenne-conso" id="200l" value="200L" name="moyenne_conso_sur_x_annee_check1" />
+                                        <span for="200l">200 L</span>
+                                    </label>
+                                    <label for="270l" style="color: white;" class="checkbox-label-white">
+                                        <input type="checkbox" class="filled-in checkbox-white chk-moyenne-conso" id="270l" value="270L" name="moyenne_conso_sur_x_annee_check2" />
+                                        <span for="200l">270 L</span>
+                                    </label>
+                                </span> 
+
+                                <img src="./assets/images/picto_gte/chauffe_eau_thermo_crop.png" alt="Pompe à chaleur air-eau" style="height: 85px;" class="conso_result_image">
+                            </div>
                             
-                            <label for="type_de_ventilation_3" class="select-item btn step-16__link image conso_result4" style="font-size: 18px!important;color:white; height:170px!important;">  
+                            <div for="type_de_ventilation_3" class="select-item btn step-16__link image conso_result4" style="font-size: 18px!important;color:white; height:170px!important;">  
                                 <span style="position: absolute;top: 30px;left:30px;text-align: left; width: 100%;">Electricité ampoules led</span> 
                                 <span style="position: absolute;top: 60px;left:30px;text-align: left; width: 100%;font-size: 13px!important;">Eclairage</span> 
-                                <span id="moyenne_conso_sur_x_annee" style="font-size:40px;position: absolute;left: 30px; top:90px">0 €</span> 
+                                <span id="elec_ampoule_led" style="font-size:40px;position: absolute;left: 30px; top:110px;display: flex; width: 192px; justify-content: space-between;">
+                                    <label for="elec_ampoule1" style="color: white;" class="checkbox-label-white">
+                                        <input type="checkbox" class="filled-in checkbox-white chk-elec-ampoule" id="elec_ampoule1" value="Oui" name="elec_ampoule_led_chk1" />
+                                        <span for="elec_ampoule1">OUI</span>
+                                    </label>
+                                    <label for="elec_ampoule2" style="color: white;" class="checkbox-label-white">
+                                        <input type="checkbox" class="filled-in checkbox-white chk-elec-ampoule" id="elec_ampoule2" value="Non" name="elec_ampoule_led_chk2" />
+                                        <span for="elec_ampoule2">NON</span>
+                                    </label></span> 
                                 <img src="./assets/images/picto_gte/elec_ampoule_led_crop.png" alt="Pompe à chaleur air-eau" class="conso_result_image">
 
-                            </label>
+                            </div>
                         </div>                
                         <!-- <h1>Chauffage envisagé</h1>
                         <h2>Source d’énergie</h2>
