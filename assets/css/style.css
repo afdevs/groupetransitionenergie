@@ -384,7 +384,9 @@ fieldset.step-1{
 }
 
 fieldset.step-6{
-    max-width: 1100px;
+    /* max-width: 1100px; */
+
+    max-width: 690px !important;
 }
 .step-6__bigtitle{
     margin-top: 50px;
@@ -758,24 +760,24 @@ main .modalContainer .modal .modal-content .pompeAChaleurAirAir input[type=numbe
     justify-content: space-between;
 }
 
-.page .page__content .step-15 .optionWithImages label.result1, .page .page__content .step-15 .optionWithImages label.result2, .page .page__content .step-15 .optionWithImages label.result3{
+.page .page__content .step-11 .optionWithImages label.result1, .page .page__content .step-11 .optionWithImages label.result2, .page .page__content .step-11 .optionWithImages label.result3{
     width: 280px!important;
     box-shadow: 0 4px 20px 0 rgb(0 0 0 / 20%);
     transition: box-shadow .5s,border .2s;
 }
 
 
-.page .page__content .step-15 .optionWithImages label.result1:hover{
+.page .page__content .step-11 .optionWithImages label.result1:hover{
     background-color: #5a29b4!important;
     box-shadow: 0 4px 20px 0 rgb(0 50 80 / 5%);
 }
 
-.page .page__content .step-15 .optionWithImages label.result2:hover{
+.page .page__content .step-11 .optionWithImages label.result2:hover{
     background-color: #0288d1!important;
     box-shadow: 0 4px 20px 0 rgb(0 50 80 / 5%);
 }
 
-.page .page__content .step-15 .optionWithImages label.result3:hover{
+.page .page__content .step-11 .optionWithImages label.result3:hover{
     background-color: #7fb863!important;
     box-shadow: 0 4px 20px 0 rgb(0 50 80 / 5%);
 }

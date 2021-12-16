@@ -8,7 +8,12 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- AIzaSyAQh5gAoS9FZRHy4uC_1osGjhUM1eqq9T8 -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQh5gAoS9FZRHy4uC_1osGjhUM1eqq9T8&libraries=places&callback=initMap">
     </script>
+  
+        
     <title>Trouvez votre métier idéal | Groupe Transition Energie</title>
 </head>
 <body>
@@ -274,7 +279,7 @@
                                 </div>  
                                 <div class="input-item">
                                     <label for="inputSurfaceSol">Surface au sol (m 2)</label>
-                                    <input id="inputSurfaceSol" type="number" name="surface_au_sol" class="" min="0">
+                                    <input id="inputSurfaceSol" type="number" name="surface_au_sol" class="" min="0" value="0">
                                     <span class="step-1__content__notice">Surface au sol (m 2) requis </span>
                                 </div>
                             </div>
@@ -560,7 +565,7 @@
                             </label>
                         </div>                        
                         <label for="inputTempConfort">Coefficient d’isolation G</label>
-                        <select id="visolation" style="width: 100%;" name="coefficient_d_isolation">
+                        <select id="gisolation" name="gisolation" style="width: 100%;" name="coefficient_d_isolation">
                             <option value="3.00">G = 3.00 : véranda ancienne</option>
                             <option value="2.50">G = 2.50 : véranda récente</option>
                             <option value="2.00">G = 2.00 : ancien très mal isolé</option>
@@ -641,24 +646,25 @@
                         </div>
                     </fieldset>
                     
-                    <fieldset class="step-15">
+                    <fieldset class="step-11">
                         <h2>Consommation et indexation</h2>
-                        <div class="step-15__content optionWithImages" style="width: 900px;margin-top: 17%;">
-                            <label for="type_de_ventilation_1" class="select-item btn step-15__link image result1" style="width: 280px!important;font-size: 13px !important; background-color: #5a29b4; color:white; height:170px!important;">                        
+                        <h3 style="line-height: 30px;">Suite à l'étude de votre habitat réalisé à l'aide voici les prévisions de vos consommations</h3>
+                        <div class="step-11__content optionWithImages" style="width: 900px;margin-top: 15%;">
+                            <label for="type_de_ventilation_1" class="select-item btn step-11__link image result1" style="width: 280px!important;font-size: 13px !important; background-color: #5a29b4; color:white; height:170px!important;">                        
                                 <!-- <input id="votre_conso_actuel" type="number" name="type_de_ventilation" id="type_de_ventilation_1" value="Votre consomation actuel"> -->
                                 <span style="position: absolute;top: 40px;left:50px;width: 220px;text-align: center;">Votre consommation actuel</span> 
                                 <span id="votre_conso_actuel" style="font-size:40px;position: absolute;bottom: 30px;">0 €</span> 
                                 <img src="./assets/images/check_icon.svg" alt="" class="image-checkbox_" style="top: 40px;left: 11px;">
                             </label>
                             
-                            <label for="type_de_ventilation_2" class="select-item btn step-15__link image result2" style="width: 280px!important;font-size: 13px !important; background-color: #0288d1; color:white; height:170px!important;">             
+                            <label for="type_de_ventilation_2" class="select-item btn step-11__link image result2" style="width: 280px!important;font-size: 13px !important; background-color: #0288d1; color:white; height:170px!important;">             
                                 <!-- <input id="step-15_value2" type="radio" name="type_de_ventilation"  id="type_de_ventilation_2" value="Votre consommation sur X années"> -->
                                 <span style="position: absolute;top: 40px;left:40px;width: 220px;text-align: center;">Votre consommation sur <span id="votre_conso_sur_x_annee_value">X </span> années</span> 
                                 <span id="votre_conso_sur_x_annee" style="font-size:40px;position: absolute;bottom: 30px;">0 €</span> 
                                 <img src="./assets/images/check_icon.svg" alt="" class="image-checkbox_" style="top: 40px;left: 11px;">
                             </label>
                             
-                            <label for="type_de_ventilation_3" class="select-item btn step-15__link image result3" style="width: 280px!important;font-size: 13px !important; background-color: #7fb863; color:white; height:170px!important;">        
+                            <label for="type_de_ventilation_3" class="select-item btn step-11__link image result3" style="width: 280px!important;font-size: 13px !important; background-color: #7fb863; color:white; height:170px!important;">        
                                 <!-- <input id="step-15_value3" type="radio" name="type_de_ventilation"  id="type_de_ventilation_3" value="Moyenne de consommation sur X années"> -->
                                 <span style="position: absolute;top: 40px;left:40px;width: 220px;text-align: center;">Moyenne de consommation sur <span id="moyenne_conso_sur_x_annee_value">X </span> années</span> 
                                 <span id="moyenne_conso_sur_x_annee" style="font-size:40px;position: absolute;bottom: 30px;">0 €</span> 
@@ -683,7 +689,7 @@
                                 <span id="votre_conso_sur_x_annee" style="font-size:40px;position: absolute;left: 30px; top:90px; display: flex; align-items: center;justify-content: space-between;flex-wrap: wrap;">
                                     <button data-target="modal5" class="callToAction" id="pompeChaleurButton">Choisir</button>
                                 </span> 
-                                <img src="./assets/images/picto_gte/pac_air_air_crop.png" alt="Pompe à chaleur air-eau" class="conso_result_image">
+                                <img src="./assets/images/picto_gte/image00001.jpeg" alt="Pompe à chaleur air-eau" class="conso_result_image">
                             </label>
                             <!-- width: 100% !important;
 display: 100%;
@@ -1471,7 +1477,7 @@ left: 30px; -->
                         <input id="inputPompeAChaleurSurfaceTotal" name="pompe_a_chaleur_air_air_surface_total" type="number" name="eau_chaude_sanitaire_envisage_source_energie_ballon_eau_chau" class="" min="0"> 
                     </label>
                 </div>
-                <div class="modal-footer"style="margin-top: 40px;text-align:center;">
+                <div class="modal-footer"style="margin-top: 25px;text-align:center;margin-bottom: 30px;">
                     <div >
                         <a href="#!" class="modal-close callToAction">VALIDER</a>
                     </div>

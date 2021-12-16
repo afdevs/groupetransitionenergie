@@ -1,3 +1,48 @@
+const franceAddresses=[
+  {
+    delta: -4,
+    departement: [29, 22, 56, 50, 14, 76, 27, 61, 53, 60, 02, 77, 45, 78, 28, 72, 49, 79, 86, 36, 18, 37, 41, 33, 40, 64, 65, 47, 24, 16, 17, 12]
+  },
+  {
+    delta: -5,
+    departement: [35, 44, 85, 32, 31, 30, 13, 75, 92, 93, 94]
+  },
+  {
+    delta: -9,
+    departement: [62, 59, 80]
+  },
+  {
+    delta: -15,
+    departement: [57, 67, 54, 88, 68, 90]
+  },
+  {
+    delta: -12,
+    departement: [55, 52, 70, 25]
+  },
+  {
+    delta: -10,
+    departement: [08, 51, 10, 89, 21, 58, 71, 39, 42, 69, 01, 38, 74, 73, 05]
+  },
+  {
+    delta: -8,
+    departement: [04, 06, 87, 23, 03, 63, 19, 63, 15, 43,48]
+  },
+  {
+    delta: -2,
+    departement: [83, 28, '2A']
+  },
+  {
+    delta: -6,
+    departement: [07, 26, 84, 46]
+  },
+  {
+    delta: 9,
+    departement: [62, 59, 60]
+  },
+
+
+]
+
 const inputsCountersValues={
     nombre_d_habitants: 0,
     hauteur_sous_plafond: 0,
@@ -18,8 +63,27 @@ const inputsCountersValues={
     moyenne_conso_sur_x_annee: 0
 }
 
+
 jQuery(function($){
     $(document).ready(function(){
+      // const center = { lat: 50.064192, lng: -130.605469 };
+      //   // Create a bounding box with sides ~10km away from the center point
+      //   const defaultBounds = {
+      //       north: center.lat + 0.1,
+      //       south: center.lat - 0.1,
+      //       east: center.lng + 0.1,
+      //       west: center.lng - 0.1,
+      //   };
+      //   const input = document.getElementById("inputAddress");
+      //   const options = {
+      //       bounds: defaultBounds,
+      //       componentRestrictions: { country: "fr" },
+      //       fields: ["address_components", "geometry", "icon", "name"],
+      //       strictBounds: false,
+      //       types: ["establishment"],
+      //   };
+      //   const autocomplete = new google.maps.places.Autocomplete(input, options);
+
       //initialize all modals           
       $('.modal').modal({
         // dismissible:false
@@ -100,6 +164,11 @@ jQuery(function($){
         
         //temperature de confort
         if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='temperature_de_confort'){
+        console.log($('select[name=hauteur_sous_plafond_moyenne]').val())
+        console.log($('select[name=gisolation]').val())
+        console.log($('#inputSurfaceSol').val)
+        console.log( inputsCountersValues.temperature_de_confort);
+
           const result=inputsCountersValues.temperature_de_confort +0.5;
           inputsCountersValues.temperature_de_confort = Math.round(result*100)/100
           $($($(this).parent().children('.counter__value'))[0]).text(inputsCountersValues.temperature_de_confort);  
@@ -117,7 +186,7 @@ jQuery(function($){
         inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]=inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')];
 
 
-        //champ calcule
+        //Champ calcule
         $($($(this).parent().children('.counter__value'))[0]).text(inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]);
         if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond'){
           $('#inputVolumeHabitation').val(parseInt($('#inputSurfaceSol').val()) * inputsCountersValues.eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond);
@@ -532,7 +601,7 @@ jQuery(function($){
             });
         } if($(this).attr('aria-selected')==='part-4'){
           $('.step-'+1).css('display', 'none');
-          current=14;
+          current=10;
           $('.page .page__content #regiration_form').css("transform"," translateX(50px)" );
           $('.page .page__content #regiration_form').css("transition", "none" );
 
@@ -676,7 +745,7 @@ jQuery(function($){
           $("#part-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-5").removeClass('step-list-item-active',1000, 'easeInBack');
-      }else if(current==15){
+      }else if(current==11){
         if(!$("#part-4").hasClass('step-list-item-active')){
           $("#part-4").addClass('step-list-item-active')
         }
@@ -793,7 +862,7 @@ jQuery(function($){
       inputsCountersValues.votre_conso_actuel=parseFloat($(this).val());
       $('#votre_conso_actuel').text($(this).val() +' €');
       if(!isNaN(parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()))){
-        inputsCountersValues.votre_conso_sur_x_annee=(parseInt($(this).val())+ parseInt($('#inputEvol25Annee').val())) * parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val())
+        inputsCountersValues.votre_conso_sur_x_annee=(parseInt($(this).val())+ (parseInt($(this).val()) * (parseInt($('#inputEvol25Annee').val())/100))) * parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val())
         inputsCountersValues.moyenne_conso_sur_x_annee=inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val() || 0);
       }
       $('#votre_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee +' €');
@@ -806,7 +875,7 @@ jQuery(function($){
       inputsCountersValues.votre_conso_actuel= parseFloat($('#inputEstimFactChauff').val()||0);
       $('#votre_conso_actuel').text(inputsCountersValues.votre_conso_actuel +' €');
       if(!isNaN(parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()))){
-        inputsCountersValues.votre_conso_sur_x_annee=(parseInt($('#inputEvol25Annee').val()) + parseFloat($('#inputEstimFactChauff').val()))*parseInt($(this).val());
+        inputsCountersValues.votre_conso_sur_x_annee=(((parseInt($('#inputEvol25Annee').val())/100)* parseFloat($('#inputEstimFactChauff').val())) + parseFloat($('#inputEstimFactChauff').val()))*parseInt($(this).val());
         inputsCountersValues.moyenne_conso_sur_x_annee=inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val());
       }
       $('#votre_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee +' €');
@@ -817,13 +886,50 @@ jQuery(function($){
       inputsCountersValues.votre_conso_actuel= parseFloat($('#inputEstimFactChauff').val());
       $('#votre_conso_actuel').text(inputsCountersValues.votre_conso_actuel +' €');
       if(!isNaN(parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()))){
-        inputsCountersValues.votre_conso_sur_x_annee=(parseInt($('#inputEstimFactChauff').val()) + parseInt($(this).val())) * parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val() || 0)
+        inputsCountersValues.votre_conso_sur_x_annee=((parseInt($('#inputEstimFactChauff').val()) + (parseInt($('#inputEstimFactChauff').val())*(parseInt($(this).val())/100)))) * parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val() || 0)
         inputsCountersValues.moyenne_conso_sur_x_annee=inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val());
         
       }
       $('#votre_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee +' €');
       $('#moyenne_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()) +' €');
+    });
+
+    //gisolation
+    $('select[name=gisolation]').change(function(){
+      console.log($(this).val())
+      console.log($('#inputSurfaceSol').val())
+      console.log($('select[name=hauteur_sous_plafond_moyenne]').val())
+      console.log( inputsCountersValues.temperature_de_confort);
+      console.log($('#inputAddress').val())
+
     })
+    //surface au sol
+    $('#inputSurfaceSol').change(function(){
+      console.log($(this).val())
+      console.log($('select[name=gisolation]').val())
+      console.log($('select[name=hauteur_sous_plafond_moyenne]').val())
+      console.log( inputsCountersValues.temperature_de_confort);
+      console.log($('#inputAddress').val())
+
+    })
+
+    //hauteur sous plafond_moyenne
+    $('select[name=hauteur_sous_plafond_moyenne').change(function(){
+      console.log($(this).val());
+      console.log($('select[name=gisolation]').val())
+      console.log($('#inputSurfaceSol').val())
+      console.log( inputsCountersValues.temperature_de_confort);
+      console.log($('#inputAddress').val())
+
+    })
+    
+    $('#inputAddress').keyup(function(){
+      console.log($(this).val())
+      console.log($('select[name=gisolation]').val())
+      console.log($('#inputSurfaceSol').val())
+      console.log( inputsCountersValues.temperature_de_confort);
+    })
+
     //MODAL CONDITIONAL
     $("label[for='source_energie_1_chauffage']").click(function(){
       $('#source_energie_type_gpl').css('display', 'none')
