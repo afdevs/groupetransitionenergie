@@ -8,16 +8,92 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <!-- AIzaSyAQh5gAoS9FZRHy4uC_1osGjhUM1eqq9T8 -->
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQh5gAoS9FZRHy4uC_1osGjhUM1eqq9T8&libraries=places&callback=initMap">
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1EXRWkpnVufW7zY3VUrTjaJiz4Lmj5wU&libraries=places&callback=initMap">
     </script>
-  
+
+    <script async>
+        function getAbsoluteDelta(){
+            const deltaVal=[]            
+            franceAddresses.forEach(franceAd=>{
+                franceAd.departement.filter(depart=>{
+                    if(depart===inputsCountersValues.departement_address){
+                        deltaVal.push(franceAd.delta);
+                    }
+                });
+            });
+            return deltaVal[0];
+        }
+        
+        function calculatePompeAChaleurAirEau(){
+            console.log('inputsCountersValues', inputsCountersValues);
+            let volumeIsolationResult= inputsCountersValues.gisolation * (inputsCountersValues.surface_au_sol * inputsCountersValues.hauteur_sous_plafond_m)
+            while (inputsCountersValues.altitude> 200){
+                inputsCountersValues.delta--;
+                inputsCountersValues.altitude -=200;
+            }
+            let finalResult= ((volumeIsolationResult * (inputsCountersValues.temperature_de_confort + Math.abs(inputsCountersValues.delta)))/1.2)/1000;
+
+            document.getElementById('pompe_a_chaleur_air_eau_value').innerText=finalResult
+            inputsCountersValues.pompe_a_chaleur_air_eau_value=finalResult;
+
+        }
+
+        function getElevation(location) {
+            let elevator = new google.maps.ElevationService();
+            // Initiate the location request
+            elevator
+                .getElevationForLocations({
+                locations: [location],
+                })
+                .then(({ results }) => {
+                // Retrieve the first result
+                if (results[0]) {
+                    inputsCountersValues.altitude=results[0].elevation;
+                    calculatePompeAChaleurAirEau()
+                } else {
+                    console.log("No results found");
+                }
+                })
+                .catch((e) =>
+                    console.log("Elevation service failed due to: " + e)
+                );
+        }
+
+        function initMap(){
+            const center = { lat: 50.064192, lng: -130.605469 };
+            // Create a bounding box with sides ~10km away from the center point
+            const defaultBounds = {
+                north: center.lat + 0.1,
+                south: center.lat - 0.1,
+                east: center.lng + 0.1,
+                west: center.lng - 0.1,
+            };
+            const input = document.getElementById("inputAddress");
+            const options = {
+                bounds: defaultBounds,
+                componentRestrictions: { country: "fr" },
+                fields: ["address_components", "geometry", "name"],
+                strictBounds: false,
+                types: ["establishment"],
+            };
+            const autocomplete = new google.maps.places.Autocomplete(input, options);
+            
+            autocomplete.addListener('place_changed', function(e){
+                let place= autocomplete.getPlace();
+                inputsCountersValues.departement_address=place.address_components[place.address_components.length-1].long_name.substring(0, 2);
+                inputsCountersValues.delta=getAbsoluteDelta();
+                getElevation({lat: place.geometry.location.lat(), lng: place.geometry.location.lng()})
+
+            })
+        }
+
+    </script>
         
     <title>Trouvez votre métier idéal | Groupe Transition Energie</title>
 </head>
 <body>
     <main>
+    <div id="map"></div>
         <div class="topbar">
             <div class="topbar__logo">
                 <img src="./assets/images/logo_groupe_transition_energie.png" alt="Logo - Groupe Transition Energie">
@@ -591,7 +667,7 @@
                         </select>
                     </fieldset>
                     
-                    <fieldset class="step-10" >                        
+                    <fieldset class="step-10" style="margin-top:6%">                        
                     <h2>Vos consommations<br>poste par poste</h2>                     
                         <!-- <h3 class="text-center mb-4">Vos consommations
                             <br>poste par poste</h3>    -->
@@ -679,7 +755,7 @@
                             <label for="type_de_ventilation_1" class="select-item btn step-16__link image conso_result1" style="font-size: 18px!important;color:white; height:220px!important;margin-bottom: 25px;">                        
                                 <span style="position: absolute;top: 30px;left:30px;text-align: left; width: fit-content;">Pompe à chaleur air-eau </span> 
                                 <span style="position: absolute;top: 60px;left:30px;text-align: left; width: fit-content;font-size: 13px!important;">Chauffage</span> 
-                                <span id="votre_conso_actuel" style="font-size:40px;position: absolute;left: 30px; top: 90px; display: flex; width: 200px; justify-content: space-between;flex-wrap: wrap;">0 KW</span> 
+                                <span id="pompe_a_chaleur_air_eau_value" style="font-size:40px;position: absolute;left: 30px; top: 90px; display: flex; width: 200px; justify-content: space-between;flex-wrap: wrap;">0 KW</span> 
                                 <img src="./assets/images/picto_gte/chauffee-small-icon.svg" alt="Pompe à chaleur air-eau" class="conso_result_image">
                             </label>
                             
@@ -689,12 +765,10 @@
                                 <span id="votre_conso_sur_x_annee" style="font-size:40px;position: absolute;left: 30px; top:90px; display: flex; align-items: center;justify-content: space-between;flex-wrap: wrap;">
                                     <button data-target="modal5" class="callToAction" id="pompeChaleurButton">Choisir</button>
                                 </span> 
-                                <img src="./assets/images/picto_gte/image00001.jpeg" alt="Pompe à chaleur air-eau" class="conso_result_image">
+                                <img src="./assets/images/picto_gte/chauffee-small-icon.svg" alt="Pompe à chaleur air-eau" class="conso_result_image">
                             </label>
-                            <!-- width: 100% !important;
-display: 100%;
-text-align: left;
-left: 30px; -->
+                            <!-- width: 100% !important;display: 100%;text-align: left;left: 30px; -->
+
                             <div class="type_de_ventilation_3" class="select-item btn step-16__link image conso_result3" style="font-size: 18px!important;color:white; height:220px!important;margin-bottom: 25px;">     
                                 <span style="position: absolute;top: 60px;left:30px;text-align: left; width: fit-content;font-size: 13px!important;">Eclairage</span> 
                                 <span style="position: absolute;top: 30px;left:30px;text-align: left; width: fit-content;">Chauffe-eau thermodynamique</span> 
