@@ -1,11 +1,11 @@
 var franceAddresses=[
   {
     delta: -4,
-    departement: ['29', '22', '56', '50', '14', '76', '27', '61', '53', '60', '02', '77', '45', '78', '28', '72', '49', '79', '86', '36', '18', '37', '41', '33', '40', '64', '65', '47', '24', '16', '17', '12']
+    departement: ['29', '22', '56', '50', '14', '76', '27', '61', '53', '60', '02', '77', '45', '78', '28', '72', '49', '79', '86', '36', '18', '37', '41', '33', '40', '32', '64', '65', '47', '24', '16', '17', '12']
   },
   {
     delta: -5,
-    departement: ['35', '44', '85', '32', '31', '30', '13', '75', '92', '93', '94']
+    departement: ['35', '44', '85','31', '82', '09', '81', '30',  '11', '66', '34', '13', '75', '92', '93', '94']
   },
   {
     delta: -9,
@@ -854,32 +854,34 @@ jQuery(function($){
       if(!isNaN(parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()))){
         let sumTotal=inputsCountersValues.votre_conso_actuel;
         for(let i=0; i< parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()); i++){
-          sumTotal +=((sumTotal * (parseFloat($(this).val())/100)))
+          sumTotal +=((sumTotal * (parseFloat($('#inputEvol25Annee').val())/100)))
         }
-        inputsCountersValues.votre_conso_sur_x_annee=sumTotal;
+        inputsCountersValues.votre_conso_sur_x_annee=sumTotal.toFixed(2);
         
         inputsCountersValues.moyenne_conso_sur_x_annee=inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val() || 0);
       }
       $('#votre_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee +' €');
-      $('#moyenne_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val() || 0) +' €');
+      $('#moyenne_conso_sur_x_annee').text((inputsCountersValues.votre_conso_sur_x_annee).toFixed(2) +' €');
     })
 
       $('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').change(function(e){
+        //label en x annee
         $("#votre_conso_sur_x_annee_value").text($(this).val());
         $("#moyenne_conso_sur_x_annee_value").text($(this).val());
+
       inputsCountersValues.votre_conso_actuel= parseFloat($('#inputEstimFactChauff').val()||0);
       $('#votre_conso_actuel').text(inputsCountersValues.votre_conso_actuel +' €');
       if(!isNaN(parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()))){
         let sumTotal=inputsCountersValues.votre_conso_actuel;
-        for(let i=0; i< parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()); i++){
-          sumTotal +=((sumTotal * (parseFloat($(this).val())/100)))
+        for(let i=0; i< parseInt($($(this)).val()); i++){
+          sumTotal +=((sumTotal * (parseFloat($('#inputEvol25Annee').val())/100)))
         }
-        
-        inputsCountersValues.votre_conso_sur_x_annee=sumTotal;
+
+        inputsCountersValues.votre_conso_sur_x_annee=sumTotal.toFixed(2);;
         inputsCountersValues.moyenne_conso_sur_x_annee=inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val());
       }
       $('#votre_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee +' €');
-      $('#moyenne_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee/ parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val() || 0) +' €');
+      $('#moyenne_conso_sur_x_annee').text(inputsCountersValues.moyenne_conso_sur_x_annee.toFixed(2) +' €');
     })
 
     $('#inputEvol25Annee').change(function(){
@@ -895,15 +897,13 @@ jQuery(function($){
         
       }
       $('#votre_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee +' €');
-      $('#moyenne_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()) +' €');
+      $('#moyenne_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee.toFixed(2) +' €');
     });
 
     //gisolation
     $('select[name=gisolation]').change(function(){
-      console.log($(this).val())
       inputsCountersValues.gisolation=parseFloat($(this).val());
       calculatePompeAChaleurAirEau()
-      console.log('select[name=gisolation]')
       // console.log($('#inputSurfaceSol').val())
       // console.log($('select[name=hauteur_sous_plafond_moyenne]').val())
       // console.log( inputsCountersValues.temperature_de_confort);
@@ -914,7 +914,6 @@ jQuery(function($){
     $('#inputSurfaceSol').change(function(){
       inputsCountersValues.surface_au_sol=parseFloat($(this).val())
       calculatePompeAChaleurAirEau();
-      console.log('inputSurfaceSol')
 
       // console.log($('select[name=gisolation]').val())
       // console.log($('select[name=hauteur_sous_plafond_moyenne]').val())
@@ -927,7 +926,6 @@ jQuery(function($){
     $('select[name=hauteur_sous_plafond_moyenne').change(function(){
       inputsCountersValues.hauteur_sous_plafond_m=parseFloat($(this).val());
       calculatePompeAChaleurAirEau();
-      console.log('select[name=hauteur_sous_plafond_moyenne')
 
       // console.log($('select[name=gisolation]').val())
       // console.log($('#inputSurfaceSol').val())
@@ -937,10 +935,7 @@ jQuery(function($){
     })
     
     $('#inputAddress').keyup(function(){
-      console.log($(this).val())
-      console.log($('select[name=gisolation]').val())
-      console.log($('#inputSurfaceSol').val())
-      console.log( inputsCountersValues.temperature_de_confort);
+      calculatePompeAChaleurAirEau();
     })
 
     //MODAL CONDITIONAL
