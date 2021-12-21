@@ -25,7 +25,6 @@
         }
         
         function calculatePompeAChaleurAirEau(){
-            console.log('inputsCountersValues', inputsCountersValues);
             let volumeIsolationResult= inputsCountersValues.gisolation * (inputsCountersValues.surface_au_sol * inputsCountersValues.hauteur_sous_plafond_m)
             while (inputsCountersValues.altitude> 200){
                 inputsCountersValues.delta--;
@@ -81,6 +80,8 @@
             autocomplete.addListener('place_changed', function(e){
                 let place= autocomplete.getPlace();
                 inputsCountersValues.departement_address=place.address_components[place.address_components.length-1].long_name.substring(0, 2);
+                document.getElementById('inputZipcode').value=place.address_components[place.address_components.length-1].long_name;
+                document.getElementById('inputCity').value=place.name;
                 inputsCountersValues.delta=getAbsoluteDelta();
                 getElevation({lat: place.geometry.location.lat(), lng: place.geometry.location.lng()})
 
