@@ -672,13 +672,22 @@ main .modalContainer .modal-content .optionWithImagesColumn label.image{
 main .modalContainer .step-left__img{
     width: 90px;
 }
+main .modalContainer .modal .modal-content .pieces .pieces__item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 main .modalContainer .modal .modal-content .pompeAChaleurAirAir{
-    max-width: 300px;
-    display: block;
+    padding-right: 0;
+}
+main .modalContainer .modal .modal-content .pompeAChaleurAirAirInput{
+    max-width: 170px;
+    margin: 0 10px;
+    /* display: block;
     margin-right: auto;
     margin-left: auto;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 50px; */
 }
 main .modalContainer .modal .modal-content .pompeAChaleurAirAir input[type=number]{
     margin-top: 25px;

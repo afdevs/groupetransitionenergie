@@ -33,7 +33,7 @@
             }
             let finalResult= ((volumeIsolationResult * (inputsCountersValues.temperature_de_confort + Math.abs(inputsCountersValues.delta)))/1.2)/1000;
 
-            document.getElementById('pompe_a_chaleur_air_eau_value').innerText=finalResult
+            document.getElementById('pompe_a_chaleur_air_eau_value').innerText=finalResult +'KW';
             inputsCountersValues.pompe_a_chaleur_air_eau_value=finalResult;
 
         }
@@ -243,11 +243,11 @@
 
                                 <label for="type_occupation_2" class="select-item btn step-2__link image image4">
                                     <input type="radio" name="type_d_occupation" id="type_occupation_2" value="
-                                    Propriétaire d’une résidence secondaire">
+                                    Résidence secondaire">
                                     <span class="img-wrapper">
                                         <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_proprietaire-maison-secondaire.svg" alt="Photo - Propriétaire d’une résidence secondaire">
                                     </span>
-                                    Propriétaire d’une résidence secondaire
+                                    Résidence secondaire
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
 
@@ -469,13 +469,13 @@
                             <option value="3.9">3.90 m</option>
                             <option value="4.0">4.00 m</option>
                         </select>
-                        <div class="inputs"> 
+                        <!-- <div class="inputs"> 
                             <div class="input-item nopr20">
                                 <label for="inputVolumeHabitation">Volume habitation (m 3 hauteur x surface )</label>
                                 <input id="inputVolumeHabitation" type="number" name="volume_habitation" class="" min="0">
                                 <span class="step-1__content__notice">Volume habitation (m 3 hauteur x surface ) requis </span>
                             </div>
-                        </div>
+                        </div> -->
                     </fieldset>
 
                     <fieldset class="step-6">
@@ -619,21 +619,21 @@
                     <fieldset class="step-9">
                         <h2>Type de ventilation</h2>
                         <div class="step-9__content optionWithImages">
-                            <label for="type_de_ventilation_1" class="next btn step-9__link image">                        
+                            <label for="type_de_ventilation_1" class="select-item btn step-9__link image">                        
                                 <input type="radio" name="type_de_ventilation" id="type_de_ventilation_1" value="Naturelle">
                                 <img class="step-1__img" src="./assets/images/picto_gte/ventilation_naturelle.png" alt="Photo - Ventilation naturelle">
                                 Naturelle
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="type_de_ventilation_2" class="next btn step-9__link image">             
+                            <label for="type_de_ventilation_2" class="select-item btn step-9__link image">             
                                 <input type="radio" name="type_de_ventilation"  id="type_de_ventilation_2" value="Simple">
                                 <img class="step-1__img" src="./assets/images/picto_gte/ventilation_double.png" alt="Photo - Ventilation Simple">
                                 Simple
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="type_de_ventilation_3" class="next btn step-9__link image">        
+                            <label for="type_de_ventilation_3" class="select-item btn step-9__link image">        
                                 <input type="radio" name="type_de_ventilation"  id="type_de_ventilation_3" value="Double f lux">
                                 <img class="step-1__img" src="./assets/images/picto_gte/ventilation_double_flux.png" alt="Photo - Ventilation double flux">
                                 Double flux
@@ -667,7 +667,7 @@
                         </select>
                     </fieldset>
                     
-                    <fieldset class="step-10" style="margin-top:6%">                        
+                    <fieldset class="step-10" >                        
                     <h2>Vos consommations<br>poste par poste</h2>                     
                         <!-- <h3 class="text-center mb-4">Vos consommations
                             <br>poste par poste</h3>    -->
@@ -680,31 +680,31 @@
                                         <div class="name-caption">Chauffage</div>
                                     </div>
 
-                                    <div class="consump-info ">
-                                        <div class="consumpt-val" >44545€</div>
+                                    <div class="consump-info" id="consump-info1">
+                                        <div class="consumpt-val" id="consumpt-val1" >0€</div>
                                     </div>
                                 </a>
                                 
                                 <a class="vos-consommations__consumption-item ecs-item" data-target="modal2" class="btn chauffage-modal-trigger" id="eauSanitaireModalButton">
-                                    <div class="left-part">
+                                    <div class="left-part" id="eauChaudeSanitaireLeftPart">
                                         <div class="img-wrapper"><img alt="" src="./assets/images/picto_gte/ecs-white-icon.svg">
                                         </div>
                                         <div class="name-caption">Eau chaude sanitaire (ECS)</div>
                                     </div>      
                                     
-                                    <div class="consump-info ">
-                                        <div class="consumpt-val" >44545€</div>
+                                    <div class="consump-info" id="consump-info2">
+                                        <div class="consumpt-val" id="consumpt-val2" >0€</div>
                                     </div>
                                 </a>
                                 
                                 <a class="vos-consommations__consumption-item taches-item" data-target="modal3" class="btn chauffage-modal-trigger" id="appareilElecModalButton">
-                                    <div class="left-part">
+                                    <div class="left-part" id="appareilElecLeftPart">
                                         <div class="img-wrapper"><img alt="" src="./assets/images/picto_gte/taches-menageres-white-icon.png"></div>
                                         <div class="name-caption">Appareils électriques</div>
                                     </div>
                                     
-                                    <div class="consump-info ">
-                                        <div class="consumpt-val" >44545€</div>
+                                    <div class="consump-info" id="consump-info3">
+                                        <div class="consumpt-val" id="consumpt-val3" >0€</div>
                                     </div>
                                 </a>
                                 
@@ -713,9 +713,9 @@
                                         <div class="img-wrapper"><img alt="" src="./assets/images/picto_gte/electricite-white-icon.svg"></div>
                                         <div class="name-caption">Éclairage</div>
                                     </div>
-                                   
-                                    <div class="consump-info ">
-                                        <div class="consumpt-val" >44545€</div>
+                                    
+                                    <div class="consump-info" id="consump-info4">
+                                        <div class="consumpt-val" id="consumpt-val4" >0€</div>
                                     </div>
                                 </a>
                             </div>
@@ -1129,7 +1129,7 @@
                 </div>
                 <div class="modal-footer">
                     <div style="margin-right: 75px;">
-                        <a href="#!" class="modal-close callToAction">VALIDER</a>
+                        <a href="#!" class="modal-close callToAction" id="modal1Button">VALIDER</a>
                     </div>
                 </div>
             </div>
@@ -1362,7 +1362,6 @@
                             <div class="input-item">
                                 <label for="inputEstimFactEauChaude">Estimation de la facture d'eau chaude sanitaire (€/an)</label>
                                 <input id="inputEstimFactEauChaude" type="number" name="estimation_de_facture_d_eacu_chaude" class="" min="0">
-                                <span class="step-1__content__notice">Estimation de la facture d'eau chaude sanitaire requis </span>
                             </div>
                         </div>
                     </fieldset>
@@ -1370,7 +1369,7 @@
                 
                 <div class="modal-footer">
                     <div style="margin-right: 75px;">
-                        <a href="#!" class="modal-close callToAction">VALIDER</a>
+                        <a href="#!" class="modal-close callToAction" id="modal2Button">VALIDER</a>
                     </div>
                 </div>
             </div>
@@ -1420,13 +1419,11 @@
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                         </div>
-
                         
                         <div class="inputs">    
                             <div class="input-item">
-                                <label for="inputEstimFactEauChaude">Estimation de la facture des appareils électriques (€/an)</label>
-                                <input id="inputEstimFactEauChaude" type="number" name="estimation_de_facture_d_eacu_chaude" class="" min="0">
-                                <span class="step-1__content__notice">Estimation de la facture d'eau chaude sanitaire requis </span>
+                                <label for="inputEstimFactAppareilElec">Estimation de la facture des appareils électriques (€/an)</label>
+                                <input id="inputEstimFactAppareilElec" type="number" name="estimation_de_facture_d_eacu_chaude" class="" min="0">
                             </div>
                         </div>
                         
@@ -1435,7 +1432,7 @@
                 
                 <div class="modal-footer">
                     <div style="margin-right: 75px;">
-                        <a href="#!" class="modal-close callToAction">VALIDER</a>
+                        <a href="#!" class="modal-close callToAction" id="modal3Button">VALIDER</a>
                     </div>
                 </div>
             </div>
@@ -1513,7 +1510,6 @@
                             <div class="input-item">
                                 <label for="inputEstimFactEclairage">Estimation de la facture d'éclairage (€/an)</label>
                                 <input id="inputEstimFactEclairage" type="number" name="estimation_de_eclairage_par_an" class="" min="0">
-                                <span class="step-1__content__notice">Estimation de la facture d'éclairage requis </span>
                             </div>
                         </div>  
                     </fieldset>
@@ -1521,7 +1517,7 @@
                 
                 <div class="modal-footer">
                     <div style="margin-right: 75px;">
-                        <a href="#!" class="modal-close callToAction">VALIDER</a>
+                        <a href="#!" class="modal-close callToAction" id="modal4Button">VALIDER</a>
                     </div>
                 </div>
             </div>
@@ -1531,7 +1527,7 @@
                     <div class="input-counter">
                         <div class="counter"> 
                                 <div class="counter__fields">
-                                    <div class="counter__title">Nombre d’unité </div>
+                                    <div class="counter__title">Nombre de pieces </div>
                                 </div>
                                 <div class="counter_buttons">
                                     <button class="counter__decrement" type="button">
@@ -1542,14 +1538,11 @@
                                         +
                                     </button>
                                 </div>
-                                <span class="step-1__content__notice">Nombre d’unité requis </span>
-
                         </div> 
                     </div>
+                    <div id="piecesId" class="pieces">
+                    </div>
                     
-                    <label for="inputPompeAChaleurSurfaceTotal" class="pompeAChaleurAirAir">Surface total(m2)
-                        <input id="inputPompeAChaleurSurfaceTotal" name="pompe_a_chaleur_air_air_surface_total" type="number" name="eau_chaude_sanitaire_envisage_source_energie_ballon_eau_chau" class="" min="0"> 
-                    </label>
                 </div>
                 <div class="modal-footer"style="margin-top: 25px;text-align:center;margin-bottom: 30px;">
                     <div >

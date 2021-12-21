@@ -127,7 +127,6 @@ jQuery(function($){
       });
       // let map = new google.maps.Map(document.getElementById("map"), {});
       // console.log('map', map)
-      
 
       //Rese all radios inputs to uncheck
       function resetAllRadioInput(){
@@ -169,6 +168,12 @@ jQuery(function($){
         if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='pompe_a_chaleur_air_air_nombre_unite'){
           inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite++;
           $($($(this).parent().children('.counter__value'))[0]).text(inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite);  
+          const inputItem=`<div class="pieces__item" id="pieces__item${inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite}">
+          <label for="inputPompeAChaleurSurfaceTotal${inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite}" class="pompeAChaleurAirAir${inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite}">Piece N° <span>${inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite}</span></label>
+          <input id="inputPompeAChaleurSurfaceTotal${inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite}" name="pompe_a_chaleur_air_air_surface_total" type="number" name="eau_chaude_sanitaire_envisage_source_energie_ballon_eau_chau${inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite}" class="pompeAChaleurAirAirInput" min="0"> 
+          Surface en (m2)
+          </div>`;
+          $('#piecesId').append(inputItem)
           return
         }
 
@@ -213,6 +218,7 @@ jQuery(function($){
 
         //Nombre d'unite pac air air
         if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='pompe_a_chaleur_air_air_nombre_unite'){
+          $('#pieces__item'+inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite).remove()
           inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite--;
           $($($(this).parent().children('.counter__value'))[0]).text(inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite);  
           return
@@ -357,7 +363,7 @@ jQuery(function($){
             next_step=++current;
             next_step_form =  $('.step-'+next_step);
             
-            if (current >=1 && current<10){ 
+            if (current >=1 && current<11){ 
               $('.page .previous').css('visibility', 'visible');
             }else{
                 $('.page .previous').css('visibility', 'hidden');
@@ -436,7 +442,7 @@ jQuery(function($){
         
         next_step_form = $('.step-'+next_step);
         
-        if (current >1 && current<10){ 
+        if (current >1 && current<11){ 
           $('.page .previous').css('visibility', 'visible')
         }else{
           $('.page .previous').css('visibility', 'hidden');
@@ -483,7 +489,7 @@ jQuery(function($){
             next_step=++current;
             next_step_form =  $('.step-'+next_step);
             
-            if (current >=1 && current<10){ 
+            if (current >=1 && current<11){ 
               $('.page .previous').css('visibility', 'visible');
             }else{
                 $('.page .previous').css('visibility', 'hidden');
@@ -522,7 +528,7 @@ jQuery(function($){
             next_step=++current;
             next_step_form =  $('.step-'+next_step);
             
-            if (current >=1 && current<10){ 
+            if (current >=1 && current<11){ 
               $('.page .previous').css('visibility', 'visible');
             }else{
                 $('.page .previous').css('visibility', 'hidden');
@@ -562,7 +568,7 @@ jQuery(function($){
             next_step=++current;
             next_step_form =  $('.step-'+next_step);
             
-            if (current >=1 && current<10){ 
+            if (current >=1 && current<11){ 
               $('.page .previous').css('visibility', 'visible');
             }else{
                 $('.page .previous').css('visibility', 'hidden');
@@ -602,7 +608,7 @@ jQuery(function($){
           next_step=++current;
           next_step_form =  $('.step-'+next_step);
           
-          if (current >=1 && current<10){ 
+          if (current >=1 && current<11){ 
             $('.page .previous').css('visibility', 'visible');
           }else{
               $('.page .previous').css('visibility', 'hidden');
@@ -641,7 +647,7 @@ jQuery(function($){
           next_step=++current;
           next_step_form =  $('.step-'+next_step);
           
-          if (current >=1 && current<10){ 
+          if (current >=1 && current<11){ 
             $('.page .previous').css('visibility', 'visible');
           }else{
               $('.page .previous').css('visibility', 'hidden');
@@ -861,7 +867,7 @@ jQuery(function($){
         inputsCountersValues.moyenne_conso_sur_x_annee=inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val() || 0);
       }
       $('#votre_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee +' €');
-      $('#moyenne_conso_sur_x_annee').text((inputsCountersValues.votre_conso_sur_x_annee).toFixed(2) +' €');
+      $('#moyenne_conso_sur_x_annee').text((inputsCountersValues.moyenne_conso_sur_x_annee).toFixed(2) +' €');
     })
 
       $('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').change(function(e){
@@ -897,7 +903,7 @@ jQuery(function($){
         
       }
       $('#votre_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee +' €');
-      $('#moyenne_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee.toFixed(2) +' €');
+      $('#moyenne_conso_sur_x_annee').text(inputsCountersValues.moyenne_conso_sur_x_annee.toFixed(2) +' €');
     });
 
     //gisolation
@@ -1007,6 +1013,40 @@ jQuery(function($){
     
     $("label[for='source_energie_eau_chaude_chauffr_charbon_6']").click(function(){
       $('#source_energie_eau_chaude_Elect').css('display', 'none')
+    })
+
+    $('#modal1Button').click(function(){
+      if($('#inputPrixElec').val()!==''){
+          $('#consump-info1').attr('style', 'opacity:1; display: block;')
+          // $('#consump-info1').css('opacity:','1')
+          // $('#consump-info1').css('display', 'block')
+          $('#consumpt-val1').text($('#inputPrixElec').val()+'€')
+      }
+    })
+
+    
+    $('#modal2Button').click(function(){
+      if($('#inputEstimFactEauChaude').val()!==''){
+        $('#consump-info2').attr('style', 'opacity:1; display: block;');
+        $('#consumpt-val2').text($('#inputEstimFactEauChaude').val()+'€');
+        $('#eauChaudeSanitaireLeftPart').css('width', '130px');
+      }
+    })
+    
+    $('#modal3Button').click(function(){
+      if($('#inputEstimFactAppareilElec').val()!==''){
+        $('#consump-info3').attr('style', 'opacity:1; display: block;')
+        $('#consumpt-val3').text($('#inputEstimFactAppareilElec').val()+'€')
+        $('#appareilElecLeftPart').css('width', '80px');
+      }
+    })
+
+    $('#modal4Button').click(function(){
+      if($('#inputEstimFactEclairage').val()!==''){
+        $('#consump-info4').attr('style', 'opacity:1; display: block;')
+        $('#consumpt-val4').text($('#inputEstimFactEclairage').val()+'€')
+        
+      }
     })
     
     //-----------------------------------------------------------------------------------------
