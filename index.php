@@ -32,7 +32,7 @@
             }
             let finalResult= ((volumeIsolationResult * (inputsCountersValues.temperature_de_confort + Math.abs(inputsCountersValues.delta)))/1.2)/1000;
 
-            document.getElementById('pompe_a_chaleur_air_eau_value').innerText=finalResult +'KW';
+            document.getElementById('pompe_a_chaleur_air_eau_value').innerText=finalResult.toFixed(2) +'KW';
             inputsCountersValues.pompe_a_chaleur_air_eau_value=finalResult;
 
         }
@@ -150,6 +150,15 @@
                         </div>
                         </button>
                     </li>
+                    
+                    <li class="step-list-item" id="part-6">
+                        <button class="navigationButton" aria-selected="part-6">
+                            <div class="step-list-item-content">
+                            <h5 class="step-list-item-disabled">ELIGIBILITE AUX AIDES</h5>
+                            <!-- <p class="step-description-text step-list-item-disabled">Décrivez votre logement et détaillez votre projet de travaux.</p> -->
+                        </div>
+                        </button>
+                    </li>
                 </ul>
             </aside>
             <div class="page__content">
@@ -210,11 +219,11 @@
                             <div class="inputs">
                                 <div class="input-item nopr20">
                                     <label for="inputAddress">Adresse</label>
-                                    <input id="inputAddress" type="text" name="address" class=""  placeholder="Votre adresse">
+                                    <input id="inputAddress" type="text" name="address" class="" style="height:100px;" placeholder="Votre adresse">
                                     <span class="step-1__content__notice">Adresse requis </span>
                                 </div>  
                             </div>
-                            <div class="inputs">
+                            <!-- <div class="inputs">
                                 <div class="input-item">
                                     <label for="inputZipcode">Code postal</label>
                                     <input id="inputZipcode" type="text" name="zipcode" class=""  placeholder="Votre code postal">
@@ -225,7 +234,7 @@
                                     <input id="inputCity" type="text" name="ville" class=""  placeholder="Votre ville">
                                     <span class="step-1__content__notice">Ville requis </span>
                                 </div>  
-                            </div>
+                            </div> -->
                         </div>
                         
                     </fieldset>
@@ -764,7 +773,8 @@
                                 <span style="position: absolute;top: 30px;left:30px;text-align: left; width: 100%;"> Pompe à chaleur air/air </span> 
                                 <span style="position: absolute;top: 60px;left:30px;text-align: left; width: 100%;font-size: 13px!important;">Chauffage</span> 
                                 <span id="votre_conso_sur_x_annee" style="font-size:40px;position: absolute;left: 30px; top:90px; display: flex; align-items: center;justify-content: space-between;flex-wrap: wrap;">
-                                    <button data-target="modal5" class="callToAction" id="pompeChaleurButton">Choisir</button>
+                                    <a data-target="modal5" class="callToAction" id="pompeChaleurButton" style="font-size: 16px;" rel="noopener noreferrer">Choisir</a>
+                                    <!-- <button data-target="modal5" class="callToAction" id="pompeChaleurButton">Choisir</button> -->
                                 </span> 
                                 <img src="./assets/images/picto_gte/chauffee-small-icon.svg" alt="Pompe à chaleur air-eau" class="conso_result_image">
                             </label>
@@ -804,12 +814,125 @@
                             </div>
                         </div>        
                     </fieldset>
+                    
+                    <fieldset class="step-17">
+                        <div class="step-17__content optionWithImages" style="display: flex;flex-direction:column;">
+                            <h2>Situation matrimoniale</h2>
+                            <div class="noImageSelection" style="max-width: 600px;">
+                                <label for="eligibilite_situation_matrimoniale_1" class="select-item btn step-17__link no-image three-item-no-image step-17_one_item">                                       
+                                    <input type="radio" name="eligibilite_situation_matrimoniale" id="eligibilite_situation_matrimoniale_1" value="Célibataire">
+                                    <span>Célibataire</span>
+                                </label>
+
+                                <label for="eligibilite_situation_matrimoniale_2" class="select-item btn step-17__link no-image three-item-no-image step-17_one_item">                                       
+                                    <input type="radio" name="eligibilite_situation_matrimoniale"  id="eligibilite_situation_matrimoniale_2" value="Marié(e)">
+                                    <span>Marié(e)</span>
+                                </label>
+                                
+                                <label for="eligibilite_situation_matrimoniale_3" class="select-item btn step-17__link no-image three-item-no-image step-17_one_item">                                       
+                                    <input type="radio" name="eligibilite_situation_matrimoniale"  id="eligibilite_situation_matrimoniale_3" value="Marié(e)">
+                                    <span>Marié(e)</span>
+                                </label>
+                                <label for="eligibilite_situation_matrimoniale_4" class="select-item btn step-7__link no-image three-item-no-image step-17_one_item">                                       
+                                    <input type="radio" name="eligibilite_situation_matrimoniale" id="eligibilite_situation_matrimoniale_4" value="Veuf(ve)">
+                                    <span>Veuf(ve)</span>
+                                </label>
+
+                                <label for="eligibilite_situation_matrimoniale_5" class="select-item btn step-7__link no-image three-item-no-image step-17_one_item">                                       
+                                    <input type="radio" name="eligibilite_situation_matrimoniale"  id="eligibilite_situation_matrimoniale_5" value="Divorcé(e)">
+                                    <span>Divorcé(e)</span>
+                                </label>
+                                
+                                <label for="eligibilite_situation_matrimoniale_6" class="select-item btn step-7__link no-image three-item-no-image step-17_one_item">                                       
+                                    <input type="radio" name="eligibilite_situation_matrimoniale"  id="eligibilite_situation_matrimoniale_6" value="Concubinage">
+                                    <span>Concubinage</span>
+                                </label>
+                            </div>
+                            
+                            <h2>Nombre d'enfants à charge</h2>
+                            <div class="input-counter">
+                                <div class="counter" style="width: 190px;margin: 0 auto;"> 
+                                    <div class="counter__fields">
+                                        <!-- <div class="counter__title">Nombre d'enfants à charge </div> -->
+                                    </div>
+                                    <div class="counter_buttons">
+                                        <button class="counter__decrement" type="button">
+                                            -
+                                        </button>
+                                        <span class="counter__value" name="eligibility_nbr_enfant_a_charge">0</span>
+                                        <button class="counter__increment" type="button">
+                                            +
+                                        </button>
+                                    </div>
+                                </div> 
+                            </div>
+
+                            <h2>Naissance à venir ou enfant non présent sur la déclaration ?</h2>
+                            <div class="noImageSelection"  style="width: 400px;justify-content: space-between;display: flex;">
+                                <label for="eligibilite_situation_enfant_1" class="select-item btn step-7__link no-image three-item-no-image step-17_one_item">                                       
+                                    <input type="radio" name="eligibilite_situation_enfant" id="eligibilite_situation_enfant_1" value="Oui">
+                                    <span>Oui</span>
+                                </label>
+
+                                <label for="eligibilite_situation_enfant_2" class="select-item btn step-7__link no-image three-item-no-image step-17_one_item">                                       
+                                    <input type="radio" name="eligibilite_situation_enfant"  id="eligibilite_situation_enfant_2" value="Non">
+                                    <span>Non</span>
+                                </label>
+                            </div>
+                            
+                            <h2>Référence de l'avis d'imposition </h2>
+                            <div class="inputs" style="width: 65%;margin: 0;">
+                                <div class="input-item nopr20"style="margin: 0;">
+                                    <!-- <label for="inputEligibiliteAvisImposition">Référence de l'avis d'imposition </label> -->
+                                    <input id="inputEligibiliteAvisImposition" type="text" name="eligibilite_avis_imposition">
+                                    <span class="step-1__content__notice">Référence de l'avis d'imposition requis </span>
+                                </div>  
+                            </div>
+                            
+                            <h2>Numéro fiscal </h2>
+                            <div class="inputs" style="width: 65%;margin: 0;display: flex;justify-content: center;">
+                                <div class="input-item nopr20" style="margin: 0;">
+                                    <!-- <label for="inputNumeroFisc">Numéro fiscal </label> -->
+                                    <input id="inputNumeroFisc" type="text" name="eligibilite_numéro_fiscal" class="" >
+                                    <span class="step-1__content__notice">Numéro fiscal requis </span>
+                                </div>  
+                            </div>
+                            
+                            <h2>Nombre de parts fiscales </h2>
+                            <div class="input-counter">
+                                <div class="counter"style="width: 190px;margin: 0 auto;display: flex;justify-content: center;"> 
+                                    <div class="counter__fields" >
+                                        <!-- <div class="counter__title">Nombre de parts fiscales </div> -->
+                                    </div>
+                                    <div class="counter_buttons">
+                                        <button class="counter__decrement" type="button">
+                                            -
+                                        </button>
+                                        <span class="counter__value" name="eligibility_nbr_part_fiscal">0</span>
+                                        <button class="counter__increment" type="button">
+                                            +
+                                        </button>
+                                    </div>
+                                </div> 
+                            </div>
+                            
+                            <h2>Dernier revenu fiscal de référence </h2>
+                            <div class="inputs" style="width: 65%;margin: 0;">
+                                <div class="input-item nopr20" style="margin: 0;">
+                                    <!-- <label for="inputDernierRevenuFiscalRef">Dernier revenu fiscal de référence </label> -->
+                                    <input id="inputDernierRevenuFiscalRef" type="text" name="eligibilite_dernier_revenu_fiscal_reference" class="">
+                                    <span class="step-1__content__notice">Dernier revenu fiscal de référencerequis </span>
+                                </div>  
+                            </div>
+                        </div>        
+                    </fieldset>
                 </form>
                 <div class="nextButtonControl">
                     <input type="button" class="next btn btn-info main-cta" value="Suivant" />
                 </div>
             </div>
         </div>
+
         <div class="modalContainer">
             <!-- Modal Structure -->
             <div id="modal1" class="modal">
@@ -1527,18 +1650,18 @@
                 <div class="modal-content">
                     <div class="input-counter">
                         <div class="counter"> 
-                                <div class="counter__fields">
-                                    <div class="counter__title">Nombre de pieces </div>
-                                </div>
-                                <div class="counter_buttons">
-                                    <button class="counter__decrement" type="button">
-                                        -
-                                    </button>
-                                    <span class="counter__value" name="pompe_a_chaleur_air_air_nombre_unite">0</span>
-                                    <button class="counter__increment" type="button">
-                                        +
-                                    </button>
-                                </div>
+                            <div class="counter__fields">
+                                <div class="counter__title">Nombre de pieces </div>
+                            </div>
+                            <div class="counter_buttons">
+                                <button class="counter__decrement" type="button">
+                                    -
+                                </button>
+                                <span class="counter__value" name="pompe_a_chaleur_air_air_nombre_unite">0</span>
+                                <button class="counter__increment" type="button">
+                                    +
+                                </button>
+                            </div>
                         </div> 
                     </div>
                     <div id="piecesId" class="pieces">
@@ -1554,7 +1677,7 @@
             <!-- end -->
         </div>
     </main>
-    <script src="./assets/js/jquery-1.6.3.min.js"></script>
+    <script src="./assets/js/jquery-3.6.0.min.js"></script>
     <script src="./assets/js/materialize.min.js"></script>
     <script src="./assets/js/app.js" ></script>
 </body>

@@ -672,16 +672,20 @@ main .modalContainer .modal-content .optionWithImagesColumn label.image{
 main .modalContainer .step-left__img{
     width: 90px;
 }
+main .modalContainer .modal .modal-content .pieces {
+    padding-top: 25px;
+}
 main .modalContainer .modal .modal-content .pieces .pieces__item{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 main .modalContainer .modal .modal-content .pompeAChaleurAirAir{
     padding-right: 0;
 }
 main .modalContainer .modal .modal-content .pompeAChaleurAirAirInput{
-    max-width: 170px;
+    max-width: 100px;
     margin: 0 10px;
     /* display: block;
     margin-right: auto;
@@ -691,6 +695,13 @@ main .modalContainer .modal .modal-content .pompeAChaleurAirAirInput{
 }
 main .modalContainer .modal .modal-content .pompeAChaleurAirAir input[type=number]{
     margin-top: 25px;
+}
+main .modalContainer .modal .modal-content .pieces__value{
+    background: #ff5b5b;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;width: 100px;
+    display: inline-grid;
 }
 /*---------------------------------------------------*/
 
@@ -1248,6 +1259,23 @@ input[type=button]:hover, .page .page__content button:hover{
     justify-content: center;
     align-items: center;
     padding: 72px 0 72px;
+}
+.step-17_one_item{
+    width: 190px!important;
+    height: 66px!important;
+    justify-content: center!important;
+}
+
+main .page .page__content .step-17 h2{
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+main .page .page__content .step-17 .answer-selected{
+    background: #74f0a7!important;
+    border: none!important;
+    border: 2px solid #399bd2!important;
+    border-color: #003250!important;
 }
 /* .step-8__link{
     margin: auto;

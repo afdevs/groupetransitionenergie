@@ -65,8 +65,9 @@ var inputsCountersValues={
     departement_address:0,
     altitude: 0,
     delta: 0,
-    pompe_a_chaleur_air_eau_value: 0
-
+    pompe_a_chaleur_air_eau_value: 0,
+    eligibility_nbr_enfant_a_charge: 0,
+    eligibility_nbr_part_fiscal: 0
 }
 
 jQuery(function($){
@@ -168,11 +169,7 @@ jQuery(function($){
         if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='pompe_a_chaleur_air_air_nombre_unite'){
           inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite++;
           $($($(this).parent().children('.counter__value'))[0]).text(inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite);  
-          const inputItem=`<div class="pieces__item" id="pieces__item${inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite}">
-          <label for="inputPompeAChaleurSurfaceTotal${inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite}" class="pompeAChaleurAirAir${inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite}">Piece N° <span>${inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite}</span></label>
-          <input id="inputPompeAChaleurSurfaceTotal${inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite}" name="pompe_a_chaleur_air_air_surface_total" type="number" name="eau_chaude_sanitaire_envisage_source_energie_ballon_eau_chau${inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite}" class="pompeAChaleurAirAirInput" min="0"> 
-          Surface en (m2)
-          </div>`;
+          const inputItem=`<div class="pieces__item" id="pieces__item${inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite}"><label for="inputPompeAChaleurSurfaceTotal1" class="pompeAChaleurAirAir${inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite}">Piece N° <span>${ inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite}</span></label><div class="bottom_part">Surface en (m2)<input id="inputPompeAChaleurSurfaceTotal${ inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite}"  name="pompe_a_chaleur_air_air_surface_total${ inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite}" type="number" class="pompeAChaleurAirAirInput" min="0"> <span class="pieces__value">Ow</span></div></div>`;
           $('#piecesId').append(inputItem)
           return
         }
@@ -191,6 +188,15 @@ jQuery(function($){
           $('#inputTotalConso20ans').val(((inputsCountersValues.consommation_annuelle_fioul+inputsCountersValues.consommation_annuelle_gaz)* parseInt($('#inputConsoAnIndex').val())));
           $('#inputMoyennConso').val((((inputsCountersValues.consommation_annuelle_fioul+inputsCountersValues.consommation_annuelle_gaz)* parseInt($('#inputConsoAnIndex').val()))/parseInt($('#inputConsoAnIndex').val())));
         }
+
+        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='eligibility_nbr_enfant_a_charge'){
+         inputsCountersValues.eligibility_nbr_enfant_a_charge++
+        }
+        
+        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='eligibility_nbr_part_fiscal'){
+          inputsCountersValues.eligibility_nbr_part_fiscal++
+         }
+        
       });
 
       $('.counter__decrement').click(function(e){
@@ -239,6 +245,13 @@ jQuery(function($){
           $('#inputMoyennConso').val((((inputsCountersValues.consommation_annuelle_fioul+inputsCountersValues.consommation_annuelle_gaz)* parseInt($('#inputConsoAnIndex').val()))/parseInt($('#inputConsoAnIndex').val())));
         }
         
+        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='eligibility_nbr_enfant_a_charge'){
+          inputsCountersValues.eligibility_nbr_enfant_a_charge--
+         }
+         
+        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='eligibility_nbr_part_fiscal'){
+          inputsCountersValues.eligibility_nbr_part_fiscal++
+         }
       });
 
       $('label.select-item').click(function(e){
@@ -416,8 +429,6 @@ jQuery(function($){
             //     stepVisited.push(next_step);
             //   });
             // }
-
-
             
             next_step_form.fadeTo('slow', 1, function(){
               setProgressBar(next_step);
@@ -676,6 +687,49 @@ jQuery(function($){
           });
 
         }
+        if($(this).attr('aria-selected')==='part-6'){
+          $('.step-'+1).css('display', 'none');
+          current=16;
+          $('.page .page__content #regiration_form').css("transform"," translateX(50px)" );
+          $('.page .page__content #regiration_form').css("transition", "none" );
+
+          previousStep=parseInt($(this).attr('skipStep')) ? current:  null;
+          current= $(this).attr('skipStep') ? parseInt($(this).attr('skipStep')) : current;
+          
+          current_step =  $('.step-'+current);
+          next_step=++current;
+          next_step_form =  $('.step-'+next_step);
+          
+          if (current >=1 && current<11){ 
+            $('.page .previous').css('visibility', 'visible');
+          }else{
+              $('.page .previous').css('visibility', 'hidden');
+          }
+          
+          if(current>10){
+            $('.main-cta').css('visibility', 'hidden');
+          }else{
+            $('.main-cta').css('visibility', 'visible');
+          }
+
+          handleStepsDesign(current)
+
+          if (previousStep){ $('.step-'+previousStep).hide()}
+          current_step.hide();
+
+          $('.page .page__content #regiration_form').css("transition", ".4s ease-out" );
+          $('.page .page__content #regiration_form').css("transform"," translateX(0px)" );
+          
+          
+          
+          next_step_form.fadeTo('slow', 1, function(){
+            setProgressBar(next_step);
+            next_step_form.show();
+            stepVisited.push(next_step);
+          });
+
+        }
+
         //end
       })
 
@@ -716,6 +770,11 @@ jQuery(function($){
           $("#part-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-5").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-6 h5").hasClass('step-list-item-disabled')){
+          $("#part-6 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-6").removeClass('step-list-item-active',1000, 'easeInBack');
       } else if(current<=1){
         if(!$("#part-1").hasClass('step-list-item-active')){
           $("#part-1").addClass('step-list-item-active')
@@ -741,6 +800,11 @@ jQuery(function($){
           $("#part-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-5").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-6 h5").hasClass('step-list-item-disabled')){
+          $("#part-6 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-6").removeClass('step-list-item-active',1000, 'easeInBack');
       }else if(current==11){
         if(!$("#part-4").hasClass('step-list-item-active')){
           $("#part-4").addClass('step-list-item-active')
@@ -766,6 +830,11 @@ jQuery(function($){
           $("#part-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-5").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-6 h5").hasClass('step-list-item-disabled')){
+          $("#part-6 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-6").removeClass('step-list-item-active',1000, 'easeInBack');
       }else if(current==16){
         if(!$("#part-5").hasClass('step-list-item-active')){
           $("#part-5").addClass('step-list-item-active')
@@ -791,6 +860,41 @@ jQuery(function($){
           $("#part-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-1").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-6 h5").hasClass('step-list-item-disabled')){
+          $("#part-6 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-6").removeClass('step-list-item-active',1000, 'easeInBack');
+      }else if(current==17){
+        if(!$("#part-6").hasClass('step-list-item-active')){
+          $("#part-6").addClass('step-list-item-active')
+        }
+        $("#part-6 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
+
+        if(!$("#part-2 h5").hasClass('step-list-item-disabled')){
+          $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-3 h5").hasClass('step-list-item-disabled')){
+          $("#part-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-3").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-4 h5").hasClass('step-list-item-disabled')){
+          $("#part-4 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-4").removeClass('step-list-item-active',1000, 'easeInBack');
+
+        if(!$("#part-1 h5").hasClass('step-list-item-disabled')){
+          $("#part-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-1").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-5 h5").hasClass('step-list-item-disabled')){
+          $("#part-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-5").removeClass('step-list-item-active',1000, 'easeInBack');
       } else {
         if(!$("#part-3").hasClass('step-list-item-active')){
           $("#part-3").addClass('step-list-item-active')
@@ -816,6 +920,11 @@ jQuery(function($){
           $("#part-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-5").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-6 h5").hasClass('step-list-item-disabled')){
+          $("#part-6 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-6").removeClass('step-list-item-active',1000, 'easeInBack');
       }
     }
 
@@ -857,14 +966,21 @@ jQuery(function($){
     $('#inputEstimFactChauff').change(function(e){
       inputsCountersValues.votre_conso_actuel=parseFloat($(this).val());
       $('#votre_conso_actuel').text($(this).val() +' €');
-      if(!isNaN(parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()))){
+      const nombreAnneeAIndexer=parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()) || 0;
+      const evolPrixFioul =parseFloat($('#inputEvol25Annee').val())/100;
+      if(!isNaN(nombreAnneeAIndexer)){
         let sumTotal=inputsCountersValues.votre_conso_actuel;
-        for(let i=0; i< parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()); i++){
-          sumTotal +=((sumTotal * (parseFloat($('#inputEvol25Annee').val())/100)))
+        const allValues=[]
+        for(let i=0; i< nombreAnneeAIndexer; i++){
+          sumTotal=sumTotal+(sumTotal * evolPrixFioul);
+          allValues.push(sumTotal.toFixed(2));
         }
-        inputsCountersValues.votre_conso_sur_x_annee=sumTotal.toFixed(2);
-        
-        inputsCountersValues.moyenne_conso_sur_x_annee=inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val() || 0);
+        const result=allValues.reduce((prev, value)=>{
+          return prev + parseFloat(value);
+        },0)
+        const allValuesTotal=result + inputsCountersValues.votre_conso_actuel
+        inputsCountersValues.votre_conso_sur_x_annee=allValuesTotal.toFixed(2);        
+        inputsCountersValues.moyenne_conso_sur_x_annee=inputsCountersValues.votre_conso_sur_x_annee / nombreAnneeAIndexer;
       }
       $('#votre_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee +' €');
       $('#moyenne_conso_sur_x_annee').text((inputsCountersValues.moyenne_conso_sur_x_annee).toFixed(2) +' €');
@@ -874,38 +990,77 @@ jQuery(function($){
         //label en x annee
         $("#votre_conso_sur_x_annee_value").text($(this).val());
         $("#moyenne_conso_sur_x_annee_value").text($(this).val());
-
-      inputsCountersValues.votre_conso_actuel= parseFloat($('#inputEstimFactChauff').val()||0);
-      $('#votre_conso_actuel').text(inputsCountersValues.votre_conso_actuel +' €');
-      if(!isNaN(parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()))){
-        let sumTotal=inputsCountersValues.votre_conso_actuel;
-        for(let i=0; i< parseInt($($(this)).val()); i++){
-          sumTotal +=((sumTotal * (parseFloat($('#inputEvol25Annee').val())/100)))
+        inputsCountersValues.votre_conso_actuel= parseFloat($('#inputEstimFactChauff').val()||0);
+        $('#votre_conso_actuel').text(inputsCountersValues.votre_conso_actuel +' €');      
+        const nombreAnneeAIndexer=parseInt($(this).val()) || 0;
+        const evolPrixFioul =parseFloat($('#inputEvol25Annee').val())/100;
+        if(!isNaN(nombreAnneeAIndexer)){
+          let sumTotal=inputsCountersValues.votre_conso_actuel;
+          const allValues=[]
+          for(let i=0; i< nombreAnneeAIndexer; i++){
+            sumTotal=sumTotal+(sumTotal * evolPrixFioul);
+            allValues.push(sumTotal.toFixed(2));
+          }
+          const result=allValues.reduce((prev, value)=>{
+            return prev + parseFloat(value);
+          },0)
+          const allValuesTotal=result + inputsCountersValues.votre_conso_actuel
+          inputsCountersValues.votre_conso_sur_x_annee=allValuesTotal.toFixed(2);        
+          inputsCountersValues.moyenne_conso_sur_x_annee=inputsCountersValues.votre_conso_sur_x_annee / nombreAnneeAIndexer;
         }
-
-        inputsCountersValues.votre_conso_sur_x_annee=sumTotal.toFixed(2);;
-        inputsCountersValues.moyenne_conso_sur_x_annee=inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val());
-      }
-      $('#votre_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee +' €');
-      $('#moyenne_conso_sur_x_annee').text(inputsCountersValues.moyenne_conso_sur_x_annee.toFixed(2) +' €');
+        $('#votre_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee +' €');
+        $('#moyenne_conso_sur_x_annee').text(inputsCountersValues.moyenne_conso_sur_x_annee.toFixed(2) +' €');
     })
 
     $('#inputEvol25Annee').change(function(){
-      inputsCountersValues.votre_conso_actuel= parseFloat($('#inputEstimFactChauff').val());
+      inputsCountersValues.votre_conso_actuel= parseFloat($('#inputEstimFactChauff').val()||0);
       $('#votre_conso_actuel').text(inputsCountersValues.votre_conso_actuel +' €');
-      if(!isNaN(parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()))){
+      const nombreAnneeAIndexer=parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()) || 0;
+      const evolPrixFioul =parseFloat($(this).val())/100;
+      if(!isNaN(nombreAnneeAIndexer)){
         let sumTotal=inputsCountersValues.votre_conso_actuel;
-        for(let i=0; i< parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()); i++){
-          sumTotal +=((sumTotal * (parseFloat($(this).val())/100)))
+        const allValues=[]
+        for(let i=0; i< nombreAnneeAIndexer; i++){
+          sumTotal=sumTotal+(sumTotal * evolPrixFioul);
+          allValues.push(sumTotal.toFixed(2));
         }
-        inputsCountersValues.votre_conso_sur_x_annee=sumTotal.toFixed(2);
-        inputsCountersValues.moyenne_conso_sur_x_annee=inputsCountersValues.votre_conso_sur_x_annee / parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val());
-        
+        const result=allValues.reduce((prev, value)=>{
+          return prev + parseFloat(value);
+        },0)
+        const allValuesTotal=result + inputsCountersValues.votre_conso_actuel
+        inputsCountersValues.votre_conso_sur_x_annee=allValuesTotal.toFixed(2);        
+        inputsCountersValues.moyenne_conso_sur_x_annee=inputsCountersValues.votre_conso_sur_x_annee / nombreAnneeAIndexer;
       }
       $('#votre_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee +' €');
       $('#moyenne_conso_sur_x_annee').text(inputsCountersValues.moyenne_conso_sur_x_annee.toFixed(2) +' €');
     });
+    // $('.pompeAChaleurAirAirInput').change(function(){
+    //   console.log($(this).val())
+    // })
 
+    $('#piecesId').on('change', '.pompeAChaleurAirAirInput', function(e){
+      $(this).next().text(getMatchedWhattNumber(parseInt($(this).val()))+ 'W')
+    })
+
+    function getMatchedWhattNumber(nbr){
+      if(nbr>10 && nbr<=15){
+        return 2000
+      }
+      if(nbr>15 && nbr<=20){
+        return 2500
+      }
+      if(nbr>20 && nbr<=30){
+        return 3600
+      }
+      if(nbr>30 && nbr<=50){
+        return 5000
+      }
+      return 1000
+    }
+
+    $(document).on('click', '#someting', function(){
+
+    });
     //gisolation
     $('select[name=gisolation]').change(function(){
       inputsCountersValues.gisolation=parseFloat($(this).val());
@@ -940,7 +1095,8 @@ jQuery(function($){
 
     })
     
-    $('#inputAddress').keyup(function(){
+    $('#inputAddress').keyup(function(e){
+      e.preventDefault();
       calculatePompeAChaleurAirEau();
     })
 
