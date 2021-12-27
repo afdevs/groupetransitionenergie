@@ -12,13 +12,14 @@
     </script>
 
     <script async>
+
         function getAbsoluteDelta(){
             const deltaVal=[]            
             franceAddresses.forEach(franceAd=>{
                 franceAd.departement.filter(depart=>{
                     if(depart===inputsCountersValues.departement_address){
                         deltaVal.push(franceAd.delta);
-                    }
+                    }   
                 });
             });
             return deltaVal[0];
@@ -58,6 +59,20 @@
                 );
         }
 
+        function geocodingPlaceID(placeId){            
+            const geocoder = new google.maps.Geocoder();
+            return new Promise((resolve, reject) => {
+                geocoder.geocode(
+                {
+                    placeId
+                },
+                (results, status) => {
+                    resolve(results[0]);
+                }
+                );
+            });
+        }
+
         function initMap(){
             const center = { lat: 50.064192, lng: -130.605469 };
             // Create a bounding box with sides ~10km away from the center point
@@ -71,7 +86,7 @@
             const options = {
                 bounds: defaultBounds,
                 componentRestrictions: { country: "fr" },
-                fields: ["address_components", "geometry", "name"],
+                fields: ["address_components", "geometry", "name", "place_id"],
                 strictBounds: false,
                 types: ["establishment"],
             };
@@ -80,10 +95,15 @@
             autocomplete.addListener('place_changed', function(e){
                 let place= autocomplete.getPlace();
                 inputsCountersValues.departement_address=place.address_components[place.address_components.length-1].long_name.substring(0, 2);
-                document.getElementById('inputZipcode').value=place.address_components[place.address_components.length-1].long_name;
-                document.getElementById('inputCity').value=place.name;
+                // document.getElementById('inputZipcode').value=place.address_components[place.address_components.length-1].long_name;
+                // document.getElementById('inputCity').value=place.name;
                 inputsCountersValues.delta=getAbsoluteDelta();
-                getElevation({lat: place.geometry.location.lat(), lng: place.geometry.location.lng()})
+                const location={lat: place.geometry.location.lat(), lng: place.geometry.location.lng()};
+                getElevation(location);
+
+                geocodingPlaceID('ChIJF4ymA8Th5UcRcCWLaMOCCwE').then(response=>{
+                    console.log(response.geometry.bounds.contains(location));
+                })
 
             })
         }
@@ -155,6 +175,15 @@
                         <button class="navigationButton" aria-selected="part-6">
                             <div class="step-list-item-content">
                             <h5 class="step-list-item-disabled">ELIGIBILITE AUX AIDES</h5>
+                            <!-- <p class="step-description-text step-list-item-disabled">Décrivez votre logement et détaillez votre projet de travaux.</p> -->
+                        </div>
+                        </button>
+                    </li>
+                    
+                    <li class="step-list-item" id="part-7">
+                        <button class="navigationButton" aria-selected="part-7">
+                            <div class="step-list-item-content">
+                            <h5 class="step-list-item-disabled">CALCUL DE VOS SUBVENTIONS POUR L'INSTLLATION DE VOS SOLUTIONS</h5>
                             <!-- <p class="step-description-text step-list-item-disabled">Décrivez votre logement et détaillez votre projet de travaux.</p> -->
                         </div>
                         </button>
@@ -898,11 +927,11 @@
                                 </div>  
                             </div>
                             
-                            <h2>Nombre de parts fiscales </h2>
+                            <!-- <h2>Nombre de parts fiscales </h2>
                             <div class="input-counter">
                                 <div class="counter"style="width: 190px;margin: 0 auto;display: flex;justify-content: center;"> 
                                     <div class="counter__fields" >
-                                        <!-- <div class="counter__title">Nombre de parts fiscales </div> -->
+                                         <div class="counter__title">Nombre de parts fiscales </div> 
                                     </div>
                                     <div class="counter_buttons">
                                         <button class="counter__decrement" type="button">
@@ -914,7 +943,7 @@
                                         </button>
                                     </div>
                                 </div> 
-                            </div>
+                            </div> -->
                             
                             <h2>Dernier revenu fiscal de référence </h2>
                             <div class="inputs" style="width: 65%;margin: 0;">
@@ -924,7 +953,58 @@
                                     <span class="step-1__content__notice">Dernier revenu fiscal de référencerequis </span>
                                 </div>  
                             </div>
+                            
+                            <h2>Aide bonus écologique </h2>
+                            <div class="inputs" style="width: 65%;margin: 0;">
+                                <div class="input-item nopr20" style="margin: 0;">
+                                    <input id="inputBonusEcologique" type="text" name="aide_bonus_ecologique" class="">
+                                    <span class="step-1__content__notice">Aide bonus écologique  </span>
+                                </div>  
+                            </div>
+
                         </div>        
+                    </fieldset>
+                    
+                    <fieldset class="step-18">
+                        <div class="step-18__content optionWithImages" style="display: flex;flex-direction:column;">
+                            <div class="results">
+                                <div class="results__item">
+                                        <div class="results__image">
+                                            <img src="./assets/images/picto_gte/chauffee-small-icon.svg" alt="Pompe à chaleur air-eau" height="50">
+                                        </div>
+                                    <span class="results__label">
+                                        Paic air-eau
+                                    </span>
+                                    <div class="results__value">
+                                        500 €
+                                    </div>
+                                </div>
+                                
+                                <div class="results__item">
+                                    <div class="results__image">
+                                        <img class="step-1__img" src="./assets/images/picto_gte/ecs-white-icon.svg" alt="Chauffe-eau thermodynamique" height="50">
+                                    </div>
+                                    <span class="results__label">
+                                        Chauffe-eau thermodynamique
+                                    </span>
+                                    <div class="results__value">
+                                        2000 €
+                                    </div>
+                                </div>
+                                
+                                <div class="results__item">
+                                    <div class="results__image">
+                                        <img class="step-1__img" src="./assets/images/picto_gte/ecs-white-icon.svg" alt="Chauffe-eau thermodynamique" height="50">
+                                    </div>
+                                    <span class="results__label">
+                                        Chauffe-eau thermodynamique
+                                    </span>
+                                    <div class="results__value">
+                                        2000 €
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </fieldset>
                 </form>
                 <div class="nextButtonControl">
@@ -1224,14 +1304,6 @@
                             <div class="input-item">
                                 <label for="inputEstimFactChauff">Estimation de la facture de chauffage (€/an)</label>
                                 <input id="inputEstimFactChauff" type="number" name="estimation_de_facture_de_chauffage" value="0" min="0">
-                                <span class="step-1__content__notice">Estimation de la facture de chauffage requis </span>
-                            </div>
-                        </div>
-                          
-                        <div class="inputs" id="source_energie_1_chauffage_pric_Elect" style="display: block;">
-                            <div class="input-item">
-                                <label for="inputPrixElec">Prix de l'électricité (€/kWh)</label>
-                                <input id="inputPrixElec" type="number" name="prix_de_l_electricite" class="" min="0">
                                 <span class="step-1__content__notice">Estimation de la facture de chauffage requis </span>
                             </div>
                         </div>
