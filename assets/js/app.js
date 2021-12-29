@@ -112,6 +112,7 @@ let bonusCalcul={
   },
   coupDePouce: 0,
   ecologique: 0,
+  totalBonus: 0,
   dansIleDeFrance: false
 }
 
@@ -229,23 +230,22 @@ jQuery(function($){
           $('#inputVolumeHabitation').val(parseInt($('#inputSurfaceSol').val()) * inputsCountersValues.eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond);
         }
 
-        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='nombre_d_habitants'){
-          inputsCountersValues.nombre_d_habitants +=1;
-          calculBonus();
-        }
 
         if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='consommation_annuelle_fioul' || $($($(this).parent().children('.counter__value'))[0]).attr('name')==='consommation_annuelle_gaz'){
           $('#inputTotalConso20ans').val(((inputsCountersValues.consommation_annuelle_fioul+inputsCountersValues.consommation_annuelle_gaz)* parseInt($('#inputConsoAnIndex').val())));
           $('#inputMoyennConso').val((((inputsCountersValues.consommation_annuelle_fioul+inputsCountersValues.consommation_annuelle_gaz)* parseInt($('#inputConsoAnIndex').val()))/parseInt($('#inputConsoAnIndex').val())));
         }
-
-        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='eligibility_nbr_enfant_a_charge'){
-         inputsCountersValues.eligibility_nbr_enfant_a_charge++
+        
+        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='nombre_d_habitants'){
+          // inputsCountersValues.nombre_d_habitants -=1
+          calculBonus()
         }
         
-        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='eligibility_nbr_part_fiscal'){
-          inputsCountersValues.eligibility_nbr_part_fiscal++
-         }
+        // if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='eligibility_nbr_part_fiscal'){
+        //   console.log( inputsCountersValues.eligibility_nbr_part_fiscal)
+
+        //   inputsCountersValues.eligibility_nbr_part_fiscal++
+        //  }
         
       });
 
@@ -296,17 +296,13 @@ jQuery(function($){
         }
         
         if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='nombre_d_habitants'){
-          inputsCountersValues.nombre_d_habitants -=1
+          // inputsCountersValues.nombre_d_hnts -=1
           calculBonus()
         }
-
-        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='eligibility_nbr_enfant_a_charge'){
-          inputsCountersValues.eligibility_nbr_enfant_a_charge--
-         }
          
-        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='eligibility_nbr_part_fiscal'){
-          inputsCountersValues.eligibility_nbr_part_fiscal++
-         }
+        // if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='eligibility_nbr_part_fiscal'){
+        //   inputsCountersValues.eligibility_nbr_part_fiscal++
+        //  }
       });
 
       $('label.select-item').click(function(e){
@@ -1253,7 +1249,9 @@ jQuery(function($){
     $('#inputDernierRevenuFiscalRef').change(function(){
       calculBonus();
     })
-
+    $('#inputBonusEcologique').change(function(){
+      calculBonus();
+    })
     function calculBonus(){
       let dernierRevenuFisc=parseFloat($('#inputDernierRevenuFiscalRef').val() || 0)
       let nbrFoyerFisciale='more';
@@ -1327,10 +1325,16 @@ jQuery(function($){
             break;
         }
         
-        $('#maPrimeRenov').text(bonusCalcul.maprimenov +' €')
+        bonusCalcul.ecologique=parseFloat($('#inputBonusEcologique').val());
+        bonusCalcul.totalBonus=(bonusCalcul.maprimenov.pacAirEau + bonusCalcul.maprimenov.chauffeEauthermo) + bonusCalcul.coupDePouce + bonusCalcul.ecologique
+        $('#maPrimeRenov').text((bonusCalcul.maprimenov.pacAirEau + bonusCalcul.maprimenov.chauffeEauthermo) +' €')
         $('#coupDePouce').text(bonusCalcul.coupDePouce +' €')        
+        $('#bonusEcologique').text(bonusCalcul.ecologique +' €');
+        $('#total_bonus').text(bonusCalcul.totalBonus +' €')
+
         $('#bonusEcologique').text(bonusCalcul.ecologique +' €')
     }
+
 
     $('#piecesId').on('change', '.pompeAChaleurAirAirInput', function(e){
       $(this).next().text(getMatchedWhattNumber(parseInt($(this).val()))+ 'W')

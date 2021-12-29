@@ -1345,6 +1345,60 @@ main .page .page__content .total .total__value{
     margin-left: 32px;
     font-weight: bold;
 }
+main .page .page__content .pompes .pompes__title{
+    font-weight: bold;
+    font-size: 1.3em;
+    display: block;
+    text-align: left;
+    margin-bottom: 16px;
+}
+main .page .page__content .pompes__advantages {    
+    min-width: 450px;
+    display: flex;
+    justify-content: space-between;
+}
+main .page .page__content .pompes .pompes__advantages span{
+    color: #888;
+}
+main .page .page__content .pompes .pompes__item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 25px;  
+    height: 210px;
+}
+main .page .page__content .pompes__left{
+    width: 140px;
+    
+}
+main .page .page__content .pompes__left img{
+    width: 100%;
+}
+main .page .page__content .pompes__center{
+    margin: 0 20px;
+    padding: 16px;
+    height: 100%;
+}
+main .page .page__content .pompes__right{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+main .page .page__content .pompes__btn{
+    width: 190px;
+    background: #1687f7;
+    transition: all 300ms;
+}
+main .page .page__content .pompes__btn:hover{
+    background: #1475d6;
+}
+main .page .page__content .pompes__btn--show{
+    background-color: #74f0a7;;
+}
+main .page .page__content .pompes__btn--show:hover{
+    background-color: #68d696;;
+}
 /* .step-8__link{
     margin: auto;
     display: block;

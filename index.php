@@ -858,10 +858,6 @@
                                     <span>Marié(e)</span>
                                 </label>
                                 
-                                <label for="eligibilite_situation_matrimoniale_3" class="select-item btn step-17__link no-image three-item-no-image step-17_one_item">                                       
-                                    <input type="radio" name="eligibilite_situation_matrimoniale"  id="eligibilite_situation_matrimoniale_3" value="Marié(e)">
-                                    <span>Marié(e)</span>
-                                </label>
                                 <label for="eligibilite_situation_matrimoniale_4" class="select-item btn step-7__link no-image three-item-no-image step-17_one_item">                                       
                                     <input type="radio" name="eligibilite_situation_matrimoniale" id="eligibilite_situation_matrimoniale_4" value="Veuf(ve)">
                                     <span>Veuf(ve)</span>
@@ -870,11 +866,6 @@
                                 <label for="eligibilite_situation_matrimoniale_5" class="select-item btn step-7__link no-image three-item-no-image step-17_one_item">                                       
                                     <input type="radio" name="eligibilite_situation_matrimoniale"  id="eligibilite_situation_matrimoniale_5" value="Divorcé(e)">
                                     <span>Divorcé(e)</span>
-                                </label>
-                                
-                                <label for="eligibilite_situation_matrimoniale_6" class="select-item btn step-7__link no-image three-item-no-image step-17_one_item">                                       
-                                    <input type="radio" name="eligibilite_situation_matrimoniale"  id="eligibilite_situation_matrimoniale_6" value="Concubinage">
-                                    <span>Concubinage</span>
                                 </label>
                             </div>
                             
@@ -957,9 +948,9 @@
                             <h2>Aide bonus écologique </h2>
                             <div class="inputs" style="width: 65%;margin: 0;">
                                 <div class="input-item nopr20" style="margin: 0;">
-                                    <input id="inputBonusEcologique" type="text" name="aide_bonus_ecologique" class="">
+                                    <input id="inputBonusEcologique" type="number" name="aide_bonus_ecologique" value="0" min="0">
                                     <span class="step-1__content__notice">Aide bonus écologique  </span>
-                                </div>  
+                                </div>
                             </div>
 
                         </div>        
@@ -1012,17 +1003,42 @@
                                     <span class="total__label">
                                         Total de vos bonus:
                                     </span>
-                                    <div class="total__value">
-                                        2000 €
+                                    <div class="total__value" id="total_bonus">
+                                        0 €
                                     </div>
                                 </div>
                             </div>
                     </fieldset>
                     
-                    <fieldset class="step-19">
+                    <fieldset class="step-19" style="max-width: 850px;">
                         <h2>FICHE TECHNIQUE PAR CATEGORIE</h2>
                         <div class="step-19__content optionWithImages" style="display: flex;flex-direction:column;">
-                            
+                            <div class="pompes">
+                                <div class="pompes__item">
+                                    <div class="pompes__left">
+                                        <img src="./assets/images/appartement.png" alt="">
+                                    </div>
+                                    <div class="pompes__center">
+                                        <span class="pompes__title">
+                                            Clim’Up EMSM – De Dietrich
+                                        </span>
+                                        <div class="pompes__advantages">
+                                            <span>Mono split mural</span>
+                                            <span>Monophasé et Triphasé</span>
+                                            <span>Fluide frigorigène R32</span>
+                                            <span>SCOP 4,0 à 4,3</span>
+                                        </div>
+                                    </div>
+                                    <div class="pompes__right">
+                                        <button class="pompes__btn">
+                                            AJOUTER
+                                        </button>
+                                        <button class="pompes__btn pompes__btn--show">
+                                            FICHE TECHNIQUE
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </fieldset>
                 </form>
