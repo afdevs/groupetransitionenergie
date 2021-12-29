@@ -27,6 +27,11 @@ let subventionsChauffeEau={
   rose: 0
 }
 
+let coupDePouceChauffageBonnus={
+  bleu: 5000,
+  jaune: 4000,
+  rose: 2500
+}
 
 var franceAddresses=[
   {
@@ -98,6 +103,16 @@ var inputsCountersValues={
     pompe_a_chaleur_air_eau_value: 0,
     eligibility_nbr_enfant_a_charge: 0,
     eligibility_nbr_part_fiscal: 0
+}
+
+let bonusCalcul={
+  maprimenov: {
+    pacAirEau: 0,
+    chauffeEauthermo: 0
+  },
+  coupDePouce: 0,
+  ecologique: 0,
+  dansIleDeFrance: false
 }
 
 jQuery(function($){
@@ -214,6 +229,11 @@ jQuery(function($){
           $('#inputVolumeHabitation').val(parseInt($('#inputSurfaceSol').val()) * inputsCountersValues.eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond);
         }
 
+        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='nombre_d_habitants'){
+          inputsCountersValues.nombre_d_habitants +=1;
+          calculBonus();
+        }
+
         if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='consommation_annuelle_fioul' || $($($(this).parent().children('.counter__value'))[0]).attr('name')==='consommation_annuelle_gaz'){
           $('#inputTotalConso20ans').val(((inputsCountersValues.consommation_annuelle_fioul+inputsCountersValues.consommation_annuelle_gaz)* parseInt($('#inputConsoAnIndex').val())));
           $('#inputMoyennConso').val((((inputsCountersValues.consommation_annuelle_fioul+inputsCountersValues.consommation_annuelle_gaz)* parseInt($('#inputConsoAnIndex').val()))/parseInt($('#inputConsoAnIndex').val())));
@@ -275,6 +295,11 @@ jQuery(function($){
           $('#inputMoyennConso').val((((inputsCountersValues.consommation_annuelle_fioul+inputsCountersValues.consommation_annuelle_gaz)* parseInt($('#inputConsoAnIndex').val()))/parseInt($('#inputConsoAnIndex').val())));
         }
         
+        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='nombre_d_habitants'){
+          inputsCountersValues.nombre_d_habitants -=1
+          calculBonus()
+        }
+
         if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='eligibility_nbr_enfant_a_charge'){
           inputsCountersValues.eligibility_nbr_enfant_a_charge--
          }
@@ -408,15 +433,25 @@ jQuery(function($){
             
             if (current >=1 && current<11){ 
               $('.page .previous').css('visibility', 'visible');
+            }else if(current >16){
+              $('.page .previous').css('visibility', 'visible');
             }else{
                 $('.page .previous').css('visibility', 'hidden');
             }
+              
             
-            if(current>10){
+            if(current>11 && current< 16){
               $('.main-cta').css('visibility', 'hidden');
-            }else{
+            }else if(current >18){
+              $('.main-cta').css('visibility', 'hidden');
+            }else{            
               $('.main-cta').css('visibility', 'visible');
             }
+  
+
+            // else if(current>15 && current<18){
+            //   $('.main-cta').css('visibility', 'visible');
+            // }
 
             
             handleStepsDesign(current)
@@ -483,18 +518,22 @@ jQuery(function($){
         
         next_step_form = $('.step-'+next_step);
         
-        if (current >1 && current<11){ 
-          $('.page .previous').css('visibility', 'visible')
+        if (current >=1 && current<11){ 
+          $('.page .previous').css('visibility', 'visible');
+        }else if(current >16){
+          $('.page .previous').css('visibility', 'visible');
         }else{
-          $('.page .previous').css('visibility', 'hidden');
-
+            $('.page .previous').css('visibility', 'hidden');
         }
-  
-        if(current>10){
+          
+            
+        if(current>11 && current< 16){
           $('.main-cta').css('visibility', 'hidden');
-        }else{
+        }else if(current >18){
+          $('.main-cta').css('visibility', 'hidden');
+        }else{            
           $('.main-cta').css('visibility', 'visible');
-        }    
+        }
 
         
         handleStepsDesign(current)
@@ -514,7 +553,7 @@ jQuery(function($){
       });
 
       $('.navigationButton').click(function(){
-        for(let i=0; i<19; i++){
+        for(let i=0; i<20; i++){
           $('.step-'+i).removeAttr('style');
         }
 
@@ -532,16 +571,22 @@ jQuery(function($){
             
             if (current >=1 && current<11){ 
               $('.page .previous').css('visibility', 'visible');
+            }else if(current >16){
+              $('.page .previous').css('visibility', 'visible');
             }else{
                 $('.page .previous').css('visibility', 'hidden');
             }
-
-            if(current>10){
+              
+              
+            
+            if(current>11 && current< 16){
               $('.main-cta').css('visibility', 'hidden');
-            }else{
+            }else if(current >18){
+              $('.main-cta').css('visibility', 'hidden');
+            }else{            
               $('.main-cta').css('visibility', 'visible');
             }
-
+  
             handleStepsDesign(current)
 
             if (previousStep){ $('.step-'+previousStep).hide()}
@@ -571,15 +616,19 @@ jQuery(function($){
             
             if (current >=1 && current<11){ 
               $('.page .previous').css('visibility', 'visible');
+            }else if(current >16){
+              $('.page .previous').css('visibility', 'visible');
             }else{
                 $('.page .previous').css('visibility', 'hidden');
             }
-
-            if(current>10){
+            
+            if(current>11 && current< 16){
               $('.main-cta').css('visibility', 'hidden');
-            }else{
+            }else if(current >18){
+              $('.main-cta').css('visibility', 'hidden');
+            }else{            
               $('.main-cta').css('visibility', 'visible');
-            }
+            }  
 
             handleStepsDesign(current)
 
@@ -611,16 +660,20 @@ jQuery(function($){
             
             if (current >=1 && current<11){ 
               $('.page .previous').css('visibility', 'visible');
+            }else if(current >16){
+              $('.page .previous').css('visibility', 'visible');
             }else{
                 $('.page .previous').css('visibility', 'hidden');
             }
             
-            if(current>10){
+            if(current>11 && current< 16){
               $('.main-cta').css('visibility', 'hidden');
-            }else{
+            }else if(current >18){
+              $('.main-cta').css('visibility', 'hidden');
+            }else{            
               $('.main-cta').css('visibility', 'visible');
             }
-
+  
             handleStepsDesign(current)
 
             if (previousStep){ $('.step-'+previousStep).hide()}
@@ -651,13 +704,18 @@ jQuery(function($){
           
           if (current >=1 && current<11){ 
             $('.page .previous').css('visibility', 'visible');
+          }else if(current >16){
+            $('.page .previous').css('visibility', 'visible');
           }else{
               $('.page .previous').css('visibility', 'hidden');
           }
-          
-          if(current>9){
+            
+            
+          if(current>11 && current< 16){
             $('.main-cta').css('visibility', 'hidden');
-          }else{
+          }else if(current >18){
+            $('.main-cta').css('visibility', 'hidden');
+          }else{            
             $('.main-cta').css('visibility', 'visible');
           }
 
@@ -690,13 +748,18 @@ jQuery(function($){
           
           if (current >=1 && current<11){ 
             $('.page .previous').css('visibility', 'visible');
+          }else if(current >16){
+            $('.page .previous').css('visibility', 'visible');
           }else{
               $('.page .previous').css('visibility', 'hidden');
           }
-          
-          if(current>10){
+        
+            
+          if(current>11 && current< 16){
             $('.main-cta').css('visibility', 'hidden');
-          }else{
+          }else if(current >18){
+            $('.main-cta').css('visibility', 'hidden');
+          }else{            
             $('.main-cta').css('visibility', 'visible');
           }
 
@@ -730,13 +793,18 @@ jQuery(function($){
           
           if (current >=1 && current<11){ 
             $('.page .previous').css('visibility', 'visible');
+          }else if(current >16){
+            $('.page .previous').css('visibility', 'visible');
           }else{
               $('.page .previous').css('visibility', 'hidden');
           }
-          
-          if(current>10){
+        
+            
+          if(current>11 && current< 16){
             $('.main-cta').css('visibility', 'hidden');
-          }else{
+          }else if(current >18){
+            $('.main-cta').css('visibility', 'hidden');
+          }else{            
             $('.main-cta').css('visibility', 'visible');
           }
 
@@ -771,13 +839,17 @@ jQuery(function($){
           
           if (current >=1 && current<11){ 
             $('.page .previous').css('visibility', 'visible');
+          }else if(current >16){
+            $('.page .previous').css('visibility', 'visible');
           }else{
               $('.page .previous').css('visibility', 'hidden');
           }
-          
-          if(current>10){
+        
+          if(current>11 && current< 16){
             $('.main-cta').css('visibility', 'hidden');
-          }else{
+          }else if(current >18){
+            $('.main-cta').css('visibility', 'hidden');
+          }else{            
             $('.main-cta').css('visibility', 'visible');
           }
 
@@ -953,77 +1025,7 @@ jQuery(function($){
           $("#part-7 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-7").removeClass('step-list-item-active',1000, 'easeInBack');
-      }else if(current==17){
-        if(!$("#part-6").hasClass('step-list-item-active')){
-          $("#part-6").addClass('step-list-item-active')
-        }
-        $("#part-6 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
-
-        if(!$("#part-2 h5").hasClass('step-list-item-disabled')){
-          $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-        }
-        $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
-        
-        if(!$("#part-3 h5").hasClass('step-list-item-disabled')){
-          $("#part-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-        }
-        $("#part-3").removeClass('step-list-item-active',1000, 'easeInBack');
-        
-        if(!$("#part-4 h5").hasClass('step-list-item-disabled')){
-          $("#part-4 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-        }
-        $("#part-4").removeClass('step-list-item-active',1000, 'easeInBack');
-
-        if(!$("#part-1 h5").hasClass('step-list-item-disabled')){
-          $("#part-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-        }
-        $("#part-1").removeClass('step-list-item-active',1000, 'easeInBack');
-        
-        if(!$("#part-5 h5").hasClass('step-list-item-disabled')){
-          $("#part-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-        }
-        $("#part-5").removeClass('step-list-item-active',1000, 'easeInBack');
-        
-        if(!$("#part-7 h5").hasClass('step-list-item-disabled')){
-          $("#part-7 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-        }
-        $("#part-7").removeClass('step-list-item-active',1000, 'easeInBack');
-      }else if(current==18){
-        if(!$("#part-7").hasClass('step-list-item-active')){
-          $("#part-7").addClass('step-list-item-active')
-        }
-        $("#part-7 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
-
-        if(!$("#part-2 h5").hasClass('step-list-item-disabled')){
-          $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-        }
-        $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
-        
-        if(!$("#part-3 h5").hasClass('step-list-item-disabled')){
-          $("#part-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-        }
-        $("#part-3").removeClass('step-list-item-active',1000, 'easeInBack');
-        
-        if(!$("#part-4 h5").hasClass('step-list-item-disabled')){
-          $("#part-4 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-        }
-        $("#part-4").removeClass('step-list-item-active',1000, 'easeInBack');
-
-        if(!$("#part-1 h5").hasClass('step-list-item-disabled')){
-          $("#part-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-        }
-        $("#part-1").removeClass('step-list-item-active',1000, 'easeInBack');
-        
-        if(!$("#part-5 h5").hasClass('step-list-item-disabled')){
-          $("#part-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-        }
-        $("#part-5").removeClass('step-list-item-active',1000, 'easeInBack');
-        
-        if(!$("#part-6 h5").hasClass('step-list-item-disabled')){
-          $("#part-6 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-        }
-        $("#part-6").removeClass('step-list-item-active',1000, 'easeInBack');
-      } else {
+      } else if(current==10) {
         if(!$("#part-3").hasClass('step-list-item-active')){
           $("#part-3").addClass('step-list-item-active')
         }
@@ -1058,6 +1060,78 @@ jQuery(function($){
           $("#part-7 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-7").removeClass('step-list-item-active',1000, 'easeInBack');
+      }else{
+        // else if(current==17){
+          if(!$("#part-6").hasClass('step-list-item-active')){
+            $("#part-6").addClass('step-list-item-active')
+          }
+          $("#part-6 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
+  
+          if(!$("#part-2 h5").hasClass('step-list-item-disabled')){
+            $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          }
+          $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
+          
+          if(!$("#part-3 h5").hasClass('step-list-item-disabled')){
+            $("#part-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          }
+          $("#part-3").removeClass('step-list-item-active',1000, 'easeInBack');
+          
+          if(!$("#part-4 h5").hasClass('step-list-item-disabled')){
+            $("#part-4 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          }
+          $("#part-4").removeClass('step-list-item-active',1000, 'easeInBack');
+  
+          if(!$("#part-1 h5").hasClass('step-list-item-disabled')){
+            $("#part-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          }
+          $("#part-1").removeClass('step-list-item-active',1000, 'easeInBack');
+          
+          if(!$("#part-5 h5").hasClass('step-list-item-disabled')){
+            $("#part-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          }
+          $("#part-5").removeClass('step-list-item-active',1000, 'easeInBack');
+          
+          if(!$("#part-7 h5").hasClass('step-list-item-disabled')){
+            $("#part-7 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          }
+          $("#part-7").removeClass('step-list-item-active',1000, 'easeInBack');
+        // }else if(current==18){
+          // if(!$("#part-7").hasClass('step-list-item-active')){
+          //   $("#part-7").addClass('step-list-item-active')
+          // }
+          // $("#part-7 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
+  
+          // if(!$("#part-2 h5").hasClass('step-list-item-disabled')){
+          //   $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          // }
+          // $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
+          
+          // if(!$("#part-3 h5").hasClass('step-list-item-disabled')){
+          //   $("#part-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          // }
+          // $("#part-3").removeClass('step-list-item-active',1000, 'easeInBack');
+          
+          // if(!$("#part-4 h5").hasClass('step-list-item-disabled')){
+          //   $("#part-4 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          // }
+          // $("#part-4").removeClass('step-list-item-active',1000, 'easeInBack');
+  
+          // if(!$("#part-1 h5").hasClass('step-list-item-disabled')){
+          //   $("#part-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          // }
+          // $("#part-1").removeClass('step-list-item-active',1000, 'easeInBack');
+          
+          // if(!$("#part-5 h5").hasClass('step-list-item-disabled')){
+          //   $("#part-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          // }
+          // $("#part-5").removeClass('step-list-item-active',1000, 'easeInBack');
+          
+          // if(!$("#part-6 h5").hasClass('step-list-item-disabled')){
+          //   $("#part-6 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          // }
+          // $("#part-6").removeClass('step-list-item-active',1000, 'easeInBack');
+        // }
       }
     }
 
@@ -1175,9 +1249,88 @@ jQuery(function($){
       $('#votre_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee +' €');
       $('#moyenne_conso_sur_x_annee').text(inputsCountersValues.moyenne_conso_sur_x_annee.toFixed(2) +' €');
     });
-    // $('.pompeAChaleurAirAirInput').change(function(){
-    //   console.log($(this).val())
-    // })
+    
+    $('#inputDernierRevenuFiscalRef').change(function(){
+      calculBonus();
+    })
+
+    function calculBonus(){
+      let dernierRevenuFisc=parseFloat($('#inputDernierRevenuFiscalRef').val() || 0)
+      let nbrFoyerFisciale='more';
+      let nbrFoyerFiscialeIndex=0;
+      let couleur='';
+      if(bonusCalcul.dansIleDeFrance){
+        plafondRessourceEnIleFrance.foyerFiscale.map((el, index)=>{
+          if(el===inputsCountersValues.nombre_d_habitants){
+            nbrFoyerFisciale=el;
+            nbrFoyerFiscialeIndex=index;
+          }
+        })
+        if(dernierRevenuFisc <=plafondRessourceEnIleFrance.bleu[nbrFoyerFiscialeIndex]){
+          couleur='bleu';
+        }else if(dernierRevenuFisc <=plafondRessourceEnIleFrance.jaune[nbrFoyerFiscialeIndex]){
+          couleur='jaune'
+        }else if(dernierRevenuFisc <=plafondRessourceEnIleFrance.violet[nbrFoyerFiscialeIndex]){
+          couleur='violet'
+        }
+      }else{
+        plafondRessourceHorsIleFrance.foyerFiscale.map((el, index)=>{
+          if(el===inputsCountersValues.nombre_d_habitants){
+            nbrFoyerFisciale=el;
+            nbrFoyerFiscialeIndex=index;
+          }
+        })
+        if(dernierRevenuFisc <=plafondRessourceHorsIleFrance.bleu[nbrFoyerFiscialeIndex]){
+          couleur='bleu';
+        }else if(dernierRevenuFisc <=plafondRessourceHorsIleFrance.jaune[nbrFoyerFiscialeIndex]){
+          couleur='jaune'
+        }else if(dernierRevenuFisc <=plafondRessourceHorsIleFrance.violet[nbrFoyerFiscialeIndex]){
+          couleur='violet'
+        }
+      }
+        //bonus pac air-eau
+        switch (couleur) {
+          case 'bleu':
+            bonusCalcul.maprimenov.pacAirEau=subventionsPacAiEau.bleu
+            break;
+          case 'jaune':
+            bonusCalcul.maprimenov.pacAirEau=subventionsPacAiEau.jaune
+            break;
+          case 'violet':
+            bonusCalcul.maprimenov.pacAirEau=subventionsPacAiEau.violet
+            break;
+        }
+        
+        //bonus chauffe-eau
+        switch (couleur) {
+          case 'bleu':
+            bonusCalcul.maprimenov.chauffeEauthermo=subventionsChauffeEau.bleu
+            break;
+          case 'jaune':
+            bonusCalcul.maprimenov.chauffeEauthermo=subventionsChauffeEau.jaune
+            break;
+          case 'violet':
+            bonusCalcul.maprimenov.chauffeEauthermo=subventionsChauffeEau.violet
+            break;
+        }
+
+        //bonus chauffage
+        switch (couleur) {
+          case 'bleu':
+            bonusCalcul.coupDePouce=coupDePouceChauffageBonnus.bleu
+            break;
+          case 'jaune':
+            bonusCalcul.coupDePouce=coupDePouceChauffageBonnus.jaune
+            break;
+          case 'violet':
+            bonusCalcul.coupDePouce=coupDePouceChauffageBonnus.rose
+            break;
+        }
+        
+        $('#maPrimeRenov').text(bonusCalcul.maprimenov +' €')
+        $('#coupDePouce').text(bonusCalcul.coupDePouce +' €')        
+        $('#bonusEcologique').text(bonusCalcul.ecologique +' €')
+    }
 
     $('#piecesId').on('change', '.pompeAChaleurAirAirInput', function(e){
       $(this).next().text(getMatchedWhattNumber(parseInt($(this).val()))+ 'W')
@@ -1242,6 +1395,7 @@ jQuery(function($){
     $('#inputAddress').keyup(function(e){
       e.preventDefault();
       calculatePompeAChaleurAirEau();
+      calculBonus();
     })
 
     //MODAL CONDITIONAL

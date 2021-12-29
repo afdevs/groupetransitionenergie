@@ -102,7 +102,7 @@
                 getElevation(location);
 
                 geocodingPlaceID('ChIJF4ymA8Th5UcRcCWLaMOCCwE').then(response=>{
-                    console.log(response.geometry.bounds.contains(location));
+                    bonusCalcul.dansIleDeFrance=response.geometry.bounds.contains(location);                    
                 })
 
             })
@@ -165,7 +165,7 @@
                     <li class="step-list-item" id="part-5">
                         <button class="navigationButton" aria-selected="part-5">
                             <div class="step-list-item-content">
-                            <h5 class="step-list-item-disabled">SOLUTIONS ET PROPOSES</h5>
+                            <h5 class="step-list-item-disabled">SOLUTIONS PROPOSES</h5>
                             <!-- <p class="step-description-text step-list-item-disabled">Décrivez votre logement et détaillez votre projet de travaux.</p> -->
                         </div>
                         </button>
@@ -180,14 +180,14 @@
                         </button>
                     </li>
                     
-                    <li class="step-list-item" id="part-7">
+                    <!-- <li class="step-list-item" id="part-7">
                         <button class="navigationButton" aria-selected="part-7">
                             <div class="step-list-item-content">
                             <h5 class="step-list-item-disabled">CALCUL DE VOS SUBVENTIONS POUR L'INSTLLATION DE VOS SOLUTIONS</h5>
-                            <!-- <p class="step-description-text step-list-item-disabled">Décrivez votre logement et détaillez votre projet de travaux.</p> -->
+                             <p class="step-description-text step-list-item-disabled">Décrivez votre logement et détaillez votre projet de travaux.</p> 
                         </div>
                         </button>
-                    </li>
+                    </li> -->
                 </ul>
             </aside>
             <div class="page__content">
@@ -966,44 +966,63 @@
                     </fieldset>
                     
                     <fieldset class="step-18">
+                        <h2>CALCUL DE VOS SUBVENTIONS POUR L'INSTLLATION DE VOS SOLUTIONS</h2>
                         <div class="step-18__content optionWithImages" style="display: flex;flex-direction:column;">
                             <div class="results">
                                 <div class="results__item">
                                         <div class="results__image">
-                                            <img src="./assets/images/picto_gte/chauffee-small-icon.svg" alt="Pompe à chaleur air-eau" height="50">
+                                            <img src="./assets/images/image00005.jpeg" alt="Ma prime renov" height="50">
                                         </div>
                                     <span class="results__label">
-                                        Paic air-eau
+                                        MaPrimeRénov
                                     </span>
-                                    <div class="results__value">
-                                        500 €
+                                    <div class="results__value"id="maPrimeRenov">
+                                        0 €
                                     </div>
                                 </div>
                                 
                                 <div class="results__item">
                                     <div class="results__image">
-                                        <img class="step-1__img" src="./assets/images/picto_gte/ecs-white-icon.svg" alt="Chauffe-eau thermodynamique" height="50">
+                                        <img class="step-1__img" src="./assets/images/image00003.jpeg" alt="Coup de pouce" height="50">
                                     </div>
                                     <span class="results__label">
-                                        Chauffe-eau thermodynamique
+                                        Coup de pouce
                                     </span>
-                                    <div class="results__value">
-                                        2000 €
+                                    <div class="results__value" id="coupDePouce">
+                                        0 €
                                     </div>
                                 </div>
                                 
                                 <div class="results__item">
                                     <div class="results__image">
-                                        <img class="step-1__img" src="./assets/images/picto_gte/ecs-white-icon.svg" alt="Chauffe-eau thermodynamique" height="50">
+                                        <img class="step-1__img" src="./assets/images/image00002.jpeg" alt="Bonus écologique" height="50">
                                     </div>
                                     <span class="results__label">
-                                        Chauffe-eau thermodynamique
+                                        Bonus écologique
                                     </span>
-                                    <div class="results__value">
+                                    <div class="results__value" id="bonusEcologique">
+                                        0 €
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="total">
+                                <div class="total__item">
+                                    <span class="total__label">
+                                        Total de vos bonus:
+                                    </span>
+                                    <div class="total__value">
                                         2000 €
                                     </div>
                                 </div>
                             </div>
+                    </fieldset>
+                    
+                    <fieldset class="step-19">
+                        <h2>FICHE TECHNIQUE PAR CATEGORIE</h2>
+                        <div class="step-19__content optionWithImages" style="display: flex;flex-direction:column;">
+                            
                         </div>
                     </fieldset>
                 </form>
@@ -1281,7 +1300,6 @@
                                             +
                                         </button>
                                     </div>
-                                    <span class="step-1__content__notice">Nombre d’habitants requis </span>
                                 </div>
                             </div>  
                         </div>

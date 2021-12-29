@@ -1282,11 +1282,17 @@ main .page .page__content .step-17 .answer-selected{
     border-color: #003250!important;
 }
 main .page .page__content .step-18__content{
-    background: #f2f2f2;
+    background-color: #1687f7;
+    color: white;
     padding: 40px;
 }
-main .page .page__content .results{
+main .page .page__content .results, main .page .page__content .total{
     display: flex;
+}
+main .page .page__content .total{
+    margin-top: 32px;
+    padding: 40px;
+    background: #eefdf0;
 }
 main .page .page__content .results__image{
     background: #aeaeae;
@@ -1297,14 +1303,18 @@ main .page .page__content .results__image{
     justify-content: center;
     flex-shrink: unset;
     border-radius: 35px;
+    overflow: hidden;
 }
 main .page .page__content .results__image img{
-    margin-top: 23px;
+    /* margin-top: 23px;
     margin-left: 5px;
-    height: 25px;
+    height: 25px; */
+    margin-top: 0px;
+    width: 100%;
+    height: 100%;
 }
 main .page .page__content .results .results__label{
-    color: #b5b5b5;
+    color: white;
     font-size: 12px;
     margin: 35px 0 15px 0 ;
     display: block;
@@ -1317,9 +1327,23 @@ main .page .page__content .results .results__item{
     align-items: flex-start;
     width: 275px;
 }
-main .page .page__content .results .results__value{
+main .page .page__content .total .total__item{
+    display: flex;
+    align-items: flex-end;
+}
+main .page .page__content .total .total__label{
+    font-size: 2em;
+    margin-bottom: 3px;
+    font-weight: lighter;
+}
+main .page .page__content .results .results__value,  main .page .page__content .total .total__value{
     font-size: 3em;
     margin-left: 10px;
+    
+}
+main .page .page__content .total .total__value{
+    margin-left: 32px;
+    font-weight: bold;
 }
 /* .step-8__link{
     margin: auto;
