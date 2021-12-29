@@ -767,21 +767,21 @@
                         <div class="step-11__content optionWithImages" style="width: 900px;margin-top: 15%;">
                             <label for="type_de_ventilation_1" class="select-item btn step-11__link image result1" style="width: 280px!important;font-size: 13px !important; background-color: #5a29b4; color:white; height:170px!important;">                        
                                 <!-- <input id="votre_conso_actuel" type="number" name="type_de_ventilation" id="type_de_ventilation_1" value="Votre consomation actuel"> -->
-                                <span style="position: absolute;top: 40px;left:50px;width: 220px;text-align: center;">Votre consommation actuel</span> 
+                                <span style="position: absolute;top: 40px;left:50px;width: 220px;text-align: center;">Votre consommation global actuel</span> 
                                 <span id="votre_conso_actuel" style="font-size:40px;position: absolute;bottom: 30px;">0 €</span> 
                                 <img src="./assets/images/check_icon.svg" alt="" class="image-checkbox_" style="top: 40px;left: 11px;">
                             </label>
                             
                             <label for="type_de_ventilation_2" class="select-item btn step-11__link image result2" style="width: 280px!important;font-size: 13px !important; background-color: #0288d1; color:white; height:170px!important;">             
                                 <!-- <input id="step-15_value2" type="radio" name="type_de_ventilation"  id="type_de_ventilation_2" value="Votre consommation sur X années"> -->
-                                <span style="position: absolute;top: 40px;left:40px;width: 220px;text-align: center;">Votre consommation sur <span id="votre_conso_sur_x_annee_value">X </span> années</span> 
+                                <span style="position: absolute;top: 40px;left:40px;width: 220px;text-align: center;">Votre consommation global sur <span id="votre_conso_sur_x_annee_value">X </span> années</span> 
                                 <span id="votre_conso_sur_x_annee" style="font-size:40px;position: absolute;bottom: 30px;">0 €</span> 
                                 <img src="./assets/images/check_icon.svg" alt="" class="image-checkbox_" style="top: 40px;left: 11px;">
                             </label>
                             
                             <label for="type_de_ventilation_3" class="select-item btn step-11__link image result3" style="width: 280px!important;font-size: 13px !important; background-color: #7fb863; color:white; height:170px!important;">        
                                 <!-- <input id="step-15_value3" type="radio" name="type_de_ventilation"  id="type_de_ventilation_3" value="Moyenne de consommation sur X années"> -->
-                                <span style="position: absolute;top: 40px;left:40px;width: 220px;text-align: center;">Moyenne de consommation sur <span id="moyenne_conso_sur_x_annee_value">X </span> années</span> 
+                                <span style="position: absolute;top: 40px;left:40px;width: 220px;text-align: center;">Moyenne de consommation global sur <span id="moyenne_conso_sur_x_annee_value">X </span> années</span> 
                                 <span id="moyenne_conso_sur_x_annee" style="font-size:40px;position: absolute;bottom: 30px;">0 €</span> 
 
                                 <img src="./assets/images/check_icon.svg" alt="" class="image-checkbox_" style="top: 40px;left: 11px;">
@@ -1052,7 +1052,7 @@
             <!-- Modal Structure -->
             <div id="modal1" class="modal">
                 <div class="modal-content">
-                    <h4 style="color: #50249f;">Chauffage </h4>
+                    <h4 style="color: #009482;">Chauffage </h4>
                     <fieldset class="step-11">
                         <h2>Source d’énergie</h2>
                         <div class="step-11__content optionWithImages" style="max-width: 760px;">
@@ -1367,7 +1367,7 @@
              <!-- Modal Structure -->
              <div id="modal2" class="modal" style="width: 65%;">
                 <div class="modal-content">
-                    <h4 style="color:#0288d1;">Eau chaude sanitaire </h4>
+                    <h4 style="color:#225c54;">Eau chaude sanitaire </h4>
                     <fieldset class="step-12">
                         <h2>Source d’énergie</h2>
                         <div class="step-12__content optionWithImages" style="max-width: 760px;">
@@ -1591,7 +1591,7 @@
                         <div class="inputs">    
                             <div class="input-item">
                                 <label for="inputEstimFactEauChaude">Estimation de la facture d'eau chaude sanitaire (€/an)</label>
-                                <input id="inputEstimFactEauChaude" type="number" name="estimation_de_facture_d_eacu_chaude" class="" min="0">
+                                <input id="inputEstimFactEauChaude" type="number" name="estimation_de_facture_d_eacu_chaude" value="0" min="0">
                             </div>
                         </div>
                     </fieldset>
@@ -1607,8 +1607,8 @@
              <!-- Modal Structure -->
              <div id="modal3" class="modal">
                 <div class="modal-content">
-                    <h4 style="color:#d81159;margin-bottom:0;">Appareils électriques </h4>
-                    <h5 style="color:#d81159;margin-bottom:40px; text-align:center;">(Appareils et équipements électriques)</h5>
+                    <h4 style="color:#7ac6bf;margin-bottom:0;">Appareils électriques </h4>
+                    <h5 style="color:#7ac6bf;margin-bottom:40px; text-align:center;">(Appareils et équipements électriques)</h5>
                     <fieldset class="step-13">
                         <h2>Utilisation de vos appareils et équipements électriques</h2>
                         <div class="step-13__content optionWithImages" style="max-width: 830px;">
@@ -1653,7 +1653,7 @@
                         <div class="inputs">    
                             <div class="input-item">
                                 <label for="inputEstimFactAppareilElec">Estimation de la facture des appareils électriques (€/an)</label>
-                                <input id="inputEstimFactAppareilElec" type="number" name="estimation_de_facture_d_eacu_chaude" class="" min="0">
+                                <input id="inputEstimFactAppareilElec" type="number" name="estimation_de_facture_d_eacu_chaude" value="0" min="0">
                             </div>
                         </div>
                         
@@ -1670,7 +1670,7 @@
              <!-- Modal Structure -->
              <div id="modal4" class="modal">
                 <div class="modal-content">
-                    <h4 style="color: #71b051;">Éclairage </h4>
+                    <h4 style="color: #009245;">Éclairage </h4>
                     <fieldset class="step-14">
                         <h2>Type d'ampoules</h2>
                         <div class="step-14__content optionWithImages" style="max-width: 610px;">
@@ -1739,7 +1739,7 @@
                         <div class="inputs">    
                             <div class="input-item">
                                 <label for="inputEstimFactEclairage">Estimation de la facture d'éclairage (€/an)</label>
-                                <input id="inputEstimFactEclairage" type="number" name="estimation_de_eclairage_par_an" class="" min="0">
+                                <input id="inputEstimFactEclairage" type="number" name="estimation_de_eclairage_par_an" value="0" min="0">
                             </div>
                         </div>  
                     </fieldset>

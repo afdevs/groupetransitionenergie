@@ -1165,12 +1165,10 @@ jQuery(function($){
       $('#inputTotalConso20ans').val(((parseInt($('#inputConsoFioul').val())+parseInt($('#inputConsoGaz').val()))* parseInt($(this).val())))
       $('#inputMoyennConso').val((((parseInt($('#inputConsoFioul').val())+parseInt($('#inputConsoGaz').val()))* parseInt($(this).val()))/parseInt($(this).val())))
     })
-
-    $('#inputEstimFactChauff').change(function(e){
-      inputsCountersValues.votre_conso_actuel=parseFloat($(this).val());
-      $('#votre_conso_actuel').text($(this).val() +' €');
+    function consommationGlobal(){      
+      inputsCountersValues.votre_conso_actuel=(parseFloat($('#inputEstimFactChauff').val()) + parseFloat($('#inputEstimFactEauChaude').val())+ parseFloat($('#inputEstimFactAppareilElec').val())+parseFloat($('#inputEstimFactEclairage').val()));
+      $('#votre_conso_actuel').text(inputsCountersValues.votre_conso_actuel +' €');
       const nombreAnneeAIndexer=parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()) || 0;
-      console.log(nombreAnneeAIndexer)
       const evolPrixFioul =parseFloat($('#inputEvol25Annee').val())/100;
       if(!isNaN(nombreAnneeAIndexer)){
         let sumTotal=inputsCountersValues.votre_conso_actuel;
@@ -1190,60 +1188,31 @@ jQuery(function($){
       }
       $('#votre_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee +' €');
       $('#moyenne_conso_sur_x_annee').text((inputsCountersValues.moyenne_conso_sur_x_annee).toFixed(2) +' €');
+    }
+    
+    $('#inputEstimFactChauff').change(function(e){
+      consommationGlobal()
+    })
+    $('#inputEstimFactEauChaude').change(function(e){
+      consommationGlobal()
+    })
+    $('#inputEstimFactAppareilElec').change(function(e){
+      consommationGlobal()
+    })
+    $('#inputEstimFactEclairage').change(function(e){
+      consommationGlobal()
     })
 
-      $('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').change(function(e){
+    $('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').change(function(e){
         //label en x annee
         $("#votre_conso_sur_x_annee_value").text($(this).val());
         $("#moyenne_conso_sur_x_annee_value").text($(this).val());
-        inputsCountersValues.votre_conso_actuel= parseFloat($('#inputEstimFactChauff').val()||0);
-        $('#votre_conso_actuel').text(inputsCountersValues.votre_conso_actuel +' €');      
-        const nombreAnneeAIndexer=parseInt($(this).val()) || 0;
-        const evolPrixFioul =parseFloat($('#inputEvol25Annee').val())/100;
-        if(!isNaN(nombreAnneeAIndexer)){
-          let sumTotal=inputsCountersValues.votre_conso_actuel;
-          const allValues=[]
-          for(let i=0; i< nombreAnneeAIndexer; i++){
-            sumTotal=sumTotal+(sumTotal * evolPrixFioul);
-            allValues.push(sumTotal.toFixed(2));
-          }
-          const result=allValues.reduce((prev, value)=>{
-            return prev + parseFloat(value);
-          },0)
-          const allValuesTotal=result + inputsCountersValues.votre_conso_actuel
-          inputsCountersValues.votre_conso_sur_x_annee=allValuesTotal.toFixed(2);        
-          
-          if(nombreAnneeAIndexer> 0){
-            inputsCountersValues.moyenne_conso_sur_x_annee=inputsCountersValues.votre_conso_sur_x_annee / nombreAnneeAIndexer;
-          }        
-        }
-        $('#votre_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee +' €');
-        $('#moyenne_conso_sur_x_annee').text(inputsCountersValues.moyenne_conso_sur_x_annee.toFixed(2) +' €');
+        consommationGlobal();
     })
 
     $('#inputEvol25Annee').change(function(){
       inputsCountersValues.votre_conso_actuel= parseFloat($('#inputEstimFactChauff').val()||0);
-      $('#votre_conso_actuel').text(inputsCountersValues.votre_conso_actuel +' €');
-      const nombreAnneeAIndexer=parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()) || 0;
-      const evolPrixFioul =parseFloat($(this).val())/100;
-      if(!isNaN(nombreAnneeAIndexer)){
-        let sumTotal=inputsCountersValues.votre_conso_actuel;
-        const allValues=[]
-        for(let i=0; i< nombreAnneeAIndexer; i++){
-          sumTotal=sumTotal+(sumTotal * evolPrixFioul);
-          allValues.push(sumTotal.toFixed(2));
-        }
-        const result=allValues.reduce((prev, value)=>{
-          return prev + parseFloat(value);
-        },0)
-        const allValuesTotal=result + inputsCountersValues.votre_conso_actuel
-        inputsCountersValues.votre_conso_sur_x_annee=allValuesTotal.toFixed(2);        
-        if(nombreAnneeAIndexer> 0){
-          inputsCountersValues.moyenne_conso_sur_x_annee=inputsCountersValues.votre_conso_sur_x_annee / nombreAnneeAIndexer;
-        }        
-      }
-      $('#votre_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee +' €');
-      $('#moyenne_conso_sur_x_annee').text(inputsCountersValues.moyenne_conso_sur_x_annee.toFixed(2) +' €');
+      consommationGlobal()
     });
     
     $('#inputDernierRevenuFiscalRef').change(function(){

@@ -1710,10 +1710,10 @@ h3 {
 }
 
 .vos-consommations__consumption-item.chauffage-item {
-    background-color: #50249f;
+    background-color: #009482;
 }
 .vos-consommations__consumption-item.chauffage-item:hover {
-    background-color: #5a29b4;
+    background-color: #009482;
 }
 .vos-consommations__consumption-item:not(:last-child) {
     margin-bottom: 20px;
@@ -1754,7 +1754,7 @@ h3 {
     justify-content: center;
 }
 .vos-consommations__consumption-item.chauffage-item::before {
-    color: #50249f;
+    color: #009482;
 }
 .vos-consommations__consumption-item::before {
     content: "chevron_right";
@@ -1924,33 +1924,33 @@ h3 {
 }
 
 .vos-consommations__consumption-item.ecs-item {
-    background-color: #0288d1;
+    background-color: #225c54;
 }
 .vos-consommations__consumption-item.ecs-item:hover {
-    background-color: #0298ea;
+    background-color: #225c54;
 }
 
 .vos-consommations__consumption-item.ecs-item::before {
     color: #0288d1;
 }
 .vos-consommations__consumption-item.taches-item {
-    background-color: #d81159;
+    background-color: #7ac6bf;
 }
 .vos-consommations__consumption-item.taches-item:hover {
-    background-color: #ed1664;
+    background-color: #7ac6bf;
 }
 .vos-consommations__consumption-item.taches-item::before {
-    color: #d81159;
+    color: #7ac6bf;
 }
 
 .vos-consommations__consumption-item.eclairage-item {
-    background-color: #71b051;
+    background-color: #009245;
 }
 .vos-consommations__consumption-item.eclairage-item:hover {
-    background-color: #7fb863;
+    background-color: #009245;
 }
 .vos-consommations__consumption-item.eclairage-item::before {
-    color: #71b051;
+    color: #009245;
 }
 .vos-consommations__consumption-item:hover::before {
     background-color: #fff;
