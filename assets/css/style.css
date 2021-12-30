@@ -1955,3 +1955,14 @@ h3 {
 .vos-consommations__consumption-item:hover::before {
     background-color: #fff;
 }
+
+.maskEverything{
+    height: 220px;
+    display: block;
+    background: #e6e6e6e6;
+    z-index: 123;
+    position: absolute;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    width: 400px;
+}

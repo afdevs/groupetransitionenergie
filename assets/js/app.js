@@ -30,6 +30,7 @@ let subventionsChauffeEau={
 let coupDePouceChauffageBonnus={
   bleu: 5000,
   jaune: 4000,
+  violet: 2500,
   rose: 2500
 }
 
@@ -77,7 +78,7 @@ var franceAddresses=[
 ]
 
 var inputsCountersValues={
-    nombre_d_habitants: 0,
+    nombre_d_habitants: 1,
     chaufface_envisage_source_energie_nbr_unite: 0,
     eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond: 0,
     source_energie_nombre: 0,
@@ -490,7 +491,8 @@ jQuery(function($){
             //     stepVisited.push(next_step);
             //   });
             // }
-            
+            calculatePompeAChaleurAirEau();
+            calculBonus()
             next_step_form.fadeTo('slow', 1, function(){
               setProgressBar(next_step);
               next_step_form.show();
@@ -540,6 +542,8 @@ jQuery(function($){
             $('.page .page__content #regiration_form').css("transition", ".4s ease-out" );
             $('.page .page__content #regiration_form').css("transform"," translateX(0px)" );
         }, timeout);   
+        calculatePompeAChaleurAirEau();
+        calculBonus()
 
           next_step_form.fadeTo('slow', 1, function(){
             setProgressBar(next_step);
@@ -865,7 +869,7 @@ jQuery(function($){
 
         }
 
-
+        calculatePompeAChaleurAirEau();
         //end
       })
 
@@ -1221,10 +1225,18 @@ jQuery(function($){
     $('#inputBonusEcologique').change(function(){
       calculBonus();
     })
+    $('#270l').change(function(){
+      calculBonus()
+    })
+    
+    $('#200l').change(function(){
+      calculBonus()
+    })
     function calculBonus(){
       let dernierRevenuFisc=parseFloat($('#inputDernierRevenuFiscalRef').val() || 0)
       let nbrFoyerFisciale='more';
       let nbrFoyerFiscialeIndex=0;
+      
       let couleur='';
       if(bonusCalcul.dansIleDeFrance){
         plafondRessourceEnIleFrance.foyerFiscale.map((el, index)=>{
@@ -1232,13 +1244,15 @@ jQuery(function($){
             nbrFoyerFisciale=el;
             nbrFoyerFiscialeIndex=index;
           }
-        })
-        if(dernierRevenuFisc <=plafondRessourceEnIleFrance.bleu[nbrFoyerFiscialeIndex]){
+        });
+        if(dernierRevenuFisc <= plafondRessourceEnIleFrance.bleu[nbrFoyerFiscialeIndex]){
           couleur='bleu';
         }else if(dernierRevenuFisc <=plafondRessourceEnIleFrance.jaune[nbrFoyerFiscialeIndex]){
-          couleur='jaune'
+          couleur='jaune';
         }else if(dernierRevenuFisc <=plafondRessourceEnIleFrance.violet[nbrFoyerFiscialeIndex]){
-          couleur='violet'
+          couleur='violet';
+        }else{
+          couleur= 'none';
         }
       }else{
         plafondRessourceHorsIleFrance.foyerFiscale.map((el, index)=>{
@@ -1253,7 +1267,10 @@ jQuery(function($){
           couleur='jaune'
         }else if(dernierRevenuFisc <=plafondRessourceHorsIleFrance.violet[nbrFoyerFiscialeIndex]){
           couleur='violet'
+        }else{
+          couleur= 'none';
         }
+        
       }
         //bonus pac air-eau
         switch (couleur) {
@@ -1265,6 +1282,9 @@ jQuery(function($){
             break;
           case 'violet':
             bonusCalcul.maprimenov.pacAirEau=subventionsPacAiEau.violet
+            break;
+          case 'none':
+            bonusCalcul.maprimenov.pacAirEau=0
             break;
         }
         
@@ -1279,6 +1299,9 @@ jQuery(function($){
           case 'violet':
             bonusCalcul.maprimenov.chauffeEauthermo=subventionsChauffeEau.violet
             break;
+          case 'none':
+            bonusCalcul.maprimenov.chauffeEauthermo=0
+            break;
         }
 
         //bonus chauffage
@@ -1290,20 +1313,37 @@ jQuery(function($){
             bonusCalcul.coupDePouce=coupDePouceChauffageBonnus.jaune
             break;
           case 'violet':
-            bonusCalcul.coupDePouce=coupDePouceChauffageBonnus.rose
+            bonusCalcul.coupDePouce=coupDePouceChauffageBonnus.violet
+            break;
+          case 'none':
+            bonusCalcul.coupDePouce=0
             break;
         }
         
         bonusCalcul.ecologique=parseFloat($('#inputBonusEcologique').val());
-        bonusCalcul.totalBonus=(bonusCalcul.maprimenov.pacAirEau + bonusCalcul.maprimenov.chauffeEauthermo) + bonusCalcul.coupDePouce + bonusCalcul.ecologique
-        $('#maPrimeRenov').text((bonusCalcul.maprimenov.pacAirEau + bonusCalcul.maprimenov.chauffeEauthermo) +' €')
+        let maPrimeRenovSum=0
+        if($('#270l').is(':checked') || $('#200l').is(':checked')){
+          bonusCalcul.totalBonus=bonusCalcul.maprimenov.pacAirEau;
+          maPrimeRenovSum=bonusCalcul.maprimenov.pacAirEau;
+        }
+        if(inputsCountersValues.pompe_a_chaleur_air_eau_value!=0){
+          bonusCalcul.totalBonus +=bonusCalcul.maprimenov.chauffeEauthermo;
+          maPrimeRenovSum +=bonusCalcul.maprimenov.chauffeEauthermo;
+        }
+        // bonusCalcul.totalBonus=(bonusCalcul.maprimenov.pacAirEau + bonusCalcul.maprimenov.chauffeEauthermo) + bonusCalcul.coupDePouce + bonusCalcul.ecologique
+        bonusCalcul.totalBonus= bonusCalcul.coupDePouce + bonusCalcul.ecologique + maPrimeRenovSum
+
+        if($('#type_de_chaufface_chaudiere_gaz_natur_condensa').is(':checked')){
+          bonusCalcul.coupDePouce=0
+        }
+        
+        $('#maPrimeRenov').text(maPrimeRenovSum +' €')
         $('#coupDePouce').text(bonusCalcul.coupDePouce +' €')        
         $('#bonusEcologique').text(bonusCalcul.ecologique +' €');
         $('#total_bonus').text(bonusCalcul.totalBonus +' €')
-
         $('#bonusEcologique').text(bonusCalcul.ecologique +' €')
-    }
 
+    }
 
     $('#piecesId').on('change', '.pompeAChaleurAirAirInput', function(e){
       $(this).next().text(getMatchedWhattNumber(parseInt($(this).val()))+ 'W')
