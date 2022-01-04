@@ -1282,8 +1282,7 @@ main .page .page__content .step-17 .answer-selected{
     border-color: #003250!important;
 }
 main .page .page__content .step-18__content{
-    background-color: #1687f7;
-    color: white;
+    background-color: #e9f6fe;
     padding: 40px;
 }
 main .page .page__content .results, main .page .page__content .total{
@@ -1309,12 +1308,11 @@ main .page .page__content .results__image img{
     /* margin-top: 23px;
     margin-left: 5px;
     height: 25px; */
-    margin-top: 0px;
     width: 100%;
+    margin-top: -1px;
     height: 100%;
 }
 main .page .page__content .results .results__label{
-    color: white;
     font-size: 12px;
     margin: 35px 0 15px 0 ;
     display: block;
@@ -1356,48 +1354,87 @@ main .page .page__content .pompes__advantages {
     min-width: 450px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 main .page .page__content .pompes .pompes__advantages span{
     color: #888;
+    line-height: 25px;
+    font-size: 14px;
 }
+
 main .page .page__content .pompes .pompes__item{
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: white;
     padding: 25px;  
-    height: 210px;
+    height: 230px;
+    margin-top: 25px;
 }
 main .page .page__content .pompes__left{
     width: 140px;
     
 }
 main .page .page__content .pompes__left img{
-    width: 100%;
+    width: 80%;
 }
 main .page .page__content .pompes__center{
     margin: 0 20px;
     padding: 16px;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 475px;
+}
+main .page .page__content .pompes__category{
+    margin-top: 16px;
+    font-size: 12px;    
+    background: #67879b;
+    color: white;
+    padding: 8px;
 }
 main .page .page__content .pompes__right{
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 }
 main .page .page__content .pompes__btn{
     width: 190px;
     background: #1687f7;
     transition: all 300ms;
+    margin: 0;
 }
 main .page .page__content .pompes__btn:hover{
     background: #1475d6;
 }
 main .page .page__content .pompes__btn--show{
-    background-color: #74f0a7;;
+    background-color: #74f0a7;display: flex;
+    height: 48px;
+    max-width: 260px;
+    position: static;
+    font-size: 14px !important;
+    font-family: aoki_regular,Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 100%;
+    cursor: pointer;
+    z-index: 2;
+    border: 0;
+    border-bottom-color: currentcolor;
+    border-bottom-style: none;
+    border-bottom-width: 0px;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
+    height: 48px;
+    padding: 0 24px;
+    align-items: center;
 }
 main .page .page__content .pompes__btn--show:hover{
-    background-color: #68d696;;
+    background-color: #68d696;
+    box-shadow: 0 10px 12px 0 rgb(0 0 0 / 25%);
 }
 /* .step-8__link{
     margin: auto;

@@ -62,7 +62,7 @@
                     console.log("Elevation service failed due to: " + e)
                 );
         }
-
+        
         function geocodingPlaceID(placeId){            
             const geocoder = new google.maps.Geocoder();
             return new Promise((resolve, reject) => {
@@ -1023,7 +1023,7 @@
                             <div class="pompes">
                                 <div class="pompes__item">
                                     <div class="pompes__left">
-                                        <img src="./assets/images/appartement.png" alt="">
+                                        <img src="./assets/images/pompe_Dietrich.png" alt="Clim’Up EMSM – De Dietrich">
                                     </div>
                                     <div class="pompes__center">
                                         <span class="pompes__title">
@@ -1035,16 +1035,529 @@
                                             <span>Fluide frigorigène R32</span>
                                             <span>SCOP 4,0 à 4,3</span>
                                         </div>
+                                        <div class="pompes__category">
+                                        Pompes à chaleur air-air
+                                        </div>
                                     </div>
                                     <div class="pompes__right">
                                         <button class="pompes__btn">
                                             AJOUTER
                                         </button>
-                                        <button class="pompes__btn pompes__btn--show">
+                                        <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/05/clim-up.pdf">
                                             FICHE TECHNIQUE
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
+
+                                <div class="pompes__item">
+                                    <div class="pompes__left">
+                                        <img src="./assets/images/pompe_Dietrich_2.png" alt="Clim’Up EMSM – De Dietrich">
+                                    </div>
+                                    <div class="pompes__center">
+                                        <span class="pompes__title">
+                                            Clim’Up Muse unité extérieure - De Dietrich
+                                        </span>
+                                        <div class="pompes__advantages">
+                                            <span>Multisplit</span>
+                                            <span>SCOP de 4,1 à 4,2</span>
+                                            <span>Fluide</span>
+                                            <span>Frigorigène R32</span>
+                                            <span>SEER de 6,18 à</span>
+                                        </div>
+                                        <div class="pompes__category">
+                                        Pompes à chaleur air-air
+                                        </div>
+                                    </div>
+                                    <div class="pompes__right">
+                                        <button class="pompes__btn">
+                                            AJOUTER
+                                        </button>
+                                        <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/05/clim-up.pdf">
+                                            FICHE TECHNIQUE
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="pompes__item">
+                                    <div class="pompes__left">
+                                        <img src="./assets/images/pompe_Dietrich_4.png" alt="Clim’Up EMSM – De Dietrich">
+                                    </div>
+                                    <div class="pompes__center">
+                                        <span class="pompes__title">
+                                        Clim’up SMART unité interieur – De Dietrich
+                                        </span>
+                                        <div class="pompes__advantages">
+                                            <span>Pompe de relevage des condensats</span>
+                                            <span>Fixation murale </span>
+                                            <span>De 2,05 à 5,30 kW</span>
+                                            <span>Monophasé</span>
+                                        </div>
+                                        <div class="pompes__category">
+                                        Pompes à chaleur air-air
+                                        </div>
+                                    </div>
+                                    <div class="pompes__right">
+                                        <button class="pompes__btn">
+                                            AJOUTER
+                                        </button>
+                                        <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/05/SMART.pdf">
+                                            FICHE TECHNIQUE
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="pompes__item">
+                                    <div class="pompes__left">
+                                        <img src="./assets/images/pompe_Dietrich_3.png" alt="Clim’Up EMSM – De Dietrich">
+                                    </div>
+                                    <div class="pompes__center">
+                                        <span class="pompes__title">
+                                        Perfera - Daikin
+                                        </span>
+                                        <div class="pompes__advantages">
+                                            <span>Fluide frigorigène R32</span>
+                                            <span>Label énergétique</span>
+                                            <span>Purificateur d'air et anti-allergènes</span>
+                                            <span>Amplification de chauffage</span>
+                                        </div>
+                                        <div class="pompes__category">
+                                        Pompes à chaleur air-air
+                                        </div>
+                                    </div>
+                                    <div class="pompes__right">
+                                        <button class="pompes__btn">
+                                            AJOUTER
+                                        </button>
+                                        <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/12/250.DOC.FTXM-R.20.pdf">
+                                            FICHE TECHNIQUE
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="pompes__item">
+                                    <div class="pompes__left">
+                                        <img src="./assets/images/pompe_air_eau.png" alt="Altherma 60° - Daikin">
+                                    </div>
+                                    <div class="pompes__center">
+                                        <span class="pompes__title">
+                                        Altherma 60° - Daikin
+                                        </span>
+                                        <div class="pompes__advantages">
+                                            <span>Fluide frigorigène R32</span>
+                                            <span>Label énergétique</span>
+                                            <span>Compresseur Inverter DC</span>
+                                            <span>Compacte</span>
+                                        </div>
+                                        <div class="pompes__category">
+                                        Pompes à chaleur air-eau
+                                        </div>
+                                    </div>
+                                    <div class="pompes__right">
+                                        <button class="pompes__btn">
+                                            AJOUTER
+                                        </button>
+                                        <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/12/DAIKIN-doc-altherma-60c.pdf">
+                                            FICHE TECHNIQUE
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="pompes__item">
+                                    <div class="pompes__left">
+                                        <img src="./assets/images/pompe_air_eau_2.png" alt="Altherma 70° 3H HT - Daikin">
+                                    </div>
+                                    <div class="pompes__center">
+                                        <span class="pompes__title">
+                                        Altherma 70° 3H HT - Daikin
+                                        </span>
+                                        <div class="pompes__advantages">
+                                            <span>Seulement 32 dB(A)</span>
+                                            <span>Fluide frigorigène R32</span>
+                                            <span>Pression max 56 bar</span>
+                                            <span>Commande intuitive</span>
+                                        </div>
+                                        <div class="pompes__category">
+                                        Pompes à chaleur air-eau
+                                        </div>
+                                    </div>
+                                    <div class="pompes__right">
+                                        <button class="pompes__btn">
+                                            AJOUTER
+                                        </button>
+                                        <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/05/altherma-3-hht.pdf">
+                                            FICHE TECHNIQUE
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="pompes__item">
+                                    <div class="pompes__left">
+                                        <img src="./assets/images/pompe__air_eau_3.png" alt="Altherma 80° R HT - Daikin">
+                                    </div>
+                                    <div class="pompes__center">
+                                        <span class="pompes__title">
+                                        Altherma 80° R HT - Daikin
+                                        </span>
+                                        <div class="pompes__advantages">
+                                            <span>Sortie d’eau 80°C</span>
+                                            <span>COP entre 3 et 5</span>
+                                            <span>100 % thermodynamique</span>
+                                            <span>Thermostat d’ambiance</span>
+                                        </div>
+                                        <div class="pompes__category">
+                                        Pompes à chaleur air-eau
+                                        </div>
+                                    </div>
+                                    <div class="pompes__right">
+                                        <button class="pompes__btn">
+                                            AJOUTER
+                                        </button>
+                                        <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/05/ALTRHT.pdf">
+                                            FICHE TECHNIQUE
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="pompes__item">
+                                    <div class="pompes__left">
+                                        <img src="./assets/images/pompe_air_eau_4.png" alt="Arianext plus S - Chaffoteaux">
+                                    </div>
+                                    <div class="pompes__center">
+                                        <span class="pompes__title">
+                                        Arianext plus S - Chaffoteaux
+                                        </span>
+                                        <div class="pompes__advantages">
+                                            <span>Sonde extérieure filaire</span>
+                                            <span>Appoint électrique intégré, 4kW ou 6kW</span>
+                                            <span>COP jusqu’à 5,25   Compresseur Inverter DC</span>
+                                            <span>Compresseur Inverter DC</span>
+                                        </div>
+                                        <div class="pompes__category">
+                                        Pompes à chaleur air-eau
+                                        </div>
+                                    </div>
+                                    <div class="pompes__right">
+                                        <button class="pompes__btn">
+                                            AJOUTER
+                                        </button>
+                                        <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/05/ALTRHT.pdf">
+                                            FICHE TECHNIQUE
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="pompes__item">
+                                    <div class="pompes__left">
+                                        <img src="./assets/images/pompe__air__eau__5.jpg" alt="EHS - SAMSUNG ">
+                                    </div>
+                                    <div class="pompes__center">
+                                        <span class="pompes__title">
+                                        EHS - SAMSUNG 
+                                        </span>
+                                        <div class="pompes__advantages">
+                                            <span>Label énergétique</span>
+                                            <span>Eau jusqu’à 65°C</span>
+                                            <span>Ballon disponible</span>
+                                            <span>Disponible en 4 / 6 / 9 kW</span>
+                                        </div>
+                                        <div class="pompes__category">
+                                        Pompes à chaleur air-eau
+                                        </div>
+                                    </div>
+                                    <div class="pompes__right">
+                                        <button class="pompes__btn">
+                                            AJOUTER
+                                        </button>
+                                        <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/05/ARIANEXT-PLUS-S.pdf">
+                                            FICHE TECHNIQUE
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="pompes__item">
+                                    <div class="pompes__left">
+                                        <img src="./assets/images/pompe_air_eau_5.png" alt="Alezio S – De Dietrich">
+                                    </div>
+                                    <div class="pompes__center">
+                                        <span class="pompes__title">
+                                        Alezio S – De Dietrich
+                                        </span>
+                                        <div class="pompes__advantages">
+                                            <span>Jusqu'à 70% d'économies</span>
+                                            <span>Rapide à installer</span>
+                                            <span>Solution connectée</span>
+                                            <span>Simple d’utilisation</span>
+                                        </div>
+                                        <div class="pompes__category">
+                                        Pompes à chaleur air-eau
+                                        </div>
+                                    </div>
+                                    <div class="pompes__right">
+                                        <button class="pompes__btn">
+                                            AJOUTER
+                                        </button>
+                                        <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/05/ALEZIO-awhp.pdf">
+                                            FICHE TECHNIQUE
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="pompes__item">
+                                    <div class="pompes__left">
+                                        <img src="./assets/images/pompe_air_eau_6.png" alt="Alezio  V200 - De Dietrich">
+                                    </div>
+                                    <div class="pompes__center">
+                                        <span class="pompes__title">
+                                        Alezio  V200 - De Dietrich
+                                        </span>
+                                        <div class="pompes__advantages">
+                                            <span>Solution compacte</span>
+                                            <span>4,5 kW à 16 kW</span>
+                                            <span>Thermostat connecté</span>
+                                            <span>Fluide frigorigène R410A</span>
+                                        </div>
+                                        <div class="pompes__category">
+                                        Pompes à chaleur air-eau
+                                        </div>
+                                    </div>
+                                    <div class="pompes__right">
+                                        <button class="pompes__btn">
+                                            AJOUTER
+                                        </button>
+                                        <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/05/ALEZIO-S-V200.pdf">
+                                            FICHE TECHNIQUE
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="pompes__item">
+                                    <div class="pompes__left">
+                                        <img src="./assets/images/pompe_air_eau_7.png" alt="HPI Evolution - De Dietrich">
+                                    </div>
+                                    <div class="pompes__center">
+                                        <span class="pompes__title">
+                                        HPI Evolution - De Dietrich
+                                        </span>
+                                        <div class="pompes__advantages">
+                                            <span>Option hybride</span>
+                                            <span>Compatible multi-énergies</span>
+                                            <span>Bouteille de découplage intégrée</span>
+                                            <span>COP de 5,11</span>
+                                        </div>
+                                        <div class="pompes__category">
+                                        Pompes à chaleur air-eau
+                                        </div>
+                                    </div>
+                                    <div class="pompes__right">
+                                        <button class="pompes__btn">
+                                            AJOUTER
+                                        </button>
+                                        <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/05/hpi.pdf">
+                                            FICHE TECHNIQUE
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="pompes__item">
+                                    <div class="pompes__left">
+                                        <img src="./assets/images/pompe_air_eau_8.png" alt="Hydrosplit - LG">
+                                    </div>
+                                    <div class="pompes__center">
+                                        <span class="pompes__title">
+                                        Hydrosplit - LG
+                                        </span>
+                                        <div class="pompes__advantages">
+                                            <span>Fluide frigorigène R32</span>
+                                            <span>Label énergétique</span>
+                                            <span>Réfrigérant écologique</span>
+                                            <span>Contrôle intelligent du chauffage</span>
+                                        </div>
+                                        <div class="pompes__category">
+                                        Pompes à chaleur air-eau
+                                        </div>
+                                    </div>
+                                    <div class="pompes__right">
+                                        <button class="pompes__btn">
+                                            AJOUTER
+                                        </button>
+                                        <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/12/LG-Fiche-PAC-air-eau-Hydrosplit-R32-2021.pdf">
+                                            FICHE TECHNIQUE
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="pompes__item">
+                                    <div class="pompes__left">
+                                        <img src="./assets/images/pompe_air_eau_9.png" alt="Hydrosplit DUO - LG" >
+                                    </div>
+                                    <div class="pompes__center">
+                                        <span class="pompes__title">
+                                        Hydrosplit DUO - LG
+                                        </span>
+                                        <div class="pompes__advantages">
+                                            <span>Fluide frigorigène R32</span>
+                                            <span>Label énergétique</span>
+                                            <span>Réfrigérant écologique</span>
+                                            <span>Contrôle intelligent du chauffage</span>
+                                        </div>
+                                        <div class="pompes__category">
+                                        Pompes à chaleur air-eau
+                                        </div>
+                                    </div>
+                                    <div class="pompes__right">
+                                        <button class="pompes__btn">
+                                            AJOUTER
+                                        </button>
+                                        <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/12/LG-Fiche-PAC-air-eau-Hydrosplit-R32-2021.pdf">
+                                            FICHE TECHNIQUE
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="pompes__item">
+                                    <div class="pompes__left">
+                                        <img src="./assets/images/pompe_air_eau_10.png" alt="Nuos Primos – Ariston" style="width: 40%" >
+                                    </div>
+                                    <div class="pompes__center">
+                                        <span class="pompes__title">
+                                        Nuos Primos – Ariston
+                                        </span>
+                                        <div class="pompes__advantages">
+                                            <span>Temps de chauffe < 8h</span>
+                                            <span>COP de 2,86</span>
+                                            <span>4 modes d’utilisations</span>
+                                            <span>200L à 240L</span>
+                                        </div>
+                                        <div class="pompes__category">
+                                        Chauffe-eau Thermodynamique
+                                        </div>
+                                    </div>
+                                    <div class="pompes__right">
+                                        <button class="pompes__btn">
+                                            AJOUTER
+                                        </button>
+                                        <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/05/NUOS.pdf">
+                                            FICHE TECHNIQUE
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="pompes__item">
+                                    <div class="pompes__left">
+                                        <img src="./assets/images/pompe_air_eau_11.png" alt="Aquanext Split - Chaffoteaux">
+                                    </div>
+                                    <div class="pompes__center">
+                                        <span class="pompes__title">
+                                        Aquanext Split - Chaffoteaux
+                                        </span>
+                                        <div class="pompes__advantages">
+                                            <span>Temps de chauffe < 6h</span>
+                                            <span>Technologie Inverter</span>
+                                            <span>Condenseur avec profile D</span>
+                                            <span>Connexion HP/HC</span>
+                                        </div>
+                                        <div class="pompes__category">
+                                        Chauffe-eau Thermodynamique
+                                        </div>
+                                    </div>
+                                    <div class="pompes__right">
+                                        <button class="pompes__btn">
+                                            AJOUTER
+                                        </button>
+                                        <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/05/Aquanext-Split-Inverter.pdf">
+                                            FICHE TECHNIQUE
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="pompes__item">
+                                    <div class="pompes__left">
+                                        <img src="./assets/images/pompe_air_eau_12.png" alt="Kaliko - De Dietrich" style="width: 50%">
+                                    </div>
+                                    <div class="pompes__center">
+                                        <span class="pompes__title">
+                                        Kaliko - De Dietrich
+                                        </span>
+                                        <div class="pompes__advantages">
+                                            <span>Ecran digital déportable</span>
+                                            <span>Résistance de 1550 W</span>
+                                            <span>34 à 35,2 dB(A)</span>
+                                            <span>Fluide frigorigène R 134 A</span>
+                                        </div>
+                                        <div class="pompes__category">
+                                        Chauffe-eau Thermodynamique
+                                        </div>
+                                    </div>
+                                    <div class="pompes__right">
+                                        <button class="pompes__btn">
+                                            AJOUTER
+                                        </button>
+                                        <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-conKaliko">
+                                            FICHE TECHNIQUE
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="pompes__item">
+                                    <div class="pompes__left">
+                                        <img src="./assets/images/pompe_air_eau_13.png" alt="Essentiel – De Dietrich"  style="width: 40%">
+                                    </div>
+                                    <div class="pompes__center">
+                                        <span class="pompes__title">
+                                        Essentiel – De Dietrich
+                                        </span>
+                                        <div class="pompes__advantages">
+                                            <span>Classe énergétique A+</span>
+                                            <span>Puissance PAC 1750W</span>
+                                            <span>Pression acoustique 42dB(A)</span>
+                                            <span>Temps de chauffe < 6h</span>
+                                        </div>
+                                        <div class="pompes__category">
+                                        Chauffe-eau Thermodynamique
+                                        </div>
+                                    </div>
+                                    <div class="pompes__right">
+                                        <button class="pompes__btn">
+                                            AJOUTER
+                                        </button>
+                                        <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/05/KALIKO-ESSENTIEL.pdf">
+                                            FICHE TECHNIQUE
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="pompes__item">
+                                    <div class="pompes__left">
+                                        <img src="./assets/images/pompe_air_eau_13.png" alt="Kaliko Split – De Dietrich" style="width: 40%">
+                                    </div>
+                                    <div class="pompes__center">
+                                        <span class="pompes__title">
+                                        Kaliko Split – De Dietrich
+                                        </span>
+                                        <div class="pompes__advantages">
+                                            <span>ECS jusqu’à 65°</span>
+                                            <span>Puissance PAC</span>
+                                            <span>230v Monophasé</span>
+                                            <span>Maxi 1 300m3/h</span>
+                                        </div>
+                                        <div class="pompes__category">
+                                        Chauffe-eau Thermodynamique
+                                        </div>
+                                    </div>
+                                    <div class="pompes__right">
+                                        <button class="pompes__btn">
+                                            AJOUTER
+                                        </button>
+                                        <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/05/KALIKO-SPLIT.pdf">
+                                            FICHE TECHNIQUE
+                                        </a>
+                                    </div>
+                                </div>
+                                
+
+
+
+
                             </div>
                         </div>
                     </fieldset>

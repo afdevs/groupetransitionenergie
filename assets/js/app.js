@@ -94,9 +94,9 @@ var inputsCountersValues={
     moyenne_conso_sur_x_annee: 0,
     hauteur_sous_plafond: 0,
     hauteur_sous_plafond_moyenne: 1, 
-    hauteur_sous_plafond_m:0, //pompoe a chaleur air eau
+    hauteur_sous_plafond_m:2.5, //pompoe a chaleur air eau
     temperature_de_confort: 17,
-    gisolation:0,
+    gisolation:0.80,
     surface_au_sol: 0,
     departement_address:0,
     altitude: 0,
@@ -424,6 +424,11 @@ jQuery(function($){
             previousStep=parseInt($(this).attr('skipStep')) ? current:  null;
             current= $(this).attr('skipStep') ? parseInt($(this).attr('skipStep')) : current;
             
+            console.log('suivant current', current);
+            if(current===11){
+             $('.step-'+current).hide()
+              current=15
+            }
             current_step =  $('.step-'+current);
             next_step=++current;
             next_step_form =  $('.step-'+next_step);
@@ -1237,7 +1242,7 @@ jQuery(function($){
       let nbrFoyerFisciale='more';
       let nbrFoyerFiscialeIndex=0;
       
-      let couleur='';
+      let couleur='none';
       if(bonusCalcul.dansIleDeFrance){
         plafondRessourceEnIleFrance.foyerFiscale.map((el, index)=>{
           if(el===inputsCountersValues.nombre_d_habitants){
@@ -1261,14 +1266,16 @@ jQuery(function($){
             nbrFoyerFiscialeIndex=index;
           }
         })
-        if(dernierRevenuFisc <=plafondRessourceHorsIleFrance.bleu[nbrFoyerFiscialeIndex]){
-          couleur='bleu';
-        }else if(dernierRevenuFisc <=plafondRessourceHorsIleFrance.jaune[nbrFoyerFiscialeIndex]){
-          couleur='jaune'
-        }else if(dernierRevenuFisc <=plafondRessourceHorsIleFrance.violet[nbrFoyerFiscialeIndex]){
-          couleur='violet'
-        }else{
-          couleur= 'none';
+        if(dernierRevenuFisc>0){
+          if(dernierRevenuFisc <=plafondRessourceHorsIleFrance.bleu[nbrFoyerFiscialeIndex]){
+            couleur='bleu';
+          }else if(dernierRevenuFisc <=plafondRessourceHorsIleFrance.jaune[nbrFoyerFiscialeIndex]){
+            couleur='jaune'
+          }else if(dernierRevenuFisc <=plafondRessourceHorsIleFrance.violet[nbrFoyerFiscialeIndex]){
+            couleur='violet'
+          }else{
+            couleur= 'none';
+          }
         }
         
       }
