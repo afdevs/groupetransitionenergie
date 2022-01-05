@@ -1253,15 +1253,18 @@ jQuery(function($){
             nbrFoyerFiscialeIndex=index;
           }
         });
-        if(dernierRevenuFisc <= plafondRessourceEnIleFrance.bleu[nbrFoyerFiscialeIndex]){
-          couleur='bleu';
-        }else if(dernierRevenuFisc <=plafondRessourceEnIleFrance.jaune[nbrFoyerFiscialeIndex]){
-          couleur='jaune';
-        }else if(dernierRevenuFisc <=plafondRessourceEnIleFrance.violet[nbrFoyerFiscialeIndex]){
-          couleur='violet';
-        }else{
-          couleur= 'none';
+        if(dernierRevenuFisc>0){          
+          if(dernierRevenuFisc <= plafondRessourceEnIleFrance.bleu[nbrFoyerFiscialeIndex]){
+            couleur='bleu';
+          }else if(dernierRevenuFisc <=plafondRessourceEnIleFrance.jaune[nbrFoyerFiscialeIndex]){
+            couleur='jaune';
+          }else if(dernierRevenuFisc <=plafondRessourceEnIleFrance.violet[nbrFoyerFiscialeIndex]){
+            couleur='violet';
+          }else{
+            couleur= 'none';
+          }
         }
+        console.log(dernierRevenuFisc, couleur)
       }else{
         plafondRessourceHorsIleFrance.foyerFiscale.map((el, index)=>{
           if(el===inputsCountersValues.nombre_d_habitants){
@@ -1280,6 +1283,8 @@ jQuery(function($){
             couleur= 'none';
           }
         }
+        console.log(dernierRevenuFisc, couleur)
+
         
       }
         //bonus pac air-eau
