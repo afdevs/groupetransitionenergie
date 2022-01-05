@@ -171,7 +171,11 @@ jQuery(function($){
       
       
       $('a').click(function(e){
-        e.preventDefault();
+        if(e.currentTarget.classList[0]!=='pompes__btn'){
+          e.preventDefault();
+        }else{
+          window.open(e.currentTarget.href, '_blank').focus();
+        }
       });
       // let map = new google.maps.Map(document.getElementById("map"), {});
       // console.log('map', map)
@@ -424,7 +428,6 @@ jQuery(function($){
             previousStep=parseInt($(this).attr('skipStep')) ? current:  null;
             current= $(this).attr('skipStep') ? parseInt($(this).attr('skipStep')) : current;
             
-            console.log('suivant current', current);
             if(current===11){
              $('.step-'+current).hide()
               current=15

@@ -1135,7 +1135,7 @@ input[type=button]:hover, .page .page__content button:hover{
     margin-bottom: 4px;
 }
 
-.step-13__content .step-1__img, .step-15__content .step-1__img, .step-17__content .step-1__img{
+.step-13__content .step-1__img, .step-15__content .step-1__img, .step-18__content .step-1__img{
     width: 30%;
     margin-top: 3px;
     margin-bottom: 4px;
@@ -1261,27 +1261,27 @@ input[type=button]:hover, .page .page__content button:hover{
     padding: 72px 0 72px;
 }
 
-.step-17_one_item{
+.step-18_one_item{
     width: 190px!important;
     height: 66px!important;
     justify-content: center!important;
 }
 
-main .page .page__content .step-17 h2{
+main .page .page__content .step-18 h2{
     margin-top: 50px;
     margin-bottom: 40px;
 }
-main .page .page__content .step-17{
+main .page .page__content .step-18{
     margin-top: -65px;
 }
 
-main .page .page__content .step-17 .answer-selected{
+main .page .page__content .step-18 .answer-selected{
     background: #74f0a7!important;
     border: none!important;
     border: 2px solid #399bd2!important;
     border-color: #003250!important;
 }
-main .page .page__content .step-18__content{
+main .page .page__content .step-19__content{
     background-color: #e9f6fe;
     padding: 40px;
 }
