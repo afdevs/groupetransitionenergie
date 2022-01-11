@@ -119,7 +119,7 @@
     <div id="map"></div>
         <div class="topbar">
             <div class="topbar__logo">
-                <img src="./assets/images/rsz_1mydiag_logo-removebg-preview.png" alt="Logo - Groupe Transition Energie">
+                <img src="./assets/images/image00001-removebg-preview(1).png" alt="Logo - Groupe Transition Energie">
             </div>
             <div class="topbar__infos"> 
             Étude personnalisée de l’habitat
