@@ -92,7 +92,7 @@
                 componentRestrictions: { country: "fr" },
                 fields: ["address_components", "geometry", "name", "place_id"],
                 strictBounds: false,
-                types: ["establishment"],
+                types: ["geocode"],
             };
             const autocomplete = new google.maps.places.Autocomplete(input, options);
             
