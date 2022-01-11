@@ -108,13 +108,11 @@
                 geocodingPlaceID('ChIJF4ymA8Th5UcRcCWLaMOCCwE').then(response=>{
                     bonusCalcul.dansIleDeFrance=response.geometry.bounds.contains(location);                    
                 })
-
             })
         }
-
     </script>
         
-    <title>Étude personnalisée de l’habitat| Groupe Transition Energie</title>
+    <title>Étude personnalisée de l’habitat | Groupe Transition Energie</title>
 </head>
 <body>
     <main>

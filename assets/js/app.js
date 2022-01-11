@@ -1371,20 +1371,21 @@ jQuery(function($){
         bonusCalcul.ecologique=parseFloat($('#inputBonusEcologique').val());
         let maPrimeRenovSum=0
         if($('#270l').is(':checked') || $('#200l').is(':checked')){
-          bonusCalcul.totalBonus=bonusCalcul.maprimenov.pacAirEau;
-          maPrimeRenovSum=bonusCalcul.maprimenov.pacAirEau;
-        }
-        if(inputsCountersValues.pompe_a_chaleur_air_eau_value!=0){
           bonusCalcul.totalBonus +=bonusCalcul.maprimenov.chauffeEauthermo;
           maPrimeRenovSum +=bonusCalcul.maprimenov.chauffeEauthermo;
         }
+        /* !$('#source_energie_2_chauffage').is(':checked') */
+        if(inputsCountersValues.pompe_a_chaleur_air_eau_value!=0){
+          bonusCalcul.totalBonus=bonusCalcul.maprimenov.pacAirEau;
+          maPrimeRenovSum=bonusCalcul.maprimenov.pacAirEau;
+        }
         // bonusCalcul.totalBonus=(bonusCalcul.maprimenov.pacAirEau + bonusCalcul.maprimenov.chauffeEauthermo) + bonusCalcul.coupDePouce + bonusCalcul.ecologique
-        bonusCalcul.totalBonus= bonusCalcul.coupDePouce + bonusCalcul.ecologique + maPrimeRenovSum
-
         if($('#type_de_chaufface_chaudiere_gaz_natur_condensa').is(':checked')){
           bonusCalcul.coupDePouce=0
         }
         
+        bonusCalcul.totalBonus= bonusCalcul.coupDePouce + bonusCalcul.ecologique + maPrimeRenovSum
+
         $('#maPrimeRenov').text(maPrimeRenovSum +' €');
         $('#coupDePouce').text(bonusCalcul.coupDePouce +' €');     
         $('#bonusEcologique').text(bonusCalcul.ecologique +' €');
