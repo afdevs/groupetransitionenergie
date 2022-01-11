@@ -178,6 +178,15 @@
                     <li class="step-list-item" id="part-6">
                         <button class="navigationButton" aria-selected="part-6">
                             <div class="step-list-item-content">
+                            <h5 class="step-list-item-disabled">CHOIX DU PRODUIT</h5>
+                            <!-- <p class="step-description-text step-list-item-disabled">Décrivez votre logement et détaillez votre projet de travaux.</p> -->
+                        </div>
+                        </button>
+                    </li>
+
+                    <li class="step-list-item" id="part-7">
+                        <button class="navigationButton" aria-selected="part-7">
+                            <div class="step-list-item-content">
                             <h5 class="step-list-item-disabled">ELIGIBILITE AUX AIDES</h5>
                             <!-- <p class="step-description-text step-list-item-disabled">Décrivez votre logement et détaillez votre projet de travaux.</p> -->
                         </div>
@@ -1400,7 +1409,7 @@
                                     <span>Célibataire</span>
                                 </label>
 
-                                <label for="eligibilite_situation_matrimoniale_2" class="select-item btn step-18__link no-image three-item-no-image step-17_one_item">                                       
+                                <label for="eligibilite_situation_matrimoniale_2" class="select-item btn step-18__link no-image three-item-no-image step-18_one_item">                                       
                                     <input type="radio" name="eligibilite_situation_matrimoniale"  id="eligibilite_situation_matrimoniale_2" value="Marié(e)">
                                     <span>Marié(e)</span>
                                 </label>

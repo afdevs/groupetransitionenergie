@@ -173,8 +173,6 @@ jQuery(function($){
       $('a').click(function(e){
         if(e.currentTarget.classList[0]!=='pompes__btn'){
           e.preventDefault();
-        }else{
-          window.open(e.currentTarget.href, '_blank').focus();
         }
       });
       // let map = new google.maps.Map(document.getElementById("map"), {});
@@ -1068,6 +1066,41 @@ jQuery(function($){
           $("#part-7 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-7").removeClass('step-list-item-active',1000, 'easeInBack');
+      }else if(current==18){
+        if(!$("#part-7").hasClass('step-list-item-active')){
+          $("#part-7").addClass('step-list-item-active')
+        }
+        $("#part-7 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
+
+        if(!$("#part-2 h5").hasClass('step-list-item-disabled')){
+          $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-3 h5").hasClass('step-list-item-disabled')){
+          $("#part-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-3").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-4 h5").hasClass('step-list-item-disabled')){
+          $("#part-4 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-4").removeClass('step-list-item-active',1000, 'easeInBack');
+
+        if(!$("#part-1 h5").hasClass('step-list-item-disabled')){
+          $("#part-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-1").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-5 h5").hasClass('step-list-item-disabled')){
+          $("#part-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-5").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-6 h5").hasClass('step-list-item-disabled')){
+          $("#part-6 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-6").removeClass('step-list-item-active',1000, 'easeInBack');
       }else{
         // else if(current==17){
           if(!$("#part-6").hasClass('step-list-item-active')){
@@ -1253,6 +1286,7 @@ jQuery(function($){
             nbrFoyerFiscialeIndex=index;
           }
         });
+
         if(dernierRevenuFisc>0){          
           if(dernierRevenuFisc <= plafondRessourceEnIleFrance.bleu[nbrFoyerFiscialeIndex]){
             couleur='bleu';
@@ -1264,7 +1298,7 @@ jQuery(function($){
             couleur= 'none';
           }
         }
-        console.log(dernierRevenuFisc, couleur)
+        
       }else{
         plafondRessourceHorsIleFrance.foyerFiscale.map((el, index)=>{
           if(el===inputsCountersValues.nombre_d_habitants){
@@ -1283,7 +1317,6 @@ jQuery(function($){
             couleur= 'none';
           }
         }
-        console.log(dernierRevenuFisc, couleur)
 
         
       }
@@ -1352,11 +1385,11 @@ jQuery(function($){
           bonusCalcul.coupDePouce=0
         }
         
-        $('#maPrimeRenov').text(maPrimeRenovSum +' €')
-        $('#coupDePouce').text(bonusCalcul.coupDePouce +' €')        
+        $('#maPrimeRenov').text(maPrimeRenovSum +' €');
+        $('#coupDePouce').text(bonusCalcul.coupDePouce +' €');     
         $('#bonusEcologique').text(bonusCalcul.ecologique +' €');
         $('#total_bonus').text(bonusCalcul.totalBonus +' €')
-        $('#bonusEcologique').text(bonusCalcul.ecologique +' €')
+        $('#bonusEcologique').text(bonusCalcul.ecologique +' €');
 
     }
 
