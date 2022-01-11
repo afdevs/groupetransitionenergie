@@ -114,16 +114,16 @@
 
     </script>
         
-    <title>Trouvez votre métier idéal | Groupe Transition Energie</title>
+    <title>Étude personnalisée de l’habitat| Groupe Transition Energie</title>
 </head>
 <body>
     <main>
     <div id="map"></div>
         <div class="topbar">
             <div class="topbar__logo">
-                <img src="./assets/images/logo_groupe_transition_energie.png" alt="Logo - Groupe Transition Energie">
+                <img src="./assets/images/rsz_1mydiag_logo-removebg-preview.png" alt="Logo - Groupe Transition Energie">
             </div>
-            <div class="topbar__infos">
+            <div class="topbar__infos"> 
             Étude personnalisée de l’habitat
             </div>
         </div>
@@ -160,7 +160,7 @@
                     <li class="step-list-item" id="part-4">
                         <button class="navigationButton" aria-selected="part-4">
                             <div class="step-list-item-content">
-                            <h5 class="step-list-item-disabled">CONSOMMATIONS ET INDEXATION</h5>
+                             <h5 class="step-list-item-disabled">CONSOMMATIONS ET INDEXATION</h5>
                             <!-- <p class="step-description-text step-list-item-disabled">Décrivez votre logement et détaillez votre projet de travaux.</p> -->
                         </div>
                         </button>
