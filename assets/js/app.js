@@ -34,89 +34,6 @@ let coupDePouceChauffageBonnus={
   rose: 2500
 }
 
-var franceAddresses=[
-  {
-    delta: -4,
-    departement: ['29', '22', '56', '50', '14', '76', '27', '61', '53', '60', '02', '77', '45', '78', '28', '72', '49', '79', '86', '36', '18', '37', '41', '33', '40', '32', '64', '65', '47', '24', '16', '17', '12']
-  },
-  {
-    delta: -5,
-    departement: ['35', '44', '85','31', '82', '09', '81', '30',  '11', '66', '34', '13', '75', '92', '93', '94']
-  },
-  {
-    delta: -9,
-    departement: ['62', '59', '80']
-  },
-  {
-    delta: -15,
-    departement: ['57', '67', '54', '88', '68', '90']
-  },
-  {
-    delta: -12,
-    departement: ['55', '52', '70', '25']
-  },
-  {
-    delta: -10,
-    departement: ['08', '51', '10', '89', '21', '58', '71', '39', '42', '69', '01', '38', '74', '73', '05']
-  },
-  {
-    delta: -8,
-    departement: ['04', '06', '87', '23', '03', '63', '19', '63', '15', '43','48']
-  },
-  {
-    delta: -2,
-    departement: ['83', '28', '2A']
-  },
-  {
-    delta: -6,
-    departement: ['07', '26', '84', '46']
-  },
-  {
-    delta: 9,
-    departement: ['62', '59', '60']
-  }
-]
-
-var inputsCountersValues={
-    nombre_d_habitants: 1,
-    chaufface_envisage_source_energie_nbr_unite: 0,
-    eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond: 0,
-    source_energie_nombre: 0,
-    consommation_annuelle_elec: 0,
-    consommation_annuelle_gaz: 0,
-    consommation_annuelle_gpl: 0,
-    consommation_annuelle_fioul: 0,
-    consommation_annuelle_bois: 0,
-    consommation_annuelle_autre:0,
-    pompe_a_chaleur_air_air_nombre_unite: 0,
-    votre_conso_actuel: 0,
-    votre_conso_sur_x_annee: 0,
-    moyenne_conso_sur_x_annee: 0,
-    hauteur_sous_plafond: 0,
-    hauteur_sous_plafond_moyenne: 1, 
-    hauteur_sous_plafond_m:2.5, //pompoe a chaleur air eau
-    temperature_de_confort: 17,
-    gisolation:0.80,
-    surface_au_sol: 0,
-    departement_address:0,
-    altitude: 0,
-    delta: 0,
-    pompe_a_chaleur_air_eau_value: 0,
-    eligibility_nbr_enfant_a_charge: 0,
-    eligibility_nbr_part_fiscal: 0
-}
-
-let bonusCalcul={
-  maprimenov: {
-    pacAirEau: 0,
-    chauffeEauthermo: 0
-  },
-  coupDePouce: 0,
-  ecologique: 0,
-  totalBonus: 0,
-  dansIleDeFrance: false
-}
-
 let produits=[
   {
     title: 'Clim’Up EMSM – De Dietrich',
@@ -252,6 +169,92 @@ let produits=[
     img_url: './assets/images/pompe_air_eau_13.png'
   },
 ]
+
+var franceAddresses=[
+  {
+    delta: -4,
+    departement: ['29', '22', '56', '50', '14', '76', '27', '61', '53', '60', '02', '77', '45', '78', '28', '72', '49', '79', '86', '36', '18', '37', '41', '33', '40', '32', '64', '65', '47', '24', '16', '17', '12']
+  },
+  {
+    delta: -5,
+    departement: ['35', '44', '85','31', '82', '09', '81', '30',  '11', '66', '34', '13', '75', '92', '93', '94']
+  },
+  {
+    delta: -9,
+    departement: ['62', '59', '80']
+  },
+  {
+    delta: -15,
+    departement: ['57', '67', '54', '88', '68', '90']
+  },
+  {
+    delta: -12,
+    departement: ['55', '52', '70', '25']
+  },
+  {
+    delta: -10,
+    departement: ['08', '51', '10', '89', '21', '58', '71', '39', '42', '69', '01', '38', '74', '73', '05']
+  },
+  {
+    delta: -8,
+    departement: ['04', '06', '87', '23', '03', '63', '19', '63', '15', '43','48']
+  },
+  {
+    delta: -2,
+    departement: ['83', '28', '2A']
+  },
+  {
+    delta: -6,
+    departement: ['07', '26', '84', '46']
+  },
+  {
+    delta: 9,
+    departement: ['62', '59', '60']
+  }
+]
+
+var formPageValues={
+    nombre_d_habitants: 1,
+    chaufface_envisage_source_energie_nbr_unite: 0,
+    eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond: 0,
+    source_energie_nombre: 0,
+    consommation_annuelle_elec: 0,
+    consommation_annuelle_gaz: 0,
+    consommation_annuelle_gpl: 0,
+    consommation_annuelle_fioul: 0,
+    consommation_annuelle_bois: 0,
+    consommation_annuelle_autre:0,
+    pompe_a_chaleur_air_air_nombre_unite: 0,
+    votre_conso_actuel: 0,
+    votre_conso_sur_x_annee: 0,
+    moyenne_conso_sur_x_annee: 0,
+    hauteur_sous_plafond: 0,
+    hauteur_sous_plafond_moyenne: 1, 
+    hauteur_sous_plafond_m:2.5, //pompoe a chaleur air eau
+    temperature_de_confort: 17,
+    gisolation:0.80,
+    surface_au_sol: 0,
+    departement_address:0,
+    altitude: 0,
+    delta: 0,
+    pompe_a_chaleur_air_eau_value: 0,
+    eligibility_nbr_enfant_a_charge: 0,
+    eligibility_nbr_part_fiscal: 0,
+    produits_ajoutees: Array.apply(null, Array(produits.length)).map(function(){}) //new Array(produits.length)
+}
+
+let bonusCalcul={
+  maprimenov: {
+    pacAirEau: 0,
+    chauffeEauthermo: 0
+  },
+  coupDePouce: 0,
+  ecologique: 0,
+  totalBonus: 0,
+  dansIleDeFrance: false
+}
+
+
 jQuery(function($){
     $(document).ready(function(){
       //initialize all modals           
@@ -339,7 +342,6 @@ jQuery(function($){
     }
 
       $('button.pompes__btn').click(function(e){
-        console.log($(this))
         // $(this).animate({ trans: 60}, 0);
         // console.log('animation')
         AnimateRotate($(this), 90);
@@ -348,14 +350,17 @@ jQuery(function($){
             $(this).text('Ajouter')
             $($(this)[0]).removeClass('unset');
           }, 1000);
+          formPageValues.produits_ajoutees[$(this).val()]=undefined;
           AnimateRotate($(this), 0);
         }else{
           setTimeout(() => {
             $(this).text('Retirer')
             $($(this)[0]).addClass('unset');
           }, 1000);
+          formPageValues.produits_ajoutees[$(this).val()]=produits[$(this).val()]
           AnimateRotate($(this), 360)
         };
+        
       })
       // let map = new google.maps.Map(document.getElementById("map"), {});
       // console.log('map', map)
@@ -373,12 +378,12 @@ jQuery(function($){
       resetAllRadioInput();
 
       $('.counter__increment').click(function(e){
-        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='temperature_de_confort' && inputsCountersValues.temperature_de_confort >=25)return;
+        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='temperature_de_confort' && formPageValues.temperature_de_confort >=25)return;
         //hauteur_sous_plafond_moyenne
         if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='hauteur_sous_plafond_moyenne'){
-          const result=inputsCountersValues.hauteur_sous_plafond_moyenne +0.2;
-          inputsCountersValues.hauteur_sous_plafond_moyenne = Math.round(result*100)/100
-          $($($(this).parent().children('.counter__value'))[0]).text(inputsCountersValues.hauteur_sous_plafond_moyenne);  
+          const result=formPageValues.hauteur_sous_plafond_moyenne +0.2;
+          formPageValues.hauteur_sous_plafond_moyenne = Math.round(result*100)/100
+          $($($(this).parent().children('.counter__value'))[0]).text(formPageValues.hauteur_sous_plafond_moyenne);  
           return
         }
         
@@ -387,106 +392,106 @@ jQuery(function($){
         // console.log($('select[name=hauteur_sous_plafond_moyenne]').val())
         // console.log($('select[name=gisolation]').val())
         // console.log($('#inputSurfaceSol').val)
-        // console.log( inputsCountersValues.temperature_de_confort);
+        // console.log( formPageValues.temperature_de_confort);
 
-          const result=inputsCountersValues.temperature_de_confort +0.5;
-          inputsCountersValues.temperature_de_confort = Math.round(result*100)/100
-          $($($(this).parent().children('.counter__value'))[0]).text(inputsCountersValues.temperature_de_confort);  
+          const result=formPageValues.temperature_de_confort +0.5;
+          formPageValues.temperature_de_confort = Math.round(result*100)/100
+          $($($(this).parent().children('.counter__value'))[0]).text(formPageValues.temperature_de_confort);  
           calculatePompeAChaleurAirEau();
           return
         }
 
         //Nombre d'unite pac air air
         if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='pompe_a_chaleur_air_air_nombre_unite'){
-          inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite++;
-          $($($(this).parent().children('.counter__value'))[0]).text(inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite);  
-          const inputItem=`<div class="pieces__item" id="pieces__item${inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite}"><label for="inputPompeAChaleurSurfaceTotal1" class="pompeAChaleurAirAir${inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite}">Piece N° <span>${ inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite}</span></label><div class="bottom_part">Surface en (m2)<input id="inputPompeAChaleurSurfaceTotal${ inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite}"  name="pompe_a_chaleur_air_air_surface_total${ inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite}" type="number" class="pompeAChaleurAirAirInput" value="0" min="0"> <span class="pieces__value">Ow</span></div></div>`;
+          formPageValues.pompe_a_chaleur_air_air_nombre_unite++;
+          $($($(this).parent().children('.counter__value'))[0]).text(formPageValues.pompe_a_chaleur_air_air_nombre_unite);  
+          const inputItem=`<div class="pieces__item" id="pieces__item${formPageValues.pompe_a_chaleur_air_air_nombre_unite}"><label for="inputPompeAChaleurSurfaceTotal1" class="pompeAChaleurAirAir${formPageValues.pompe_a_chaleur_air_air_nombre_unite}">Piece N° <span>${ formPageValues.pompe_a_chaleur_air_air_nombre_unite}</span></label><div class="bottom_part">Surface en (m2)<input id="inputPompeAChaleurSurfaceTotal${ formPageValues.pompe_a_chaleur_air_air_nombre_unite}"  name="pompe_a_chaleur_air_air_surface_total${ formPageValues.pompe_a_chaleur_air_air_nombre_unite}" type="number" class="pompeAChaleurAirAirInput" value="0" min="0"> <span class="pieces__value">Ow</span></div></div>`;
           $('#piecesId').append(inputItem)
           return
         }
 
-        inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]=parseInt(inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')])+1
-        inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]=inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')];
+        formPageValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]=parseInt(formPageValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')])+1
+        formPageValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]=formPageValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')];
 
 
         //Champ calcule
-        $($($(this).parent().children('.counter__value'))[0]).text(inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]);
+        $($($(this).parent().children('.counter__value'))[0]).text(formPageValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]);
         if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond'){
-          $('#inputVolumeHabitation').val(parseInt($('#inputSurfaceSol').val()) * inputsCountersValues.eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond);
+          $('#inputVolumeHabitation').val(parseInt($('#inputSurfaceSol').val()) * formPageValues.eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond);
         }
 
 
         if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='consommation_annuelle_fioul' || $($($(this).parent().children('.counter__value'))[0]).attr('name')==='consommation_annuelle_gaz'){
-          $('#inputTotalConso20ans').val(((inputsCountersValues.consommation_annuelle_fioul+inputsCountersValues.consommation_annuelle_gaz)* parseInt($('#inputConsoAnIndex').val())));
-          $('#inputMoyennConso').val((((inputsCountersValues.consommation_annuelle_fioul+inputsCountersValues.consommation_annuelle_gaz)* parseInt($('#inputConsoAnIndex').val()))/parseInt($('#inputConsoAnIndex').val())));
+          $('#inputTotalConso20ans').val(((formPageValues.consommation_annuelle_fioul+formPageValues.consommation_annuelle_gaz)* parseInt($('#inputConsoAnIndex').val())));
+          $('#inputMoyennConso').val((((formPageValues.consommation_annuelle_fioul+formPageValues.consommation_annuelle_gaz)* parseInt($('#inputConsoAnIndex').val()))/parseInt($('#inputConsoAnIndex').val())));
         }
         
         if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='nombre_d_habitants'){
-          // inputsCountersValues.nombre_d_habitants -=1
+          // formPageValues.nombre_d_habitants -=1
           calculBonus()
         }
         
         // if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='eligibility_nbr_part_fiscal'){
-        //   console.log( inputsCountersValues.eligibility_nbr_part_fiscal)
+        //   console.log( formPageValues.eligibility_nbr_part_fiscal)
 
-        //   inputsCountersValues.eligibility_nbr_part_fiscal++
+        //   formPageValues.eligibility_nbr_part_fiscal++
         //  }
         
       });
 
       $('.counter__decrement').click(function(e){
-        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='temperature_de_confort' && inputsCountersValues.temperature_de_confort <= 17)return;
+        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='temperature_de_confort' && formPageValues.temperature_de_confort <= 17)return;
           
-        if(parseInt(inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')])===0) return;
+        if(parseInt(formPageValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')])===0) return;
         
         //hauteur_sous_plafond_moyenne
-        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='hauteur_sous_plafond_moyenne' && inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]===1) return 
+        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='hauteur_sous_plafond_moyenne' && formPageValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]===1) return 
         if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='hauteur_sous_plafond_moyenne'){
-          const result=inputsCountersValues.hauteur_sous_plafond_moyenne -0.2;
-          inputsCountersValues.hauteur_sous_plafond_moyenne = Math.round(result*100)/100
-          $($($(this).parent().children('.counter__value'))[0]).text(inputsCountersValues.hauteur_sous_plafond_moyenne);  
+          const result=formPageValues.hauteur_sous_plafond_moyenne -0.2;
+          formPageValues.hauteur_sous_plafond_moyenne = Math.round(result*100)/100
+          $($($(this).parent().children('.counter__value'))[0]).text(formPageValues.hauteur_sous_plafond_moyenne);  
           return
         }
         
         //temperature de confort
-        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='temperature_de_confort' && inputsCountersValues.temperature_de_confort > 17){
-          const result=inputsCountersValues.temperature_de_confort -0.5;
-          inputsCountersValues.temperature_de_confort = Math.round(result*100)/100
-          $($($(this).parent().children('.counter__value'))[0]).text(inputsCountersValues.temperature_de_confort);  
+        if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='temperature_de_confort' && formPageValues.temperature_de_confort > 17){
+          const result=formPageValues.temperature_de_confort -0.5;
+          formPageValues.temperature_de_confort = Math.round(result*100)/100
+          $($($(this).parent().children('.counter__value'))[0]).text(formPageValues.temperature_de_confort);  
           calculatePompeAChaleurAirEau();
           return
         }
 
         //Nombre d'unite pac air air
         if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='pompe_a_chaleur_air_air_nombre_unite'){
-          $('#pieces__item'+inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite).remove()
-          inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite--;
-          $($($(this).parent().children('.counter__value'))[0]).text(inputsCountersValues.pompe_a_chaleur_air_air_nombre_unite);  
+          $('#pieces__item'+formPageValues.pompe_a_chaleur_air_air_nombre_unite).remove()
+          formPageValues.pompe_a_chaleur_air_air_nombre_unite--;
+          $($($(this).parent().children('.counter__value'))[0]).text(formPageValues.pompe_a_chaleur_air_air_nombre_unite);  
           return
         }
 
-        inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]=parseInt(inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')])-1
-        inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]=inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')];
+        formPageValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]=parseInt(formPageValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')])-1
+        formPageValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]=formPageValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')];
         
-        $($($(this).parent().children('.counter__value'))[0]).text(inputsCountersValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]);
+        $($($(this).parent().children('.counter__value'))[0]).text(formPageValues[$($($(this).parent().children('.counter__value'))[0]).attr('name')]);
         
         //champ calcule
         if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond'){
-          $('#inputVolumeHabitation').val(parseInt($('#inputSurfaceSol').val()) * inputsCountersValues.eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond)
+          $('#inputVolumeHabitation').val(parseInt($('#inputSurfaceSol').val()) * formPageValues.eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond)
         }
 
         if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='consommation_annuelle_fioul' || $($($(this).parent().children('.counter__value'))[0]).attr('name')==='consommation_annuelle_gaz'){
-          $('#inputTotalConso20ans').val(((inputsCountersValues.consommation_annuelle_fioul+inputsCountersValues.consommation_annuelle_gaz)* parseInt($('#inputConsoAnIndex').val())));
-          $('#inputMoyennConso').val((((inputsCountersValues.consommation_annuelle_fioul+inputsCountersValues.consommation_annuelle_gaz)* parseInt($('#inputConsoAnIndex').val()))/parseInt($('#inputConsoAnIndex').val())));
+          $('#inputTotalConso20ans').val(((formPageValues.consommation_annuelle_fioul+formPageValues.consommation_annuelle_gaz)* parseInt($('#inputConsoAnIndex').val())));
+          $('#inputMoyennConso').val((((formPageValues.consommation_annuelle_fioul+formPageValues.consommation_annuelle_gaz)* parseInt($('#inputConsoAnIndex').val()))/parseInt($('#inputConsoAnIndex').val())));
         }
         
         if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='nombre_d_habitants'){
-          // inputsCountersValues.nombre_d_hnts -=1
+          // formPageValues.nombre_d_hnts -=1
           calculBonus()
         }
          
         // if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='eligibility_nbr_part_fiscal'){
-        //   inputsCountersValues.eligibility_nbr_part_fiscal++
+        //   formPageValues.eligibility_nbr_part_fiscal++
         //  }
       });
 
@@ -1248,7 +1253,7 @@ jQuery(function($){
           $("#part-7 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-7").removeClass('step-list-item-active',1000, 'easeInBack');
-      }else if(current==18){
+      }else if(current==18 || current==19){
         if(!$("#part-7").hasClass('step-list-item-active')){
           $("#part-7").addClass('step-list-item-active')
         }
@@ -1371,9 +1376,9 @@ jQuery(function($){
 
 
     //CHAMPS CALCULER 
-      //= inputVolumeHabitation inputSurfaceSol * inputsCountersValues('eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond')
+      //= inputVolumeHabitation inputSurfaceSol * formPageValues('eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond')
     $('#inputSurfaceSol').change(function(){
-      $('#inputVolumeHabitation').val(parseInt($(this).val())* inputsCountersValues.eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond);
+      $('#inputVolumeHabitation').val(parseInt($(this).val())* formPageValues.eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond);
 
     })
     
@@ -1393,12 +1398,12 @@ jQuery(function($){
       $('#inputMoyennConso').val((((parseInt($('#inputConsoFioul').val())+parseInt($('#inputConsoGaz').val()))* parseInt($(this).val()))/parseInt($(this).val())))
     })
     function consommationGlobal(){      
-      inputsCountersValues.votre_conso_actuel=(parseFloat($('#inputEstimFactChauff').val()) + parseFloat($('#inputEstimFactEauChaude').val())+ parseFloat($('#inputEstimFactAppareilElec').val())+parseFloat($('#inputEstimFactEclairage').val()));
-      $('#votre_conso_actuel').text(inputsCountersValues.votre_conso_actuel +' €');
+      formPageValues.votre_conso_actuel=(parseFloat($('#inputEstimFactChauff').val()) + parseFloat($('#inputEstimFactEauChaude').val())+ parseFloat($('#inputEstimFactAppareilElec').val())+parseFloat($('#inputEstimFactEclairage').val()));
+      $('#votre_conso_actuel').text(formPageValues.votre_conso_actuel +' €');
       const nombreAnneeAIndexer=parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()) || 0;
       const evolPrixFioul =parseFloat($('#inputEvol25Annee').val())/100;
       if(!isNaN(nombreAnneeAIndexer)){
-        let sumTotal=inputsCountersValues.votre_conso_actuel;
+        let sumTotal=formPageValues.votre_conso_actuel;
         const allValues=[]
         for(let i=0; i< nombreAnneeAIndexer; i++){
           sumTotal=sumTotal+(sumTotal * evolPrixFioul);
@@ -1407,14 +1412,14 @@ jQuery(function($){
         const result=allValues.reduce((prev, value)=>{
           return prev + parseFloat(value);
         },0)
-        const allValuesTotal=result + inputsCountersValues.votre_conso_actuel
-        inputsCountersValues.votre_conso_sur_x_annee=allValuesTotal.toFixed(2);
+        const allValuesTotal=result + formPageValues.votre_conso_actuel
+        formPageValues.votre_conso_sur_x_annee=allValuesTotal.toFixed(2);
         if(nombreAnneeAIndexer> 0){
-          inputsCountersValues.moyenne_conso_sur_x_annee=inputsCountersValues.votre_conso_sur_x_annee / nombreAnneeAIndexer;
+          formPageValues.moyenne_conso_sur_x_annee=formPageValues.votre_conso_sur_x_annee / nombreAnneeAIndexer;
         }        
       }
-      $('#votre_conso_sur_x_annee').text(inputsCountersValues.votre_conso_sur_x_annee +' €');
-      $('#moyenne_conso_sur_x_annee').text((inputsCountersValues.moyenne_conso_sur_x_annee).toFixed(2) +' €');
+      $('#votre_conso_sur_x_annee').text(formPageValues.votre_conso_sur_x_annee +' €');
+      $('#moyenne_conso_sur_x_annee').text((formPageValues.moyenne_conso_sur_x_annee).toFixed(2) +' €');
     }
     
     $('#inputEstimFactChauff').change(function(e){
@@ -1438,7 +1443,7 @@ jQuery(function($){
     })
 
     $('#inputEvol25Annee').change(function(){
-      inputsCountersValues.votre_conso_actuel= parseFloat($('#inputEstimFactChauff').val()||0);
+      formPageValues.votre_conso_actuel= parseFloat($('#inputEstimFactChauff').val()||0);
       consommationGlobal()
     });
     
@@ -1463,7 +1468,7 @@ jQuery(function($){
       let couleur='none';
       if(bonusCalcul.dansIleDeFrance){
         plafondRessourceEnIleFrance.foyerFiscale.map((el, index)=>{
-          if(el===inputsCountersValues.nombre_d_habitants){
+          if(el===formPageValues.nombre_d_habitants){
             nbrFoyerFisciale=el;
             nbrFoyerFiscialeIndex=index;
           }
@@ -1483,7 +1488,7 @@ jQuery(function($){
         
       }else{
         plafondRessourceHorsIleFrance.foyerFiscale.map((el, index)=>{
-          if(el===inputsCountersValues.nombre_d_habitants){
+          if(el===formPageValues.nombre_d_habitants){
             nbrFoyerFisciale=el;
             nbrFoyerFiscialeIndex=index;
           }
@@ -1557,7 +1562,7 @@ jQuery(function($){
           maPrimeRenovSum +=bonusCalcul.maprimenov.chauffeEauthermo;
         }
         /* !$('#source_energie_2_chauffage').is(':checked') */
-        if(inputsCountersValues.pompe_a_chaleur_air_eau_value!=0){
+        if(formPageValues.pompe_a_chaleur_air_eau_value!=0){
           bonusCalcul.totalBonus=bonusCalcul.maprimenov.pacAirEau;
           maPrimeRenovSum=bonusCalcul.maprimenov.pacAirEau;
         }
@@ -1599,40 +1604,24 @@ jQuery(function($){
       return 5000
     }
 
-    $(document).on('click', '#someting', function(){
-
-    });
     //gisolation
     $('select[name=gisolation]').change(function(){
-      inputsCountersValues.gisolation=parseFloat($(this).val());
+      formPageValues.gisolation=parseFloat($(this).val());
       calculatePompeAChaleurAirEau()
-      // console.log($('#inputSurfaceSol').val())
-      // console.log($('select[name=hauteur_sous_plafond_moyenne]').val())
-      // console.log( inputsCountersValues.temperature_de_confort);
-      // console.log($('#inputAddress').val())
 
     })
     //surface au sol
     $('#inputSurfaceSol').change(function(){
-      inputsCountersValues.surface_au_sol=parseFloat($(this).val())
+      formPageValues.surface_au_sol=parseFloat($(this).val())
       calculatePompeAChaleurAirEau();
-
-      // console.log($('select[name=gisolation]').val())
-      // console.log($('select[name=hauteur_sous_plafond_moyenne]').val())
-      // console.log( inputsCountersValues.temperature_de_confort);
-      // console.log($('#inputAddress').val())
 
     })
 
     //hauteur sous plafond_moyenne
     $('select[name=hauteur_sous_plafond_moyenne').change(function(){
-      inputsCountersValues.hauteur_sous_plafond_m=parseFloat($(this).val());
+      formPageValues.hauteur_sous_plafond_m=parseFloat($(this).val());
       calculatePompeAChaleurAirEau();
 
-      // console.log($('select[name=gisolation]').val())
-      // console.log($('#inputSurfaceSol').val())
-      // console.log( inputsCountersValues.temperature_de_confort);
-      // console.log($('#inputAddress').val())
 
     })
     
@@ -1745,6 +1734,13 @@ jQuery(function($){
         $('#consumpt-val4').text($('#inputEstimFactEclairage').val()+'€')
         
       }
+    })
+
+    //GENERATING PDF CLICK EVENT
+    $('.generate_pdf_btn').click(function(){
+      let productValuesCleaned=formPageValues.produits_ajoutees.filter(el=>el!= undefined)
+      console.log(productValuesCleaned)
+      alert('Generating PDF')
     })
     
     //-----------------------------------------------------------------------------------------

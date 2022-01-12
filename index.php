@@ -17,7 +17,7 @@
             const deltaVal=[]            
             franceAddresses.forEach(franceAd=>{
                 franceAd.departement.filter(depart=>{
-                    if(depart===inputsCountersValues.departement_address){
+                    if(depart===formPageValues.departement_address){
                         deltaVal.push(franceAd.delta);
                     }   
                 });
@@ -30,15 +30,15 @@
             let finalResult=0;
             if(!$('#source_energie_2_chauffage').is(':checked')){
             $('.maskEverything').hide()
-                let volumeIsolationResult= inputsCountersValues.gisolation * (inputsCountersValues.surface_au_sol * inputsCountersValues.hauteur_sous_plafond_m)
-                while (inputsCountersValues.altitude> 200){
-                    inputsCountersValues.delta--;
-                    inputsCountersValues.altitude -=200;
+                let volumeIsolationResult= formPageValues.gisolation * (formPageValues.surface_au_sol * formPageValues.hauteur_sous_plafond_m)
+                while (formPageValues.altitude> 200){
+                    formPageValues.delta--;
+                    formPageValues.altitude -=200;
                 }
-                finalResult= ((volumeIsolationResult * (inputsCountersValues.temperature_de_confort + Math.abs(inputsCountersValues.delta)))/1.2)/1000; 
+                finalResult= ((volumeIsolationResult * (formPageValues.temperature_de_confort + Math.abs(formPageValues.delta)))/1.2)/1000; 
             }
             document.getElementById('pompe_a_chaleur_air_eau_value').innerText=finalResult.toFixed(2) +'KW';
-            inputsCountersValues.pompe_a_chaleur_air_eau_value=finalResult.toFixed(2);
+            formPageValues.pompe_a_chaleur_air_eau_value=finalResult.toFixed(2);
 
         }
 
@@ -52,7 +52,7 @@
                 .then(({ results }) => {
                 // Retrieve the first result
                 if (results[0]) {
-                    inputsCountersValues.altitude=results[0].elevation;
+                    formPageValues.altitude=results[0].elevation;
                     calculatePompeAChaleurAirEau()
                 } else {
                     console.log("No results found");
@@ -98,10 +98,10 @@
             
             autocomplete.addListener('place_changed', function(e){
                 let place= autocomplete.getPlace();
-                inputsCountersValues.departement_address=place.address_components[place.address_components.length-1].long_name.substring(0, 2);
+                formPageValues.departement_address=place.address_components[place.address_components.length-1].long_name.substring(0, 2);
                 // document.getElementById('inputZipcode').value=place.address_components[place.address_components.length-1].long_name;
                 // document.getElementById('inputCity').value=place.name;
-                inputsCountersValues.delta=getAbsoluteDelta();
+                formPageValues.delta=getAbsoluteDelta();
                 const location={lat: place.geometry.location.lat(), lng: place.geometry.location.lng()};
                 getElevation(location);
 
@@ -469,7 +469,7 @@
                                 <span class="img-wrapper">
                                     <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_1niveau.svg" alt="Photo - Niveau 1">     
                                 </span>
-                                1                           
+                                1                            
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
@@ -1552,15 +1552,20 @@
                         </div>
                         
                         <div class="total">
-                                <div class="total__item">
-                                    <span class="total__label">
-                                        Total de vos bonus:
-                                    </span>
-                                    <div class="total__value" id="total_bonus">
-                                        0 €
-                                    </div>
+                            <div class="total__item">
+                                <span class="total__label">
+                                    Total de vos bonus:
+                                </span>
+                                <div class="total__value" id="total_bonus">
+                                    0 €
                                 </div>
                             </div>
+                        </div>
+                        <div class="generate_pdf_container">
+                            <button class="generate_pdf_btn" type="button">
+                                GENERER MON PDF
+                            </button>
+                        </div>
                     </fieldset>
                     
                 </form>
@@ -1581,27 +1586,27 @@
                             <label for="source_energie_1_chauffage" class="select-item btn step-11__link image chauff_image_3">                        
                                 <input type="radio" name="source_energie" id="source_energie_1_chauffage" value="Chauffage au Fioul ">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_au_fioul_crop.png" alt="Photo - Chauffage au Fioul ">
-                                Chauffage au Fioul 
+                                 Fioul 
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
                             <label for="source_energie_2_chauffage" class="select-item btn step-11__link image chauff_image_3">             
                                 <input type="radio" name="source_energie"  id="source_energie_2_chauffage" value="Chauffage Électrique">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_elec_crop.png" alt="Photo - Chauffage Électrique">
-                                Chauffage Électrique
+                                 Électrique
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             <label for="source_energie_3_chauffage" class="select-item btn step-11__link image chauff_image_3">        
                                 <input type="radio" name="source_energie"  id="source_energie_3_chauffage" value=" Chauffage au Gaz ">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chuaffage_au_gaz_crop.png" alt="Photo -  Chauffage au Gaz ">
-                                Chauffage au Gaz 
+                                 Gaz 
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
 
                             <label for="source_energie_4_chauffage" class="select-item btn step-11__link image chauff_image_3">             
                                 <input type="radio" name="source_energie"  id="source_energie_4_chauffage" value=" Chauffage au Bois">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_au_bois_crop.png" alt="Photo -  Chauffage au Bois ">
-                                Chauffage au Bois 
+                                 Bois 
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
@@ -1615,7 +1620,7 @@
                             <label for="source_energie_5_chauffage" class="select-item btn step-11__link image chauff_image_3">        
                                 <input type="radio" name="source_energie"  id="source_energie_5_chauffage" value="Chauffage au Charbon ">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chaffage_au_charbon_crop.png" alt="Photo -  Chauffage au Charbon">
-                                Chauffage au Charbon 
+                                 Charbon 
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                         </div>
@@ -1897,28 +1902,28 @@
                             <label for="source_energie_eau_chaude_fioul_1" class="select-item btn step-12__link image chauff_image_3">                        
                                 <input type="radio" name="source_energie_eau_chaude" id="source_energie_eau_chaude_fioul_1" value="Chauffage au Fioul ">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_au_fioul_crop.png" alt="Photo - Chauffage au Fioul ">
-                                Chauffage au Fioul 
+                                Fioul 
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
                             <label for="source_energie_eau_chaude_elec_2" class="select-item btn step-12__link image chauff_image_3">             
                                 <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_elec_2" value="Chauffage Électrique">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_elec_crop.png" alt="Photo - Chauffage Électrique">
-                                Chauffage Électrique
+                                 Électrique
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
 
                             <label for="source_energie_eau_chaude_gaz_3" class="select-item btn step-12__link image chauff_image_3">        
                                 <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_gaz_3" value=" Chauffage au Gaz ">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chuaffage_au_gaz_crop.png" alt="Photo -  Chauffage au Gaz ">
-                                Chauffage au Gaz 
+                                 Gaz 
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
 
                             <label for="source_energie_eau_chaude_bois_4" class="select-item btn step-12__link image chauff_image_3">             
                                 <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_bois_4" value=" Chauffage au Bois">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_au_bois_crop.png" alt="Photo -  Chauffage au Bois ">
-                                Chauffage au Bois 
+                                 Bois 
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
@@ -1932,7 +1937,7 @@
                             <label for="source_energie_eau_chaude_chauffr_charbon_6" class="select-item btn step-12__link image chauff_image_3">        
                                 <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_chauffr_charbon_6" value="Chauffage au Charbon ">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chaffage_au_charbon_crop.png" alt="Photo -  Chauffage au Charbon">
-                                Chauffage au Charbon 
+                                 Charbon 
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                         </div>
