@@ -877,11 +877,11 @@
                                             <span>SCOP 4,0 à 4,3</span>
                                         </div>
                                         <div class="pompes__category">
-                                        Pompes à chaleur air-air
+                                        Pompes à chaleur air-eau
                                         </div>
                                     </div>
                                     <div class="pompes__right">
-                                        <button class="pompes__btn">
+                                        <button class="pompes__btn" type="button" value="0">
                                             AJOUTER
                                         </button>
                                         <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/05/clim-up.pdf">
@@ -892,7 +892,7 @@
 
                                 <div class="pompes__item">
                                     <div class="pompes__left">
-                                        <img src="./assets/images/pompe_Dietrich_2.png" alt="Clim’Up EMSM – De Dietrich">
+                                        <img src="./assets/images/pompe_Dietrich_2.png" alt="Clim’Up Muse unité extérieure - De Dietrich">
                                     </div>
                                     <div class="pompes__center">
                                         <span class="pompes__title">
@@ -901,16 +901,15 @@
                                         <div class="pompes__advantages">
                                             <span>Multisplit</span>
                                             <span>SCOP de 4,1 à 4,2</span>
-                                            <span>Fluide</span>
-                                            <span>Frigorigène R32</span>
-                                            <span>SEER de 6,18 à</span>
+                                            <span>Fluide frigorigène R32</span>
+                                            <span>SEER de 6,18 à 6,5</span>
                                         </div>
                                         <div class="pompes__category">
-                                        Pompes à chaleur air-air
+                                        Pompes à chaleur air-eau
                                         </div>
                                     </div>
                                     <div class="pompes__right">
-                                        <button class="pompes__btn">
+                                        <button class="pompes__btn" type="button" value="1">
                                             AJOUTER
                                         </button>
                                         <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/05/clim-up.pdf">
@@ -921,7 +920,7 @@
 
                                 <div class="pompes__item">
                                     <div class="pompes__left">
-                                        <img src="./assets/images/pompe_Dietrich_4.png" alt="Clim’Up EMSM – De Dietrich">
+                                        <img src="./assets/images/pompe_Dietrich_4.png" alt="Clim’up SMART unité interieur – De Dietrich">
                                     </div>
                                     <div class="pompes__center">
                                         <span class="pompes__title">
@@ -934,11 +933,11 @@
                                             <span>Monophasé</span>
                                         </div>
                                         <div class="pompes__category">
-                                        Pompes à chaleur air-air
+                                        Pompes à chaleur air-eau
                                         </div>
                                     </div>
                                     <div class="pompes__right">
-                                        <button class="pompes__btn">
+                                        <button class="pompes__btn" type="button" value="2">
                                             AJOUTER
                                         </button>
                                         <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/05/SMART.pdf">
@@ -966,7 +965,7 @@
                                         </div>
                                     </div>
                                     <div class="pompes__right">
-                                        <button class="pompes__btn">
+                                        <button class="pompes__btn" type="button" value="3">
                                             AJOUTER
                                         </button>
                                         <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/12/250.DOC.FTXM-R.20.pdf">
@@ -994,7 +993,7 @@
                                         </div>
                                     </div>
                                     <div class="pompes__right">
-                                        <button class="pompes__btn">
+                                        <button class="pompes__btn" type="button" value="4">
                                             AJOUTER
                                         </button>
                                         <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/12/DAIKIN-doc-altherma-60c.pdf">
@@ -1022,7 +1021,7 @@
                                         </div>
                                     </div>
                                     <div class="pompes__right">
-                                        <button class="pompes__btn">
+                                        <button class="pompes__btn" type="button" value="5">
                                             AJOUTER
                                         </button>
                                         <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/05/altherma-3-hht.pdf">
@@ -1050,7 +1049,7 @@
                                         </div>
                                     </div>
                                     <div class="pompes__right">
-                                        <button class="pompes__btn">
+                                        <button class="pompes__btn" type="button" value="6">
                                             AJOUTER
                                         </button>
                                         <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/05/ALTRHT.pdf">
@@ -1070,7 +1069,7 @@
                                         <div class="pompes__advantages">
                                             <span>Sonde extérieure filaire</span>
                                             <span>Appoint électrique intégré, 4kW ou 6kW</span>
-                                            <span>COP jusqu’à 5,25   Compresseur Inverter DC</span>
+                                            <span>COP jusqu’à 5,25</span>
                                             <span>Compresseur Inverter DC</span>
                                         </div>
                                         <div class="pompes__category">
@@ -1078,10 +1077,10 @@
                                         </div>
                                     </div>
                                     <div class="pompes__right">
-                                        <button class="pompes__btn">
+                                        <button class="pompes__btn" type="button" value="7">
                                             AJOUTER
                                         </button>
-                                        <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/05/ALTRHT.pdf">
+                                        <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/05/ARIANEXT-PLUS-S.pdf">
                                             FICHE TECHNIQUE
                                         </a>
                                     </div>
@@ -1106,7 +1105,7 @@
                                         </div>
                                     </div>
                                     <div class="pompes__right">
-                                        <button class="pompes__btn">
+                                        <button class="pompes__btn" type="button" value="8">
                                             AJOUTER
                                         </button>
                                         <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/05/ARIANEXT-PLUS-S.pdf">
@@ -1134,7 +1133,7 @@
                                         </div>
                                     </div>
                                     <div class="pompes__right">
-                                        <button class="pompes__btn">
+                                        <button class="pompes__btn" type="button" value="9">
                                             AJOUTER
                                         </button>
                                         <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/05/ALEZIO-awhp.pdf">
@@ -1162,7 +1161,7 @@
                                         </div>
                                     </div>
                                     <div class="pompes__right">
-                                        <button class="pompes__btn">
+                                        <button class="pompes__btn" type="button" value="10">
                                             AJOUTER
                                         </button>
                                         <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/05/ALEZIO-S-V200.pdf">
@@ -1190,7 +1189,7 @@
                                         </div>
                                     </div>
                                     <div class="pompes__right">
-                                        <button class="pompes__btn">
+                                        <button class="pompes__btn" type="button" value="11">
                                             AJOUTER
                                         </button>
                                         <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/05/hpi.pdf">
@@ -1218,7 +1217,7 @@
                                         </div>
                                     </div>
                                     <div class="pompes__right">
-                                        <button class="pompes__btn">
+                                        <button class="pompes__btn" type="button" value="12">
                                             AJOUTER
                                         </button>
                                         <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/12/LG-Fiche-PAC-air-eau-Hydrosplit-R32-2021.pdf">
@@ -1246,7 +1245,7 @@
                                         </div>
                                     </div>
                                     <div class="pompes__right">
-                                        <button class="pompes__btn">
+                                        <button class="pompes__btn" type="button" value="13">
                                             AJOUTER
                                         </button>
                                         <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/12/LG-Fiche-PAC-air-eau-Hydrosplit-R32-2021.pdf">
@@ -1274,7 +1273,7 @@
                                         </div>
                                     </div>
                                     <div class="pompes__right">
-                                        <button class="pompes__btn">
+                                        <button class="pompes__btn" type="button" value="14">
                                             AJOUTER
                                         </button>
                                         <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/05/NUOS.pdf">
@@ -1302,7 +1301,7 @@
                                         </div>
                                     </div>
                                     <div class="pompes__right">
-                                        <button class="pompes__btn">
+                                        <button class="pompes__btn" type="button" value="15">
                                             AJOUTER
                                         </button>
                                         <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/05/Aquanext-Split-Inverter.pdf">
@@ -1330,7 +1329,7 @@
                                         </div>
                                     </div>
                                     <div class="pompes__right">
-                                        <button class="pompes__btn">
+                                        <button class="pompes__btn" type="button" value="16">
                                             AJOUTER
                                         </button>
                                         <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-conKaliko">
@@ -1358,7 +1357,7 @@
                                         </div>
                                     </div>
                                     <div class="pompes__right">
-                                        <button class="pompes__btn">
+                                        <button class="pompes__btn" type="button" value="17">
                                             AJOUTER
                                         </button>
                                         <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/05/KALIKO-ESSENTIEL.pdf">
@@ -1386,7 +1385,7 @@
                                         </div>
                                     </div>
                                     <div class="pompes__right">
-                                        <button class="pompes__btn">
+                                        <button class="pompes__btn" type="button" value="18">
                                             AJOUTER
                                         </button>
                                         <a class="pompes__btn pompes__btn--show" target="_blank" href="https://econegoce.com/wp-content/uploads/2021/05/KALIKO-SPLIT.pdf">

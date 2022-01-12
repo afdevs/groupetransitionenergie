@@ -117,6 +117,141 @@ let bonusCalcul={
   dansIleDeFrance: false
 }
 
+let produits=[
+  {
+    title: 'Clim’Up EMSM – De Dietrich',
+    avantage: ['Mono split mural', 'Monophasé et Triphasé', 'Fluide frigorigène R32', 'SCOP 4,0 à 4,3'],
+    categorie: 'Pompes à chaleur air-eau',
+    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/clim-up.pdf',
+    img_url: './assets/images/pompe_Dietrich.png'
+  },
+  {
+    title: 'Clim’Up Muse unité extérieure - De Dietrich',
+    avantage: ['Multisplit', 'SCOP de 4,1 à 4,2', 'Fluide frigorigène R32', 'SEER de 6,18 à 6,5'],
+    categorie: 'Pompes à chaleur air-eau',
+    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/clim-up.pdf',
+    img_url: './assets/images/pompe_Dietrich_2.png'
+  },
+  {
+    title: 'Clim’up SMART unité interieur – De Dietrich',
+    avantage: ['Pompe de relevage des condensats', 'Fixation murale', 'De 2,05 à 5,30 kW', 'Monophasé'],
+    categorie: 'Pompes à chaleur aieau',
+    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/SMART.pdf',
+    img_url: './assets/images/pompe_Dietrich_4.png'
+  },
+  {
+    title: 'Perfera - Daikin',
+    avantage: ['Fluide frigorigène R32', 'Label énergétique', 'Purificateur d\'air et anti-allergènes', 'Amplification de chauffage'],
+    categorie: 'Pompes à chaleur air-air',
+    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/12/250.DOC.FTXM-R.20.pdf',
+    img_url: './assets/images/pompe_Dietrich_3.png'
+  },
+  {
+    title: 'Altherma 60° - Daikin',
+    avantage: ['Fluide frigorigène R32', 'Label énergétique', 'Compresseur Inverter DC', 'Compacte'],
+    categorie: 'Pompes à chaleur air-eau',
+    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/12/DAIKIN-doc-altherma-60c.pdf',
+    img_url: './assets/images/pompe_air_eau.png'
+  },
+  {
+    title: 'Altherma 70° 3H HT - Daikin',
+    avantage: ['Seulement 32 dB(A)', 'Fluide frigorigène R32', 'Pression max 56 bar', 'Commande intuitive'],
+    categorie: 'Pompes à chaleur air-eau',
+    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/altherma-3-hht.pdf',
+    img_url: './assets/images/pompe_air_eau_2.png'
+  },
+  {
+    title: 'Altherma 80° R HT - Daikin',
+    avantage: ['Sortie d’eau 80°C', 'COP entre 3 et 5', '100 % thermodynamique', 'Thermostat d’ambiance'],
+    categorie: 'Pompes à chaleur air-eau',
+    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/ALTRHT.pdf',
+    img_url: './assets/images/pompe_air_eau_3.png'
+  },
+  {
+    title: 'Arianext plus S - Chaffoteaux',
+    avantage: ['Sonde extérieure filaire', 'Appoint électrique intégré, 4kW ou 6kW', 'COP jusqu’à 5,25', 'Compresseur Inverter DC'],
+    categorie: 'Pompes à chaleur air-eau',
+    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/ARIANEXT-PLUS-S.pdf',
+    img_url: './assets/images/pompe_air_eau_4.png'
+  },
+  {
+    title: 'EHS - SAMSUNG ',
+    avantage: ['Label énergétique', 'Eau jusqu’à 65°C', 'Ballon disponible', 'Disponible en 4 / 6 / 9 kW'],
+    categorie: 'Pompes à chaleur air-eau',
+    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/ARIANEXT-PLUS-S.pdf',
+    img_url: './assets/images/pompe__air__eau__5.jpg'
+  },
+  {
+    title: 'Alezio S – De Dietrich',
+    avantage: ['Jusqu\'à 70% d\'économies', 'Rapide à installer', 'Solution connectée', 'Simple d’utilisation'],
+    categorie: 'Pompes à chaleur air-eau',
+    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/ALEZIO-awhp.pdf',
+    img_url: './assets/images/pompe_air_eau_5.png'
+  },
+  {
+    title: 'Alezio  V200 - De Dietrich',
+    avantage: ['Solution compacte', '4,5 kW à 16 kW', 'Thermostat connecté', 'Fluide frigorigène R410A'],
+    categorie: 'Pompes à chaleur air-eau',
+    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/ALEZIO-S-V200.pdf',
+    img_url: './assets/images/pompe_air_eau_6.png'
+  },
+  {
+    title: 'HPI Evolution - De Dietrich',
+    avantage: ['Option hybride', 'Compatible multi-énergies', 'Bouteille de découplage intégrée', 'COP de 5,11'],
+    categorie: 'Pompes à chaleur air-eau',
+    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/hpi.pdf',
+    img_url: './assets/images/pompe_air_eau_7.png'
+  },
+  {
+    title: 'Hydrosplit - LG',
+    avantage: ['Fluide frigorigène R32', 'Label énergétique', 'Réfrigérant écologique', 'Contrôle intelligent du chauffage'],
+    categorie: 'Pompes à chaleur air-eau',
+    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/12/LG-Fiche-PAC-air-eau-Hydrosplit-R32-2021.pdf',
+    img_url: './assets/images/pompe_air_eau_8.png'
+  },
+  {
+    title: 'Hydrosplit DUO - LG',
+    avantage: ['Fluide frigorigène R32', 'Label énergétique', 'Réfrigérant écologique', 'Contrôle intelligent du chauffage'],
+    categorie: 'Pompes à chaleur air-eau',
+    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/12/LG-Fiche-PAC-air-eau-Hydrosplit-R32-2021.pdf',
+    img_url: './assets/images/pompe_air_eau_9.png'
+  },
+  {
+    title: 'Nuos Primos – Ariston',
+    avantage: ['Temps de chauffe < 8h', 'COP de 2,86', '4 modes d’utilisations', '200L à 240L'],
+    categorie: 'Chauffe-eau Thermodynamique',
+    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/NUOS.pdf',
+    img_url: './assets/images/pompe_air_eau_10.png'
+  },
+  {
+    title: 'Aquanext Split - Chaffoteaux',
+    avantage: ['Temps de chauffe < 6h', 'Technologie Inverter', 'Condenseur avec profile D', 'Connexion HP/HC'],
+    categorie: 'Chauffe-eau Thermodynamique',
+    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/Aquanext-Split-Inverter.pdf',
+    img_url: './assets/images/pompe_air_eau_11.png'
+  },
+  {
+    title: 'Kaliko - De Dietrich',
+    avantage: ['Ecran digital déportable', 'Résistance de 1550 W', '34 à 35,2 dB(A)', 'Fluide frigorigène R 134 A'],
+    categorie: 'Chauffe-eau Thermodynamique',
+    fiche_technique_url: 'https://econegoce.com/wp-conKaliko',
+    img_url: './assets/images/pompe_air_eau_12.png'
+  },
+  {
+    title: 'Essentiel – De Dietrich',
+    avantage: ['Classe énergétique A+', 'Puissance PAC 1750W', 'Pression acoustique 42dB(A)', 'Temps de chauffe < 6h'],
+    categorie: 'Chauffe-eau Thermodynamique',
+    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/KALIKO-ESSENTIEL.pdf',
+    img_url: './assets/images/pompe_air_eau_13.png'
+  },
+  {
+    title: 'Kaliko Split – De Dietrich',
+    avantage: ['ECS jusqu’à 65°', 'Puissance PAC', '230v Monophasé', 'Maxi 1 300m3/hh'],
+    categorie: 'Chauffe-eau Thermodynamique',
+    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/KALIKO-SPLIT.pdf',
+    img_url: './assets/images/pompe_air_eau_13.png'
+  },
+]
 jQuery(function($){
     $(document).ready(function(){
       //initialize all modals           
@@ -175,6 +310,53 @@ jQuery(function($){
           e.preventDefault();
         }
       });
+
+
+
+    function AnimateRotate(el, angle) {
+      // caching the object for performance reasons
+      var $elem = el;
+
+      $elem.animate({  trans: angle }, {
+        step: function(now,fx) {
+          $(this).css('transform','rotateY('+now+'deg)');
+        },
+        duration:'slow'
+      },'linear');
+      // we use a pseudo object for the animation
+      // (starts from `0` to `angle`), you can name it as you want
+      // $({deg: 0}).animate({trans: angle}, {
+      //     duration: 2000,
+      //     step: function(now) {
+      //         // in the step-callback (that is fired each step of the animation),
+      //         // you can use the `now` paramter which contains the current
+      //         // animation-position (`0` up to `angle`)
+      //         $elem.css({
+      //             transform: 'rotate(' + now + 'deg)'
+      //         });
+      //     }
+      // });
+    }
+
+      $('button.pompes__btn').click(function(e){
+        console.log($(this))
+        // $(this).animate({ trans: 60}, 0);
+        // console.log('animation')
+        AnimateRotate($(this), 90);
+        if($($(this)[0]).hasClass('unset')){
+          setTimeout(() => {
+            $(this).text('Ajouter')
+            $($(this)[0]).removeClass('unset');
+          }, 1000);
+          AnimateRotate($(this), 0);
+        }else{
+          setTimeout(() => {
+            $(this).text('Retirer')
+            $($(this)[0]).addClass('unset');
+          }, 1000);
+          AnimateRotate($(this), 360)
+        };
+      })
       // let map = new google.maps.Map(document.getElementById("map"), {});
       // console.log('map', map)
 
