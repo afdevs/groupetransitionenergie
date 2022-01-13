@@ -12,8 +12,8 @@
     </script>
 
     <script async>
-
         function getAbsoluteDelta(){
+            if(isNaN(formPageValues.departement_address)) return 0;
             const deltaVal=[]            
             franceAddresses.forEach(franceAd=>{
                 franceAd.departement.filter(depart=>{
@@ -37,6 +37,7 @@
                 }
                 finalResult= ((volumeIsolationResult * (formPageValues.temperature_de_confort + Math.abs(formPageValues.delta)))/1.2)/1000; 
             }
+            
             document.getElementById('pompe_a_chaleur_air_eau_value').innerText=finalResult.toFixed(2) +'KW';
             formPageValues.pompe_a_chaleur_air_eau_value=finalResult.toFixed(2);
 

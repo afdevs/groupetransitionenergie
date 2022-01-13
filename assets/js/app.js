@@ -1,35 +1,78 @@
+let dateDiff={
+  inDays: function (d1, d2){
+    let t1= d1.getTime();
+    let t2= d2.getTime();
+    return Math.floor((t2-t1)/(24*3600*1000))
+  },
+  inWeeks: function (d1, d2){
+    let t1= d1.getTime();
+    let t2= d2.getTime();
+    return parseInt((t2-t1)/(24*3600*1000*7))
+
+  },
+  inMonths: function (d1, d2){
+    let d1Y= d1.getFullYear();
+    let d2Y= d2.getFullYear();
+
+    let d1M= d1.getMonth();
+    let d2M= d2.getMonth();
+
+    return (d2M+12*d2Y)-(d1M+12*d1Y)
+
+  },
+  inYears: function (d1, d2){
+
+    return d2.getFullYear()- d1.getFullYear()
+
+  }
+}
 let plafondRessourceHorsIleFrance={
   foyerFiscale: [1, 2, 3, 4, 5, 'more'],
-  bleu: [14879, 21760, 26170, 30572, 34993, 4412 ],
-  jaune: [19074, 27896, 33547, 39192, 44860, 5651],
+  bleu: [15262, 22320, 26844, 31359, 35894, 4526 ],
+  jaune: [19565, 28614, 34411, 40201, 46015, 5797],
   violet: [29148, 42848, 51592, 60336, 69081, 8744],
-  rose: [29148, 42848, 51592, 60336, 69081, 8744]
+  rose: [29148, 42848, 51592, 60336, 69091, 8744]
 }
 
 let plafondRessourceEnIleFrance={
   foyerFiscale: [1, 2, 3, 4, 5, 'more'],
-  bleu: [29593, 30225, 36297, 42381, 48488, 6096 ],
-  jaune: [25068, 36792, 44188, 51597, 59026, 7422],
+  bleu: [21123, 31003, 37232, 43472, 49736, 6096],
+  jaune: [25714, 37739, 45326, 52925, 60546, 7613],
   violet: [38184, 56130, 67585, 79041, 90496, 11455],
   rose: [38184, 56130, 67585, 79041, 90496, 11455]
 }
 
+
+let coupDePouceHorsIleFrance={
+  foyerFiscale: [1, 2, 3, 4, 5, 'more'],
+  bleu: [14879, 21760, 26170, 30572, 34993, 4412],
+  jaune: [19024, 27896, 33547, 39192, 44860, 5651],
+  violet: [19075, 27897, 33548, 39193, 44861, 8744]
+}
+
+let coupDePouceEnIleFrance={
+  foyerFiscale: [1, 2, 3, 4, 5, 'more'],
+  bleu: [20593, 30225, 36297, 42381, 48488, 6096],
+  jaune: [25068, 36792, 44188, 51597, 59026, 7422],
+  violet: [25069, 36793, 44189, 51598, 59027, 11455],
+}
+
 let subventionsPacAiEau={
-  bleu: 4000,
-  jaune: 3000,
-  violet: 2000,
+  bleu: 5000,
+  jaune: 4000,
+  violet: 2500,
   rose: 0
 }
 let subventionsChauffeEau={
-  bleu: 1200,
-  jaune: 800,
-  violet: 500,
+  bleu: 185,
+  jaune: 88,
+  violet: 88,
   rose: 0
 }
 
 let coupDePouceChauffageBonnus={
   bleu: 5000,
-  jaune: 4000,
+  jaune: 5000,
   violet: 2500,
   rose: 2500
 }
@@ -240,6 +283,7 @@ var formPageValues={
     pompe_a_chaleur_air_eau_value: 0,
     eligibility_nbr_enfant_a_charge: 0,
     eligibility_nbr_part_fiscal: 0,
+    annee_contruction: 0,
     produits_ajoutees: Array.apply(null, Array(produits.length)).map(function(){}) //new Array(produits.length)
 }
 
@@ -1459,88 +1503,128 @@ jQuery(function($){
     
     $('#200l').change(function(){
       calculBonus()
-    })
+    });
+    
+    function intBonusData(){
+      bonusCalcul.maprimenov.pacAirEau=0;
+      bonusCalcul.maprimenov.chauffeEauthermo=0;
+      bonusCalcul.coupDePouce=0;
+      bonusCalcul.ecologique=0;
+      bonusCalcul.totalBonus=0;
+    }
+
     function calculBonus(){
+      intBonusData();
+      let anneeSelected= $('select[name=annee_contruction]').val();
+      let anneeConstruction=0;
+      const d1= new Date(anneeSelected)
+      const d2 = new Date();
+      if(anneeSelected){
+        anneeConstruction= dateDiff.inYears(d1, d2);
+      }
+
       let dernierRevenuFisc=parseFloat($('#inputDernierRevenuFiscalRef').val() || 0)
       let nbrFoyerFisciale='more';
       let nbrFoyerFiscialeIndex=0;
-      
       let couleur='none';
-      if(bonusCalcul.dansIleDeFrance){
-        plafondRessourceEnIleFrance.foyerFiscale.map((el, index)=>{
-          if(el===formPageValues.nombre_d_habitants){
-            nbrFoyerFisciale=el;
-            nbrFoyerFiscialeIndex=index;
-          }
-        });
+      let couleurCDP='none';
 
-        if(dernierRevenuFisc>0){          
-          if(dernierRevenuFisc <= plafondRessourceEnIleFrance.bleu[nbrFoyerFiscialeIndex]){
-            couleur='bleu';
-          }else if(dernierRevenuFisc <=plafondRessourceEnIleFrance.jaune[nbrFoyerFiscialeIndex]){
-            couleur='jaune';
-          }else if(dernierRevenuFisc <=plafondRessourceEnIleFrance.violet[nbrFoyerFiscialeIndex]){
-            couleur='violet';
-          }else{
-            couleur= 'none';
+      // Année de construction plus de 2 ans
+      if(anneeConstruction > 1){
+        if(bonusCalcul.dansIleDeFrance){
+          plafondRessourceEnIleFrance.foyerFiscale.map((el, index)=>{
+            if(el===formPageValues.nombre_d_habitants){
+              nbrFoyerFisciale=el;
+              nbrFoyerFiscialeIndex=index;
+            }
+          });
+  
+          if(dernierRevenuFisc>0){          
+            if(dernierRevenuFisc <= plafondRessourceEnIleFrance.bleu[nbrFoyerFiscialeIndex]){
+              couleur='bleu';
+            }else if(dernierRevenuFisc <=plafondRessourceEnIleFrance.jaune[nbrFoyerFiscialeIndex]){
+              couleur='jaune';
+            }else {
+              couleur='violet';
+            }
+            // else if(dernierRevenuFisc <=plafondRessourceEnIleFrance.violet[nbrFoyerFiscialeIndex]){
+            //   couleur='violet';
+            // }else{
+            //   couleur= 'none';
+            // }
+  
+            // Couleur coup de pouce en ile de france
+            if(dernierRevenuFisc <= coupDePouceEnIleFrance.bleu[nbrFoyerFiscialeIndex]){
+              couleurCDP='bleu';
+            }else if(dernierRevenuFisc <=coupDePouceEnIleFrance.jaune[nbrFoyerFiscialeIndex]){
+              couleurCDP='jaune';
+            }else {
+              couleurCDP='violet';
+            }
+            // else if(dernierRevenuFisc <=coupDePouceEnIleFrance.violet[nbrFoyerFiscialeIndex]){
+            //   couleurCDP='violet';
+            // }
+            // else{
+            //   couleurCDP= 'none';
+            // }
+            
           }
+          
+        }else{
+          plafondRessourceHorsIleFrance.foyerFiscale.map((el, index)=>{
+            if(el===formPageValues.nombre_d_habitants){
+              nbrFoyerFisciale=el;
+              nbrFoyerFiscialeIndex=index;
+            }
+          })
+          if(dernierRevenuFisc>0){
+            if(dernierRevenuFisc <=plafondRessourceHorsIleFrance.bleu[nbrFoyerFiscialeIndex]){
+              couleur='bleu';
+            }else if(dernierRevenuFisc <=plafondRessourceHorsIleFrance.jaune[nbrFoyerFiscialeIndex]){
+              couleur='jaune'
+            }else{
+              couleur='violet'
+            }
+            // else if(dernierRevenuFisc <=plafondRessourceHorsIleFrance.violet[nbrFoyerFiscialeIndex]){
+            //   couleur='violet'
+            // }else{
+            //   couleur= 'none';
+            // }
+  
+            // Couleur coup de pouce hors ile de france
+            if(dernierRevenuFisc <= coupDePouceHorsIleFrance.bleu[nbrFoyerFiscialeIndex]){
+              couleurCDP='bleu';
+            }else if(dernierRevenuFisc <=coupDePouceHorsIleFrance.jaune[nbrFoyerFiscialeIndex]){
+              couleurCDP='jaune';
+            }else{
+              couleurCDP='violet';
+            }
+            // else if(dernierRevenuFisc <=coupDePouceHorsIleFrance.violet[nbrFoyerFiscialeIndex]){
+            //   couleurCDP='violet';
+            // }else{
+            //   couleurCDP= 'none';
+            // }
+          }
+  
+      }
+        
+      }
+        
+      if($('#source_energie_3_chauffage').is(':checked')){
+        console.log('gaz selected', anneeConstruction)
+        if(anneeConstruction > 15){
+          getMaPrimeRenovBonus(couleur, bonusCalcul)
+        console.log('gbonusCalcul', bonusCalcul)
+
         }
         
       }else{
-        plafondRessourceHorsIleFrance.foyerFiscale.map((el, index)=>{
-          if(el===formPageValues.nombre_d_habitants){
-            nbrFoyerFisciale=el;
-            nbrFoyerFiscialeIndex=index;
-          }
-        })
-        if(dernierRevenuFisc>0){
-          if(dernierRevenuFisc <=plafondRessourceHorsIleFrance.bleu[nbrFoyerFiscialeIndex]){
-            couleur='bleu';
-          }else if(dernierRevenuFisc <=plafondRessourceHorsIleFrance.jaune[nbrFoyerFiscialeIndex]){
-            couleur='jaune'
-          }else if(dernierRevenuFisc <=plafondRessourceHorsIleFrance.violet[nbrFoyerFiscialeIndex]){
-            couleur='violet'
-          }else{
-            couleur= 'none';
-          }
-        }
-
-        
+        getMaPrimeRenovBonus(couleur, bonusCalcul)
       }
-        //bonus pac air-eau
-        switch (couleur) {
-          case 'bleu':
-            bonusCalcul.maprimenov.pacAirEau=subventionsPacAiEau.bleu
-            break;
-          case 'jaune':
-            bonusCalcul.maprimenov.pacAirEau=subventionsPacAiEau.jaune
-            break;
-          case 'violet':
-            bonusCalcul.maprimenov.pacAirEau=subventionsPacAiEau.violet
-            break;
-          case 'none':
-            bonusCalcul.maprimenov.pacAirEau=0
-            break;
-        }
-        
-        //bonus chauffe-eau
-        switch (couleur) {
-          case 'bleu':
-            bonusCalcul.maprimenov.chauffeEauthermo=subventionsChauffeEau.bleu
-            break;
-          case 'jaune':
-            bonusCalcul.maprimenov.chauffeEauthermo=subventionsChauffeEau.jaune
-            break;
-          case 'violet':
-            bonusCalcul.maprimenov.chauffeEauthermo=subventionsChauffeEau.violet
-            break;
-          case 'none':
-            bonusCalcul.maprimenov.chauffeEauthermo=0
-            break;
-        }
+        //bonus coup de pouce
 
-        //bonus chauffage
-        switch (couleur) {
+        // //bonus chauffage
+        switch (couleurCDP) {
           case 'bleu':
             bonusCalcul.coupDePouce=coupDePouceChauffageBonnus.bleu
             break;
@@ -1578,6 +1662,42 @@ jQuery(function($){
         $('#bonusEcologique').text(bonusCalcul.ecologique +' €');
         $('#total_bonus').text(bonusCalcul.totalBonus +' €')
         $('#bonusEcologique').text(bonusCalcul.ecologique +' €');
+
+    }
+
+    function getMaPrimeRenovBonus(couleur, bonusCalcul){
+      
+        //bonus pac air-eau
+        switch (couleur) {
+          case 'bleu':
+            bonusCalcul.maprimenov.pacAirEau=subventionsPacAiEau.bleu
+            break;
+          case 'jaune':
+            bonusCalcul.maprimenov.pacAirEau=subventionsPacAiEau.jaune
+            break;
+          case 'violet':
+            bonusCalcul.maprimenov.pacAirEau=subventionsPacAiEau.violet
+            break;
+          case 'none':
+            bonusCalcul.maprimenov.pacAirEau=0
+            break;
+        }
+        
+        //bonus chauffe-eau
+        switch (couleur) {
+          case 'bleu':
+            bonusCalcul.maprimenov.chauffeEauthermo=subventionsChauffeEau.bleu
+            break;
+          case 'jaune':
+            bonusCalcul.maprimenov.chauffeEauthermo=subventionsChauffeEau.jaune
+            break;
+          case 'violet':
+            bonusCalcul.maprimenov.chauffeEauthermo=subventionsChauffeEau.violet
+            break;
+          case 'none':
+            bonusCalcul.maprimenov.chauffeEauthermo=0
+            break;
+        }
 
     }
 
