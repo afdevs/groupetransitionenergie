@@ -58,15 +58,15 @@ let coupDePouceEnIleFrance={
 }
 
 let subventionsPacAiEau={
-  bleu: 5000,
-  jaune: 4000,
-  violet: 2500,
+  bleu: 4000,
+  jaune: 3000,
+  violet: 2000,
   rose: 0
 }
 let subventionsChauffeEau={
-  bleu: 185,
-  jaune: 88,
-  violet: 88,
+  bleu: 1200,
+  jaune: 800,
+  violet: 400,
   rose: 0
 }
 

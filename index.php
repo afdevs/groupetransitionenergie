@@ -1516,7 +1516,7 @@
                             <div class="results">
                                 <div class="results__item">
                                         <div class="results__image">
-                                            <img src="./assets/images/image00005.jpeg" alt="Ma prime renov" height="50">
+                                            <img src="./assets/images/image00003.jpeg" alt="Ma prime renov" height="50">
                                         </div>
                                     <span class="results__label">
                                         MaPrimeRénov
@@ -1528,7 +1528,7 @@
                                 
                                 <div class="results__item">
                                     <div class="results__image">
-                                        <img class="step-1__img" src="./assets/images/image00003.jpeg" alt="Coup de pouce" height="50">
+                                        <img class="step-1__img" src="./assets/images/image00005.jpeg" alt="Coup de pouce" height="50">
                                     </div>
                                     <span class="results__label">
                                         Coup de pouce
