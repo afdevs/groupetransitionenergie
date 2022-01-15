@@ -45,16 +45,16 @@ let plafondRessourceEnIleFrance={
 
 let coupDePouceHorsIleFrance={
   foyerFiscale: [1, 2, 3, 4, 5, 'more'],
-  bleu: [14879, 21760, 26170, 30572, 34993, 4412],
-  jaune: [19024, 27896, 33547, 39192, 44860, 5651],
-  violet: [19075, 27897, 33548, 39193, 44861, 8744]
+  bleu: [15262, 22320, 26844, 31359, 35894, 4526 ],
+  jaune: [19565, 28614, 34411, 40201, 46015, 5797],
+  violet: [19566, 28615, 34412, 40202, 46016, 5797],
 }
 
 let coupDePouceEnIleFrance={
   foyerFiscale: [1, 2, 3, 4, 5, 'more'],
-  bleu: [20593, 30225, 36297, 42381, 48488, 6096],
-  jaune: [25068, 36792, 44188, 51597, 59026, 7422],
-  violet: [25069, 36793, 44189, 51598, 59027, 11455],
+  bleu: [21123, 31003, 37232, 43472, 49736, 6096],
+  jaune: [25714, 37739, 45326, 52925, 60546, 7613],
+  violet: [25715, 37740, 45327, 52926, 60547, 7613],
 }
 
 let subventionsPacAiEau={
@@ -1549,7 +1549,7 @@ jQuery(function($){
               nbrFoyerFiscialeIndex=index;
             }
           });
-          console.log('plafondRessourceEnIleFrance.violet[nbrFoyerFiscialeIndex]', plafondRessourceEnIleFrance.violet[nbrFoyerFiscialeIndex])
+          
           if(dernierRevenuFisc>0){          
             if(dernierRevenuFisc <= plafondRessourceEnIleFrance.bleu[nbrFoyerFiscialeIndex]){
               couleur='bleu';
@@ -1656,7 +1656,7 @@ jQuery(function($){
         /* !$('#source_energie_2_chauffage').is(':checked') */
         if(formPageValues.pompe_a_chaleur_air_eau_value!=0){
           bonusCalcul.totalBonus=bonusCalcul.maprimenov.pacAirEau;
-          maPrimeRenovSum=bonusCalcul.maprimenov.pacAirEau;
+          maPrimeRenovSum +=bonusCalcul.maprimenov.pacAirEau;
         }
         // bonusCalcul.totalBonus=(bonusCalcul.maprimenov.pacAirEau + bonusCalcul.maprimenov.chauffeEauthermo) + bonusCalcul.coupDePouce + bonusCalcul.ecologique
         if($('#type_de_chaufface_chaudiere_gaz_natur_condensa').is(':checked')){
