@@ -26,6 +26,12 @@ let dateDiff={
 
   }
 }
+
+let formatNumber={
+  asEuro:function(val){
+    return new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(val)
+  }
+}
 let plafondRessourceHorsIleFrance={
   foyerFiscale: [1, 2, 3, 4, 5, 'more'],
   bleu: [15262, 22320, 26844, 31359, 35894, 4526 ],
@@ -1419,13 +1425,33 @@ jQuery(function($){
 
     //CHECKBOX
     $(".chk-moyenne-conso").change(function() {
-        $(".chk-moyenne-conso").prop('checked', false);
-        $(this).prop('checked', true);
+      
+      // if($(this).is(':checked')){
+      //   $(this).prop('checked', false);
+      // }else{
+      //   $(this).prop('checked', true)
+      // }
+
+      // $(this).prop('checked', true);
+      if($(this).is(':checked')){
+        if($(this).attr('id')==='200l'){
+          $('#270l').prop('checked', false);
+        }else{
+          $('#200l').prop('checked', false);
+
+        }
+      }
     });
 
     $(".chk-elec-ampoule").change(function() {
-        $(".chk-elec-ampoule").prop('checked', false);
-        $(this).prop('checked', true);
+      if($(this).is(':checked')){
+        if($(this).attr('id')==='elec_ampoule1'){
+          $('#elec_ampoule2').prop('checked', false);
+        }else{
+          $('#elec_ampoule1').prop('checked', false);
+
+        }
+      }
     });
 
 
@@ -1453,7 +1479,7 @@ jQuery(function($){
     })
     function consommationGlobal(){      
       formPageValues.votre_conso_actuel=(parseFloat($('#inputEstimFactChauff').val()) + parseFloat($('#inputEstimFactEauChaude').val())+ parseFloat($('#inputEstimFactAppareilElec').val())+parseFloat($('#inputEstimFactEclairage').val()));
-      $('#votre_conso_actuel').text(formPageValues.votre_conso_actuel +' €');
+      $('#votre_conso_actuel').text(formatNumber.asEuro(formPageValues.votre_conso_actuel).replace(",00", ""));
       const nombreAnneeAIndexer=parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()) || 0;
       const evolPrixFioul =parseFloat($('#inputEvol25Annee').val())/100;
       if(!isNaN(nombreAnneeAIndexer)){
@@ -1469,11 +1495,11 @@ jQuery(function($){
         const allValuesTotal=result + formPageValues.votre_conso_actuel
         formPageValues.votre_conso_sur_x_annee=allValuesTotal.toFixed(2);
         if(nombreAnneeAIndexer> 0){
-          formPageValues.moyenne_conso_sur_x_annee=formPageValues.votre_conso_sur_x_annee / nombreAnneeAIndexer;
+          formPageValues.moyenne_conso_sur_x_annee=(formPageValues.votre_conso_sur_x_annee / nombreAnneeAIndexer).toFixed(2);
         }        
       }
-      $('#votre_conso_sur_x_annee').text(formPageValues.votre_conso_sur_x_annee +' €');
-      $('#moyenne_conso_sur_x_annee').text((formPageValues.moyenne_conso_sur_x_annee).toFixed(2) +' €');
+      $('#votre_conso_sur_x_annee').text(formatNumber.asEuro(formPageValues.votre_conso_sur_x_annee).replace(",00", ""));
+      $('#moyenne_conso_sur_x_annee').text(formatNumber.asEuro(formPageValues.moyenne_conso_sur_x_annee).replace(",00", ""));
     }
     
     $('#inputEstimFactChauff').change(function(e){
@@ -1507,11 +1533,11 @@ jQuery(function($){
     $('#inputBonusEcologique').change(function(){
       calculBonus();
     })
-    $('#270l').change(function(){
+    $('#270l').click(function(){
       calculBonus()
     })
     
-    $('#200l').change(function(){
+    $('#200l').click(function(){
       calculBonus()
     });
     
@@ -1618,45 +1644,29 @@ jQuery(function($){
       if($('#source_energie_3_chauffage').is(':checked')){
         if(anneeConstruction > 15){
           getMaPrimeRenovBonus(couleur, bonusCalcul)
-
         }
-        
       }else{
         getMaPrimeRenovBonus(couleur, bonusCalcul)
       }
-      console.log('couleur', couleur, 'bonusCalcul', bonusCalcul)
-        //bonus coup de pouce
 
-        // //bonus chauffage
-        switch (couleurCDP) {
-          case 'bleu':
-            bonusCalcul.coupDePouce.pacAirEau =coupDePoucePompeBonus.bleu
-            bonusCalcul.coupDePouce.chauffeEauthermo =coupDePouceChauffageBonus.bleu
-            break;
-          case 'jaune':
-            bonusCalcul.coupDePouce.pacAirEau =coupDePoucePompeBonus.jaune
-            bonusCalcul.coupDePouce.chauffeEauthermo =coupDePouceChauffageBonus.jaune
-            break;
-          case 'violet':
-            bonusCalcul.coupDePouce.pacAirEau =coupDePoucePompeBonus.violet
-            bonusCalcul.coupDePouce.chauffeEauthermo =coupDePouceChauffageBonus.violet
-            break;
-          case 'none':
-            bonusCalcul.coupDePouce.pacAirEau=0
-            bonusCalcul.coupDePouce.chauffeEauthermo=0
-            break;
-        }
-        
+      getCoupDePouceBonus(couleurCDP, bonusCalcul)
+
+      
         bonusCalcul.ecologique=parseFloat($('#inputBonusEcologique').val());
         let maPrimeRenovSum=0
+        let coupDePouceSm=0;
         if($('#270l').is(':checked') || $('#200l').is(':checked')){
           bonusCalcul.totalBonus +=bonusCalcul.maprimenov.chauffeEauthermo;
           maPrimeRenovSum +=bonusCalcul.maprimenov.chauffeEauthermo;
+
+          coupDePouceSm +=bonusCalcul.coupDePouce.chauffeEauthermo
         }
         /* !$('#source_energie_2_chauffage').is(':checked') */
         if(formPageValues.pompe_a_chaleur_air_eau_value!=0){
           bonusCalcul.totalBonus=bonusCalcul.maprimenov.pacAirEau;
           maPrimeRenovSum +=bonusCalcul.maprimenov.pacAirEau;
+          
+          coupDePouceSm +=bonusCalcul.coupDePouce.pacAirEau;
         }
         // bonusCalcul.totalBonus=(bonusCalcul.maprimenov.pacAirEau + bonusCalcul.maprimenov.chauffeEauthermo) + bonusCalcul.coupDePouce + bonusCalcul.ecologique
         if($('#type_de_chaufface_chaudiere_gaz_natur_condensa').is(':checked')){
@@ -1664,17 +1674,17 @@ jQuery(function($){
           bonusCalcul.coupDePouce.chauffeEauthermo=0
         }
         
-        bonusCalcul.totalBonus= (bonusCalcul.coupDePouce.pacAirEau + bonusCalcul.coupDePouce.chauffeEauthermo) + bonusCalcul.ecologique + maPrimeRenovSum
+        bonusCalcul.totalBonus= coupDePouceSm + bonusCalcul.ecologique + maPrimeRenovSum
 
-        $('#maPrimeRenov').text(maPrimeRenovSum +' €');
-        $('#coupDePouce').text((bonusCalcul.coupDePouce.pacAirEau + bonusCalcul.coupDePouce.chauffeEauthermo) +' €');     
-        $('#bonusEcologique').text(bonusCalcul.ecologique +' €');
-        $('#total_bonus').text(bonusCalcul.totalBonus +' €')
-        $('#bonusEcologique').text(bonusCalcul.ecologique +' €');
+        $('#maPrimeRenov').text(formatNumber.asEuro(maPrimeRenovSum).replace(",00", ""));
+        $('#coupDePouce').text(formatNumber.asEuro(coupDePouceSm).replace(",00", ""));     
+        $('#bonusEcologique').text(formatNumber.asEuro(bonusCalcul.ecologique).replace(",00", ""));
+        $('#total_bonus').text(formatNumber.asEuro(bonusCalcul.totalBonus).replace(",00", ""))
+        $('#bonusEcologique').text(formatNumber.asEuro(bonusCalcul.ecologique).replace(",00", ""));
 
     }
 
-    function getMaPrimeRenovBonus(couleur, bonusCalcul){
+    function getMaPrimeRenovBonus(couleur, bonusCalcul, couleurCDP){
       
         //bonus pac air-eau
         switch (couleur) {
@@ -1710,6 +1720,29 @@ jQuery(function($){
 
     }
 
+    function getCoupDePouceBonus(couleurCDP, bonusCalcul){
+
+        //bonus coup de pouce// //bonus chauffage
+        switch (couleurCDP) {
+          case 'bleu':
+            bonusCalcul.coupDePouce.pacAirEau =coupDePoucePompeBonus.bleu
+            bonusCalcul.coupDePouce.chauffeEauthermo =coupDePouceChauffageBonus.bleu
+            break;
+          case 'jaune':
+            bonusCalcul.coupDePouce.pacAirEau =coupDePoucePompeBonus.jaune
+            bonusCalcul.coupDePouce.chauffeEauthermo =coupDePouceChauffageBonus.jaune
+            break;
+          case 'violet':
+            bonusCalcul.coupDePouce.pacAirEau =coupDePoucePompeBonus.violet
+            bonusCalcul.coupDePouce.chauffeEauthermo =coupDePouceChauffageBonus.violet
+            break;
+          case 'none':
+            bonusCalcul.coupDePouce.pacAirEau=0
+            bonusCalcul.coupDePouce.chauffeEauthermo=0
+            break;
+        }
+        
+    }
     $('#piecesId').on('change', '.pompeAChaleurAirAirInput', function(e){
       $(this).next().text(getMatchedWhattNumber(parseInt($(this).val()))+ 'W')
     })

@@ -28,7 +28,7 @@
         function calculatePompeAChaleurAirEau(){
             $('.maskEverything').show()
             let finalResult=0;
-            if(!$('#source_energie_2_chauffage').is(':checked')){
+            if(!$('#source_energie_2_chauffage').is(':checked') && !$('#source_energie_5_chauffage').is(':checked')){
             $('.maskEverything').hide()
                 let volumeIsolationResult= formPageValues.gisolation * (formPageValues.surface_au_sol * formPageValues.hauteur_sous_plafond_m)
                 while (formPageValues.altitude> 200){
@@ -40,7 +40,6 @@
             
             document.getElementById('pompe_a_chaleur_air_eau_value').innerText=finalResult.toFixed(2) +'KW';
             formPageValues.pompe_a_chaleur_air_eau_value=finalResult.toFixed(2);
-
         }
 
         function getElevation(location) {
@@ -834,7 +833,7 @@
                                     </label>
                                     <label for="270l" style="color: white;" class="checkbox-label-white">
                                         <input type="checkbox" class="filled-in checkbox-white chk-moyenne-conso" id="270l" value="270L" name="moyenne_conso_sur_x_annee_check2" />
-                                        <span for="200l">270 L</span>
+                                        <span for="270l">270 L</span>
                                     </label>
                                 </span> 
 
