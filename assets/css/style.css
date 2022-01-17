@@ -594,7 +594,7 @@ main .modalContainer .step-13__content .step-1__img {
     margin-top: 3px;
     margin-bottom: 4px;
 }
-main .modalContainer .inputs .input-item{
+main .modalContainer .inputs .input-item, .step-10__content {
     text-align: center;
 }
 main .modalContainer .inputs .input-item label,  main .modalContainer .modal-content .counter__title{

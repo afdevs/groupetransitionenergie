@@ -1899,11 +1899,13 @@ jQuery(function($){
     })
 
     //GENERATING PDF CLICK EVENT
-    $('.generate_pdf_btn').click(function(){
-      let productValuesCleaned=formPageValues.produits_ajoutees.filter(el=>el!= undefined)
-      console.log(productValuesCleaned)
-      alert('Generating PDF')
-    })
+    // $('.generate_pdf_btn').click(function(){
+    //   let productValuesCleaned=formPageValues.produits_ajoutees.filter(el=>el!= undefined)
+      
+    //   alert('Generating PDF')
+      
+
+    // })
     
     //-----------------------------------------------------------------------------------------
     //Validation form
@@ -2027,27 +2029,196 @@ jQuery(function($){
       // Serialize the data in the form
       var serializedData = $form.serialize();
 
-      // Let's disable the inputs for the duration of the Ajax request.
-      // Note: we disable elements AFTER the form data has been serialized.
-      // Disabled form elements will not be serialized.
+      //les valeurs que j'ai pas pu les récupérer du form
+      serializedData += '&nombre_d_habitants=' + $("[name='nombre_d_habitants']").text().trim().trim();
+      serializedData += '&temperature_de_confort=' + $("[name='temperature_de_confort']").text().trim();
+      serializedData += '&type_d_occupation=' + $(".step-2__link.answer-selected :input[name='type_d_occupation']").val();
+      serializedData += '&forme_maison=' + $(".step-4__link.answer-selected :input[name='forme_maison']").val();
+      serializedData += '&nombre_de_niveau=' + $(".step-5__link.answer-selected :input[name='nombre_de_niveau']").val();
+      serializedData += '&type_de_sous_sol=' + $(".step-6__link.answer-selected :input[name='type_de_sous_sol']").val();
+      serializedData += '&type_de_mur=' + $(".step-6__link.answer-selected :input[name='type_de_mur']").val();
+      serializedData += '&type_de_comble=' + $(".step-7__link.answer-selected :input[name='type_de_comble']").val();
+      serializedData += '&type_de_ventilation=' + $(".step-9__link.answer-selected :input[name='type_de_ventilation']").val();
+      serializedData += '&type_de_vitrage=' + $(".step-10__link.answer-selected :input[name='type_de_vitrage']").val();
+      serializedData += '&source_chauffage=' + $(".step-11__link.answer-selected :input[name='source_energie']").val();
+      serializedData += '&typeChauffage=' + $(".step-11__link.answer-selected :input[name='type_de_chaufface']").val();
+      serializedData += '&AnneeInst=' + $("#annee_contruction_chauffage").val();
+      serializedData += '&annee_contruction=' + $("#annee_contruction").val();
+      serializedData += '&sourceEau=' + $(".step-12__link.answer-selected :input[name='source_energie_eau_chaude']").val();
+      serializedData += '&capStock=' + $(".step-12__link.answer-selected :input[name='capacite_de_stockage_eau_chaude']").val();
+      serializedData += '&utilisation=' + $(".step-12__link.answer-selected :input[name='utilisation_eau_chaude']").val();
+      serializedData += '&appElec=' + $(".step-13__link.answer-selected :input[name='utilisation_appareil_equip_electrique']").val();
+      serializedData += '&typeAmpoule=' + $(".step-14__link.answer-selected :input[name='type_d_ampoule_eclairage']").val();
+      serializedData += '&electUtil=' + $(".step-14__link.answer-selected :input[name='utilisation_moyenne_eclairage']").val();
+      serializedData += '&consoActGlob=' + $("#votre_conso_actuel").text().trim();
+      serializedData += '&consoXAn=' + $("#votre_conso_sur_x_annee").text().trim();
+      serializedData += '&moyenneConsoXan=' + $("#moyenne_conso_sur_x_annee").text().trim();
+      serializedData += '&statutMarital=' + $(".step-18__link.answer-selected :input[name='eligibilite_situation_matrimoniale']").val()
+      serializedData += '&nbEnfCharge=' + $("[name='eligibility_nbr_enfant_a_charge']").text().trim();
+      serializedData += '&revenus=' + $("#inputDernierRevenuFiscalRef").val();
+      serializedData += '&primeRenov=' + $("#maPrimeRenov").text().trim();
+      serializedData += '&coupDePouce=' + $("#coupDePouce").text().trim();
+      serializedData += '&bonusEco=' + $("#bonusEcologique").text().trim();
+      serializedData += '&aidesCumul=' + $("#total_bonus").text().trim();
+      serializedData += '&chauffagePrix=' + $("#consumpt-val1").text().trim();
+      serializedData += '&eauPrix=' + $("#consumpt-val2").text().trim();
+      serializedData += '&appPrix=' + $("#consumpt-val3").text().trim();
+      serializedData += '&elecPrix=' + $("#consumpt-val4").text().trim();
+      serializedData += '&nbAnnee=' + $("#type_de_chaufface_nombre_d_annee_a_indexer").val();
+      //solution eau
+      serializedData += '&solutionEau='
+      var $eau = $(".chk-moyenne-conso:checked");
+      if ($eau.length > 0) { serializedData += $eau.val() } else { serializedData += "Non défini"; }
+
+      //donnes du pompe à chaleur air eau
+      serializedData += '&pompeKWA=';
+      $valKwa = $("#pompe_a_chaleur_air_eau_value").text().trim();
+      if ($valKwa != "0.00KW") { serializedData += $valKwa; } else { serializedData += "Non défini"; }
+      //donnes pompe à chaleur air air
+      serializedData += '&nbUnit=' + $("[name='pompe_a_chaleur_air_air_nombre_unite']").text();
+      var pieces = []
+      $(".pieces__item").each(function () {
+          var str = ""
+          str += $(this).children(".pompeAChaleurAirAir").text().replace("N°", "").trim() + " : "
+              + $(this).children(".bottom_part").children(".pompeAChaleurAirAirInput").val() + " M² : "
+              + $(this).children(".bottom_part").children(".pieces__value").text()
+          pieces.push(str);
+          console.log(pieces);
+      });
+      var champ1 = "", champ2 = ""
+      for (var i = 0; i < pieces.length; i++) {
+          if (i < 5) {
+              champ1 += pieces[i] + "\n";
+          }
+          else if (i < 10) {
+              champ2 += pieces[i] + "\n";
+          }
+      }
+      serializedData += '&champ1=' + champ1;
+      serializedData += '&champ2=' + champ2;
+
+      //les produits selectionnées
+      var items = $(".pompes__btn.unset").parents(".pompes__item");
+      var columns = ["TYPE", "MODÈLE", "CARACTÉRISTIQUES", "vide"];
+      var rows = [];
+      items.each(function () {
+          var type = $(this).children(".pompes__center").children(".pompes__category").text().trim()
+          var model = $(this).children(".pompes__center").children(".pompes__title").text().trim()
+          var cara = ""
+          var nbelem = $(this).children(".pompes__center").children(".pompes__advantages").children().length
+          var i = 1;
+          $(this).children(".pompes__center").children(".pompes__advantages").children().each(function () {
+              cara += $(this).text().trim()
+              if (i != nbelem) { cara += "\n" }
+              i = i + 1;
+          });
+          rows.push([type, model, cara, "vide"]);
+      });
+
+      //cerifier si on a choisi des produits
+      // si on a pas choisi on affiche pas la page dans le pdf
+      var addProducts = rows.length;
+
+      //pour avoir acces à info dans les documents
+      serializedData += '&addProducts=' + addProducts;
+
+      var addSolutions = 0;
+      if (pieces.length > 0 || $valKwa != "0.00KW" || $(".chk-moyenne-conso:checked").length > 0) {
+          addSolutions = 1;
+      }
+      serializedData += '&addSolutions=' + addSolutions;
+
+      //ajout de la page des produits selectionnés
+      if (addProducts) {
+          var doc = new jsPDF();
+
+          //fct de genration du pdf
+          var generatePDFWithHeader = function (url, callback) {
+              var img = new Image();
+
+              img.onError = function () {
+                  alert('Cannot load image: "' + url + '"');
+              };
+              img.onload = function () {
+                  callback(img);
+              };
+              img.src = url;
+          }
+
+          //ajout de header
+          var addImage = function (imgData) {
+              doc.addImage(imgData, 'JPG', 15, 10, 180, 40, 'headerPDF');
+
+              //generation de la table
+              doc.autoTable({
+                  head: [columns],
+                  body: rows,
+                  startY: 50,
+                  styles: {
+                      theme: 'striped',
+                      tableWidth: 'auto',
+                      bodyStyles: { valign: 'top' },
+                      styles: { overflow: 'linebreak', cellWidth: 'wrap' },
+                      // columnStyles: { text: { cellWidth: 'auto' } },
+                      margin: {
+                          top: 10,
+                          bottom: 10,
+                          left: 10,
+                          right: 10
+                      }
+                  },
+                  headStyles: {
+                      fillColor: "#5bb6aa",
+                  },
+              });
+
+              var blob = doc.output('blob');
+              var formData = new FormData();
+              formData.append('pdf', blob);
+
+              //ajout de fichier de produits
+              $.ajax('./upload.php',
+                  {
+                      method: 'POST',
+                      data: formData,
+                      processData: false,
+                      contentType: false,
+                      success: function (data) { console.log(data) },
+                      error: function (data) { console.log(data) }
+                  });
+          }
+          //appel à la fonction
+          generatePDFWithHeader('headerPDF.jpg', addImage);
+      }
+
+      //remplissage du formulaire
       $inputs.prop("disabled", true);
-        request = $.ajax({
-          url: "mail.php",
+      request = $.ajax({
+          url: "generate.php",
           type: "post",
           data: serializedData
       });
 
       // Callback handler that will be called on success
-      request.done(function (response, textStatus, jqXHR){
+      request.done(function (response, textStatus, jqXHR) {
           // Log a message to the console
-          console.log("Mail sent", response);
+          console.log("Document done", response);
+          var win = window.open('./completed/recapitulatif.pdf', '_blank');
+          console.log(win);
+          if (win) {
+              //Browser has allowed it to be opened
+              win.focus();
+          } else {
+              //Browser has blocked it
+              alert('Please allow popups for this website');
+          }
       });
 
       // Callback handler that will be called on failure
-      request.fail(function (jqXHR, textStatus, errorThrown){
+      request.fail(function (jqXHR, textStatus, errorThrown) {
           // Log the error to the console
           console.error(
-              "The following error occurred: "+
+              "The following error occurred: " +
               textStatus, errorThrown
           );
       });

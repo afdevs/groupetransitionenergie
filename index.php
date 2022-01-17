@@ -11,6 +11,10 @@
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1EXRWkpnVufW7zY3VUrTjaJiz4Lmj5wU&libraries=places&callback=initMap">
     </script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.1.4/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+        
     <script async>
         function getAbsoluteDelta(){
             if(isNaN(formPageValues.departement_address)) return 0;
@@ -1562,7 +1566,7 @@
                             </div>
                         </div>
                         <div class="generate_pdf_container">
-                            <button class="generate_pdf_btn" type="button">
+                            <button class="generate_pdf_btn" type="submit" >
                                 GENERER MON PDF
                             </button>
                         </div>
