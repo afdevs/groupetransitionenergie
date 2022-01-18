@@ -1563,7 +1563,7 @@
                                 <div class="total__value" id="total_bonus">
                                     0 €
                                 </div>
-                            </div>
+                            </div>  
                         </div>
                         <div class="generate_pdf_container">
                             <button class="generate_pdf_btn" type="submit" >

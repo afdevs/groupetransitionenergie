@@ -1612,16 +1612,6 @@ jQuery(function($){
             }
           })
           if(dernierRevenuFisc>0){
-            if(dernierRevenuFisc <=plafondRessourceHorsIleFrance.bleu[nbrFoyerFiscialeIndex]){
-              couleur='bleu';
-            }else if(dernierRevenuFisc <=plafondRessourceHorsIleFrance.jaune[nbrFoyerFiscialeIndex]){
-              couleur='jaune'
-            }else if(dernierRevenuFisc <=plafondRessourceHorsIleFrance.violet[nbrFoyerFiscialeIndex]){
-              couleur='violet'
-            }else{
-              couleur= 'none';
-            }
-  
             // Couleur coup de pouce hors ile de france
             if(dernierRevenuFisc <= coupDePouceHorsIleFrance.bleu[nbrFoyerFiscialeIndex]){
               couleurCDP='bleu';
@@ -1630,16 +1620,35 @@ jQuery(function($){
             }else{
               couleurCDP='violet';
             }
-            // else if(dernierRevenuFisc <=coupDePouceHorsIleFrance.violet[nbrFoyerFiscialeIndex]){
-            //   couleurCDP='violet';
-            // }else{
-            //   couleurCDP= 'none';
-            // }
           }
   
       }
         
+    }else{
+      if(bonusCalcul.dansIleDeFrance){
+        plafondRessourceEnIleFrance.foyerFiscale.map((el, index)=>{
+          if(el===formPageValues.nombre_d_habitants){
+            nbrFoyerFisciale=el;
+            nbrFoyerFiscialeIndex=index;
+          }
+        });
+        
+        if(dernierRevenuFisc>0){      
+          // Couleur coup de pouce en ile de france
+          if(dernierRevenuFisc <= coupDePouceEnIleFrance.bleu[nbrFoyerFiscialeIndex]){
+            couleurCDP='bleu';
+          }else if(dernierRevenuFisc <=coupDePouceEnIleFrance.jaune[nbrFoyerFiscialeIndex]){
+            couleurCDP='jaune';
+          }else {
+            couleurCDP='violet';
+          }
+          
+        }
+      }else{
+
       }
+
+    }
         
       if($('#source_energie_3_chauffage').is(':checked')){
         if(anneeConstruction > 15){
