@@ -801,7 +801,21 @@
 
                                 <img src="./assets/images/check_icon.svg" alt="" class="image-checkbox_" style="top: 40px;left: 11px;">
                             </label>
-                        </div>                    
+                        </div>                   
+                        
+                        <div class="inputs">
+                            <div class="input-item">
+                                <label for="inputEvol25Annee">Évolution du <span>prix du fioul </span> <!--sur les 25 prochaines années (%)--> </label>
+                                <div class="input-item-range">
+                                    <span class="rangeMin"> 0%</span>
+                                        <p class="range-field">
+                                            <input type="range" id="inputEvol25Annee" name="evoluion_sur_les_23_prochaine_annees" min="0" max="7" />
+                                        </p>
+                                    <span class="rangeMax">7%</span>
+                                </div>
+                            </div>
+                        </div>
+ 
                     </fieldset>
                     
                     <fieldset class="step-16">
@@ -1873,19 +1887,6 @@
                             </div>
                         </div>
                         
-                        <div class="inputs">
-                            <div class="input-item">
-                                <label for="inputEvol25Annee">Évolution du <span>prix du fioul </span> <!--sur les 25 prochaines années (%)--> </label>
-                                <div class="input-item-range">
-                                    <span class="rangeMin"> 0%</span>
-                                        <p class="range-field">
-                                            <input type="range" id="inputEvol25Annee" name="evoluion_sur_les_23_prochaine_annees" min="0" max="7" />
-                                        </p>
-                                    <span class="rangeMax">7%</span>
-                                </div>
-                            </div>
-                        </div>
-
                     </fieldset>
                 </div>
                 <div class="modal-footer">

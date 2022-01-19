@@ -594,14 +594,14 @@ main .modalContainer .step-13__content .step-1__img {
     margin-top: 3px;
     margin-bottom: 4px;
 }
-main .modalContainer .inputs .input-item, .step-10__content {
+main .modalContainer .inputs .input-item, .step-10__content, .step-11  .inputs .input-item{
     text-align: center;
 }
-main .modalContainer .inputs .input-item label,  main .modalContainer .modal-content .counter__title{
+main .modalContainer .inputs .input-item label,  main .modalContainer .modal-content .counter__title, .step-11  .inputs .input-item label{
     margin: 25px 0!important;
     display: block
 }
-main .modalContainer .inputs .input-item input[type=number], main .modalContainer .inputs .input-item input[type=text]{
+main .modalContainer .inputs .input-item input[type=number], main .modalContainer .inputs .input-item input[type=text], .step-11 .inputs .input-item input[type=text]{
     max-width: 65%!important;
     display: block!important;
     margin: 16px auto!important;
@@ -610,7 +610,7 @@ main .modalContainer .inputs .input-item input[type=number], main .modalContaine
 main .modalContainer .modal-content .counter{
     text-align: center;
 }
-main .modalContainer .modal-content .inputs .input-item .input-item-range{
+main .modalContainer .modal-content .inputs .input-item .input-item-range, .step-11 .inputs .input-item .input-item-range{
     display: flex;
     max-width: 60%;
     justify-content: revert;
@@ -620,13 +620,16 @@ main .modalContainer .modal-content .inputs .input-item .input-item-range{
     justify-content: center;
     align-items: center;    
 }
-main .modalContainer .modal-content .inputs .input-item .rangeMin, main .modalContainer .modal-content .inputs .input-item .rangeMax{
+main .modalContainer .modal-content .inputs .input-item .rangeMin, main .modalContainer .modal-content .inputs .input-item .rangeMax, .step-11  .inputs .input-item .rangeMax, .step-11  .inputs .input-item .rangeMin {
     transform: translateY(-3px);
 }
-main .modalContainer .modal-content .inputs .input-item .range-field{
+main .modalContainer .modal-content .inputs .input-item .range-field {
     width: 85%;
     margin-right: auto;
     margin-left: auto;
+}
+.step-11  .inputs .input-item .range-field{
+    width: 100%;
 }
 main .modalContainer .select-wrapper .dropdown-content li{
     text-align: center!important;

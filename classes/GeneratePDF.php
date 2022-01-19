@@ -50,7 +50,7 @@ class GeneratePDF{
                             ->cat(1,'end', 'B')
                             ->cat($page+1, 'end', 'A')
                             ->saveAs($fileoutput);
-                      unlink($fileproducts);
+                  //     unlink($fileproducts);
                 }
                 //->send( $filename . '.pdf');
                 return $filename;

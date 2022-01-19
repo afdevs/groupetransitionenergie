@@ -2048,11 +2048,11 @@ jQuery(function($){
       serializedData += '&type_de_mur=' + $(".step-6__link.answer-selected :input[name='type_de_mur']").val();
       serializedData += '&type_de_comble=' + $(".step-7__link.answer-selected :input[name='type_de_comble']").val();
       serializedData += '&type_de_ventilation=' + $(".step-9__link.answer-selected :input[name='type_de_ventilation']").val();
-      serializedData += '&type_de_vitrage=' + $(".step-10__link.answer-selected :input[name='type_de_vitrage']").val();
+      serializedData += '&type_de_vitrage=' + $("input[name='type_de_vitrage']").val();
       serializedData += '&source_chauffage=' + $(".step-11__link.answer-selected :input[name='source_energie']").val();
       serializedData += '&typeChauffage=' + $(".step-11__link.answer-selected :input[name='type_de_chaufface']").val();
       serializedData += '&AnneeInst=' + $("#annee_contruction_chauffage").val();
-      serializedData += '&annee_contruction=' + $("#annee_contruction").val();
+      serializedData += '&annee_contruction=' + $("select[ name='annee_contruction']").val();
       serializedData += '&sourceEau=' + $(".step-12__link.answer-selected :input[name='source_energie_eau_chaude']").val();
       serializedData += '&capStock=' + $(".step-12__link.answer-selected :input[name='capacite_de_stockage_eau_chaude']").val();
       serializedData += '&utilisation=' + $(".step-12__link.answer-selected :input[name='utilisation_eau_chaude']").val();
@@ -2073,7 +2073,7 @@ jQuery(function($){
       serializedData += '&eauPrix=' + $("#consumpt-val2").text().trim();
       serializedData += '&appPrix=' + $("#consumpt-val3").text().trim();
       serializedData += '&elecPrix=' + $("#consumpt-val4").text().trim();
-      serializedData += '&nbAnnee=' + $("#type_de_chaufface_nombre_d_annee_a_indexer").val();
+      serializedData += '&nbAnnee=' + $("select[name='type_de_chaufface_nombre_d_annee_a_indexer']").val();
       //solution eau
       serializedData += '&solutionEau='
       var $eau = $(".chk-moyenne-conso:checked");
@@ -2109,20 +2109,29 @@ jQuery(function($){
       //les produits selectionnées
       var items = $(".pompes__btn.unset").parents(".pompes__item");
       var columns = ["TYPE", "MODÈLE", "CARACTÉRISTIQUES", "vide"];
+      let productValuesCleaned=formPageValues.produits_ajoutees.filter(el=>el!= undefined)
       var rows = [];
-      items.each(function () {
-          var type = $(this).children(".pompes__center").children(".pompes__category").text().trim()
-          var model = $(this).children(".pompes__center").children(".pompes__title").text().trim()
-          var cara = ""
-          var nbelem = $(this).children(".pompes__center").children(".pompes__advantages").children().length
-          var i = 1;
-          $(this).children(".pompes__center").children(".pompes__advantages").children().each(function () {
-              cara += $(this).text().trim()
-              if (i != nbelem) { cara += "\n" }
-              i = i + 1;
-          });
-          rows.push([type, model, cara, "vide"]);
-      });
+      productValuesCleaned.forEach(el=>{
+        var type = el.categorie
+        var model = el.title
+        var cara = el.avantage.join(', ')
+        
+        rows.push([type, model, cara, "vide"]);
+      })
+      
+      // items.each(function () {
+      //     var type = $(this).children(".pompes__center").children(".pompes__category").text().trim()
+      //     var model = $(this).children(".pompes__center").children(".pompes__title").text().trim()
+      //     var cara = ""
+      //     var nbelem = $(this).children(".pompes__center").children(".pompes__advantages").children().length
+      //     var i = 1;
+      //     $(this).children(".pompes__center").children(".pompes__advantages").children().each(function () {
+      //         cara += $(this).text().trim()
+      //         if (i != nbelem) { cara += "\n" }
+      //         i = i + 1;
+      //     });
+      //     rows.push([type, model, cara, "vide"]);
+      // });
 
       //cerifier si on a choisi des produits
       // si on a pas choisi on affiche pas la page dans le pdf
@@ -2136,7 +2145,6 @@ jQuery(function($){
           addSolutions = 1;
       }
       serializedData += '&addSolutions=' + addSolutions;
-
       //ajout de la page des produits selectionnés
       if (addProducts) {
           var doc = new jsPDF();
@@ -2182,9 +2190,10 @@ jQuery(function($){
               });
 
               var blob = doc.output('blob');
+              
               var formData = new FormData();
               formData.append('pdf', blob);
-
+              console.log(blob);
               //ajout de fichier de produits
               $.ajax('./upload.php',
                   {
@@ -2213,7 +2222,6 @@ jQuery(function($){
           // Log a message to the console
           console.log("Document done", response);
           var win = window.open('./completed/recapitulatif.pdf', '_blank');
-          console.log(win);
           if (win) {
               //Browser has allowed it to be opened
               win.focus();
