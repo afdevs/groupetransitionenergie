@@ -1576,7 +1576,8 @@ jQuery(function($){
             }
           });
           
-          if(dernierRevenuFisc>0){          
+          if(dernierRevenuFisc>0){    
+            // Couleur ma prime renov en ile de france      
             if(dernierRevenuFisc <= plafondRessourceEnIleFrance.bleu[nbrFoyerFiscialeIndex]){
               couleur='bleu';
             }else if(dernierRevenuFisc <=plafondRessourceEnIleFrance.jaune[nbrFoyerFiscialeIndex]){
@@ -1611,7 +1612,19 @@ jQuery(function($){
               nbrFoyerFiscialeIndex=index;
             }
           })
+
           if(dernierRevenuFisc>0){
+             // Couleur ma prime renov en ile de france      
+            if(dernierRevenuFisc <= plafondRessourceHorsIleFrance.bleu[nbrFoyerFiscialeIndex]){
+              couleur='bleu';
+            }else if(dernierRevenuFisc <=plafondRessourceHorsIleFrance.jaune[nbrFoyerFiscialeIndex]){
+              couleur='jaune';
+            }else if(dernierRevenuFisc <=plafondRessourceHorsIleFrance.violet[nbrFoyerFiscialeIndex]){
+              couleur='violet';
+            }else{
+              couleur= 'none';
+            }
+
             // Couleur coup de pouce hors ile de france
             if(dernierRevenuFisc <= coupDePouceHorsIleFrance.bleu[nbrFoyerFiscialeIndex]){
               couleurCDP='bleu';
@@ -1641,11 +1654,26 @@ jQuery(function($){
             couleurCDP='jaune';
           }else {
             couleurCDP='violet';
-          }
-          
+          }          
         }
       }else{
-
+        plafondRessourceHorsIleFrance.foyerFiscale.map((el, index)=>{
+          if(el===formPageValues.nombre_d_habitants){
+            nbrFoyerFisciale=el;
+            nbrFoyerFiscialeIndex=index;
+          }
+        })
+        
+        if(dernierRevenuFisc>0){     
+            // Couleur coup de pouce hors ile de france
+            if(dernierRevenuFisc <= coupDePouceHorsIleFrance.bleu[nbrFoyerFiscialeIndex]){
+              couleurCDP='bleu';
+            }else if(dernierRevenuFisc <=coupDePouceHorsIleFrance.jaune[nbrFoyerFiscialeIndex]){
+              couleurCDP='jaune';
+            }else{
+              couleurCDP='violet';
+            }
+        }
       }
 
     }
@@ -1664,12 +1692,14 @@ jQuery(function($){
         bonusCalcul.ecologique=parseFloat($('#inputBonusEcologique').val());
         let maPrimeRenovSum=0
         let coupDePouceSm=0;
+        
         if($('#270l').is(':checked') || $('#200l').is(':checked')){
           bonusCalcul.totalBonus +=bonusCalcul.maprimenov.chauffeEauthermo;
           maPrimeRenovSum +=bonusCalcul.maprimenov.chauffeEauthermo;
 
           coupDePouceSm +=bonusCalcul.coupDePouce.chauffeEauthermo
         }
+
         /* !$('#source_energie_2_chauffage').is(':checked') */
         if(formPageValues.pompe_a_chaleur_air_eau_value!=0){
           bonusCalcul.totalBonus=bonusCalcul.maprimenov.pacAirEau;
@@ -1677,6 +1707,7 @@ jQuery(function($){
           
           coupDePouceSm +=bonusCalcul.coupDePouce.pacAirEau;
         }
+
         // bonusCalcul.totalBonus=(bonusCalcul.maprimenov.pacAirEau + bonusCalcul.maprimenov.chauffeEauthermo) + bonusCalcul.coupDePouce + bonusCalcul.ecologique
         if($('#type_de_chaufface_chaudiere_gaz_natur_condensa').is(':checked')){
           bonusCalcul.coupDePouce.pacAirEau=0
@@ -1693,7 +1724,7 @@ jQuery(function($){
 
     }
 
-    function getMaPrimeRenovBonus(couleur, bonusCalcul, couleurCDP){
+    function getMaPrimeRenovBonus(couleur, bonusCalcul){
       
         //bonus pac air-eau
         switch (couleur) {
@@ -2073,7 +2104,8 @@ jQuery(function($){
       serializedData += '&eauPrix=' + $("#consumpt-val2").text().trim();
       serializedData += '&appPrix=' + $("#consumpt-val3").text().trim();
       serializedData += '&elecPrix=' + $("#consumpt-val4").text().trim();
-      serializedData += '&nbAnnee=' + $("select[name='type_de_chaufface_nombre_d_annee_a_indexer']").val();
+      console.log( $("select[name='type_de_chaufface_nombre_d_annee_a_indexer']").val());
+      serializedData += '&NbAnnee3=' + $("select[name='type_de_chaufface_nombre_d_annee_a_indexer']").val();
       //solution eau
       serializedData += '&solutionEau='
       var $eau = $(".chk-moyenne-conso:checked");
