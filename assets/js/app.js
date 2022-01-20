@@ -2108,7 +2108,7 @@ jQuery(function($){
 
       //les produits selectionnées
       var items = $(".pompes__btn.unset").parents(".pompes__item");
-      var columns = ["TYPE", "MODÈLE", "CARACTÉRISTIQUES", "vide"];
+      var columns = ["TYPE", "MODÈLE", "CARACTÉRISTIQUES"]//, "vide"];
       let productValuesCleaned=formPageValues.produits_ajoutees.filter(el=>el!= undefined)
       var rows = [];
       productValuesCleaned.forEach(el=>{
@@ -2116,7 +2116,7 @@ jQuery(function($){
         var model = el.title
         var cara = el.avantage.join(', ')
         
-        rows.push([type, model, cara, "vide"]);
+        rows.push([type, model, cara])//, "vide"]);
       })
       
       // items.each(function () {

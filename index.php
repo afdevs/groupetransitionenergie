@@ -805,6 +805,20 @@
                         
                         <div class="inputs">
                             <div class="input-item">
+                                <label for="type_de_chaufface_nombre_d_annee_a_indexer">Nombre d'année à indexer</label>
+                                <select name="type_de_chaufface_nombre_d_annee_a_indexer" id="">
+                                    <option disabled selected>Choisir</option>
+                                    <option value="05">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="inputs">
+                            <div class="input-item">
                                 <label for="inputEvol25Annee">Évolution du <span>prix du fioul </span> <!--sur les 25 prochaines années (%)--> </label>
                                 <div class="input-item-range">
                                     <span class="rangeMin"> 0%</span>
@@ -1865,19 +1879,6 @@
                             </div>  
                         </div>
                             
-                        <div class="inputs">
-                            <div class="input-item">
-                                <label for="type_de_chaufface_nombre_d_annee_a_indexer">Nombre d'année à indexer</label>
-                                <select name="type_de_chaufface_nombre_d_annee_a_indexer" id="">
-                                    <option disabled selected>Choisir</option>
-                                    <option value="05">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                    <option value="20">20</option>
-                                    <option value="25">25</option>
-                                </select>
-                            </div>
-                        </div>
 
                         <div class="inputs">    
                             <div class="input-item">
