@@ -2189,11 +2189,11 @@ jQuery(function($){
                   },
               });
 
+              // doc.save('/completed/produits_selected.pdf')
               var blob = doc.output('blob');
               
               var formData = new FormData();
               formData.append('pdf', blob);
-              console.log(blob);
               //ajout de fichier de produits
               $.ajax('./upload.php',
                   {
