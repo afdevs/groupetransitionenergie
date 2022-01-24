@@ -281,6 +281,7 @@ var formPageValues={
     consommation_annuelle_bois: 0,
     consommation_annuelle_autre:0,
     pompe_a_chaleur_air_air_nombre_unite: 0,
+    evol_sur_25_annee: 4,
     votre_conso_actuel: 0,
     votre_conso_sur_x_annee: 0,
     moyenne_conso_sur_x_annee: 0,
@@ -374,7 +375,7 @@ jQuery(function($){
         }
       });
 
-
+      // updatThumbEvolValue();
 
     function AnimateRotate(el, angle) {
       // caching the object for performance reasons
@@ -683,7 +684,7 @@ jQuery(function($){
             
             if (current >=1 && current<11){ 
               $('.page .previous').css('visibility', 'visible');
-            }else if(current >16){
+            }else if(current >15){
               $('.page .previous').css('visibility', 'visible');
             }else{
                 $('.page .previous').css('visibility', 'hidden');
@@ -771,7 +772,7 @@ jQuery(function($){
         
         if (current >=1 && current<11){ 
           $('.page .previous').css('visibility', 'visible');
-        }else if(current >16){
+        } else if(current >15){
           $('.page .previous').css('visibility', 'visible');
         }else{
             $('.page .previous').css('visibility', 'hidden');
@@ -824,7 +825,7 @@ jQuery(function($){
             
             if (current >=1 && current<11){ 
               $('.page .previous').css('visibility', 'visible');
-            }else if(current >16){
+            }else if(current >15){
               $('.page .previous').css('visibility', 'visible');
             }else{
                 $('.page .previous').css('visibility', 'hidden');
@@ -869,7 +870,7 @@ jQuery(function($){
             
             if (current >=1 && current<11){ 
               $('.page .previous').css('visibility', 'visible');
-            }else if(current >16){
+            }else if(current >15){
               $('.page .previous').css('visibility', 'visible');
             }else{
                 $('.page .previous').css('visibility', 'hidden');
@@ -913,7 +914,7 @@ jQuery(function($){
             
             if (current >=1 && current<11){ 
               $('.page .previous').css('visibility', 'visible');
-            }else if(current >16){
+            }else if(current >15){
               $('.page .previous').css('visibility', 'visible');
             }else{
                 $('.page .previous').css('visibility', 'hidden');
@@ -957,7 +958,7 @@ jQuery(function($){
           
           if (current >=1 && current<11){ 
             $('.page .previous').css('visibility', 'visible');
-          }else if(current >16){
+          }else if(current >15){
             $('.page .previous').css('visibility', 'visible');
           }else{
               $('.page .previous').css('visibility', 'hidden');
@@ -1001,7 +1002,7 @@ jQuery(function($){
           
           if (current >=1 && current<11){ 
             $('.page .previous').css('visibility', 'visible');
-          }else if(current >16){
+          }else if(current >15){
             $('.page .previous').css('visibility', 'visible');
           }else{
               $('.page .previous').css('visibility', 'hidden');
@@ -1046,7 +1047,7 @@ jQuery(function($){
           
           if (current >=1 && current<11){ 
             $('.page .previous').css('visibility', 'visible');
-          }else if(current >16){
+          }else if(current >15){
             $('.page .previous').css('visibility', 'visible');
           }else{
               $('.page .previous').css('visibility', 'hidden');
@@ -1092,7 +1093,7 @@ jQuery(function($){
           
           if (current >=1 && current<11){ 
             $('.page .previous').css('visibility', 'visible');
-          }else if(current >16){
+          }else if(current >15){
             $('.page .previous').css('visibility', 'visible');
           }else{
               $('.page .previous').css('visibility', 'hidden');
@@ -1424,8 +1425,7 @@ jQuery(function($){
     }
 
     //CHECKBOX
-    $(".chk-moyenne-conso").change(function() {
-      
+    $(".chk-moyenne-conso").change(function() {      
       // if($(this).is(':checked')){
       //   $(this).prop('checked', false);
       // }else{
@@ -1522,11 +1522,31 @@ jQuery(function($){
         consommationGlobal();
     })
 
-    $('#inputEvol25Annee').change(function(){
+    updatThumbEvolValue();
+
+    $('#inputEvol25Annee').change(function(e){
+      e.preventDefault();
+      formPageValues.evol_sur_25_annee=$(this).val();
       formPageValues.votre_conso_actuel= parseFloat($('#inputEstimFactChauff').val()||0);
-      consommationGlobal()
+      consommationGlobal();
+      updatThumbEvolValue();
+      return
     });
-    
+
+    $('#inputEvol25Annee').mouseup(function(){
+        $($('#inputEvol25Annee + span.thumb')).addClass('active-thumb')
+        $($('#inputEvol25Annee + span.thumb')).css('left', (80.3786 * parseInt($(this).val())))
+      updatThumbEvolValue();
+    });
+
+    $('#inputEvol25Annee').mouseleave(function(){
+      console.log('blur')
+      $($('#inputEvol25Annee + span.thumb')).addClass('active-thumb')
+      $($('#inputEvol25Annee + span.thumb')).css('left', (80.3786 * parseInt($(this).val())));
+    });
+    function updatThumbEvolValue(){
+      $('#inputEvol25Annee + span.thumb').text(formPageValues.evol_sur_25_annee)
+    }
     $('#inputDernierRevenuFiscalRef').change(function(){
       calculBonus();
     })
@@ -2068,7 +2088,7 @@ jQuery(function($){
       
       // Serialize the data in the form
       var serializedData = $form.serialize();
-
+      console.log($(".step-8__link.answer-selected input[name='type_de_vitrage']").val())
       //les valeurs que j'ai pas pu les récupérer du form
       serializedData += '&nombre_d_habitants=' + $("[name='nombre_d_habitants']").text().trim().trim();
       serializedData += '&temperature_de_confort=' + $("[name='temperature_de_confort']").text().trim();
@@ -2079,10 +2099,10 @@ jQuery(function($){
       serializedData += '&type_de_mur=' + $(".step-6__link.answer-selected :input[name='type_de_mur']").val();
       serializedData += '&type_de_comble=' + $(".step-7__link.answer-selected :input[name='type_de_comble']").val();
       serializedData += '&type_de_ventilation=' + $(".step-9__link.answer-selected :input[name='type_de_ventilation']").val();
-      serializedData += '&type_de_vitrage=' + $("input[name='type_de_vitrage']").val();
+      serializedData += '&type_de_vitrage=' + $(".step-8__link.answer-selected input[name='type_de_vitrage']").val();
       serializedData += '&source_chauffage=' + $(".step-11__link.answer-selected :input[name='source_energie']").val();
       serializedData += '&typeChauffage=' + $(".step-11__link.answer-selected :input[name='type_de_chaufface']").val();
-      serializedData += '&AnneeInst=' + $("#annee_contruction_chauffage").val();
+      serializedData += '&AnneeInst=' + $("select[name='annee_contruction_chauffage']").val();
       serializedData += '&annee_contruction=' + $("select[ name='annee_contruction']").val();
       serializedData += '&sourceEau=' + $(".step-12__link.answer-selected :input[name='source_energie_eau_chaude']").val();
       serializedData += '&capStock=' + $(".step-12__link.answer-selected :input[name='capacite_de_stockage_eau_chaude']").val();
@@ -2090,9 +2110,9 @@ jQuery(function($){
       serializedData += '&appElec=' + $(".step-13__link.answer-selected :input[name='utilisation_appareil_equip_electrique']").val();
       serializedData += '&typeAmpoule=' + $(".step-14__link.answer-selected :input[name='type_d_ampoule_eclairage']").val();
       serializedData += '&electUtil=' + $(".step-14__link.answer-selected :input[name='utilisation_moyenne_eclairage']").val();
-      serializedData += '&consoActGlob=' + $("#votre_conso_actuel").text().trim();
-      serializedData += '&consoXAn=' + $("#votre_conso_sur_x_annee").text().trim();
-      serializedData += '&moyenneConsoXan=' + $("#moyenne_conso_sur_x_annee").text().trim();
+      serializedData += '&consoActGlob=' + formPageValues.votre_conso_actuel;
+      serializedData += '&consoXAn=' + formPageValues.votre_conso_sur_x_annee;
+      serializedData += '&moyenneConsoXan=' + formPageValues.moyenne_conso_sur_x_annee
       serializedData += '&statutMarital=' + $(".step-18__link.answer-selected :input[name='eligibilite_situation_matrimoniale']").val()
       serializedData += '&nbEnfCharge=' + $("[name='eligibility_nbr_enfant_a_charge']").text().trim();
       serializedData += '&revenus=' + $("#inputDernierRevenuFiscalRef").val();
@@ -2104,7 +2124,6 @@ jQuery(function($){
       serializedData += '&eauPrix=' + $("#consumpt-val2").text().trim();
       serializedData += '&appPrix=' + $("#consumpt-val3").text().trim();
       serializedData += '&elecPrix=' + $("#consumpt-val4").text().trim();
-      console.log( $("select[name='type_de_chaufface_nombre_d_annee_a_indexer']").val());
       serializedData += '&NbAnnee3=' + $("select[name='type_de_chaufface_nombre_d_annee_a_indexer']").val();
       //solution eau
       serializedData += '&solutionEau='

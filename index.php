@@ -286,7 +286,7 @@
                         <h2>Type d’occupation</h2>
                         <div class="step-2__content">
                             <div class="step-2__content optionWithImages">
-                                <label for="type_occupation_1" class="select-item btn step-2__link image image4">
+                                <label for="type_occupation_1" class="select-item btn step-2__link image image4 columnStyleInput">
                                     <input type="radio" name="type_d_occupation" id="type_occupation_1" value="Propriétaire occupant">
                                     <span class="img-wrapper">
                                         <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_Proprietaire-occupant.svg" alt="Photo - Carrée/rectangulaire">
@@ -295,7 +295,7 @@
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
 
-                                <label for="type_occupation_2" class="select-item btn step-2__link image image4">
+                                <label for="type_occupation_2" class="select-item btn step-2__link image image4 columnStyleInput">
                                     <input type="radio" name="type_d_occupation" id="type_occupation_2" value="
                                     Résidence secondaire">
                                     <span class="img-wrapper">
@@ -305,7 +305,7 @@
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
 
-                                <label for="type_occupation_3" class="select-item btn step-2__link image image4">
+                                <label for="type_occupation_3" class="select-item btn step-2__link image image4 columnStyleInput">
                                     <input type="radio" name="type_d_occupation" id="type_occupation_3" value="Propriétaire bailleur">
                                     <span class="img-wrapper">
                                         <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_proprietaire-bailleur.svg" alt="Photo - Propriétaire bailleur">
@@ -314,7 +314,7 @@
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
 
-                                <label for="type_occupation_4" class="select-item btn step-2__link image image4">
+                                <label for="type_occupation_4" class="select-item btn step-2__link image image4 columnStyleInput">
                                     <input type="radio" name="type_d_occupation" id="type_occupation_4" value="Locataire">
                                     <span class="img-wrapper">
                                         <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_Locataire.svg" alt="Photo - Locataire">
@@ -414,7 +414,7 @@
                                 </div>
                             </div>
                             
-                            <h2>Type d’installation électrique :</h2>
+                            <h2 style="margin-top: 40px;margin-top: 30px;">Type d’installation électrique</h2>
                             <div class="noImageSelection">
                                 <label for="type_installation_electrique_1" class="select-item btn step-3__link no-image monophase" style="background: #ae391c78;">                                       
                                     <input type="radio" name="type_installation_electrique" id="type_installation_electrique_1" value="Monophasé">
@@ -440,24 +440,30 @@
                         <h2>Forme de la maison</h2>
                         <!-- <h4 class="subtitle">Y compris CDI, CDD, intérim et alternance</h4> -->
                         <div class="step-4__content optionWithImages">
-                            <label for="inptutCarreeRect" class="next btn step-4__link image">
+                            <label for="inptutCarreeRect" class="next btn step-4__link image columnStyleInput">
                                 <input type="radio" name="forme_maison" id="inptutCarreeRect" value="Carrée/rectangulaire">
-                                <img class="step-1__img" src="./assets/images/picto_gte/carree_rectangulaire.png" alt="Photo - Carrée/rectangulaire">
+                                <span class="img-wrapper">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/carree_rectangulaire.png" alt="Photo - Carrée/rectangulaire">
+                                </span>
                                 Carrée/rectangulaire
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="inputAllongee" class="next btn step-4__link image">
+                            <label for="inputAllongee" class="next btn step-4__link image columnStyleInput">
                                 <input type="radio" name="forme_maison" id="inputAllongee" value="Allongée">
-                                <img class="step-1__img" src="./assets/images/picto_gte/allongee.png" alt="Photo - Allongée">
+                                <span class="img-wrapper">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/allongee.png" alt="Photo - Allongée">
+                                </span>
                                 Allongée
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
 
                             </label>
                             
-                            <label for="inputDeveloppe" class="next btn step-4__link image">
+                            <label for="inputDeveloppe" class="next btn step-4__link image columnStyleInput">
                                 <input type="radio" name="forme_maison" id="inputDeveloppe" value="Développée">
-                                <img class="step-1__img" src="./assets/images/picto_gte/developpee.png" alt="Photo - Développée">
+                                <span class="img-wrapper">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/developpee.png" alt="Photo - Développée">
+                                </span>
                                 Développée
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
 
@@ -468,7 +474,7 @@
                     <fieldset class="step-5">
                         <h2>Nombre de niveau</h2>
                         <div class="step-5__content optionWithImages">
-                            <label for="inputNiveau1" class="select-item btn step-5__link image">
+                            <label for="inputNiveau1" class="select-item btn step-5__link image columnStyleInput">
                                 <input type="radio" name="nombre_de_niveau" id="inputNiveau1" value="Niveau 1">
                                 <span class="img-wrapper">
                                     <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_1niveau.svg" alt="Photo - Niveau 1">     
@@ -477,7 +483,7 @@
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="inputNiveau2" class="select-item btn step-5__link image">
+                            <label for="inputNiveau2" class="select-item btn step-5__link image columnStyleInput">
                                 <input type="radio" name="nombre_de_niveau" id="inputNiveau2" value="Niveau 2">
                                 
                                 <span class="img-wrapper">
@@ -487,7 +493,7 @@
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="inputNiveau3" class="select-item btn step-5__link image">
+                            <label for="inputNiveau3" class="select-item btn step-5__link image columnStyleInput">
                                 <input type="radio" name="nombre_de_niveau" id="inputNiveau3" value="Niveau 3">
                                 <span class="img-wrapper">
                                     <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_3niveaux.svg" alt="Photo - Niveau 3" >
@@ -497,7 +503,7 @@
                             </label>
                         </div>
                             
-                        <label for="hauteur_sous_plafond_moyenne">Hauteur sous plafond</label>  
+                        <label for="hauteur_sous_plafond_moyenne" style="margin-top: 40px;margin-bottom: 16px;">Hauteur sous plafond</label>  
                         <select id="hauteur_sous_plafond_moyenne" name="hauteur_sous_plafond_moyenne" style="width: 100%;">
                             <option value="1.8">1.80 m</option>
                             <option value="1.9">1.90 m</option>
@@ -535,24 +541,29 @@
                     <fieldset class="step-6">
                         <h2>Type de sous-sol</h2>
                         <div class="step-6__content optionWithImages">
-                            <label for="inputCaveSousSol" class="select-item btn step-6__link image">
-                                <input type="radio" name="type_de_sous_sol" id="inputCaveSousSol" value="Cave/sous-sol">
-                                <img class="step-1__img" src="./assets/images/picto_gte/sous_sol.png" alt="Photo - cave/sous-sol">
+                            <label for="inputCaveSousSol" class="select-item btn step-6__link image columnStyleInput">
+                                <span class="img-wrapper">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/sous_sol.png" alt="Photo - cave/sous-sol">
+                                </span>
                                 Cave/sous-sol
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="inputTerrePlein" class="select-item btn step-6__link image">
+                            <label for="inputTerrePlein" class="select-item btn step-6__link image columnStyleInput">
                                 <input type="radio" name="type_de_sous_sol" id="inputTerrePlein" value="Terre-plein">
+                                <span class="img-wrapper">
                                 <img class="step-1__img" src="./assets/images/picto_gte/terre_plein.png" alt="Photo - Terre-plein">
+                                </span>
                                 Terre-plein
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
 
                             </label>
                             
-                            <label for="inputVideSanitaire" class="select-item btn step-6__link image">
+                            <label for="inputVideSanitaire" class="select-item btn step-6__link image columnStyleInput">
                                 <input type="radio" name="type_de_sous_sol" id="inputVideSanitaire" value="Vide sanitaire">
-                                <img class="step-1__img" src="./assets/images/picto_gte/vide_sanitaire.png" alt="Photo - Vide sanitaire">
+                                <span class="img-wrapper">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/vide_sanitaire.png" alt="Photo - Vide sanitaire">
+                                </span>
                                 Vide sanitaire
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
 
@@ -560,31 +571,39 @@
                         </div>
                             <h2>Type de murs </h2>
                         <div class="step-6__content optionWithImages">
-                            <label for="inputPierre" class="select-item btn step-6__link image four-item-image">
+                            <label for="inputPierre" class="select-item btn step-6__link image four-item-image columnStyleInput">
                                 <input type="radio" name="type_de_mur" id="inputPierre" value="Pierre">
-                                <img class="step-1__img" src="./assets/images/picto_gte/pierre.png" alt="Photo - Pierre">
+                                <span class="img-wrapper img-wrapper-mob">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/pierre.png" alt="Photo - Pierre">
+                                </span>
                                 Pierre
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="inputBeton" class="select-item btn step-6__link image four-item-image">
+                            <label for="inputBeton" class="select-item btn step-6__link image four-item-image columnStyleInput">
                                 <input type="radio" name="type_de_mur" id="inputBeton" value="Béton">
-                                <img class="step-1__img" src="./assets/images/picto_gte/beton.png" alt="Photo - Béton">
+                                <span class="img-wrapper img-wrapper-mob">
+                                 <img class="step-1__img" src="./assets/images/picto_gte/beton.png" alt="Photo - Béton">
+                                </span>
                                 Béton                                
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
 
                             </label>
                             
-                            <label for="inputBrique" class="select-item btn step-6__link image four-item-image">
+                            <label for="inputBrique" class="select-item btn step-6__link image four-item-image columnStyleInput">
                                 <input type="radio" name="type_de_mur" id="inputBrique" value="Brique">
+                                <span class="img-wrapper img-wrapper-mob">
                                 <img class="step-1__img" src="./assets/images/picto_gte/brique.png" alt="Photo - Brique">
+                                </span>
                                 Brique
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
 
                             </label>
-                            <label for="inputBois" class="select-item btn step-6__link image four-item-image">
+                            <label for="inputBois" class="select-item btn step-6__link image four-item-image columnStyleInput">
                                 <input type="radio" name="type_de_mur" id="inputBois" value="Bois">
+                                <span class="img-wrapper img-wrapper-mob">
                                 <img class="step-1__img" src="./assets/images/picto_gte/bois.png" alt="Photo - Bois">
+                                </span>
                                 Bois
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
 
@@ -596,24 +615,30 @@
                         <h2>Type de combles  </h2>                        
                         <div class="step-7__content">
                             <div class="step-7__content optionWithImages">
-                                <label for="inputCombleAmenage" class="select-item btn step-7__link image">
-                                    <input type="radio" name="type_de_comble" id="inputCombleAmenage" value="Combles aménagés">
-                                    <img class="step-1__img" src="./assets/images/picto_gte/comble_amenage.png" alt="Photo - Combles aménagés">
+                                <label for="inputCombleAmenage" class="select-item btn step-7__link image columnStyleInput">
+                                    <input type="radio" name="type_de_comble" id="inputCombleAmenage" value="Combles aménagés">    
+                                    <span class="img-wrapper">
+                                        <img class="step-1__img" src="./assets/images/picto_gte/comble_amenage.png" alt="Photo - Combles aménagés">
+                                    </span>
                                     Combles aménagés
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
                                 
-                                <label for="inputComblePerdue" class="select-item btn step-7__link image">
-                                    <input type="radio" name="type_de_comble" id="inputComblePerdue" value="Combles perdues">
-                                    <img class="step-1__img" src="./assets/images/picto_gte/comble_perdue.png" alt="Photo - Combles perdues">
+                                <label for="inputComblePerdue" class="select-item btn step-7__link image columnStyleInput">
+                                    <input type="radio" name="type_de_comble" id="inputComblePerdue" value="Combles perdues">    
+                                    <span class="img-wrapper">
+                                        <img class="step-1__img" src="./assets/images/picto_gte/comble_perdue.png" alt="Photo - Combles perdues">
+                                    </span>
                                     Combles perdues
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
 
                                 </label>
                                 
-                                <label for="inputPasDeComble" class="select-item btn step-7__link image">
-                                    <input type="radio" name="type_de_comble" id="inputPasDeComble" value="Pas de combles">
-                                    <img class="step-1__img" src="./assets/images/picto_gte/pas_de_comble.png" alt="Photo - Pas de combles">
+                                <label for="inputPasDeComble" class="select-item btn step-7__link image columnStyleInput">
+                                    <input type="radio" name="type_de_comble" id="inputPasDeComble" value="Pas de combles">  
+                                    <span class="img-wrapper">
+                                        <img class="step-1__img" src="./assets/images/picto_gte/pas_de_comble.png" alt="Photo - Pas de combles">
+                                    </span>
                                     Pas de combles
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
 
@@ -646,23 +671,29 @@
                     <fieldset class="step-8">
                         <h2>Type de vitrages  </h2>
                         <div class="step-10__content optionWithImages">
-                            <label for="type_de_vitrage_1" class="next btn step-8__link image">                        
-                                <input type="radio" name="type_de_vitrage" id="type_de_vitrage_1" value="Simple">
-                                <img class="step-1__img" src="./assets/images/picto_gte/vitrage_simple.png" alt="Photo - Vitrage simple">
+                            <label for="type_de_vitrage_1" class="next btn step-8__link image columnStyleInput">                        
+                                <input type="radio" name="type_de_vitrage" id="type_de_vitrage_1" value="simple">
+                                <span class="img-wrapper img-wrapper-mob">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/vitrage_simple.png" alt="Photo - Vitrage simple">
+                                </span>
                                 Simple
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="type_de_vitrage_2" class="next btn step-8__link image">                          
+                            <label for="type_de_vitrage_2" class="next btn step-8__link image columnStyleInput">                          
                                 <input type="radio" name="type_de_vitrage"  id="type_de_vitrage_2" value="Double">
-                                <img class="step-1__img" src="./assets/images/picto_gte/vitrage_double.png" alt="Photo - Vitrage double">
+                                <span class="img-wrapper img-wrapper-mob">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/vitrage_double.png" alt="Photo - Vitrage double">
+                                </span>
                                 Double
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="type_de_vitrage_3" class="next btn step-8__link image">               
+                            <label for="type_de_vitrage_3" class="next btn step-8__link image columnStyleInput">               
                                 <input type="radio" name="type_de_vitrage"  id="type_de_vitrage_3" value="Double renforcé">
-                                <img class="step-1__img" src="./assets/images/picto_gte/vitrage_double_renforce.png" alt="Photo - Vitrage renforcé">
+                                <span class="img-wrapper img-wrapper-mob">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/vitrage_double_renforce.png" alt="Photo - Vitrage renforcé">
+                                </span>
                                 Double renforcé
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
 
@@ -673,23 +704,29 @@
                     <fieldset class="step-9">
                         <h2>Type de ventilation</h2>
                         <div class="step-9__content optionWithImages">
-                            <label for="type_de_ventilation_1" class="select-item btn step-9__link image">                        
+                            <label for="type_de_ventilation_1" class="select-item btn step-9__link image columnStyleInput">                        
                                 <input type="radio" name="type_de_ventilation" id="type_de_ventilation_1" value="Naturelle">
-                                <img class="step-1__img" src="./assets/images/picto_gte/ventilation_naturelle.png" alt="Photo - Ventilation naturelle">
+                                <span class="img-wrapper">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/ventilation_naturelle.png" alt="Photo - Ventilation naturelle">
+                                </span>
                                 Naturelle
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="type_de_ventilation_2" class="select-item btn step-9__link image">             
+                            <label for="type_de_ventilation_2" class="select-item btn step-9__link image columnStyleInput">             
                                 <input type="radio" name="type_de_ventilation"  id="type_de_ventilation_2" value="Simple">
-                                <img class="step-1__img" src="./assets/images/picto_gte/ventilation_double.png" alt="Photo - Ventilation Simple">
+                                <span class="img-wrapper">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/ventilation_double.png" alt="Photo - Ventilation Simple">
+                                </span>
                                 Simple
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="type_de_ventilation_3" class="select-item btn step-9__link image">        
+                            <label for="type_de_ventilation_3" class="select-item btn step-9__link image columnStyleInput">        
                                 <input type="radio" name="type_de_ventilation"  id="type_de_ventilation_3" value="Double f lux">
-                                <img class="step-1__img" src="./assets/images/picto_gte/ventilation_double_flux.png" alt="Photo - Ventilation double flux">
+                                <span class="img-wrapper">
+                                    <img class="step-1__img" src="./assets/images/picto_gte/ventilation_double_flux.png" alt="Photo - Ventilation double flux">
+                                </span>
                                 Double flux
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
@@ -779,26 +816,25 @@
                     <fieldset class="step-11">
                         <h2>Consommation et indexation</h2>
                         <h3 style="line-height: 30px;">Suite à l'étude de votre habitat réalisé à l'aide voici les prévisions de vos consommations</h3>
-                        <div class="step-11__content optionWithImages" style="width: 900px;margin-top: 15%;">
-                            <label for="type_de_ventilation_1" class="select-item btn step-11__link image result1" style="width: 280px!important;font-size: 13px !important; background-color: #5a29b4; color:white; height:170px!important;">                        
+                        <div class="step-11__content optionWithImages" style="margin-top: 5%!important;">
+                            <label for="type_de_ventilation_1" class="select-item btn step-11__link image result1 conso_indexation_1" >                        
                                 <!-- <input id="votre_conso_actuel" type="number" name="type_de_ventilation" id="type_de_ventilation_1" value="Votre consomation actuel"> -->
-                                <span style="position: absolute;top: 40px;left:50px;width: 220px;text-align: center;">Votre consommation global actuel</span> 
-                                <span id="votre_conso_actuel" style="font-size:40px;position: absolute;bottom: 30px;">0 €</span> 
+                                <span class="conso_indexation_title">Votre consommation global actuel</span> 
+                                <span id="votre_conso_actuel" style="font-size:30px;position: absolute;bottom: 30px;">0 €</span> 
                                 <img src="./assets/images/check_icon.svg" alt="" class="image-checkbox_" style="top: 40px;left: 11px;">
                             </label>
                             
-                            <label for="type_de_ventilation_2" class="select-item btn step-11__link image result2" style="width: 280px!important;font-size: 13px !important; background-color: #0288d1; color:white; height:170px!important;">             
+                            <label for="type_de_ventilation_2" class="select-item btn step-11__link image result2 conso_indexation_2">             
                                 <!-- <input id="step-15_value2" type="radio" name="type_de_ventilation"  id="type_de_ventilation_2" value="Votre consommation sur X années"> -->
-                                <span style="position: absolute;top: 40px;left:40px;width: 220px;text-align: center;">Votre consommation global sur <span id="votre_conso_sur_x_annee_value">X </span> années</span> 
-                                <span id="votre_conso_sur_x_annee" style="font-size:40px;position: absolute;bottom: 30px;">0 €</span> 
+                                <span class="conso_indexation_title">Votre consommation global sur <span id="votre_conso_sur_x_annee_value">X </span> années</span> 
+                                <span id="votre_conso_sur_x_annee" style="font-size:30px;position: absolute;bottom: 30px;">0 €</span> 
                                 <img src="./assets/images/check_icon.svg" alt="" class="image-checkbox_" style="top: 40px;left: 11px;">
                             </label>
                             
-                            <label for="type_de_ventilation_3" class="select-item btn step-11__link image result3" style="width: 280px!important;font-size: 13px !important; background-color: #7fb863; color:white; height:170px!important;">        
+                            <label for="type_de_ventilation_3" class="select-item btn step-11__link image result3 conso_indexation_3">        
                                 <!-- <input id="step-15_value3" type="radio" name="type_de_ventilation"  id="type_de_ventilation_3" value="Moyenne de consommation sur X années"> -->
-                                <span style="position: absolute;top: 40px;left:40px;width: 220px;text-align: center;">Moyenne de consommation global sur <span id="moyenne_conso_sur_x_annee_value">X </span> années</span> 
-                                <span id="moyenne_conso_sur_x_annee" style="font-size:40px;position: absolute;bottom: 30px;">0 €</span> 
-
+                                <span class="conso_indexation_title">Moyenne de consommation global sur <span id="moyenne_conso_sur_x_annee_value">X </span> années</span> 
+                                <span id="moyenne_conso_sur_x_annee" style="font-size:30px;position: absolute;bottom: 30px;">0 €</span> 
                                 <img src="./assets/images/check_icon.svg" alt="" class="image-checkbox_" style="top: 40px;left: 11px;">
                             </label>
                         </div>                   
@@ -819,7 +855,7 @@
                         
                         <div class="inputs">
                             <div class="input-item">
-                                <label for="inputEvol25Annee">Évolution du <span>prix du fioul </span> <!--sur les 25 prochaines années (%)--> </label>
+                                <label for="inputEvol25Annee" style="margin-bottom: 0px !important;">Évolution du <span>prix du fioul </span> <!--sur les 25 prochaines années (%)--> </label>
                                 <div class="input-item-range">
                                     <span class="rangeMin"> 0%</span>
                                         <p class="range-field">
@@ -833,32 +869,29 @@
                     </fieldset>
                     
                     <fieldset class="step-16">
-                        <div class="step-16__content optionWithImages" style="width: 825px;">
-                            <label for="type_de_ventilation_1" id="pompeAChaleurAirEau" class="select-item btn step-16__link image conso_result1" style="font-size: 18px!important;color:white; height:220px!important;margin-bottom: 25px;position: relative">       
-                                <div class="maskEverything">
-
-                                </div>                 
-                                <span style="position: absolute;top: 30px;left:30px;text-align: left; width: fit-content;">Pompe à chaleur air-eau </span> 
-                                <span style="position: absolute;top: 60px;left:30px;text-align: left; width: fit-content;font-size: 13px!important;">Chauffage</span> 
-                                <span id="pompe_a_chaleur_air_eau_value" style="font-size:40px;position: absolute;left: 30px; top: 90px; display: flex; width: 200px; justify-content: space-between;flex-wrap: wrap;">0 KW</span> 
+                        <div class="step-16__content optionWithImages">
+                            <label for="type_de_ventilation_1" id="pompeAChaleurAirEau" class="select-item btn step-16__link image conso_result1 solution_proposee" >       
+                                <span class="solution_proposee_big_title">Pompe à chaleur air-eau </span> 
+                                <span class="solution_proposee_small_title">Chauffage</span> 
+                                <span id="pompe_a_chaleur_air_eau_value" class="solution_proposee_value">0 KW</span> 
                                 <img src="./assets/images/picto_gte/chauffee-small-icon.svg" alt="Pompe à chaleur air-eau" class="conso_result_image">
                             </label>
                             
-                            <label for="type_de_ventilation_2" class="select-item btn step-16__link image conso_result2" style="font-size: 18px!important;color:white; height:220px!important;margin-bottom: 25px;">  
-                                <span style="position: absolute;top: 30px;left:30px;text-align: left; width: 100%;"> Pompe à chaleur air/air </span> 
-                                <span style="position: absolute;top: 60px;left:30px;text-align: left; width: 100%;font-size: 13px!important;">Chauffage</span> 
-                                <span id="votre_conso_sur_x_annee" style="font-size:40px;position: absolute;left: 30px; top:90px; display: flex; align-items: center;justify-content: space-between;flex-wrap: wrap;">
-                                    <a data-target="modal5" class="callToAction" id="pompeChaleurButton" style="font-size: 16px;" rel="noopener noreferrer">Choisir</a>
+                            <label for="type_de_ventilation_2" class="select-item btn step-16__link image conso_result2 solution_proposee" >  
+                                <span class="solution_proposee_big_title"> Pompe à chaleur air/air </span> 
+                                <span class="solution_proposee_small_title">Chauffage</span> 
+                                <span id="votre_conso_sur_x_annee" class="solution_proposee_value">
+                                    <a data-target="modal5" class="callToAction" id="pompeChaleurButton"  rel="noopener noreferrer">Choisir</a>
                                     <!-- <button data-target="modal5" class="callToAction" id="pompeChaleurButton">Choisir</button> -->
                                 </span> 
                                 <img src="./assets/images/picto_gte/chauffee-small-icon.svg" alt="Pompe à chaleur air-eau" class="conso_result_image">
                             </label>
                             <!-- width: 100% !important;display: 100%;text-align: left;left: 30px; -->
 
-                            <div class="type_de_ventilation_3" class="select-item btn step-16__link image conso_result3" style="font-size: 18px!important;color:white; height:220px!important;margin-bottom: 25px;">     
-                                <span style="position: absolute;top: 60px;left:30px;text-align: left; width: fit-content;font-size: 13px!important;">Eclairage</span> 
-                                <span style="position: absolute;top: 30px;left:30px;text-align: left; width: fit-content;">Chauffe-eau thermodynamique</span> 
-                                <span id="moyenne_conso_sur_x_annee" style="font-size:40px;position: absolute;left: 30px; top: 110px; display: flex; width: 200px; justify-content: space-between;flex-wrap: wrap;">
+                            <label class="type_de_ventilation_3" class="image conso_result3 solution_proposee" > 
+                                <span class="solution_proposee_big_title">Chauffe-eau thermodynamique</span>     
+                                <span class="solution_proposee_small_title">Eclairage</span> 
+                                <span id="moyenne_conso_sur_x_annee" class="solution_proposee_checkbox_container">
                                     <label for="200l" style="color: white;" class="checkbox-label-white">
                                         <input type="checkbox" class="filled-in checkbox-white chk-moyenne-conso" id="200l" value="200L" name="moyenne_conso_sur_x_annee_check1" />
                                         <span for="200l">200 L</span>
@@ -870,12 +903,12 @@
                                 </span> 
 
                                 <img src="./assets/images/picto_gte/ecs-white-icon.svg" alt="Chauffe-eau thermodynamique" style="top: 75px;" class="conso_result_image">
-                            </div>
+                            </label>
                             
-                            <div for="type_de_ventilation_3" class="select-item btn step-16__link image conso_result4" style="font-size: 18px!important;color:white; height:220px!important;margin-bottom: 25px;">  
-                                <span style="position: absolute;top: 30px;left:30px;text-align: left; width: fit-content;">Electricité ampoules led</span> 
-                                <span style="position: absolute;top: 60px;left:30px;text-align: left; width: fit-content;font-size: 13px!important;">Eclairage</span> 
-                                <span id="elec_ampoule_led" style="font-size:40px;position: absolute;left: 30px; top:110px;display: flex; width: 192px; justify-content: space-between;flex-wrap: wrap;">
+                            <label for="type_de_ventilation_4" class="image conso_result4 solution_proposee">  
+                                <span class="solution_proposee_big_title">Electricité ampoules led</span> 
+                                <span class="solution_proposee_small_title">Eclairage</span>
+                                <span id="elec_ampoule_led" class="solution_proposee_checkbox_container">
                                     <label for="elec_ampoule1" style="color: white;" class="checkbox-label-white">
                                         <input type="checkbox" class="filled-in checkbox-white chk-elec-ampoule" id="elec_ampoule1" value="Oui" name="elec_ampoule_led_chk1" />
                                         <span for="elec_ampoule1">OUI</span>
@@ -886,7 +919,7 @@
                                     </label></span> 
                                 <img src="./assets/images/picto_gte/electricite-white-icon.svg" alt="Pompe à chaleur air-eau" class="conso_result_image">
 
-                            </div>
+                            </label>
                         </div>        
                     </fieldset>                    
                     
@@ -1288,7 +1321,7 @@
 
                                 <div class="pompes__item">
                                     <div class="pompes__left">
-                                        <img src="./assets/images/pompe_air_eau_10.png" alt="Nuos Primos – Ariston" style="width: 40%" >
+                                        <img src="./assets/images/pompe_air_eau_10.png" alt="Nuos Primos – Ariston" style="width: 30%" >
                                     </div>
                                     <div class="pompes__center">
                                         <span class="pompes__title">
@@ -1344,7 +1377,7 @@
                                 
                                 <div class="pompes__item">
                                     <div class="pompes__left">
-                                        <img src="./assets/images/pompe_air_eau_12.png" alt="Kaliko - De Dietrich" style="width: 50%">
+                                        <img src="./assets/images/pompe_air_eau_12.png" alt="Kaliko - De Dietrich" style="width: 40%">
                                     </div>
                                     <div class="pompes__center">
                                         <span class="pompes__title">
@@ -1372,7 +1405,7 @@
                                 
                                 <div class="pompes__item">
                                     <div class="pompes__left">
-                                        <img src="./assets/images/pompe_air_eau_13.png" alt="Essentiel – De Dietrich"  style="width: 40%">
+                                        <img src="./assets/images/pompe_air_eau_13.png" alt="Essentiel – De Dietrich"  style="width: 30%;">
                                     </div>
                                     <div class="pompes__center">
                                         <span class="pompes__title">
@@ -1400,7 +1433,7 @@
                                 
                                 <div class="pompes__item">
                                     <div class="pompes__left">
-                                        <img src="./assets/images/pompe_air_eau_13.png" alt="Kaliko Split – De Dietrich" style="width: 40%">
+                                        <img src="./assets/images/pompe_air_eau_13.png" alt="Kaliko Split – De Dietrich" style="width: 30%;">
                                     </div>
                                     <div class="pompes__center">
                                         <span class="pompes__title">
@@ -1432,7 +1465,7 @@
                     <fieldset class="step-18">
                         <div class="step-18__content optionWithImages" style="display: flex;flex-direction:column;">
                             <h2>Situation matrimoniale</h2>
-                            <div class="noImageSelection" style="max-width: 395px;">
+                            <div class="noImageSelection" style="max-width: 395px;margin: 0 auto;">
                                 <label for="eligibilite_situation_matrimoniale_1" class="select-item btn step-18__link no-image three-item-no-image step-18_one_item">                                       
                                     <input type="radio" name="eligibilite_situation_matrimoniale" id="eligibilite_situation_matrimoniale_1" value="Célibataire">
                                     <span>Célibataire</span>
@@ -1473,7 +1506,7 @@
                             </div>
 
                             <h2>Naissance à venir ou enfant non présent sur la déclaration ?</h2>
-                            <div class="noImageSelection"  style="width: 400px;justify-content: space-between;display: flex;">
+                            <div class="noImageSelection"  style="width: 400px;justify-content: space-between;display: flex; margin: 0 auto;">
                                 <label for="eligibilite_situation_enfant_1" class="select-item btn step-18__link no-image three-item-no-image step-18_one_item">                                       
                                     <input type="radio" name="eligibilite_situation_enfant" id="eligibilite_situation_enfant_1" value="Oui">
                                     <span>Oui</span>
@@ -1486,8 +1519,8 @@
                             </div>
                             
                             <h2>Référence de l'avis d'imposition </h2>
-                            <div class="inputs" style="width: 65%;margin: 0;">
-                                <div class="input-item nopr20"style="margin: 0;">
+                            <div class="inputs" style="width: 100%;margin: 0;">
+                                <div class="input-item nopr20" style="margin: 0 31px;">
                                     <!-- <label for="inputEligibiliteAvisImposition">Référence de l'avis d'imposition </label> -->
                                     <input id="inputEligibiliteAvisImposition" type="text" name="eligibilite_avis_imposition">
                                     <span class="step-1__content__notice">Référence de l'avis d'imposition requis </span>
@@ -1495,8 +1528,8 @@
                             </div>
                             
                             <h2>Numéro fiscal </h2>
-                            <div class="inputs" style="width: 65%;margin: 0;display: flex;justify-content: center;">
-                                <div class="input-item nopr20" style="margin: 0;">
+                            <div class="inputs" style="width: 100%;margin: 0;display: flex;justify-content: center;">
+                                <div class="input-item nopr20" style="margin: 0 31px;">
                                     <!-- <label for="inputNumeroFisc">Numéro fiscal </label> -->
                                     <input id="inputNumeroFisc" type="text" name="eligibilite_numéro_fiscal" class="" >
                                     <span class="step-1__content__notice">Numéro fiscal requis </span>
@@ -1522,7 +1555,7 @@
                             </div> -->
                             
                             <h2>Dernier revenu fiscal de référence </h2>
-                            <div class="inputs" style="width: 65%;margin: 0;">
+                            <div class="inputs" style="width: 65%;margin: 0 auto;">
                                 <div class="input-item nopr20" style="margin: 0;">
                                     <!-- <label for="inputDernierRevenuFiscalRef">Dernier revenu fiscal de référence </label> -->
                                     <input id="inputDernierRevenuFiscalRef" type="text" name="eligibilite_dernier_revenu_fiscal_reference" class="">
@@ -1531,8 +1564,8 @@
                             </div>
                             
                             <h2>Aide bonus écologique </h2>
-                            <div class="inputs" style="width: 65%;margin: 0;">
-                                <div class="input-item nopr20" style="margin: 0;">
+                            <div class="inputs" style="width: 65%;margin: 0 auto;">
+                                <div class="input-item nopr20" style="margin: 0 auto;">
                                     <input id="inputBonusEcologique" type="number" name="aide_bonus_ecologique" value="0" min="0">
                                     <span class="step-1__content__notice">Aide bonus écologique  </span>
                                 </div>
@@ -1541,7 +1574,7 @@
                         </div>        
                     </fieldset>
 
-                    <fieldset class="step-19">
+                    <fieldset class="step-19" >
                         <h2>CALCUL DE VOS SUBVENTIONS POUR L'INSTLLATION DE VOS SOLUTIONS</h2>
                         <div class="step-19__content optionWithImages" style="display: flex;flex-direction:column;">
                             <div class="results">
@@ -1615,41 +1648,41 @@
                     <fieldset class="step-11">
                         <h2>Source d’énergie</h2>
                         <div class="step-11__content optionWithImages" style="max-width: 760px;">
-                            <label for="source_energie_1_chauffage" class="select-item btn step-11__link image chauff_image_3">                        
+                            <label for="source_energie_1_chauffage" class="select-item btn step-11__link image chauff_image_3 columnStyleInput">                        
                                 <input type="radio" name="source_energie" id="source_energie_1_chauffage" value="Chauffage au Fioul ">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_au_fioul_crop.png" alt="Photo - Chauffage au Fioul ">
                                  Fioul 
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="source_energie_2_chauffage" class="select-item btn step-11__link image chauff_image_3">             
+                            <label for="source_energie_2_chauffage" class="select-item btn step-11__link image chauff_image_3 columnStyleInput">             
                                 <input type="radio" name="source_energie"  id="source_energie_2_chauffage" value="Chauffage Électrique">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_elec_crop.png" alt="Photo - Chauffage Électrique">
                                  Électrique
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
-                            <label for="source_energie_3_chauffage" class="select-item btn step-11__link image chauff_image_3">        
+                            <label for="source_energie_3_chauffage" class="select-item btn step-11__link image chauff_image_3 columnStyleInput">        
                                 <input type="radio" name="source_energie"  id="source_energie_3_chauffage" value=" Chauffage au Gaz ">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chuaffage_au_gaz_crop.png" alt="Photo -  Chauffage au Gaz ">
                                  Gaz 
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
 
-                            <label for="source_energie_4_chauffage" class="select-item btn step-11__link image chauff_image_3">             
+                            <label for="source_energie_4_chauffage" class="select-item btn step-11__link image chauff_image_3 columnStyleInput">             
                                 <input type="radio" name="source_energie"  id="source_energie_4_chauffage" value=" Chauffage au Bois">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_au_bois_crop.png" alt="Photo -  Chauffage au Bois ">
                                  Bois 
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="source_energie_5_chauffage" class="select-item btn step-11__link image chauff_image_3">        
+                            <label for="source_energie_5_chauffage" class="select-item btn step-11__link image chauff_image_3 columnStyleInput">        
                                 <input type="radio" name="source_energie"  id="source_energie_5_chauffage" value=" Pompe à Chaleur">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_pompe_a_chaleur_crop.png" alt="Photo -  Pompe à Chaleur ">
                                 Pompe à Chaleur
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="source_energie_5_chauffage" class="select-item btn step-11__link image chauff_image_3">        
+                            <label for="source_energie_5_chauffage" class="select-item btn step-11__link image chauff_image_3 columnStyleInput">        
                                 <input type="radio" name="source_energie"  id="source_energie_5_chauffage" value="Chauffage au Charbon ">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chaffage_au_charbon_crop.png" alt="Photo -  Chauffage au Charbon">
                                  Charbon 
@@ -1659,47 +1692,47 @@
                         
                         <h2>Type de chauffage</h2>
                         <div id="source_energie_type_elec" style="display: none;">
-                            <div class="step-11__content optionWithImages" style="max-width: 615px;">
-                                <label for="type_de_chaufface_convecteur_elec" class="select-item btn step-11__link image image5">                        
+                            <div class="step-11__content optionWithImages">
+                                <label for="type_de_chaufface_convecteur_elec" class="select-item btn step-11__link image image5 columnStyleInput">                        
                                     <input type="radio" name="type_de_chaufface" id="type_de_chaufface_convecteur_elec" value="Convecteur électrique">
-                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_convecteur electrique.svg" alt="Photo - Convecteur électrique">
+                                    <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_convecteur electrique.svg" alt="Photo - Convecteur électrique">
                                     Convecteur électrique
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
                                 
-                                <label for="type_de_chaufface_plancher_chauffant" class="select-item btn step-11__link image image5">             
+                                <label for="type_de_chaufface_plancher_chauffant" class="select-item btn step-11__link image image5 columnStyleInput">             
                                     <input type="radio" name="type_de_chaufface"  id="type_de_chaufface_plancher_chauffant" value="Plancher chauffant électrique">
-                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_plancher-chauffant.svg" alt="Photo - Plancher chauffant électrique">
+                                    <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_plancher-chauffant.svg" alt="Photo - Plancher chauffant électrique">
                                     Plancher chauffant électrique
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
                                 
-                                <label for="type_de_chaufface_radiateur_elec" class="select-item btn step-11__link image image5">        
+                                <label for="type_de_chaufface_radiateur_elec" class="select-item btn step-11__link image image5 columnStyleInput">        
                                     <input type="radio" name="type_de_chaufface"  id="type_de_chaufface_radiateur_elec" value="Radiateur électrique à inertie">
-                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_radiateur-inertie.svg" alt="Photo - Radiateur électrique à inertie">
+                                    <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_radiateur-inertie.svg" alt="Photo - Radiateur électrique à inertie">
                                     Radiateur électrique à inertie
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
                             </div>
                             
-                            <div class="step-14__content optionWithImages" style="max-width: 615px;">
-                                <label for="type_de_chaufface_chaudiere_elec" class="select-item btn step-11__link image image5">             
+                            <div class="step-11__content optionWithImages">
+                                <label for="type_de_chaufface_chaudiere_elec" class="select-item btn step-11__link image image5 columnStyleInput">             
                                     <input type="radio" name="type_de_chaufface"  id="type_de_chaufface_chaudiere_elec" value="Chaudière électrique">
-                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chaudiere-electrique.svg" alt="Photo - Chaudière électrique">
+                                    <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_chaudiere-electrique.svg" alt="Photo - Chaudière électrique">
                                     Chaudière électrique
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
                                 
-                                <label for="type_de_chaufface_pompe_a_chaleur" class="select-item btn step-11__link image image5">        
+                                <label for="type_de_chaufface_pompe_a_chaleur" class="select-item btn step-11__link image image5 columnStyleInput">        
                                     <input type="radio" name="type_de_chaufface"  id="type_de_chaufface_pompe_a_chaleur" value="Pompe à chaleur">
-                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_pompe à chaleur.svg" alt="Photo - Pompe à chaleur">
+                                    <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_pompe à chaleur.svg" alt="Photo - Pompe à chaleur">
                                     Pompe à chaleur
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
                                 
-                                <label for="type_de_chaufface_chudiere_eau_solaire" class="select-item btn step-11__link image image5">        
+                                <label for="type_de_chaufface_chudiere_eau_solaire" class="select-item btn step-11__link image image5 columnStyleInput">        
                                     <input type="radio" name="type_de_chaufface"  id="type_de_chaufface_chudiere_eau_solaire" value="Chauffe eau solaire">
-                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chauffage-solaire.svg" alt="Photo - Chauffe eau solaire">
+                                    <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_chauffage-solaire.svg" alt="Photo - Chauffe eau solaire">
                                     Chauffe eau solaire
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
@@ -1707,17 +1740,17 @@
                         </div>
                         
                         <div id="source_energie_type_gaz_naturel" style="display: none;">
-                            <div class="step-11__content optionWithImages" style="max-width: 415px;">
-                                <label for="type_de_chaufface_chaudierer_gaz_natur_hors_condensa" class="select-item btn step-11__link image image5">                        
+                            <div class="step-11__content optionWithImages">
+                                <label for="type_de_chaufface_chaudierer_gaz_natur_hors_condensa" class="select-item btn step-11__link image image5 columnStyleInput">                        
                                     <input type="radio" name="type_de_chaufface" id="type_de_chaufface_chaudierer_gaz_natur_hors_condensa" value="Chaudière Gaz naturel hors condensation">
-                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chaudiere-gaz-basse-temperature.svg" alt="Photo - Chaudière Gaz naturel hors condensation">
+                                    <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_chaudiere-gaz-basse-temperature.svg" alt="Photo - Chaudière Gaz naturel hors condensation">
                                     Chaudière Gaz naturel hors condensation
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
                                 
-                                <label for="type_de_chaufface_chaudiere_gaz_natur_condensa" class="select-item btn step-11__link image image5">             
+                                <label for="type_de_chaufface_chaudiere_gaz_natur_condensa" class="select-item btn step-11__link image image5 columnStyleInput">             
                                     <input type="radio" name="type_de_chaufface"  id="type_de_chaufface_chaudiere_gaz_natur_condensa" value="Chaudière Gaz naturel à condensation">
-                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chaudiere-gaz-condensation.svg" alt="Photo - Chaudière Gaz naturel à condensation">
+                                    <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_chaudiere-gaz-condensation.svg" alt="Photo - Chaudière Gaz naturel à condensation">
                                     Chaudière Gaz naturel à condensation
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
@@ -1727,23 +1760,23 @@
                         
                         <div id="source_energie_type_gpl" style="display: none;">
                             <div class="step-11__content optionWithImages" style="max-width: 620px;">
-                                <label for="type_de_chaufface_chaudiere_gpl_condensation" class="select-item btn step-11__link image image5">                        
+                                <label for="type_de_chaufface_chaudiere_gpl_condensation" class="select-item btn step-11__link image image5 columnStyleInput">                        
                                     <input type="radio" name="type_de_chaufface" id="type_de_chaufface_chaudiere_gpl_condensation" value="Chaudière GPL à condensation">
-                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chaudiere-GPL-condensation.svg" alt="Photo - Chaudière GPL à condensation">
+                                    <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_chaudiere-GPL-condensation.svg" alt="Photo - Chaudière GPL à condensation">
                                     Chaudière GPL à condensation
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
                                 
-                                <label for="type_de_chaufface_chaudiere_gpn_hor_condensation" class="select-item btn step-11__link image image5">                        
+                                <label for="type_de_chaufface_chaudiere_gpn_hor_condensation" class="select-item btn step-11__link image image5 columnStyleInput">                        
                                     <input type="radio" name="type_de_chaufface" id="type_de_chaufface_chaudiere_gpn_chor_ondensation" value="Chaudière GPL hors condensation">
-                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chaudiere-GPL-basse-temperature.svg" alt="Photo - Chaudière GPL hors condensation">
+                                    <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_chaudiere-GPL-basse-temperature.svg" alt="Photo - Chaudière GPL hors condensation">
                                     Chaudière GPL hors condensation
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
                                 
-                                <label for="type_de_chaufface_poele_gpl" class="select-item btn step-11__link image image5">             
+                                <label for="type_de_chaufface_poele_gpl" class="select-item btn step-11__link image image5 columnStyleInput">             
                                     <input type="radio" name="type_de_chaufface"  id="type_de_chaufface_poele_gpl" value="Poêle GPL">
-                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_poele-GPL.svg" alt="Photo - Poêle GPL">
+                                    <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_poele-GPL.svg" alt="Photo - Poêle GPL">
                                     Poêle GPL
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
@@ -1753,24 +1786,24 @@
                         
                         <div id="source_energie_type_fioul" style="display: none;">
                             <div class="step-11__content optionWithImages" style="max-width: 620px;">
-                                <label for="type_de_chauffage_chaudiere_fioul" class="select-item btn step-11__link image image5">                        
+                                <label for="type_de_chauffage_chaudiere_fioul" class="select-item btn step-11__link image image5 columnStyleInput">                        
                                     <input type="radio" name="type_de_chaufface" id="type_de_chauffage_chaudiere_fioul" value="Chaudière Fioul">
-                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chaudiere-fioul-condensation.svg" alt="Photo - Chaudière Fioul">
+                                    <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_chaudiere-fioul-condensation.svg" alt="Photo - Chaudière Fioul">
                                     Chaudière Fioul
                                                     
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
                                 
-                                <label for="type_de_chaufface_chaudiere_hors_condensation" class="select-item btn step-11__link image image5">                        
+                                <label for="type_de_chaufface_chaudiere_hors_condensation" class="select-item btn step-11__link image image5 columnStyleInput">                        
                                     <input type="radio" name="type_de_chaufface" id="type_de_chaufface_chaudiere_hors_condensation" value="Chaudière Fioul hors condensation">
-                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chaudiere-fioul-basse-temperature.svg" alt="Photo - Chaudière Fioul hors condensation">
+                                    <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_chaudiere-fioul-basse-temperature.svg" alt="Photo - Chaudière Fioul hors condensation">
                                     Chaudière Fioul hors condensation
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
                                 
-                                <label for="type_de_chaufface_poele_fioul" class="select-item btn step-11__link image image5">             
+                                <label for="type_de_chaufface_poele_fioul" class="select-item btn step-11__link image image5 columnStyleInput">             
                                     <input type="radio" name="type_de_chaufface"  id="type_de_chaufface_poele_fioul" value="Poêle GPL">
-                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_poele-fioul.svg" alt="Photo - Poêle GPL">
+                                    <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_poele-fioul.svg" alt="Photo - Poêle GPL">
                                     Poêle Fioul
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
@@ -1779,23 +1812,23 @@
                         
                         <div id="source_energie_type_bois" style="display: none;">
                             <div class="step-11__content optionWithImages" style="max-width: 620px;">
-                                <label for="type_de_chaufface_chaudiere_bois" class="select-item btn step-11__link image image5">                        
+                                <label for="type_de_chaufface_chaudiere_bois" class="select-item btn step-11__link image image5 columnStyleInput">                        
                                     <input type="radio" name="type_de_chaufface" id="type_de_chaufface_chaudiere_bois" value="Chaudière Bois">
-                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chaudiere-bois.svg" alt="Photo - Chaudière Bois">
+                                    <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_chaudiere-bois.svg" alt="Photo - Chaudière Bois">
                                     Chaudière Bois
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
                                 
-                                <label for="type_de_chauffage_poele" class="select-item btn step-11__link image image5">                        
+                                <label for="type_de_chauffage_poele" class="select-item btn step-11__link image image5 columnStyleInput">                        
                                     <input type="radio" name="type_de_chaufface" id="type_de_chauffage_poele" value="Poêle à buches classiques">
-                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_poele-bois.svg" alt="Photo - Poêle à buches classiques">
+                                    <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_poele-bois.svg" alt="Photo - Poêle à buches classiques">
                                     Poêle à buches classiques
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
                                 
-                                <label for="type_de_chauffage_cheminee" class="select-item btn step-11__link image image5">             
+                                <label for="type_de_chauffage_cheminee" class="select-item btn step-11__link image image5 columnStyleInput">             
                                     <input type="radio" name="type_de_chaufface"  id="type_de_chauffage_cheminee" value="Cheminée">
-                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_Cheminee.svg" alt="Photo - Cheminée">
+                                    <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_Cheminee.svg" alt="Photo - Cheminée">
                                     Cheminée
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
@@ -1903,44 +1936,43 @@
                     <h4 style="color:#225c54;">Eau chaude sanitaire </h4>
                     <fieldset class="step-12">
                         <h2>Source d’énergie</h2>
-                        <div class="step-12__content optionWithImages" style="max-width: 760px;">
-                            
-                            <label for="source_energie_eau_chaude_fioul_1" class="select-item btn step-12__link image chauff_image_3">                        
+                        <div class="step-12__content optionWithImages">
+                            <label for="source_energie_eau_chaude_fioul_1" class="select-item btn step-12__link image chauff_image_3 columnStyleInput">                        
                                 <input type="radio" name="source_energie_eau_chaude" id="source_energie_eau_chaude_fioul_1" value="Chauffage au Fioul ">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_au_fioul_crop.png" alt="Photo - Chauffage au Fioul ">
                                 Fioul 
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="source_energie_eau_chaude_elec_2" class="select-item btn step-12__link image chauff_image_3">             
+                            <label for="source_energie_eau_chaude_elec_2" class="select-item btn step-12__link image chauff_image_3 columnStyleInput">             
                                 <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_elec_2" value="Chauffage Électrique">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_elec_crop.png" alt="Photo - Chauffage Électrique">
                                  Électrique
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
 
-                            <label for="source_energie_eau_chaude_gaz_3" class="select-item btn step-12__link image chauff_image_3">        
+                            <label for="source_energie_eau_chaude_gaz_3" class="select-item btn step-12__link image chauff_image_3 columnStyleInput">        
                                 <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_gaz_3" value=" Chauffage au Gaz ">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chuaffage_au_gaz_crop.png" alt="Photo -  Chauffage au Gaz ">
                                  Gaz 
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
 
-                            <label for="source_energie_eau_chaude_bois_4" class="select-item btn step-12__link image chauff_image_3">             
+                            <label for="source_energie_eau_chaude_bois_4" class="select-item btn step-12__link image chauff_image_3 columnStyleInput">             
                                 <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_bois_4" value=" Chauffage au Bois">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_au_bois_crop.png" alt="Photo -  Chauffage au Bois ">
                                  Bois 
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="source_energie_eau_chaude_pompe_a_chauleur_5" class="select-item btn step-12__link image chauff_image_3">        
+                            <label for="source_energie_eau_chaude_pompe_a_chauleur_5" class="select-item btn step-12__link image chauff_image_3 columnStyleInput">        
                                 <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_pompe_a_chauleur_5" value=" Pompe à Chaleur">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_pompe_a_chaleur_crop.png" alt="Photo -  Pompe à Chaleur ">
                                 Pompe à Chaleur
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="source_energie_eau_chaude_chauffr_charbon_6" class="select-item btn step-12__link image chauff_image_3">        
+                            <label for="source_energie_eau_chaude_chauffr_charbon_6" class="select-item btn step-12__link image chauff_image_3 columnStyleInput">        
                                 <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_chauffr_charbon_6" value="Chauffage au Charbon ">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chaffage_au_charbon_crop.png" alt="Photo -  Chauffage au Charbon">
                                  Charbon 
@@ -1950,32 +1982,32 @@
                         
                         <div id="source_energie_eau_chaude_Elect" style="display:none;">
                             <h2 style="margin-top: 40px!important;margin-bottom:25px;">Type d'eau chaude sanitaire</h2>
-                            <div class="step-12__content optionWithImages" style="max-width: 400px;">
-                                <label for="type_de_chaufface_1" class="select-item btn step-12__link image" style="width: 190px!important;">                        
+                            <div class="step-12__content optionWithImages">
+                                <label for="type_de_chaufface_1" class="select-item btn step-12__link image chauff_image_2 columnStyleInput" >                        
                                     <input type="radio" name="type_d_eau_chaude" id="type_d_eau_chaude_1" value="Chauffe-eau électrique">
-                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chauffe-eau-electrique.svg" alt="Photo - Chauffe-eau électrique">
+                                    <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_chauffe-eau-electrique.svg" alt="Photo - Chauffe-eau électrique">
                                     Chauffe-eau électrique
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
                                 
-                                <label for="type_d_eau_chaude_2" class="select-item btn step-12__link image" style="width: 190px!important;">             
+                                <label for="type_d_eau_chaude_2" class="select-item btn step-12__link image chauff_image_2 columnStyleInput" >             
                                     <input type="radio" name="type_d_eau_chaude"  id="type_d_eau_chaude_2" value="Chauffe-eau thermodynamique">
-                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chauffe-eau-thermodynamique.svg" alt="Photo - Chauffe-eau thermodynamique">
+                                    <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_chauffe-eau-thermodynamique.svg" alt="Photo - Chauffe-eau thermodynamique">
                                     Chauffe-eau thermodynamique
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
                             </div>
-                            <div class="step-15__content optionWithImages" style="max-width: 400px;">
-                                <label for="type_d_eau_chaude_3" class="select-item btn step-12__link image" style="width: 190px!important;">        
+                            <div class="step-12__content optionWithImages">
+                                <label for="type_d_eau_chaude_3" class="select-item btn step-12__link image chauff_image_2 columnStyleInput" >        
                                     <input type="radio" name="type_d_eau_chaude"  id="type_d_eau_chaude_3" value="Module ECS intégré à PAC">
-                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_ECS-et-PAC.svg" alt="Photo - Module ECS intégré à PAC">
+                                    <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_ECS-et-PAC.svg" alt="Photo - Module ECS intégré à PAC">
                                     Module ECS intégré à PAC
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
 
-                                <label for="type_d_eau_chaude_4" class="select-item btn step-12__link image" style="width: 190px!important;">             
+                                <label for="type_d_eau_chaude_4" class="select-item btn step-12__link image chauff_image_2 columnStyleInput" >             
                                     <input type="radio" name="type_d_eau_chaude"  id="type_d_eau_chaude_4" value="Chauffe eau solaire">
-                                    <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_chauffage-solaire_.svg" alt="Photo - Chauffe eau solaire">
+                                    <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_chauffage-solaire_.svg" alt="Photo - Chauffe eau solaire">
                                     Chauffe eau solaire
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
@@ -2044,37 +2076,37 @@
                         <div class="step-12__content optionWithImages" style="max-width: 845px;" > 
                             <!-- optionWithImagesColumn 
                         left__img-->
-                            <label for="capacite_de_stockage_eau_chaude_1" class="select-item btn step-12__link image">                        
+                            <label for="capacite_de_stockage_eau_chaude_1" class="select-item btn step-12__link image columnStyleInput">                        
                                 <input type="radio" name="capacite_de_stockage_eau_chaude" id="capacite_de_stockage_eau_chaude_1" value="Pas de stockage">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_pas-de-stockage.svg" alt="Photo - Pas de stockage">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_pas-de-stockage.svg" alt="Photo - Pas de stockage">
                                 Pas de stockage
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="capacite_de_stockage_eau_chaude_2" class="select-item btn step-12__link image">             
+                            <label for="capacite_de_stockage_eau_chaude_2" class="select-item btn step-12__link image columnStyleInput">             
                                 <input type="radio" name="capacite_de_stockage_eau_chaude"  id="capacite_de_stockage_eau_chaude_2" value="150 litres">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_capacite-100-150L.svg" alt="Photo - 150 litres">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_capacite-100-150L.svg" alt="Photo - 150 litres">
                                 150 litres
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="capacite_de_stockage_eau_chaude_3" class="select-item btn step-12__link image">        
+                            <label for="capacite_de_stockage_eau_chaude_3" class="select-item btn step-12__link image columnStyleInput">        
                                 <input type="radio" name="capacite_de_stockage_eau_chaude"  id="capacite_de_stockage_eau_chaude_3" value="200 litres">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_capacite-150-200L.svg" alt="Photo - 200 litres">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_capacite-150-200L.svg" alt="Photo - 200 litres">
                                 200 litres
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
 
-                            <label for="capacite_de_stockage_eau_chaude_4" class="select-item btn step-12__link image">             
+                            <label for="capacite_de_stockage_eau_chaude_4" class="select-item btn step-12__link image columnStyleInput">             
                                 <input type="radio" name="capacite_de_stockage_eau_chaude"  id="capacite_de_stockage_eau_chaude_4" value="250 litres">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_capacite-200-300L.svg" alt="Photo - 250 litres">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_capacite-200-300L.svg" alt="Photo - 250 litres">
                                 250 litres
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="capacite_de_stockage_eau_chaude_5" class="select-item btn step-12__link image">             
+                            <label for="capacite_de_stockage_eau_chaude_5" class="select-item btn step-12__link image columnStyleInput">             
                                 <input type="radio" name="capacite_de_stockage_eau_chaude"  id="capacite_de_stockage_eau_chaude_5" value="300 litres et plus">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_capacite-superieure300L.svg" alt="Photo - 300 litres et plus">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_capacite-superieure300L.svg" alt="Photo - 300 litres et plus">
                                 300 litres et plus
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
@@ -2085,37 +2117,37 @@
                             <!-- optionWithImagesColumn 
                                 left__img    
                             -->
-                            <label for="utilisation_eau_chaude_1" class="select-item btn step-12__link image">                        
+                            <label for="utilisation_eau_chaude_1" class="select-item btn step-12__link image columnStyleInput">                        
                                 <input type="radio" name="utilisation_eau_chaude" id="utilisation_eau_chaude_1" value="Sobre">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_ECS-sobre.svg" alt="Photo - Sobre">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_ECS-sobre.svg" alt="Photo - Sobre">
                                 Sobre
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="utilisation_eau_chaude_2" class="select-item btn step-12__link image">             
+                            <label for="utilisation_eau_chaude_2" class="select-item btn step-12__link image columnStyleInput">             
                                 <input type="radio" name="utilisation_eau_chaude"  id="utilisation_eau_chaude_2" value="Modérée">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_ECS-modere.svg" alt="Photo - Modérée">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_ECS-modere.svg" alt="Photo - Modérée">
                                 Modérée
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="utilisation_eau_chaude_3" class="select-item btn step-12__link image">        
+                            <label for="utilisation_eau_chaude_3" class="select-item btn step-12__link image columnStyleInput">        
                                 <input type="radio" name="utilisation_eau_chaude"  id="utilisation_eau_chaude_3" value="Normale">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_ECS-normal.svg" alt="Photo - Normale">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_ECS-normal.svg" alt="Photo - Normale">
                                 Normale
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
 
-                            <label for="utilisation_eau_chaude_4" class="select-item btn step-12__link image">             
+                            <label for="utilisation_eau_chaude_4" class="select-item btn step-12__link image columnStyleInput">             
                                 <input type="radio" name="utilisation_eau_chaude"  id="utilisation_eau_chaude_4" value="Intensive">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_ECS_intensif.svg" alt="Photo - Intensive">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_ECS_intensif.svg" alt="Photo - Intensive">
                                 Intensive
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="utilisation_eau_chaude_5" class="select-item btn step-12__link image">             
+                            <label for="utilisation_eau_chaude_5" class="select-item btn step-12__link image columnStyleInput">             
                                 <input type="radio" name="utilisation_eau_chaude"  id="utilisation_eau_chaude_5" value="Balnéo">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_ECS-balneo.svg" alt="Photo - Balnéo">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_ECS-balneo.svg" alt="Photo - Balnéo">
                                 Balnéo
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
@@ -2147,37 +2179,42 @@
                         <div class="step-13__content optionWithImages" style="max-width: 830px;">
                         <!-- optionWithImagesColumn 
                     step-left__img -->
-                            <label for="utilisation_appareil_equip_electrique_1" class="select-item btn step-13__link image">                        
+                            <label for="utilisation_appareil_equip_electrique_1" class="select-item btn step-13__link image columnStyleInput
+                            ">                        
                                 <input type="radio" name="utilisation_appareil_equip_electrique" id="utilisation_appareil_equip_electrique_1" value="Sobre">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icone_tache-menagere-sobre.svg" alt="Photo - Sobre">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/icone_tache-menagere-sobre.svg" alt="Photo - Sobre">
                                 Sobre
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="utilisation_appareil_equip_electrique_2" class="select-item btn step-13__link image">             
+                            <label for="utilisation_appareil_equip_electrique_2" class="select-item btn step-13__link image columnStyleInput
+                            ">             
                                 <input type="radio" name="utilisation_appareil_equip_electrique"  id="utilisation_appareil_equip_electrique_2" value="Modérée">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icone_tache-menagere-moderee.svg" alt="Photo - Modérée">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/icone_tache-menagere-moderee.svg" alt="Photo - Modérée">
                                 Modérée
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="utilisation_appareil_equip_electrique_3" class="select-item btn step-13__link image">        
+                            <label for="utilisation_appareil_equip_electrique_3" class="select-item btn step-13__link image columnStyleInput
+                            ">        
                                 <input type="radio" name="utilisation_appareil_equip_electrique"  id="utilisation_appareil_equip_electrique_3" value="Normale">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icone_tache-menagere-elevee.svg" alt="Photo - Normale">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/icone_tache-menagere-elevee.svg" alt="Photo - Normale">
                                 Normale
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
 
-                            <label for="utilisation_appareil_equip_electrique_4" class="select-item btn step-13__link image">             
+                            <label for="utilisation_appareil_equip_electrique_4" class="select-item btn step-13__link image columnStyleInput
+                            ">             
                                 <input type="radio" name="utilisation_appareil_equip_electrique"  id="source_energie_eau_chaude_4" value="Élevée">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icone_tache-menagere-elevee.svg" alt="Photo - Élevée">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/icone_tache-menagere-elevee.svg" alt="Photo - Élevée">
                                 Élevée
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="utilisation_appareil_equip_electrique_5" class="select-item btn step-13__link image">        
+                            <label for="utilisation_appareil_equip_electrique_5" class="select-item btn step-13__link image columnStyleInput
+                            ">        
                                 <input type="radio" name="utilisation_appareil_equip_electrique"  id="utilisation_appareil_equip_electrique_5" value="Très élevée">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icone_tache-menagere-tres-elevee.svg" alt="Photo - Très élevée">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/icone_tache-menagere-tres-elevee.svg" alt="Photo - Très élevée">
                                 Très élevée
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
@@ -2207,23 +2244,26 @@
                     <fieldset class="step-14">
                         <h2>Type d'ampoules</h2>
                         <div class="step-14__content optionWithImages" style="max-width: 610px;">
-                            <label for="type_d_ampoule_eclairage_1" class="select-item btn step-14__link image" style="width:190px!important;">                        
+                            <label for="type_d_ampoule_eclairage_1" class="select-item btn step-14__link image chauff_image_2 columnStyleInput
+                            ">                        
                                 <input type="radio" name="type_d_ampoule_eclairage" id="type_d_ampoule_eclairage_1" value="Ampoules incandescentes">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_ampoules-incandescentes.svg" alt="Photo - Ampoules incandescentes">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_ampoules-incandescentes.svg" alt="Photo - Ampoules incandescentes">
                                 Ampoules incandescentes
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="type_d_ampoule_eclairage_2" class="select-item btn step-14__link image" style="width:190px!important;">             
+                            <label for="type_d_ampoule_eclairage_2" class="select-item btn step-14__link image columnStyleInput
+                            chauff_image_2">             
                                 <input type="radio" name="type_d_ampoule_eclairage"  id="type_d_ampoule_eclairage_2" value="Ampoules LED">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_ampoules-LED.svg" alt="Photo - Ampoules LED">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_ampoules-LED.svg" alt="Photo - Ampoules LED">
                                 Ampoules LED
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="type_d_ampoule_eclairage_3" class="select-item btn step-14__link image" style="width:190px!important;">        
+                            <label for="type_d_ampoule_eclairage_3" class="select-item btn step-14__link image columnStyleInput
+                            chauff_image_2" >        
                                 <input type="radio" name="type_d_ampoule_eclairage"  id="type_d_ampoule_eclairage_3" value="Mixte">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_ampoules-mixtes.svg" alt="Photo - Mixte">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_ampoules-mixtes.svg" alt="Photo - Mixte">
                                 Mixte
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
@@ -2233,37 +2273,42 @@
                         <div class="step-14__content optionWithImages" style="max-width: 830px;">
                         <!-- optionWithImagesColumn
                     step-left__img -->
-                            <label for="utilisation_moyenne_eclairage_1" class="select-item btn step-14__link image">                        
+                            <label for="utilisation_moyenne_eclairage_1" class="select-item btn step-14__link image columnStyleInput
+                            ">                        
                                 <input type="radio" name="utilisation_moyenne_eclairage" id="utilisation_moyenne_eclairage_1" value="Sobre">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_Eclairage-sobre.svg" alt="Photo - Sobre">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_Eclairage-sobre.svg" alt="Photo - Sobre">
                                 Sobre
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="utilisation_moyenne_eclairage_2" class="select-item btn step-14__link image">             
+                            <label for="utilisation_moyenne_eclairage_2" class="select-item btn step-14__link image columnStyleInput
+                            ">             
                                 <input type="radio" name="utilisation_moyenne_eclairage"  id="utilisation_moyenne_eclairage_2" value="Modérée">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_Eclairage-modere.svg" alt="Photo - Modérée">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_Eclairage-modere.svg" alt="Photo - Modérée">
                                 Modérée
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="utilisation_moyenne_eclairage_3" class="select-item btn step-14__link image">        
+                            <label for="utilisation_moyenne_eclairage_3" class="select-item btn step-14__link image columnStyleInput
+                            ">        
                                 <input type="radio" name="utilisation_moyenne_eclairage"  id="utilisation_moyenne_eclairage_3" value="Moyenne">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_Eclairage-normal.svg" alt="Photo - Moyenne">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_Eclairage-normal.svg" alt="Photo - Moyenne">
                                 Moyenne
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="utilisation_moyenne_eclairage_4" class="select-item btn step-14__link image">        
+                            <label for="utilisation_moyenne_eclairage_4" class="select-item btn step-14__link image columnStyleInput
+                            ">        
                                 <input type="radio" name="utilisation_moyenne_eclairage"  id="utilisation_moyenne_eclairage_4" value="Élevée">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-normal_Eclairage-eleve.svg" alt="Photo - Élevée">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_Eclairage-eleve.svg" alt="Photo - Élevée">
                                 Élevée
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="utilisation_moyenne_eclairage_5" class="select-item btn step-14__link image">        
+                            <label for="utilisation_moyenne_eclairage_5" class="select-item btn step-14__link image columnStyleInput
+                            ">        
                                 <input type="radio" name="utilisation_moyenne_eclairage"  id="utilisation_moyenne_eclairage_5" value="Très élevée">
-                                <img class="step-1__img" src="./assets/images/picto_gte/icones-selectionnee_Eclairage-tres-eleve.svg" alt="Photo - Très élevée">
+                                <img class="step-chauff__img" src="./assets/images/picto_gte/icones-selectionnee_Eclairage-tres-eleve.svg" alt="Photo - Très élevée">
                                 Très élevée
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
@@ -2285,7 +2330,7 @@
                 </div>
             </div>
             
-            <div id="modal5" class="modal" style="width: 30%;">
+            <div id="modal5" class="modal">
                 <div class="modal-content">
                     <div class="input-counter">
                         <div class="counter"> 
