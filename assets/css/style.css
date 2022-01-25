@@ -2153,7 +2153,9 @@ h3 {
     border-radius: 50% 50% 50% 0!important;
     color: white;
 }
-
+.modal{
+    width: 90%;
+}
 
 
 /*RESPONSIVENESS*/
@@ -2168,7 +2170,7 @@ h3 {
         max-width: 200px;
         background-color: #fff;
         padding: 10px;
-      }
+    }
     .step-list-item-content h5{
         font-size: 12px;
     }
@@ -2323,6 +2325,10 @@ h3 {
         height: 50px;
         border-radius: 30px;
     }
+
+    main .modalContainer .modal-content label.chauff_image_3 {
+        width: 210px !important;
+    }
 }
 /* @media only screen and (max-width: 920px){ 
     
@@ -2460,6 +2466,7 @@ h3 {
         margin-bottom: 20px;
         margin-left: -25px !important;
     }
+
 }
 
 @media only screen and (max-width: 598px){ 

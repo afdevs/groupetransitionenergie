@@ -1931,7 +1931,7 @@
             </div>
 
              <!-- Modal Structure -->
-             <div id="modal2" class="modal" style="width: 65%;">
+             <div id="modal2" class="modal">
                 <div class="modal-content">
                     <h4 style="color:#225c54;">Eau chaude sanitaire </h4>
                     <fieldset class="step-12">
