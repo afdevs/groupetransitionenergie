@@ -224,6 +224,35 @@ let produits=[
     fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/KALIKO-SPLIT.pdf',
     img_url: './assets/images/pompe_air_eau_13.png'
   },
+  {
+    title: 'Therma V - LG',
+    avantage: ['Classe énergétique A+', 'Télécommande intuitive', 'Contrôle via l\'application LG ThinQ', 'Monophasée'],
+    categorie: 'Chauffe-eau Thermodynamique',
+    fiche_technique_url: 'https://www.lg.com/fr/business/download/airsolution/%20produit%20PAC%20air-eau%20Split%20R410A%20Mono%20et%20Triphasée%2012%20à%2016%20kW_installateur[20200902_204329384].pdf',
+    img_url: './assets/images/pompe__chauff_thermo_new_1.jpg'
+  },
+  {
+    title: 'Gamme Dojo – Atlantic',
+    avantage: ['Confort acoustique : 20 dB', 'Classe énergétique A+', 'Mono split mural', 'Mode pleine puissance'],
+    categorie: 'Chauffe-eau Thermodynamique',
+    fiche_technique_url: 'https://www.energy-go.fr/wp-content/uploads/2020/05/Pac-Air-Air-Atlantic-Multisplit-Dojo.pdf',
+    img_url: './assets/images/pompe__chauff_thermo_new_2.jpg'
+  },
+  {
+    title: 'Performer – Thaleos',
+    avantage: ['Fonction Smart Control', '75% d’économies D’énergie ', 'Système ACI Hybrid', 'Plage de fonctionnement (-5 à +43°c)'],
+    categorie: 'Chauffe-eau Thermodynamique',
+    fiche_technique_url: 'https://www.hellopro.fr/documentation/pdf_prod/6/4/8/1211063_a3f0bd97fb14002b3bc353d9ac157600_6012846.pdf',
+    img_url: './assets/images/pompe__chauff_thermo_new_3.jpg'
+  },
+  {
+    title: 'Alféa Excellia – Atlantic',
+    avantage: ['Certifié, Heat Pump, Keymark', 'Application, Atlantic, Cozytouch', 'Monophasé et Triphasé', 'Classe énergétique A++ & A+'],
+    categorie: 'Chauffe-eau Thermodynamique',
+    fiche_technique_url: 'https://www.izi-by-edf-renov.fr/files/catalogue/produits/fiche-technique-pompe-a-chaleur-alfea-excellia-ai-atlantic.pdf',
+    img_url: './assets/images/pompe__chauff_thermo_new_4.jpg'
+  },
+  
 ]
 
 var franceAddresses=[
@@ -681,8 +710,8 @@ jQuery(function($){
             current_step =  $('.step-'+current);
             next_step=++current;
             next_step_form =  $('.step-'+next_step);
-            
-            if (current >=1 && current<11){ 
+
+            if (current >=1 && current<12){ 
               $('.page .previous').css('visibility', 'visible');
             }else if(current >15){
               $('.page .previous').css('visibility', 'visible');
@@ -770,7 +799,8 @@ jQuery(function($){
         
         next_step_form = $('.step-'+next_step);
         
-        if (current >=1 && current<11){ 
+            console.log('previous', current);
+        if (current >=1 && current<12){ 
           $('.page .previous').css('visibility', 'visible');
         } else if(current >15){
           $('.page .previous').css('visibility', 'visible');
@@ -807,7 +837,7 @@ jQuery(function($){
       });
 
       $('.navigationButton').click(function(){
-        for(let i=0; i<20; i++){
+        for(let i=0; i<21; i++){
           $('.step-'+i).removeAttr('style');
         }
 
@@ -823,7 +853,7 @@ jQuery(function($){
             next_step=++current;
             next_step_form =  $('.step-'+next_step);
             
-            if (current >=1 && current<11){ 
+            if (current >=1 && current<12){ 
               $('.page .previous').css('visibility', 'visible');
             }else if(current >15){
               $('.page .previous').css('visibility', 'visible');
@@ -854,7 +884,10 @@ jQuery(function($){
             next_step_form.fadeTo('slow', 1, function(){
               setProgressBar(next_step);
               next_step_form.show();
-              stepVisited.push(next_step);
+              stepVisited=[]
+              for(let i=1; i<=next_step; i++){
+                  stepVisited.push(i);
+              }
             });
         }else if ($(this).attr('aria-selected')==='part-2'){
             current=1;
@@ -868,7 +901,7 @@ jQuery(function($){
             next_step=++current;
             next_step_form =  $('.step-'+next_step);
             
-            if (current >=1 && current<11){ 
+            if (current >=1 && current<12){ 
               $('.page .previous').css('visibility', 'visible');
             }else if(current >15){
               $('.page .previous').css('visibility', 'visible');
@@ -897,11 +930,15 @@ jQuery(function($){
             next_step_form.fadeTo('slow', 1, function(){
               setProgressBar(next_step);
               next_step_form.show();
-              stepVisited.push(next_step);
+              stepVisited=[]
+              for(let i=1; i<=next_step; i++){
+                  stepVisited.push(i);
+              }
             });
         }else if ($(this).attr('aria-selected')==='part-3'){
             $('.step-'+1).css('display', 'none');
             current=9;
+            
             $('.page .page__content #regiration_form').css("transform"," translateX(50px)" );
             $('.page .page__content #regiration_form').css("transition", "none" );
 
@@ -912,7 +949,7 @@ jQuery(function($){
             next_step=++current;
             next_step_form =  $('.step-'+next_step);
             
-            if (current >=1 && current<11){ 
+            if (current >=1 && current<12){ 
               $('.page .previous').css('visibility', 'visible');
             }else if(current >15){
               $('.page .previous').css('visibility', 'visible');
@@ -936,12 +973,14 @@ jQuery(function($){
             $('.page .page__content #regiration_form').css("transition", ".4s ease-out" );
             $('.page .page__content #regiration_form').css("transform"," translateX(0px)" );
             
-            
-            
             next_step_form.fadeTo('slow', 1, function(){
               setProgressBar(next_step);
               next_step_form.show();
+              stepVisited=[]
               stepVisited.push(next_step);
+              for(let i=1; i<=next_step; i++){
+                  stepVisited.push(i);
+              }
             });
         } if($(this).attr('aria-selected')==='part-4'){
           $('.step-'+1).css('display', 'none');
@@ -949,14 +988,14 @@ jQuery(function($){
           $('.page .page__content #regiration_form').css("transform"," translateX(50px)" );
           $('.page .page__content #regiration_form').css("transition", "none" );
 
-          previousStep=parseInt($(this).attr('skipStep')) ? current:  null;
+          previousStep=parseInt($(this).attr('skipStep')) || current;
           current= $(this).attr('skipStep') ? parseInt($(this).attr('skipStep')) : current;
           
           current_step =  $('.step-'+current);
           next_step=++current;
           next_step_form =  $('.step-'+next_step);
           
-          if (current >=1 && current<11){ 
+          if (current >=1 && current<12){ 
             $('.page .previous').css('visibility', 'visible');
           }else if(current >15){
             $('.page .previous').css('visibility', 'visible');
@@ -981,10 +1020,14 @@ jQuery(function($){
           $('.page .page__content #regiration_form').css("transition", ".4s ease-out" );
           $('.page .page__content #regiration_form').css("transform"," translateX(0px)" );
           
+         
           next_step_form.fadeTo('slow', 1, function(){
             setProgressBar(next_step);
             next_step_form.show();
-            stepVisited.push(next_step);
+            stepVisited=[]
+            for(let i=1; i<=next_step; i++){
+                stepVisited.push(i);
+            }
           });
 
         } if($(this).attr('aria-selected')==='part-5'){
@@ -1000,7 +1043,7 @@ jQuery(function($){
           next_step=++current;
           next_step_form =  $('.step-'+next_step);
           
-          if (current >=1 && current<11){ 
+          if (current >=1 && current<12){ 
             $('.page .previous').css('visibility', 'visible');
           }else if(current >15){
             $('.page .previous').css('visibility', 'visible');
@@ -1028,7 +1071,12 @@ jQuery(function($){
           next_step_form.fadeTo('slow', 1, function(){
             setProgressBar(next_step);
             next_step_form.show();
-            stepVisited.push(next_step);
+            stepVisited=[]
+            for(let i=1; i<=next_step; i++){
+              if(i<12 || i>15){
+                stepVisited.push(i);
+              }
+            }
           });
 
         }
@@ -1045,7 +1093,7 @@ jQuery(function($){
           next_step=++current;
           next_step_form =  $('.step-'+next_step);
           
-          if (current >=1 && current<11){ 
+          if (current >=1 && current<12){ 
             $('.page .previous').css('visibility', 'visible');
           }else if(current >15){
             $('.page .previous').css('visibility', 'visible');
@@ -1073,7 +1121,12 @@ jQuery(function($){
           next_step_form.fadeTo('slow', 1, function(){
             setProgressBar(next_step);
             next_step_form.show();
-            stepVisited.push(next_step);
+            stepVisited=[]
+            for(let i=1; i<=next_step; i++){
+              if(i<12 || i>15){
+                stepVisited.push(i);
+              }
+            }
           });
 
         }
@@ -1091,7 +1144,7 @@ jQuery(function($){
           next_step=++current;
           next_step_form =  $('.step-'+next_step);
           
-          if (current >=1 && current<11){ 
+          if (current >=1 && current<12){ 
             $('.page .previous').css('visibility', 'visible');
           }else if(current >15){
             $('.page .previous').css('visibility', 'visible');
@@ -1118,7 +1171,61 @@ jQuery(function($){
           next_step_form.fadeTo('slow', 1, function(){
             setProgressBar(next_step);
             next_step_form.show();
-            stepVisited.push(next_step);
+            stepVisited=[]
+            for(let i=1; i<=next_step; i++){
+              if(i<12 || i>15){
+                stepVisited.push(i);
+              }
+            }
+          });
+
+        }
+        if($(this).attr('aria-selected')==='part-8'){
+          $('.step-'+1).css('display', 'none');
+          current=19;
+          $('.page .page__content #regiration_form').css("transform"," translateX(50px)" );
+          $('.page .page__content #regiration_form').css("transition", "none" );
+
+          previousStep=parseInt($(this).attr('skipStep')) ? current:  null;
+          current= $(this).attr('skipStep') ? parseInt($(this).attr('skipStep')) : current;
+          
+          current_step =  $('.step-'+current);
+          next_step=++current;
+          next_step_form =  $('.step-'+next_step);
+          
+          if (current >=1 && current<12){ 
+            $('.page .previous').css('visibility', 'visible');
+          }else if(current >15){
+            $('.page .previous').css('visibility', 'visible');
+          }else{
+              $('.page .previous').css('visibility', 'hidden');
+          }
+        
+          if(current>11 && current< 16){
+            $('.main-cta').css('visibility', 'hidden');
+          }else if(current >18){
+            $('.main-cta').css('visibility', 'hidden');
+          }else{            
+            $('.main-cta').css('visibility', 'visible');
+          }
+
+          handleStepsDesign(current)
+
+          if (previousStep){ $('.step-'+previousStep).hide()}
+          current_step.hide();
+
+          $('.page .page__content #regiration_form').css("transition", ".4s ease-out" );
+          $('.page .page__content #regiration_form').css("transform"," translateX(0px)" );          
+          
+          next_step_form.fadeTo('slow', 1, function(){
+            setProgressBar(next_step);
+            next_step_form.show();
+            stepVisited=[]
+            for(let i=1; i<=next_step; i++){
+              if(i<12 || i>15){
+                stepVisited.push(i);
+              }
+            }
           });
 
         }
@@ -1174,6 +1281,11 @@ jQuery(function($){
           $("#part-7 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-7").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-8 h5").hasClass('step-list-item-disabled')){
+          $("#part-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-8").removeClass('step-list-item-active',1000, 'easeInBack');
       } else if(current<=1){
         if(!$("#part-1").hasClass('step-list-item-active')){
           $("#part-1").addClass('step-list-item-active')
@@ -1209,6 +1321,11 @@ jQuery(function($){
           $("#part-7 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-7").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-8 h5").hasClass('step-list-item-disabled')){
+          $("#part-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-8").removeClass('step-list-item-active',1000, 'easeInBack');
       }else if(current==11){
         if(!$("#part-4").hasClass('step-list-item-active')){
           $("#part-4").addClass('step-list-item-active')
@@ -1244,6 +1361,11 @@ jQuery(function($){
           $("#part-7 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-7").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-8 h5").hasClass('step-list-item-disabled')){
+          $("#part-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-8").removeClass('step-list-item-active',1000, 'easeInBack');
       }else if(current==16){
         if(!$("#part-5").hasClass('step-list-item-active')){
           $("#part-5").addClass('step-list-item-active')
@@ -1279,6 +1401,11 @@ jQuery(function($){
           $("#part-7 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-7").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-8 h5").hasClass('step-list-item-disabled')){
+          $("#part-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-8").removeClass('step-list-item-active',1000, 'easeInBack');
       } else if(current==10) {
         if(!$("#part-3").hasClass('step-list-item-active')){
           $("#part-3").addClass('step-list-item-active')
@@ -1314,12 +1441,62 @@ jQuery(function($){
           $("#part-7 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-7").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-8 h5").hasClass('step-list-item-disabled')){
+          $("#part-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-8").removeClass('step-list-item-active',1000, 'easeInBack');
       }else if(current==18 || current==19){
         if(!$("#part-7").hasClass('step-list-item-active')){
           $("#part-7").addClass('step-list-item-active')
         }
         $("#part-7 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
 
+        if(!$("#part-2 h5").hasClass('step-list-item-disabled')){
+          $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-3 h5").hasClass('step-list-item-disabled')){
+          $("#part-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-3").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-4 h5").hasClass('step-list-item-disabled')){
+          $("#part-4 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-4").removeClass('step-list-item-active',1000, 'easeInBack');
+
+        if(!$("#part-1 h5").hasClass('step-list-item-disabled')){
+          $("#part-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-1").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-5 h5").hasClass('step-list-item-disabled')){
+          $("#part-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-5").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-6 h5").hasClass('step-list-item-disabled')){
+          $("#part-6 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-6").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-8 h5").hasClass('step-list-item-disabled')){
+          $("#part-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-8").removeClass('step-list-item-active',1000, 'easeInBack');
+      }else if(current==20){
+        if(!$("#part-8").hasClass('step-list-item-active')){
+          $("#part-8").addClass('step-list-item-active')
+        }
+        $("#part-8 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
+
+        if(!$("#part-7 h5").hasClass('step-list-item-disabled')){
+          $("#part-7 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-7").removeClass('step-list-item-active',1000, 'easeInBack');
+        
         if(!$("#part-2 h5").hasClass('step-list-item-disabled')){
           $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
@@ -1385,6 +1562,12 @@ jQuery(function($){
             $("#part-7 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
           }
           $("#part-7").removeClass('step-list-item-active',1000, 'easeInBack');
+          
+          if(!$("#part-8 h5").hasClass('step-list-item-disabled')){
+            $("#part-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          }
+          $("#part-8").removeClass('step-list-item-active',1000, 'easeInBack');
+
         // }else if(current==18){
           // if(!$("#part-7").hasClass('step-list-item-active')){
           //   $("#part-7").addClass('step-list-item-active')
@@ -1478,7 +1661,7 @@ jQuery(function($){
       $('#inputMoyennConso').val((((parseInt($('#inputConsoFioul').val())+parseInt($('#inputConsoGaz').val()))* parseInt($(this).val()))/parseInt($(this).val())))
     })
     function consommationGlobal(){      
-      formPageValues.votre_conso_actuel=(parseFloat($('#inputEstimFactChauff').val()) + parseFloat($('#inputEstimFactEauChaude').val())+ parseFloat($('#inputEstimFactAppareilElec').val())+parseFloat($('#inputEstimFactEclairage').val()));
+      formPageValues.votre_conso_actuel=(Number($('#inputEstimFactChauff').val()) + Number($('#inputEstimFactEauChaude').val())+ Number($('#inputEstimFactAppareilElec').val())+Number($('#inputEstimFactEclairage').val()));
       $('#votre_conso_actuel').text(formatNumber.asEuro(formPageValues.votre_conso_actuel).replace(",00", ""));
       const nombreAnneeAIndexer=parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()) || 0;
       const evolPrixFioul =parseFloat($('#inputEvol25Annee').val())/100;
@@ -1501,7 +1684,6 @@ jQuery(function($){
       $('#votre_conso_sur_x_annee').text(formatNumber.asEuro(formPageValues.votre_conso_sur_x_annee).replace(",00", ""));
       $('#moyenne_conso_sur_x_annee').text(formatNumber.asEuro(formPageValues.moyenne_conso_sur_x_annee).replace(",00", ""));
     }
-    
     $('#inputEstimFactChauff').change(function(e){
       consommationGlobal()
     })
@@ -1513,6 +1695,27 @@ jQuery(function($){
     })
     $('#inputEstimFactEclairage').change(function(e){
       consommationGlobal()
+    })
+    //when clicking on the field
+    $('#inputEstimFactChauff').click(function(e){
+      if(parseInt($(this).val())===0){
+        $(this).val('')
+      }
+    })
+    $('#inputEstimFactEauChaude').click(function(e){
+      if(parseInt($(this).val())===0){
+        $(this).val('')
+      }
+    })
+    $('#inputEstimFactAppareilElec').click(function(e){
+      if(parseInt($(this).val())===0){
+        $(this).val('')
+      }
+    })
+    $('#inputEstimFactEclairage').click(function(e){
+      if(parseInt($(this).val())===0){
+        $(this).val('')
+      }
     })
 
     $('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').change(function(e){
@@ -1535,14 +1738,14 @@ jQuery(function($){
 
     $('#inputEvol25Annee').mouseup(function(){
         $($('#inputEvol25Annee + span.thumb')).addClass('active-thumb')
-        $($('#inputEvol25Annee + span.thumb')).css('left', (80.3786 * parseInt($(this).val())))
+        $($('#inputEvol25Annee + span.thumb')).css('left', (13.9 * parseInt($(this).val())))
       updatThumbEvolValue();
     });
 
     $('#inputEvol25Annee').mouseleave(function(){
       console.log('blur')
       $($('#inputEvol25Annee + span.thumb')).addClass('active-thumb')
-      $($('#inputEvol25Annee + span.thumb')).css('left', (80.3786 * parseInt($(this).val())));
+      $($('#inputEvol25Annee + span.thumb')).css('left', (13.7 * parseInt($(this).val()))+'%');
     });
     function updatThumbEvolValue(){
       $('#inputEvol25Annee + span.thumb').text(formPageValues.evol_sur_25_annee)
@@ -1925,7 +2128,7 @@ jQuery(function($){
     })
 
     $('#modal1Button').click(function(){
-      if($('#inputEstimFactChauff').val()!==''){
+      if($('#inputEstimFactChauff').val()!=='' && parseInt($('#inputEstimFactChauff').val())!==0){
           $('#consump-info1').attr('style', 'opacity:1; display: block;')
           // $('#consump-info1').css('opacity:','1')
           // $('#consump-info1').css('display', 'block')
@@ -1935,7 +2138,7 @@ jQuery(function($){
 
     
     $('#modal2Button').click(function(){
-      if($('#inputEstimFactEauChaude').val()!==''){
+      if($('#inputEstimFactEauChaude').val()!=='' && parseInt($('#inputEstimFactEauChaude').val())!==0){
         $('#consump-info2').attr('style', 'opacity:1; display: block;');
         $('#consumpt-val2').text($('#inputEstimFactEauChaude').val()+'€');
         $('#eauChaudeSanitaireLeftPart').css('width', '130px');
@@ -1943,7 +2146,7 @@ jQuery(function($){
     })
     
     $('#modal3Button').click(function(){
-      if($('#inputEstimFactAppareilElec').val()!==''){
+      if($('#inputEstimFactAppareilElec').val()!=='' && parseInt($('#inputEstimFactAppareilElec').val())!==0){
         $('#consump-info3').attr('style', 'opacity:1; display: block;')
         $('#consumpt-val3').text($('#inputEstimFactAppareilElec').val()+'€')
         $('#appareilElecLeftPart').css('width', '80px');
@@ -1951,7 +2154,7 @@ jQuery(function($){
     })
 
     $('#modal4Button').click(function(){
-      if($('#inputEstimFactEclairage').val()!==''){
+      if($('#inputEstimFactEclairage').val()!=='' && parseInt($('#inputEstimFactEclairage').val())!==0){
         $('#consump-info4').attr('style', 'opacity:1; display: block;')
         $('#consumpt-val4').text($('#inputEstimFactEclairage').val()+'€')
         
@@ -2088,7 +2291,6 @@ jQuery(function($){
       
       // Serialize the data in the form
       var serializedData = $form.serialize();
-      console.log($(".step-8__link.answer-selected input[name='type_de_vitrage']").val())
       //les valeurs que j'ai pas pu les récupérer du form
       serializedData += '&nombre_d_habitants=' + $("[name='nombre_d_habitants']").text().trim().trim();
       serializedData += '&temperature_de_confort=' + $("[name='temperature_de_confort']").text().trim();
@@ -2110,6 +2312,7 @@ jQuery(function($){
       serializedData += '&appElec=' + $(".step-13__link.answer-selected :input[name='utilisation_appareil_equip_electrique']").val();
       serializedData += '&typeAmpoule=' + $(".step-14__link.answer-selected :input[name='type_d_ampoule_eclairage']").val();
       serializedData += '&electUtil=' + $(".step-14__link.answer-selected :input[name='utilisation_moyenne_eclairage']").val();
+      serializedData += '&nbAnnee=' + $("select[name='type_de_chaufface_nombre_d_annee_a_indexer']").val();
       serializedData += '&consoActGlob=' + formPageValues.votre_conso_actuel;
       serializedData += '&consoXAn=' + formPageValues.votre_conso_sur_x_annee;
       serializedData += '&moyenneConsoXan=' + formPageValues.moyenne_conso_sur_x_annee
@@ -2119,7 +2322,7 @@ jQuery(function($){
       serializedData += '&primeRenov=' + $("#maPrimeRenov").text().trim();
       serializedData += '&coupDePouce=' + $("#coupDePouce").text().trim();
       serializedData += '&bonusEco=' + $("#bonusEcologique").text().trim();
-      serializedData += '&aidesCumul=' + $("#total_bonus").text().trim();
+      serializedData += '&aidesCumul=' + $("#total_bonus").text().trim(); 
       serializedData += '&chauffagePrix=' + $("#consumpt-val1").text().trim();
       serializedData += '&eauPrix=' + $("#consumpt-val2").text().trim();
       serializedData += '&appPrix=' + $("#consumpt-val3").text().trim();

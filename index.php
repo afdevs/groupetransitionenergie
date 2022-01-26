@@ -195,6 +195,15 @@
                         </button>
                     </li>
                     
+                    <li class="step-list-item" id="part-8">
+                        <button class="navigationButton" aria-selected="part-8">
+                            <div class="step-list-item-content">
+                            <h5 class="step-list-item-disabled">PRÉVISION DE VOTRE INSTALLATIONS</h5>
+                            <!-- <p class="step-description-text step-list-item-disabled">Décrivez votre logement et détaillez votre projet de travaux.</p> -->
+                        </div>
+                        </button>
+                    </li>
+                    
                     <!-- <li class="step-list-item" id="part-7">
                         <button class="navigationButton" aria-selected="part-7">
                             <div class="step-list-item-content">
@@ -1458,6 +1467,120 @@
                                         </a>
                                     </div>
                                 </div>
+
+                                <div class="pompes__item">
+                                    <div class="pompes__left">
+                                        <img src="./assets/images/pompe__chauff_thermo_new_1.jpg" alt="Therma V - LG">
+                                    </div>
+                                    <div class="pompes__center">
+                                        <span class="pompes__title">
+                                        Therma V - LG
+                                        </span>
+                                        <div class="pompes__advantages">
+                                            <span>Classe énergétique A+</span>
+                                            <span>Télécommande intuitive</span>
+                                            <span>Contrôle via l'application LG ThinQ</span>
+                                            <span>Monophasée</span>
+                                        </div>
+                                        <div class="pompes__category">
+                                        Chauffe-eau Thermodynamique
+                                        </div>
+                                    </div>
+                                    <div class="pompes__right">
+                                        <button class="pompes__btn" type="button" value="18">
+                                            AJOUTER
+                                        </button>
+                                        <a class="pompes__btn pompes__btn--show" target="_blank" href="https://www.lg.com/fr/business/download/airsolution/%20produit%20PAC%20air-eau%20Split%20R410A%20Mono%20et%20Triphasée%2012%20à%2016%20kW_installateur[20200902_204329384].pdf">
+                                            FICHE TECHNIQUE
+                                        </a>
+                                    </div>
+                                </div>                                
+
+                                <div class="pompes__item">
+                                    <div class="pompes__left">
+                                        <img src="./assets/images/pompe__chauff_thermo_new_2.jpg" alt="Gamme Dojo – Atlantic">
+                                    </div>
+                                    <div class="pompes__center">
+                                        <span class="pompes__title">
+                                        Gamme Dojo – Atlantic
+                                        </span>
+                                        <div class="pompes__advantages">
+                                            <span>Confort acoustique : 20 dB</span>
+                                            <span>Classe énergétique A+</span>
+                                            <span>Mono split mural</span>
+                                            <span>Mode pleine puisssance</span>
+                                        </div>
+                                        <div class="pompes__category">
+                                        Chauffe-eau Thermodynamique
+                                        </div>
+                                    </div>
+                                    <div class="pompes__right">
+                                        <button class="pompes__btn" type="button" value="18">
+                                            AJOUTER
+                                        </button>
+                                        <a class="pompes__btn pompes__btn--show" target="_blank" href="https://www.energy-go.fr/wp-content/uploads/2020/05/Pac-Air-Air-Atlantic-Multisplit-Dojo.pdf">
+                                            FICHE TECHNIQUE
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="pompes__item">
+                                    <div class="pompes__left">
+                                        <img src="./assets/images/pompe__chauff_thermo_new_3.jpg" alt="Performer – Thaleos" >
+                                    </div>
+                                    <div class="pompes__center">
+                                        <span class="pompes__title">
+                                        Performer – Thaleos
+                                        </span>
+                                        <div class="pompes__advantages">
+                                            <span>Fonction Smart Control</span>
+                                            <span>75% d’économies D’énergie </span>
+                                            <span>Système ACI Hybrid</span>
+                                            <span>Plage de fonctionnement (-5 à +43°c)</span>
+                                        </div>
+                                        <div class="pompes__category">
+                                        Chauffe-eau Thermodynamique
+                                        </div>
+                                    </div>
+                                    <div class="pompes__right">
+                                        <button class="pompes__btn" type="button" value="18">
+                                            AJOUTER
+                                        </button>
+                                        <a class="pompes__btn pompes__btn--show" target="_blank" href="https://www.energy-go.fr/wp-content/uploads/2020/05/Pac-Air-Air-Atlantic-Multisplit-Dojo.pdf">
+                                            FICHE TECHNIQUE
+                                        </a>
+                                    </div>
+                                </div>
+
+                                
+                                <div class="pompes__item">
+                                    <div class="pompes__left">
+                                        <img src="./assets/images/pompe__chauff_thermo_new_4.jpg" alt="Alféa Excellia – Atlantic">
+                                    </div>
+                                    <div class="pompes__center">
+                                        <span class="pompes__title">
+                                        Alféa Excellia – Atlantic
+                                        </span>
+                                        <div class="pompes__advantages">
+                                            <span>Certifié, Heat Pump, Keymark.</span>
+                                            <span>Application, Atlantic, Cozytouch</span>
+                                            <span>Monophasé et Triphasé</span>
+                                            <span>Classe énergétique A++ & A+</span>
+                                        </div>
+                                        <div class="pompes__category">
+                                        Chauffe-eau Thermodynamique
+                                        </div>
+                                    </div>
+                                    <div class="pompes__right">
+                                        <button class="pompes__btn" type="button" value="18">
+                                            AJOUTER
+                                        </button>
+                                        <a class="pompes__btn pompes__btn--show" target="_blank" href="https://www.izi-by-edf-renov.fr/files/catalogue/produits/fiche-technique-pompe-a-chaleur-alfea-excellia-ai-atlantic.pdf">
+                                            FICHE TECHNIQUE
+                                        </a>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </fieldset>
@@ -1572,8 +1695,8 @@
                             </div>
 
                         </div>        
-                    </fieldset>
-
+                    </fieldset>                    
+                    
                     <fieldset class="step-19" >
                         <h2>CALCUL DE VOS SUBVENTIONS POUR L'INSTLLATION DE VOS SOLUTIONS</h2>
                         <div class="step-19__content optionWithImages" style="display: flex;flex-direction:column;">
@@ -1633,6 +1756,52 @@
                         </div>
                     </fieldset>
                     
+                    <fieldset class="step-20" >
+                        <h2>PRÉVISION DE VOTRE INSTALLATION</h2>
+                        <div class="step-20__content optionWithImages" style="display: flex;flex-direction:column;">
+                            <div class="photos">
+                                <div class="row">
+                                    <div class="col s12 m6">
+                                        <h6>FAÇADE MAISON</h6>
+                                        <img src="./assets/images/photo_sample.jpg" alt="">
+                                        <button class="callToAction"><span class="material-icons">add_a_photo</span></button>
+                                    </div>
+                                    <div class="col s12 m6">
+                                        <h6>COMPTEUR ACTUEL</h6>
+                                        <img src="./assets/images/photo_sample.jpg" alt="">
+                                        <button class="callToAction"><span class="material-icons">add_a_photo</span></button>
+                                    </div>
+                                    <div class="col s12 m6">
+                                        <h6>CHAUDIÈRE ACTUELLE</h6>
+                                        <img src="./assets/images/photo_sample.jpg" alt="">
+                                        <button class="callToAction"><span class="material-icons">add_a_photo</span></button>
+                                    </div>
+                                    <div class="col s12 m6">
+                                        <h6>BALLON ACTUEL</h6>
+                                        <img src="./assets/images/photo_sample.jpg" alt="">
+                                        <button class="callToAction"><span class="material-icons">add_a_photo</span></button>
+                                    </div>
+                                    <div class="col s12 m6">
+                                        <h6>EMPLACEMENT POMPE À CHALEUR</h6>
+                                        <img src="./assets/images/photo_sample.jpg" alt="">
+                                        <button class="callToAction"><span class="material-icons">add_a_photo</span></button>
+                                    </div>
+                                    <div class="col s12 m6">
+                                        <h6>EMPLACEMENT DES BLOCS EXTÉRIEURS *</h6>
+                                        <img src="./assets/images/photo_sample.jpg" alt="">
+                                        <button class="callToAction"><span class="material-icons">add_a_photo</span></button>
+                                    </div>
+                                </div>
+                                <!-- <div class="photos__item">
+
+                                <button>
+                                    Take Photo
+                                </button>
+                                </div> -->
+                            </div>
+                        </div>
+                        
+                    </fieldset>
                 </form>
                 <div class="nextButtonControl">
                     <input type="button" class="next btn btn-info main-cta" value="Suivant" />
@@ -1835,6 +2004,31 @@
                             </div>
                         </div>
                         
+                        <div class="inputs">    
+                            <div class="input-item">
+                                <label for="inputMarqueAncienneChau">Marque de l'ancienne chaudière</label>
+                                <input id="inputMarqueAncienneChau" type="text" name="marque_ancienne_chaudiere">
+                                <span class="step-1__content__notice">Marque de l'ancienne chaudière requis </span>
+                            </div>
+                        </div>
+                        
+                        <div id="chauffage_emplacement" >
+                            <div class="step-11__content optionWithImages" style="max-width: 415px;">
+                                <label for="inputMarqueAncienneChau">Emplacement de la chaudière</label>
+
+                                <label for="type_de_chaufface_chaudierer_gaz_natur_hors_condensa" class="select-item btn step-11__link image image5 columnStyleInput" style="height: auto!important;">                        
+                                    <input type="radio" name="emplacement_chaudiere" id="emplacement_chaudiere_1" value="Mur">
+                                    Mur
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                                </label>
+                                
+                                <label for="type_de_chaufface_chaudiere_gaz_natur_condensa" class="select-item btn step-11__link image image5 columnStyleInput" style="height: auto!important;">             
+                                    <input type="radio" name="emplacement_chaudiere"  id="emplacement_chaudiere_2" value="Sol">
+                                    Sol
+                                    <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
+                                </label>
+                            </div>
+                        </div>
 
                         <div class="inputs">
                             <div class="input-item">

@@ -60,6 +60,7 @@ $data = [
       'elecPrix' => $_POST['elecPrix'],
       'pompeKWA' => $_POST['pompeKWA'],
       'nbAnnee' => $_POST['nbAnnee'],
+      'nbAnne' => $_POST['nbAnnee'],
       'NbAnnee3' => $_POST['NbAnnee3'],
       'nbAnnee3' => $_POST['NbAnnee3'],
       'solutionEau' => $_POST['solutionEau'],
