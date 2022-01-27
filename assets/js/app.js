@@ -194,7 +194,8 @@ let produits=[
     avantage: ['Temps de chauffe < 8h', 'COP de 2,86', '4 modes d’utilisations', '200L à 240L'],
     categorie: 'Chauffe-eau Thermodynamique',
     fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/NUOS.pdf',
-    img_url: './assets/images/pompe_air_eau_10.png'
+    img_url: './assets/images/pompe_air_eau_10.png',
+    width: '30%'
   },
   {
     title: 'Aquanext Split - Chaffoteaux',
@@ -208,21 +209,24 @@ let produits=[
     avantage: ['Ecran digital déportable', 'Résistance de 1550 W', '34 à 35,2 dB(A)', 'Fluide frigorigène R 134 A'],
     categorie: 'Chauffe-eau Thermodynamique',
     fiche_technique_url: 'https://econegoce.com/wp-conKaliko',
-    img_url: './assets/images/pompe_air_eau_12.png'
+    img_url: './assets/images/pompe_air_eau_12.png',
+    width: '40%'
   },
   {
     title: 'Essentiel – De Dietrich',
     avantage: ['Classe énergétique A+', 'Puissance PAC 1750W', 'Pression acoustique 42dB(A)', 'Temps de chauffe < 6h'],
     categorie: 'Chauffe-eau Thermodynamique',
     fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/KALIKO-ESSENTIEL.pdf',
-    img_url: './assets/images/pompe_air_eau_13.png'
+    img_url: './assets/images/pompe_air_eau_13.png',
+    width: '30%'
   },
   {
     title: 'Kaliko Split – De Dietrich',
     avantage: ['ECS jusqu’à 65°', 'Puissance PAC', '230v Monophasé', 'Maxi 1 300m3/hh'],
     categorie: 'Chauffe-eau Thermodynamique',
     fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/KALIKO-SPLIT.pdf',
-    img_url: './assets/images/pompe_air_eau_13.png'
+    img_url: './assets/images/pompe_air_eau_13.png',
+    width: '30%'
   },
   {
     title: 'Therma V - LG',
@@ -327,7 +331,10 @@ var formPageValues={
     eligibility_nbr_enfant_a_charge: 0,
     eligibility_nbr_part_fiscal: 0,
     annee_contruction: 0,
-    produits_ajoutees: Array.apply(null, Array(produits.length)).map(function(){}) //new Array(produits.length)
+    produits_ajoutees: Array.apply(null, Array(produits.length)).map(function(){}), //new Array(produits.length)
+    snapshot:{
+      fieldName: '',
+    }
 }
 
 let bonusCalcul={
@@ -373,6 +380,95 @@ jQuery(function($){
 
       $('#pompeChaleurButton').click(function(e){
         $('#modal5').modal('open');
+      })
+      
+      $('#facade_maison').click(function(e){
+        formPageValues.snapshot.fieldName='facade_maison';
+        $('#modal6').modal('open');
+      })
+      
+      $('#compteur_actuel').click(function(e){
+        formPageValues.snapshot.fieldName='compteur_actuel';
+        $('#modal6').modal('open');
+      })
+      
+      $('#chaudiere_actuel').click(function(e){
+        formPageValues.snapshot.fieldName='chaudiere_actuel';
+        $('#modal6').modal('open');
+      })
+      
+      $('#ballon_actuel').click(function(e){
+        formPageValues.snapshot.fieldName='ballon_actuel';
+        $('#modal6').modal('open');
+      })
+      
+      $('#emplacement_pompe_a_chaleur').click(function(e){
+        formPageValues.snapshot.fieldName='emplacement_pompe_a_chaleur';
+        $('#modal6').modal('open');
+      })
+      
+      $('#emplacement_des_blocs_exterieurs').click(function(e){
+        formPageValues.snapshot.fieldName='emplacement_des_blocs_exterieurs';
+        $('#modal6').modal('open');
+      })
+
+      $('#modal6Button').click(function(){
+        let image = new Image();
+        image.src = canvas.toDataURL()
+        if(formPageValues.snapshot.fieldName==='facade_maison'){
+          image.id = "pic"+formPageValues.snapshot.fieldName;
+          image.alt="Facade Maison";
+          $('#facade_maison_img').html('');
+          $('#facade_maison_img').append(image);
+        }else if(formPageValues.snapshot.fieldName==='compteur_actuel'){
+          image.id = "pic"+formPageValues.snapshot.fieldName;
+          image.alt="COMPTEUR ACTUEL";
+          $('#compteur_actuel_img').html('');
+          $('#compteur_actuel_img').append(image);
+        }else if(formPageValues.snapshot.fieldName==='chaudiere_actuel'){
+          image.id = "pic"+formPageValues.snapshot.fieldName;
+          image.alt="CHAUDIÈRE ACTUELLE";
+          $('#chaudiere_actuel_img').html('');
+          $('#chaudiere_actuel_img').append(image);
+        }else if(formPageValues.snapshot.fieldName==='ballon_actuel'){
+          image.id = "pic"+formPageValues.snapshot.fieldName;
+          image.alt="BALLON ACTUEL";
+          $('#ballon_actuel_img').html('');
+          $('#ballon_actuel_img').append(image);
+        }else if(formPageValues.snapshot.fieldName==='emplacement_pompe_a_chaleur'){
+          image.id = "pic"+formPageValues.snapshot.fieldName;
+          image.alt="EMPLACEMENT POMPE À CHALEUR";
+          $('#emplacement_pompe_a_chaleur_img').html('');
+          $('#emplacement_pompe_a_chaleur_img').append(image);
+        }else if(formPageValues.snapshot.fieldName==='emplacement_des_blocs_exterieurs'){
+          image.id = "pic"+formPageValues.snapshot.fieldName;
+          image.alt="EMPLACEMENT DES BLOCS EXTÉRIEURS";
+          $('#emplacement_des_blocs_exterieurs_img').html('');
+          $('#emplacement_des_blocs_exterieurs_img').append(image);
+        }
+
+      })
+
+      function showListProduits(filtreText='all'){
+        $('#list_pompes').html('');
+        produits.forEach(produit=>{
+          if(filtreText!=='all' && produit.categorie.indexOf(filtreText)== -1) return
+          let avantages='<div class="pompes__advantages">';
+          produit.avantage.forEach(atg=>{
+            avantages +='<span>'+atg+'</span>'
+          })
+          avantages +='</div>';
+          const styleValue=produit.width ? "width:"+produit.width?.toString() :"";
+          let row='<div class="pompes__item"><div class="pompes__left"><img src="'+ produit.img_url+'" alt="'+produit.title+'" style='+styleValue +'></div><div class="pompes__center"><span class="pompes__title">'+produit.title+'</span>'+avantages+'<div class="pompes__category">'+produit.categorie+'</div></div><div class="pompes__right"><button class="pompes__btn" type="button" value="0">AJOUTER</button><a class="pompes__btn pompes__btn--show" target="_blank" href="'+ produit.img_url +'">FICHE TECHNIQUE</a></div></div>';
+          
+          $('#list_pompes').append(row);
+        })
+      }
+      showListProduits();
+      $('#productsFilterCategory').change(function(){
+      
+        console.log($(this).val())
+        showListProduits($(this).val())
       })
       // $('.modal-trigger').modal();
 
@@ -430,8 +526,8 @@ jQuery(function($){
       //     }
       // });
     }
-
-      $('button.pompes__btn').click(function(e){
+      $('#list_pompes').on('click', 'button.pompes__btn', function(e){
+      // $('button.pompes__btn').click(function(e){
         // $(this).animate({ trans: 60}, 0);
         // console.log('animation')
         AnimateRotate($(this), 90);
@@ -450,7 +546,7 @@ jQuery(function($){
           formPageValues.produits_ajoutees[$(this).val()]=produits[$(this).val()]
           AnimateRotate($(this), 360)
         };
-        
+        console.log(formPageValues.produits_ajoutees);
       })
       // let map = new google.maps.Map(document.getElementById("map"), {});
       // console.log('map', map)
@@ -2346,7 +2442,6 @@ jQuery(function($){
               + $(this).children(".bottom_part").children(".pompeAChaleurAirAirInput").val() + " M² : "
               + $(this).children(".bottom_part").children(".pieces__value").text()
           pieces.push(str);
-          console.log(pieces);
       });
       var champ1 = "", champ2 = ""
       for (var i = 0; i < pieces.length; i++) {

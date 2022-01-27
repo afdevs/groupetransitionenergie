@@ -935,8 +935,14 @@
                     <fieldset class="step-17" style="max-width: 850px;">
                         <h2>FICHE TECHNIQUE PAR CATEGORIE</h2>
                         <div class="step-17__content optionWithImages" style="display: flex;flex-direction:column;">
-                            <div class="pompes">
-                                <div class="pompes__item">
+                        <select id="productsFilterCategory" name="product_category" style="width: 100%;">
+                            <option value="all">Tous</option>
+                            <option value="Pompes à chaleur air-eau">Pompes à chaleur air-eau</option>
+                            <option value="Chauffe-eau Thermodynamique">Chauffe-eau Thermodynamique</option>
+                            <option value="Pompes à chaleur air-air">Pompes à chaleur air-air</option>
+                        </select>
+                            <div class="pompes" id="list_pompes">
+                                <!-- <div class="pompes__item">
                                     <div class="pompes__left">
                                         <img src="./assets/images/pompe_Dietrich.png" alt="Clim’Up EMSM – De Dietrich">
                                     </div>
@@ -1579,7 +1585,7 @@
                                             FICHE TECHNIQUE
                                         </a>
                                     </div>
-                                </div>
+                                </div> -->
 
                             </div>
                         </div>
@@ -1763,33 +1769,45 @@
                                 <div class="row">
                                     <div class="col s12 m6">
                                         <h6>FAÇADE MAISON</h6>
-                                        <img src="./assets/images/photo_sample.jpg" alt="">
-                                        <button class="callToAction"><span class="material-icons">add_a_photo</span></button>
+                                        <div id="facade_maison_img" class="col_image">
+                                            <img src="./assets/images/photo_sample.jpg" alt="Facade Maison" >
+                                        </div>
+                                        <button class="callToAction" id="facade_maison" type="button"><span class="material-icons">add_a_photo</span></button>
                                     </div>
                                     <div class="col s12 m6">
                                         <h6>COMPTEUR ACTUEL</h6>
-                                        <img src="./assets/images/photo_sample.jpg" alt="">
-                                        <button class="callToAction"><span class="material-icons">add_a_photo</span></button>
+                                        <div id="compteur_actuel_img" class="col_image">
+                                            <img src="./assets/images/photo_sample.jpg" alt="COMPTEUR ACTUEL">
+                                        </div>
+                                        <button class="callToAction" id="compteur_actuel" type="button"><span class="material-icons">add_a_photo</span></button>
                                     </div>
                                     <div class="col s12 m6">
                                         <h6>CHAUDIÈRE ACTUELLE</h6>
-                                        <img src="./assets/images/photo_sample.jpg" alt="">
-                                        <button class="callToAction"><span class="material-icons">add_a_photo</span></button>
+                                        <div id="chaudiere_actuel_img" class="col_image">
+                                            <img src="./assets/images/photo_sample.jpg" alt="CHAUDIÈRE ACTUELLE"> 
+                                        </div>
+                                        <button class="callToAction" id="chaudiere_actuel" type="button"><span class="material-icons">add_a_photo</span></button>
                                     </div>
                                     <div class="col s12 m6">
                                         <h6>BALLON ACTUEL</h6>
-                                        <img src="./assets/images/photo_sample.jpg" alt="">
-                                        <button class="callToAction"><span class="material-icons">add_a_photo</span></button>
+                                        <div id="ballon_actuel_img" class="col_image">
+                                            <img src="./assets/images/photo_sample.jpg" alt="BALLON ACTUEL">
+                                        </div>
+                                        <button class="callToAction" id="ballon_actuel" type="button"><span class="material-icons">add_a_photo</span></button>
                                     </div>
-                                    <div class="col s12 m6">
+                                    <div class="col s12 m6 ">
                                         <h6>EMPLACEMENT POMPE À CHALEUR</h6>
-                                        <img src="./assets/images/photo_sample.jpg" alt="">
-                                        <button class="callToAction"><span class="material-icons">add_a_photo</span></button>
+                                        <div id="emplacement_pompe_a_chaleur_img" class="col_image">
+                                            <img src="./assets/images/photo_sample.jpg" alt="EMPLACEMENT POMPE À CHALEUR"> 
+                                        </div>
+                                        <button class="callToAction" id="emplacement_pompe_a_chaleur" type="button"><span class="material-icons">add_a_photo</span></button>
                                     </div>
                                     <div class="col s12 m6">
                                         <h6>EMPLACEMENT DES BLOCS EXTÉRIEURS *</h6>
-                                        <img src="./assets/images/photo_sample.jpg" alt="">
-                                        <button class="callToAction"><span class="material-icons">add_a_photo</span></button>
+                                        <div id="emplacement_des_blocs_exterieurs_img" class="col_image">
+                                            <img src="./assets/images/photo_sample.jpg" alt="EMPLACEMENT DES BLOCS EXTÉRIEURS ">
+                                        </div>
+                                        <button class="callToAction" id="emplacement_des_blocs_exterieurs" type="button"><span class="material-icons">add_a_photo</span></button>
                                     </div>
                                 </div>
                                 <!-- <div class="photos__item">
@@ -2548,7 +2566,39 @@
                 </div>
                 <div class="modal-footer"style="margin-top: 25px;text-align:center;margin-bottom: 30px;">
                     <div >
-                        <a href="#!" class="modal-close callToAction">VALIDER</a>
+                        <a href="#!" class="modal-close callToAction" >VALIDER</a>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="modal6" class="modal">
+                <div class="modal-content">
+                    <div class="container" style="margin-top: 40px;">
+                        <div class="col s12">
+                            <div class="buttons" style="text-align: center;">
+                                <button id="start_camera_button" type="text">Start Camera</button>
+                                <button id="take_picture_button" type="text" disabled>Take Picture</button>
+                                <button id="clear_picture_button" type="text" disabled>Clear Picture</button>
+                                <button id="upload_button" type="text" disabled>Upload Picture</button>
+                            </div>
+                        </div>
+                        <div class="row" style="text-align: center;">
+                            <div class="col m6">
+                                <label for="video_camera">Video tag</label><br />
+                                <video id="video_camera" class="responsive-video">Video stream not available.</video><br />
+                            </div>
+                            <div class="col m6">
+                                <!-- Canvas -->
+                                <label for="canvas">Canvas:</label><br />
+                                <canvas id="canvas"></canvas><br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer"style="margin-top: 25px;text-align:center;margin-bottom: 30px;">
+                    <div >
+                        <a href="#!" class="modal-close callToAction" id="modal6Button">VALIDER</a>
                     </div>
                 </div>
             </div>
@@ -2558,5 +2608,7 @@
     <script src="./assets/js/jquery-3.6.0.min.js"></script>
     <script src="./assets/js/materialize.min.js"></script>
     <script src="./assets/js/app.js" ></script>
+    <script src="./node_modules/jslib-html5-camera-photo/build/index.js" ></script>
+    <script src="./assets/js/camera.js" ></script>
 </body>
 </html>

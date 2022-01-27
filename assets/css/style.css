@@ -2184,9 +2184,38 @@ main .modalContainer .modal-content .noImageSelection label.no-image {
 }
 .step-20 .row .col img {
     width: 100%;
+    height: 100%;
 }
 .step-20 .row .col {
     margin-bottom: 16px;
+}
+input {
+  width: 200px;
+}
+
+video,
+canvas,
+#cloudinary_photo {
+  border: 1px solid black;
+  background-color: #efefef;
+}
+#video_camera, #canvas{
+    width: 100%;
+}
+
+#camera_upload > p {
+  font-size: 0.9rem;
+  color: #333;
+  margin: 0px 0px 0px 105px;
+}
+
+#uploadBtn {
+  margin: 20px 0 0 105px;
+}
+.col_image {
+    max-width: 490px;
+    height: 350px;
+    overflow: hidden;
 }
 
 /*RESPONSIVENESS*/
