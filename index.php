@@ -936,7 +936,7 @@
                         <h2>FICHE TECHNIQUE PAR CATEGORIE</h2>
                         <div class="step-17__content optionWithImages" style="display: flex;flex-direction:column;">
                         <select id="productsFilterCategory" name="product_category" style="width: 100%;">
-                            <option value="all">Tous</option>
+                            <option value="all">Tous les produits</option>
                             <option value="Pompes à chaleur air-eau">Pompes à chaleur air-eau</option>
                             <option value="Chauffe-eau Thermodynamique">Chauffe-eau Thermodynamique</option>
                             <option value="Pompes à chaleur air-air">Pompes à chaleur air-air</option>
@@ -2577,20 +2577,20 @@
                     <div class="container" style="margin-top: 40px;">
                         <div class="col s12">
                             <div class="buttons" style="text-align: center;">
-                                <button id="start_camera_button" type="text">Start Camera</button>
-                                <button id="take_picture_button" type="text" disabled>Take Picture</button>
-                                <button id="clear_picture_button" type="text" disabled>Clear Picture</button>
-                                <button id="upload_button" type="text" disabled>Upload Picture</button>
+                                <button id="start_camera_button" type="text">Ouvrir la camera</button>
+                                <button id="take_picture_button" type="text" disabled>Capturer une photo</button>
+                                <button id="clear_picture_button" type="text" disabled>Effacer la photo</button>
+                                <button id="upload_button" type="text" disabled>Sélectionner une photo</button>
                             </div>
                         </div>
                         <div class="row" style="text-align: center;">
                             <div class="col m6">
-                                <label for="video_camera">Video tag</label><br />
-                                <video id="video_camera" class="responsive-video">Video stream not available.</video><br />
+                                <label for="video_camera">Camera vidéo</label><br />
+                                <video id="video_camera" class="responsive-video">Stream vidéo not disponible.</video><br />
                             </div>
                             <div class="col m6">
                                 <!-- Canvas -->
-                                <label for="canvas">Canvas:</label><br />
+                                <label for="canvas">Photo capturé:</label><br />
                                 <canvas id="canvas"></canvas><br />
                             </div>
                         </div>
