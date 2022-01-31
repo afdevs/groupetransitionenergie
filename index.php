@@ -1755,11 +1755,6 @@
                                 </div>
                             </div>  
                         </div>
-                        <div class="generate_pdf_container">
-                            <button class="generate_pdf_btn" type="submit" >
-                                GENERER MON PDF
-                            </button>
-                        </div>
                     </fieldset>
                     
                     <fieldset class="step-20" >
@@ -1786,21 +1781,21 @@
                                         <div id="chaudiere_actuel_img" class="col_image">
                                             <img src="./assets/images/photo_sample.jpg" alt="CHAUDIÈRE ACTUELLE"> 
                                         </div>
-                                        <button class="callToAction" id="chaudiere_actuel" type="button"><span class="material-icons">add_a_photo</span></button>
+                                        <button class="callToAction disabled_photo_btn" id="chaudiere_actuel" disabled="true" type="button"><span class="material-icons">add_a_photo</span></button>
                                     </div>
                                     <div class="col s12 m6">
                                         <h6>BALLON ACTUEL</h6>
                                         <div id="ballon_actuel_img" class="col_image">
                                             <img src="./assets/images/photo_sample.jpg" alt="BALLON ACTUEL">
                                         </div>
-                                        <button class="callToAction" id="ballon_actuel" type="button"><span class="material-icons">add_a_photo</span></button>
+                                        <button class="callToAction disabled_photo_btn" disabled="true" id="ballon_actuel" type="button"><span class="material-icons">add_a_photo</span></button>
                                     </div>
                                     <div class="col s12 m6 ">
                                         <h6>EMPLACEMENT POMPE À CHALEUR</h6>
                                         <div id="emplacement_pompe_a_chaleur_img" class="col_image">
                                             <img src="./assets/images/photo_sample.jpg" alt="EMPLACEMENT POMPE À CHALEUR"> 
                                         </div>
-                                        <button class="callToAction" id="emplacement_pompe_a_chaleur" type="button"><span class="material-icons">add_a_photo</span></button>
+                                        <button class="callToAction disabled_photo_btn" disabled="true" id="emplacement_pompe_a_chaleur" type="button"><span class="material-icons">add_a_photo</span></button>
                                     </div>
                                     <div class="col s12 m6">
                                         <h6>EMPLACEMENT DES BLOCS EXTÉRIEURS *</h6>
@@ -1810,6 +1805,11 @@
                                         <button class="callToAction" id="emplacement_des_blocs_exterieurs" type="button"><span class="material-icons">add_a_photo</span></button>
                                     </div>
                                 </div>
+                                    <div class="generate_pdf_container">
+                                        <button class="generate_pdf_btn" type="submit" >
+                                            GENERER MON PDF
+                                        </button>
+                                    </div>
                                 <!-- <div class="photos__item">
 
                                 <button>
@@ -2580,17 +2580,21 @@
                                 <button id="start_camera_button" type="text">Ouvrir la camera</button>
                                 <button id="take_picture_button" type="text" disabled>Capturer une photo</button>
                                 <button id="clear_picture_button" type="text" disabled>Effacer la photo</button>
+                                <input type="file" id="upload_photo" />
                                 <button id="upload_button" type="text" disabled>Sélectionner une photo</button>
                             </div>
                         </div>
                         <div class="row" style="text-align: center;">
                             <div class="col m6">
-                                <label for="video_camera">Camera vidéo</label><br />
+                                <label for="video_camera">Camera vidéo</label><br /> 
+                                <select id="videoSource" style="width: 100%;display:none;">
+                                
+                                </select>
                                 <video id="video_camera" class="responsive-video">Stream vidéo not disponible.</video><br />
                             </div>
                             <div class="col m6">
                                 <!-- Canvas -->
-                                <label for="canvas">Photo capturé:</label><br />
+                                <label for="canvas">Aperçu photo</label><br />
                                 <canvas id="canvas"></canvas><br />
                             </div>
                         </div>

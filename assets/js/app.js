@@ -95,105 +95,105 @@ let produits=[
     title: 'Clim’Up EMSM – De Dietrich',
     avantage: ['Mono split mural', 'Monophasé et Triphasé', 'Fluide frigorigène R32', 'SCOP 4,0 à 4,3'],
     categorie: 'Pompes à chaleur air-eau',
-    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/clim-up.pdf',
+    fiche_technique_url: 'https://bit.ly/3g6ZTA8',
     img_url: './assets/images/pompe_Dietrich.png'
   },
   {
     title: 'Clim’Up Muse unité extérieure - De Dietrich',
     avantage: ['Multisplit', 'SCOP de 4,1 à 4,2', 'Fluide frigorigène R32', 'SEER de 6,18 à 6,5'],
     categorie: 'Pompes à chaleur air-eau',
-    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/clim-up.pdf',
+    fiche_technique_url: 'https://bit.ly/3g6ZTA8',
     img_url: './assets/images/pompe_Dietrich_2.png'
   },
   {
     title: 'Clim’up SMART unité interieur – De Dietrich',
     avantage: ['Pompe de relevage des condensats', 'Fixation murale', 'De 2,05 à 5,30 kW', 'Monophasé'],
     categorie: 'Pompes à chaleur aieau',
-    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/SMART.pdf',
+    fiche_technique_url:  'https://bit.ly/3KRClO4',
     img_url: './assets/images/pompe_Dietrich_4.png'
   },
   {
     title: 'Perfera - Daikin',
     avantage: ['Fluide frigorigène R32', 'Label énergétique', 'Purificateur d\'air et anti-allergènes', 'Amplification de chauffage'],
     categorie: 'Pompes à chaleur air-air',
-    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/12/250.DOC.FTXM-R.20.pdf',
+    fiche_technique_url: 'https://bit.ly/34gkkI6',
     img_url: './assets/images/pompe_Dietrich_3.png'
   },
   {
     title: 'Altherma 60° - Daikin',
     avantage: ['Fluide frigorigène R32', 'Label énergétique', 'Compresseur Inverter DC', 'Compacte'],
     categorie: 'Pompes à chaleur air-eau',
-    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/12/DAIKIN-doc-altherma-60c.pdf',
+    fiche_technique_url: 'https://bit.ly/3IIMNp5',
     img_url: './assets/images/pompe_air_eau.png'
   },
   {
     title: 'Altherma 70° 3H HT - Daikin',
     avantage: ['Seulement 32 dB(A)', 'Fluide frigorigène R32', 'Pression max 56 bar', 'Commande intuitive'],
     categorie: 'Pompes à chaleur air-eau',
-    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/altherma-3-hht.pdf',
+    fiche_technique_url: 'https://bit.ly/3Hbr8FK',
     img_url: './assets/images/pompe_air_eau_2.png'
   },
   {
     title: 'Altherma 80° R HT - Daikin',
     avantage: ['Sortie d’eau 80°C', 'COP entre 3 et 5', '100 % thermodynamique', 'Thermostat d’ambiance'],
     categorie: 'Pompes à chaleur air-eau',
-    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/ALTRHT.pdf',
+    fiche_technique_url: 'https://bit.ly/3r6h7Eb',
     img_url: './assets/images/pompe_air_eau_3.png'
   },
   {
     title: 'Arianext plus S - Chaffoteaux',
     avantage: ['Sonde extérieure filaire', 'Appoint électrique intégré, 4kW ou 6kW', 'COP jusqu’à 5,25', 'Compresseur Inverter DC'],
     categorie: 'Pompes à chaleur air-eau',
-    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/ARIANEXT-PLUS-S.pdf',
+    fiche_technique_url: 'https://bit.ly/33U6dsu',
     img_url: './assets/images/pompe_air_eau_4.png'
   },
   {
     title: 'EHS - SAMSUNG ',
     avantage: ['Label énergétique', 'Eau jusqu’à 65°C', 'Ballon disponible', 'Disponible en 4 / 6 / 9 kW'],
     categorie: 'Pompes à chaleur air-eau',
-    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/ARIANEXT-PLUS-S.pdf',
+    fiche_technique_url: 'https://bit.ly/33U6dsu',
     img_url: './assets/images/pompe__air__eau__5.jpg'
   },
   {
     title: 'Alezio S – De Dietrich',
     avantage: ['Jusqu\'à 70% d\'économies', 'Rapide à installer', 'Solution connectée', 'Simple d’utilisation'],
     categorie: 'Pompes à chaleur air-eau',
-    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/ALEZIO-awhp.pdf',
+    fiche_technique_url: 'https://bit.ly/3KPPpDw',
     img_url: './assets/images/pompe_air_eau_5.png'
   },
   {
     title: 'Alezio  V200 - De Dietrich',
     avantage: ['Solution compacte', '4,5 kW à 16 kW', 'Thermostat connecté', 'Fluide frigorigène R410A'],
     categorie: 'Pompes à chaleur air-eau',
-    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/ALEZIO-S-V200.pdf',
+    fiche_technique_url: 'https://bit.ly/3u5DmvV',
     img_url: './assets/images/pompe_air_eau_6.png'
   },
   {
     title: 'HPI Evolution - De Dietrich',
     avantage: ['Option hybride', 'Compatible multi-énergies', 'Bouteille de découplage intégrée', 'COP de 5,11'],
     categorie: 'Pompes à chaleur air-eau',
-    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/hpi.pdf',
+    fiche_technique_url:  'https://bit.ly/3INY7Au',
     img_url: './assets/images/pompe_air_eau_7.png'
   },
   {
     title: 'Hydrosplit - LG',
     avantage: ['Fluide frigorigène R32', 'Label énergétique', 'Réfrigérant écologique', 'Contrôle intelligent du chauffage'],
     categorie: 'Pompes à chaleur air-eau',
-    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/12/LG-Fiche-PAC-air-eau-Hydrosplit-R32-2021.pdf',
+    fiche_technique_url:  'https://bit.ly/3KQ4yog',
     img_url: './assets/images/pompe_air_eau_8.png'
   },
   {
     title: 'Hydrosplit DUO - LG',
     avantage: ['Fluide frigorigène R32', 'Label énergétique', 'Réfrigérant écologique', 'Contrôle intelligent du chauffage'],
     categorie: 'Pompes à chaleur air-eau',
-    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/12/LG-Fiche-PAC-air-eau-Hydrosplit-R32-2021.pdf',
+    fiche_technique_url:  'https://bit.ly/3KQ4yog',
     img_url: './assets/images/pompe_air_eau_9.png'
   },
   {
     title: 'Nuos Primos – Ariston',
     avantage: ['Temps de chauffe < 8h', 'COP de 2,86', '4 modes d’utilisations', '200L à 240L'],
     categorie: 'Chauffe-eau Thermodynamique',
-    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/NUOS.pdf',
+    fiche_technique_url: 'https://bit.ly/3IQQMjD',
     img_url: './assets/images/pompe_air_eau_10.png',
     width: '30%'
   },
@@ -201,14 +201,14 @@ let produits=[
     title: 'Aquanext Split - Chaffoteaux',
     avantage: ['Temps de chauffe < 6h', 'Technologie Inverter', 'Condenseur avec profile D', 'Connexion HP/HC'],
     categorie: 'Chauffe-eau Thermodynamique',
-    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/Aquanext-Split-Inverter.pdf',
+    fiche_technique_url: 'https://bit.ly/3G41b9z',
     img_url: './assets/images/pompe_air_eau_11.png'
   },
   {
     title: 'Kaliko - De Dietrich',
     avantage: ['Ecran digital déportable', 'Résistance de 1550 W', '34 à 35,2 dB(A)', 'Fluide frigorigène R 134 A'],
     categorie: 'Chauffe-eau Thermodynamique',
-    fiche_technique_url: 'https://econegoce.com/wp-conKaliko',
+    fiche_technique_url: 'https://bit.ly/3r8NrGz',
     img_url: './assets/images/pompe_air_eau_12.png',
     width: '40%'
   },
@@ -216,7 +216,7 @@ let produits=[
     title: 'Essentiel – De Dietrich',
     avantage: ['Classe énergétique A+', 'Puissance PAC 1750W', 'Pression acoustique 42dB(A)', 'Temps de chauffe < 6h'],
     categorie: 'Chauffe-eau Thermodynamique',
-    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/KALIKO-ESSENTIEL.pdf',
+    fiche_technique_url: 'https://bit.ly/3u93JBc',
     img_url: './assets/images/pompe_air_eau_13.png',
     width: '30%'
   },
@@ -224,7 +224,7 @@ let produits=[
     title: 'Kaliko Split – De Dietrich',
     avantage: ['ECS jusqu’à 65°', 'Puissance PAC', '230v Monophasé', 'Maxi 1 300m3/hh'],
     categorie: 'Chauffe-eau Thermodynamique',
-    fiche_technique_url: 'https://econegoce.com/wp-content/uploads/2021/05/KALIKO-SPLIT.pdf',
+    fiche_technique_url:  'https://bit.ly/3o8JAY1',
     img_url: './assets/images/pompe_air_eau_13.png',
     width: '30%'
   },
@@ -818,7 +818,7 @@ jQuery(function($){
             
             if(current>11 && current< 16){
               $('.main-cta').css('visibility', 'hidden');
-            }else if(current >18){
+            }else if(current >19){
               $('.main-cta').css('visibility', 'hidden');
             }else{            
               $('.main-cta').css('visibility', 'visible');
@@ -907,7 +907,7 @@ jQuery(function($){
             
         if(current>11 && current< 16){
           $('.main-cta').css('visibility', 'hidden');
-        }else if(current >18){
+        }else if(current >19){
           $('.main-cta').css('visibility', 'hidden');
         }else{            
           $('.main-cta').css('visibility', 'visible');
@@ -961,7 +961,7 @@ jQuery(function($){
             
             if(current>11 && current< 16){
               $('.main-cta').css('visibility', 'hidden');
-            }else if(current >18){
+            }else if(current >19){
               $('.main-cta').css('visibility', 'hidden');
             }else{            
               $('.main-cta').css('visibility', 'visible');
@@ -1007,7 +1007,7 @@ jQuery(function($){
             
             if(current>11 && current< 16){
               $('.main-cta').css('visibility', 'hidden');
-            }else if(current >18){
+            }else if(current >19){
               $('.main-cta').css('visibility', 'hidden');
             }else{            
               $('.main-cta').css('visibility', 'visible');
@@ -1055,7 +1055,7 @@ jQuery(function($){
             
             if(current>11 && current< 16){
               $('.main-cta').css('visibility', 'hidden');
-            }else if(current >18){
+            }else if(current >19){
               $('.main-cta').css('visibility', 'hidden');
             }else{            
               $('.main-cta').css('visibility', 'visible');
@@ -1102,7 +1102,7 @@ jQuery(function($){
             
           if(current>11 && current< 16){
             $('.main-cta').css('visibility', 'hidden');
-          }else if(current >18){
+          }else if(current >19){
             $('.main-cta').css('visibility', 'hidden');
           }else{            
             $('.main-cta').css('visibility', 'visible');
@@ -1150,7 +1150,7 @@ jQuery(function($){
             
           if(current>11 && current< 16){
             $('.main-cta').css('visibility', 'hidden');
-          }else if(current >18){
+          }else if(current >19){
             $('.main-cta').css('visibility', 'hidden');
           }else{            
             $('.main-cta').css('visibility', 'visible');
@@ -1200,7 +1200,7 @@ jQuery(function($){
             
           if(current>11 && current< 16){
             $('.main-cta').css('visibility', 'hidden');
-          }else if(current >18){
+          }else if(current >19){
             $('.main-cta').css('visibility', 'hidden');
           }else{            
             $('.main-cta').css('visibility', 'visible');
@@ -1250,7 +1250,7 @@ jQuery(function($){
         
           if(current>11 && current< 16){
             $('.main-cta').css('visibility', 'hidden');
-          }else if(current >18){
+          }else if(current >19){
             $('.main-cta').css('visibility', 'hidden');
           }else{            
             $('.main-cta').css('visibility', 'visible');
@@ -1299,7 +1299,7 @@ jQuery(function($){
         
           if(current>11 && current< 16){
             $('.main-cta').css('visibility', 'hidden');
-          }else if(current >18){
+          }else if(current >19){
             $('.main-cta').css('visibility', 'hidden');
           }else{            
             $('.main-cta').css('visibility', 'visible');
@@ -1327,6 +1327,8 @@ jQuery(function($){
         }
 
         calculatePompeAChaleurAirEau();
+        
+        handlePhotoCaptureButtons();
         //end
       })
 
@@ -1927,9 +1929,9 @@ jQuery(function($){
         }else{
           plafondRessourceHorsIleFrance.foyerFiscale.map((el, index)=>{
             if(el===formPageValues.nombre_d_habitants){
-              nbrFoyerFisciale=el;
-              nbrFoyerFiscialeIndex=index;
-            }
+                nbrFoyerFisciale=el;
+                nbrFoyerFiscialeIndex=index;
+              }
           })
 
           if(dernierRevenuFisc>0){
@@ -1952,8 +1954,7 @@ jQuery(function($){
             }else{
               couleurCDP='violet';
             }
-          }
-  
+          }            
       }
         
     }else{
@@ -1994,7 +1995,6 @@ jQuery(function($){
             }
         }
       }
-
     }
         
       if($('#source_energie_3_chauffage').is(':checked')){
@@ -2006,45 +2006,45 @@ jQuery(function($){
       }
 
       getCoupDePouceBonus(couleurCDP, bonusCalcul)
-
       
-        bonusCalcul.ecologique=parseFloat($('#inputBonusEcologique').val());
-        let maPrimeRenovSum=0
-        let coupDePouceSm=0;
+      bonusCalcul.ecologique=parseFloat($('#inputBonusEcologique').val());
+      let maPrimeRenovSum=0
+      let coupDePouceSm=0;
+      
+      if($('#270l').is(':checked') || $('#200l').is(':checked')){
+        bonusCalcul.totalBonus +=bonusCalcul.maprimenov.chauffeEauthermo;
+        maPrimeRenovSum +=bonusCalcul.maprimenov.chauffeEauthermo;
+
+        coupDePouceSm +=bonusCalcul.coupDePouce.chauffeEauthermo
+      }
+      
+
+      /* !$('#source_energie_2_chauffage').is(':checked') */
+      if(formPageValues.pompe_a_chaleur_air_eau_value!=0){
+        bonusCalcul.totalBonus=bonusCalcul.maprimenov.pacAirEau;
+        maPrimeRenovSum +=bonusCalcul.maprimenov.pacAirEau;
         
-        if($('#270l').is(':checked') || $('#200l').is(':checked')){
-          bonusCalcul.totalBonus +=bonusCalcul.maprimenov.chauffeEauthermo;
-          maPrimeRenovSum +=bonusCalcul.maprimenov.chauffeEauthermo;
+        coupDePouceSm +=bonusCalcul.coupDePouce.pacAirEau;
+      }
 
-          coupDePouceSm +=bonusCalcul.coupDePouce.chauffeEauthermo
-        }
+      // bonusCalcul.totalBonus=(bonusCalcul.maprimenov.pacAirEau + bonusCalcul.maprimenov.chauffeEauthermo) + bonusCalcul.coupDePouce + bonusCalcul.ecologique
+      if($('#type_de_chaufface_chaudiere_gaz_natur_condensa').is(':checked')){
+        bonusCalcul.coupDePouce.pacAirEau=0
+        bonusCalcul.coupDePouce.chauffeEauthermo=0
+      }
+      
+      bonusCalcul.totalBonus= coupDePouceSm + bonusCalcul.ecologique + maPrimeRenovSum
 
-        /* !$('#source_energie_2_chauffage').is(':checked') */
-        if(formPageValues.pompe_a_chaleur_air_eau_value!=0){
-          bonusCalcul.totalBonus=bonusCalcul.maprimenov.pacAirEau;
-          maPrimeRenovSum +=bonusCalcul.maprimenov.pacAirEau;
-          
-          coupDePouceSm +=bonusCalcul.coupDePouce.pacAirEau;
-        }
-
-        // bonusCalcul.totalBonus=(bonusCalcul.maprimenov.pacAirEau + bonusCalcul.maprimenov.chauffeEauthermo) + bonusCalcul.coupDePouce + bonusCalcul.ecologique
-        if($('#type_de_chaufface_chaudiere_gaz_natur_condensa').is(':checked')){
-          bonusCalcul.coupDePouce.pacAirEau=0
-          bonusCalcul.coupDePouce.chauffeEauthermo=0
-        }
-        
-        bonusCalcul.totalBonus= coupDePouceSm + bonusCalcul.ecologique + maPrimeRenovSum
-
-        $('#maPrimeRenov').text(formatNumber.asEuro(maPrimeRenovSum).replace(",00", ""));
-        $('#coupDePouce').text(formatNumber.asEuro(coupDePouceSm).replace(",00", ""));     
-        $('#bonusEcologique').text(formatNumber.asEuro(bonusCalcul.ecologique).replace(",00", ""));
-        $('#total_bonus').text(formatNumber.asEuro(bonusCalcul.totalBonus).replace(",00", ""))
-        $('#bonusEcologique').text(formatNumber.asEuro(bonusCalcul.ecologique).replace(",00", ""));
-
+      handlePhotoCaptureButtons();
+      console.log('tonga eto')
+      $('#maPrimeRenov').text(formatNumber.asEuro(maPrimeRenovSum).replace(",00", ""));
+      $('#coupDePouce').text(formatNumber.asEuro(coupDePouceSm).replace(",00", ""));     
+      $('#bonusEcologique').text(formatNumber.asEuro(bonusCalcul.ecologique).replace(",00", ""));
+      $('#total_bonus').text(formatNumber.asEuro(bonusCalcul.totalBonus).replace(",00", ""))
+      $('#bonusEcologique').text(formatNumber.asEuro(bonusCalcul.ecologique).replace(",00", ""));
     }
 
-    function getMaPrimeRenovBonus(couleur, bonusCalcul){
-      
+    function getMaPrimeRenovBonus(couleur, bonusCalcul){      
         //bonus pac air-eau
         switch (couleur) {
           case 'bleu':
@@ -2076,9 +2076,7 @@ jQuery(function($){
             bonusCalcul.maprimenov.chauffeEauthermo=0
             break;
         }
-
     }
-
     function getCoupDePouceBonus(couleurCDP, bonusCalcul){
 
         //bonus coup de pouce// //bonus chauffage
@@ -2102,8 +2100,59 @@ jQuery(function($){
         }
         
     }
+    
     $('#piecesId').on('change', '.pompeAChaleurAirAirInput', function(e){
       $(this).next().text(getMatchedWhattNumber(parseInt($(this).val()))+ 'W')
+    })
+
+    function handlePhotoCaptureButtons(){
+      if($('#source_energie_3_chauffage').is(':checked') || $('#source_energie_1_chauffage').is(':checked')){
+        console.log('fioul ou gaz actived')
+        $('#chaudiere_actuel').removeClass('disabled_photo_btn')
+        $('#chaudiere_actuel').prop('disabled', false)
+      }else{
+        console.log('fioul ou gaz desactived')
+        $('#chaudiere_actuel').addClass('disabled_photo_btn')
+        $('#chaudiere_actuel').prop('disabled', true)
+        
+        $('#ballon_actuel').addClass('disabled_photo_btn')
+        $('#ballon_actuel').prop('disabled', true)
+      }
+
+      if(formPageValues.pompe_a_chaleur_air_eau_value!=0){
+        $('#emplacement_pompe_a_chaleur').removeClass('disabled_photo_btn')
+        $('#emplacement_pompe_a_chaleur').prop('disabled', false)
+      }else{
+        $('#emplacement_pompe_a_chaleur').addClass('disabled_photo_btn')
+        $('#emplacement_pompe_a_chaleur').prop('disabled', true)
+      }
+      
+      if($('#270l').is(':checked') || $('#200l').is(':checked')){
+        $('#ballon_actuel').removeClass('disabled_photo_btn')
+        $('#ballon_actuel').prop('disabled', false)
+      }else{
+
+      }
+    }
+    
+    $('#upload_photo').change(function(e){
+  var context = canvas.getContext("2d");
+      // console.log('upload_photo', e.target.files[0]);
+      // const tmpURLImage= URL.createObjectURL(e.target.files[0])
+      // console.log(tmpURLImage);
+
+      var context = canvas.getContext("2d");
+      let width=320;
+      // let height = video_camera.videoHeight / (video_camera.videoWidth / width);
+      // canvas.width = width;
+      // canvas.height = height;
+      var img = new Image;
+      img.src = URL.createObjectURL(e.target.files[0]);
+      img.onload = function() {
+        context.drawImage(img, 0, 0)
+        // context.drawImage(img, 0, 0, width, height)
+      }
+
     })
 
     function getMatchedWhattNumber(nbr){
@@ -2409,9 +2458,9 @@ jQuery(function($){
       serializedData += '&typeAmpoule=' + $(".step-14__link.answer-selected :input[name='type_d_ampoule_eclairage']").val();
       serializedData += '&electUtil=' + $(".step-14__link.answer-selected :input[name='utilisation_moyenne_eclairage']").val();
       serializedData += '&nbAnnee=' + $("select[name='type_de_chaufface_nombre_d_annee_a_indexer']").val();
-      serializedData += '&consoActGlob=' + formPageValues.votre_conso_actuel;
-      serializedData += '&consoXAn=' + formPageValues.votre_conso_sur_x_annee;
-      serializedData += '&moyenneConsoXan=' + formPageValues.moyenne_conso_sur_x_annee
+      serializedData += '&consoActGlob=' + formPageValues.votre_conso_actuel + ' €';
+      serializedData += '&consoXAn=' + formPageValues.votre_conso_sur_x_annee + ' €';
+      serializedData += '&moyenneConsoXan=' + formPageValues.moyenne_conso_sur_x_annee + ' €'
       serializedData += '&statutMarital=' + $(".step-18__link.answer-selected :input[name='eligibilite_situation_matrimoniale']").val()
       serializedData += '&nbEnfCharge=' + $("[name='eligibility_nbr_enfant_a_charge']").text().trim();
       serializedData += '&revenus=' + $("#inputDernierRevenuFiscalRef").val();
@@ -2457,15 +2506,15 @@ jQuery(function($){
 
       //les produits selectionnées
       var items = $(".pompes__btn.unset").parents(".pompes__item");
-      var columns = ["TYPE", "MODÈLE", "CARACTÉRISTIQUES"]//, "vide"];
+      var columns = ["TYPE", "MODÈLE", "CARACTÉRISTIQUES", "FICHE TECHNIQUE"]
       let productValuesCleaned=formPageValues.produits_ajoutees.filter(el=>el!= undefined)
       var rows = [];
       productValuesCleaned.forEach(el=>{
         var type = el.categorie
         var model = el.title
         var cara = el.avantage.join(', ')
-        
-        rows.push([type, model, cara])//, "vide"]);
+        var lien = el.fiche_technique_url
+        rows.push([type, model, cara, lien]);
       })
       
       // items.each(function () {
@@ -2535,6 +2584,7 @@ jQuery(function($){
                   },
                   headStyles: {
                       fillColor: "#5bb6aa",
+                      minCellWidth: 45,
                   },
               });
 

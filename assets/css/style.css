@@ -169,7 +169,7 @@ a span{
     text-align: center;
     position: relative;
     overflow: scroll;
-    height: 90vh;
+    /* height: 90vh; */
     scrollbar-width: none;
 }
 .page .page__content .avatar_customer {
@@ -2078,7 +2078,7 @@ h3 {
 }
 .generate_pdf_btn{
     background: #1687f7;
-    width: 100%!important;
+    width: 98%!important;
     display: block;
     transition: all 300ms;
     max-width: 100%!important;
@@ -2216,6 +2216,14 @@ canvas,
     max-width: 490px;
     height: 350px;
     overflow: hidden;
+}
+
+.disabled_photo_btn{
+    background-color: #7a7a7a!important;
+    background: #7a7a7a!important;
+}
+#upload_button{
+    display: none;
 }
 
 /*RESPONSIVENESS*/
