@@ -2585,11 +2585,13 @@
                             </div>
                         </div>
                         <div class="row" style="text-align: center;">
-                            <div class="col m6">
+                            <div class="col m6 p_rel">
                                 <label for="video_camera">Camera vidéo</label><br /> 
-                                <!-- <select id="videoSource" style="width: 100%;display:none;">
-                                </select> -->
-                                <video id="video_camera" class="responsive-video">Stream vidéo not disponible.</video><br />
+                                <!-- <span class="material-icons-outlined">flip_camera_android</span> -->
+                                <select id="videoSource" style="width: 100%;">
+                                </select>
+                                <video id="video_camera" class="responsive-video">Stream vidéo not disponible.
+                                </video><br />
                             </div>
                             <div class="col m6">
                                 <!-- Canvas -->

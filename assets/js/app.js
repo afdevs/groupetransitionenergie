@@ -2023,7 +2023,6 @@ jQuery(function($){
       if(formPageValues.pompe_a_chaleur_air_eau_value!=0){
         bonusCalcul.totalBonus=bonusCalcul.maprimenov.pacAirEau;
         maPrimeRenovSum +=bonusCalcul.maprimenov.pacAirEau;
-        
         coupDePouceSm +=bonusCalcul.coupDePouce.pacAirEau;
       }
 
@@ -2036,7 +2035,6 @@ jQuery(function($){
       bonusCalcul.totalBonus= coupDePouceSm + bonusCalcul.ecologique + maPrimeRenovSum
 
       handlePhotoCaptureButtons();
-      console.log('tonga eto')
       $('#maPrimeRenov').text(formatNumber.asEuro(maPrimeRenovSum).replace(",00", ""));
       $('#coupDePouce').text(formatNumber.asEuro(coupDePouceSm).replace(",00", ""));     
       $('#bonusEcologique').text(formatNumber.asEuro(bonusCalcul.ecologique).replace(",00", ""));
@@ -2077,8 +2075,8 @@ jQuery(function($){
             break;
         }
     }
-    function getCoupDePouceBonus(couleurCDP, bonusCalcul){
 
+    function getCoupDePouceBonus(couleurCDP, bonusCalcul){
         //bonus coup de pouce// //bonus chauffage
         switch (couleurCDP) {
           case 'bleu':
@@ -2107,11 +2105,9 @@ jQuery(function($){
 
     function handlePhotoCaptureButtons(){
       if($('#source_energie_3_chauffage').is(':checked') || $('#source_energie_1_chauffage').is(':checked')){
-        console.log('fioul ou gaz actived')
         $('#chaudiere_actuel').removeClass('disabled_photo_btn')
         $('#chaudiere_actuel').prop('disabled', false)
       }else{
-        console.log('fioul ou gaz desactived')
         $('#chaudiere_actuel').addClass('disabled_photo_btn')
         $('#chaudiere_actuel').prop('disabled', true)
         
@@ -2136,7 +2132,7 @@ jQuery(function($){
     }
     
     $('#upload_photo').change(function(e){
-  var context = canvas.getContext("2d");
+      var context = canvas.getContext("2d");
       // console.log('upload_photo', e.target.files[0]);
       // const tmpURLImage= URL.createObjectURL(e.target.files[0])
       // console.log(tmpURLImage);
@@ -2407,7 +2403,7 @@ jQuery(function($){
     email.keyup(function(e){
       if(email.val()===''){
         email.addClass('invalide')
-        $(email.next()).addClass('show');
+        $(email.next()).addClass('show');onc
       }else{
         email.removeClass('invalide')
         $(email.next()).removeClass('show');

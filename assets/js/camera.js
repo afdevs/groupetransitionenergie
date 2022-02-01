@@ -33,9 +33,9 @@ function init() {
 }
 
 video_select = document.querySelector('select#videoSource');
-// video_select.onchange = getStream;
+video_select.onchange = getStream;
 
-// getStream().then(getDevices).then(gotDevices);
+getStream().then(getDevices).then(gotDevices);
 
 function getDevices() {
   // AFAICT in Safari this only gets default devices until gUM is called :/
@@ -44,12 +44,11 @@ function getDevices() {
 
 function gotDevices(deviceInfos) {
   window.deviceInfos = deviceInfos; // make available to console
-  console.log('Available input and output devices:', deviceInfos);
   for (const deviceInfo of deviceInfos) {
     const option = document.createElement('option');
     option.value = deviceInfo.deviceId;
-    option.text = deviceInfo.label || `Camera ${videoSelect.length + 1}`;
-    videoSelect.appendChild(option);
+    option.text = deviceInfo.label || `Camera ${video_select.length + 1}`;
+    video_select.appendChild(option);
   }
 }
 
@@ -59,7 +58,7 @@ function getStream() {
       track.stop();
     });
   }
-  const videoSource = video_select.value;
+  const videoSource = video_select.value; 
   const constraints = {
     video: {deviceId: videoSource ? {exact: videoSource} : undefined}
   };
@@ -69,11 +68,14 @@ function getStream() {
 
 function gotStream(stream) {
   window.stream = stream; // make stream available to console
-  videoSelect.selectedIndex = [...videoSelect.options].
+  video_select.selectedIndex = [...video_select.options].
     findIndex(option => option.text === stream.getVideoTracks()[0].label);
   videoElement.srcObject = stream;
 }
 
+function handleError(error) {
+  console.error('Error: ', error);
+}
 
 function startCamera(ev) {
   console.log("startCamera");

@@ -2203,6 +2203,14 @@ canvas,
     width: 100%;
 }
 
+.p_rel{
+    position: relative;
+
+}
+.modal .modal-content .p_rel .select-wrapper {
+    position: absolute;
+
+}
 #camera_upload > p {
   font-size: 0.9rem;
   color: #333;
