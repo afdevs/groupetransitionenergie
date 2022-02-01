@@ -2587,9 +2587,8 @@
                         <div class="row" style="text-align: center;">
                             <div class="col m6">
                                 <label for="video_camera">Camera vidéo</label><br /> 
-                                <select id="videoSource" style="width: 100%;display:none;">
-                                
-                                </select>
+                                <!-- <select id="videoSource" style="width: 100%;display:none;">
+                                </select> -->
                                 <video id="video_camera" class="responsive-video">Stream vidéo not disponible.</video><br />
                             </div>
                             <div class="col m6">

@@ -33,7 +33,7 @@ function init() {
 }
 
 video_select = document.querySelector('select#videoSource');
-video_select.onchange = getStream;
+// video_select.onchange = getStream;
 
 // getStream().then(getDevices).then(gotDevices);
 
