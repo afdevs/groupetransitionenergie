@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "jslib-html5-camera-photo": "^3.1.8"
+    "jslib-html5-camera-photo": "^3.1.8",
+    "materialize-css-helper": "^1.0.9"
   }
 }

@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link href="https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/materialize.min.css">
@@ -1618,10 +1619,7 @@
                             
                             <h2>Nombre d'enfants à charge</h2>
                             <div class="input-counter">
-                                <div class="counter" style="width: 190px;margin: 0 auto;"> 
-                                    <div class="counter__fields">
-                                        <!-- <div class="counter__title">Nombre d'enfants à charge </div> -->
-                                    </div>
+                                <div class="counter" style="width: 190px;margin: 0 auto;justify-content: center;"> 
                                     <div class="counter_buttons">
                                         <button class="counter__decrement" type="button">
                                             -
@@ -1648,8 +1646,8 @@
                             </div>
                             
                             <h2>Référence de l'avis d'imposition </h2>
-                            <div class="inputs" style="width: 100%;margin: 0;">
-                                <div class="input-item nopr20" style="margin: 0 31px;">
+                            <div class="inputs" style="width: 65%;margin: 0 auto;">
+                                <div class="input-item nopr20">
                                     <!-- <label for="inputEligibiliteAvisImposition">Référence de l'avis d'imposition </label> -->
                                     <input id="inputEligibiliteAvisImposition" type="text" name="eligibilite_avis_imposition">
                                     <span class="step-1__content__notice">Référence de l'avis d'imposition requis </span>
@@ -1657,8 +1655,8 @@
                             </div>
                             
                             <h2>Numéro fiscal </h2>
-                            <div class="inputs" style="width: 100%;margin: 0;display: flex;justify-content: center;">
-                                <div class="input-item nopr20" style="margin: 0 31px;">
+                            <div class="inputs" style="width: 65%;margin: 0 auto;display: flex;justify-content: center;">
+                                <div class="input-item nopr20" >
                                     <!-- <label for="inputNumeroFisc">Numéro fiscal </label> -->
                                     <input id="inputNumeroFisc" type="text" name="eligibilite_numéro_fiscal" class="" >
                                     <span class="step-1__content__notice">Numéro fiscal requis </span>
@@ -2615,5 +2613,10 @@
     <script src="./assets/js/app.js" ></script>
     <script src="./node_modules/jslib-html5-camera-photo/build/index.js" ></script>
     <script src="./assets/js/camera.js" ></script>
+    <script>
+        // if undefined will apply the default configuration
+        window.materializeHelper = {/*...*/}
+    </script>
+    <script type="text/javascript" src="node_modules/materialize-css-helper/dist/main.js"></script>
 </body>
 </html>

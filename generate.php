@@ -16,13 +16,15 @@ $today = date("d-m-Y");
 
 $data = [
       'nomPrenom' =>  $_POST['nom'].' '.$_POST['prenom'],
+      'nomPrenom1' =>  $_POST['nom'].' '.$_POST['prenom'],
+      'nomPrenom2' =>  $_POST['nom'].' '.$_POST['prenom'],
       'adresse' =>  $_POST['address'],
       'dateEtude' => $today,
       'refProjet' => 'BH2600-'.rand(100,999),
       'typeOccupation' => trim($_POST['type_d_occupation']),
       'nbHabitant' => $_POST['nombre_d_habitants'],
       'AnneeConstruction' => $_POST['annee_contruction'],
-      'surfaceSol' => $_POST['surface_au_sol'].'m²',
+      'surfaceSol' => $_POST['surface_au_sol'].' m2',
       'formeMaison' => $_POST['forme_maison'],
       'nbNiveau' => $_POST['nombre_de_niveau'],
       'hauteurSousPlafond' => $_POST['hauteur_sous_plafond_moyenne'],

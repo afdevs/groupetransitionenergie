@@ -94,106 +94,106 @@ let produits=[
   {
     title: 'Clim’Up EMSM – De Dietrich',
     avantage: ['Mono split mural', 'Monophasé et Triphasé', 'Fluide frigorigène R32', 'SCOP 4,0 à 4,3'],
-    categorie: 'Pompes à chaleur air-eau',
-    fiche_technique_url: 'https://bit.ly/3g6ZTA8',
+    categorie: 'Pompes à chaleur air-air',
+    fiche_technique_url: 'https://bit.ly/3IX7YUr',
     img_url: './assets/images/pompe_Dietrich.png'
   },
   {
     title: 'Clim’Up Muse unité extérieure - De Dietrich',
     avantage: ['Multisplit', 'SCOP de 4,1 à 4,2', 'Fluide frigorigène R32', 'SEER de 6,18 à 6,5'],
-    categorie: 'Pompes à chaleur air-eau',
-    fiche_technique_url: 'https://bit.ly/3g6ZTA8',
+    categorie: 'Pompes à chaleur air-air',
+    fiche_technique_url: 'https://bit.ly/3IX7YUr',
     img_url: './assets/images/pompe_Dietrich_2.png'
   },
   {
     title: 'Clim’up SMART unité interieur – De Dietrich',
     avantage: ['Pompe de relevage des condensats', 'Fixation murale', 'De 2,05 à 5,30 kW', 'Monophasé'],
     categorie: 'Pompes à chaleur aieau',
-    fiche_technique_url:  'https://bit.ly/3KRClO4',
+    fiche_technique_url:  'https://bit.ly/34r8yLd',
     img_url: './assets/images/pompe_Dietrich_4.png'
   },
   {
     title: 'Perfera - Daikin',
     avantage: ['Fluide frigorigène R32', 'Label énergétique', 'Purificateur d\'air et anti-allergènes', 'Amplification de chauffage'],
     categorie: 'Pompes à chaleur air-air',
-    fiche_technique_url: 'https://bit.ly/34gkkI6',
+    fiche_technique_url: 'https://bit.ly/3rmpFqB',
     img_url: './assets/images/pompe_Dietrich_3.png'
   },
   {
     title: 'Altherma 60° - Daikin',
     avantage: ['Fluide frigorigène R32', 'Label énergétique', 'Compresseur Inverter DC', 'Compacte'],
     categorie: 'Pompes à chaleur air-eau',
-    fiche_technique_url: 'https://bit.ly/3IIMNp5',
+    fiche_technique_url: 'https://bit.ly/32Tgcxv',
     img_url: './assets/images/pompe_air_eau.png'
   },
   {
     title: 'Altherma 70° 3H HT - Daikin',
     avantage: ['Seulement 32 dB(A)', 'Fluide frigorigène R32', 'Pression max 56 bar', 'Commande intuitive'],
     categorie: 'Pompes à chaleur air-eau',
-    fiche_technique_url: 'https://bit.ly/3Hbr8FK',
+    fiche_technique_url: 'https://bit.ly/3okCYWC',
     img_url: './assets/images/pompe_air_eau_2.png'
   },
   {
     title: 'Altherma 80° R HT - Daikin',
     avantage: ['Sortie d’eau 80°C', 'COP entre 3 et 5', '100 % thermodynamique', 'Thermostat d’ambiance'],
     categorie: 'Pompes à chaleur air-eau',
-    fiche_technique_url: 'https://bit.ly/3r6h7Eb',
-    img_url: './assets/images/pompe_air_eau_3.png'
+    fiche_technique_url: 'https://bit.ly/3IWbbUi',
+    img_url: './assets/images/pompe__air_eau_3.png'
   },
   {
     title: 'Arianext plus S - Chaffoteaux',
     avantage: ['Sonde extérieure filaire', 'Appoint électrique intégré, 4kW ou 6kW', 'COP jusqu’à 5,25', 'Compresseur Inverter DC'],
     categorie: 'Pompes à chaleur air-eau',
-    fiche_technique_url: 'https://bit.ly/33U6dsu',
+    fiche_technique_url: 'https://bit.ly/3Grlkqm',
     img_url: './assets/images/pompe_air_eau_4.png'
   },
   {
     title: 'EHS - SAMSUNG ',
     avantage: ['Label énergétique', 'Eau jusqu’à 65°C', 'Ballon disponible', 'Disponible en 4 / 6 / 9 kW'],
     categorie: 'Pompes à chaleur air-eau',
-    fiche_technique_url: 'https://bit.ly/33U6dsu',
+    fiche_technique_url: 'https://bit.ly/3Grlkqm',
     img_url: './assets/images/pompe__air__eau__5.jpg'
   },
   {
     title: 'Alezio S – De Dietrich',
     avantage: ['Jusqu\'à 70% d\'économies', 'Rapide à installer', 'Solution connectée', 'Simple d’utilisation'],
     categorie: 'Pompes à chaleur air-eau',
-    fiche_technique_url: 'https://bit.ly/3KPPpDw',
+    fiche_technique_url: 'https://bit.ly/3L6PGSq',
     img_url: './assets/images/pompe_air_eau_5.png'
   },
   {
     title: 'Alezio  V200 - De Dietrich',
     avantage: ['Solution compacte', '4,5 kW à 16 kW', 'Thermostat connecté', 'Fluide frigorigène R410A'],
     categorie: 'Pompes à chaleur air-eau',
-    fiche_technique_url: 'https://bit.ly/3u5DmvV',
+    fiche_technique_url: 'https://bit.ly/3GqEc8S',
     img_url: './assets/images/pompe_air_eau_6.png'
   },
   {
     title: 'HPI Evolution - De Dietrich',
     avantage: ['Option hybride', 'Compatible multi-énergies', 'Bouteille de découplage intégrée', 'COP de 5,11'],
     categorie: 'Pompes à chaleur air-eau',
-    fiche_technique_url:  'https://bit.ly/3INY7Au',
+    fiche_technique_url:  'https://bit.ly/35xUOPh',
     img_url: './assets/images/pompe_air_eau_7.png'
   },
   {
     title: 'Hydrosplit - LG',
     avantage: ['Fluide frigorigène R32', 'Label énergétique', 'Réfrigérant écologique', 'Contrôle intelligent du chauffage'],
     categorie: 'Pompes à chaleur air-eau',
-    fiche_technique_url:  'https://bit.ly/3KQ4yog',
+    fiche_technique_url:  'https://bit.ly/3oGcDmf',
     img_url: './assets/images/pompe_air_eau_8.png'
   },
   {
     title: 'Hydrosplit DUO - LG',
     avantage: ['Fluide frigorigène R32', 'Label énergétique', 'Réfrigérant écologique', 'Contrôle intelligent du chauffage'],
     categorie: 'Pompes à chaleur air-eau',
-    fiche_technique_url:  'https://bit.ly/3KQ4yog',
+    fiche_technique_url:  'https://bit.ly/3oGcDmf',
     img_url: './assets/images/pompe_air_eau_9.png'
   },
   {
     title: 'Nuos Primos – Ariston',
     avantage: ['Temps de chauffe < 8h', 'COP de 2,86', '4 modes d’utilisations', '200L à 240L'],
     categorie: 'Chauffe-eau Thermodynamique',
-    fiche_technique_url: 'https://bit.ly/3IQQMjD',
+    fiche_technique_url: 'https://bit.ly/3uhDetj',
     img_url: './assets/images/pompe_air_eau_10.png',
     width: '30%'
   },
@@ -201,7 +201,7 @@ let produits=[
     title: 'Aquanext Split - Chaffoteaux',
     avantage: ['Temps de chauffe < 6h', 'Technologie Inverter', 'Condenseur avec profile D', 'Connexion HP/HC'],
     categorie: 'Chauffe-eau Thermodynamique',
-    fiche_technique_url: 'https://bit.ly/3G41b9z',
+    fiche_technique_url: 'Pompes à chaleur air-eau',
     img_url: './assets/images/pompe_air_eau_11.png'
   },
   {
@@ -231,29 +231,29 @@ let produits=[
   {
     title: 'Therma V - LG',
     avantage: ['Classe énergétique A+', 'Télécommande intuitive', 'Contrôle via l\'application LG ThinQ', 'Monophasée'],
-    categorie: 'Chauffe-eau Thermodynamique',
-    fiche_technique_url: 'https://www.lg.com/fr/business/download/airsolution/%20produit%20PAC%20air-eau%20Split%20R410A%20Mono%20et%20Triphasée%2012%20à%2016%20kW_installateur[20200902_204329384].pdf',
+    categorie: 'Pompes à chaleur air-eau',
+    fiche_technique_url: 'https://bit.ly/3GjiG5X',
     img_url: './assets/images/pompe__chauff_thermo_new_1.jpg'
   },
   {
     title: 'Gamme Dojo – Atlantic',
     avantage: ['Confort acoustique : 20 dB', 'Classe énergétique A+', 'Mono split mural', 'Mode pleine puissance'],
-    categorie: 'Chauffe-eau Thermodynamique',
-    fiche_technique_url: 'https://www.energy-go.fr/wp-content/uploads/2020/05/Pac-Air-Air-Atlantic-Multisplit-Dojo.pdf',
+    categorie: 'Pompes à chaleur air-eau',
+    fiche_technique_url: 'https://bit.ly/3sc8kQn',
     img_url: './assets/images/pompe__chauff_thermo_new_2.jpg'
   },
   {
     title: 'Performer – Thaleos',
     avantage: ['Fonction Smart Control', '75% d’économies D’énergie ', 'Système ACI Hybrid', 'Plage de fonctionnement (-5 à +43°c)'],
     categorie: 'Chauffe-eau Thermodynamique',
-    fiche_technique_url: 'https://www.hellopro.fr/documentation/pdf_prod/6/4/8/1211063_a3f0bd97fb14002b3bc353d9ac157600_6012846.pdf',
+    fiche_technique_url: 'https://bit.ly/3Hi11Nn',
     img_url: './assets/images/pompe__chauff_thermo_new_3.jpg'
   },
   {
     title: 'Alféa Excellia – Atlantic',
     avantage: ['Certifié, Heat Pump, Keymark', 'Application, Atlantic, Cozytouch', 'Monophasé et Triphasé', 'Classe énergétique A++ & A+'],
     categorie: 'Chauffe-eau Thermodynamique',
-    fiche_technique_url: 'https://www.izi-by-edf-renov.fr/files/catalogue/produits/fiche-technique-pompe-a-chaleur-alfea-excellia-ai-atlantic.pdf',
+    fiche_technique_url: 'https://bit.ly/35LOmo7',
     img_url: './assets/images/pompe__chauff_thermo_new_4.jpg'
   },
   
@@ -303,6 +303,7 @@ var franceAddresses=[
 ]
 
 var formPageValues={
+    maPrimeRenovSum: 0,
     nombre_d_habitants: 1,
     chaufface_envisage_source_energie_nbr_unite: 0,
     eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond: 0,
@@ -451,7 +452,7 @@ jQuery(function($){
 
       function showListProduits(filtreText='all'){
         $('#list_pompes').html('');
-        produits.forEach(produit=>{
+        produits.forEach((produit, index)=>{
           if(filtreText!=='all' && produit.categorie.indexOf(filtreText)== -1) return
           let avantages='<div class="pompes__advantages">';
           produit.avantage.forEach(atg=>{
@@ -459,15 +460,13 @@ jQuery(function($){
           })
           avantages +='</div>';
           const styleValue=produit.width ? "width:"+produit.width?.toString() :"";
-          let row='<div class="pompes__item"><div class="pompes__left"><img src="'+ produit.img_url+'" alt="'+produit.title+'" style='+styleValue +'></div><div class="pompes__center"><span class="pompes__title">'+produit.title+'</span>'+avantages+'<div class="pompes__category">'+produit.categorie+'</div></div><div class="pompes__right"><button class="pompes__btn" type="button" value="0">AJOUTER</button><a class="pompes__btn pompes__btn--show" target="_blank" href="'+ produit.img_url +'">FICHE TECHNIQUE</a></div></div>';
+          let row='<div class="pompes__item"><div class="pompes__left"><img src="'+ produit.img_url+'" alt="'+produit.title+'" style='+styleValue +'></div><div class="pompes__center"><span class="pompes__title">'+produit.title+'</span>'+avantages+'<div class="pompes__category">'+produit.categorie+'</div></div><div class="pompes__right"><button class="pompes__btn" type="button" value="'+index+'">AJOUTER</button><a class="pompes__btn pompes__btn--show" target="_blank" href="'+ produit.fiche_technique_url +'">FICHE TECHNIQUE</a></div></div>';
           
           $('#list_pompes').append(row);
         })
       }
       showListProduits();
       $('#productsFilterCategory').change(function(){
-      
-        console.log($(this).val())
         showListProduits($(this).val())
       })
       // $('.modal-trigger').modal();
@@ -546,7 +545,6 @@ jQuery(function($){
           formPageValues.produits_ajoutees[$(this).val()]=produits[$(this).val()]
           AnimateRotate($(this), 360)
         };
-        console.log(formPageValues.produits_ajoutees);
       })
       // let map = new google.maps.Map(document.getElementById("map"), {});
       // console.log('map', map)
@@ -591,7 +589,7 @@ jQuery(function($){
         if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='pompe_a_chaleur_air_air_nombre_unite'){
           formPageValues.pompe_a_chaleur_air_air_nombre_unite++;
           $($($(this).parent().children('.counter__value'))[0]).text(formPageValues.pompe_a_chaleur_air_air_nombre_unite);  
-          const inputItem=`<div class="pieces__item" id="pieces__item${formPageValues.pompe_a_chaleur_air_air_nombre_unite}"><label for="inputPompeAChaleurSurfaceTotal1" class="pompeAChaleurAirAir${formPageValues.pompe_a_chaleur_air_air_nombre_unite}">Piece N° <span>${ formPageValues.pompe_a_chaleur_air_air_nombre_unite}</span></label><div class="bottom_part">Surface en (m2)<input id="inputPompeAChaleurSurfaceTotal${ formPageValues.pompe_a_chaleur_air_air_nombre_unite}"  name="pompe_a_chaleur_air_air_surface_total${ formPageValues.pompe_a_chaleur_air_air_nombre_unite}" type="number" class="pompeAChaleurAirAirInput" value="0" min="0"> <span class="pieces__value">Ow</span></div></div>`;
+          const inputItem=`<div class="pieces__item" id="pieces__item${formPageValues.pompe_a_chaleur_air_air_nombre_unite}"><label for="inputPompeAChaleurSurfaceTotal${formPageValues.pompe_a_chaleur_air_air_nombre_unite}" class="pompeAChaleurAirAir">Piece N° <span>${formPageValues.pompe_a_chaleur_air_air_nombre_unite}</span></label><div class="bottom_part">Surface en (m2)<input id="inputPompeAChaleurSurfaceTotal${formPageValues.pompe_a_chaleur_air_air_nombre_unite}"  name="pompe_a_chaleur_air_air_surface_total${formPageValues. pompe_a_chaleur_air_air_nombre_unite}" type="number" class="pompeAChaleurAirAirInput" value="0" min="0"> <span class="pieces__value">Ow</span></div></div>`;
           $('#piecesId').append(inputItem)
           return
         }
@@ -1800,6 +1798,8 @@ jQuery(function($){
         $(this).val('')
       }
     })
+    
+    
     $('#inputEstimFactEauChaude').click(function(e){
       if(parseInt($(this).val())===0){
         $(this).val('')
@@ -1839,6 +1839,7 @@ jQuery(function($){
         $($('#inputEvol25Annee + span.thumb')).css('left', (13.9 * parseInt($(this).val())))
       updatThumbEvolValue();
     });
+    
 
     $('#inputEvol25Annee').mouseleave(function(){
       console.log('blur')
@@ -2025,7 +2026,6 @@ jQuery(function($){
         maPrimeRenovSum +=bonusCalcul.maprimenov.pacAirEau;
         coupDePouceSm +=bonusCalcul.coupDePouce.pacAirEau;
       }
-
       // bonusCalcul.totalBonus=(bonusCalcul.maprimenov.pacAirEau + bonusCalcul.maprimenov.chauffeEauthermo) + bonusCalcul.coupDePouce + bonusCalcul.ecologique
       if($('#type_de_chaufface_chaudiere_gaz_natur_condensa').is(':checked')){
         bonusCalcul.coupDePouce.pacAirEau=0
@@ -2033,6 +2033,7 @@ jQuery(function($){
       }
       
       bonusCalcul.totalBonus= coupDePouceSm + bonusCalcul.ecologique + maPrimeRenovSum
+      formPageValues.maPrimeRenovSum= maPrimeRenovSum;
 
       handlePhotoCaptureButtons();
       $('#maPrimeRenov').text(formatNumber.asEuro(maPrimeRenovSum).replace(",00", ""));
@@ -2102,6 +2103,17 @@ jQuery(function($){
     $('#piecesId').on('change', '.pompeAChaleurAirAirInput', function(e){
       $(this).next().text(getMatchedWhattNumber(parseInt($(this).val()))+ 'W')
     })
+    $('#piecesId').on('mouseup', '.pompeAChaleurAirAirInput', function(e){
+      if(parseInt($(this).val())===0){
+        $(this).val('')
+      }
+    });
+    
+    $('#inputSurfaceSol').on('click', function(e){
+      if(parseInt($(this).val())===0){
+        $(this).val('')
+      }
+    })
 
     function handlePhotoCaptureButtons(){
       if($('#source_energie_3_chauffage').is(':checked') || $('#source_energie_1_chauffage').is(':checked')){
@@ -2145,7 +2157,7 @@ jQuery(function($){
       var img = new Image;
       img.src = URL.createObjectURL(e.target.files[0]);
       img.onload = function() {
-        context.drawImage(img, 0, 0)
+        context.drawImage(img, 0, 0, 320)
         // context.drawImage(img, 0, 0, width, height)
       }
 
@@ -2460,10 +2472,10 @@ jQuery(function($){
       serializedData += '&statutMarital=' + $(".step-18__link.answer-selected :input[name='eligibilite_situation_matrimoniale']").val()
       serializedData += '&nbEnfCharge=' + $("[name='eligibility_nbr_enfant_a_charge']").text().trim();
       serializedData += '&revenus=' + $("#inputDernierRevenuFiscalRef").val();
-      serializedData += '&primeRenov=' + $("#maPrimeRenov").text().trim();
-      serializedData += '&coupDePouce=' + $("#coupDePouce").text().trim();
-      serializedData += '&bonusEco=' + $("#bonusEcologique").text().trim();
-      serializedData += '&aidesCumul=' + $("#total_bonus").text().trim(); 
+      serializedData += '&primeRenov=' + formPageValues.maPrimeRenovSum+ ' €';
+      serializedData += '&coupDePouce=' + bonusCalcul.coupDePouce + ' €';
+      serializedData += '&bonusEco=' + bonusCalcul.ecologique+ ' €';
+      serializedData += '&aidesCumul=' + bonusCalcul.totalBonus+ ' €';
       serializedData += '&chauffagePrix=' + $("#consumpt-val1").text().trim();
       serializedData += '&eauPrix=' + $("#consumpt-val2").text().trim();
       serializedData += '&appPrix=' + $("#consumpt-val3").text().trim();
@@ -2503,8 +2515,12 @@ jQuery(function($){
       //les produits selectionnées
       var items = $(".pompes__btn.unset").parents(".pompes__item");
       var columns = ["TYPE", "MODÈLE", "CARACTÉRISTIQUES", "FICHE TECHNIQUE"]
-      let productValuesCleaned=formPageValues.produits_ajoutees.filter(el=>el!= undefined)
+      let productValuesCleaned=formPageValues.produits_ajoutees.filter(el=>{
+        console.log(el)
+        return el!= undefined
+      })
       var rows = [];
+      console.log(productValuesCleaned);
       productValuesCleaned.forEach(el=>{
         var type = el.categorie
         var model = el.title
@@ -2512,6 +2528,7 @@ jQuery(function($){
         var lien = el.fiche_technique_url
         rows.push([type, model, cara, lien]);
       })
+      console.log(rows)
       
       // items.each(function () {
       //     var type = $(this).children(".pompes__center").children(".pompes__category").text().trim()

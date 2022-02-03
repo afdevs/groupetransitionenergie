@@ -2233,6 +2233,13 @@ canvas,
 #upload_button{
     display: none;
 }
+/* .dropdown-content {
+    transform: none !important;
+} */
+
+#modal6 .buttons button, #modal6 .buttons input{
+    margin: 5px 0;
+}
 
 /*RESPONSIVENESS*/
 @media only screen and (max-width:1149px){
@@ -2241,6 +2248,7 @@ canvas,
         align-items: center;
     }
 }
+
 @media only screen and (max-width:1024px){ 
     .aside {
         max-width: 200px;
@@ -2605,6 +2613,37 @@ canvas,
     main .modalContainer .modal .modal-content .pieces .pieces__item .bottom_part{
         display: flex;
     }
+
+    .page .page__content .step-18 h2 {
+        font-size: 16px!important;
+    }
+
+    .page .page__content .step-18{
+        min-width: 0;
+    }
+
+    .page .page__content .step-18 .noImageSelection{
+        width: inherit!important;
+    }
+
+    .page .page__content .step-18 .inputs{
+        width: 100%!important;
+    }
+
+    main .page .page__content .step-18 h2 {
+        margin-top: 35px;
+        margin-bottom: 10px;
+    }
+
+    main .page .page__content .step-18 h2:first-child {
+        margin-top: 50px;
+    }
+    .step-11 .inputs .input-item .input-item-range {
+        max-width: 90%;
+    }
+    input[type=range] {
+        border: 3px solid white;
+    }
 }
 
 @media only screen and (max-width: 519px){ 
@@ -2617,5 +2656,16 @@ canvas,
     }
     .previous {
         margin-top: 40px;
+    }
+    #modal6 .buttons{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    #modal6 .buttons input{
+        margin-left: auto;
+        margin-right: auto;
     }
 }
