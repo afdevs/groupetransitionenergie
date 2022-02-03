@@ -35,7 +35,7 @@ function init() {
 video_select = document.querySelector('select#videoSource');
 video_select.onchange = getStream;
 
-// getStream().then(getDevices).then(gotDevices);
+getStream().then(getDevices).then(gotDevices);
 
 function getDevices() {
   // AFAICT in Safari this only gets default devices until gUM is called :/

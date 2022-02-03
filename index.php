@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link href="https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/materialize.min.css">
+    <link rel="stylesheet" href="./assets/css/materialize.min2.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1EXRWkpnVufW7zY3VUrTjaJiz4Lmj5wU&libraries=places&callback=initMap">
     </script>
@@ -774,7 +774,7 @@
                             <br>poste par poste</h3>    -->
                         <div class="step-10__content optionWithImages" style="justify-content: center;">
                             <div class="vos-consommations__consumption-list">
-                                <a class="vos-consommations__consumption-item chauffage-item" data-target="modal1" class="btn chauffage-modal-trigger" id="chauffageModalButton">
+                                <a class="vos-consommations__consumption-item chauffage-item modal-trigger" href="#modal1" class="btn chauffage-modal-trigger" id="chauffageModalButton">
                                     <div class="left-part">
                                         <div class="img-wrapper"><img alt="" src="./assets/images/picto_gte/chauffee-small-icon.svg">
                                         </div>
@@ -786,7 +786,7 @@
                                     </div>
                                 </a>
                                 
-                                <a class="vos-consommations__consumption-item ecs-item" data-target="modal2" class="btn chauffage-modal-trigger" id="eauSanitaireModalButton">
+                                <a class="vos-consommations__consumption-item ecs-item modal-trigger" href="#modal2" class="btn chauffage-modal-trigger" id="eauSanitaireModalButton">
                                     <div class="left-part" id="eauChaudeSanitaireLeftPart">
                                         <div class="img-wrapper"><img alt="" src="./assets/images/picto_gte/ecs-white-icon.svg">
                                         </div>
@@ -798,7 +798,7 @@
                                     </div>
                                 </a>
                                 
-                                <a class="vos-consommations__consumption-item taches-item" data-target="modal3" class="btn chauffage-modal-trigger" id="appareilElecModalButton">
+                                <a class="vos-consommations__consumption-item taches-item modal-trigger" href="#modal3" class="btn chauffage-modal-trigger" id="appareilElecModalButton">
                                     <div class="left-part" id="appareilElecLeftPart">
                                         <div class="img-wrapper"><img alt="" src="./assets/images/picto_gte/taches-menageres-white-icon.png"></div>
                                         <div class="name-caption">Appareils électriques</div>
@@ -809,7 +809,7 @@
                                     </div>
                                 </a>
                                 
-                                <a class="vos-consommations__consumption-item eclairage-item" data-target="modal4" class="btn chauffage-modal-trigger" id="eclairageModalButton">
+                                <a class="vos-consommations__consumption-item eclairage-item modal-trigger" href="#modal4" class="btn chauffage-modal-trigger" id="eclairageModalButton">
                                     <div class="left-part">
                                         <div class="img-wrapper"><img alt="" src="./assets/images/picto_gte/electricite-white-icon.svg"></div>
                                         <div class="name-caption">Éclairage</div>
@@ -2608,15 +2608,16 @@
             <!-- end -->
         </div>
     </main>
-    <script src="./assets/js/jquery-3.6.0.min.js"></script>
-    <script src="./assets/js/materialize.min.js"></script>
+    <!-- <script src="./assets/js/jquery-3.6.0.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="./assets/js/materialize.min2.js"></script>
     <script src="./assets/js/app.js" ></script>
-    <script src="./node_modules/jslib-html5-camera-photo/build/index.js" ></script>
-    <script src="./assets/js/camera.js" ></script>
-    <script>
+    <!-- <script>
         // if undefined will apply the default configuration
         window.materializeHelper = {/*...*/}
     </script>
-    <script type="text/javascript" src="node_modules/materialize-css-helper/dist/main.js"></script>
+    <script type="text/javascript" src="node_modules/materialize-css-helper/dist/main.js"></script> -->
+    <!-- <script src="./node_modules/jslib-html5-camera-photo/build/index.js" ></script> -->
+    <script src="./assets/js/camera.js" ></script>
 </body>
 </html>

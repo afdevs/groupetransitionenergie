@@ -356,61 +356,63 @@ let bonusCalcul={
 jQuery(function($){
     $(document).ready(function(){
       //initialize all modals           
-      $('.modal').modal({
-        // dismissible:false
-        preventScrolling: false
-    });
+    //   $('.modal').modal({
+    //     // dismissible:false
+    //     preventScrolling: false
+    // });
+
+    $('.modal-trigger').leanModal();
 
       //or by click on trigger
       $('#chauffageModalButton').click(function(e){
-        $('#modal1').modal('open');
+        $('#modal1').openModal('open');
 
       })
       
       $('#eauSanitaireModalButton').click(function(e){
-          $('#modal2').modal('open');
+          $('#modal2').openModal('open');
       })
       
       $('#appareilElecModalButton').click(function(e){
-        $('#modal3').modal('open');
+        $('#modal3').openModal('open');
       })
       
       $('#eclairageModalButton').click(function(e){
-        $('#modal4').modal('open');
+        $('#modal4').openModal('open');
       })
 
       $('#pompeChaleurButton').click(function(e){
-        $('#modal5').modal('open');
+        $('#modal5').openModal('open');
       })
       
       $('#facade_maison').click(function(e){
         formPageValues.snapshot.fieldName='facade_maison';
-        $('#modal6').modal('open');
+        $('#modal6').openModal('open');
       })
       
       $('#compteur_actuel').click(function(e){
         formPageValues.snapshot.fieldName='compteur_actuel';
-        $('#modal6').modal('open');
+        $('#modal6').openModal('open');
       })
       
       $('#chaudiere_actuel').click(function(e){
         formPageValues.snapshot.fieldName='chaudiere_actuel';
-        $('#modal6').modal('open');
+        $('#modal6').openModal('open');
       })
       
       $('#ballon_actuel').click(function(e){
         formPageValues.snapshot.fieldName='ballon_actuel';
-        $('#modal6').modal('open');
+        $('#modal6').openModal('open');
       })
       
       $('#emplacement_pompe_a_chaleur').click(function(e){
         formPageValues.snapshot.fieldName='emplacement_pompe_a_chaleur';
-        $('#modal6').modal('open');
+        $('#modal6').openModal('open');
       })
       
       $('#emplacement_des_blocs_exterieurs').click(function(e){
         formPageValues.snapshot.fieldName='emplacement_des_blocs_exterieurs';
-        $('#modal6').modal('open');
+        $('#modal6').openModal('open');
       })
 
       $('#modal6Button').click(function(){
@@ -469,11 +471,20 @@ jQuery(function($){
       $('#productsFilterCategory').change(function(){
         showListProduits($(this).val())
       })
-      // $('.modal-trigger').modal();
+      
 
       // var elems = document.querySelectorAll('select');
       // var instances = M.FormSelect.init(elems);
-      $('select').formSelect();
+      // $('select').formSelect();
+      var selectFields = $('select');
+      selectFields.each(function () {
+        var selectField = $(this);
+        selectField.material_select();
+        selectField.on('change.initMaterialSelect', function () {
+          // re-init when native field changes
+          selectField.material_select();
+        });
+      }); 
 
       var current = 1, current_step,next_step,steps;
       steps = $("fieldset").length;

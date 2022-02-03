@@ -62,6 +62,9 @@ body{
     overflow-y: scroll;
     font-family: aoki_regular;
     height: fit-content!important;
+
+    /* for ol materialize purpose */
+    overflow: scroll!important;
 }
 
 a span{
@@ -337,6 +340,13 @@ fieldset.step-1{
     font-size: 14px !important;
     margin-bottom: 2px;
 }
+/* for ol materialize purpose */
+
+.modal .modal-footer {
+    text-align: right;
+}
+
+/* --------------------------------- */
 .page .page__content .counter__subtitle, main .modalContainer .modal-content .counter__subtitle{
     color: #00325082;
 }
@@ -2239,6 +2249,20 @@ canvas,
 
 #modal6 .buttons button, #modal6 .buttons input{
     margin: 5px 0;
+}
+/* force the native select field to overlay the material select */
+.select-wrapper {
+	position: relative;
+}
+.select-wrapper select {
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 10;
+	opacity: 0;
 }
 
 /*RESPONSIVENESS*/
