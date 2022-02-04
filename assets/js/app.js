@@ -356,15 +356,18 @@ let bonusCalcul={
 jQuery(function($){
     $(document).ready(function(){
       //initialize all modals           
-    //   $('.modal').modal({
-    //     // dismissible:false
-    //     preventScrolling: false
-    // });
+      //   $('.modal').modal({
+      //     // dismissible:false
+      //     preventScrolling: false
+      // });
 
-    $('.modal-trigger').leanModal();
+      $('.modal-trigger').leanModal({
+        dismissible: false
+      });
 
       //or by click on trigger
       $('#chauffageModalButton').click(function(e){
+        $('.step-11').removeAttr('style');
         $('#modal1').openModal('open');
 
       })
@@ -884,7 +887,10 @@ jQuery(function($){
             next_step_form.fadeTo('slow', 1, function(){
               setProgressBar(next_step);
               next_step_form.show();
-              stepVisited.push(next_step);
+              if(!stepVisited.includes(next_step)){
+                stepVisited.push(next_step);
+              }
+              console.log('stepVisited', stepVisited)
             });
 
         }, timeout);
@@ -898,13 +904,12 @@ jQuery(function($){
         $('.page .page__content #regiration_form').css("transition", "none" );
 
         current_step = $('.step-'+stepVisited[stepVisited.length-1]);
-
+        console.log('previous', current_step)
         next_step=stepVisited[stepVisited.length-2];
         current=next_step;
         
         next_step_form = $('.step-'+next_step);
         
-            console.log('previous', current);
         if (current >=1 && current<12){ 
           $('.page .previous').css('visibility', 'visible');
         } else if(current >15){
@@ -931,6 +936,7 @@ jQuery(function($){
             $('.page .page__content #regiration_form').css("transition", ".4s ease-out" );
             $('.page .page__content #regiration_form').css("transform"," translateX(0px)" );
         }, timeout);   
+
         calculatePompeAChaleurAirEau();
         calculBonus()
 

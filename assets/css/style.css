@@ -171,7 +171,7 @@ a span{
     width: 100%;
     text-align: center;
     position: relative;
-    overflow: scroll;
+    /* overflow: scroll; */
     /* height: 90vh; */
     scrollbar-width: none;
 }
@@ -873,6 +873,17 @@ main .modalContainer .modal .modal-content .pieces__value{
     right: 30px;
     width: 50px;
 }
+[type="checkbox"].filled-in:not(:checked)+label:after {
+    border: 2px solid #ffffff;
+    transform: translateY(3px);
+}
+[type="checkbox"].filled-in:checked+label:after {
+    transform: translateY(3px);
+}
+[type="checkbox"].filled-in:checked+label:before {
+    top: 3px;
+}
+
 [type="checkbox"].filled-in:checked+span:not(.lever):before {
     top: -7px;
 }
@@ -1622,7 +1633,7 @@ main .page .page__content .pompes__btn--show:hover{
     }
     .page .page__content label{
         height: auto;
-        padding: 12px 10px;
+        /* padding: 12px 10px; */
         font-family: aoki_regular,Helvetica,Arial,sans-serif;
         color: #003250;
         font-weight: 600;
@@ -2585,6 +2596,10 @@ canvas,
     .page__content .total .total__value {
         font-size: 2.5m!important;
     }
+    
+    .page .page__content .img-wrapper img.step-1__img {
+        max-width: 100%;
+    }
 }
 
 @media only screen and (max-width: 598px){ 
@@ -2668,6 +2683,9 @@ canvas,
     input[type=range] {
         border: 3px solid white;
     }
+    .vos-consommations__consumption-item .consump-info {
+        width: auto!important;
+    }
 }
 
 @media only screen and (max-width: 519px){ 
@@ -2691,5 +2709,8 @@ canvas,
     #modal6 .buttons input{
         margin-left: auto;
         margin-right: auto;
+    }
+    .vos-consommations__consumption-item .consumpt-val {
+        font-size: 20px;
     }
 }

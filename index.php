@@ -902,13 +902,14 @@
                                 <span class="solution_proposee_big_title">Chauffe-eau thermodynamique</span>     
                                 <span class="solution_proposee_small_title">Eclairage</span> 
                                 <span id="moyenne_conso_sur_x_annee" class="solution_proposee_checkbox_container">
+                                    <input type="checkbox" class="filled-in checkbox-white chk-moyenne-conso" id="200l" value="200L" name="moyenne_conso_sur_x_annee_check1" />
                                     <label for="200l" style="color: white;" class="checkbox-label-white">
-                                        <input type="checkbox" class="filled-in checkbox-white chk-moyenne-conso" id="200l" value="200L" name="moyenne_conso_sur_x_annee_check1" />
-                                        <span for="200l">200 L</span>
+                                        200 L
                                     </label>
+                                    
+                                    <input type="checkbox" class="filled-in checkbox-white chk-moyenne-conso" id="270l" value="270L" name="moyenne_conso_sur_x_annee_check2" />
                                     <label for="270l" style="color: white;" class="checkbox-label-white">
-                                        <input type="checkbox" class="filled-in checkbox-white chk-moyenne-conso" id="270l" value="270L" name="moyenne_conso_sur_x_annee_check2" />
-                                        <span for="270l">270 L</span>
+                                        270 L
                                     </label>
                                 </span> 
 
@@ -919,13 +920,13 @@
                                 <span class="solution_proposee_big_title">Electricité ampoules led</span> 
                                 <span class="solution_proposee_small_title">Eclairage</span>
                                 <span id="elec_ampoule_led" class="solution_proposee_checkbox_container">
-                                    <label for="elec_ampoule1" style="color: white;" class="checkbox-label-white">
                                         <input type="checkbox" class="filled-in checkbox-white chk-elec-ampoule" id="elec_ampoule1" value="Oui" name="elec_ampoule_led_chk1" />
-                                        <span for="elec_ampoule1">OUI</span>
+                                    <label for="elec_ampoule1" style="color: white;" class="checkbox-label-white">
+                                        OUI
                                     </label>
-                                    <label for="elec_ampoule2" style="color: white;" class="checkbox-label-white">
                                         <input type="checkbox" class="filled-in checkbox-white chk-elec-ampoule" id="elec_ampoule2" value="Non" name="elec_ampoule_led_chk2" />
-                                        <span for="elec_ampoule2">NON</span>
+                                    <label for="elec_ampoule2" style="color: white;" class="checkbox-label-white">
+                                        NON
                                     </label></span> 
                                 <img src="./assets/images/picto_gte/electricite-white-icon.svg" alt="Pompe à chaleur air-eau" class="conso_result_image">
 
