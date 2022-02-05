@@ -238,7 +238,7 @@ let produits=[
   {
     title: 'Gamme Dojo – Atlantic',
     avantage: ['Confort acoustique : 20 dB', 'Classe énergétique A+', 'Mono split mural', 'Mode pleine puissance'],
-    categorie: 'Pompes à chaleur air-eau',
+    categorie: 'Pompes à chaleur air-air',
     fiche_technique_url: 'https://bit.ly/3sc8kQn',
     img_url: './assets/images/pompe__chauff_thermo_new_2.jpg'
   },
@@ -252,7 +252,7 @@ let produits=[
   {
     title: 'Alféa Excellia – Atlantic',
     avantage: ['Certifié, Heat Pump, Keymark', 'Application, Atlantic, Cozytouch', 'Monophasé et Triphasé', 'Classe énergétique A++ & A+'],
-    categorie: 'Chauffe-eau Thermodynamique',
+    categorie: 'Pompes à chaleur air-eau',
     fiche_technique_url: 'https://bit.ly/35LOmo7',
     img_url: './assets/images/pompe__chauff_thermo_new_4.jpg'
   },
@@ -352,7 +352,6 @@ let bonusCalcul={
   dansIleDeFrance: false
 }
 
-
 jQuery(function($){
     $(document).ready(function(){
       //initialize all modals           
@@ -392,30 +391,54 @@ jQuery(function($){
         formPageValues.snapshot.fieldName='facade_maison';
         $('#modal6').openModal('open');
       })
-      
+      $('#facade_maison_select').click(function(e){
+        formPageValues.snapshot.fieldName='facade_maison';
+        $('#upload_photo').click();
+      })
+
       $('#compteur_actuel').click(function(e){
         formPageValues.snapshot.fieldName='compteur_actuel';
         $('#modal6').openModal('open');
+      })
+      $('#compteur_actuel_select').click(function(e){
+        formPageValues.snapshot.fieldName='compteur_actuel';
+        $('#upload_photo').click();
       })
       
       $('#chaudiere_actuel').click(function(e){
         formPageValues.snapshot.fieldName='chaudiere_actuel';
         $('#modal6').openModal('open');
       })
+      $('#chaudiere_actuel_select').click(function(e){
+        formPageValues.snapshot.fieldName='chaudiere_actuel';
+        $('#upload_photo').click();
+      })
       
       $('#ballon_actuel').click(function(e){
         formPageValues.snapshot.fieldName='ballon_actuel';
         $('#modal6').openModal('open');
+      })
+      $('#ballon_actuel_select').click(function(e){
+        formPageValues.snapshot.fieldName='ballon_actuel';
+        $('#upload_photo').click();
       })
       
       $('#emplacement_pompe_a_chaleur').click(function(e){
         formPageValues.snapshot.fieldName='emplacement_pompe_a_chaleur';
         $('#modal6').openModal('open');
       })
+      $('#emplacement_pompe_a_chaleur_select').click(function(e){
+        formPageValues.snapshot.fieldName='emplacement_pompe_a_chaleur';
+        $('#upload_photo').click();
+      })
       
       $('#emplacement_des_blocs_exterieurs').click(function(e){
         formPageValues.snapshot.fieldName='emplacement_des_blocs_exterieurs';
         $('#modal6').openModal('open');
+      })
+      $('#emplacement_des_blocs_exterieurs_select').click(function(e){
+        formPageValues.snapshot.fieldName='emplacement_des_blocs_exterieurs';
+        $('#upload_photo').click();
       })
 
       $('#modal6Button').click(function(){
@@ -479,6 +502,7 @@ jQuery(function($){
       // var elems = document.querySelectorAll('select');
       // var instances = M.FormSelect.init(elems);
       // $('select').formSelect();
+      
       var selectFields = $('select');
       selectFields.each(function () {
         var selectField = $(this);
@@ -1777,7 +1801,7 @@ jQuery(function($){
       formPageValues.votre_conso_actuel=(Number($('#inputEstimFactChauff').val()) + Number($('#inputEstimFactEauChaude').val())+ Number($('#inputEstimFactAppareilElec').val())+Number($('#inputEstimFactEclairage').val()));
       $('#votre_conso_actuel').text(formatNumber.asEuro(formPageValues.votre_conso_actuel).replace(",00", ""));
       const nombreAnneeAIndexer=parseInt($('select[name=type_de_chaufface_nombre_d_annee_a_indexer]').val()) || 0;
-      const evolPrixFioul =parseFloat($('#inputEvol25Annee').val())/100;
+      const evolPrixFioul =parseFloat(formPageValues.evol_sur_25_annee)/100;
       if(!isNaN(nombreAnneeAIndexer)){
         let sumTotal=formPageValues.votre_conso_actuel;
         const allValues=[]
@@ -1840,32 +1864,72 @@ jQuery(function($){
         consommationGlobal();
     })
 
-    updatThumbEvolValue();
+    // updatThumbEvolValue();
 
-    $('#inputEvol25Annee').change(function(e){
-      e.preventDefault();
-      formPageValues.evol_sur_25_annee=$(this).val();
+    // $('#inputEvol25Annee').change(function(e){
+    //   e.preventDefault();
+    //   formPageValues.evol_sur_25_annee=$(this).val();
+    //   formPageValues.votre_conso_actuel= parseFloat($('#inputEstimFactChauff').val()||0);
+    //   consommationGlobal();
+    //   // updatThumbEvolValue();
+    //   return
+    // });
+
+    // $('#inputEvol25Annee').mouseup(function(){
+    //     $($('#inputEvol25Annee + span.thumb')).addClass('active-thumb')
+    //     $($('#inputEvol25Annee + span.thumb')).css('left', (13.9 * parseInt($(this).val())))
+    //   updatThumbEvolValue();
+    // });
+    
+    // $('#inputEvol25Annee').change(function(){
+    //   let circlePos=$('input[type=range]::-webkit-slider-thumb').position()
+    //   circlePos = parseFloat(circlePos)-16,999999714
+    //   console.log('circlePos', circlePos)
+    // })
+    // $('#inputEvol25Annee').mouseleave(function(){
+    //   console.log('blur')
+    //   $($('#inputEvol25Annee + span.thumb')).addClass('active-thumb')
+    //   // const inputWidth=$('#inputEvol25Annee').css('width').substring(0, $('#inputEvol25Annee').css('width').length-2);
+    //   // const position= parseFloat(inputWidth)*(((parseFloat($(this).val()) *100)/7)/100);
+    //   // console.log('position ', position)
+    //   console.log($('input[type=range]::-webkit-slider-thumb'));
+    //   let circlePos=$('input[type=range]::-webkit-slider-thumb').position();
+    //   console.log(circlePos);
+    //   circlePos = parseFloat(circlePos)-16,999999714
+    //   $($('#inputEvol25Annee + span.thumb')).css('left',circlePos+'px');
+    // });
+    // function updatThumbEvolValue(){
+    //   $('#inputEvol25Annee + span.thumb').text(formPageValues.evol_sur_25_annee)
+    // }
+
+    
+    var slider = document.getElementById('range-input');
+      noUiSlider.create(slider, {
+      start: [4],
+      connect: [true, false],
+      tooltips: [true],
+      step: 1,
+      range: {
+        'min': 0,
+        'max': 7
+      },
+      format: {
+        to: function ( value ) {
+          return value + '';
+        },
+        from: function ( value ) {
+          return value.replace(',-', '');
+        }
+      }
+    });
+
+    slider.noUiSlider.on('change.one', function (value) { 
+      formPageValues.evol_sur_25_annee=parseFloat(value[0]);
       formPageValues.votre_conso_actuel= parseFloat($('#inputEstimFactChauff').val()||0);
       consommationGlobal();
-      updatThumbEvolValue();
-      return
+      console.log(value)
     });
 
-    $('#inputEvol25Annee').mouseup(function(){
-        $($('#inputEvol25Annee + span.thumb')).addClass('active-thumb')
-        $($('#inputEvol25Annee + span.thumb')).css('left', (13.9 * parseInt($(this).val())))
-      updatThumbEvolValue();
-    });
-    
-
-    $('#inputEvol25Annee').mouseleave(function(){
-      console.log('blur')
-      $($('#inputEvol25Annee + span.thumb')).addClass('active-thumb')
-      $($('#inputEvol25Annee + span.thumb')).css('left', (13.7 * parseInt($(this).val()))+'%');
-    });
-    function updatThumbEvolValue(){
-      $('#inputEvol25Annee + span.thumb').text(formPageValues.evol_sur_25_annee)
-    }
     $('#inputDernierRevenuFiscalRef').change(function(){
       calculBonus();
     })
@@ -2161,23 +2225,13 @@ jQuery(function($){
     }
     
     $('#upload_photo').change(function(e){
-      var context = canvas.getContext("2d");
-      // console.log('upload_photo', e.target.files[0]);
-      // const tmpURLImage= URL.createObjectURL(e.target.files[0])
-      // console.log(tmpURLImage);
+      // var context = canvas.getContext("2d");
+      const tmpURLImage= URL.createObjectURL(e.target.files[0])
 
-      var context = canvas.getContext("2d");
-      let width=320;
-      // let height = video_camera.videoHeight / (video_camera.videoWidth / width);
-      // canvas.width = width;
-      // canvas.height = height;
-      var img = new Image;
-      img.src = URL.createObjectURL(e.target.files[0]);
-      img.onload = function() {
-        context.drawImage(img, 0, 0, 320)
-        // context.drawImage(img, 0, 0, width, height)
-      }
-
+        console.log(`${formPageValues.snapshot.fieldName}`);
+        $(`#${formPageValues.snapshot.fieldName}_img`).css('height', 350);
+        $(`#${formPageValues.snapshot.fieldName}_img img`).attr('src', tmpURLImage);
+        
     })
 
     function getMatchedWhattNumber(nbr){
@@ -2490,7 +2544,7 @@ jQuery(function($){
       serializedData += '&nbEnfCharge=' + $("[name='eligibility_nbr_enfant_a_charge']").text().trim();
       serializedData += '&revenus=' + $("#inputDernierRevenuFiscalRef").val();
       serializedData += '&primeRenov=' + formPageValues.maPrimeRenovSum+ ' €';
-      serializedData += '&coupDePouce=' + bonusCalcul.coupDePouce + ' €';
+      serializedData += '&coupDePouce=' + b(onusCalcul.coupDePouce.pacAirEau +  bonusCalcul.coupDePouce.chauffeEauthermo) + ' €';
       serializedData += '&bonusEco=' + bonusCalcul.ecologique+ ' €';
       serializedData += '&aidesCumul=' + bonusCalcul.totalBonus+ ' €';
       serializedData += '&chauffagePrix=' + $("#consumpt-val1").text().trim();

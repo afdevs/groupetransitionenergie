@@ -9,7 +9,6 @@ var cloud_name,
   start_camera_button,
   take_picture_button,
   clear_picture_button,
-  upload_button,
   video_select,
   upload_response;
 
@@ -23,13 +22,11 @@ function init() {
   start_camera_button = document.getElementById("start_camera_button");
   take_picture_button = document.getElementById("take_picture_button");
   clear_picture_button = document.getElementById("clear_picture_button");
-  upload_button = document.getElementById("upload_button");
   upload_response = document.getElementById("upload_response");
 
   start_camera_button.addEventListener("click", startCamera);
   take_picture_button.addEventListener("click", takePhoto);
   clear_picture_button.addEventListener("click", clearPhotos);
-  upload_button.addEventListener("click", uploadPhoto);
 }
 
 video_select = document.querySelector('select#videoSource');
@@ -124,7 +121,6 @@ function clearPhotos() {
 
   var data = canvas.toDataURL("image/png");
   cloudinary_photo.setAttribute("src", data);
-  upload_button.disabled = true;
 }
 
 function takePhoto() {
@@ -133,7 +129,6 @@ function takePhoto() {
     canvas.width = width;
     canvas.height = height;
     context.drawImage(video_camera, 0, 0, width, height);
-    upload_button.disabled = false;
   } else {
     clearPhotos();
   }
