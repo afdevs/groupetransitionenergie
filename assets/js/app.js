@@ -2195,6 +2195,11 @@ jQuery(function($){
         $(this).val('')
       }
     })
+    $('#inputBonusEcologique').on('click', function(e){
+      if(parseInt($(this).val())===0){
+        $(this).val('')
+      }
+    })
 
     function handlePhotoCaptureButtons(){
       if($('#source_energie_3_chauffage').is(':checked') || $('#source_energie_1_chauffage').is(':checked')){
@@ -2486,7 +2491,7 @@ jQuery(function($){
     email.keyup(function(e){
       if(email.val()===''){
         email.addClass('invalide')
-        $(email.next()).addClass('show');onc
+        $(email.next()).addClass('show');
       }else{
         email.removeClass('invalide')
         $(email.next()).removeClass('show');
@@ -2544,7 +2549,7 @@ jQuery(function($){
       serializedData += '&nbEnfCharge=' + $("[name='eligibility_nbr_enfant_a_charge']").text().trim();
       serializedData += '&revenus=' + $("#inputDernierRevenuFiscalRef").val();
       serializedData += '&primeRenov=' + formPageValues.maPrimeRenovSum+ ' €';
-      serializedData += '&coupDePouce=' + b(onusCalcul.coupDePouce.pacAirEau +  bonusCalcul.coupDePouce.chauffeEauthermo) + ' €';
+      serializedData += '&coupDePouce=' + (bonusCalcul.coupDePouce.pacAirEau +  bonusCalcul.coupDePouce.chauffeEauthermo) + ' €';
       serializedData += '&bonusEco=' + bonusCalcul.ecologique+ ' €';
       serializedData += '&aidesCumul=' + bonusCalcul.totalBonus+ ' €';
       serializedData += '&chauffagePrix=' + $("#consumpt-val1").text().trim();
