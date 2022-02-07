@@ -130,6 +130,62 @@ a span{
     margin-left: 12px;
     display: inline-flex!important;
 }
+.flickity-enabled.is-draggable .flickity-viewport {
+    /* max-width: 70%; */
+    margin: 0 auto;
+    height: 80px!important;
+}
+
+.navigation {
+    padding: 5px;
+    background: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    width: 100%;
+}
+.navigation__previous {
+    cursor: pointer;
+    color: #003250;
+    font-family: gilroymedium,Arial,sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    display: flex;
+    padding-left: 16px;
+    padding-bottom: 0;
+    align-items: center;
+    width: 115px;
+}
+
+.navigation__menus{
+    /* max-width: 85%; */
+    margin-left: auto;
+    margin-right: auto;
+    background: #eaeaea91;
+}
+
+  
+.navigation__previous svg{
+    transform: translateY(2px);
+}
+
+.navigation .navigation__head{
+    display: flex;
+    align-items: center;
+}
+
+.navigation .navigation__head .logo{
+    min-width: 300px;
+    text-align: center;
+}
+
+.flickity-button {
+    background: transparent!important;
+}
+
 .desktop_avatar{
     display: block;
 }
@@ -261,7 +317,14 @@ h5{
 .step-list-item-active::before{
     background-color: #74ffa7;
 }
-
+.navigation__menus .step-list-item::before{
+    height: 10px;
+    width: 5px;
+}
+.navigation__menus .step-list-item-active::before {
+    height: 10px;
+    width: 5px;
+}  
 .step-list-item-content{
     margin-left: 16px;
     padding: 10px 0;
@@ -407,7 +470,7 @@ svg[data-v-250eb6c4] {
     margin-right: 8px;
     width: 9px;
 }
-.previous{    
+.previous__link{    
     cursor: pointer;    
     color: #003250;
     font-family: gilroymedium,Arial,sans-serif;
@@ -2173,7 +2236,13 @@ h3 {
     font-size:40px;position: absolute;left: 30px; top: 90px; display: flex; width: 200px; justify-content: space-between;flex-wrap: wrap;
 }
 .solution_proposee_checkbox_container{
-    position: absolute;left: 30px;top: 110px;display: flex;width: 200px;justify-content: space-between;flex-wrap: wrap;
+    position: absolute;
+    left: 30px;
+    top: 110px;
+    display: flex;
+    width: 205px;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
 }
 
 #modal5{
@@ -2344,7 +2413,7 @@ main .modalContainer .inputs .input-item .select-wrapper {
         width: 300px;
     }
     .solution_proposee, label[class=type_de_ventilation_3]{
-        height: 165px!important;
+        height: 200px!important;
     }
     .solution_proposee_big_title{
         font-size: 13px;
@@ -2361,9 +2430,9 @@ main .modalContainer .inputs .input-item .select-wrapper {
         font-size:25px;
     }
     
-    .solution_proposee_checkbox_container{
+    /* .solution_proposee_checkbox_container{
         width: 190px;
-    }
+    } */
 
     .page .page__content .solution_proposee_checkbox_container label [type="checkbox"]+span:not(.lever) {
         font-size: 12px;
@@ -2485,6 +2554,9 @@ main .modalContainer .inputs .input-item .select-wrapper {
 
 
 @media only screen and (max-width: 769px){
+    .navigation {
+        display: block;
+    }
     .aside{
         display: none;
     }
@@ -2611,7 +2683,8 @@ main .modalContainer .inputs .input-item .select-wrapper {
         width: 95%;
     }
     
-    .previous{
+    .previous__link{
+        display: none;
         margin-bottom: 20px;
         margin-left: -25px !important;
     }
@@ -2725,7 +2798,8 @@ main .modalContainer .inputs .input-item .select-wrapper {
     .progress {
         top: 52px;
     }
-    .previous {
+    .previous__link {
+        display: none;
         margin-top: 40px;
     }
     #modal6 .buttons{

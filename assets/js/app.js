@@ -363,6 +363,15 @@ jQuery(function($){
       $('.modal-trigger').leanModal({
         dismissible: false
       });
+      
+      $('.main-carousel').flickity({
+        // options
+        // cellAlign: 'center',
+        draggable: '>1',
+        contain: true,
+        pageDots: false
+      });
+            
 
       //or by click on trigger
       $('#chauffageModalButton').click(function(e){
@@ -827,6 +836,7 @@ jQuery(function($){
       
       /* ALL ABOUT THE FORM */     
       $(".next").click(function(e){
+        if($($(this)[0]).hasClass('flickity-button')) return;
         let timeout= current >1 && current<25 ? 200 : 0;
         setTimeout(()=>{
             $('.page .page__content #regiration_form').css("transform"," translateX(50px)" );
@@ -844,11 +854,11 @@ jQuery(function($){
             next_step_form =  $('.step-'+next_step);
 
             if (current >=1 && current<12){ 
-              $('.page .previous').css('visibility', 'visible');
+              $('.page .previous__link').css('visibility', 'visible');
             }else if(current >15){
-              $('.page .previous').css('visibility', 'visible');
+              $('.page .previous__link').css('visibility', 'visible');
             }else{
-                $('.page .previous').css('visibility', 'hidden');
+                $('.page .previous__link').css('visibility', 'hidden');
             }
               
             
@@ -921,25 +931,24 @@ jQuery(function($){
           
       });
 
-      $(".previous").click(function(){
+      $(".previous__link").click(function(){
         let timeout= current>1 && current<25 ? 200 : 0;  
         
         $('.page .page__content #regiration_form').css("transform"," translateX(50px)" );
         $('.page .page__content #regiration_form').css("transition", "none" );
 
         current_step = $('.step-'+stepVisited[stepVisited.length-1]);
-        console.log('previous', current_step)
         next_step=stepVisited[stepVisited.length-2];
         current=next_step;
         
         next_step_form = $('.step-'+next_step);
         
         if (current >=1 && current<12){ 
-          $('.page .previous').css('visibility', 'visible');
+          $('.page .previous__link').css('visibility', 'visible');
         } else if(current >15){
           $('.page .previous').css('visibility', 'visible');
         }else{
-            $('.page .previous').css('visibility', 'hidden');
+            $('.page .previous__link').css('visibility', 'hidden');
         }
           
             
@@ -989,11 +998,11 @@ jQuery(function($){
             next_step_form =  $('.step-'+next_step);
             
             if (current >=1 && current<12){ 
-              $('.page .previous').css('visibility', 'visible');
+              $('.page .previous__link').css('visibility', 'visible');
             }else if(current >15){
-              $('.page .previous').css('visibility', 'visible');
+              $('.page .previous__link').css('visibility', 'visible');
             }else{
-                $('.page .previous').css('visibility', 'hidden');
+                $('.page .previous__link').css('visibility', 'hidden');
             }
               
               
@@ -1037,11 +1046,11 @@ jQuery(function($){
             next_step_form =  $('.step-'+next_step);
             
             if (current >=1 && current<12){ 
-              $('.page .previous').css('visibility', 'visible');
+              $('.page .previous__link').css('visibility', 'visible');
             }else if(current >15){
-              $('.page .previous').css('visibility', 'visible');
+              $('.page .previous__link').css('visibility', 'visible');
             }else{
-                $('.page .previous').css('visibility', 'hidden');
+                $('.page .previous__link').css('visibility', 'hidden');
             }
             
             if(current>11 && current< 16){
@@ -1085,11 +1094,11 @@ jQuery(function($){
             next_step_form =  $('.step-'+next_step);
             
             if (current >=1 && current<12){ 
-              $('.page .previous').css('visibility', 'visible');
+              $('.page .previous__link').css('visibility', 'visible');
             }else if(current >15){
-              $('.page .previous').css('visibility', 'visible');
+              $('.page .previous__link').css('visibility', 'visible');
             }else{
-                $('.page .previous').css('visibility', 'hidden');
+                $('.page .previous__link').css('visibility', 'hidden');
             }
             
             if(current>11 && current< 16){
@@ -1131,11 +1140,11 @@ jQuery(function($){
           next_step_form =  $('.step-'+next_step);
           
           if (current >=1 && current<12){ 
-            $('.page .previous').css('visibility', 'visible');
+            $('.page .previous__link').css('visibility', 'visible');
           }else if(current >15){
-            $('.page .previous').css('visibility', 'visible');
+            $('.page .previous__link').css('visibility', 'visible');
           }else{
-              $('.page .previous').css('visibility', 'hidden');
+              $('.page .previous__link').css('visibility', 'hidden');
           }
             
             
@@ -1179,11 +1188,11 @@ jQuery(function($){
           next_step_form =  $('.step-'+next_step);
           
           if (current >=1 && current<12){ 
-            $('.page .previous').css('visibility', 'visible');
+            $('.page .previous__link').css('visibility', 'visible');
           }else if(current >15){
-            $('.page .previous').css('visibility', 'visible');
+            $('.page .previous__link').css('visibility', 'visible');
           }else{
-              $('.page .previous').css('visibility', 'hidden');
+              $('.page .previous__link').css('visibility', 'hidden');
           }
         
             
@@ -1229,11 +1238,11 @@ jQuery(function($){
           next_step_form =  $('.step-'+next_step);
           
           if (current >=1 && current<12){ 
-            $('.page .previous').css('visibility', 'visible');
+            $('.page .previous__link').css('visibility', 'visible');
           }else if(current >15){
-            $('.page .previous').css('visibility', 'visible');
+            $('.page .previous__link').css('visibility', 'visible');
           }else{
-              $('.page .previous').css('visibility', 'hidden');
+              $('.page .previous__link').css('visibility', 'hidden');
           }
         
             
@@ -1280,11 +1289,11 @@ jQuery(function($){
           next_step_form =  $('.step-'+next_step);
           
           if (current >=1 && current<12){ 
-            $('.page .previous').css('visibility', 'visible');
+            $('.page .previous__link').css('visibility', 'visible');
           }else if(current >15){
-            $('.page .previous').css('visibility', 'visible');
+            $('.page .previous__link').css('visibility', 'visible');
           }else{
-              $('.page .previous').css('visibility', 'hidden');
+              $('.page .previous__link').css('visibility', 'hidden');
           }
         
           if(current>11 && current< 16){
@@ -1329,11 +1338,11 @@ jQuery(function($){
           next_step_form =  $('.step-'+next_step);
           
           if (current >=1 && current<12){ 
-            $('.page .previous').css('visibility', 'visible');
+            $('.page .previous__link').css('visibility', 'visible');
           }else if(current >15){
-            $('.page .previous').css('visibility', 'visible');
+            $('.page .previous__link').css('visibility', 'visible');
           }else{
-              $('.page .previous').css('visibility', 'hidden');
+              $('.page .previous__link').css('visibility', 'hidden');
           }
         
           if(current>11 && current< 16){
@@ -1756,9 +1765,21 @@ jQuery(function($){
       if($(this).is(':checked')){
         if($(this).attr('id')==='200l'){
           $('#270l').prop('checked', false);
-        }else{
+          $('#230l').prop('checked', false);
+          $('#Autres').prop('checked', false);
+        }else if($(this).attr('id')==='230l'){
           $('#200l').prop('checked', false);
-
+          $('#270l').prop('checked', false);
+          $('#Autres').prop('checked', false);
+        }else if($(this).attr('id')==='270l'){
+          $('#230l').prop('checked', false);
+          $('#Autres').prop('checked', false);
+          $('#200l').prop('checked', false);
+        }else{
+          $('#230l').prop('checked', false);
+          $('#200l').prop('checked', false);
+          $('#270l').prop('checked', false);
+          
         }
       }
     });
@@ -1944,6 +1965,14 @@ jQuery(function($){
       calculBonus()
     });
     
+    $('#230l').click(function(){
+      calculBonus()
+    });
+    
+    $('#Autres').click(function(){
+      calculBonus()
+    });
+
     function intBonusData(){
       bonusCalcul.maprimenov.pacAirEau=0;
       bonusCalcul.maprimenov.chauffeEauthermo=0;
@@ -2093,7 +2122,7 @@ jQuery(function($){
       let maPrimeRenovSum=0
       let coupDePouceSm=0;
       
-      if($('#270l').is(':checked') || $('#200l').is(':checked')){
+      if($('#270l').is(':checked') || $('#200l').is(':checked') || $('#230l').is(':checked') || $('#Autres').is(':checked')){
         bonusCalcul.totalBonus +=bonusCalcul.maprimenov.chauffeEauthermo;
         maPrimeRenovSum +=bonusCalcul.maprimenov.chauffeEauthermo;
 
@@ -2238,7 +2267,7 @@ jQuery(function($){
         $('#emplacement_pompe_a_chaleur_select').prop('disabled', true)
       }
       
-      if($('#270l').is(':checked') || $('#200l').is(':checked')){
+      if($('#270l').is(':checked') || $('#200l').is(':checked') || $('#230l').is(':checked') || $('#Autres').is(':checked')){
         $('#ballon_actuel').removeClass('disabled_photo_btn')
         $('#ballon_actuel').prop('disabled', false)
         

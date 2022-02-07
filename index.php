@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./assets/css/materialize.min2.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/nouislider.css">
+    <link rel="stylesheet" href="./assets/css/flickity.css" media="screen">
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1EXRWkpnVufW7zY3VUrTjaJiz4Lmj5wU&libraries=places&callback=initMap">
     </script>
 
@@ -130,6 +131,104 @@
             <div class="topbar__infos"> 
             Étude personnalisée de l’habitat
             </div>
+
+            <div class="navigation">
+                <div class="navigation__head">
+                    <div class="navigation__previous">
+                        <svg version="1.1" fill="#003250" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            height="14px" viewBox="0 0 493.578 493.578" style="enable-background:new 0 0 493.578 493.578;"
+                                xml:space="preserve">
+                            <g>
+                                <path d="M487.267,225.981c0-17.365-13.999-31.518-31.518-31.518H194.501L305.35,83.615c12.24-12.24,12.24-32.207,0-44.676
+                                    L275.592,9.18c-12.24-12.24-32.207-12.24-44.676,0L15.568,224.527c-6.12,6.12-9.256,14.153-9.256,22.262
+                                    c0,8.032,3.136,16.142,9.256,22.262l215.348,215.348c12.24,12.239,32.207,12.239,44.676,0l29.758-29.759
+                                    c12.24-12.24,12.24-32.207,0-44.676L194.501,299.498h261.094c17.366,0,31.519-14.153,31.519-31.519L487.267,225.981z"/>
+                            </g>
+                        </svg>
+                        <a href="#" class="previous__button" >RETOUR</a>
+                    </div>
+                    <div class="logo">
+                        <img src="./assets/images/image00001-removebg-preview(1).png" alt="Logo - Groupe Transition Energie" width="200">
+                    </div>
+
+                </div>
+                <div class="navigation__menus">
+                    <ul class="main-carousel">
+                    <li class="step-list-item step-list-item-active carousel-cell" id="part-1">
+                        <button class="navigationButton" aria-selected="part-1">
+                            <div class="step-list-item-content">
+                            <h5>INFORMATION CLIENT</h5>
+                            <!-- <p class="step-description-text">Décrivez votre logement et détaillez votre projet de travaux.</p> -->
+                            </div>
+                        </button>
+                    </li>
+
+                    <li class="step-list-item carousel-cell" id="part-2">
+                        <button class="navigationButton" aria-selected="part-2">
+                            <div class="step-list-item-content">
+                            <h5 class="step-list-item-disabled">ETUDE DU LOGEMENT</h5>
+                            <!-- <p class="step-description-text step-list-item-disabled">Décrivez votre logement et détaillez votre projet de travaux.</p> -->
+                        </div>
+                        </button>
+                    </li>
+                    
+                    <li class="step-list-item carousel-cell" id="part-3">
+                        <button class="navigationButton" aria-selected="part-3">
+                            <div class="step-list-item-content">
+                            <h5 class="step-list-item-disabled">VOS CONSOMMATIONS ET EQUIPEMENTS</h5>
+                            <!-- <p class="step-description-text step-list-item-disabled">Décrivez votre logement et détaillez votre projet de travaux.</p> -->
+                        </div>
+                        </button>
+                    </li>
+                    
+                    <li class="step-list-item carousel-cell" id="part-4">
+                        <button class="navigationButton" aria-selected="part-4">
+                            <div class="step-list-item-content">
+                             <h5 class="step-list-item-disabled">CONSOMMATIONS ET INDEXATION</h5>
+                            <!-- <p class="step-description-text step-list-item-disabled">Décrivez votre logement et détaillez votre projet de travaux.</p> -->
+                        </div>
+                        </button>
+                    </li>
+                    
+                    <li class="step-list-item carousel-cell" id="part-5">
+                        <button class="navigationButton" aria-selected="part-5">
+                            <div class="step-list-item-content">
+                            <h5 class="step-list-item-disabled">SOLUTIONS PROPOSES</h5>
+                            <!-- <p class="step-description-text step-list-item-disabled">Décrivez votre logement et détaillez votre projet de travaux.</p> -->
+                        </div>
+                        </button>
+                    </li>
+                    
+                    <li class="step-list-item carousel-cell" id="part-6">
+                        <button class="navigationButton" aria-selected="part-6">
+                            <div class="step-list-item-content">
+                            <h5 class="step-list-item-disabled">CHOIX DU PRODUIT</h5>
+                            <!-- <p class="step-description-text step-list-item-disabled">Décrivez votre logement et détaillez votre projet de travaux.</p> -->
+                        </div>
+                        </button>
+                    </li>
+
+                    <li class="step-list-item carousel-cell" id="part-7">
+                        <button class="navigationButton" aria-selected="part-7">
+                            <div class="step-list-item-content">
+                            <h5 class="step-list-item-disabled">ELIGIBILITE AUX AIDES</h5>
+                            <!-- <p class="step-description-text step-list-item-disabled">Décrivez votre logement et détaillez votre projet de travaux.</p> -->
+                        </div>
+                        </button>
+                    </li>
+                    
+                    <li class="step-list-item carousel-cell" id="part-8">
+                        <button class="navigationButton" aria-selected="part-8">
+                            <div class="step-list-item-content">
+                            <h5 class="step-list-item-disabled">PRÉVISION DE VOTRE INSTALLATIONS</h5>
+                            <!-- <p class="step-description-text step-list-item-disabled">Décrivez votre logement et détaillez votre projet de travaux.</p> -->
+                        </div>
+                        </button>
+                    </li>
+                    </ul>
+
+                </div>
+            </div>
         </div>
         <div class="page">
             <aside class="aside">
@@ -224,7 +323,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="previous">
+                <div class="previous__link">
                 <svg version="1.1" fill="#003250" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                    height="14px" viewBox="0 0 493.578 493.578" style="enable-background:new 0 0 493.578 493.578;"
                     xml:space="preserve">
@@ -907,13 +1006,23 @@
                                 <span class="solution_proposee_small_title">Eclairage</span> 
                                 <span id="moyenne_conso_sur_x_annee" class="solution_proposee_checkbox_container">
                                     <input type="checkbox" class="filled-in checkbox-white chk-moyenne-conso" id="200l" value="200L" name="moyenne_conso_sur_x_annee_check1" />
-                                    <label for="200l" style="color: white;" class="checkbox-label-white">
+                                    <label for="200l" style="color: white;margin-right: 16px;" class="checkbox-label-white">
                                         200 L
                                     </label>
                                     
                                     <input type="checkbox" class="filled-in checkbox-white chk-moyenne-conso" id="270l" value="270L" name="moyenne_conso_sur_x_annee_check2" />
-                                    <label for="270l" style="color: white;" class="checkbox-label-white">
+                                    <label for="270l" style="color: white;margin-right: 16px;" class="checkbox-label-white">
                                         270 L
+                                    </label>
+                                    
+                                    <input type="checkbox" class="filled-in checkbox-white chk-moyenne-conso" id="230l" value="230l" name="moyenne_conso_sur_x_annee_check2" />
+                                    <label for="230l" style="color: white;margin-right: 16px;" class="checkbox-label-white">
+                                        230 L
+                                    </label>
+                                    
+                                    <input type="checkbox" class="filled-in checkbox-white chk-moyenne-conso" id="Autres" value="Autres" name="moyenne_conso_sur_x_annee_check2" />
+                                    <label for="Autres" style="color: white;margin-right: 16px;" class="checkbox-label-white">
+                                        Autres
                                     </label>
                                 </span> 
 
@@ -925,14 +1034,14 @@
                                 <span class="solution_proposee_small_title">Eclairage</span>
                                 <span id="elec_ampoule_led" class="solution_proposee_checkbox_container">
                                         <input type="checkbox" class="filled-in checkbox-white chk-elec-ampoule" id="elec_ampoule1" value="Oui" name="elec_ampoule_led_chk1" />
-                                    <label for="elec_ampoule1" style="color: white;" class="checkbox-label-white">
+                                    <label for="elec_ampoule1" style="color: white;margin-right: 16px;" class="checkbox-label-white">
                                         OUI
                                     </label>
                                         <input type="checkbox" class="filled-in checkbox-white chk-elec-ampoule" id="elec_ampoule2" value="Non" name="elec_ampoule_led_chk2" />
-                                    <label for="elec_ampoule2" style="color: white;" class="checkbox-label-white">
+                                    <label for="elec_ampoule2" style="color: white;margin-right: 16px;" class="checkbox-label-white">
                                         NON
                                     </label></span> 
-                                <img src="./assets/images/picto_gte/electricite-white-icon.svg" alt="Pompe à chaleur air-eau" class="conso_result_image">
+                                    <img src="./assets/images/picto_gte/electricite-white-icon.svg" alt="Pompe à chaleur air-eau" style="top: 60px;" class="conso_result_image">
 
                             </label>
                         </div>        
@@ -1128,48 +1237,48 @@
                                         </div>
 
                                         <input type="file" id="upload_photo"  style="display: none;"/>
-                                        <button class="callToAction select_file" id="facade_maison_select" type="button"><span class="material-icons">attachment</span></button>
-                                        <button class="callToAction" id="facade_maison" type="button"><span class="material-icons">add_a_photo</span></button>
+                                        <button class="callToAction" id="facade_maison_select" type="button"><span class="material-icons">add_a_photo</span></button>
+                                        <!-- <button class="callToAction" id="facade_maison" type="button"><span class="material-icons">add_a_photo</span></button> -->
                                     </div>
                                     <div class="col s12 m6">
                                         <h6>COMPTEUR ACTUEL</h6>
                                         <div id="compteur_actuel_img" class="col_image">
                                             <img src="./assets/images/photo_sample.jpg" alt="COMPTEUR ACTUEL">
                                         </div>
-                                        <button class="callToAction select_file" id="compteur_actuel_select" type="button"><span class="material-icons">attachment</span></button>
-                                        <button class="callToAction" id="compteur_actuel" type="button"><span class="material-icons">add_a_photo</span></button>
+                                        <button class="callToAction" id="compteur_actuel_select" type="button"><span class="material-icons">add_a_photo</span></button>
+                                        <!-- <button class="callToAction" id="compteur_actuel" type="button"><span class="material-icons">add_a_photo</span></button> -->
                                     </div>
                                     <div class="col s12 m6">
                                         <h6>CHAUDIÈRE ACTUELLE</h6>
                                         <div id="chaudiere_actuel_img" class="col_image">
                                             <img src="./assets/images/photo_sample.jpg" alt="CHAUDIÈRE ACTUELLE"> 
                                         </div>
-                                        <button class="callToAction select_file" id="chaudiere_actuel_select" type="button"><span class="material-icons">attachment</span></button>
-                                        <button class="callToAction disabled_photo_btn" id="chaudiere_actuel" disabled="true" type="button"><span class="material-icons">add_a_photo</span></button>
+                                        <button class="callToAction" id="chaudiere_actuel_select" type="button"><span class="material-icons">add_a_photo</span></button>
+                                        <!-- <button class="callToAction disabled_photo_btn" id="chaudiere_actuel" disabled="true" type="button"><span class="material-icons">add_a_photo</span></button> -->
                                     </div>
                                     <div class="col s12 m6">
                                         <h6>BALLON ACTUEL</h6>
                                         <div id="ballon_actuel_img" class="col_image">
                                             <img src="./assets/images/photo_sample.jpg" alt="BALLON ACTUEL">
                                         </div>
-                                        <button class="callToAction select_file"  disabled="true" id="ballon_actuel_select" type="button"><span class="material-icons">attachment</span></button>
-                                        <button class="callToAction disabled_photo_btn" disabled="true" id="ballon_actuel" type="button"><span class="material-icons">add_a_photo</span></button>
+                                        <button class="callToAction"  disabled="true" id="ballon_actuel_select" type="button"><span class="material-icons">add_a_photo</span></button>
+                                        <!-- <button class="callToAction disabled_photo_btn" disabled="true" id="ballon_actuel" type="button"><span class="material-icons">add_a_photo</span></button> -->
                                     </div>
                                     <div class="col s12 m6 ">
                                         <h6>EMPLACEMENT POMPE À CHALEUR</h6>
                                         <div id="emplacement_pompe_a_chaleur_img" class="col_image">
                                             <img src="./assets/images/photo_sample.jpg" alt="EMPLACEMENT POMPE À CHALEUR"> 
                                         </div>
-                                        <button class="callToAction select_file" id="emplacement_pompe_a_chaleur_select" type="button"><span class="material-icons">attachment</span></button>
-                                        <button class="callToAction disabled_photo_btn" disabled="true" id="emplacement_pompe_a_chaleur" type="button"><span class="material-icons">add_a_photo</span></button>
+                                        <button class="callToAction" id="emplacement_pompe_a_chaleur_select" type="button"><span class="material-icons">add_a_photo</span></button>
+                                        <!-- <button class="callToAction disabled_photo_btn" disabled="true" id="emplacement_pompe_a_chaleur" type="button"><span class="material-icons">add_a_photo</span></button> -->
                                     </div>
                                     <div class="col s12 m6">
                                         <h6>EMPLACEMENT DES BLOCS EXTÉRIEURS *</h6>
                                         <div id="emplacement_des_blocs_exterieurs_img" class="col_image">
                                             <img src="./assets/images/photo_sample.jpg" alt="EMPLACEMENT DES BLOCS EXTÉRIEURS ">
                                         </div>
-                                        <button class="callToAction select_file" id="emplacement_des_blocs_exterieurs_select" type="button"><span class="material-icons">attachment</span></button>
-                                        <button class="callToAction" id="emplacement_des_blocs_exterieurs" type="button"><span class="material-icons">add_a_photo</span></button>
+                                        <button class="callToAction" id="emplacement_des_blocs_exterieurs_select" type="button"><span class="material-icons">add_a_photo</span></button>
+                                        <!-- <button class="callToAction" id="emplacement_des_blocs_exterieurs" type="button"><span class="material-icons">add_a_photo</span></button> -->
                                     </div>
                                 </div>
                                     <div class="generate_pdf_container">
@@ -1335,8 +1444,7 @@
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
                             </div>
-                        </div>
-                        
+                        </div>                        
                         
                         <div id="source_energie_type_fioul" style="display: none;">
                             <div class="step-11__content optionWithImages" style="max-width: 620px;">
@@ -1344,7 +1452,6 @@
                                     <input type="radio" name="type_de_chaufface" id="type_de_chauffage_chaudiere_fioul" value="Chaudière Fioul">
                                     <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_chaudiere-fioul-condensation.svg" alt="Photo - Chaudière Fioul">
                                     Chaudière Fioul
-                                                    
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
                                 
@@ -1979,6 +2086,7 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="./assets/js/materialize.min2.js"></script>
     <script src="./assets/js/nouislider.min.js"></script>
+    <script src="./assets/js/flickity.pkgd.min.js"></script>
     <script src="./assets/js/app.js" ></script>
     <script type="text/javascript" src="node_modules/materialize-css-helper/dist/main.js"></script> -->
     <!-- <script src="./node_modules/jslib-html5-camera-photo/build/index.js" ></script> -->
