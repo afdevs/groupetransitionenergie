@@ -2205,25 +2205,45 @@ jQuery(function($){
       if($('#source_energie_3_chauffage').is(':checked') || $('#source_energie_1_chauffage').is(':checked')){
         $('#chaudiere_actuel').removeClass('disabled_photo_btn')
         $('#chaudiere_actuel').prop('disabled', false)
+        
+        $('#chaudiere_actuel_select').removeClass('disabled_photo_btn')
+        $('#chaudiere_actuel_select').prop('disabled', false)        
       }else{
         $('#chaudiere_actuel').addClass('disabled_photo_btn')
         $('#chaudiere_actuel').prop('disabled', true)
+
+        $('#chaudiere_actuel_select').addClass('disabled_photo_btn')
+        $('#chaudiere_actuel_select').prop('disabled', true)
+        
         
         $('#ballon_actuel').addClass('disabled_photo_btn')
         $('#ballon_actuel').prop('disabled', true)
+
+        $('#ballon_actuel_select').addClass('disabled_photo_btn')
+        $('#ballon_actuel_select').prop('disabled', true)
+        
       }
 
       if(formPageValues.pompe_a_chaleur_air_eau_value!=0){
         $('#emplacement_pompe_a_chaleur').removeClass('disabled_photo_btn')
         $('#emplacement_pompe_a_chaleur').prop('disabled', false)
+        
+        $('#emplacement_pompe_a_chaleur_select').removeClass('disabled_photo_btn')
+        $('#emplacement_pompe_a_chaleur_select').prop('disabled', false)
       }else{
         $('#emplacement_pompe_a_chaleur').addClass('disabled_photo_btn')
         $('#emplacement_pompe_a_chaleur').prop('disabled', true)
+        
+        $('#emplacement_pompe_a_chaleur_select').addClass('disabled_photo_btn')
+        $('#emplacement_pompe_a_chaleur_select').prop('disabled', true)
       }
       
       if($('#270l').is(':checked') || $('#200l').is(':checked')){
         $('#ballon_actuel').removeClass('disabled_photo_btn')
         $('#ballon_actuel').prop('disabled', false)
+        
+        $('#ballon_actuel_select').removeClass('disabled_photo_btn')
+        $('#ballon_actuel_select').prop('disabled', false)
       }else{
 
       }

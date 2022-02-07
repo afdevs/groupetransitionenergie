@@ -1152,7 +1152,7 @@
                                         <div id="ballon_actuel_img" class="col_image">
                                             <img src="./assets/images/photo_sample.jpg" alt="BALLON ACTUEL">
                                         </div>
-                                        <button class="callToAction select_file" id="ballon_actuel_select" type="button"><span class="material-icons">attachment</span></button>
+                                        <button class="callToAction select_file"  disabled="true" id="ballon_actuel_select" type="button"><span class="material-icons">attachment</span></button>
                                         <button class="callToAction disabled_photo_btn" disabled="true" id="ballon_actuel" type="button"><span class="material-icons">add_a_photo</span></button>
                                     </div>
                                     <div class="col s12 m6 ">
