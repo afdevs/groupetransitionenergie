@@ -2341,10 +2341,10 @@ canvas,
     margin: 5px 0;
 }
 /* force the native select field to overlay the material select */
-/* .select-wrapper {
+.select-wrapper {
 	position: relative;
-}*/
-/* .select-wrapper select {
+}
+.select-wrapper select {
 	display: block;
 	position: absolute;
 	left: 0;
@@ -2353,7 +2353,7 @@ canvas,
 	bottom: 0;
 	z-index: 10;
 	opacity: 0; 
-}  */
+} 
 main .modalContainer .inputs .input-item .select-wrapper input[type="text"]{
     max-width: 100% !important;
 }

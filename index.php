@@ -154,7 +154,7 @@
                 </div>
                 <div class="navigation__menus">
                     <ul class="main-carousel">
-                    <li class="step-list-item step-list-item-active carousel-cell" id="part-1">
+                    <li class="step-list-item step-list-item-active carousel-cell" id="part_m-1">
                         <button class="navigationButton" aria-selected="part-1">
                             <div class="step-list-item-content">
                             <h5>INFORMATION CLIENT</h5>
@@ -163,7 +163,7 @@
                         </button>
                     </li>
 
-                    <li class="step-list-item carousel-cell" id="part-2">
+                    <li class="step-list-item carousel-cell" id="part_m-2">
                         <button class="navigationButton" aria-selected="part-2">
                             <div class="step-list-item-content">
                             <h5 class="step-list-item-disabled">ETUDE DU LOGEMENT</h5>
@@ -172,7 +172,7 @@
                         </button>
                     </li>
                     
-                    <li class="step-list-item carousel-cell" id="part-3">
+                    <li class="step-list-item carousel-cell" id="part_m-3">
                         <button class="navigationButton" aria-selected="part-3">
                             <div class="step-list-item-content">
                             <h5 class="step-list-item-disabled">VOS CONSOMMATIONS ET EQUIPEMENTS</h5>
@@ -181,7 +181,7 @@
                         </button>
                     </li>
                     
-                    <li class="step-list-item carousel-cell" id="part-4">
+                    <li class="step-list-item carousel-cell" id="part_m-4">
                         <button class="navigationButton" aria-selected="part-4">
                             <div class="step-list-item-content">
                              <h5 class="step-list-item-disabled">CONSOMMATIONS ET INDEXATION</h5>
@@ -190,7 +190,7 @@
                         </button>
                     </li>
                     
-                    <li class="step-list-item carousel-cell" id="part-5">
+                    <li class="step-list-item carousel-cell" id="part_m-5">
                         <button class="navigationButton" aria-selected="part-5">
                             <div class="step-list-item-content">
                             <h5 class="step-list-item-disabled">SOLUTIONS PROPOSES</h5>
@@ -199,7 +199,7 @@
                         </button>
                     </li>
                     
-                    <li class="step-list-item carousel-cell" id="part-6">
+                    <li class="step-list-item carousel-cell" id="part_m-6">
                         <button class="navigationButton" aria-selected="part-6">
                             <div class="step-list-item-content">
                             <h5 class="step-list-item-disabled">CHOIX DU PRODUIT</h5>
@@ -208,7 +208,7 @@
                         </button>
                     </li>
 
-                    <li class="step-list-item carousel-cell" id="part-7">
+                    <li class="step-list-item carousel-cell" id="part_m-7">
                         <button class="navigationButton" aria-selected="part-7">
                             <div class="step-list-item-content">
                             <h5 class="step-list-item-disabled">ELIGIBILITE AUX AIDES</h5>
@@ -217,7 +217,7 @@
                         </button>
                     </li>
                     
-                    <li class="step-list-item carousel-cell" id="part-8">
+                    <li class="step-list-item carousel-cell" id="part_m-8">
                         <button class="navigationButton" aria-selected="part-8">
                             <div class="step-list-item-content">
                             <h5 class="step-list-item-disabled">PRÉVISION DE VOTRE INSTALLATIONS</h5>

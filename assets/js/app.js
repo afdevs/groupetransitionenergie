@@ -1393,327 +1393,479 @@ jQuery(function($){
 
     function handleStepsDesign(current){
       if(current>1 && current< 10){
-        if(!$("#part-2").hasClass('step-list-item-active')){
+        if(!$("#part-2").hasClass('step-list-item-active') || !$("#part_m-2").hasClass('step-list-item-active')){
           $("#part-2").addClass('step-list-item-active')
+          $("#part_m-2").addClass('step-list-item-active')
         }
         $("#part-2 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
+        $("#part_m-2 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
 
-        if(!$("#part-1 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-1 h5").hasClass('step-list-item-disabled')|| !$("#part_m-1 h5").hasClass('step-list-item-disabled')){
           $("#part-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-1").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-1").removeClass('step-list-item-active',1000, 'easeInBack');
         
-        if(!$("#part-3 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-3 h5").hasClass('step-list-item-disabled') || !$("#part_m-3 h5").hasClass('step-list-item-disabled')){
           $("#part-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-3").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-3").removeClass('step-list-item-active',1000, 'easeInBack');
         
-        if(!$("#part-4 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-4 h5").hasClass('step-list-item-disabled') || !$("#part_m-4 h5").hasClass('step-list-item-disabled')){
           $("#part-4 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-4 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-4").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-4").removeClass('step-list-item-active',1000, 'easeInBack');
 
-        if(!$("#part-5 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-5 h5").hasClass('step-list-item-disabled') || !$("#part_m-5 h5").hasClass('step-list-item-disabled')){
           $("#part-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-5").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-5").removeClass('step-list-item-active',1000, 'easeInBack');
         
-        if(!$("#part-6 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-6 h5").hasClass('step-list-item-disabled') || !$("#part_m-6 h5").hasClass('step-list-item-disabled')){
           $("#part-6 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-6 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-6").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-6").removeClass('step-list-item-active',1000, 'easeInBack');
         
-        if(!$("#part-7 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-7 h5").hasClass('step-list-item-disabled') || !$("#part_m-7 h5").hasClass('step-list-item-disabled')){
           $("#part-7 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-7 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-7").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-7").removeClass('step-list-item-active',1000, 'easeInBack');
         
-        if(!$("#part-8 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-8 h5").hasClass('step-list-item-disabled') || !$("#part_m-8 h5").hasClass('step-list-item-disabled')){
           $("#part-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-8").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-8").removeClass('step-list-item-active',1000, 'easeInBack');
       } else if(current<=1){
-        if(!$("#part-1").hasClass('step-list-item-active')){
+        if(!$("#part-1").hasClass('step-list-item-active') || !$("#part_m-1").hasClass('step-list-item-active')){
           $("#part-1").addClass('step-list-item-active')
+          $("#part_m-1").addClass('step-list-item-active')
         }
         $("#part-1 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
+        $("#part_m-1 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
 
-        if(!$("#part-2 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-2 h5").hasClass('step-list-item-disabled') || !$("#part_m-2 h5").hasClass('step-list-item-disabled')){
           $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
         
-        if(!$("#part-3 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-3 h5").hasClass('step-list-item-disabled') || !$("#part_m-3 h5").hasClass('step-list-item-disabled')){
           $("#part-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-3").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-3").removeClass('step-list-item-active',1000, 'easeInBack');
         
-        if(!$("#part-4 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-4 h5").hasClass('step-list-item-disabled') || !$("#part_m-4 h5").hasClass('step-list-item-disabled')){
           $("#part-4 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-4 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-4").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-4").removeClass('step-list-item-active',1000, 'easeInBack');
         
-        if(!$("#part-5 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-5 h5").hasClass('step-list-item-disabled') || !$("#part_m-5 h5").hasClass('step-list-item-disabled')){
           $("#part-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-5").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-5").removeClass('step-list-item-active',1000, 'easeInBack');        
         
-        if(!$("#part-6 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-6 h5").hasClass('step-list-item-disabled') || !$("#part_m-6 h5").hasClass('step-list-item-disabled')){
           $("#part-6 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-6 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-6").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-6").removeClass('step-list-item-active',1000, 'easeInBack');
         
-        if(!$("#part-7 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-7 h5").hasClass('step-list-item-disabled') || !$("#part_m-7 h5").hasClass('step-list-item-disabled')){
           $("#part-7 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-7 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-7").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-7").removeClass('step-list-item-active',1000, 'easeInBack');
         
-        if(!$("#part-8 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-8 h5").hasClass('step-list-item-disabled') || !$("#part_m-8 h5").hasClass('step-list-item-disabled')){
           $("#part-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        
+        if(!$("#part-8 h5").hasClass('step-list-item-disabled') || !$("#part_m-8 h5").hasClass('step-list-item-disabled')){
+          $("#part-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-8").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-8").removeClass('step-list-item-active',1000, 'easeInBack');
       }else if(current==11){
-        if(!$("#part-4").hasClass('step-list-item-active')){
+        if(!$("#part-4").hasClass('step-list-item-active') || !$("#part_m-4").hasClass('step-list-item-active')){
           $("#part-4").addClass('step-list-item-active')
+          $("#part_m-4").addClass('step-list-item-active')
         }
         $("#part-4 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
+        $("#part_m-4 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
 
-        if(!$("#part-2 h5").hasClass('step-list-item-disabled')){
-          $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-        }
-        $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
-        
-        if(!$("#part-3 h5").hasClass('step-list-item-disabled')){
-          $("#part-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-        }
-        $("#part-3").removeClass('step-list-item-active',1000, 'easeInBack');
-        
-        if(!$("#part-1 h5").hasClass('step-list-item-disabled')){
+       if(!$("#part-1 h5").hasClass('step-list-item-disabled')|| !$("#part_m-1 h5").hasClass('step-list-item-disabled')){
           $("#part-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-1").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-1").removeClass('step-list-item-active',1000, 'easeInBack');       
         
-        if(!$("#part-5 h5").hasClass('step-list-item-disabled')){
+
+        if(!$("#part-2 h5").hasClass('step-list-item-disabled') || !$("#part_m-2 h5").hasClass('step-list-item-disabled')){
+          $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-3 h5").hasClass('step-list-item-disabled') || !$("#part_m-3 h5").hasClass('step-list-item-disabled')){
+          $("#part-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-3").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-3").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-5 h5").hasClass('step-list-item-disabled') || !$("#part_m-5 h5").hasClass('step-list-item-disabled')){
           $("#part-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-5").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-5").removeClass('step-list-item-active',1000, 'easeInBack');        
         
-        if(!$("#part-6 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-6 h5").hasClass('step-list-item-disabled') || !$("#part_m-6 h5").hasClass('step-list-item-disabled')){
           $("#part-6 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-6 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-6").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-6").removeClass('step-list-item-active',1000, 'easeInBack');
         
-        if(!$("#part-7 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-7 h5").hasClass('step-list-item-disabled') || !$("#part_m-7 h5").hasClass('step-list-item-disabled')){
           $("#part-7 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-7 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-7").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-7").removeClass('step-list-item-active',1000, 'easeInBack');
         
-        if(!$("#part-8 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-8 h5").hasClass('step-list-item-disabled') || !$("#part_m-8 h5").hasClass('step-list-item-disabled')){
           $("#part-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        
+        if(!$("#part-8 h5").hasClass('step-list-item-disabled') || !$("#part_m-8 h5").hasClass('step-list-item-disabled')){
+          $("#part-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-8").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-8").removeClass('step-list-item-active',1000, 'easeInBack');
       }else if(current==16){
-        if(!$("#part-5").hasClass('step-list-item-active')){
+        if(!$("#part-5").hasClass('step-list-item-active') || !$("#part_m-5").hasClass('step-list-item-active')){
           $("#part-5").addClass('step-list-item-active')
+          $("#part_m-5").addClass('step-list-item-active')
         }
         $("#part-5 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
+        $("#part_m-5 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
 
-        if(!$("#part-2 h5").hasClass('step-list-item-disabled')){
-          $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-        }
-        $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
-        
-        if(!$("#part-3 h5").hasClass('step-list-item-disabled')){
-          $("#part-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-        }
-        $("#part-3").removeClass('step-list-item-active',1000, 'easeInBack');
-        
-        if(!$("#part-4 h5").hasClass('step-list-item-disabled')){
-          $("#part-4 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-        }
-        $("#part-4").removeClass('step-list-item-active',1000, 'easeInBack');
-
-        if(!$("#part-1 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-1 h5").hasClass('step-list-item-disabled')|| !$("#part_m-1 h5").hasClass('step-list-item-disabled')){
           $("#part-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-1").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-1").removeClass('step-list-item-active',1000, 'easeInBack');
+
+        if(!$("#part-2 h5").hasClass('step-list-item-disabled') || !$("#part_m-2 h5").hasClass('step-list-item-disabled')){
+          $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
         
-        if(!$("#part-6 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-3 h5").hasClass('step-list-item-disabled') || !$("#part_m-3 h5").hasClass('step-list-item-disabled')){
+          $("#part-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-3").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-3").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-4 h5").hasClass('step-list-item-disabled') || !$("#part_m-4 h5").hasClass('step-list-item-disabled')){
+          $("#part-4 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-4 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-4").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-4").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-6 h5").hasClass('step-list-item-disabled') || !$("#part_m-6 h5").hasClass('step-list-item-disabled')){
           $("#part-6 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-6 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-6").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-6").removeClass('step-list-item-active',1000, 'easeInBack');
         
-        if(!$("#part-7 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-7 h5").hasClass('step-list-item-disabled') || !$("#part_m-7 h5").hasClass('step-list-item-disabled')){
           $("#part-7 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-7 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-7").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-7").removeClass('step-list-item-active',1000, 'easeInBack');
         
-        if(!$("#part-8 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-8 h5").hasClass('step-list-item-disabled') || !$("#part_m-8 h5").hasClass('step-list-item-disabled')){
           $("#part-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        
+        if(!$("#part-8 h5").hasClass('step-list-item-disabled') || !$("#part_m-8 h5").hasClass('step-list-item-disabled')){
+          $("#part-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-8").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-8").removeClass('step-list-item-active',1000, 'easeInBack');
       } else if(current==10) {
-        if(!$("#part-3").hasClass('step-list-item-active')){
+        if(!$("#part-3").hasClass('step-list-item-active') || !$("#part_m-3").hasClass('step-list-item-active')){
           $("#part-3").addClass('step-list-item-active')
+          $("#part_m-3").addClass('step-list-item-active')
         }
         $("#part-3 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
-
-        if(!$("#part-2 h5").hasClass('step-list-item-disabled')){
-          $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-        }
-        $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
-
-        if(!$("#part-1 h5").hasClass('step-list-item-disabled')){
+        $("#part_m-3 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
+        
+        if(!$("#part-1 h5").hasClass('step-list-item-disabled')|| !$("#part_m-1 h5").hasClass('step-list-item-disabled')){
           $("#part-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-1").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-1").removeClass('step-list-item-active',1000, 'easeInBack');
 
-        if(!$("#part-4 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-2 h5").hasClass('step-list-item-disabled') || !$("#part_m-2 h5").hasClass('step-list-item-disabled')){
+          $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-2").removeClass('step-list-item-active',1000, 'easeInBack');
+
+        if(!$("#part-4 h5").hasClass('step-list-item-disabled') || !$("#part_m-4 h5").hasClass('step-list-item-disabled')){
           $("#part-4 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-4 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-4").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-4").removeClass('step-list-item-active',1000, 'easeInBack');
         
-        if(!$("#part-5 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-5 h5").hasClass('step-list-item-disabled') || !$("#part_m-5 h5").hasClass('step-list-item-disabled')){
           $("#part-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-5").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-5").removeClass('step-list-item-active',1000, 'easeInBack');        
         
-        if(!$("#part-6 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-6 h5").hasClass('step-list-item-disabled') || !$("#part_m-6 h5").hasClass('step-list-item-disabled')){
           $("#part-6 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-6 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-6").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-6").removeClass('step-list-item-active',1000, 'easeInBack');
         
-        if(!$("#part-7 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-7 h5").hasClass('step-list-item-disabled') || !$("#part_m-7 h5").hasClass('step-list-item-disabled')){
           $("#part-7 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-7 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-7").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-7").removeClass('step-list-item-active',1000, 'easeInBack');
         
-        if(!$("#part-8 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-8 h5").hasClass('step-list-item-disabled') || !$("#part_m-8 h5").hasClass('step-list-item-disabled')){
           $("#part-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        
+        if(!$("#part-8 h5").hasClass('step-list-item-disabled') || !$("#part_m-8 h5").hasClass('step-list-item-disabled')){
+          $("#part-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-8").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-8").removeClass('step-list-item-active',1000, 'easeInBack');
       }else if(current==18 || current==19){
-        if(!$("#part-7").hasClass('step-list-item-active')){
+        if(!$("#part-7").hasClass('step-list-item-active') || !$("#part_m-7").hasClass('step-list-item-active')){
           $("#part-7").addClass('step-list-item-active')
+          $("#part_m-7").addClass('step-list-item-active')
         }
         $("#part-7 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
+        $("#part_m-7 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
 
-        if(!$("#part-2 h5").hasClass('step-list-item-disabled')){
-          $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-        }
-        $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
-        
-        if(!$("#part-3 h5").hasClass('step-list-item-disabled')){
-          $("#part-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-        }
-        $("#part-3").removeClass('step-list-item-active',1000, 'easeInBack');
-        
-        if(!$("#part-4 h5").hasClass('step-list-item-disabled')){
-          $("#part-4 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-        }
-        $("#part-4").removeClass('step-list-item-active',1000, 'easeInBack');
-
-        if(!$("#part-1 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-1 h5").hasClass('step-list-item-disabled')|| !$("#part_m-1 h5").hasClass('step-list-item-disabled')){
           $("#part-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-1").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-1").removeClass('step-list-item-active',1000, 'easeInBack');
+
+        if(!$("#part-2 h5").hasClass('step-list-item-disabled') || !$("#part_m-2 h5").hasClass('step-list-item-disabled')){
+          $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
         
-        if(!$("#part-5 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-3 h5").hasClass('step-list-item-disabled') || !$("#part_m-3 h5").hasClass('step-list-item-disabled')){
+          $("#part-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-3").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-3").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-4 h5").hasClass('step-list-item-disabled') || !$("#part_m-4 h5").hasClass('step-list-item-disabled')){
+          $("#part-4 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-4 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-4").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-4").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-5 h5").hasClass('step-list-item-disabled') || !$("#part_m-5 h5").hasClass('step-list-item-disabled')){
           $("#part-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-5").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-5").removeClass('step-list-item-active',1000, 'easeInBack');        
         
-        if(!$("#part-6 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-6 h5").hasClass('step-list-item-disabled') || !$("#part_m-6 h5").hasClass('step-list-item-disabled')){
           $("#part-6 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-6 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-6").removeClass('step-list-item-active',1000, 'easeInBack');
-        
-        if(!$("#part-8 h5").hasClass('step-list-item-disabled')){
+        $("#part_m-6").removeClass('step-list-item-active',1000, 'easeInBack');
+
+        if(!$("#part-8 h5").hasClass('step-list-item-disabled') || !$("#part_m-8 h5").hasClass('step-list-item-disabled')){
           $("#part-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
+
         $("#part-8").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-8").removeClass('step-list-item-active',1000, 'easeInBack');
       }else if(current==20){
-        if(!$("#part-8").hasClass('step-list-item-active')){
+        if(!$("#part-8").hasClass('step-list-item-active') || !$("#part_m-8").hasClass('step-list-item-active')){
           $("#part-8").addClass('step-list-item-active')
+          $("#part_m-8").addClass('step-list-item-active')
         }
         $("#part-8 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
+        $("#part_m-8 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
 
-        if(!$("#part-7 h5").hasClass('step-list-item-disabled')){
-          $("#part-7 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-        }
-        $("#part-7").removeClass('step-list-item-active',1000, 'easeInBack');
-        
-        if(!$("#part-2 h5").hasClass('step-list-item-disabled')){
-          $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-        }
-        $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
-        
-        if(!$("#part-3 h5").hasClass('step-list-item-disabled')){
-          $("#part-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-        }
-        $("#part-3").removeClass('step-list-item-active',1000, 'easeInBack');
-        
-        if(!$("#part-4 h5").hasClass('step-list-item-disabled')){
-          $("#part-4 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-        }
-        $("#part-4").removeClass('step-list-item-active',1000, 'easeInBack');
-
-        if(!$("#part-1 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-1 h5").hasClass('step-list-item-disabled')|| !$("#part_m-1 h5").hasClass('step-list-item-disabled')){
           $("#part-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-1").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-1").removeClass('step-list-item-active',1000, 'easeInBack');
+
+        if(!$("#part-2 h5").hasClass('step-list-item-disabled') || !$("#part_m-2 h5").hasClass('step-list-item-disabled')){
+          $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
         
-        if(!$("#part-5 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-3 h5").hasClass('step-list-item-disabled') || !$("#part_m-3 h5").hasClass('step-list-item-disabled')){
+          $("#part-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-3").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-3").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-4 h5").hasClass('step-list-item-disabled') || !$("#part_m-4 h5").hasClass('step-list-item-disabled')){
+          $("#part-4 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-4 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-4").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-4").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-5 h5").hasClass('step-list-item-disabled') || !$("#part_m-5 h5").hasClass('step-list-item-disabled')){
           $("#part-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-5").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-5").removeClass('step-list-item-active',1000, 'easeInBack');        
         
-        if(!$("#part-6 h5").hasClass('step-list-item-disabled')){
+        if(!$("#part-6 h5").hasClass('step-list-item-disabled') || !$("#part_m-6 h5").hasClass('step-list-item-disabled')){
           $("#part-6 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-6 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
         }
         $("#part-6").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-6").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+        if(!$("#part-7 h5").hasClass('step-list-item-disabled') || !$("#part_m-7 h5").hasClass('step-list-item-disabled')){
+          $("#part-7 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-7 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+        }
+        $("#part-7").removeClass('step-list-item-active',1000, 'easeInBack');
+        $("#part_m-7").removeClass('step-list-item-active',1000, 'easeInBack');
+        
+
       }else{
         // else if(current==17){
-          if(!$("#part-6").hasClass('step-list-item-active')){
+          if(!$("#part-6").hasClass('step-list-item-active') || !$("#part_m-6").hasClass('step-list-item-active')){
             $("#part-6").addClass('step-list-item-active')
+            $("#part_m-6").addClass('step-list-item-active')
           }
           $("#part-6 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
+          $("#part_m-6 h5").removeClass('step-list-item-disabled',1000, 'easeInBack');
   
-          if(!$("#part-2 h5").hasClass('step-list-item-disabled')){
-            $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-          }
-          $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
-          
-          if(!$("#part-3 h5").hasClass('step-list-item-disabled')){
-            $("#part-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-          }
-          $("#part-3").removeClass('step-list-item-active',1000, 'easeInBack');
-          
-          if(!$("#part-4 h5").hasClass('step-list-item-disabled')){
-            $("#part-4 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-          }
-          $("#part-4").removeClass('step-list-item-active',1000, 'easeInBack');
-  
-          if(!$("#part-1 h5").hasClass('step-list-item-disabled')){
+          if(!$("#part-1 h5").hasClass('step-list-item-disabled')|| !$("#part_m-1 h5").hasClass('step-list-item-disabled')){
             $("#part-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+            $("#part_m-1 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
           }
           $("#part-1").removeClass('step-list-item-active',1000, 'easeInBack');
+          $("#part_m-1").removeClass('step-list-item-active',1000, 'easeInBack');
+  
+          if(!$("#part-2 h5").hasClass('step-list-item-disabled') || !$("#part_m-2 h5").hasClass('step-list-item-disabled')){
+            $("#part-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+            $("#part_m-2 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          }
+          $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
+          $("#part-2").removeClass('step-list-item-active',1000, 'easeInBack');
           
-          if(!$("#part-5 h5").hasClass('step-list-item-disabled')){
+          if(!$("#part-3 h5").hasClass('step-list-item-disabled') || !$("#part_m-3 h5").hasClass('step-list-item-disabled')){
+            $("#part-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+            $("#part_m-3 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          }
+          $("#part-3").removeClass('step-list-item-active',1000, 'easeInBack');
+          $("#part_m-3").removeClass('step-list-item-active',1000, 'easeInBack');
+          
+          if(!$("#part-4 h5").hasClass('step-list-item-disabled') || !$("#part_m-4 h5").hasClass('step-list-item-disabled')){
+            $("#part-4 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+            $("#part_m-4 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          }
+          $("#part-4").removeClass('step-list-item-active',1000, 'easeInBack');
+          $("#part_m-4").removeClass('step-list-item-active',1000, 'easeInBack');
+          
+          if(!$("#part-5 h5").hasClass('step-list-item-disabled') || !$("#part_m-5 h5").hasClass('step-list-item-disabled')){
             $("#part-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+            $("#part_m-5 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
           }
           $("#part-5").removeClass('step-list-item-active',1000, 'easeInBack');
+          $("#part_m-5").removeClass('step-list-item-active',1000, 'easeInBack');        
           
-          if(!$("#part-7 h5").hasClass('step-list-item-disabled')){
+          if(!$("#part-7 h5").hasClass('step-list-item-disabled') || !$("#part_m-7 h5").hasClass('step-list-item-disabled')){
             $("#part-7 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+            $("#part_m-7 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
           }
           $("#part-7").removeClass('step-list-item-active',1000, 'easeInBack');
-          
-          if(!$("#part-8 h5").hasClass('step-list-item-disabled')){
-            $("#part-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
-          }
-          $("#part-8").removeClass('step-list-item-active',1000, 'easeInBack');
+          $("#part_m-7").removeClass('step-list-item-active',1000, 'easeInBack');
 
+          if(!$("#part-8 h5").hasClass('step-list-item-disabled') || !$("#part_m-8 h5").hasClass('step-list-item-disabled')){
+            $("#part-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+            $("#part_m-8 h5").addClass('step-list-item-disabled',1000, 'easeInBack');
+          }
+  
+          $("#part-8").removeClass('step-list-item-active',1000, 'easeInBack');
+          $("#part_m-8").removeClass('step-list-item-active',1000, 'easeInBack');
         // }else if(current==18){
           // if(!$("#part-7").hasClass('step-list-item-active')){
           //   $("#part-7").addClass('step-list-item-active')
