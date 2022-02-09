@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./assets/css/materialize.min2.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/nouislider.css">
-    <link rel="stylesheet" href="./assets/css/flickity.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1EXRWkpnVufW7zY3VUrTjaJiz4Lmj5wU&libraries=places&callback=initMap">
     </script>
 
@@ -153,8 +153,9 @@
 
                 </div>
                 <div class="navigation__menus">
+                 <button class="prevBtn"><span class="material-icons">chevron_left</span></button> 
                     <ul class="main-carousel">
-                    <li class="step-list-item step-list-item-active carousel-cell" id="part_m-1">
+                    <li class="step-list-item step-list-item-active" id="part_m-1">
                         <button class="navigationButton" aria-selected="part-1">
                             <div class="step-list-item-content">
                             <h5>INFORMATION CLIENT</h5>
@@ -163,7 +164,7 @@
                         </button>
                     </li>
 
-                    <li class="step-list-item carousel-cell" id="part_m-2">
+                    <li class="step-list-item" id="part_m-2">
                         <button class="navigationButton" aria-selected="part-2">
                             <div class="step-list-item-content">
                             <h5 class="step-list-item-disabled">ETUDE DU LOGEMENT</h5>
@@ -172,7 +173,7 @@
                         </button>
                     </li>
                     
-                    <li class="step-list-item carousel-cell" id="part_m-3">
+                    <li class="step-list-item" id="part_m-3">
                         <button class="navigationButton" aria-selected="part-3">
                             <div class="step-list-item-content">
                             <h5 class="step-list-item-disabled">VOS CONSOMMATIONS ET EQUIPEMENTS</h5>
@@ -181,7 +182,7 @@
                         </button>
                     </li>
                     
-                    <li class="step-list-item carousel-cell" id="part_m-4">
+                    <li class="step-list-item" id="part_m-4">
                         <button class="navigationButton" aria-selected="part-4">
                             <div class="step-list-item-content">
                              <h5 class="step-list-item-disabled">CONSOMMATIONS ET INDEXATION</h5>
@@ -190,7 +191,7 @@
                         </button>
                     </li>
                     
-                    <li class="step-list-item carousel-cell" id="part_m-5">
+                    <li class="step-list-item" id="part_m-5">
                         <button class="navigationButton" aria-selected="part-5">
                             <div class="step-list-item-content">
                             <h5 class="step-list-item-disabled">SOLUTIONS PROPOSES</h5>
@@ -199,7 +200,7 @@
                         </button>
                     </li>
                     
-                    <li class="step-list-item carousel-cell" id="part_m-6">
+                    <li class="step-list-item" id="part_m-6">
                         <button class="navigationButton" aria-selected="part-6">
                             <div class="step-list-item-content">
                             <h5 class="step-list-item-disabled">CHOIX DU PRODUIT</h5>
@@ -208,7 +209,7 @@
                         </button>
                     </li>
 
-                    <li class="step-list-item carousel-cell" id="part_m-7">
+                    <li class="step-list-item" id="part_m-7">
                         <button class="navigationButton" aria-selected="part-7">
                             <div class="step-list-item-content">
                             <h5 class="step-list-item-disabled">ELIGIBILITE AUX AIDES</h5>
@@ -217,7 +218,7 @@
                         </button>
                     </li>
                     
-                    <li class="step-list-item carousel-cell" id="part_m-8">
+                    <li class="step-list-item" id="part_m-8">
                         <button class="navigationButton" aria-selected="part-8">
                             <div class="step-list-item-content">
                             <h5 class="step-list-item-disabled">PRÉVISION DE VOTRE INSTALLATIONS</h5>
@@ -226,7 +227,7 @@
                         </button>
                     </li>
                     </ul>
-
+                    <button class="nextBtn"><span class="material-icons">chevron_right</span></button> 
                 </div>
             </div>
         </div>
@@ -2086,9 +2087,9 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="./assets/js/materialize.min2.js"></script>
     <script src="./assets/js/nouislider.min.js"></script>
-    <script src="./assets/js/flickity.pkgd.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="./assets/js/app.js" ></script>
-    <script type="text/javascript" src="node_modules/materialize-css-helper/dist/main.js"></script> -->
+    <!-- <script type="text/javascript" src="node_modules/materialize-css-helper/dist/main.js"></script> --> -->
     <!-- <script src="./node_modules/jslib-html5-camera-photo/build/index.js" ></script> -->
     <script src="./assets/js/camera.js" ></script>
 </body>

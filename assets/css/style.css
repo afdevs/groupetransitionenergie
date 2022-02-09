@@ -142,7 +142,8 @@ a span{
     position: absolute;
     top: 0;
     right: 0;
-    display: none;
+    /* display: none; */
+    visibility: hidden;
     width: 100%;
 }
 .navigation__previous {
@@ -317,6 +318,32 @@ h5{
 .step-list-item-active::before{
     background-color: #74ffa7;
 }
+.navigation__menus{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 70px;
+}
+.slick-slider {
+    width: 80%;
+}
+.navigation__menus .step-list-item-disabled {
+    color: #b7bbbd!important;
+}
+.prevBtn, .nextBtn, .prevBtn:focus, .nextBtn:focus {
+    display: block;
+    border: none;
+    background: transparent;
+}
+.navigation__menus .material-icons {
+    font-size: 35px;
+}
+.slick-initialized .slick-slide {
+    /* display: block;
+    width: 376px!important;
+    max-width: 769px!important;
+    transform: translateX(85px); */
+}
 .navigation__menus .step-list-item::before{
     height: 10px;
     width: 5px;
@@ -324,7 +351,16 @@ h5{
 .navigation__menus .step-list-item-active::before {
     height: 10px;
     width: 5px;
-}  
+    content: inherit;
+} 
+.navigation__menus .step-list-item::before{
+    background-color: inherit;
+}
+.navigation__menus .step-list-item {
+    margin-bottom: 0;
+    text-align: center;
+}
+
 .step-list-item-content{
     margin-left: 16px;
     padding: 10px 0;
@@ -2371,8 +2407,10 @@ main .modalContainer .inputs .input-item .select-wrapper {
 .noUi-target { 
     width: 100%;
 }
-
-  
+.slick-slider {
+    display: flex!important;
+    align-items: center;
+}
 
 /*RESPONSIVENESS*/
 @media only screen and (max-width:1149px){
@@ -2561,7 +2599,8 @@ main .modalContainer .inputs .input-item .select-wrapper {
         display: none;
     }
     .navigation {
-        display: block;
+        /* display: block; */
+        visibility: visible;
     }
     .aside{
         display: none;

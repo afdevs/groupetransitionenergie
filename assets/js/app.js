@@ -364,15 +364,36 @@ jQuery(function($){
         dismissible: false
       });
       
-      $('.main-carousel').flickity({
-        // options
-        // cellAlign: 'center',
-        draggable: '>1',
-        contain: true,
-        pageDots: false
-      });
+      // $('.main-carousel').flickity({
+      //   // options
+      //   // cellAlign: 'center',
+      //   draggable: '>1',
+      //   contain: true,
+      //   pageDots: false
+      // });
             
-
+      $('.main-carousel').slick({
+        prevArrow: $('.prevBtn'),
+        nextArrow: $('.nextBtn'),
+        centerMode: true,
+        mobileFirst: true,
+        responseive:[
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
+      });
       //or by click on trigger
       $('#chauffageModalButton').click(function(e){
         $('.step-11').removeAttr('style');
@@ -854,11 +875,11 @@ jQuery(function($){
             next_step_form =  $('.step-'+next_step);
 
             if (current >=1 && current<12){ 
-              $('.page .previous__link').css('visibility', 'visible');
+              $('.page .previous__button').css('visibility', 'visible');
             }else if(current >15){
-              $('.page .previous__link').css('visibility', 'visible');
+              $('.page .previous__button').css('visibility', 'visible');
             }else{
-                $('.page .previous__link').css('visibility', 'hidden');
+                $('.page .previous__button').css('visibility', 'hidden');
             }
               
             
@@ -931,7 +952,7 @@ jQuery(function($){
           
       });
 
-      $(".previous__link").click(function(){
+      $(".previous__button").click(function(){
         let timeout= current>1 && current<25 ? 200 : 0;  
         
         $('.page .page__content #regiration_form').css("transform"," translateX(50px)" );
@@ -944,11 +965,11 @@ jQuery(function($){
         next_step_form = $('.step-'+next_step);
         
         if (current >=1 && current<12){ 
-          $('.page .previous__link').css('visibility', 'visible');
+          $('.page .previous__button').css('visibility', 'visible');
         } else if(current >15){
           $('.page .previous').css('visibility', 'visible');
         }else{
-            $('.page .previous__link').css('visibility', 'hidden');
+            $('.page .previous__button').css('visibility', 'hidden');
         }
           
             
@@ -998,11 +1019,11 @@ jQuery(function($){
             next_step_form =  $('.step-'+next_step);
             
             if (current >=1 && current<12){ 
-              $('.page .previous__link').css('visibility', 'visible');
+              $('.page .previous__button').css('visibility', 'visible');
             }else if(current >15){
-              $('.page .previous__link').css('visibility', 'visible');
+              $('.page .previous__button').css('visibility', 'visible');
             }else{
-                $('.page .previous__link').css('visibility', 'hidden');
+                $('.page .previous__button').css('visibility', 'hidden');
             }
               
               
@@ -1046,11 +1067,11 @@ jQuery(function($){
             next_step_form =  $('.step-'+next_step);
             
             if (current >=1 && current<12){ 
-              $('.page .previous__link').css('visibility', 'visible');
+              $('.page .previous__button').css('visibility', 'visible');
             }else if(current >15){
-              $('.page .previous__link').css('visibility', 'visible');
+              $('.page .previous__button').css('visibility', 'visible');
             }else{
-                $('.page .previous__link').css('visibility', 'hidden');
+                $('.page .previous__button').css('visibility', 'hidden');
             }
             
             if(current>11 && current< 16){
@@ -1094,11 +1115,11 @@ jQuery(function($){
             next_step_form =  $('.step-'+next_step);
             
             if (current >=1 && current<12){ 
-              $('.page .previous__link').css('visibility', 'visible');
+              $('.page .previous__button').css('visibility', 'visible');
             }else if(current >15){
-              $('.page .previous__link').css('visibility', 'visible');
+              $('.page .previous__button').css('visibility', 'visible');
             }else{
-                $('.page .previous__link').css('visibility', 'hidden');
+                $('.page .previous__button').css('visibility', 'hidden');
             }
             
             if(current>11 && current< 16){
@@ -1140,11 +1161,11 @@ jQuery(function($){
           next_step_form =  $('.step-'+next_step);
           
           if (current >=1 && current<12){ 
-            $('.page .previous__link').css('visibility', 'visible');
+            $('.page .previous__button').css('visibility', 'visible');
           }else if(current >15){
-            $('.page .previous__link').css('visibility', 'visible');
+            $('.page .previous__button').css('visibility', 'visible');
           }else{
-              $('.page .previous__link').css('visibility', 'hidden');
+              $('.page .previous__button').css('visibility', 'hidden');
           }
             
             
@@ -1188,11 +1209,11 @@ jQuery(function($){
           next_step_form =  $('.step-'+next_step);
           
           if (current >=1 && current<12){ 
-            $('.page .previous__link').css('visibility', 'visible');
+            $('.page .previous__button').css('visibility', 'visible');
           }else if(current >15){
-            $('.page .previous__link').css('visibility', 'visible');
+            $('.page .previous__button').css('visibility', 'visible');
           }else{
-              $('.page .previous__link').css('visibility', 'hidden');
+              $('.page .previous__button').css('visibility', 'hidden');
           }
         
             
@@ -1238,11 +1259,11 @@ jQuery(function($){
           next_step_form =  $('.step-'+next_step);
           
           if (current >=1 && current<12){ 
-            $('.page .previous__link').css('visibility', 'visible');
+            $('.page .previous__button').css('visibility', 'visible');
           }else if(current >15){
-            $('.page .previous__link').css('visibility', 'visible');
+            $('.page .previous__button').css('visibility', 'visible');
           }else{
-              $('.page .previous__link').css('visibility', 'hidden');
+              $('.page .previous__button').css('visibility', 'hidden');
           }
         
             
@@ -1289,11 +1310,11 @@ jQuery(function($){
           next_step_form =  $('.step-'+next_step);
           
           if (current >=1 && current<12){ 
-            $('.page .previous__link').css('visibility', 'visible');
+            $('.page .previous__button').css('visibility', 'visible');
           }else if(current >15){
-            $('.page .previous__link').css('visibility', 'visible');
+            $('.page .previous__button').css('visibility', 'visible');
           }else{
-              $('.page .previous__link').css('visibility', 'hidden');
+              $('.page .previous__button').css('visibility', 'hidden');
           }
         
           if(current>11 && current< 16){
@@ -1338,11 +1359,11 @@ jQuery(function($){
           next_step_form =  $('.step-'+next_step);
           
           if (current >=1 && current<12){ 
-            $('.page .previous__link').css('visibility', 'visible');
+            $('.page .previous__button').css('visibility', 'visible');
           }else if(current >15){
-            $('.page .previous__link').css('visibility', 'visible');
+            $('.page .previous__button').css('visibility', 'visible');
           }else{
-              $('.page .previous__link').css('visibility', 'hidden');
+              $('.page .previous__button').css('visibility', 'hidden');
           }
         
           if(current>11 && current< 16){
