@@ -398,7 +398,6 @@ jQuery(function($){
       $('#chauffageModalButton').click(function(e){
         $('.step-11').removeAttr('style');
         $('#modal1').openModal('open');
-
       })
       
       $('#eauSanitaireModalButton').click(function(e){
@@ -1969,7 +1968,25 @@ jQuery(function($){
     });
 
 
-    //CHAMPS CALCULER 
+    //CHAMPS CALCULER    
+
+    $('select[name=annee_contruction]').change(function(e){
+      if( $(this).val()==='Avant 1975'){
+        $('#gisolation').val('1.60').trigger('change');
+        return ;
+      }
+      if(parseInt($(this).val())<= 1980){
+        $('#gisolation').val('1.60').trigger('change');
+        
+      } else if(parseInt($(this).val()) > 1980 && parseInt($(this).val()) <=1999){
+        $('#gisolation').val('1.30').trigger('change');
+      } else if(parseInt($(this).val()) > 1999 && parseInt($(this).val()) <=2005){
+        $('#gisolation').val('1').trigger('change');
+      } else if(parseInt($(this).val()) > 2005 && parseInt($(this).val()) <=2022){
+        $('#gisolation').val('0.65').trigger('change');
+      }
+    })
+
       //= inputVolumeHabitation inputSurfaceSol * formPageValues('eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond')
     $('#inputSurfaceSol').change(function(){
       $('#inputVolumeHabitation').val(parseInt($(this).val())* formPageValues.eau_chaude_sanitaire_envisage_source_energie_hauteur_plafond);
@@ -1991,6 +2008,7 @@ jQuery(function($){
       $('#inputTotalConso20ans').val(((parseInt($('#inputConsoFioul').val())+parseInt($('#inputConsoGaz').val()))* parseInt($(this).val())))
       $('#inputMoyennConso').val((((parseInt($('#inputConsoFioul').val())+parseInt($('#inputConsoGaz').val()))* parseInt($(this).val()))/parseInt($(this).val())))
     })
+
     function consommationGlobal(){      
       formPageValues.votre_conso_actuel=(Number($('#inputEstimFactChauff').val()) + Number($('#inputEstimFactEauChaude').val())+ Number($('#inputEstimFactAppareilElec').val())+Number($('#inputEstimFactEclairage').val()));
       $('#votre_conso_actuel').text(formatNumber.asEuro(formPageValues.votre_conso_actuel).replace(",00", ""));

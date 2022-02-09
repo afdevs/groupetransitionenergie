@@ -465,6 +465,7 @@
                                     <label for="inputAnneContruct">Année de construction</label>    
                                     <select name="annee_contruction" id="">
                                         <option disabled selected>Choisir</option>
+                                        <option value="2022">2022</option>
                                         <option value="2021">2021</option>
                                         <option value="2020">2020</option>
                                         <option value="2019">2019</option>
@@ -844,7 +845,12 @@
                         </div>                        
                         <label for="inputTempConfort">Coefficient d’isolation G</label>
                         <select id="gisolation" name="gisolation" style="width: 100%;" name="coefficient_d_isolation">
-                            <option value="3.00">G = 3.00 : véranda ancienne</option>
+                            <option value="0.65" >0,65 Norme Année 2005</option>
+                            <option value="1" >1 Norme Année 2000</option>
+                            <option value="1.30" >1.3, Norme Année 1980</option>
+                            <option value="1.60" >1.6, Norme Année 1960</option>
+
+                            <!-- <option value="3.00">G = 3.00 : véranda ancienne</option>
                             <option value="2.50">G = 2.50 : véranda récente</option>
                             <option value="2.00">G = 2.00 : ancien très mal isolé</option>
                             <option value="1.80">G = 1.80 : bâtiment années 1950</option>
@@ -865,7 +871,7 @@
                             <option value="0.65">G = 0.65 : isolation norme RT2005</option>
                             <option value="0.58">G = 0.58 : isolation norme RT2005 Elec</option>
                             <option value="0.47">G = 0.47 : BBC rénovation 2009</option>
-                            <option value="0.30">G = 0.30 : isolation norme RT2012</option>
+                            <option value="0.30">G = 0.30 : isolation norme RT2012</option> -->
                         </select>
                     </fieldset>
                     
