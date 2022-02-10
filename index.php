@@ -16,7 +16,13 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.1.4/jspdf.plugin.autotable.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script> -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+
+    <!-- Pdf-lib -->
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="https://unpkg.com/downloadjs@1.4.7"></script>
+    <script src="https://unpkg.com/@pdf-lib/fontkit@1.1.1/dist/fontkit.umd.min.js"></script>
         
     <script async>
         function getAbsoluteDelta(){
@@ -844,7 +850,7 @@
                             </label>
                         </div>                        
                         <label for="inputTempConfort">Coefficient d’isolation G</label>
-                        <select id="gisolation" name="gisolation" style="width: 100%;" name="coefficient_d_isolation">
+                        <select id="gisolation" name="gisolation" style="width: 100%;" name="coefficient_d_isolation" disabled>
                             <option value="0.65" >0,65 Norme Année 2005</option>
                             <option value="1" >1 Norme Année 2000</option>
                             <option value="1.30" >1.3, Norme Année 1980</option>
@@ -1243,7 +1249,7 @@
                                             <img src="./assets/images/photo_sample.jpg" alt="Facade Maison" >
                                         </div>
 
-                                        <input type="file" id="upload_photo"  style="display: none;"/>
+                                        <input type="file" id="upload_photo" accept=".jpg" style="display: none;"/>
                                         <button class="callToAction" id="facade_maison_select" type="button"><span class="material-icons">add_a_photo</span></button>
                                         <!-- <button class="callToAction" id="facade_maison" type="button"><span class="material-icons">add_a_photo</span></button> -->
                                     </div>
@@ -1288,7 +1294,7 @@
                                         <!-- <button class="callToAction" id="emplacement_des_blocs_exterieurs" type="button"><span class="material-icons">add_a_photo</span></button> -->
                                     </div>
                                 </div>
-                                    <div class="generate_pdf_container">
+                                    <div class="generate_pdf_container" id="ignore_for_pdf">
                                         <button class="generate_pdf_btn" type="submit" >
                                             GENERER MON PDF
                                         </button>
@@ -2094,9 +2100,11 @@
     <script src="./assets/js/materialize.min2.js"></script>
     <script src="./assets/js/nouislider.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./assets/js/generatePDF.js"></script>
     <script src="./assets/js/app.js" ></script>
     <!-- <script type="text/javascript" src="node_modules/materialize-css-helper/dist/main.js"></script> --> -->
     <!-- <script src="./node_modules/jslib-html5-camera-photo/build/index.js" ></script> -->
-    <script src="./assets/js/camera.js" ></script>
+    <!-- <script src="./assets/js/camera.js" ></script> -->
+    <!-- <script src="./assets/js/generatePDF.js"></script> -->
 </body>
 </html>

@@ -2832,11 +2832,9 @@ jQuery(function($){
       var items = $(".pompes__btn.unset").parents(".pompes__item");
       var columns = ["TYPE", "MODÈLE", "CARACTÉRISTIQUES", "FICHE TECHNIQUE"]
       let productValuesCleaned=formPageValues.produits_ajoutees.filter(el=>{
-        console.log(el)
         return el!= undefined
       })
       var rows = [];
-      console.log(productValuesCleaned);
       productValuesCleaned.forEach(el=>{
         var type = el.categorie
         var model = el.title
@@ -2844,21 +2842,6 @@ jQuery(function($){
         var lien = el.fiche_technique_url
         rows.push([type, model, cara, lien]);
       })
-      console.log(rows)
-      
-      // items.each(function () {
-      //     var type = $(this).children(".pompes__center").children(".pompes__category").text().trim()
-      //     var model = $(this).children(".pompes__center").children(".pompes__title").text().trim()
-      //     var cara = ""
-      //     var nbelem = $(this).children(".pompes__center").children(".pompes__advantages").children().length
-      //     var i = 1;
-      //     $(this).children(".pompes__center").children(".pompes__advantages").children().each(function () {
-      //         cara += $(this).text().trim()
-      //         if (i != nbelem) { cara += "\n" }
-      //         i = i + 1;
-      //     });
-      //     rows.push([type, model, cara, "vide"]);
-      // });
 
       //cerifier si on a choisi des produits
       // si on a pas choisi on affiche pas la page dans le pdf
@@ -2944,6 +2927,9 @@ jQuery(function($){
           type: "post",
           data: serializedData
       });
+
+    // ajout des images au pdf
+    createPdf();
 
       // Callback handler that will be called on success
       request.done(function (response, textStatus, jqXHR) {
