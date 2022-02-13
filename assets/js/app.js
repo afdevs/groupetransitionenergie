@@ -561,7 +561,7 @@ jQuery(function($){
     }
 
       $('#list_pompes').on('click', 'button.pompes__btn', function(e){
-        AnimateRotate($(this), 90);
+        // AnimateRotate($(this), 90);
         if($($(this)[0]).hasClass('unset')){
           setTimeout(() => {
             $(this).text('Ajouter')

@@ -338,7 +338,8 @@ h5{
 .navigation__menus .material-icons {
     font-size: 35px;
 }
-.slick-initialized .slick-slide {
+.slick-initialized .slick-slide:focus, button.navigationButton:focus{
+    outline: none;
     /* display: block;
     width: 376px!important;
     max-width: 769px!important;
