@@ -323,7 +323,7 @@ var formPageValues={
     hauteur_sous_plafond_moyenne: 1, 
     hauteur_sous_plafond_m:2.5, //pompoe a chaleur air eau
     temperature_de_confort: 17,
-    gisolation:0.80,
+    gisolation:0,
     surface_au_sol: 0,
     departement_address:0,
     altitude: 0,
@@ -527,11 +527,6 @@ jQuery(function($){
         showListProduits($(this).val())
       })
       
-
-      // var elems = document.querySelectorAll('select');
-      // var instances = M.FormSelect.init(elems);
-      // $('select').formSelect();
-      
       var selectFields = $('select');
       selectFields.each(function () {
         var selectField = $(this);
@@ -547,26 +542,11 @@ jQuery(function($){
       let stepVisited=[1];
       let previousStep=null;
       
-      /* Add the listener */
-
-      // var els = document.querySelectorAll('select');
-
-      // [].forEach.call(els, function(el) {
-      //   this.addEventListener('change', function() {
-      //     console.log(el.value);
-      //     console.log(el.children[el.value].textContent);
-      //     alert(el.children[el.value].textContent);
-      //   }, false);
-      // });
-      
-      
       $('a').click(function(e){
         if(e.currentTarget.classList[0]!=='pompes__btn'){
           e.preventDefault();
         }
       });
-
-      // updatThumbEvolValue();
 
     function AnimateRotate(el, angle) {
       // caching the object for performance reasons
@@ -578,24 +558,9 @@ jQuery(function($){
         },
         duration:'slow'
       },'linear');
-      // we use a pseudo object for the animation
-      // (starts from `0` to `angle`), you can name it as you want
-      // $({deg: 0}).animate({trans: angle}, {
-      //     duration: 2000,
-      //     step: function(now) {
-      //         // in the step-callback (that is fired each step of the animation),
-      //         // you can use the `now` paramter which contains the current
-      //         // animation-position (`0` up to `angle`)
-      //         $elem.css({
-      //             transform: 'rotate(' + now + 'deg)'
-      //         });
-      //     }
-      // });
     }
+
       $('#list_pompes').on('click', 'button.pompes__btn', function(e){
-      // $('button.pompes__btn').click(function(e){
-        // $(this).animate({ trans: 60}, 0);
-        // console.log('animation')
         AnimateRotate($(this), 90);
         if($($(this)[0]).hasClass('unset')){
           setTimeout(() => {
@@ -612,6 +577,7 @@ jQuery(function($){
           formPageValues.produits_ajoutees[$(this).val()]=produits[$(this).val()]
           AnimateRotate($(this), 360)
         };
+        pageFormValidation();
       })
       // let map = new google.maps.Map(document.getElementById("map"), {});
       // console.log('map', map)
@@ -640,11 +606,6 @@ jQuery(function($){
         
         //temperature de confort
         if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='temperature_de_confort'){
-        // console.log($('select[name=hauteur_sous_plafond_moyenne]').val())
-        // console.log($('select[name=gisolation]').val())
-        // console.log($('#inputSurfaceSol').val)
-        // console.log( formPageValues.temperature_de_confort);
-
           const result=formPageValues.temperature_de_confort +0.5;
           formPageValues.temperature_de_confort = Math.round(result*100)/100
           $($($(this).parent().children('.counter__value'))[0]).text(formPageValues.temperature_de_confort);  
@@ -681,12 +642,6 @@ jQuery(function($){
           // formPageValues.nombre_d_habitants -=1
           calculBonus()
         }
-        
-        // if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='eligibility_nbr_part_fiscal'){
-        //   console.log( formPageValues.eligibility_nbr_part_fiscal)
-
-        //   formPageValues.eligibility_nbr_part_fiscal++
-        //  }
         
       });
 
@@ -741,9 +696,6 @@ jQuery(function($){
           calculBonus()
         }
          
-        // if($($($(this).parent().children('.counter__value'))[0]).attr('name')==='eligibility_nbr_part_fiscal'){
-        //   formPageValues.eligibility_nbr_part_fiscal++
-        //  }
       });
 
       $('label.select-item').click(function(e){
@@ -770,13 +722,6 @@ jQuery(function($){
         if (checkboxIconPath){$($($($(this)[0])[0]).children('img.image-checkbox')[0]).attr('src', checkboxIconPath.replace('check', 'uncheck'));}
         
         $($(this).children('input[type=radio]')[0]).prop('checked',true);
-        // if($($(this)[0]).hasClass('image')){
-        //   $($(this)[0]).addClass('answer-selected-image');
-        //   $($($($(this)[0])[0]).children('img.image-checkbox')[0]).attr('src', checkboxIconPath.replace('uncheck', 'check'));
-        // }else{
-        //   $($(this)[0]).addClass('answer-selected');
-        //   $($($($(this)[0])[0]).children('img.image-checkbox')[0]).attr('src', checkboxIconPath.replace('uncheck', 'check'));
-        // }
         
         $($(this)[0]).addClass('answer-selected');
         if(checkboxIconPath){$($($($(this)[0])[0]).children('img.image-checkbox')[0]).attr('src', checkboxIconPath.replace('uncheck', 'check'))};
@@ -787,23 +732,7 @@ jQuery(function($){
       $('label.multi-select-item').click(function(e){
         $($(this).parent().children('input[type=radio]')[0]).prop('checked', false);
         $($(this).parent().children('label')).removeClass('answer-selected');
-        // console.log($($($(this).parent())[0]).children('img'));
-        // Array.from($($(this).parent().children('label.no-image'))).forEach(el=>{
-        //   let urlPathCheckbox=$($($(el)[0]).children('img')[0]).attr('src');
-        //   if(urlPathCheckbox){
-        //     let splittedUrl= urlPathCheckbox.split('/');
-        //     let newCheckboxUrl=splittedUrl[0]+'/'+splittedUrl[1]+'/'+splittedUrl[2]+'/uncheck.png';
-        //     $($($(el)[0]).children('img.image-checkbox')[0]).attr('src', newCheckboxUrl);
-        //   }
-        // })
-        // Array.from($($(this).parent().children('label.image'))).forEach(el=>{
-        //   let urlPathCheckbox=$($($(el)[0]).children('img')[0]).attr('src');
-        //   if(urlPathCheckbox){
-        //     let splittedUrl= urlPathCheckbox.split('/');
-        //     let newCheckboxUrl=splittedUrl[0]+'/'+splittedUrl[1]+'/'+splittedUrl[2]+'/uncheck.png';
-        //     $($($(el)[0]).children('img.image-checkbox')[0]).attr('src', newCheckboxUrl);
-        //   }
-        // })
+
         let checkboxIconPath=$($($($(this)[0])[0]).children('img.image-checkbox')[0]).attr('src');
         if (checkboxIconPath){$($($($(this)[0])[0]).children('img.image-checkbox')[0]).attr('src', checkboxIconPath.replace('check', 'uncheck'));}
         
@@ -841,13 +770,6 @@ jQuery(function($){
         if (checkboxIconPath){$($($($(this)[0])[0]).children('img.image-checkbox')[0]).attr('src', checkboxIconPath.replace('check', 'uncheck'));}
         
         $($(this).children('input[type=radio]')[0]).prop('checked',true);
-        // if($($(this)[0]).hasClass('image')){
-        //   $($(this)[0]).addClass('answer-selected-image');
-        //   $($($($(this)[0])[0]).children('img.image-checkbox')[0]).attr('src', checkboxIconPath.replace('uncheck', 'check'));
-        // }else{
-        //   $($(this)[0]).addClass('answer-selected');
-        //   $($($($(this)[0])[0]).children('img.image-checkbox')[0]).attr('src', checkboxIconPath.replace('uncheck', 'check'));
-        // }
         
         $($(this)[0]).addClass('answer-selected');
         if(checkboxIconPath){$($($($(this)[0])[0]).children('img.image-checkbox')[0]).attr('src', checkboxIconPath.replace('uncheck', 'check'))};
@@ -857,97 +779,60 @@ jQuery(function($){
       /* ALL ABOUT THE FORM */     
       $(".next").click(function(e){
         if($($(this)[0]).hasClass('flickity-button')) return;
-        let timeout= current >1 && current<25 ? 200 : 0;
-        setTimeout(()=>{
-            $('.page .page__content #regiration_form').css("transform"," translateX(50px)" );
-            $('.page .page__content #regiration_form').css("transition", "none" );
+      //  current >1 && current<25 ? 200 : 0;
+        if(!pageFormValidation(current)) return
+          $('.page .page__content #regiration_form').css("transform"," translateX(50px)" );
+          $('.page .page__content #regiration_form').css("transition", "none" );
 
-            previousStep=parseInt($(this).attr('skipStep')) ? current:  null;
-            current= $(this).attr('skipStep') ? parseInt($(this).attr('skipStep')) : current;
-            
-            if(current===11){
-             $('.step-'+current).hide()
-              current=15
-            }
-            current_step =  $('.step-'+current);
-            next_step=++current;
-            next_step_form =  $('.step-'+next_step);
-
-            if (current >=1 && current<12){ 
-              $('.page .previous__button').css('visibility', 'visible');
-            }else if(current >15){
-              $('.page .previous__button').css('visibility', 'visible');
-            }else{
-                $('.page .previous__button').css('visibility', 'hidden');
-            }
-              
-            
-            if(current>11 && current< 16){
-              $('.main-cta').css('visibility', 'hidden');
-            }else if(current >19){
-              $('.main-cta').css('visibility', 'hidden');
-            }else{            
-              $('.main-cta').css('visibility', 'visible');
-            }
-  
-
-            // else if(current>15 && current<18){
-            //   $('.main-cta').css('visibility', 'visible');
-            // }
-
-            
-            handleStepsDesign(current)
-            // if(current>5){
-            //   setTimeout(() => {
-            //     $('.topbar .topbar__progress').css('visibility','hidden');
-            //   }, 4000);
-            // }
-
-            if (previousStep){ $('.step-'+previousStep).hide()}
+          previousStep=parseInt($(this).attr('skipStep')) ? current:  null;
+          current= $(this).attr('skipStep') ? parseInt($(this).attr('skipStep')) : current;
           
-            // if(next_step===6){
-            //   current_step.fadeTo(4000, 1, function(){
-            //     current_step.hide();
-            //   });
-            // }else{
-            //   current_step.hide();
-            // }
-            current_step.hide();
+          if(current===11){
+            $('.step-'+current).hide()
+            current=15
+          }
+          current_step =  $('.step-'+current);
+          next_step=++current;
+          next_step_form =  $('.step-'+next_step);
 
-            // $('.page .page__content').animate({transform: "translateY(0px)!important"});
+          if (current >=1 && current<12){ 
+            $('.page .previous__button').css('visibility', 'visible');
+          }else if(current >15){
+            $('.page .previous__button').css('visibility', 'visible');
+          }else{
+              $('.page .previous__button').css('visibility', 'hidden');
+          }
             
-            $('.page .page__content #regiration_form').css("transition", ".4s ease-out" );
-            $('.page .page__content #regiration_form').css("transform"," translateX(0px)" );
-            
-            
-            // if(current===10){
-            //   setTimeout(() => {
-            //     next_step_form.fadeTo('slow', 1, function(){
-            //       setProgressBar(next_step);
-            //       // $('.page .page__content .step-6 h2').css('margin-top', '50px');
-            //       next_step_form.show();
-            //       stepVisited.push(next_step);
-            //     });
-            //   }, 4000);
-            // }else{
-            //   next_step_form.fadeTo('slow', 1, function(){
-            //     setProgressBar(next_step);
-            //     next_step_form.show();
-            //     stepVisited.push(next_step);
-            //   });
-            // }
-            calculatePompeAChaleurAirEau();
-            calculBonus()
-            next_step_form.fadeTo('slow', 1, function(){
-              setProgressBar(next_step);
-              next_step_form.show();
-              if(!stepVisited.includes(next_step)){
-                stepVisited.push(next_step);
-              }
-              console.log('stepVisited', stepVisited)
-            });
+          
+          if(current>11 && current< 16){
+            $('.main-cta').css('visibility', 'hidden');
+          }else if(current >19){
+            $('.main-cta').css('visibility', 'hidden');
+          }else{            
+            $('.main-cta').css('visibility', 'visible');
+          }
 
-        }, timeout);
+          
+          handleStepsDesign(current)
+
+          if (previousStep){ $('.step-'+previousStep).hide()}
+        
+          current_step.hide();
+
+          $('.page .page__content #regiration_form').css("transition", ".4s ease-out" );
+          $('.page .page__content #regiration_form').css("transform"," translateX(0px)" );
+          
+          calculatePompeAChaleurAirEau();
+          calculBonus()
+          next_step_form.fadeTo('slow', 1, function(){
+            setProgressBar(next_step);
+            next_step_form.show();
+            if(!stepVisited.includes(next_step)){
+              stepVisited.push(next_step);
+            }
+            pageFormValidation(next_step);
+          });
+
           
       });
 
@@ -996,6 +881,7 @@ jQuery(function($){
           next_step_form.fadeTo('slow', 1, function(){
             setProgressBar(next_step);
             next_step_form.show();
+            pageFormValidation(next_step);
           });
           stepVisited.pop();
       });
@@ -1395,6 +1281,7 @@ jQuery(function($){
         }
 
         calculatePompeAChaleurAirEau();
+        pageFormValidation();
         
         handlePhotoCaptureButtons();
         //end
@@ -1409,7 +1296,8 @@ jQuery(function($){
           .css("width",percent+"%")
           //.html(percent+"%");   
       }
-    });
+
+      
 
     function handleStepsDesign(current){
       if(current>1 && current< 10){
@@ -1936,6 +1824,11 @@ jQuery(function($){
       // $(this).prop('checked', true);
       if($(this).is(':checked')){
         if($(this).attr('id')==='200l'){
+          // console.log('adfsdfas')
+          // if($(this).is(':checked')){
+          //   console.log('adfsdfas')
+          //   $('#200l').prop('checked', !$(this).is(':checked')); 
+          // }
           $('#270l').prop('checked', false);
           $('#230l').prop('checked', false);
           $('#Autres').prop('checked', false);
@@ -2139,7 +2032,6 @@ jQuery(function($){
       formPageValues.evol_sur_25_annee=parseFloat(value[0]);
       formPageValues.votre_conso_actuel= parseFloat($('#inputEstimFactChauff').val()||0);
       consommationGlobal();
-      console.log(value)
     });
 
     $('#inputDernierRevenuFiscalRef').change(function(){
@@ -2150,19 +2042,33 @@ jQuery(function($){
     })
     $('#270l').click(function(){
       calculBonus()
+      
+      pageFormValidation();
     })
     
     $('#200l').click(function(){
       calculBonus()
+      
+      pageFormValidation();
     });
     
     $('#230l').click(function(){
       calculBonus()
+      
+      pageFormValidation();
     });
     
     $('#Autres').click(function(){
       calculBonus()
+      
+      pageFormValidation();
     });
+
+    $('#elec_ampoule1, #elec_ampoule2').on('click', function(){
+      calculBonus()
+      
+      pageFormValidation();
+    })
 
     function intBonusData(){
       bonusCalcul.maprimenov.pacAirEau=0;
@@ -2309,7 +2215,7 @@ jQuery(function($){
 
       getCoupDePouceBonus(couleurCDP, bonusCalcul)
       
-      bonusCalcul.ecologique=parseFloat($('#inputBonusEcologique').val());
+      bonusCalcul.ecologique=parseFloat($('#inputBonusEcologique').val()) || 0;
       let maPrimeRenovSum=0
       let coupDePouceSm=0;
       
@@ -2427,20 +2333,23 @@ jQuery(function($){
         $('#chaudiere_actuel').prop('disabled', false)
         
         $('#chaudiere_actuel_select').removeClass('disabled_photo_btn')
-        $('#chaudiere_actuel_select').prop('disabled', false)        
+        $('#chaudiere_actuel_select').prop('disabled', false)       
+        $('#chaudiere_actuel_img img').css('filter', 'inherit')
+
       }else{
         $('#chaudiere_actuel').addClass('disabled_photo_btn')
         $('#chaudiere_actuel').prop('disabled', true)
-
         $('#chaudiere_actuel_select').addClass('disabled_photo_btn')
         $('#chaudiere_actuel_select').prop('disabled', true)
-        
+        $('#chaudiere_actuel_img img').css('filter', 'grayscale(1)')
         
         $('#ballon_actuel').addClass('disabled_photo_btn')
         $('#ballon_actuel').prop('disabled', true)
 
         $('#ballon_actuel_select').addClass('disabled_photo_btn')
         $('#ballon_actuel_select').prop('disabled', true)
+        $('#ballon_actuel_img img').css('filter', 'grayscale(1)')
+
         
       }
 
@@ -2450,12 +2359,14 @@ jQuery(function($){
         
         $('#emplacement_pompe_a_chaleur_select').removeClass('disabled_photo_btn')
         $('#emplacement_pompe_a_chaleur_select').prop('disabled', false)
+        $('#emplacement_pompe_a_chaleur_img img').css('filter', 'inherit')
       }else{
         $('#emplacement_pompe_a_chaleur').addClass('disabled_photo_btn')
         $('#emplacement_pompe_a_chaleur').prop('disabled', true)
         
         $('#emplacement_pompe_a_chaleur_select').addClass('disabled_photo_btn')
         $('#emplacement_pompe_a_chaleur_select').prop('disabled', true)
+        $('#emplacement_pompe_a_chaleur_img img').css('filter', 'grayscale(1)')
       }
       
       if($('#270l').is(':checked') || $('#200l').is(':checked') || $('#230l').is(':checked') || $('#Autres').is(':checked')){
@@ -2464,6 +2375,8 @@ jQuery(function($){
         
         $('#ballon_actuel_select').removeClass('disabled_photo_btn')
         $('#ballon_actuel_select').prop('disabled', false)
+        $('#ballon_actuel_img img').css('filter', 'inherit')
+
       }else{
 
       }
@@ -2747,12 +2660,160 @@ jQuery(function($){
         $(telephone.next()).removeClass('show');
       }
     })
+    
+    function pageFormValidation(step=1){
+      $('#nextStepButton').css('filter', 'grayscale(1)');
+      step = current || 1;
+      isValid=false;
+      switch (step) {
+        case 1:
+          if($('#inputNom').val()!='' && $('#inputPrenom').val() !='' && $('#inputTelephone').val()!='' && $('#inputAddress').val()!=''){
+            isValid=true;
+          }
+          break;
+        case 2:
+          if($(".step-2__link.answer-selected :input[name='type_d_occupation']").val()){
+            isValid=true;
+          }        
+          break;
+        case 3:
+          if($('#inputSurfaceSol').val()!='' && $('#inputPuissanceCompteur').val() !='' && $(".step-3__link.answer-selected :input[name='type_installation_electrique']").val() && formPageValues.gisolation!= 0){
+            isValid=true;
+          }
+          break;
+        case 4:
+          if($(".step-4__link.answer-selected :input[name='forme_maison']").val()){
+            isValid=true;
+          }
+          break;
+        case 5:
+          if($(".step-5__link.answer-selected :input[name='nombre_de_niveau']").val()){
+            isValid=true;
+          }
+          break;
+        case 6:
+          if($(".step-6__link.answer-selected :input[name='type_de_sous_sol']").val() && $(".step-6__link.answer-selected :input[name='type_de_mur']").val()){
+            isValid=true;
+          }
+          break
+        case 7:
+          if($(".step-7__link.answer-selected :input[name='type_de_comble']").val() && $(".step-7__link.answer-selected :input[name='comble_isole']").val()){
+            isValid=true;
+          }
+          break
+        case 8:
+          if($(".step-8__link.answer-selected input[name='type_de_vitrage']").val()){
+            isValid=true;
+          }
+          break
+        case 9:
+          if($(".step-9__link.answer-selected :input[name='type_de_ventilation']").val()){
+            isValid=true;
+          }
+          break
+        case 10:
+          if($('#inputMarqueAncienneChau').val()!='' && $(".step-11__link.answer-selected :input[name='source_energie']").val() && $(".step-11__link.answer-selected :input[name='emplacement_chaudiere']").val() && $("select[name='annee_contruction_chauffage']").val() && $('#inputEstimFactChauff').val()){
+            isValid=true;
+          }
+          break
+        case 11:
+          if($("select[name='type_de_chaufface_nombre_d_annee_a_indexer']").val()){
+            isValid=true;
+          }
+          break
+        case 16:
+          if(($('#270l').is(':checked') || $('#200l').is(':checked') || $('#230l').is(':checked') || $('#Autres').is(':checked')) && $('#elec_ampoule1').is(':checked') || $('#elec_ampoule2').is(':checked')){
+            isValid=true;
+          }
+          break
+        case 17:
+          let productValuesCleaned=formPageValues.produits_ajoutees.filter(el=>{
+            return el!= undefined
+          })
+          if(productValuesCleaned.length>0){
+            isValid=true;
+          }
+          break
+        case 18:
+          if($(".step-18__link.answer-selected :input[name='eligibilite_situation_matrimoniale']").val() && $(".step-18__link.answer-selected :input[name='eligibilite_situation_enfant']").val() && $('#inputEligibiliteAvisImposition').val()!='' && $('#inputNumeroFisc').val()!='' && $('#inputNumeroFisc').val()!='' && $('#inputDernierRevenuFiscalRef').val()!='' ){//&& $('#inputBonusEcologique').val()!=''
+            isValid=true;
+          }
+          break
+        case 19:
+          isValid=true;          
+          break
+        case 20:
+          isValid=true;          
+          break
+          
+        default:
+          break;
+      }
+      if(isValid){
+        $('#nextStepButton').css('filter', 'inherit');
+      }
+      console.log('current', current)
+      console.log('isValid', isValid)
+      console.log('validation')
+      return isValid;
+    }
 
+    pageFormValidation();
+    
+    //Validation on all changes input
+    //STEP 1
+    $('#inputNom, #inputPrenom, #inputTelephone, #inputAddress').on('keyup', ()=>pageFormValidation());
+    $('#inputNom, #inputPrenom, #inputTelephone, #inputAddress').on('change', ()=>pageFormValidation());
+    //STEP 2
+    $(".step-2__link").on('click', ()=>pageFormValidation());
+    //STEP 3    
+    $("#inputSurfaceSol").on('keyup', ()=>pageFormValidation());
+    $("#inputSurfaceSol").on('change', ()=>pageFormValidation());
+    $("#inputPuissanceCompteur").on('keyup', ()=>pageFormValidation());
+    $("#inputPuissanceCompteur").on('change', ()=>pageFormValidation());
+    $(".step-3__link").on('click', ()=>pageFormValidation());
+    $("select[ name='annee_contruction']").on('change', ()=>pageFormValidation());
+    //STEP 4
+    $(".step-4__link").on('click', ()=>pageFormValidation());
+    //STEP 5
+    $(".step-5__link").on('click', ()=>pageFormValidation());
+    //STEP 6
+    $(".step-6__link.image, .step-6__link.four-item-image").on('click', ()=>pageFormValidation());
+    //STEP 7
+    $(".step-7__link.image, .step-7__link.no-image").on('click', ()=>pageFormValidation());
+    //STEP 8
+    $(".step-8__link").on('click', ()=>pageFormValidation());
+    //STEP 9
+    $(".step-9__link").on('click', ()=>pageFormValidation());
+    //STEP 10
+    $(".step-9__link").on('click', ()=>pageFormValidation());
+    $("#inputMarqueAncienneChau").on('keyup', ()=>pageFormValidation());
+    $("#inputMarqueAncienneChau").on('change', ()=>pageFormValidation());
+    $(".step-11__link.souceEnergieTypeChauffage").on('click', ()=>pageFormValidation());
+    $(".step-11__link.emplacementChaudiere").on('click', ()=>pageFormValidation());
+    $("#inputEstimFactChauff").on('keyup', ()=>pageFormValidation());
+    $("#inputEstimFactChauff").on('change', ()=>pageFormValidation());
+    $("select[name='annee_contruction_chauffage']").on('change', ()=>pageFormValidation());
+    //STEP 11
+    $("select[name='type_de_chaufface_nombre_d_annee_a_indexer']").on('change', ()=>pageFormValidation());
+    //SETP 18
+    $('.step-18__link.situationMatri').on('click', ()=>pageFormValidation());
+    $('.step-18__link.situationEnfant').on('click', ()=>pageFormValidation());
+    $('#inputEligibiliteAvisImposition').on('keyup', ()=>pageFormValidation());
+    $('#inputEligibiliteAvisImposition').on('change', ()=>pageFormValidation());
+    $('#inputNumeroFisc').on('keyup', ()=>pageFormValidation());
+    $('#inputNumeroFisc').on('change', ()=>pageFormValidation());
+    $('#inputDernierRevenuFiscalRef').on('keyup', ()=>pageFormValidation());
+    $('#inputDernierRevenuFiscalRef').on('change', ()=>pageFormValidation());
 
 
     /* SUBMIT FORM */
     $("#regiration_form").submit(function (e) { 
       e.preventDefault();
+      $('#generatePdfButton').attr('disabled', true)
+      if($('#generatePdfButton > div').hasClass('hidden-preload')){
+        $('#generatePdfButton > div').removeClass('hidden-preload')
+      }
       var $form = $(this);
 
       // Let's select and cache all the fields
@@ -2785,7 +2846,7 @@ jQuery(function($){
       serializedData += '&consoActGlob=' + formPageValues.votre_conso_actuel + ' €';
       serializedData += '&consoXAn=' + formPageValues.votre_conso_sur_x_annee + ' €';
       serializedData += '&moyenneConsoXan=' + formPageValues.moyenne_conso_sur_x_annee + ' €'
-      serializedData += '&statutMarital=' + $(".step-18__link.answer-selected :input[name='eligibilite_situation_matrimoniale']").val()
+      serializedData += '&statutMarital=' + $(".step-18__link.answer-selected :input[name='eligibilite_situation_matrimoniale']").val();
       serializedData += '&nbEnfCharge=' + $("[name='eligibility_nbr_enfant_a_charge']").text().trim();
       serializedData += '&revenus=' + $("#inputDernierRevenuFiscalRef").val();
       serializedData += '&primeRenov=' + formPageValues.maPrimeRenovSum+ ' €';
@@ -2928,21 +2989,97 @@ jQuery(function($){
           data: serializedData
       });
 
-    // ajout des images au pdf
-    createPdf();
 
       // Callback handler that will be called on success
       request.done(function (response, textStatus, jqXHR) {
           // Log a message to the console
-          console.log("Document done", response);
-          var win = window.open('./completed/recapitulatif.pdf', '_blank');
-          if (win) {
-              //Browser has allowed it to be opened
-              win.focus();
-          } else {
-              //Browser has blocked it
-              alert('Please allow popups for this website');
+          // var win = window.open('./completed/recapitulatif.pdf', '_blank');
+          
+          // ajout des images au pdf
+          const { degrees, PDFDocument, rgb, StandardFonts }= PDFLib
+
+          async function modifyPdf() {
+            const url = './completed/formulaire_images.pdf'
+            const existingPdfBytes = await fetch(url).then(res => res.arrayBuffer())
+
+            const pdfDoc = await PDFDocument.load(existingPdfBytes)
+
+            const srcimg1 = $("#facade_maison_img img")[0].getAttribute('src')
+            const srcimg2 = $("#compteur_actuel_img img")[0].getAttribute('src')
+            const srcimg3 = $("#chaudiere_actuel_img img")[0].getAttribute('src')
+            const srcimg4 = $("#ballon_actuel_img img")[0].getAttribute('src')
+            const srcimg5 = $("#emplacement_pompe_a_chaleur_img img")[0].getAttribute('src')
+            const srcimg6 = $("#emplacement_des_blocs_exterieurs_img img")[0].getAttribute('src')
+            
+            const ImageBytes1 = await fetch(srcimg1).then(res => res.arrayBuffer())
+            const ImageBytes2 = await fetch(srcimg2).then(res => res.arrayBuffer())
+            const ImageBytes3 = await fetch(srcimg3).then(res => res.arrayBuffer())
+            const ImageBytes4 = await fetch(srcimg4).then(res => res.arrayBuffer())
+            const ImageBytes5 = await fetch(srcimg5).then(res => res.arrayBuffer())
+            const ImageBytes6 = await fetch(srcimg6).then(res => res.arrayBuffer())
+
+            const Image1 = await pdfDoc.embedJpg(ImageBytes1)
+            const Image2 = await pdfDoc.embedJpg(ImageBytes2)
+            const Image3 = await pdfDoc.embedJpg(ImageBytes3)
+            const Image4 = await pdfDoc.embedJpg(ImageBytes4)
+            const Image5 = await pdfDoc.embedJpg(ImageBytes5)
+            const Image6 = await pdfDoc.embedJpg(ImageBytes6)
+
+            const form = pdfDoc.getForm()
+          
+            const image1Field = form.getButton('image1')
+            const image2Field = form.getButton('image2')
+            const image3Field = form.getButton('image3')
+            const image4Field = form.getButton('image4')
+            const image5Field = form.getButton('image5')
+            const image6Field = form.getButton('image6')
+          
+            image1Field.setImage(Image1)
+            image2Field.setImage(Image2)
+            image3Field.setImage(Image3)
+            image4Field.setImage(Image4)
+            image5Field.setImage(Image5)
+            image6Field.setImage(Image6)
+
+            form.flatten();
+
+            const pdfBytes = await pdfDoc.save('./completed/here.pdf')
+      
+            const recapPdfBuffered = await fetch('./completed/recapitulatif.pdf').then(res => res.arrayBuffer())
+            const recapPdfLoaded = await PDFDocument.load(recapPdfBuffered)
+            // Create a new PDFDocument
+            const mergedPdf = await PDFDocument.create();
+
+            const copiedPagesA = await mergedPdf.copyPages(recapPdfLoaded, recapPdfLoaded.getPageIndices());
+            copiedPagesA.forEach((page, index) =>{ 
+              if(index<8){
+                mergedPdf.addPage(page)
+              }
+            });
+            
+            const copiedPagesB = await mergedPdf.copyPages(pdfDoc, pdfDoc.getPageIndices());
+            copiedPagesB.forEach((page) => mergedPdf.addPage(page));
+
+            copiedPagesA.forEach((page, index) =>{ 
+              if(index>7){
+                mergedPdf.addPage(page)
+              }
+            });
+            const mergedPdfFile = await mergedPdf.save();
+                
+            download(mergedPdfFile, "Mydiag__Étude_personnalisée_de_l_habitat ", "application/pdf");
           }
+
+          modifyPdf();
+
+          $('#generatePdfButton > div').addClass('hidden-preload')
+          // if (win) {
+          //     //Browser has allowed it to be opened
+          //     win.focus();
+          // } else {
+          //     //Browser has blocked it
+          //     alert('Please allow popups for this website');
+          // }
       });
 
       // Callback handler that will be called on failure
@@ -2958,8 +3095,12 @@ jQuery(function($){
       // if the request failed or succeeded
       request.always(function () {
           // Reenable the inputs
+          $('#generatePdfButton').attr('disabled', false)
+          $('#generatePdfButton > div').addClass('hidden-preload')
           $inputs.prop("disabled", false);
       });
       
+    });
+      //on ready , end bracket;
     });
 })

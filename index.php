@@ -469,7 +469,7 @@
                             <div class="inputs">
                                 <div class="input-item">
                                     <label for="inputAnneContruct">Année de construction</label>    
-                                    <select name="annee_contruction" id="">
+                                    <select name="annee_contruction" class="browser-default">
                                         <option disabled selected>Choisir</option>
                                         <option value="2022">2022</option>
                                         <option value="2021">2021</option>
@@ -531,7 +531,18 @@
                                     <span class="step-1__content__notice">Surface au sol (m 2) requis </span>
                                 </div>
                             </div>
-                            
+                            <div class="inputs">
+                                <div class="input-item">
+                                    <label for="inputTempConfort" style="text-align: center;">Coefficient d’isolation G</label>
+                                    <select id="gisolation" name="gisolation" style="width: 100%; text-align:center; background-color: #dfdfdf;" name="coefficient_d_isolation" disabled class="browser-default">
+                                        <option disabled selected>Choisir</option>
+                                        <option value="0.65" >0,65 Norme Année 2005</option>
+                                        <option value="1" >1 Norme Année 2000</option>
+                                        <option value="1.30" >1.3, Norme Année 1980</option>
+                                        <option value="1.60" >1.6, Norme Année 1960</option>
+                                    </select>
+                                </div>
+                            </div>
                             <h2 style="margin-top: 40px;margin-top: 30px;">Type d’installation électrique</h2>
                             <div class="noImageSelection">
                                 <label for="type_installation_electrique_1" class="select-item btn step-3__link no-image monophase" style="background: #ae391c78;">                                       
@@ -622,7 +633,7 @@
                         </div>
                             
                         <label for="hauteur_sous_plafond_moyenne" style="margin-top: 40px;margin-bottom: 16px;">Hauteur sous plafond</label>  
-                        <select id="hauteur_sous_plafond_moyenne" name="hauteur_sous_plafond_moyenne" style="width: 100%;">
+                        <select id="hauteur_sous_plafond_moyenne" name="hauteur_sous_plafond_moyenne" style="width: 100%;" class="browser-default">
                             <option value="1.8">1.80 m</option>
                             <option value="1.9">1.90 m</option>
                             <option value="2.0">2.00 m</option>
@@ -687,7 +698,8 @@
 
                             </label>
                         </div>
-                            <h2>Type de murs </h2>
+                        
+                        <h2>Type de murs </h2>
                         <div class="step-6__content optionWithImages">
                             <label for="inputPierre" class="select-item btn step-6__link image four-item-image columnStyleInput">
                                 <input type="radio" name="type_de_mur" id="inputPierre" value="Pierre">
@@ -778,7 +790,7 @@
                                 </label>
                                 
                                 <label for="comble_isole_3" class="select-item btn step-7__link no-image three-item-no-image">                                       
-                                    <input type="radio" name="comble_isole"  id="type_installation_electrique_2" value="Je ne sais pas">
+                                    <input type="radio" name="comble_isole"  id="comble_isole_3" value="Je ne sais pas">
                                     <span>Je ne sais pas</span>
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox not-absolute">
                                 </label>
@@ -849,36 +861,6 @@
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                         </div>                        
-                        <label for="inputTempConfort">Coefficient d’isolation G</label>
-                        <select id="gisolation" name="gisolation" style="width: 100%;" name="coefficient_d_isolation" disabled>
-                            <option value="0.65" >0,65 Norme Année 2005</option>
-                            <option value="1" >1 Norme Année 2000</option>
-                            <option value="1.30" >1.3, Norme Année 1980</option>
-                            <option value="1.60" >1.6, Norme Année 1960</option>
-
-                            <!-- <option value="3.00">G = 3.00 : véranda ancienne</option>
-                            <option value="2.50">G = 2.50 : véranda récente</option>
-                            <option value="2.00">G = 2.00 : ancien très mal isolé</option>
-                            <option value="1.80">G = 1.80 : bâtiment années 1950</option>
-                            <option value="1.70">G = 1.70 : ancien isolé sur dalle</option>
-                            <option value="1.60">G = 1.60 : bâtiment années 1960</option>
-                            <option value="1.60">G = 1.60 : ancien mur épais pas isolé</option>
-                            <option value="1.40">G = 1.40 : entre 1974-1982</option>
-                            <option value="1.30">G = 1.30 : immeuble années 1980</option>
-                            <option value="1.10">G = 1.10 : maison années 1980</option>
-                            <option value="1.00">G = 1.00 : entre 1990-2000</option>
-                            <option value="0.92">G = 0.92 : isolation norme RT2005 Gaz</option>
-                            <option value="0.90">G = 0.90 : maison RT2000</option>
-                            <option value="0.87">G = 0.87 : HPE rénovation 2009</option>
-                            <option selected="selected" value="0.80">G = 0.80 : entre 2001-2005</option>
-                            <option value="0.80">G = 0.80 : isolation norme RT2000</option>
-                            <option value="0.80">G = 0.80 : maison RT2005</option>
-                            <option value="0.73">G = 0.73 : bâtiment après 2005</option>
-                            <option value="0.65">G = 0.65 : isolation norme RT2005</option>
-                            <option value="0.58">G = 0.58 : isolation norme RT2005 Elec</option>
-                            <option value="0.47">G = 0.47 : BBC rénovation 2009</option>
-                            <option value="0.30">G = 0.30 : isolation norme RT2012</option> -->
-                        </select>
                     </fieldset>
                     
                     <fieldset class="step-10" >                        
@@ -964,7 +946,7 @@
                         
                         <div class="inputs" style="display: flex;flex-direction: column;align-items: center;">
                                 <label for="type_de_chaufface_nombre_d_annee_a_indexer" style="margin-bottom: 25px;">Nombre d'année à indexer</label>
-                                <select name="type_de_chaufface_nombre_d_annee_a_indexer" id="">
+                                <select name="type_de_chaufface_nombre_d_annee_a_indexer" class="browser-default">
                                     <option disabled selected>Choisir</option>
                                     <option value="05">5</option>
                                     <option value="10">10</option>
@@ -1063,7 +1045,7 @@
                     <fieldset class="step-17" style="max-width: 850px;">
                         <h2>FICHE TECHNIQUE PAR CATEGORIE</h2>
                         <div class="step-17__content optionWithImages" style="display: flex;flex-direction:column;">
-                        <select id="productsFilterCategory" name="product_category" style="width: 100%;">
+                        <select id="productsFilterCategory" name="product_category" style="width: 100%;" class="browser-default">
                             <option value="all">Tous les produits</option>
                             <option value="Pompes à chaleur air-eau">Pompes à chaleur air-eau</option>
                             <option value="Chauffe-eau Thermodynamique">Chauffe-eau Thermodynamique</option>
@@ -1079,22 +1061,22 @@
                         <div class="step-18__content optionWithImages" style="display: flex;flex-direction:column;">
                             <h2>Situation matrimoniale</h2>
                             <div class="noImageSelection" style="max-width: 395px;margin: 0 auto;">
-                                <label for="eligibilite_situation_matrimoniale_1" class="select-item btn step-18__link no-image three-item-no-image step-18_one_item">                                       
+                                <label for="eligibilite_situation_matrimoniale_1" class="select-item btn step-18__link no-image three-item-no-image step-18_one_item situationMatri">                                       
                                     <input type="radio" name="eligibilite_situation_matrimoniale" id="eligibilite_situation_matrimoniale_1" value="Célibataire">
                                     <span>Célibataire</span>
                                 </label>
 
-                                <label for="eligibilite_situation_matrimoniale_2" class="select-item btn step-18__link no-image three-item-no-image step-18_one_item">                                       
+                                <label for="eligibilite_situation_matrimoniale_2" class="select-item btn step-18__link no-image three-item-no-image step-18_one_item situationMatri">                                       
                                     <input type="radio" name="eligibilite_situation_matrimoniale"  id="eligibilite_situation_matrimoniale_2" value="Marié(e)">
                                     <span>Marié(e)</span>
                                 </label>
                                 
-                                <label for="eligibilite_situation_matrimoniale_4" class="select-item btn step-18__link no-image three-item-no-image step-18_one_item">                                       
+                                <label for="eligibilite_situation_matrimoniale_4" class="select-item btn step-18__link no-image three-item-no-image step-18_one_item situationMatri">                                       
                                     <input type="radio" name="eligibilite_situation_matrimoniale" id="eligibilite_situation_matrimoniale_4" value="Veuf(ve)">
                                     <span>Veuf(ve)</span>
                                 </label>
 
-                                <label for="eligibilite_situation_matrimoniale_5" class="select-item btn step-18__link no-image three-item-no-image step-18_one_item">                                       
+                                <label for="eligibilite_situation_matrimoniale_5" class="select-item btn step-18__link no-image three-item-no-image step-18_one_item situationMatri">                                       
                                     <input type="radio" name="eligibilite_situation_matrimoniale"  id="eligibilite_situation_matrimoniale_5" value="Divorcé(e)">
                                     <span>Divorcé(e)</span>
                                 </label>
@@ -1117,12 +1099,12 @@
 
                             <h2>Naissance à venir ou enfant non présent sur la déclaration ?</h2>
                             <div class="noImageSelection"  style="width: 400px;justify-content: space-between;display: flex; margin: 0 auto;">
-                                <label for="eligibilite_situation_enfant_1" class="select-item btn step-18__link no-image three-item-no-image step-18_one_item">                                       
+                                <label for="eligibilite_situation_enfant_1" class="select-item btn step-18__link no-image three-item-no-image step-18_one_item situationEnfant">                                       
                                     <input type="radio" name="eligibilite_situation_enfant" id="eligibilite_situation_enfant_1" value="Oui">
                                     <span>Oui</span>
                                 </label>
 
-                                <label for="eligibilite_situation_enfant_2" class="select-item btn step-18__link no-image three-item-no-image step-18_one_item">                                       
+                                <label for="eligibilite_situation_enfant_2" class="select-item btn step-18__link no-image three-item-no-image step-18_one_item situationEnfant">                                       
                                     <input type="radio" name="eligibilite_situation_enfant"  id="eligibilite_situation_enfant_2" value="Non">
                                     <span>Non</span>
                                 </label>
@@ -1141,7 +1123,7 @@
                             <div class="inputs" style="width: 65%;margin: 0 auto;display: flex;justify-content: center;">
                                 <div class="input-item nopr20" >
                                     <!-- <label for="inputNumeroFisc">Numéro fiscal </label> -->
-                                    <input id="inputNumeroFisc" type="text" name="eligibilite_numéro_fiscal" class="" >
+                                    <input id="inputNumeroFisc" type="number" name="eligibilite_numéro_fiscal" class="" >
                                     <span class="step-1__content__notice">Numéro fiscal requis </span>
                                 </div>  
                             </div>
@@ -1168,7 +1150,7 @@
                             <div class="inputs" style="width: 65%;margin: 0 auto;">
                                 <div class="input-item nopr20" style="margin: 0;">
                                     <!-- <label for="inputDernierRevenuFiscalRef">Dernier revenu fiscal de référence </label> -->
-                                    <input id="inputDernierRevenuFiscalRef" type="text" name="eligibilite_dernier_revenu_fiscal_reference" class="">
+                                    <input id="inputDernierRevenuFiscalRef" type="number" name="eligibilite_dernier_revenu_fiscal_reference" class="">
                                     <span class="step-1__content__notice">Dernier revenu fiscal de référencerequis </span>
                                 </div>  
                             </div>
@@ -1295,7 +1277,18 @@
                                     </div>
                                 </div>
                                     <div class="generate_pdf_container" id="ignore_for_pdf">
-                                        <button class="generate_pdf_btn" type="submit" >
+                                        <button class="generate_pdf_btn" id="generatePdfButton" type="submit" >   
+                                            <div class="preloader-wrapper small active hidden-preload">
+                                                <div class="spinner-layer spinner-green-only">
+                                                <div class="circle-clipper left">
+                                                    <div class="circle"></div>
+                                                </div><div class="gap-patch">
+                                                    <div class="circle"></div>
+                                                </div><div class="circle-clipper right">
+                                                    <div class="circle"></div>
+                                                </div>
+                                                </div>
+                                            </div>
                                             GENERER MON PDF
                                         </button>
                                     </div>
@@ -1311,7 +1304,7 @@
                     </fieldset>
                 </form>
                 <div class="nextButtonControl">
-                    <input type="button" class="next btn btn-info main-cta" value="Suivant" />
+                    <input type="button" class="next btn btn-info main-cta" value="Suivant" id="nextStepButton"/>
                 </div>
             </div>
         </div>
@@ -1324,41 +1317,41 @@
                     <fieldset class="step-11">
                         <h2>Source d’énergie</h2>
                         <div class="step-11__content optionWithImages" style="max-width: 760px;">
-                            <label for="source_energie_1_chauffage" class="select-item btn step-11__link image chauff_image_3 columnStyleInput">                        
+                            <label for="source_energie_1_chauffage" class="select-item btn step-11__link image chauff_image_3 columnStyleInput souceEnergieTypeChauffage">                        
                                 <input type="radio" name="source_energie" id="source_energie_1_chauffage" value="Chauffage au Fioul ">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_au_fioul_crop.png" alt="Photo - Chauffage au Fioul ">
                                  Fioul 
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="source_energie_2_chauffage" class="select-item btn step-11__link image chauff_image_3 columnStyleInput">             
+                            <label for="source_energie_2_chauffage" class="select-item btn step-11__link image chauff_image_3 columnStyleInput souceEnergieTypeChauffage">             
                                 <input type="radio" name="source_energie"  id="source_energie_2_chauffage" value="Chauffage Électrique">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_elec_crop.png" alt="Photo - Chauffage Électrique">
                                  Électrique
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
-                            <label for="source_energie_3_chauffage" class="select-item btn step-11__link image chauff_image_3 columnStyleInput">        
+                            <label for="source_energie_3_chauffage" class="select-item btn step-11__link image chauff_image_3 columnStyleInput souceEnergieTypeChauffage">        
                                 <input type="radio" name="source_energie"  id="source_energie_3_chauffage" value=" Chauffage au Gaz ">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chuaffage_au_gaz_crop.png" alt="Photo -  Chauffage au Gaz ">
                                  Gaz 
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
 
-                            <label for="source_energie_4_chauffage" class="select-item btn step-11__link image chauff_image_3 columnStyleInput">             
+                            <label for="source_energie_4_chauffage" class="select-item btn step-11__link image chauff_image_3 columnStyleInput souceEnergieTypeChauffage">             
                                 <input type="radio" name="source_energie"  id="source_energie_4_chauffage" value=" Chauffage au Bois">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_au_bois_crop.png" alt="Photo -  Chauffage au Bois ">
                                  Bois 
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="source_energie_5_chauffage" class="select-item btn step-11__link image chauff_image_3 columnStyleInput">        
+                            <label for="source_energie_5_chauffage" class="select-item btn step-11__link image chauff_image_3 columnStyleInput souceEnergieTypeChauffage">        
                                 <input type="radio" name="source_energie"  id="source_energie_5_chauffage" value=" Pompe à Chaleur">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_pompe_a_chaleur_crop.png" alt="Photo -  Pompe à Chaleur ">
                                 Pompe à Chaleur
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="source_energie_5_chauffage" class="select-item btn step-11__link image chauff_image_3 columnStyleInput">        
+                            <label for="source_energie_5_chauffage" class="select-item btn step-11__link image chauff_image_3 columnStyleInput souceEnergieTypeChauffage">        
                                 <input type="radio" name="source_energie"  id="source_energie_5_chauffage" value="Chauffage au Charbon ">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chaffage_au_charbon_crop.png" alt="Photo -  Chauffage au Charbon">
                                  Charbon 
@@ -1521,13 +1514,13 @@
                             <div class="step-11__content optionWithImages" style="max-width: 415px;">
                                 <label for="inputMarqueAncienneChau">Emplacement de la chaudière</label>
 
-                                <label for="type_de_chaufface_chaudierer_gaz_natur_hors_condensa" class="select-item btn step-11__link image image5 columnStyleInput" style="height: auto!important;">                        
+                                <label for="type_de_chaufface_chaudierer_gaz_natur_hors_condensa" class="select-item btn step-11__link image image5 columnStyleInput emplacementChaudiere" style="height: auto!important;">                        
                                     <input type="radio" name="emplacement_chaudiere" id="emplacement_chaudiere_1" value="Mur">
                                     Mur
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                                 </label>
                                 
-                                <label for="type_de_chaufface_chaudiere_gaz_natur_condensa" class="select-item btn step-11__link image image5 columnStyleInput" style="height: auto!important;">             
+                                <label for="type_de_chaufface_chaudiere_gaz_natur_condensa" class="select-item btn step-11__link image image5 columnStyleInput emplacementChaudiere" style="height: auto!important;">             
                                     <input type="radio" name="emplacement_chaudiere"  id="emplacement_chaudiere_2" value="Sol">
                                     Sol
                                     <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
@@ -1538,7 +1531,7 @@
                         <div class="inputs">
                             <div class="input-item">
                                 <label for="inputAnneeInstall">Année d’installation</label>
-                                <select name="annee_contruction_chauffage" id="">
+                                <select name="annee_contruction_chauffage" class="browser-default">
                                         <option disabled selected>Choisir</option>
                                         <option value="2021">2021</option>
                                         <option value="2020">2020</option>
@@ -1716,7 +1709,7 @@
                         <div class="inputs">
                             <div class="input-item">
                                 <label for="inputAnneeInstall">Année d’installation</label>
-                                <select name="annee_contruction_eau_chaude_sani" id="">
+                                <select name="annee_contruction_eau_chaude_sani" class="browser-default">
                                     <option disabled selected>Choisir</option>
                                     <option value="2021">2021</option>
                                     <option value="2020">2020</option>
@@ -2100,7 +2093,6 @@
     <script src="./assets/js/materialize.min2.js"></script>
     <script src="./assets/js/nouislider.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="./assets/js/generatePDF.js"></script>
     <script src="./assets/js/app.js" ></script>
     <!-- <script type="text/javascript" src="node_modules/materialize-css-helper/dist/main.js"></script> --> -->
     <!-- <script src="./node_modules/jslib-html5-camera-photo/build/index.js" ></script> -->

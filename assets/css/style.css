@@ -1364,6 +1364,11 @@ input[type=button]:hover, .page .page__content button:hover{
 .step-2{
     max-width: 745px;
 }
+.step-3 .step-3__content .select-wrapper input.select-dropdown:disabled {
+    text-align: center;
+    background: #d7d7d7;
+    padding-right: 0px;
+}
 .step-4, .step-5, .step-6, .step-7, .step-8, .step-9{
     max-width: 675px;
 }
@@ -2410,6 +2415,14 @@ main .modalContainer .inputs .input-item .select-wrapper {
 .slick-slider {
     display: flex!important;
     align-items: center;
+}
+.preloader-wrapper.small {
+    width: 25px;
+    height: 25px;
+    margin-right: 16px;
+}
+.hidden-preload{
+    display: none;
 }
 
 /*RESPONSIVENESS*/
