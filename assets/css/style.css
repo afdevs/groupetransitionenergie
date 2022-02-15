@@ -2426,6 +2426,13 @@ main .modalContainer .inputs .input-item .select-wrapper {
     display: none;
 }
 
+.allErrorMessage{
+    font-size: 1em;
+    color: #cc8f00 !important;
+    margin-bottom: 16px;
+    display: none;
+}
+
 /*RESPONSIVENESS*/
 @media only screen and (max-width:1149px){
     main .page .page__content .results .results__item {

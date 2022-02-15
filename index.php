@@ -355,12 +355,12 @@
                                 <div class="input-item">
                                     <label for="inputNom">Nom</label>
                                     <input id="inputNom" type="text" name="nom" class=""  placeholder="Votre nom">
-                                    <span class="step-1__content__notice">Nom requis </span>
+                                    <!-- <span class="step-1__content__notice">Nom requis </span> -->
                                 </div>
                                 <div class="input-item lastname">
                                     <label for="inputPrenom">Prénom</label>
                                     <input id="inputPrenom" type="text" name="prenom" class="" placeholder="Votre prénom">
-                                    <span class="step-1__content__notice">Prénom requis </span>
+                                    <!-- <span class="step-1__content__notice">Prénom requis </span> -->
                                 </div>
                             </div>
 
@@ -368,12 +368,12 @@
                                 <div class="input-item">
                                     <label for="inputTelephone">Téléphone</label>
                                     <input id="inputTelephone" type="text" name="telephone" class=""  placeholder="Ex: 06 31 77 82 83">
-                                    <span class="step-1__content__notice">Téléphone requis </span>
+                                    <!-- <span class="step-1__content__notice">Téléphone requis </span> -->
                                 </div>  
                                 <div class="input-item">
                                     <label for="inputMail">Email</label>
                                     <input id="inputMail" type="email" name="mail" class="" placeholder="Ex: mail@gmail.com">
-                                    <span class="step-1__content__notice">Email requis </span>
+                                    <!-- <span class="step-1__content__notice">Email requis </span> -->
                                 </div>
                             </div>
                             
@@ -381,7 +381,7 @@
                                 <div class="input-item nopr20">
                                     <label for="inputAddress">Adresse</label>
                                     <input id="inputAddress" type="text" name="address" class="" style="height:100px;" placeholder="Votre adresse">
-                                    <span class="step-1__content__notice">Adresse requis </span>
+                                    <!-- <span class="step-1__content__notice">Adresse requis </span> -->
                                 </div>  
                             </div>
                             <!-- <div class="inputs">
@@ -456,7 +456,7 @@
                                                 +
                                             </button>
                                         </div>
-                                        <span class="step-1__content__notice">Nombre d’habitants requis </span>
+                                        <!-- <span class="step-1__content__notice">Nombre d’habitants requis </span> -->
 
                                     </div>
                                 </div>  
@@ -528,7 +528,7 @@
                                 <div class="input-item">
                                     <label for="inputSurfaceSol">Surface au sol (m 2)</label>
                                     <input id="inputSurfaceSol" type="number" name="surface_au_sol" class="" min="0" value="0">
-                                    <span class="step-1__content__notice">Surface au sol (m 2) requis </span>
+                                    <!-- <span class="step-1__content__notice">Surface au sol (m 2) requis </span> -->
                                 </div>
                             </div>
                             <div class="inputs">
@@ -561,7 +561,7 @@
                                 <div class="input-item nopr20">
                                     <label for="inputPuissanceCompteur">Puissance du compteur (Kwa)</label>
                                     <input id="inputPuissanceCompteur" type="number" name="puissance_compteur" class="" min="0">
-                                    <span class="step-1__content__notice">Puissance du compteur (Kwa) requis </span>
+                                    <!-- <span class="step-1__content__notice">Puissance du compteur (Kwa) requis </span> -->
                                 </div>  
                             </div>
                     </fieldset>
@@ -671,6 +671,7 @@
                         <h2>Type de sous-sol</h2>
                         <div class="step-6__content optionWithImages">
                             <label for="inputCaveSousSol" class="select-item btn step-6__link image columnStyleInput">
+                                <input type="radio" name="type_de_sous_sol" id="inputCaveSousSol" value="Cave/sous-sol">
                                 <span class="img-wrapper">
                                     <img class="step-1__img" src="./assets/images/picto_gte/sous_sol.png" alt="Photo - cave/sous-sol">
                                 </span>
@@ -1115,7 +1116,7 @@
                                 <div class="input-item nopr20">
                                     <!-- <label for="inputEligibiliteAvisImposition">Référence de l'avis d'imposition </label> -->
                                     <input id="inputEligibiliteAvisImposition" type="text" name="eligibilite_avis_imposition">
-                                    <span class="step-1__content__notice">Référence de l'avis d'imposition requis </span>
+                                    <!-- <span class="step-1__content__notice">Référence de l'avis d'imposition requis </span> -->
                                 </div>  
                             </div>
                             
@@ -1124,7 +1125,7 @@
                                 <div class="input-item nopr20" >
                                     <!-- <label for="inputNumeroFisc">Numéro fiscal </label> -->
                                     <input id="inputNumeroFisc" type="number" name="eligibilite_numéro_fiscal" class="" >
-                                    <span class="step-1__content__notice">Numéro fiscal requis </span>
+                                    <!-- <span class="step-1__content__notice">Numéro fiscal requis </span> -->
                                 </div>  
                             </div>
                             
@@ -1151,7 +1152,7 @@
                                 <div class="input-item nopr20" style="margin: 0;">
                                     <!-- <label for="inputDernierRevenuFiscalRef">Dernier revenu fiscal de référence </label> -->
                                     <input id="inputDernierRevenuFiscalRef" type="number" name="eligibilite_dernier_revenu_fiscal_reference" class="">
-                                    <span class="step-1__content__notice">Dernier revenu fiscal de référencerequis </span>
+                                    <!-- <span class="step-1__content__notice">Dernier revenu fiscal de référencerequis </span> -->
                                 </div>  
                             </div>
                             
@@ -1159,7 +1160,7 @@
                             <div class="inputs" style="width: 65%;margin: 0 auto;">
                                 <div class="input-item nopr20" style="margin: 0 auto;">
                                     <input id="inputBonusEcologique" type="number" name="aide_bonus_ecologique" value="0" min="0">
-                                    <span class="step-1__content__notice">Aide bonus écologique  </span>
+                                    <!-- <span class="step-1__content__notice">Aide bonus écologique  </span> -->
                                 </div>
                             </div>
 
@@ -1246,7 +1247,7 @@
                                     <div class="col s12 m6">
                                         <h6>CHAUDIÈRE ACTUELLE</h6>
                                         <div id="chaudiere_actuel_img" class="col_image">
-                                            <img src="./assets/images/photo_sample.jpg" alt="CHAUDIÈRE ACTUELLE"> 
+                                            <img src="./assets/images/photo_sample_bw.jpeg" alt="CHAUDIÈRE ACTUELLE"> 
                                         </div>
                                         <button class="callToAction" id="chaudiere_actuel_select" type="button"><span class="material-icons">add_a_photo</span></button>
                                         <!-- <button class="callToAction disabled_photo_btn" id="chaudiere_actuel" disabled="true" type="button"><span class="material-icons">add_a_photo</span></button> -->
@@ -1254,7 +1255,7 @@
                                     <div class="col s12 m6">
                                         <h6>BALLON ACTUEL</h6>
                                         <div id="ballon_actuel_img" class="col_image">
-                                            <img src="./assets/images/photo_sample.jpg" alt="BALLON ACTUEL">
+                                            <img src="./assets/images/photo_sample_bw.jpeg" alt="BALLON ACTUEL">
                                         </div>
                                         <button class="callToAction"  disabled="true" id="ballon_actuel_select" type="button"><span class="material-icons">add_a_photo</span></button>
                                         <!-- <button class="callToAction disabled_photo_btn" disabled="true" id="ballon_actuel" type="button"><span class="material-icons">add_a_photo</span></button> -->
@@ -1262,7 +1263,7 @@
                                     <div class="col s12 m6 ">
                                         <h6>EMPLACEMENT POMPE À CHALEUR</h6>
                                         <div id="emplacement_pompe_a_chaleur_img" class="col_image">
-                                            <img src="./assets/images/photo_sample.jpg" alt="EMPLACEMENT POMPE À CHALEUR"> 
+                                            <img src="./assets/images/photo_sample_bw.jpeg" alt="EMPLACEMENT POMPE À CHALEUR"> 
                                         </div>
                                         <button class="callToAction" id="emplacement_pompe_a_chaleur_select" type="button"><span class="material-icons">add_a_photo</span></button>
                                         <!-- <button class="callToAction disabled_photo_btn" disabled="true" id="emplacement_pompe_a_chaleur" type="button"><span class="material-icons">add_a_photo</span></button> -->
@@ -1303,7 +1304,10 @@
                         
                     </fieldset>
                 </form>
+                <div>
+                </div>
                 <div class="nextButtonControl">
+                    <div class="allErrorMessage invalide show">Renseginer tous les champs s'il vous plait !</div>
                     <input type="button" class="next btn btn-info main-cta" value="Suivant" id="nextStepButton"/>
                 </div>
             </div>
@@ -1506,7 +1510,7 @@
                             <div class="input-item">
                                 <label for="inputMarqueAncienneChau">Marque de l'ancienne chaudière</label>
                                 <input id="inputMarqueAncienneChau" type="text" name="marque_ancienne_chaudiere">
-                                <span class="step-1__content__notice">Marque de l'ancienne chaudière requis </span>
+                                <!-- <span class="step-1__content__notice">Marque de l'ancienne chaudière requis </span> -->
                             </div>
                         </div>
                         
@@ -1609,7 +1613,7 @@
                             <div class="input-item">
                                 <label for="inputEstimFactChauff">Estimation de la facture de chauffage (€/an)</label>
                                 <input id="inputEstimFactChauff" type="number" name="estimation_de_facture_de_chauffage" value="0" min="0">
-                                <span class="step-1__content__notice">Estimation de la facture de chauffage requis </span>
+                                <!-- <span class="step-1__content__notice">Estimation de la facture de chauffage requis </span> -->
                             </div>
                         </div>
                         
