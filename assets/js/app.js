@@ -2542,8 +2542,8 @@ jQuery(function($){
     //Validation form 
     // const prenom=$('#inputPrenom');
     // const nom=$('#inputNom');
-    // const email=$('#inputMail');                                                                                                                                                 
-    // const telephone=$('#inputTelephone');
+    const email=$('#inputMail');                                                                                                                                                 
+    const telephone=$('#inputTelephone');
     // function inputValidation(){
     //   formIsCompleted()
     // }
@@ -2647,6 +2647,21 @@ jQuery(function($){
     //   }
     // })
     
+    function isValidPhoneNumber(p) {
+      var phoneRe = /^[2-9]\d{2}[2-9]\d{2}\d{4}$/;
+      var digits = p.replace(/\D/g, "");
+      return phoneRe.test(digits);
+    }
+    
+    const validateEmail = (email) => {
+      return String(email)
+        .toLowerCase()
+        .match(
+          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
+    };
+    
+    
     function pageFormValidation(step=1){
       $('#nextStepButton').css('filter', 'grayscale(1)');
       $('.allErrorMessage').addClass('show')
@@ -2654,7 +2669,7 @@ jQuery(function($){
       isValid=false;
       switch (step) {
         case 1:
-          if($('#inputNom').val()!='' && $('#inputPrenom').val() !='' && $('#inputTelephone').val()!='' && $('#inputAddress').val()!=''){
+          if($('#inputNom').val()!='' && $('#inputPrenom').val() !='' && isValidPhoneNumber($('#inputTelephone').val()) && validateEmail($('#inputMail').val()) && $('#inputAddress').val()!=''){
             isValid=true;
           }
           break;
@@ -2751,8 +2766,58 @@ jQuery(function($){
 
     //Validation on all changes input
     //STEP 1
-    $('#inputNom, #inputPrenom, #inputTelephone, #inputAddress').on('keyup', ()=>pageFormValidation());
-    $('#inputNom, #inputPrenom, #inputTelephone, #inputAddress').on('change', ()=>pageFormValidation());
+    $('#inputNom, #inputPrenom, #inputAddress').on('keyup', ()=>pageFormValidation());
+    $('#inputNom, #inputPrenom, #inputAddress').on('change', ()=>pageFormValidation());
+    $('#inputTelephone').on('keyup', ()=>{
+      if($('#inputTelephone').val().length >10) {
+        $('#inputTelephone').val($('#inputTelephone').val().substr(0, 10))
+      } 
+      if(!isValidPhoneNumber(telephone.val())){
+        telephone.addClass('invalide')
+        $(telephone.next()).addClass('show');
+      }else{
+        telephone.removeClass('invalide')
+        $(telephone.next()).removeClass('show');
+      }
+      pageFormValidation();
+    })
+    $(' #inputTelephone').on ('change', ()=>{
+      if($('#inputTelephone').val().length >10) {
+        $('#inputTelephone').val($('#inputTelephone').val().substr(0, 10))
+      } 
+      if(!isValidPhoneNumber(telephone.val())){
+        telephone.addClass('invalide')
+        $(telephone.next()).addClass('show');
+      }else{
+        telephone.removeClass('invalide')
+        $(telephone.next()).removeClass('show');
+      }
+      pageFormValidation();
+    })
+    
+    $('#inputMail').on('keyup', ()=>{      
+      if(!validateEmail(email.val())){
+        email.addClass('invalide')
+        $(email.next()).addClass('show');
+      }else{
+        email.removeClass('invalide')
+        $(email.next()).removeClass('show');
+      }
+      pageFormValidation();
+    })    
+    $('#inputMail').on('change', ()=>{      
+      if(!validateEmail(email.val())){
+        email.addClass('invalide')
+        $(email.next()).addClass('show');
+      }else{
+        email.removeClass('invalide')
+        $(email.next()).removeClass('show');
+      }
+      pageFormValidation();
+    })
+
+    
+
     //STEP 2
     $(".step-2__link").on('click', ()=>pageFormValidation());
     //STEP 3    

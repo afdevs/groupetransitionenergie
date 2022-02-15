@@ -367,7 +367,7 @@
                             <div class="inputs">
                                 <div class="input-item">
                                     <label for="inputTelephone">Téléphone</label>
-                                    <input id="inputTelephone" type="text" name="telephone" class=""  placeholder="Ex: 06 31 77 82 83">
+                                    <input id="inputTelephone" type="text" name="telephone" class="" maxlength="10" placeholder="Ex: 06 31 77 82 83">
                                     <!-- <span class="step-1__content__notice">Téléphone requis </span> -->
                                 </div>  
                                 <div class="input-item">
