@@ -75,3 +75,48 @@ function sendMail($to, $subject, $message )
     
     return mail($to,$subject, $message, $headers);
 }
+
+/*
+
+//Sending mail
+$to = "andriniainafredo@gmail.com";
+$subject = "Mydiag - Étude personnalisée de l’habitat ";
+
+$message .= "<h1>Mydiag - Étude personnalisée de votre habitat</h1>";
+$message .= "<p><label>Votre nom:</label> <br>";
+$message .= "<b>".$_POST['nom']." ".$_POST['prenom']."</b></p>";
+
+$message .= "<p><label>Adresse:</label> <br>";
+$message .= "<b>".$_POST['address']."</b></p>";
+
+$message .= "<p><label>Date d'étude:</label> <br>";
+$message .= "<b>".$today."</b></p>";
+
+$message .= "<p><label>Date d'étude:</label> <br>";
+$message .= "<b>".$ref."</b></p>";
+
+$message .= "<p><label>Type d'occupation:</label> <br>";
+$message .= "<b>".$_POST['type_d_occupation']."</b></p>";
+
+$message .= "<p><label>Nombre d'habitant:</label> <br>";
+$message .= "<b>".$_POST['nombre_d_habitants']."</b></p>";
+
+$message .= "<p><label>Année de construction:</label> <br>";
+$message .= "<b>".$_POST['annee_contruction']."</b></p>";
+
+$message .= "<p><label>Surface au sol:</label> <br>";
+$message .= "<b>".$_POST['surface_au_sol']." m2</b></p>";
+
+$message .= "<p><label>Forme de la maison:</label> <br>";
+$message .= "<b>".$_POST['forme_maison']."</b></p>";
+
+
+
+$header = "From:andriniainafredo@gmail.com \r\n";
+// $header .= "Cc:afgh@somedomain.com \r\n";
+$header .= "MIME-Version: 1.0\r\n";
+$header .= "Content-type: text/html\r\n";
+
+$retval = mail($to,$subject,$message,$header);
+
+/*

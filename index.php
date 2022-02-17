@@ -367,7 +367,7 @@
                             <div class="inputs">
                                 <div class="input-item">
                                     <label for="inputTelephone">Téléphone</label>
-                                    <input id="inputTelephone" type="text" name="telephone" class="" maxlength="10" placeholder="Ex: 06 31 77 82 83">
+                                    <input id="inputTelephone" type="number" name="telephone" class=""  placeholder="Ex: 06 31 77 82 83">
                                     <!-- <span class="step-1__content__notice">Téléphone requis </span> -->
                                 </div>  
                                 <div class="input-item">
@@ -982,17 +982,21 @@
                             <label for="type_de_ventilation_1" id="pompeAChaleurAirEau" class="select-item btn step-16__link image conso_result1 solution_proposee" >       
                                 <span class="solution_proposee_big_title">Pompe à chaleur air-eau </span> 
                                 <span class="solution_proposee_small_title">Chauffage</span> 
-                                <span id="pompe_a_chaleur_air_eau_value" class="solution_proposee_value">0 KW</span> 
+                                <span class="solution_proposee_description">Puissance préconisée</span> 
+                                <span id="pompe_a_chaleur_air_eau_value" style="top: 120px;" class="solution_proposee_value">0 KW</span> 
                                 <img src="./assets/images/picto_gte/chauffee-small-icon.svg" alt="Pompe à chaleur air-eau" class="conso_result_image">
                             </label>
                             
                             <label for="type_de_ventilation_2" class="select-item btn step-16__link image conso_result2 solution_proposee" >  
                                 <span class="solution_proposee_big_title"> Pompe à chaleur air/air </span> 
                                 <span class="solution_proposee_small_title">Chauffage</span> 
+                                <span class="solution_proposee_description">Puissance à définir, selon le nombre de pièces</span> 
                                 <span id="votre_conso_sur_x_annee" class="solution_proposee_value">
                                     <a data-target="modal5" class="callToAction" id="pompeChaleurButton"  rel="noopener noreferrer">Choisir</a>
                                     <!-- <button data-target="modal5" class="callToAction" id="pompeChaleurButton">Choisir</button> -->
                                 </span> 
+
+
                                 <img src="./assets/images/picto_gte/chauffee-small-icon.svg" alt="Pompe à chaleur air-eau" class="conso_result_image">
                             </label>
                             <!-- width: 100% !important;display: 100%;text-align: left;left: 30px; -->
@@ -1000,6 +1004,7 @@
                             <label class="type_de_ventilation_3" class="image conso_result3 solution_proposee" > 
                                 <span class="solution_proposee_big_title">Chauffe-eau thermodynamique</span>     
                                 <span class="solution_proposee_small_title">Eclairage</span> 
+                                <span class="solution_proposee_description">Choisir la capacité</span>                                 
                                 <span id="moyenne_conso_sur_x_annee" class="solution_proposee_checkbox_container">
                                     <input type="checkbox" class="filled-in checkbox-white chk-moyenne-conso" id="200l" value="200L" name="moyenne_conso_sur_x_annee_check1" />
                                     <label for="200l" style="color: white;margin-right: 16px;" class="checkbox-label-white">

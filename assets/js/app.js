@@ -526,6 +526,7 @@ jQuery(function($){
       var current = 1, current_step,next_step,steps;
       steps = $("fieldset").length;
       let stepVisited=[1];
+      let menuVisited=[];
       let previousStep=null;
       
       $('a').click(function(e){
@@ -875,11 +876,10 @@ jQuery(function($){
       });
 
       $('.navigationButton').click(function(){
-        for(let i=0; i<21; i++){
-          $('.step-'+i).removeAttr('style');
-        }
-
         if($(this).attr('aria-selected')==='part-1'){
+          for(let i=0; i<21; i++){
+            $('.step-'+i).removeAttr('style');
+          }  
           current=0;
             $('.page .page__content #regiration_form').css("transform"," translateX(50px)" );
             $('.page .page__content #regiration_form').css("transition", "none" );
@@ -898,8 +898,6 @@ jQuery(function($){
             }else{
                 $('.page .previous__button').css('visibility', 'hidden');
             }
-              
-              
             
             if(current>11 && current< 16){
               $('.main-cta').css('visibility', 'hidden');
@@ -917,8 +915,6 @@ jQuery(function($){
             $('.page .page__content #regiration_form').css("transition", ".4s ease-out" );
             $('.page .page__content #regiration_form').css("transform"," translateX(0px)" );
             
-            
-            
             next_step_form.fadeTo('slow', 1, function(){
               setProgressBar(next_step);
               next_step_form.show();
@@ -928,6 +924,10 @@ jQuery(function($){
               }
             });
         }else if ($(this).attr('aria-selected')==='part-2'){
+          if(!menuVisited.includes('part-1')) return false
+          for(let i=0; i<21; i++){
+            $('.step-'+i).removeAttr('style');
+          }  
             current=1;
             $('.page .page__content #regiration_form').css("transform"," translateX(50px)" );
             $('.page .page__content #regiration_form').css("transition", "none" );
@@ -963,8 +963,6 @@ jQuery(function($){
             $('.page .page__content #regiration_form').css("transition", ".4s ease-out" );
             $('.page .page__content #regiration_form').css("transform"," translateX(0px)" );
             
-            
-            
             next_step_form.fadeTo('slow', 1, function(){
               setProgressBar(next_step);
               next_step_form.show();
@@ -974,6 +972,10 @@ jQuery(function($){
               }
             });
         }else if ($(this).attr('aria-selected')==='part-3'){
+            if(!menuVisited.includes('part-2')) return false
+            for(let i=0; i<21; i++){
+              $('.step-'+i).removeAttr('style');
+            }
             $('.step-'+1).css('display', 'none');
             current=9;
             
@@ -1021,6 +1023,10 @@ jQuery(function($){
               }
             });
         } if($(this).attr('aria-selected')==='part-4'){
+          if(!menuVisited.includes('part-3')) return false
+          for(let i=0; i<21; i++){
+            $('.step-'+i).removeAttr('style');
+          }
           $('.step-'+1).css('display', 'none');
           current=10;
           $('.page .page__content #regiration_form').css("transform"," translateX(50px)" );
@@ -1069,6 +1075,10 @@ jQuery(function($){
           });
 
         } if($(this).attr('aria-selected')==='part-5'){
+          if(!menuVisited.includes('part-4')) return false
+          for(let i=0; i<21; i++){
+            $('.step-'+i).removeAttr('style');
+          }
           $('.step-'+1).css('display', 'none');
           current=15;
           $('.page .page__content #regiration_form').css("transform"," translateX(50px)" );
@@ -1119,6 +1129,11 @@ jQuery(function($){
 
         }
         if($(this).attr('aria-selected')==='part-6'){
+          if(!menuVisited.includes('part-5')) return false
+          for(let i=0; i<21; i++){
+            $('.step-'+i).removeAttr('style');
+          }
+
           $('.step-'+1).css('display', 'none');
           current=16;
           $('.page .page__content #regiration_form').css("transform"," translateX(50px)" );
@@ -1170,6 +1185,11 @@ jQuery(function($){
         }
 
         if($(this).attr('aria-selected')==='part-7'){
+          if(!menuVisited.includes('part-6')) return false
+          for(let i=0; i<21; i++){
+            $('.step-'+i).removeAttr('style');
+          }
+
           $('.step-'+1).css('display', 'none');
           current=17;
           $('.page .page__content #regiration_form').css("transform"," translateX(50px)" );
@@ -1219,6 +1239,11 @@ jQuery(function($){
 
         }
         if($(this).attr('aria-selected')==='part-8'){
+          if(!menuVisited.includes('part-7')) return false
+          for(let i=0; i<21; i++){
+            $('.step-'+i).removeAttr('style');
+          }
+          
           $('.step-'+1).css('display', 'none');
           current=19;
           $('.page .page__content #regiration_form').css("transform"," translateX(50px)" );
@@ -1267,7 +1292,7 @@ jQuery(function($){
           });
 
         }
-
+        
         calculatePompeAChaleurAirEau();
         pageFormValidation();
         scrollMenuMobileNavigation()
@@ -2647,11 +2672,11 @@ jQuery(function($){
     //   }
     // })
     
-    function isValidPhoneNumber(p) {
-      var phoneRe = /^[2-9]\d{2}[2-9]\d{2}\d{4}$/;
-      var digits = p.replace(/\D/g, "");
-      return phoneRe.test(digits);
-    }
+    // function isValidPhoneNumber(p) {
+    //   var phoneRe = /^[2-9]\d{2}[2-9]\d{2}\d{4}$/;
+    //   var digits = p.replace(/\D/g, "");
+    //   return phoneRe.test(digits);
+    // }
     
     const validateEmail = (email) => {
       return String(email)
@@ -2669,63 +2694,108 @@ jQuery(function($){
       isValid=false;
       switch (step) {
         case 1:
-          if($('#inputNom').val()!='' && $('#inputPrenom').val() !='' && isValidPhoneNumber($('#inputTelephone').val()) && validateEmail($('#inputMail').val()) && $('#inputAddress').val()!=''){
+          if($('#inputNom').val()!='' && $('#inputPrenom').val() !='' && $('#inputTelephone').val() && validateEmail($('#inputMail').val()) && $('#inputAddress').val()!=''){
             isValid=true;
+            if(!menuVisited.includes('part-1')){
+              menuVisited.push('part-1')
+            }
           }
           break;
         case 2:
           if($(".step-2__link.answer-selected :input[name='type_d_occupation']").val()){
             isValid=true;
+            // if(!menuVisited.includes('part-2')){
+            //   menuVisited.push('part-2')
+            // }
           }        
           break;
         case 3:
           if($('#inputSurfaceSol').val()!='' && $('#inputPuissanceCompteur').val() !='' && $(".step-3__link.answer-selected :input[name='type_installation_electrique']").val() && formPageValues.gisolation!= 0){
             isValid=true;
+            // if(!menuVisited.includes('part-2')){
+            //   menuVisited.push('part-2')
+            // }
           }
           break;
         case 4:
           if($(".step-4__link.answer-selected :input[name='forme_maison']").val()){
             isValid=true;
+            // if(!menuVisited.includes('part-2')){
+            //   menuVisited.push('part-2')
+            // }
           }
           break;
         case 5:
           if($(".step-5__link.answer-selected :input[name='nombre_de_niveau']").val()){
             isValid=true;
+            // if(!menuVisited.includes('part-2')){
+            //   menuVisited.push('part-2')
+            // }
           }
           break;
         case 6:
           if($(".step-6__link.answer-selected :input[name='type_de_sous_sol']").val() && $(".step-6__link.answer-selected :input[name='type_de_mur']").val()){
             isValid=true;
+            // if(!menuVisited.includes('part-2')){
+            //   menuVisited.push('part-2')
+            // }
           }
           break
         case 7:
           if($(".step-7__link.answer-selected :input[name='type_de_comble']").val() && $(".step-7__link.answer-selected :input[name='comble_isole']").val()){
             isValid=true;
+            // if(!menuVisited.includes('part-2')){
+            //   menuVisited.push('part-2')
+            // }
           }
           break
         case 8:
           if($(".step-8__link.answer-selected input[name='type_de_vitrage']").val()){
             isValid=true;
+            // if(!menuVisited.includes('part-2')){
+            //   menuVisited.push('part-2')
+            // }
           }
           break
         case 9:
           if($(".step-9__link.answer-selected :input[name='type_de_ventilation']").val()){
             isValid=true;
+            if(!menuVisited.includes('part-2')){
+              menuVisited.push('part-2')
+            }
           }
           break
         case 10:
-          if($('#inputMarqueAncienneChau').val()!='' && $(".step-11__link.answer-selected :input[name='source_energie']").val() && $(".step-11__link.answer-selected :input[name='emplacement_chaudiere']").val() && $("select[name='annee_contruction_chauffage']").val() && $('#inputEstimFactChauff').val()){
+          if($("#inputEstimFactChauff").val() && $("#inputMarqueAncienneChau").val() && $(".step-11__link.souceEnergieTypeChauffage") && $(".step-11__link.emplacementChaudiere") && $("select[name='annee_contruction_chauffage']")){
             isValid=true;
+            if(!menuVisited.includes('part-3')){
+              menuVisited.push('part-3')
+            }
           }
           break
         case 11:
           if($("select[name='type_de_chaufface_nombre_d_annee_a_indexer']").val()){
             isValid=true;
+            if(!menuVisited.includes('part-4')){
+              menuVisited.push('part-4')
+            }
           }
           break
+        case 12:
+          if(($('#270l').is(':checked') || $('#200l').is(':checked') || $('#230l').is(':checked') || $('#Autres').is(':checked')) && $('#elec_ampoule1').is(':checked') || $('#elec_ampoule2').is(':checked')){
+            isValid=true;
+            if(!menuVisited.includes('part-3')){
+              menuVisited.push('part-3')
+            }
+            break
+          
+          }
         case 16:
           if(($('#270l').is(':checked') || $('#200l').is(':checked') || $('#230l').is(':checked') || $('#Autres').is(':checked')) && $('#elec_ampoule1').is(':checked') || $('#elec_ampoule2').is(':checked')){
             isValid=true;
+            if(!menuVisited.includes('part-5')){
+              menuVisited.push('part-5')
+            }
           }
           break
         case 17:
@@ -2734,18 +2804,30 @@ jQuery(function($){
           })
           if(productValuesCleaned.length>0){
             isValid=true;
+            if(!menuVisited.includes('part-6')){
+              menuVisited.push('part-6')
+            }
           }
           break
         case 18:
           if($(".step-18__link.answer-selected :input[name='eligibilite_situation_matrimoniale']").val() && $(".step-18__link.answer-selected :input[name='eligibilite_situation_enfant']").val() && $('#inputEligibiliteAvisImposition').val()!='' && $('#inputNumeroFisc').val()!='' && $('#inputNumeroFisc').val()!='' && $('#inputDernierRevenuFiscalRef').val()!='' ){//&& $('#inputBonusEcologique').val()!=''
             isValid=true;
+            // if(!menuVisited.includes('part-7')){
+            //   menuVisited.push('part-7')
+            // }
           }
           break
         case 19:
-          isValid=true;          
+          isValid=true;
+          if(!menuVisited.includes('part-7')){
+            menuVisited.push('part-7')
+          }          
           break
         case 20:
-          isValid=true;          
+          isValid=true;        
+          if(!menuVisited.includes('part-8')){
+            menuVisited.push('part-8')
+          }            
           break
           
         default:
@@ -2756,9 +2838,6 @@ jQuery(function($){
         $('.allErrorMessage').removeClass('show')
 
       }
-      console.log('current', current)
-      console.log('isValid', isValid)
-      console.log('validation')
       return isValid;
     }
 
@@ -2771,8 +2850,9 @@ jQuery(function($){
     $('#inputTelephone').on('keyup', ()=>{
       if($('#inputTelephone').val().length >10) {
         $('#inputTelephone').val($('#inputTelephone').val().substr(0, 10))
-      } 
-      if(!isValidPhoneNumber(telephone.val())){
+      }
+
+      if($('#inputTelephone').val().length <10){
         telephone.addClass('invalide')
         $(telephone.next()).addClass('show');
       }else{
@@ -2781,11 +2861,13 @@ jQuery(function($){
       }
       pageFormValidation();
     })
-    $(' #inputTelephone').on ('change', ()=>{
+
+    $('#inputTelephone').on ('change', ()=>{
       if($('#inputTelephone').val().length >10) {
         $('#inputTelephone').val($('#inputTelephone').val().substr(0, 10))
-      } 
-      if(!isValidPhoneNumber(telephone.val())){
+      }
+
+      if($('#inputTelephone').val().length <10){
         telephone.addClass('invalide')
         $(telephone.next()).addClass('show');
       }else{
@@ -2840,13 +2922,11 @@ jQuery(function($){
     //STEP 9
     $(".step-9__link").on('click', ()=>pageFormValidation());
     //STEP 10
-    $(".step-9__link").on('click', ()=>pageFormValidation());
-    $("#inputMarqueAncienneChau").on('keyup', ()=>pageFormValidation());
     $("#inputMarqueAncienneChau").on('change', ()=>pageFormValidation());
     $(".step-11__link.souceEnergieTypeChauffage").on('click', ()=>pageFormValidation());
     $(".step-11__link.emplacementChaudiere").on('click', ()=>pageFormValidation());
     $("#inputEstimFactChauff").on('keyup', ()=>pageFormValidation());
-    $("#inputEstimFactChauff").on('change', ()=>pageFormValidation());
+    // $("#inputEstimFactChauff").on('change', ()=>pageFormValidation());
     $("select[name='annee_contruction_chauffage']").on('change', ()=>pageFormValidation());
     //STEP 11
     $("select[name='type_de_chaufface_nombre_d_annee_a_indexer']").on('change', ()=>pageFormValidation());
@@ -2922,6 +3002,7 @@ jQuery(function($){
       serializedData += '&typeAmpoule=' + $(".step-14__link.answer-selected :input[name='type_d_ampoule_eclairage']").val();
       serializedData += '&electUtil=' + $(".step-14__link.answer-selected :input[name='utilisation_moyenne_eclairage']").val();
       serializedData += '&nbAnnee=' + $("select[name='type_de_chaufface_nombre_d_annee_a_indexer']").val();
+      serializedData += '&gisolation=' + formPageValues.gisolation;
       serializedData += '&consoActGlob=' + formPageValues.votre_conso_actuel + ' €';
       serializedData += '&consoXAn=' + formPageValues.votre_conso_sur_x_annee + ' €';
       serializedData += '&moyenneConsoXan=' + formPageValues.moyenne_conso_sur_x_annee + ' €'
@@ -3145,12 +3226,11 @@ jQuery(function($){
               }
             });
             const mergedPdfFile = await mergedPdf.save();
-
-            console.log(`mergedPdfFile`, mergedPdfFile)
                 
             var file = new Blob([mergedPdfFile], {type: 'application/pdf'});
             var fileURL = URL.createObjectURL(file);
-            window.open(fileURL);
+            window.open(fileURL, '_blank');
+          // var win = window.open('./completed/recapitulatif.pdf', '_bla
 
             // downlo\mergedPdfFile, "Mydiag__Étude_personnalisée_de_l_habitat ", "application/pdf");
             $('#generatePdfButton > div').addClass('hidden-preload')

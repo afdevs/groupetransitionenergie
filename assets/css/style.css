@@ -582,7 +582,7 @@ fieldset{
     margin-bottom: 20px;
 }
 
-.page .page__content label.image, .page .page__content label.image4, label[class=type_de_ventilation_3]{
+.page .page__content label.image, .page .page__content label.image4, label[class=type_de_ventilation_3],  label[class=type_de_ventilation_4]{
     background-color: #fff;
     border: 2px solid transparent;
     border-radius: 8px;
@@ -599,8 +599,8 @@ fieldset{
     position: relative;
     margin: 0;
 }
-label[class=type_de_ventilation_3]{
-    height: 200px; 
+label[class=type_de_ventilation_3],  label[class=type_de_ventilation_4]{
+    height: 220px; 
     color: #fff;
 }
 .page .page__content label.image4{
@@ -955,7 +955,7 @@ main .modalContainer .modal .modal-content .pieces__value{
 }
 
 
-.page .page__content .step-16 .optionWithImages label.conso_result1, .page .page__content .step-16 .optionWithImages label.conso_result2, .page .page__content .step-16 .optionWithImages label.conso_result3, .page .page__content .step-16 .optionWithImages  label.conso_result4, label[class=type_de_ventilation_3] {
+.page .page__content .step-16 .optionWithImages label.conso_result1, .page .page__content .step-16 .optionWithImages label.conso_result2, .page .page__content .step-16 .optionWithImages label.conso_result3, .page .page__content .step-16 .optionWithImages  label.conso_result4, label[class=type_de_ventilation_3],  label[class=type_de_ventilation_4] {
     width: 370px;
     box-shadow: 0 4px 20px 0 rgb(0 0 0 / 20%);
     transition: box-shadow .5s,border .2s;
@@ -2257,7 +2257,7 @@ h3 {
 .solution_proposee{
     font-size: 18px!important;
     color:white; 
-    height:200px!important;
+    height:220px!important;
     margin-bottom: 25px!important;
     color: white!important;
 }
@@ -2271,16 +2271,29 @@ h3 {
     color: white;
 }
 .solution_proposee_small_title{
-    position: absolute;top: 60px;left:30px;text-align: left; width: fit-content;font-size: 13px;
+    position: absolute;top: 60px;left:30px;text-align: left; width: fit-content;font-size: 12px;
     color: white;
 }
+.solution_proposee_description{
+    font-weight: bold;
+    position: absolute;top: 85px;left:30px;text-align: left; width: fit-content;font-size: 13px;
+    color: white;
+    max-width: 77%;
+}
 .solution_proposee_value{
-    font-size:40px;position: absolute;left: 30px; top: 90px; display: flex; width: 200px; justify-content: space-between;flex-wrap: wrap;
+    font-size:40px;
+    position: absolute;
+    left: 30px; 
+    display: flex; 
+    width: 200px; 
+    justify-content: space-between;
+    flex-wrap: wrap;
+    top: 135px;
 }
 .solution_proposee_checkbox_container{
     position: absolute;
-    left: 30px;
-    top: 110px;
+    top: 125px;
+    left: 30px; 
     display: flex;
     width: 205px;
     /* justify-content: space-between; */
@@ -2472,14 +2485,16 @@ main .modalContainer .inputs .input-item .select-wrapper {
         width: 300px;
     }
     .solution_proposee, label[class=type_de_ventilation_3]{
-        height: 200px!important;
+        height: 220px!important;
     }
     .solution_proposee_big_title{
         font-size: 13px;
     }
     .solution_proposee_small_title{
         font-size: 9px;
-        
+    }
+    .solution_proposee_description{
+        font-size: 11px;
     }
     .conso_result_image {
         width: 35px;
