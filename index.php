@@ -372,7 +372,7 @@
                                 </div>  
                                 <div class="input-item">
                                     <label for="inputMail">Email</label>
-                                    <input id="inputMail" type="email" name="mail" class="" placeholder="Ex: mail@gmail.com">
+                                    <input id="inputMail" type="email" name="email" class="" placeholder="Ex: mail@gmail.com">
                                     <!-- <span class="step-1__content__notice">Email requis </span> -->
                                 </div>
                             </div>

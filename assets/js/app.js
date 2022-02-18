@@ -2694,7 +2694,7 @@ jQuery(function($){
       isValid=false;
       switch (step) {
         case 1:
-          if($('#inputNom').val()!='' && $('#inputPrenom').val() !='' && $('#inputTelephone').val() && validateEmail($('#inputMail').val()) && $('#inputAddress').val()!=''){
+          if($('#inputNom').val()!='' && $('#inputPrenom').val() !='' && $('#inputTelephone').val().length>9 && validateEmail($('#inputMail').val()) && $('#inputAddress').val()!=''){
             isValid=true;
             if(!menuVisited.includes('part-1')){
               menuVisited.push('part-1')
@@ -3136,7 +3136,7 @@ jQuery(function($){
                       success: function (data) { console.log(data) },
                       error: function (data) { console.log(data) }
                   });
-          }
+              }
           //appel à la fonction
           generatePDFWithHeader('headerPDF.jpg', addImage);
       }
@@ -3156,9 +3156,9 @@ jQuery(function($){
           // var win = window.open('./completed/recapitulatif.pdf', '_blank');
           
           // ajout des images au pdf
-          const { degrees, PDFDocument, rgb, StandardFonts }= PDFLib
-
           async function modifyPdf() {
+            const { degrees, PDFDocument, rgb, StandardFonts }= PDFLib
+  
             const url = './completed/formulaire_images.pdf'
             const existingPdfBytes = await fetch(url).then(res => res.arrayBuffer())
 
@@ -3212,27 +3212,43 @@ jQuery(function($){
 
             const copiedPagesA = await mergedPdf.copyPages(recapPdfLoaded, recapPdfLoaded.getPageIndices());
             copiedPagesA.forEach((page, index) =>{ 
-              if(index<8){
                 mergedPdf.addPage(page)
-              }
             });
             
             const copiedPagesB = await mergedPdf.copyPages(pdfDoc, pdfDoc.getPageIndices());
             copiedPagesB.forEach((page) => mergedPdf.addPage(page));
 
             copiedPagesA.forEach((page, index) =>{ 
-              if(index>7){
-                mergedPdf.addPage(page)
-              }
+                  mergedPdf.addPage(page)
             });
+            mergedPdf.removePage(18);
             const mergedPdfFile = await mergedPdf.save();
                 
             var file = new Blob([mergedPdfFile], {type: 'application/pdf'});
             var fileURL = URL.createObjectURL(file);
-            window.open(fileURL, '_blank');
-          // var win = window.open('./completed/recapitulatif.pdf', '_bla
+            // window.open(fileURL, '_blank');
+            var win = window.open(fileURL, '_blank');
+            
+            if (win) {
+              serializedData += '&pdf_url=' + fileURL;
 
-            // downlo\mergedPdfFile, "Mydiag__Étude_personnalisée_de_l_habitat ", "application/pdf");
+              $.ajax('./mail.php',
+              {
+                  method: 'POST',
+                  type: "post",
+                  data: serializedData,
+                  success: function (data) { console.log('mail sent', data) },
+                  error: function (data) { console.log('mail not sent', data) }
+              });     
+              win.focus();
+            } else {
+                //Browser has blocked it
+                alert('Please allow popups for this website');
+            }
+
+            // var win = window.open('./completed/recapitulatif.pdf', '_bla
+
+            // download(mergedPdfFile, "Mydiag__Étude_personnalisée_de_l_habitat ", "application/pdf");
             $('#generatePdfButton > div').addClass('hidden-preload')
           }
 
