@@ -1638,42 +1638,42 @@
                     <fieldset class="step-12">
                         <h2>Source d’énergie</h2>
                         <div class="step-12__content optionWithImages">
-                            <label for="source_energie_eau_chaude_fioul_1" class="select-item btn step-12__link image chauff_image_3 columnStyleInput">                        
+                            <label for="source_energie_eau_chaude_fioul_1" class="select-item btn step-12__link image chauff_image_3 columnStyleInput souceEnergieEauSanitaire">                        
                                 <input type="radio" name="source_energie_eau_chaude" id="source_energie_eau_chaude_fioul_1" value="Chauffage au Fioul ">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_au_fioul_crop.png" alt="Photo - Chauffage au Fioul ">
                                 Fioul 
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="source_energie_eau_chaude_elec_2" class="select-item btn step-12__link image chauff_image_3 columnStyleInput">             
+                            <label for="source_energie_eau_chaude_elec_2" class="select-item btn step-12__link image chauff_image_3 columnStyleInput souceEnergieEauSanitaire">             
                                 <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_elec_2" value="Chauffage Électrique">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_elec_crop.png" alt="Photo - Chauffage Électrique">
                                  Électrique
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
 
-                            <label for="source_energie_eau_chaude_gaz_3" class="select-item btn step-12__link image chauff_image_3 columnStyleInput">        
+                            <label for="source_energie_eau_chaude_gaz_3" class="select-item btn step-12__link image chauff_image_3 columnStyleInput souceEnergieEauSanitaire">        
                                 <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_gaz_3" value=" Chauffage au Gaz ">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chuaffage_au_gaz_crop.png" alt="Photo -  Chauffage au Gaz ">
                                  Gaz 
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
 
-                            <label for="source_energie_eau_chaude_bois_4" class="select-item btn step-12__link image chauff_image_3 columnStyleInput">             
+                            <label for="source_energie_eau_chaude_bois_4" class="select-item btn step-12__link image chauff_image_3 columnStyleInput souceEnergieEauSanitaire">             
                                 <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_bois_4" value=" Chauffage au Bois">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_au_bois_crop.png" alt="Photo -  Chauffage au Bois ">
                                  Bois 
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="source_energie_eau_chaude_pompe_a_chauleur_5" class="select-item btn step-12__link image chauff_image_3 columnStyleInput">        
+                            <label for="source_energie_eau_chaude_pompe_a_chauleur_5" class="select-item btn step-12__link image chauff_image_3 columnStyleInput souceEnergieEauSanitaire">        
                                 <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_pompe_a_chauleur_5" value=" Pompe à Chaleur">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chauffage_pompe_a_chaleur_crop.png" alt="Photo -  Pompe à Chaleur ">
                                 Pompe à Chaleur
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="source_energie_eau_chaude_chauffr_charbon_6" class="select-item btn step-12__link image chauff_image_3 columnStyleInput">        
+                            <label for="source_energie_eau_chaude_chauffr_charbon_6" class="select-item btn step-12__link image chauff_image_3 columnStyleInput souceEnergieEauSanitaire">        
                                 <input type="radio" name="source_energie_eau_chaude"  id="source_energie_eau_chaude_chauffr_charbon_6" value="Chauffage au Charbon ">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/chaffage_au_charbon_crop.png" alt="Photo -  Chauffage au Charbon">
                                  Charbon 
@@ -1777,35 +1777,35 @@
                         <div class="step-12__content optionWithImages" style="max-width: 845px;" > 
                             <!-- optionWithImagesColumn 
                         left__img-->
-                            <label for="capacite_de_stockage_eau_chaude_1" class="select-item btn step-12__link image columnStyleInput">                        
+                            <label for="capacite_de_stockage_eau_chaude_1" class="select-item btn step-12__link image columnStyleInput capaciteStockage">                        
                                 <input type="radio" name="capacite_de_stockage_eau_chaude" id="capacite_de_stockage_eau_chaude_1" value="Pas de stockage">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_pas-de-stockage.svg" alt="Photo - Pas de stockage">
                                 Pas de stockage
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="capacite_de_stockage_eau_chaude_2" class="select-item btn step-12__link image columnStyleInput">             
+                            <label for="capacite_de_stockage_eau_chaude_2" class="select-item btn step-12__link image columnStyleInput capaciteStockage">             
                                 <input type="radio" name="capacite_de_stockage_eau_chaude"  id="capacite_de_stockage_eau_chaude_2" value="150 litres">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_capacite-100-150L.svg" alt="Photo - 150 litres">
                                 150 litres
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="capacite_de_stockage_eau_chaude_3" class="select-item btn step-12__link image columnStyleInput">        
+                            <label for="capacite_de_stockage_eau_chaude_3" class="select-item btn step-12__link image columnStyleInput capaciteStockage">        
                                 <input type="radio" name="capacite_de_stockage_eau_chaude"  id="capacite_de_stockage_eau_chaude_3" value="200 litres">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_capacite-150-200L.svg" alt="Photo - 200 litres">
                                 200 litres
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
 
-                            <label for="capacite_de_stockage_eau_chaude_4" class="select-item btn step-12__link image columnStyleInput">             
+                            <label for="capacite_de_stockage_eau_chaude_4" class="select-item btn step-12__link image columnStyleInput capaciteStockage">             
                                 <input type="radio" name="capacite_de_stockage_eau_chaude"  id="capacite_de_stockage_eau_chaude_4" value="250 litres">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_capacite-200-300L.svg" alt="Photo - 250 litres">
                                 250 litres
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="capacite_de_stockage_eau_chaude_5" class="select-item btn step-12__link image columnStyleInput">             
+                            <label for="capacite_de_stockage_eau_chaude_5" class="select-item btn step-12__link image columnStyleInput capaciteStockage">             
                                 <input type="radio" name="capacite_de_stockage_eau_chaude"  id="capacite_de_stockage_eau_chaude_5" value="300 litres et plus">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_capacite-superieure300L.svg" alt="Photo - 300 litres et plus">
                                 300 litres et plus
@@ -1818,35 +1818,35 @@
                             <!-- optionWithImagesColumn 
                                 left__img    
                             -->
-                            <label for="utilisation_eau_chaude_1" class="select-item btn step-12__link image columnStyleInput">                        
+                            <label for="utilisation_eau_chaude_1" class="select-item btn step-12__link image columnStyleInput utilisationEauChaudeSanitaire">                        
                                 <input type="radio" name="utilisation_eau_chaude" id="utilisation_eau_chaude_1" value="Sobre">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_ECS-sobre.svg" alt="Photo - Sobre">
                                 Sobre
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="utilisation_eau_chaude_2" class="select-item btn step-12__link image columnStyleInput">             
+                            <label for="utilisation_eau_chaude_2" class="select-item btn step-12__link image columnStyleInput utilisationEauChaudeSanitaire">             
                                 <input type="radio" name="utilisation_eau_chaude"  id="utilisation_eau_chaude_2" value="Modérée">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_ECS-modere.svg" alt="Photo - Modérée">
                                 Modérée
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="utilisation_eau_chaude_3" class="select-item btn step-12__link image columnStyleInput">        
+                            <label for="utilisation_eau_chaude_3" class="select-item btn step-12__link image columnStyleInput utilisationEauChaudeSanitaire">        
                                 <input type="radio" name="utilisation_eau_chaude"  id="utilisation_eau_chaude_3" value="Normale">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_ECS-normal.svg" alt="Photo - Normale">
                                 Normale
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
 
-                            <label for="utilisation_eau_chaude_4" class="select-item btn step-12__link image columnStyleInput">             
+                            <label for="utilisation_eau_chaude_4" class="select-item btn step-12__link image columnStyleInput utilisationEauChaudeSanitaire">             
                                 <input type="radio" name="utilisation_eau_chaude"  id="utilisation_eau_chaude_4" value="Intensive">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_ECS_intensif.svg" alt="Photo - Intensive">
                                 Intensive
                                 <img src="./assets/images/uncheck.png" alt="" class="image-checkbox">
                             </label>
                             
-                            <label for="utilisation_eau_chaude_5" class="select-item btn step-12__link image columnStyleInput">             
+                            <label for="utilisation_eau_chaude_5" class="select-item btn step-12__link image columnStyleInput utilisationEauChaudeSanitaire">             
                                 <input type="radio" name="utilisation_eau_chaude"  id="utilisation_eau_chaude_5" value="Balnéo">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_ECS-balneo.svg" alt="Photo - Balnéo">
                                 Balnéo
@@ -1881,7 +1881,7 @@
                         <!-- optionWithImagesColumn 
                     step-left__img -->
                             <label for="utilisation_appareil_equip_electrique_1" class="select-item btn step-13__link image columnStyleInput
-                            ">                        
+                            appareilElectrique">                        
                                 <input type="radio" name="utilisation_appareil_equip_electrique" id="utilisation_appareil_equip_electrique_1" value="Sobre">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/icone_tache-menagere-sobre.svg" alt="Photo - Sobre">
                                 Sobre
@@ -1889,7 +1889,7 @@
                             </label>
                             
                             <label for="utilisation_appareil_equip_electrique_2" class="select-item btn step-13__link image columnStyleInput
-                            ">             
+                            appareilElectrique">             
                                 <input type="radio" name="utilisation_appareil_equip_electrique"  id="utilisation_appareil_equip_electrique_2" value="Modérée">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/icone_tache-menagere-moderee.svg" alt="Photo - Modérée">
                                 Modérée
@@ -1897,7 +1897,7 @@
                             </label>
                             
                             <label for="utilisation_appareil_equip_electrique_3" class="select-item btn step-13__link image columnStyleInput
-                            ">        
+                            appareilElectrique">        
                                 <input type="radio" name="utilisation_appareil_equip_electrique"  id="utilisation_appareil_equip_electrique_3" value="Normale">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/icone_tache-menagere-elevee.svg" alt="Photo - Normale">
                                 Normale
@@ -1905,7 +1905,7 @@
                             </label>
 
                             <label for="utilisation_appareil_equip_electrique_4" class="select-item btn step-13__link image columnStyleInput
-                            ">             
+                            appareilElectrique">             
                                 <input type="radio" name="utilisation_appareil_equip_electrique"  id="source_energie_eau_chaude_4" value="Élevée">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/icone_tache-menagere-elevee.svg" alt="Photo - Élevée">
                                 Élevée
@@ -1913,7 +1913,7 @@
                             </label>
                             
                             <label for="utilisation_appareil_equip_electrique_5" class="select-item btn step-13__link image columnStyleInput
-                            ">        
+                            appareilElectrique">        
                                 <input type="radio" name="utilisation_appareil_equip_electrique"  id="utilisation_appareil_equip_electrique_5" value="Très élevée">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/icone_tache-menagere-tres-elevee.svg" alt="Photo - Très élevée">
                                 Très élevée
@@ -1946,7 +1946,7 @@
                         <h2>Type d'ampoules</h2>
                         <div class="step-14__content optionWithImages" style="max-width: 610px;">
                             <label for="type_d_ampoule_eclairage_1" class="select-item btn step-14__link image chauff_image_2 columnStyleInput
-                            ">                        
+                             eclairageType">
                                 <input type="radio" name="type_d_ampoule_eclairage" id="type_d_ampoule_eclairage_1" value="Ampoules incandescentes">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_ampoules-incandescentes.svg" alt="Photo - Ampoules incandescentes">
                                 Ampoules incandescentes
@@ -1954,7 +1954,7 @@
                             </label>
                             
                             <label for="type_d_ampoule_eclairage_2" class="select-item btn step-14__link image columnStyleInput
-                            chauff_image_2">             
+                            chauff_image_2 eclairageType">             
                                 <input type="radio" name="type_d_ampoule_eclairage"  id="type_d_ampoule_eclairage_2" value="Ampoules LED">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_ampoules-LED.svg" alt="Photo - Ampoules LED">
                                 Ampoules LED
@@ -1962,7 +1962,7 @@
                             </label>
                             
                             <label for="type_d_ampoule_eclairage_3" class="select-item btn step-14__link image columnStyleInput
-                            chauff_image_2" >        
+                            chauff_image_2 eclairageType" >        
                                 <input type="radio" name="type_d_ampoule_eclairage"  id="type_d_ampoule_eclairage_3" value="Mixte">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_ampoules-mixtes.svg" alt="Photo - Mixte">
                                 Mixte
@@ -1975,7 +1975,7 @@
                         <!-- optionWithImagesColumn
                     step-left__img -->
                             <label for="utilisation_moyenne_eclairage_1" class="select-item btn step-14__link image columnStyleInput
-                            ">                        
+                            moyenneEclairage">                        
                                 <input type="radio" name="utilisation_moyenne_eclairage" id="utilisation_moyenne_eclairage_1" value="Sobre">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_Eclairage-sobre.svg" alt="Photo - Sobre">
                                 Sobre
@@ -1983,7 +1983,7 @@
                             </label>
                             
                             <label for="utilisation_moyenne_eclairage_2" class="select-item btn step-14__link image columnStyleInput
-                            ">             
+                            moyenneEclairage">             
                                 <input type="radio" name="utilisation_moyenne_eclairage"  id="utilisation_moyenne_eclairage_2" value="Modérée">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_Eclairage-modere.svg" alt="Photo - Modérée">
                                 Modérée
@@ -1991,7 +1991,7 @@
                             </label>
                             
                             <label for="utilisation_moyenne_eclairage_3" class="select-item btn step-14__link image columnStyleInput
-                            ">        
+                            moyenneEclairage">        
                                 <input type="radio" name="utilisation_moyenne_eclairage"  id="utilisation_moyenne_eclairage_3" value="Moyenne">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_Eclairage-normal.svg" alt="Photo - Moyenne">
                                 Moyenne
@@ -1999,7 +1999,7 @@
                             </label>
                             
                             <label for="utilisation_moyenne_eclairage_4" class="select-item btn step-14__link image columnStyleInput
-                            ">        
+                            moyenneEclairage">        
                                 <input type="radio" name="utilisation_moyenne_eclairage"  id="utilisation_moyenne_eclairage_4" value="Élevée">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/icones-normal_Eclairage-eleve.svg" alt="Photo - Élevée">
                                 Élevée
@@ -2007,7 +2007,7 @@
                             </label>
                             
                             <label for="utilisation_moyenne_eclairage_5" class="select-item btn step-14__link image columnStyleInput
-                            ">        
+                            moyenneEclairage">        
                                 <input type="radio" name="utilisation_moyenne_eclairage"  id="utilisation_moyenne_eclairage_5" value="Très élevée">
                                 <img class="step-chauff__img" src="./assets/images/picto_gte/icones-selectionnee_Eclairage-tres-eleve.svg" alt="Photo - Très élevée">
                                 Très élevée

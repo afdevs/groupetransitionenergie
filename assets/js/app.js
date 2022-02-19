@@ -2526,6 +2526,8 @@ jQuery(function($){
           // $('#consump-info1').css('opacity:','1')
           // $('#consump-info1').css('display', 'block')
           $('#consumpt-val1').text($('#inputEstimFactChauff').val()+'€')
+      }else{
+        $('#consumpt-val1').text('')
       }
     })
 
@@ -2535,6 +2537,8 @@ jQuery(function($){
         $('#consump-info2').attr('style', 'opacity:1; display: block;');
         $('#consumpt-val2').text($('#inputEstimFactEauChaude').val()+'€');
         $('#eauChaudeSanitaireLeftPart').css('width', '130px');
+      }else{
+        $('#consumpt-val2').text('')
       }
     })
     
@@ -2543,6 +2547,8 @@ jQuery(function($){
         $('#consump-info3').attr('style', 'opacity:1; display: block;')
         $('#consumpt-val3').text($('#inputEstimFactAppareilElec').val()+'€')
         $('#appareilElecLeftPart').css('width', '80px');
+      }else{
+        $('#consumpt-val3').text('');
       }
     })
 
@@ -2550,7 +2556,8 @@ jQuery(function($){
       if($('#inputEstimFactEclairage').val()!=='' && parseInt($('#inputEstimFactEclairage').val())!==0){
         $('#consump-info4').attr('style', 'opacity:1; display: block;')
         $('#consumpt-val4').text($('#inputEstimFactEclairage').val()+'€')
-        
+      }else{
+        $('#consumpt-val4').text('');
       }
     })
 
@@ -2748,9 +2755,9 @@ jQuery(function($){
             //   menuVisited.push('part-2')
             // }
           }
-          break
+          break;
         case 8:
-          if($(".step-8__link.answer-selected input[name='type_de_vitrage']").val()){
+          if($(".step-8__link.answer-selected :input[name='type_de_vitrage']").val()){
             isValid=true;
             // if(!menuVisited.includes('part-2')){
             //   menuVisited.push('part-2')
@@ -2766,12 +2773,13 @@ jQuery(function($){
           }
           break
         case 10:
-          if($("#inputEstimFactChauff").val() && $("#inputMarqueAncienneChau").val() && $(".step-11__link.souceEnergieTypeChauffage") && $(".step-11__link.emplacementChaudiere") && $("select[name='annee_contruction_chauffage']")){
+          if($("#inputEstimFactChauff").val()!='' && $("#inputMarqueAncienneChau").val()!='' && $(".step-11__link.answer-selected.souceEnergieTypeChauffage :input[name='source_energie']").val() && $(".step-11__link.answer-selected.emplacementChaudiere") && $("select[name='annee_contruction_chauffage']") && $("select[name='annee_contruction_eau_chaude_sani']").val() && $(".step-12__link.answer-selected.souceEnergieEauSanitaire :input[name='source_energie_eau_chaude']") && $(".step-12__link.answer-selected.capaciteStockage :input[name='capacite_de_stockage_eau_chaude']").val() && $(".step-12__link.answer-selected.utilisationEauChaudeSanitaire :input[name='utilisation_eau_chaude']").val() && $("#inputEstimFactEauChaude").val()!='' && $(".step-13__link.answer-selected.appareilElectrique :input[name='utilisation_appareil_equip_electrique']").val() && $("#inputEstimFactAppareilElec").val() && $(".step-14__link.answer-selected.eclairageType :input[name='type_d_ampoule_eclairage']").val() && $('#inputEstimFactEclairage').val()!='' && $(".step-14__link.answer-selected.moyenneEclairage :input[name='utilisation_moyenne_eclairage']").val()) {
             isValid=true;
             if(!menuVisited.includes('part-3')){
-              menuVisited.push('part-3')
+              menuVisited.push('part-3');
             }
           }
+
           break
         case 11:
           if($("select[name='type_de_chaufface_nombre_d_annee_a_indexer']").val()){
@@ -2926,8 +2934,14 @@ jQuery(function($){
     $(".step-11__link.souceEnergieTypeChauffage").on('click', ()=>pageFormValidation());
     $(".step-11__link.emplacementChaudiere").on('click', ()=>pageFormValidation());
     $("#inputEstimFactChauff").on('keyup', ()=>pageFormValidation());
-    // $("#inputEstimFactChauff").on('change', ()=>pageFormValidation());
     $("select[name='annee_contruction_chauffage']").on('change', ()=>pageFormValidation());
+    $("#inputEstimFactChauff").on('keyup', ()=>pageFormValidation());
+    $('#inputEstimFactEclairage').on('change', ()=>pageFormValidation());
+    $('#inputEstimFactAppareilElec').on('keyup', ()=>pageFormValidation());
+    $('#inputEstimFactAppareilElec').on('change', ()=>pageFormValidation());
+    $('#inputEstimFactEauChaude').on('keyup', ()=>pageFormValidation());
+    $('#inputEstimFactEauChaude').on('change', ()=>pageFormValidation());
+
     //STEP 11
     $("select[name='type_de_chaufface_nombre_d_annee_a_indexer']").on('change', ()=>pageFormValidation());
     //SETP 18
