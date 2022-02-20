@@ -22,8 +22,8 @@ function sendMail($to)
     $message .= "<br><br><br><p>GROUPE TRANSITION ENERGIE</p>";
     $result= mail($to,$subject, $message, $headers);
     print_r(json_encode($result));
-    die('stop');
 }
 
 //Sending mail
 sendMail($_POST["email"]);
+die('stop');
