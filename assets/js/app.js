@@ -782,12 +782,15 @@ jQuery(function($){
           next_step=++current;
           next_step_form =  $('.step-'+next_step);
 
-          if (current >=1 && current<12){ 
-            $('.page .previous__button').css('visibility', 'visible');
+          if (current >1 && current<12){ 
+            $('.page .previous__link').css('visibility', 'visible');
+            $('.navigation .navigation__previous').css('visibility', 'visible');
           }else if(current >15){
-            $('.page .previous__button').css('visibility', 'visible');
+            $('.page .previous__link').css('visibility', 'visible');
+            $('.navigation .navigation__previous').css('visibility', 'visible');
           }else{
-              $('.page .previous__button').css('visibility', 'hidden');
+              $('.page .previous__link').css('visibility', 'hidden');
+            $('.navigation .navigation__previous').css('visibility', 'hidden');
           }
             
           
@@ -835,15 +838,16 @@ jQuery(function($){
         current=next_step;
         
         next_step_form = $('.step-'+next_step);
-        
-        if (current >=1 && current<12){ 
-          $('.page .previous__button').css('visibility', 'visible');
-        } else if(current >15){
-          $('.page .previous').css('visibility', 'visible');
+        if (current >1 && current<12){ 
+          $('.page .previous__link').css('visibility', 'visible');
+          $('.navigation .navigation__previous').css('visibility', 'visible');
+        }else if(current >15){
+          $('.page .previous__link').css('visibility', 'visible');
+          $('.navigation .navigation__previous').css('visibility', 'visible');
         }else{
-            $('.page .previous__button').css('visibility', 'hidden');
+            $('.page .previous__link').css('visibility', 'hidden');
+          $('.navigation .navigation__previous').css('visibility', 'hidden');
         }
-          
             
         if(current>11 && current< 16){
           $('.main-cta').css('visibility', 'hidden');
@@ -891,14 +895,17 @@ jQuery(function($){
             next_step=++current;
             next_step_form =  $('.step-'+next_step);
             
-            if (current >=1 && current<12){ 
-              $('.page .previous__button').css('visibility', 'visible');
-            }else if(current >15){
-              $('.page .previous__button').css('visibility', 'visible');
-            }else{
-                $('.page .previous__button').css('visibility', 'hidden');
-            }
-            
+          if (current >1 && current<12){ 
+            $('.page .previous__link').css('visibility', 'visible');
+            $('.navigation .navigation__previous').css('visibility', 'visible');
+          }else if(current >15){
+            $('.page .previous__link').css('visibility', 'visible');
+            $('.navigation .navigation__previous').css('visibility', 'visible');
+          }else{
+            $('.page .previous__link').css('visibility', 'hidden');
+            $('.navigation .navigation__previous').css('visibility', 'hidden');
+          }
+
             if(current>11 && current< 16){
               $('.main-cta').css('visibility', 'hidden');
             }else if(current >19){
@@ -938,14 +945,17 @@ jQuery(function($){
             current_step =  $('.step-'+current);
             next_step=++current;
             next_step_form =  $('.step-'+next_step);
-            
-            if (current >=1 && current<12){ 
-              $('.page .previous__button').css('visibility', 'visible');
-            }else if(current >15){
-              $('.page .previous__button').css('visibility', 'visible');
-            }else{
-                $('.page .previous__button').css('visibility', 'hidden');
-            }
+              
+          if (current >1 && current<12){ 
+            $('.page .previous__link').css('visibility', 'visible');
+            $('.navigation .navigation__previous').css('visibility', 'visible');
+          }else if(current >15){
+            $('.page .previous__link').css('visibility', 'visible');
+            $('.navigation .navigation__previous').css('visibility', 'visible');
+          }else{
+            $('.page .previous__link').css('visibility', 'hidden');
+            $('.navigation .navigation__previous').css('visibility', 'hidden');
+          }
             
             if(current>11 && current< 16){
               $('.main-cta').css('visibility', 'hidden');
@@ -989,13 +999,17 @@ jQuery(function($){
             next_step=++current;
             next_step_form =  $('.step-'+next_step);
             
-            if (current >=1 && current<12){ 
-              $('.page .previous__button').css('visibility', 'visible');
-            }else if(current >15){
-              $('.page .previous__button').css('visibility', 'visible');
-            }else{
-                $('.page .previous__button').css('visibility', 'hidden');
-            }
+            
+          if (current >1 && current<12){ 
+            $('.page .previous__link').css('visibility', 'visible');
+            $('.navigation .navigation__previous').css('visibility', 'visible');
+          }else if(current >15){
+            $('.page .previous__link').css('visibility', 'visible');
+            $('.navigation .navigation__previous').css('visibility', 'visible');
+          }else{
+            $('.page .previous__link').css('visibility', 'hidden');
+            $('.navigation .navigation__previous').css('visibility', 'hidden');
+          }
             
             if(current>11 && current< 16){
               $('.main-cta').css('visibility', 'hidden');
@@ -1039,14 +1053,17 @@ jQuery(function($){
           next_step=++current;
           next_step_form =  $('.step-'+next_step);
           
-          if (current >=1 && current<12){ 
-            $('.page .previous__button').css('visibility', 'visible');
+          
+          if (current >1 && current<12){ 
+            $('.page .previous__link').css('visibility', 'visible');
+            $('.navigation .navigation__previous').css('visibility', 'visible');
           }else if(current >15){
-            $('.page .previous__button').css('visibility', 'visible');
+            $('.page .previous__link').css('visibility', 'visible');
+            $('.navigation .navigation__previous').css('visibility', 'visible');
           }else{
-              $('.page .previous__button').css('visibility', 'hidden');
-          }
-            
+            $('.page .previous__link').css('visibility', 'hidden');
+            $('.navigation .navigation__previous').css('visibility', 'hidden');
+          }       
             
           if(current>11 && current< 16){
             $('.main-cta').css('visibility', 'hidden');
@@ -1091,12 +1108,16 @@ jQuery(function($){
           next_step=++current;
           next_step_form =  $('.step-'+next_step);
           
-          if (current >=1 && current<12){ 
-            $('.page .previous__button').css('visibility', 'visible');
+         
+          if (current >1 && current<12){ 
+            $('.page .previous__link').css('visibility', 'visible');
+            $('.navigation .navigation__previous').css('visibility', 'visible');
           }else if(current >15){
-            $('.page .previous__button').css('visibility', 'visible');
+            $('.page .previous__link').css('visibility', 'visible');
+            $('.navigation .navigation__previous').css('visibility', 'visible');
           }else{
-              $('.page .previous__button').css('visibility', 'hidden');
+            $('.page .previous__link').css('visibility', 'hidden');
+            $('.navigation .navigation__previous').css('visibility', 'hidden');
           }
         
             
@@ -1146,12 +1167,16 @@ jQuery(function($){
           next_step=++current;
           next_step_form =  $('.step-'+next_step);
           
-          if (current >=1 && current<12){ 
-            $('.page .previous__button').css('visibility', 'visible');
+         
+          if (current >1 && current<12){ 
+            $('.page .previous__link').css('visibility', 'visible');
+            $('.navigation .navigation__previous').css('visibility', 'visible');
           }else if(current >15){
-            $('.page .previous__button').css('visibility', 'visible');
+            $('.page .previous__link').css('visibility', 'visible');
+            $('.navigation .navigation__previous').css('visibility', 'visible');
           }else{
-              $('.page .previous__button').css('visibility', 'hidden');
+            $('.page .previous__link').css('visibility', 'hidden');
+            $('.navigation .navigation__previous').css('visibility', 'hidden');
           }
         
             
@@ -1202,12 +1227,16 @@ jQuery(function($){
           next_step=++current;
           next_step_form =  $('.step-'+next_step);
           
-          if (current >=1 && current<12){ 
-            $('.page .previous__button').css('visibility', 'visible');
+          
+          if (current >1 && current<12){ 
+            $('.page .previous__link').css('visibility', 'visible');
+            $('.navigation .navigation__previous').css('visibility', 'visible');
           }else if(current >15){
-            $('.page .previous__button').css('visibility', 'visible');
+            $('.page .previous__link').css('visibility', 'visible');
+            $('.navigation .navigation__previous').css('visibility', 'visible');
           }else{
-              $('.page .previous__button').css('visibility', 'hidden');
+            $('.page .previous__link').css('visibility', 'hidden');
+            $('.navigation .navigation__previous').css('visibility', 'hidden');
           }
         
           if(current>11 && current< 16){
@@ -1256,12 +1285,15 @@ jQuery(function($){
           next_step=++current;
           next_step_form =  $('.step-'+next_step);
           
-          if (current >=1 && current<12){ 
-            $('.page .previous__button').css('visibility', 'visible');
+          if (current >1 && current<12){ 
+            $('.page .previous__link').css('visibility', 'visible');
+            $('.navigation .navigation__previous').css('visibility', 'visible');
           }else if(current >15){
-            $('.page .previous__button').css('visibility', 'visible');
+            $('.page .previous__link').css('visibility', 'visible');
+            $('.navigation .navigation__previous').css('visibility', 'visible');
           }else{
-              $('.page .previous__button').css('visibility', 'hidden');
+            $('.page .previous__link').css('visibility', 'hidden');
+            $('.navigation .navigation__previous').css('visibility', 'hidden');
           }
         
           if(current>11 && current< 16){
