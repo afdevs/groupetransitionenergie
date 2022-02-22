@@ -546,7 +546,8 @@ svg[data-v-250eb6c4] {
     margin-left: auto;
     margin-right: auto;
     overflow: hidden;;
-    min-height: 620px;
+    /* min-height: 620px; */
+    min-height: 675px;
 }
 #regiration_form fieldset:not(:first-of-type) {
     display: none;
@@ -2632,6 +2633,15 @@ main .modalContainer .inputs .input-item .select-wrapper {
 
 
 @media only screen and (max-width: 769px){
+    .nextButtonControl{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
+    .nextButtonControl #nextStepButton{
+        max-width: 100%;
+        margin-bottom: 0;
+    }
     .page{
         margin-top: 75px;
     }

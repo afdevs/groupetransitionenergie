@@ -3264,10 +3264,9 @@ jQuery(function($){
             const copiedPagesB = await mergedPdf.copyPages(pdfDoc, pdfDoc.getPageIndices());
             copiedPagesB.forEach((page) => mergedPdf.addPage(page));
 
-            copiedPagesA.forEach((page, index) =>{ 
-                  mergedPdf.addPage(page)
-            });
-            mergedPdf.removePage(18);
+            // mergedPdf.removePage(18);
+            console.log('copiedPagesA', copiedPagesA)
+            
             const mergedPdfFile = await mergedPdf.save();
                 
             var file = new Blob([mergedPdfFile], {type: 'application/pdf'});

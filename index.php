@@ -346,7 +346,7 @@
 
                 <div class="alert alert-success hide"></div>
                
-                <form id="regiration_form" method="post" novalidate>
+                <form id="regiration_form" method="post" autocomplete="off" novalidate>
                     <fieldset class="step-1">
                         <!-- <h1>Étude personnalisée de l’habitat</h1> -->
                         <h2>Informations personnelles</h2>
@@ -354,12 +354,12 @@
                             <div class="inputs">
                                 <div class="input-item">
                                     <label for="inputNom">Nom</label>
-                                    <input id="inputNom" type="text" name="nom" class=""  placeholder="Votre nom">
+                                    <input id="inputNom" autocomplete="false" type="text" name="nom" class=""  placeholder="Votre nom">
                                     <!-- <span class="step-1__content__notice">Nom requis </span> -->
                                 </div>
                                 <div class="input-item lastname">
                                     <label for="inputPrenom">Prénom</label>
-                                    <input id="inputPrenom" type="text" name="prenom" class="" placeholder="Votre prénom">
+                                    <input id="inputPrenom" autocomplete="false" type="text" name="prenom" class="" placeholder="Votre prénom">
                                     <!-- <span class="step-1__content__notice">Prénom requis </span> -->
                                 </div>
                             </div>
@@ -367,12 +367,12 @@
                             <div class="inputs">
                                 <div class="input-item">
                                     <label for="inputTelephone">Téléphone</label>
-                                    <input id="inputTelephone" type="number" name="telephone" class=""  placeholder="Ex: 06 31 77 82 83">
+                                    <input id="inputTelephone" autocomplete="false" type="number" name="telephone" class=""  placeholder="Ex: 06 31 77 82 83">
                                     <!-- <span class="step-1__content__notice">Téléphone requis </span> -->
                                 </div>  
                                 <div class="input-item">
                                     <label for="inputMail">Email</label>
-                                    <input id="inputMail" type="email" name="email" class="" placeholder="Ex: mail@gmail.com">
+                                    <input id="inputMail" autocomplete="false" type="email" name="email" class="" placeholder="Ex: mail@gmail.com">
                                     <!-- <span class="step-1__content__notice">Email requis </span> -->
                                 </div>
                             </div>
@@ -380,7 +380,7 @@
                             <div class="inputs">
                                 <div class="input-item nopr20">
                                     <label for="inputAddress">Adresse</label>
-                                    <input id="inputAddress" type="text" name="address" class="" style="height:100px;" placeholder="Votre adresse">
+                                    <input id="inputAddress" autocomplete="false" type="text" name="address" class="" style="height:100px;" placeholder="Votre adresse">
                                     <!-- <span class="step-1__content__notice">Adresse requis </span> -->
                                 </div>  
                             </div>
