@@ -369,7 +369,7 @@
                                     <label for="inputTelephone">Téléphone</label>
                                     <input id="inputTelephone" autocomplete="false" type="number" name="telephone" class=""  placeholder="Ex: 06 31 77 82 83">
                                     <!-- <span class="step-1__content__notice">Téléphone requis </span> -->
-                                </div>  
+                                </div>
                                 <div class="input-item">
                                     <label for="inputMail">Email</label>
                                     <input id="inputMail" autocomplete="false" type="email" name="email" class="" placeholder="Ex: mail@gmail.com">
@@ -500,7 +500,7 @@
                                         <option value="1996">1996</option>
                                         <option value="1995">1995</option>
                                         <option value="1994">1994</option>
-                                        <option value="1995">1993</option>
+                                        <option value="1993">1993</option>
                                         <option value="1992">1992</option>
                                         <option value="1991">1991</option>
                                         <option value="1990">1990</option>
@@ -1284,7 +1284,7 @@
                                 </div>
                                     <div class="generate_pdf_container" id="ignore_for_pdf">
                                         <button class="generate_pdf_btn" id="generatePdfButton" type="submit" >   
-                                            <div class="preloader-wrapper small active hidden-preload">
+                                            <!-- <div class="preloader-wrapper small active hidden-preload">
                                                 <div class="spinner-layer spinner-green-only">
                                                 <div class="circle-clipper left">
                                                     <div class="circle"></div>
@@ -1294,7 +1294,7 @@
                                                     <div class="circle"></div>
                                                 </div>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             GENERER MON PDF
                                         </button>
                                     </div>
@@ -1570,7 +1570,7 @@
                                         <option value="1996">1996</option>
                                         <option value="1995">1995</option>
                                         <option value="1994">1994</option>
-                                        <option value="1995">1993</option>
+                                        <option value="1993">1993</option>
                                         <option value="1992">1992</option>
                                         <option value="1991">1991</option>
                                         <option value="1990">1990</option>
@@ -1748,7 +1748,7 @@
                                     <option value="1996">1996</option>
                                     <option value="1995">1995</option>
                                     <option value="1994">1994</option>
-                                    <option value="1995">1993</option>
+                                    <option value="1993">1993</option>
                                     <option value="1992">1992</option>
                                     <option value="1991">1991</option>
                                     <option value="1990">1990</option>

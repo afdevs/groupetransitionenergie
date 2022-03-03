@@ -13,6 +13,10 @@ class ComposerStaticInit464bf323dddf358df0e36415cc15a1d0
             'mikehaertl\\shellcommand\\' => 24,
             'mikehaertl\\pdftk\\' => 17,
         ),
+        'P' => 
+        array (
+            'PHPMailer\\PHPMailer\\' => 20,
+        ),
         'G' => 
         array (
             'Gte\\Pdftk\\' => 10,
@@ -35,6 +39,10 @@ class ComposerStaticInit464bf323dddf358df0e36415cc15a1d0
         'mikehaertl\\pdftk\\' => 
         array (
             0 => __DIR__ . '/..' . '/mikehaertl/php-pdftk/src',
+        ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
         'Gte\\Pdftk\\' => 
         array (

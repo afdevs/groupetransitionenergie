@@ -2283,6 +2283,7 @@ jQuery(function($){
       if($('#type_de_chaufface_chaudiere_gaz_natur_condensa').is(':checked')){
         bonusCalcul.coupDePouce.pacAirEau=0
         bonusCalcul.coupDePouce.chauffeEauthermo=0
+        coupDePouceSm=0
       }
       
       bonusCalcul.totalBonus= coupDePouceSm + bonusCalcul.ecologique + maPrimeRenovSum
@@ -3015,10 +3016,10 @@ jQuery(function($){
     /* SUBMIT FORM */
     $("#regiration_form").submit(function (e) { 
       e.preventDefault();
-      $('#generatePdfButton').attr('disabled', true)
-      if($('#generatePdfButton > div').hasClass('hidden-preload')){
-        $('#generatePdfButton > div').removeClass('hidden-preload')
-      }
+      // $('#generatePdfButton').attr('disabled', true)
+      // if($('#generatePdfButton > div').hasClass('hidden-preload')){
+      //   $('#generatePdfButton > div').removeClass('hidden-preload')
+      // }
       var $form = $(this);
 
       // Let's select and cache all the fields
@@ -3041,7 +3042,7 @@ jQuery(function($){
       serializedData += '&typeChauffage=' + $(".step-11__link.answer-selected :input[name='type_de_chaufface']").val();
       serializedData += '&AnneeInst=' + $("select[name='annee_contruction_chauffage']").val();
       serializedData += '&annee_contruction=' + $("select[ name='annee_contruction']").val();
-      serializedData += '&sourceEau=' + $(".step-12__link.answer-selected :input[name='source_energie_eau_chaude']").val();
+      serializedData += '&sourceEau=' + $(".step-12__link.answer-selected :input[name='type_d_eau_chaude']").val();
       serializedData += '&capStock=' + $(".step-12__link.answer-selected :input[name='capacite_de_stockage_eau_chaude']").val();
       serializedData += '&utilisation=' + $(".step-12__link.answer-selected :input[name='utilisation_eau_chaude']").val();
       serializedData += '&appElec=' + $(".step-13__link.answer-selected :input[name='utilisation_appareil_equip_electrique']").val();
@@ -3265,26 +3266,32 @@ jQuery(function($){
             copiedPagesB.forEach((page) => mergedPdf.addPage(page));
 
             // mergedPdf.removePage(18);
-            console.log('copiedPagesA', copiedPagesA)
             
             const mergedPdfFile = await mergedPdf.save();
+            // mergedPdf.save().then(res=>{
+            // })
                 
             var file = new Blob([mergedPdfFile], {type: 'application/pdf'});
             var fileURL = URL.createObjectURL(file);
             // window.open(fileURL, '_blank');
+            //Envoi mail
+            
+            var formDataPdf = new FormData();
+            formDataPdf.append('pdffile', file);
+            formDataPdf.append('nom', $('#inputNom').val());
+            formDataPdf.append('prenom', $('#inputPrenom').val());
+            formDataPdf.append('email', $('#inputMail').val());
+            serializedData += '&pdf_url=' + fileURL;
+            $.ajax('./mail.php',
+            {
+                method: 'POST',
+                data: formDataPdf,
+                success: function (data) { console.log('mail sent', data) },
+                error: function (data) { console.log('mail not sent', data) }
+            });    
             var win = window.open(fileURL, '_blank');
             
-            if (win) {
-              serializedData += '&pdf_url=' + fileURL;
-
-              $.ajax('./mail.php',
-              {
-                  method: 'POST',
-                  type: "post",
-                  data: serializedData,
-                  success: function (data) { console.log('mail sent', data) },
-                  error: function (data) { console.log('mail not sent', data) }
-              });     
+            if (win) {             
               win.focus();
             } else {
                 //Browser has blocked it
@@ -3294,7 +3301,7 @@ jQuery(function($){
             // var win = window.open('./completed/recapitulatif.pdf', '_bla
 
             // download(mergedPdfFile, "Mydiag__Étude_personnalisée_de_l_habitat ", "application/pdf");
-            $('#generatePdfButton > div').addClass('hidden-preload')
+            // $('#generatePdfButton > div').addClass('hidden-preload')
           }
 
           modifyPdf();
@@ -3321,10 +3328,10 @@ jQuery(function($){
       // if the request failed or succeeded
       request.always(function () {
           // Reenable the inputs
-          setTimeout(()=>{
-            $('#generatePdfButton').attr('disabled', false)
-            $('#generatePdfButton > div').addClass('hidden-preload')
-          }, 5000)
+          // setTimeout(()=>{
+          //   $('#generatePdfButton').attr('disabled', false)
+          //   $('#generatePdfButton > div').addClass('hidden-preload')
+          // }, 5000)
           $inputs.prop("disabled", false);
       });
       
