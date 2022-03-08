@@ -10,19 +10,19 @@
     <link rel="stylesheet" href="./assets/css/materialize.min2.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/nouislider.css">
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/> -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/slick.css"/>
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1EXRWkpnVufW7zY3VUrTjaJiz4Lmj5wU&libraries=places&callback=initMap">
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.1.4/jspdf.plugin.autotable.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.1.4/jspdf.plugin.autotable.min.js"></script> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script> -->
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <!-- <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script> -->
 
-    <!-- Pdf-lib -->
-    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <!-- <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
     <script src="https://unpkg.com/downloadjs@1.4.7"></script>
-    <script src="https://unpkg.com/@pdf-lib/fontkit@1.1.1/dist/fontkit.umd.min.js"></script>
+    <script src="https://unpkg.com/@pdf-lib/fontkit@1.1.1/dist/fontkit.umd.min.js"></script> -->
         
     <script async>
         function getAbsoluteDelta(){
@@ -2097,11 +2097,23 @@
             <!-- end -->
         </div>
     </main>
+    
+    <!-- jsPDF -->
+    <script src="./assets/js/jspdf/jspdf.min.js"></script>
+    <script src="./assets/js/jspdf/jspdf.plugin.autotable.min.js"></script>
+    <script src="./assets/js/html2canvas.js"></script>
+
+    <!-- Pdf-lib -->
+    <script src="./assets/js/pdflib/pdf-lib.min.js"></script>
+    <script src="./assets/js/pdflib/download.js"></script>
+    <script src="./assets/js/pdflib/fontkit.umd.min.js"></script>
     <!-- <script src="./assets/js/jquery-3.6.0.min.js"></script> -->
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script> -->
+    <script src="./assets/js/jquery-2.1.4.min.js"></script>
     <script src="./assets/js/materialize.min2.js"></script>
     <script src="./assets/js/nouislider.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
+    <script type="text/javascript" src="./assets/js/slick.min.js"></script>
     <script src="./assets/js/app.js" ></script>
     <!-- <script type="text/javascript" src="node_modules/materialize-css-helper/dist/main.js"></script> --> -->
     <!-- <script src="./node_modules/jslib-html5-camera-photo/build/index.js" ></script> -->

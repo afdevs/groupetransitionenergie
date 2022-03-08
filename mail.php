@@ -2,10 +2,15 @@
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 
-    // $email='andrianaivofredo@gmail.com';
+require_once 'vendor/autoload.php';
+
+$phpmailer = new PHPMailer(true);
+try {
+    $email='andrianaivofredo@gmail.com';
     $to=$_POST["email"];
-    $email='mydiag@groupetransitionenergie.fr';
+    // $email='mydiag@groupetransitionenergie.fr';
     $subject = "Mydiag - Étude personnalisée de votre habitat ";
 
     // Set content-type header for sending HTML email 
@@ -37,29 +42,51 @@ use PHPMailer\PHPMailer\Exception;
     // //Sending mail
     // die('stop');
 
-//Recuperation du fichier PDF
-// $pdfdoc		= $_POST['pdffile'];
-// $b64file 		= trim( str_replace( 'data:application/pdf;base64,', '', $pdfdoc ) );
-// $b64file		= str_replace( ' ', '+', $b64file );
-// $decoded_pdf	= base64_decode( $b64file );
-// file_put_contents( $attachment, $decodPdf );
+    //Recuperation du fichier PDF
+    // $pdfdoc		= $_POST['pdffile'];
+    // $b64file 		= trim( str_replace( 'data:application/pdf;base64,', '', $pdfdoc ) );
+    // $b64file		= str_replace( ' ', '+', $b64file );
+    // $decoded_pdf	= base64_decode( $b64file );
+    // file_put_contents( $attachment, $decodPdf );
 
 
-$data = substr($_POST['pdffile'], strpos($_POST['pdffile'], ",") + 1);
-// decode it
-$decodedData = base64_decode($data);
-file_put_contents($attachment, $decodedData);
-//--------------------
-// $data = file_get_contents('php://input');
-$email = new PHPMailer();
-$email->isHTML(true);  
-$email->SetFrom($email, ' GPT | Mydiag'); //Name is optional
-$email->Subject   = $subject;
-$email->Body      = $message;
-$email->AddAddress($to);
-$email->AddAddress('andrianaivofredo@gmail.com');
-$email->AddAddress($email);
- 
-$email->AddAttachment($decodedData , 'NameOfFile.pdf' );
-$result= $email->Send();
-var_dump($data, $_POST, $result); die();
+    // $data = substr($_POST['pdffile'], strpos($_POST['pdffile'], ",") + 1);
+    // decode it
+    // $decodedData = base64_decode($data);
+    // file_put_contents($attachment, $decodedData);
+    //--------------------
+    // $data = file_get_contents('php://input');
+    $phpmailer->SMTPDebug = SMTP::DEBUG_SERVER;
+    $phpmailer->isSMTP();
+    $phpmailer->Host = "ssl://smtp.gmail.com";
+    $mail->SMTPAuth = true;
+    // $phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    // $mail->SMTPSecure = "tls";
+    // $mail->SMTPSecure = "ssl";
+    // $phpmailer->Port = 465;
+    $phpmailer->Username   = "andrianaivofredo@gmail.com";
+    $phpmailer->Password   = "rafanomezantsoa";
+    $phpmailer->SMTPSecure = 'ssl'; 
+    $phpmailer->Port = 465;
+
+    $phpmailer->setFrom($email, ' GPT | Mydiag'); //Name is optional
+    $phpmailer->addAddress($to);
+    $phpmailer->addAddress('andriniainafredo@gmail.com');
+
+    $phpmailer->isHTML(true);  
+    $phpmailer->Subject   = $subject;
+    $phpmailer->Body      = $message;
+    // $phpmailer->AddAddress($email);
+    
+    // $email->AddAttachment($decodedData , 'NameOfFile.pdf' );
+    if(!$phpmailer->send()){
+        echo 'Error '.$phpmailer->ErrorInfo;
+    }else{
+        echo 'Message sent';
+    }
+    var_dump($_POST); die();
+
+
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$e->ErrorInfo}";
+}
