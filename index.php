@@ -34,6 +34,9 @@
                         deltaVal.push(franceAd.delta);
                     }   
                 });
+                if(deltaVal.length===0 && franceAd.delta !==0){
+                    deltaVal.push(franceAd.delta);
+                }
             });
             return deltaVal[0];
         }
@@ -48,7 +51,7 @@
                     formPageValues.delta--;
                     formPageValues.altitude -=200;
                 }
-                finalResult= ((volumeIsolationResult * (formPageValues.temperature_de_confort + Math.abs(formPageValues.delta)))/1.2)/1000; 
+                finalResult= ((volumeIsolationResult * (formPageValues.temperature_de_confort + Math.abs(formPageValues.delta || 0)))/1.2)/1000; 
             }
             
             document.getElementById('pompe_a_chaleur_air_eau_value').innerText=finalResult.toFixed(2) +'KW';
