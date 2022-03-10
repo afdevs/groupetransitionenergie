@@ -3202,12 +3202,16 @@ jQuery(function($){
 
 
       // Callback handler that will be called on success
-      request.done(async function (response, textStatus, jqXHR) {
+      request.done(function (response, textStatus, jqXHR) {
+        console.log('generating pdf 1')
           // Log a message to the console
           // var win = window.open('./completed/recapitulatif.pdf', '_blank');
           /************************************************************************************** */
-            const { degrees, PDFDocument, rgb, StandardFonts }= PDFLib
-  
+          generateFinafPdf();
+          async function generateFinafPdf(){
+            const { degrees, PDFDocument, rgb, StandardFonts }= PDFLib;
+
+
             const url ='./formulaire_images.pdf';
             const existingPdfBytes = await fetch(url).then(res => res.arrayBuffer())
             const pdfDoc = await PDFDocument.load(existingPdfBytes)
@@ -3267,7 +3271,7 @@ jQuery(function($){
             copiedPagesB.forEach((page) => mergedPdf.addPage(page));
 
             const mergedPdfFile = await mergedPdf.save();
-            
+            console.log('mergedPdfFile', mergedPdfFile)
             
             var file = new Blob([mergedPdfFile], {type: 'application/pdf'});
             var fileURL = URL.createObjectURL(file);
@@ -3289,6 +3293,8 @@ jQuery(function($){
             });
             
             window.open(fileURL, '_blank');
+          }
+          
           /************************************************************************************** */
 
 
