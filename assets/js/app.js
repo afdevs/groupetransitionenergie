@@ -3207,13 +3207,14 @@ jQuery(function($){
           // Log a message to the console
           // var win = window.open('./completed/recapitulatif.pdf', '_blank');
           /************************************************************************************** */
-          generateFinafPdf();
-          async function generateFinafPdf(){
-            const { degrees, PDFDocument, rgb, StandardFonts }= PDFLib;
+          
+          // ajout des images au pdf
+          const { degrees, PDFDocument, rgb, StandardFonts }= PDFLib
 
-
-            const url ='./formulaire_images.pdf';
+          async function modifyPdf() {
+            const url = './formulaire_images.pdf'
             const existingPdfBytes = await fetch(url).then(res => res.arrayBuffer())
+
             const pdfDoc = await PDFDocument.load(existingPdfBytes)
 
             const srcimg1 = $("#facade_maison_img img")[0].getAttribute('src')
@@ -3256,29 +3257,26 @@ jQuery(function($){
             form.flatten();
 
             const pdfBytes = await pdfDoc.save('./completed/here.pdf')
-            
-            //MERGING THE TWO DOCUMENTS
+      
+            const recapPdfBuffered = await fetch('./completed/recapitulatif.pdf').then(res => res.arrayBuffer())
+            const recapPdfLoaded = await PDFDocument.load(recapPdfBuffered)
             // Create a new PDFDocument
             const mergedPdf = await PDFDocument.create();
 
-            const recapPdfBuffered = await fetch('./completed/recapitulatif.pdf').then(res => res.arrayBuffer())
-            const recapPdfLoaded = await PDFDocument.load(recapPdfBuffered)
-
             const copiedPagesA = await mergedPdf.copyPages(recapPdfLoaded, recapPdfLoaded.getPageIndices());
-            copiedPagesA.forEach((page) => mergedPdf.addPage(page));
+            copiedPagesA.forEach((page) =>{ 
+              mergedPdf.addPage(page)
+            });
             
             const copiedPagesB = await mergedPdf.copyPages(pdfDoc, pdfDoc.getPageIndices());
             copiedPagesB.forEach((page) => mergedPdf.addPage(page));
 
             const mergedPdfFile = await mergedPdf.save();
-            console.log('mergedPdfFile', mergedPdfFile)
-            
+                
             var file = new Blob([mergedPdfFile], {type: 'application/pdf'});
             var fileURL = URL.createObjectURL(file);
-            
-            // Envoi mail
-            var formDataPdf = new FormData();
-            // formDataPdf.append('pdffile', file);
+            window.open(fileURL);
+
             formDataPdf.append('nom', $('#inputNom').val());
             formDataPdf.append('prenom', $('#inputPrenom').val());
             formDataPdf.append('email', $('#inputMail').val());
@@ -3292,9 +3290,11 @@ jQuery(function($){
                 error: function (data) { console.log('mail not sent', data) }
             });
             
-            window.open(fileURL, '_blank');
+            // downlo\mergedPdfFile, "Mydiag__Étude_personnalisée_de_l_habitat ", "application/pdf");
+            $('#generatePdfButton > div').addClass('hidden-preload')
           }
-          
+
+          modifyPdf();
           /************************************************************************************** */
 
 
