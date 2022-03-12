@@ -14,7 +14,7 @@ class GeneratePDF{
 
           try {
                 //les noms des fichiers utilisés
-                $filename = 'formulaire.pdf';
+                $filename = 'formulaire_complete.pdf';
                 $fileproducts = './completed/produits_selected.pdf';
                 $fileoutput = './completed/recapitulatif.pdf';
                 // print_r($data);
