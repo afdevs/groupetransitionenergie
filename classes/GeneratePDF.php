@@ -31,19 +31,26 @@ class GeneratePDF{
 
                 //quand on ajoute pas les solutions 
                 if (!$addSolutions) {
-                        $c_files = [
-                              'A' => $fileoutput,
-                              'B' => $fileimages,
-                        ];
-
-                      $pdf2 = new PdftkPdf($c_files);
+                      $pdf2 = new PdftkPdf($fileoutput);
                       $pdf2->cat(1, 5, 'A')
                             ->cat(7, 'end', 'A')
                             ->cat(1, 'end', 'B')
                             ->saveAs($fileoutput);
                       $page = $page-1;
                 }
-                
+
+                if($fileimages){
+                        $c_files = [
+                              'A' => $fileoutput,
+                              'B' => $fileimages,
+                        ];
+
+                        $pdf3 = new PdftkPdf($c_files);
+                        var_dump('pdf3', $pdf3);
+                        $pdf3->cat(1, 'end', 'A')
+                              ->cat(1, 'end', 'B')
+                        ->saveAs($fileoutput);
+                }
                 //page des produits
                 if ($addProducts) {
                       //concatenation des pages
