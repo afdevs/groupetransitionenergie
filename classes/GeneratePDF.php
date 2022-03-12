@@ -17,39 +17,48 @@ class GeneratePDF{
                 $filename = 'formulaire.pdf';
                 $fileproducts = './completed/produits_selected.pdf';
                 $fileoutput = './completed/recapitulatif.pdf';
+                $fileimages = 'formulaire_images.pdf';
                 // print_r($data);
 
                 //page de solutions
                 $page = 6;
-
+            
                 //remplir le formulaire
                 $pdf1 = new PdftkPdf($filename);
-                var_dump($pdf1);
                 $pdf1->fillForm($data)
                       ->flatten()
                       ->saveAs($fileoutput);
 
                 //quand on ajoute pas les solutions 
                 if (!$addSolutions) {
-                      $pdf2 = new PdftkPdf($fileoutput);
-                      $pdf2->cat(1, 5)
-                            ->cat(7, 'end')
+                        $c_files = [
+                              'A' => $fileoutput,
+                              'B' => $fileimages,
+                        ];
+
+                      $pdf2 = new PdftkPdf($c_files);
+                      $pdf2->cat(1, 5, 'A')
+                            ->cat(7, 'end', 'A')
+                            ->cat(1, 'end', 'B')
                             ->saveAs($fileoutput);
                       $page = $page-1;
                 }
-
+                
                 //page des produits
                 if ($addProducts) {
                       //concatenation des pages
                       $files = [
                             'A' => $fileoutput,
                             'B' => $fileproducts,
+                            'C' => $fileimages
                       ];
 
+                      var_dump('addSolutions', $addSolutions);
                       $pdf = new PdftkPdf($files);
                       $pdf->cat(1, $page, 'A')
                             ->cat(1,'end', 'B')
                             ->cat($page+1, 'end', 'A')
+                            ->cat(1,'end', 'C')
                             ->saveAs($fileoutput);
                       unlink($fileproducts);
                 }

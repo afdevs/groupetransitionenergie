@@ -3218,7 +3218,7 @@ jQuery(function($){
         const remoteUrl='https://fredoandrianaivo.com/lab/getpdf.php';
         //formulaire_images.pdf
         //https://pdf-lib.js.org/assets/with_update_sections.pdf
-        const existingPdfBytes = await fetch('getpdf.php').then(res => res.arrayBuffer())
+        const existingPdfBytes = await fetch(remoteUrl /*'getpdf.php'*/).then(res => res.arrayBuffer())
         const pdfDoc = await PDFDocument.load(existingPdfBytes)
 
         const srcimg1 = $("#facade_maison_img img")[0].getAttribute('src')
