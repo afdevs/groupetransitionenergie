@@ -2110,9 +2110,9 @@
     <script src="./assets/js/pdflib/pdf-lib.min.js"></script>
     <script src="./assets/js/pdflib/download.js"></script>
     <script src="./assets/js/pdflib/fontkit.umd.min.js"></script>
-    <!-- <script src="./assets/js/jquery-3.6.0.min.js"></script> -->
+    <script src="./assets/js/jquery-3.6.0.min.js"></script>
     <!-- <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script> -->
-    <script src="./assets/js/jquery-2.1.4.min.js"></script>
+    <!-- <script src="./assets/js/jquery-2.1.4.min.js"></script> -->
     <script src="./assets/js/materialize.min2.js"></script>
     <script src="./assets/js/nouislider.min.js"></script>
     <!-- <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->

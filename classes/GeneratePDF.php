@@ -24,6 +24,7 @@ class GeneratePDF{
 
                 //remplir le formulaire
                 $pdf1 = new PdftkPdf($filename);
+                var_dump($pdf1);
                 $pdf1->fillForm($data)
                       ->flatten()
                       ->saveAs($fileoutput);

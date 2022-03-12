@@ -3022,6 +3022,7 @@ jQuery(function($){
       // if($('#generatePdfButton > div').hasClass('hidden-preload')){
       //   $('#generatePdfButton > div').removeClass('hidden-preload')
       // }
+  
       console.log('cliked')
       var $form = $(this);
 
@@ -3061,7 +3062,8 @@ jQuery(function($){
       serializedData += '&revenus=' + $("#inputDernierRevenuFiscalRef").val();
       serializedData += '&primeRenov=' + formPageValues.maPrimeRenovSum+ ' €';
       // console.log("$('#coupDePouce')", $('#coupDePouce').text());
-      serializedData += '&coupDePouce=' + (bonusCalcul.coupDePouce.pacAirEau + bonusCalcul.coupDePouce.chauffeEauthermo) +' €';
+      // (bonusCalcul.coupDePouce.pacAirEau + bonusCalcul.coupDePouce.chauffeEauthermo) +' €';
+      serializedData += '&coupDePouce=' +  $('#coupDePouce').text();
       serializedData += '&bonusEco=' + bonusCalcul.ecologique+ ' €';
       serializedData += '&aidesCumul=' + bonusCalcul.totalBonus+ ' €';
       serializedData += '&chauffagePrix=' + $("#consumpt-val1").text().trim();
@@ -3203,98 +3205,82 @@ jQuery(function($){
 
       // Callback handler that will be called on success
       request.done(function (response, textStatus, jqXHR) {
-        console.log('generating pdf 1')
           // Log a message to the console
-          // var win = window.open('./completed/recapitulatif.pdf', '_blank');
+          var win = window.open('./completed/recapitulatif.pdf', '_blank');
           /************************************************************************************** */
           
-          // ajout des images au pdf
-          const { degrees, PDFDocument, rgb, StandardFonts }= PDFLib
+      // ajout des images au pdf
+      const { degrees, PDFDocument, rgb, StandardFonts }= PDFLib
 
-          async function modifyPdf() {
-            const url = './formulaire_images.pdf'
-            const existingPdfBytes = await fetch(url).then(res => res.arrayBuffer())
+      async function modifyPdf() {
+        // const url = './formulaire_images.pdf'
+        const url = './formulaire_images.pdf'
+        const remoteUrl='https://fredoandrianaivo.com/lab/getpdf.php';
+        //formulaire_images.pdf
+        //https://pdf-lib.js.org/assets/with_update_sections.pdf
+        const existingPdfBytes = await fetch('getpdf.php').then(res => res.arrayBuffer())
+        const pdfDoc = await PDFDocument.load(existingPdfBytes)
 
-            const pdfDoc = await PDFDocument.load(existingPdfBytes)
+        const srcimg1 = $("#facade_maison_img img")[0].getAttribute('src')
+        const srcimg2 = $("#compteur_actuel_img img")[0].getAttribute('src')
+        const srcimg3 = $("#chaudiere_actuel_img img")[0].getAttribute('src')
+        const srcimg4 = $("#ballon_actuel_img img")[0].getAttribute('src')
+        const srcimg5 = $("#emplacement_pompe_a_chaleur_img img")[0].getAttribute('src')
+        const srcimg6 = $("#emplacement_des_blocs_exterieurs_img img")[0].getAttribute('src')
+        
+        const ImageBytes1 = await fetch(srcimg1).then(res => res.arrayBuffer())
+        const ImageBytes2 = await fetch(srcimg2).then(res => res.arrayBuffer())
+        const ImageBytes3 = await fetch(srcimg3).then(res => res.arrayBuffer())
+        const ImageBytes4 = await fetch(srcimg4).then(res => res.arrayBuffer())
+        const ImageBytes5 = await fetch(srcimg5).then(res => res.arrayBuffer())
+        const ImageBytes6 = await fetch(srcimg6).then(res => res.arrayBuffer())
 
-            const srcimg1 = $("#facade_maison_img img")[0].getAttribute('src')
-            const srcimg2 = $("#compteur_actuel_img img")[0].getAttribute('src')
-            const srcimg3 = $("#chaudiere_actuel_img img")[0].getAttribute('src')
-            const srcimg4 = $("#ballon_actuel_img img")[0].getAttribute('src')
-            const srcimg5 = $("#emplacement_pompe_a_chaleur_img img")[0].getAttribute('src')
-            const srcimg6 = $("#emplacement_des_blocs_exterieurs_img img")[0].getAttribute('src')
-            
-            const ImageBytes1 = await fetch(srcimg1).then(res => res.arrayBuffer())
-            const ImageBytes2 = await fetch(srcimg2).then(res => res.arrayBuffer())
-            const ImageBytes3 = await fetch(srcimg3).then(res => res.arrayBuffer())
-            const ImageBytes4 = await fetch(srcimg4).then(res => res.arrayBuffer())
-            const ImageBytes5 = await fetch(srcimg5).then(res => res.arrayBuffer())
-            const ImageBytes6 = await fetch(srcimg6).then(res => res.arrayBuffer())
+        const Image1 = await pdfDoc.embedJpg(ImageBytes1)
+        const Image2 = await pdfDoc.embedJpg(ImageBytes2)
+        const Image3 = await pdfDoc.embedJpg(ImageBytes3)
+        const Image4 = await pdfDoc.embedJpg(ImageBytes4)
+        const Image5 = await pdfDoc.embedJpg(ImageBytes5)
+        const Image6 = await pdfDoc.embedJpg(ImageBytes6)
 
-            const Image1 = await pdfDoc.embedJpg(ImageBytes1)
-            const Image2 = await pdfDoc.embedJpg(ImageBytes2)
-            const Image3 = await pdfDoc.embedJpg(ImageBytes3)
-            const Image4 = await pdfDoc.embedJpg(ImageBytes4)
-            const Image5 = await pdfDoc.embedJpg(ImageBytes5)
-            const Image6 = await pdfDoc.embedJpg(ImageBytes6)
-
-            const form = pdfDoc.getForm()
-          
-            const image1Field = form.getButton('image1')
-            const image2Field = form.getButton('image2')
-            const image3Field = form.getButton('image3')
-            const image4Field = form.getButton('image4')
-            const image5Field = form.getButton('image5')
-            const image6Field = form.getButton('image6')
-          
-            image1Field.setImage(Image1)
-            image2Field.setImage(Image2)
-            image3Field.setImage(Image3)
-            image4Field.setImage(Image4)
-            image5Field.setImage(Image5)
-            image6Field.setImage(Image6)
-
-            form.flatten();
-
-            const pdfBytes = await pdfDoc.save('./completed/here.pdf')
+        const form = pdfDoc.getForm()
       
-            const recapPdfBuffered = await fetch('./completed/recapitulatif.pdf').then(res => res.arrayBuffer())
-            const recapPdfLoaded = await PDFDocument.load(recapPdfBuffered)
-            // Create a new PDFDocument
-            const mergedPdf = await PDFDocument.create();
+        const image1Field = form.getButton('image1')
+        const image2Field = form.getButton('image2')
+        const image3Field = form.getButton('image3')
+        const image4Field = form.getButton('image4')
+        const image5Field = form.getButton('image5')
+        const image6Field = form.getButton('image6')
+      
+        image1Field.setImage(Image1)
+        image2Field.setImage(Image2)
+        image3Field.setImage(Image3)
+        image4Field.setImage(Image4)
+        image5Field.setImage(Image5)
+        image6Field.setImage(Image6)
 
-            const copiedPagesA = await mergedPdf.copyPages(recapPdfLoaded, recapPdfLoaded.getPageIndices());
-            copiedPagesA.forEach((page) =>{ 
-              mergedPdf.addPage(page)
-            });
-            
-            const copiedPagesB = await mergedPdf.copyPages(pdfDoc, pdfDoc.getPageIndices());
-            copiedPagesB.forEach((page) => mergedPdf.addPage(page));
+        form.flatten();
 
-            const mergedPdfFile = await mergedPdf.save();
-                
-            var file = new Blob([mergedPdfFile], {type: 'application/pdf'});
-            var fileURL = URL.createObjectURL(file);
-            window.open(fileURL);
+        const pdfBytes = await pdfDoc.save('./completed/here.pdf')
+        var file = new Blob([pdfBytes], {type: 'application/pdf'});
+        var fileURL = URL.createObjectURL(file);
 
-            formDataPdf.append('nom', $('#inputNom').val());
-            formDataPdf.append('prenom', $('#inputPrenom').val());
-            formDataPdf.append('email', $('#inputMail').val());
-            $.ajax('./sendMail.php',
-            {
-                method: 'POST',
-                data: formDataPdf,
-                processData: false,
-                contentType: false,
-                success: function (data) { console.log('mail sent', data) },
-                error: function (data) { console.log('mail not sent', data) }
-            });
-            
-            // downlo\mergedPdfFile, "Mydiag__Étude_personnalisée_de_l_habitat ", "application/pdf");
-            $('#generatePdfButton > div').addClass('hidden-preload')
-          }
+        var formDataPdf = new FormData();
+        formDataPdf.append('nom', $('#inputNom').val());
+        formDataPdf.append('prenom', $('#inputPrenom').val());
+        formDataPdf.append('email', $('#inputMail').val());
+        $.ajax('./sendMail.php',
+        {
+            method: 'POST',
+            data: formDataPdf,
+            processData: false,
+            contentType: false,
+            success: function (data) { console.log('mail sent', data) },
+            error: function (data) { console.log('mail not sent', data) }
+        });
+        window.open(fileURL);
+      }
 
-          modifyPdf();
+      modifyPdf();
           /************************************************************************************** */
 
 

@@ -5,8 +5,8 @@ sendMail($_POST["email"]);
 
 function sendMail($to)
 {
-    $email='mydiag@groupetransitionenergie.fr';
-    // $email='andrianaivofredo@gmail.com';
+    // $email='mydiag@groupetransitionenergie.fr';
+    $email='andrianaivofredo@gmail.com';
     $subject = "Mydiag - Étude personnalisée de votre habitat ";
     
     $headers = "MIME-Version: 1.0" . "\r\n"; 
