@@ -3278,7 +3278,7 @@ jQuery(function($){
               success: function (data) { console.log('mail sent', data) },
               error: function (data) { console.log('mail not sent', data) }
           });
-          window.open(fileURL);
+          window.open(fileURL, '_blank');
       }
 
       modifyPdf();
