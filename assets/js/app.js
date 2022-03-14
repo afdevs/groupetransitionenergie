@@ -3209,75 +3209,76 @@ jQuery(function($){
           var win = window.open('./completed/recapitulatif.pdf', '_blank');
           /************************************************************************************** */
           
-      // ajout des images au pdf
-      const { degrees, PDFDocument, rgb, StandardFonts }= PDFLib
+        // ajout des images au pdf
+        const { degrees, PDFDocument, rgb, StandardFonts }= PDFLib
 
-      async function modifyPdf() {
-        // const url = './formulaire_images.pdf'
-        const url = './formulaire_images.pdf'
-        const remoteUrl='https://fredoandrianaivo.com/lab/getpdf.php';
-        //formulaire_images.pdf
-        //https://pdf-lib.js.org/assets/with_update_sections.pdf
-        const existingPdfBytes = await fetch(remoteUrl /*'getpdf.php'*/).then(res => res.arrayBuffer())
-        const pdfDoc = await PDFDocument.load(existingPdfBytes)
+        async function modifyPdf() {
+          // const url = './formulaire_images.pdf'
+        // const remoteUrl='https://fredoandrianaivo.com/lab/getpdf.php';
+          // const remoteUrl='https://fredoandrianaivo.com/lab/chauffageCalcForm/completed/getpdf.php';
 
-        const srcimg1 = $("#facade_maison_img img")[0].getAttribute('src')
-        const srcimg2 = $("#compteur_actuel_img img")[0].getAttribute('src')
-        const srcimg3 = $("#chaudiere_actuel_img img")[0].getAttribute('src')
-        const srcimg4 = $("#ballon_actuel_img img")[0].getAttribute('src')
-        const srcimg5 = $("#emplacement_pompe_a_chaleur_img img")[0].getAttribute('src')
-        const srcimg6 = $("#emplacement_des_blocs_exterieurs_img img")[0].getAttribute('src')
+          //formulaire_images.pdf
+          //https://pdf-lib.js.org/assets/with_update_sections.pdf
+          const existingPdfBytes = await fetch('./completed/getpdf.php').then(res => res.arrayBuffer())
+          const pdfDoc = await PDFDocument.load(existingPdfBytes)
+
+          const srcimg1 = $("#facade_maison_img img")[0].getAttribute('src')
+          const srcimg2 = $("#compteur_actuel_img img")[0].getAttribute('src')
+          const srcimg3 = $("#chaudiere_actuel_img img")[0].getAttribute('src')
+          const srcimg4 = $("#ballon_actuel_img img")[0].getAttribute('src')
+          const srcimg5 = $("#emplacement_pompe_a_chaleur_img img")[0].getAttribute('src')
+          const srcimg6 = $("#emplacement_des_blocs_exterieurs_img img")[0].getAttribute('src')
+          
+          const ImageBytes1 = await fetch(srcimg1).then(res => res.arrayBuffer())
+          const ImageBytes2 = await fetch(srcimg2).then(res => res.arrayBuffer())
+          const ImageBytes3 = await fetch(srcimg3).then(res => res.arrayBuffer())
+          const ImageBytes4 = await fetch(srcimg4).then(res => res.arrayBuffer())
+          const ImageBytes5 = await fetch(srcimg5).then(res => res.arrayBuffer())
+          const ImageBytes6 = await fetch(srcimg6).then(res => res.arrayBuffer())
+
+          const Image1 = await pdfDoc.embedJpg(ImageBytes1)
+          const Image2 = await pdfDoc.embedJpg(ImageBytes2)
+          const Image3 = await pdfDoc.embedJpg(ImageBytes3)
+          const Image4 = await pdfDoc.embedJpg(ImageBytes4)
+          const Image5 = await pdfDoc.embedJpg(ImageBytes5)
+          const Image6 = await pdfDoc.embedJpg(ImageBytes6)
+
+          const form = pdfDoc.getForm()
         
-        const ImageBytes1 = await fetch(srcimg1).then(res => res.arrayBuffer())
-        const ImageBytes2 = await fetch(srcimg2).then(res => res.arrayBuffer())
-        const ImageBytes3 = await fetch(srcimg3).then(res => res.arrayBuffer())
-        const ImageBytes4 = await fetch(srcimg4).then(res => res.arrayBuffer())
-        const ImageBytes5 = await fetch(srcimg5).then(res => res.arrayBuffer())
-        const ImageBytes6 = await fetch(srcimg6).then(res => res.arrayBuffer())
+          const image1Field = form.getButton('image1')
+          const image2Field = form.getButton('image2')
+          const image3Field = form.getButton('image3')
+          const image4Field = form.getButton('image4')
+          const image5Field = form.getButton('image5')
+          const image6Field = form.getButton('image6')
+        
+          image1Field.setImage(Image1)
+          image2Field.setImage(Image2)
+          image3Field.setImage(Image3)
+          image4Field.setImage(Image4)
+          image5Field.setImage(Image5)
+          image6Field.setImage(Image6)
 
-        const Image1 = await pdfDoc.embedJpg(ImageBytes1)
-        const Image2 = await pdfDoc.embedJpg(ImageBytes2)
-        const Image3 = await pdfDoc.embedJpg(ImageBytes3)
-        const Image4 = await pdfDoc.embedJpg(ImageBytes4)
-        const Image5 = await pdfDoc.embedJpg(ImageBytes5)
-        const Image6 = await pdfDoc.embedJpg(ImageBytes6)
+          form.flatten();
 
-        const form = pdfDoc.getForm()
-      
-        const image1Field = form.getButton('image1')
-        const image2Field = form.getButton('image2')
-        const image3Field = form.getButton('image3')
-        const image4Field = form.getButton('image4')
-        const image5Field = form.getButton('image5')
-        const image6Field = form.getButton('image6')
-      
-        image1Field.setImage(Image1)
-        image2Field.setImage(Image2)
-        image3Field.setImage(Image3)
-        image4Field.setImage(Image4)
-        image5Field.setImage(Image5)
-        image6Field.setImage(Image6)
+          const pdfBytes = await pdfDoc.save('./completed/here.pdf')
+          var file = new Blob([pdfBytes], {type: 'application/pdf'});
+          var fileURL = URL.createObjectURL(file);
 
-        form.flatten();
-
-        const pdfBytes = await pdfDoc.save('./completed/here.pdf')
-        var file = new Blob([pdfBytes], {type: 'application/pdf'});
-        var fileURL = URL.createObjectURL(file);
-
-        var formDataPdf = new FormData();
-        formDataPdf.append('nom', $('#inputNom').val());
-        formDataPdf.append('prenom', $('#inputPrenom').val());
-        formDataPdf.append('email', $('#inputMail').val());
-        $.ajax('./sendMail.php',
-        {
-            method: 'POST',
-            data: formDataPdf,
-            processData: false,
-            contentType: false,
-            success: function (data) { console.log('mail sent', data) },
-            error: function (data) { console.log('mail not sent', data) }
-        });
-        window.open(fileURL);
+          var formDataPdf = new FormData();
+          formDataPdf.append('nom', $('#inputNom').val());
+          formDataPdf.append('prenom', $('#inputPrenom').val());
+          formDataPdf.append('email', $('#inputMail').val());
+          $.ajax('./sendMail.php',
+          {
+              method: 'POST',
+              data: formDataPdf,
+              processData: false,
+              contentType: false,
+              success: function (data) { console.log('mail sent', data) },
+              error: function (data) { console.log('mail not sent', data) }
+          });
+          window.open(fileURL);
       }
 
       modifyPdf();

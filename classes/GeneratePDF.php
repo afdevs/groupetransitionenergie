@@ -46,11 +46,11 @@ class GeneratePDF{
                         ];
 
                         $pdf3 = new PdftkPdf($c_files);
-                        var_dump('pdf3', $pdf3);
                         $pdf3->cat(1, 'end', 'A')
                               ->cat(1, 'end', 'B')
                         ->saveAs($fileoutput);
                 }
+
                 //page des produits
                 if ($addProducts) {
                       //concatenation des pages
@@ -60,7 +60,6 @@ class GeneratePDF{
                             'C' => $fileimages
                       ];
 
-                      var_dump('addSolutions', $addSolutions);
                       $pdf = new PdftkPdf($files);
                       $pdf->cat(1, $page, 'A')
                             ->cat(1,'end', 'B')

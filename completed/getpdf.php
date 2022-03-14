@@ -1,12 +1,12 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST');
-header("Access-Control-Allow-Headers: X-Requested-With");
+header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 header("Content-type:application/pdf");
-header("Content-Disposition:attachment;filename='formulaire_images.pdf'");
+header("Content-Disposition:attachment;filename='recapitulatif.pdf'");
 
 // The PDF source is in original.pdf
-readfile("formulaire_images.pdf");
+readfile("recapitulatif.pdf");
 
 /*
 
