@@ -15,8 +15,8 @@ class GeneratePDF{
             //les noms des fichiers utilisés
             $filename = 'formulaire.pdf';
             $fileproducts = './completed/produits_selected.pdf';
-            $fileoutput = './completed/recapitulatif.pdf';
-            $fileimages = 'formulaire_images.pdf';
+            $fileoutput = './completed/Mydiag_recapitulatif.pdf';
+            $fileimages = './completed/images_selected.pdf';
             // print_r($data);
 
             //page de solutions
@@ -48,6 +48,7 @@ class GeneratePDF{
                   $pdf3->cat(1, 'end', 'A')
                         ->cat(1, 'end', 'B')
                   ->saveAs($fileoutput);
+                  unlink($fileimages);
             }
 
             //page des produits
