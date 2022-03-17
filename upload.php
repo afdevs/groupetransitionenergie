@@ -12,7 +12,6 @@ header('Access-Control-Allow-Origin: *');
 //     );
 // }
 
-
 if(isset($_FILES['pdf']['name']))
 {
     $uploadResult = move_uploaded_file($_FILES['pdf']['tmp_name'],"./completed/produits_selected.pdf");

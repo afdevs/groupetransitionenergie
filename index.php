@@ -1287,7 +1287,7 @@
                                 </div>
                                     <div class="generate_pdf_container" id="ignore_for_pdf">
                                         <button class="generate_pdf_btn" id="generatePdfButton" type="submit" >   
-                                            <!-- <div class="preloader-wrapper small active hidden-preload">
+                                            <div class="preloader-wrapper small active hidden-preload">
                                                 <div class="spinner-layer spinner-green-only">
                                                 <div class="circle-clipper left">
                                                     <div class="circle"></div>
@@ -1297,7 +1297,7 @@
                                                     <div class="circle"></div>
                                                 </div>
                                                 </div>
-                                            </div> -->
+                                            </div>
                                             GENERER MON PDF
                                         </button>
                                     </div>

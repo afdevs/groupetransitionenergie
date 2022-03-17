@@ -3018,10 +3018,10 @@ jQuery(function($){
     /* SUBMIT FORM */
     $("#regiration_form").submit(function (e) { 
       e.preventDefault();
-      // $('#generatePdfButton').attr('disabled', true)
-      // if($('#generatePdfButton > div').hasClass('hidden-preload')){
-      //   $('#generatePdfButton > div').removeClass('hidden-preload')
-      // }
+      $('#generatePdfButton').attr('disabled', true)
+      if($('#generatePdfButton > div').hasClass('hidden-preload')){
+        $('#generatePdfButton > div').removeClass('hidden-preload')
+      }
   
       console.log('cliked')
       var $form = $(this);
@@ -3176,7 +3176,6 @@ jQuery(function($){
 
               // doc.save('/completed/produits_selected.pdf')
               var blob = doc.output('blob');
-              
               var formData = new FormData();
               formData.append('pdf', blob);
               //ajout de fichier de produits
@@ -3213,7 +3212,7 @@ jQuery(function($){
 
           async function modifyPdf() {
             // const url = './formulaire_images.pdf'
-          // const remoteUrl='https://fredoandrianaivo.com/lab/getpdf.php';
+            // const remoteUrl='https://fredoandrianaivo.com/lab/getpdf.php';
             // const remoteUrl='https://fredoandrianaivo.com/lab/chauffageCalcForm/completed/getpdf.php';
 
             //formulaire_images.pdf
@@ -3260,24 +3259,40 @@ jQuery(function($){
 
             form.flatten();
 
-            const pdfBytes = await pdfDoc.save('./completed/here.pdf')
-            var file = new Blob([pdfBytes], {type: 'application/pdf'});
-            var fileURL = URL.createObjectURL(file);
+            pdfDoc.save('./completed/mydiag.pdf').then(pdfBytes=>{
+              let file = new Blob([pdfBytes], {type: 'application/pdf'});
+              let fileURL = URL.createObjectURL(file);
 
-            var formDataPdf = new FormData();
-            formDataPdf.append('nom', $('#inputNom').val());
-            formDataPdf.append('prenom', $('#inputPrenom').val());
-            formDataPdf.append('email', $('#inputMail').val());
-            $.ajax('./sendMail.php',
-            {
-                method: 'POST',
-                data: formDataPdf,
-                processData: false,
-                contentType: false,
-                success: function (data) { console.log('mail sent', data) },
-                error: function (data) { console.log('mail not sent', data) }
-            });
-            window.open(fileURL, '_blank');
+              // let pdfData = new Uint8Array(pdfBytes);
+              // let base64 = pdfData.toString('base64'); //
+              console.log('file', file)
+              
+              let formDataPdf = new FormData();
+              formDataPdf.append('nom', $('#inputNom').val());
+              formDataPdf.append('prenom', $('#inputPrenom').val());
+              formDataPdf.append('email', $('#inputMail').val());
+              formDataPdf.append('pdffinal', file);
+
+              $.ajax('./sendMail.php',
+              {
+                  method: 'POST',
+                  data: formDataPdf,
+                  processData: false,
+                  contentType: false,
+                  success: function (data) { 
+                    console.log('mail sent', data) 
+                    $('#generatePdfButton').attr('disabled', false)
+                    $('#generatePdfButton > div').addClass('hidden-preload')
+                  },
+                  error: function (data) { 
+                    console.log('mail not sent', data) 
+                    $('#generatePdfButton').attr('disabled', false)
+                    $('#generatePdfButton > div').addClass('hidden-preload')
+                  }
+              });
+              
+              window.open(fileURL, '_blank');
+            })
         }
 
         modifyPdf();
