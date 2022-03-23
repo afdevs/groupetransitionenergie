@@ -38,7 +38,7 @@ $File = $FilePath.'/Mydiag_recapitulatif.pdf';
 $to = $_POST['email'];
  
 // Sender 
-$from = 'andrianaivofredo@gmail.com'; 
+$from = 'mydiag@groupetransitionenergie.fr'; 
 $fromName = 'Mydiag | GROUPE TRANSITION ENERGIE';
  
 // Email subject 
