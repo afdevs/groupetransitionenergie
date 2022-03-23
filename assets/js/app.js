@@ -303,6 +303,7 @@ var franceAddresses=[
 ]
 
 var formPageValues={
+    coupDePouceSm:0,
     maPrimeRenovSum: 0,
     nombre_d_habitants: 1,
     chaufface_envisage_source_energie_nbr_unite: 0,
@@ -2292,6 +2293,7 @@ jQuery(function($){
       formPageValues.maPrimeRenovSum= maPrimeRenovSum;
 
       handlePhotoCaptureButtons();
+      formPageValues.coupDePouceSm=coupDePouceSm,
       $('#maPrimeRenov').text(formatNumber.asEuro(maPrimeRenovSum).replace(",00", ""));
       $('#coupDePouce').text(formatNumber.asEuro(coupDePouceSm).replace(",00", ""));     
       $('#bonusEcologique').text(formatNumber.asEuro(bonusCalcul.ecologique).replace(",00", ""));
@@ -3063,7 +3065,7 @@ jQuery(function($){
       serializedData += '&primeRenov=' + formPageValues.maPrimeRenovSum+ ' €';
       // console.log("$('#coupDePouce')", $('#coupDePouce').text());
       // (bonusCalcul.coupDePouce.pacAirEau + bonusCalcul.coupDePouce.chauffeEauthermo) +' €';
-      serializedData += '&coupDePouce=' +  $('#coupDePouce').text();
+      serializedData += '&coupDePouce=' + formPageValues.coupDePouceSm+ ' €';
       serializedData += '&bonusEco=' + bonusCalcul.ecologique+ ' €';
       serializedData += '&aidesCumul=' + bonusCalcul.totalBonus+ ' €';
       serializedData += '&chauffagePrix=' + $("#consumpt-val1").text().trim();
