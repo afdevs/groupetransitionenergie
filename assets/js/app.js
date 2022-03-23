@@ -3196,148 +3196,165 @@ jQuery(function($){
         /************************************************************************************** */
                     
        // ajout des images au pdf
-       const { degrees, PDFDocument, rgb, StandardFonts }= PDFLib
+    //    const { degrees, PDFDocument, rgb, StandardFonts }= PDFLib
 
-       async function modifyPdf() {
-         // const url = './formulaire_images.pdf'
-         // const remoteUrl='https://fredoandrianaivo.com/lab/getpdf.php';
-         // const remoteUrl='https://fredoandrianaivo.com/lab/chauffageCalcForm/completed/getpdf.php';
+    //    async function modifyPdf() {
+    //      // const url = './formulaire_images.pdf'
+    //      // const remoteUrl='https://fredoandrianaivo.com/lab/getpdf.php';
+    //      // const remoteUrl='https://fredoandrianaivo.com/lab/chauffageCalcForm/completed/getpdf.php';
 
-         //formulaire_images.pdf
-         //https://pdf-lib.js.org/assets/with_update_sections.pdf
-        //  const existingPdfBytes = await fetch('./completed/getpdf.php').then(res => res.arrayBuffer())
-         const existingPdfBytes = await fetch('./get_image_pdf.php').then(res => res.arrayBuffer())
-         const pdfDoc = await PDFDocument.load(existingPdfBytes)
+    //      //formulaire_images.pdf
+    //      //https://pdf-lib.js.org/assets/with_update_sections.pdf
+    //     //  const existingPdfBytes = await fetch('./completed/getpdf.php').then(res => res.arrayBuffer())
+    //      const existingPdfBytes = await fetch('./get_image_pdf.php').then(res => res.arrayBuffer())
+    //      const pdfDoc = await PDFDocument.load(existingPdfBytes)
 
-         const srcimg1 = $("#facade_maison_img img")[0].getAttribute('src')
-         const srcimg2 = $("#compteur_actuel_img img")[0].getAttribute('src')
-         const srcimg3 = $("#chaudiere_actuel_img img")[0].getAttribute('src')
-         const srcimg4 = $("#ballon_actuel_img img")[0].getAttribute('src')
-         const srcimg5 = $("#emplacement_pompe_a_chaleur_img img")[0].getAttribute('src')
-         const srcimg6 = $("#emplacement_des_blocs_exterieurs_img img")[0].getAttribute('src')
+    //      const srcimg1 = $("#facade_maison_img img")[0].getAttribute('src')
+    //      const srcimg2 = $("#compteur_actuel_img img")[0].getAttribute('src')
+    //      const srcimg3 = $("#chaudiere_actuel_img img")[0].getAttribute('src')
+    //      const srcimg4 = $("#ballon_actuel_img img")[0].getAttribute('src')
+    //      const srcimg5 = $("#emplacement_pompe_a_chaleur_img img")[0].getAttribute('src')
+    //      const srcimg6 = $("#emplacement_des_blocs_exterieurs_img img")[0].getAttribute('src')
          
-         const ImageBytes1 = await fetch(srcimg1).then(res => res.arrayBuffer())
-         const ImageBytes2 = await fetch(srcimg2).then(res => res.arrayBuffer())
-         const ImageBytes3 = await fetch(srcimg3).then(res => res.arrayBuffer())
-         const ImageBytes4 = await fetch(srcimg4).then(res => res.arrayBuffer())
-         const ImageBytes5 = await fetch(srcimg5).then(res => res.arrayBuffer())
-         const ImageBytes6 = await fetch(srcimg6).then(res => res.arrayBuffer())
+    //      const ImageBytes1 = await fetch(srcimg1).then(res => res.arrayBuffer())
+    //      const ImageBytes2 = await fetch(srcimg2).then(res => res.arrayBuffer())
+    //      const ImageBytes3 = await fetch(srcimg3).then(res => res.arrayBuffer())
+    //      const ImageBytes4 = await fetch(srcimg4).then(res => res.arrayBuffer())
+    //      const ImageBytes5 = await fetch(srcimg5).then(res => res.arrayBuffer())
+    //      const ImageBytes6 = await fetch(srcimg6).then(res => res.arrayBuffer())
 
-         const Image1 = await pdfDoc.embedJpg(ImageBytes1)
-         const Image2 = await pdfDoc.embedJpg(ImageBytes2)
-         const Image3 = await pdfDoc.embedJpg(ImageBytes3)
-         const Image4 = await pdfDoc.embedJpg(ImageBytes4)
-         const Image5 = await pdfDoc.embedJpg(ImageBytes5)
-         const Image6 = await pdfDoc.embedJpg(ImageBytes6)
+    //      const Image1 = await pdfDoc.embedJpg(ImageBytes1)
+    //      const Image2 = await pdfDoc.embedJpg(ImageBytes2)
+    //      const Image3 = await pdfDoc.embedJpg(ImageBytes3)
+    //      const Image4 = await pdfDoc.embedJpg(ImageBytes4)
+    //      const Image5 = await pdfDoc.embedJpg(ImageBytes5)
+    //      const Image6 = await pdfDoc.embedJpg(ImageBytes6)
 
-         const form = pdfDoc.getForm()
+    //      const form = pdfDoc.getForm()
        
-         const image1Field = form.getButton('image1')
-         const image2Field = form.getButton('image2')
-         const image3Field = form.getButton('image3')
-         const image4Field = form.getButton('image4')
-         const image5Field = form.getButton('image5')
-         const image6Field = form.getButton('image6')
+    //      const image1Field = form.getButton('image1')
+    //      const image2Field = form.getButton('image2')
+    //      const image3Field = form.getButton('image3')
+    //      const image4Field = form.getButton('image4')
+    //      const image5Field = form.getButton('image5')
+    //      const image6Field = form.getButton('image6')
        
-         image1Field.setImage(Image1)
-         image2Field.setImage(Image2)
-         image3Field.setImage(Image3)
-         image4Field.setImage(Image4)
-         image5Field.setImage(Image5)
-         image6Field.setImage(Image6)
+    //      image1Field.setImage(Image1)
+    //      image2Field.setImage(Image2)
+    //      image3Field.setImage(Image3)
+    //      image4Field.setImage(Image4)
+    //      image5Field.setImage(Image5)
+    //      image6Field.setImage(Image6)
 
-         form.flatten();
+    //      form.flatten();
 
-         pdfDoc.save('./completed/mydiag.pdf').then(pdfBytes=>{ 
-           let file = new Blob([pdfBytes], {type: 'application/pdf'});
-           let fileURL = URL.createObjectURL(file);
+    //      pdfDoc.save('./completed/mydiag.pdf').then(pdfBytes=>{ 
+    //        let file = new Blob([pdfBytes], {type: 'application/pdf'});
+    //        let fileURL = URL.createObjectURL(file);
 
-           console.log('file', file)
+    //        console.log('file', file)
            
-           let formDataPdf = new FormData();
-           formDataPdf.append('pdffinal', file);
+    //        let formDataPdf = new FormData();
+    //        formDataPdf.append('pdffinal', file);
 
-           $.ajax('./upload.php',
-           {
-               method: 'POST',
-               data: formDataPdf,
-               processData: false,
-               contentType: false,
-               success: function (data) {                  
-                  //remplissage du formulaire
-                  $inputs.prop("disabled", true);
-                  request = $.ajax({
-                      url: "generate.php",
-                      type: "post",
-                      data: serializedData
-                  });
+    //        $.ajax('./upload.php',
+    //        {
+    //            method: 'POST',
+    //            data: formDataPdf,
+    //            processData: false,
+    //            contentType: false,
+    //            success: function (data) {                  
+    //               //remplissage du formulaire
+    //               $inputs.prop("disabled", true);
+    //               request = $.ajax({
+    //                   url: "generate.php",
+    //                   type: "post",
+    //                   data: serializedData
+    //               });
 
-                  // Callback handler that will be called on success
-                  request.done(function (response, textStatus, jqXHR) {
-                      // Log a message to the console
-                      var win = window.open('./completed/Mydiag_recapitulatif.pdf', '_blank');
+    //               // Callback handler that will be called on success
+    //               request.done(function (response, textStatus, jqXHR) {
+    //                   // Log a message to the console
+    //                   var win = window.open('./completed/Mydiag_recapitulatif.pdf', '_blank');
                       
-                      // download(mergedPdfFile, "Mydiag__Étude_personnalisée_de_l_habitat ", "application/pdf");
+    //                   // download(mergedPdfFile, "Mydiag__Étude_personnalisée_de_l_habitat ", "application/pdf");
   
-                      let formMailData = new FormData();
-                      formMailData.append('nom', $('#inputNom').val());
-                      formMailData.append('prenom', $('#inputPrenom').val());
-                      formMailData.append('email', $('#inputMail').val());
+    //                   let formMailData = new FormData();
+    //                   formMailData.append('nom', $('#inputNom').val());
+    //                   formMailData.append('prenom', $('#inputPrenom').val());
+    //                   formMailData.append('email', $('#inputMail').val());
             
-                       $.ajax('./sendMail.php',
-                       {
-                          method: 'POST',
-                          data: formMailData,
-                          processData: false,
-                          contentType: false,
-                          success: function (data) { 
-                          console.log('mail not sent', data) 
-                          },
-                          error: function (error) { 
-                            console.log('mail not sent', error) 
-                          }
-                       });
+    //                    $.ajax('./sendMail.php',
+    //                    {
+    //                       method: 'POST',
+    //                       data: formMailData,
+    //                       processData: false,
+    //                       contentType: false,
+    //                       success: function (data) { 
+    //                       console.log('mail not sent', data) 
+    //                       },
+    //                       error: function (error) { 
+    //                         console.log('mail not sent', error) 
+    //                       }
+    //                    });
 
-                      if (win) {
-                          //Browser has allowed it to be opened
-                          win.focus();
-                      } else {
-                          //Browser has blocked it
-                          alert('Please allow popups for this website');
-                      }
-                  });
+    //                   if (win) {
+    //                       //Browser has allowed it to be opened
+    //                       win.focus();
+    //                   } else {
+    //                       //Browser has blocked it
+    //                       alert('Please allow popups for this website');
+    //                   }
+    //               });
 
-                  // Callback handler that will be called on failure
-                  request.fail(function (jqXHR, textStatus, errorThrown) {
-                      // Log the error to the console
-                      console.error(
-                          "The following error occurred: " +
-                          textStatus, errorThrown
-                      );
-                  });
+    //               // Callback handler that will be called on failure
+    //               request.fail(function (jqXHR, textStatus, errorThrown) {
+    //                   // Log the error to the console
+    //                   console.error(
+    //                       "The following error occurred: " +
+    //                       textStatus, errorThrown
+    //                   );
+    //               });
 
-                  // Callback handler that will be called regardless
-                  // if the request failed or succeeded
-                  request.always(function () {
-                      // Reenable the inputs
-                        $('#generatePdfButton').attr('disabled', false)
-                        $('#generatePdfButton > div').addClass('hidden-preload')
-                      $inputs.prop("disabled", false);
-                  });
-               },
-               error: function (data) { 
-                 $('#generatePdfButton').attr('disabled', false)
-                 $('#generatePdfButton > div').addClass('hidden-preload')
-               }
-           });
+    //               // Callback handler that will be called regardless
+    //               // if the request failed or succeeded
+    //               request.always(function () {
+    //                 $('#generatePdfButton').attr('disabled', false)
+    //                 $('#generatePdfButton > div').addClass('hidden-preload')
+    //                 $inputs.prop("disabled", false);
+    //               });
+    //            },
+    //            error: function (data) { 
+    //              $('#generatePdfButton').attr('disabled', false)
+    //              $('#generatePdfButton > div').addClass('hidden-preload')
+    //            }
+    //        });
            
-          //  window.open(fileURL, '_blank');
-         })
-     }
+    //       //  window.open(fileURL, '_blank');
+    //      })
+    //  }
 
-     modifyPdf();
+    //  modifyPdf();
 
-      
+    let formMailData = new FormData();
+    formMailData.append('nom', $('#inputNom').val());
+    formMailData.append('prenom', $('#inputPrenom').val());
+    formMailData.append('email', $('#inputMail').val());
+
+     $.ajax('./sendMail.php',
+     {
+        method: 'POST',
+        data: formMailData,
+        processData: false,
+        contentType: false,
+        success: function (data) { 
+          console.log('mail sent', data) 
+        },
+        error: function (error) { 
+          console.log('mail not sent', error) 
+        }
+     });
+
     });
       //on ready , end bracket;
     });
